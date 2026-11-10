@@ -698,3 +698,6 @@ main > section.dark:has(+ section.work.dark){padding-bottom:0}
 
 /* Homepage: knop naar de nieuwspagina */
 .nw-all{display:flex;justify-content:center;margin-top:48px}
+
+/* Lichte contactsectie na een lichte sectie: eigen ruimte boven, even groot als onder */
+main > section.light + section.contact.light{padding-top:var(--sec)}
