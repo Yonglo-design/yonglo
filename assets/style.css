@@ -720,7 +720,11 @@ main > section.light + section.contact.light{padding-top:var(--sec)}
 /* ===== Zoeken (header) ===== */
 .srch-btn{cursor:pointer;background:none;color:inherit}
 .srch-btn svg{stroke-width:1.9;stroke-linecap:round}
-@media (max-width:1023px){.hdr-cta .srch-btn{display:grid}}
+@media (max-width:1023px){.hdr-cta .srch-btn,.hdr-cta .play-btn{display:grid}}
+.play-btn{position:relative}
+.play-btn::after{content:"";position:absolute;top:7px;right:7px;width:7px;height:7px;border-radius:50%;background:var(--glow);box-shadow:0 0 0 2px var(--ink)}
+.play-btn[aria-current]{background:var(--spark);border-color:var(--spark)}
+.play-btn[aria-current]::after{display:none}
 html.srch-open{overflow:hidden}
 .srch{position:fixed;inset:0;z-index:200;background:rgba(14,15,26,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:flex;justify-content:center;align-items:flex-start;padding:96px 20px 20px;opacity:0;transition:opacity .2s}
 .srch.on{opacity:1}

@@ -224,6 +224,13 @@ window.addEventListener("keydown", e => {
   if (state === "play") { e.preventDefault(); drop(); }
 });
 document.querySelectorAll(".pp-go").forEach(b => b.addEventListener("click", start));
+// "Speel nu": naar het speelveld scrollen en de startknop klaarzetten
+document.querySelectorAll(".pp-jump").forEach(a => a.addEventListener("click", e => {
+  e.preventDefault();
+  document.getElementById("spelen").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  const go = state === "over" ? ui.over.querySelector(".pp-again") : ui.start.querySelector(".pp-go");
+  setTimeout(() => { if (state !== "play" && go) go.focus({ preventScroll: true }); }, 600);
+}));
 window.addEventListener("resize", () => { if (state !== "play") resize(); });
 
 // ---------- highscores ----------
@@ -234,8 +241,17 @@ async function loadScores() {
   try {
     const page = await queryDataItems(COLLECTION, { sort: [{ fieldName: "score", order: "DESC" }, { fieldName: "_createdDate", order: "ASC" }], limit: 10 });
     const items = page.items || [];
-    if (!items.length) { ui.list.innerHTML = `<li class="pp-empty">Nog geen scores. Zet jij de eerste neer?</li>`; return; }
-    ui.list.innerHTML = items.map((it, i) => `<li${mine && it._id === mine ? ' class="me"' : ""}><span class="pp-rank">${i + 1}</span><span class="pp-n">${esc(it.naam)}</span><b>${Number(it.score) || 0}</b></li>`).join("");
+    if (!items.length) ui.list.innerHTML = `<li class="pp-empty">Nog geen scores. Zet jij de eerste neer?</li>`;
+    const top = items[0];
+    document.querySelectorAll('[data-pp="top"]').forEach(e => e.textContent = top ? Number(top.score) || 0 : "–");
+    document.querySelectorAll('[data-pp="leader"]').forEach(e => e.textContent = top ? top.naam : "Jij?");
+    ["p1", "p2", "p3"].forEach((c, k) => {
+      const el = document.querySelector("#pp-podium ." + c), it = items[k];
+      if (!el) return;
+      el.querySelector(".pod-n").textContent = it ? it.naam : "Nog vrij";
+      el.querySelector(".pod-s").textContent = it ? Number(it.score) || 0 : "–";
+    });
+    if (items.length) ui.list.innerHTML = items.map((it, i) => `<li${mine && it._id === mine ? ' class="me"' : ""}><span class="pp-rank">${i + 1}</span><span class="pp-n">${esc(it.naam)}</span><b>${Number(it.score) || 0}</b></li>`).join("");
   } catch (e) {
     console.error(e);
     ui.list.innerHTML = `<li class="pp-empty">De highscorelijst kan nu niet geladen worden.</li>`;
