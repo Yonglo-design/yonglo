@@ -345,7 +345,7 @@ section{position:relative;padding:128px 0;overflow:clip}
 .ftr-bot a:hover{color:#fff}
 
 /* floating */
-.float-wa{position:fixed;right:24px;bottom:24px;z-index:80;padding:14px 20px;border-radius:999px;background:#25D366;color:#0b2b18;font-weight:600;font-size:15px;box-shadow:0 12px 30px rgba(0,0,0,.25);transform:translateY(120px);transition:transform .5s var(--ease)}
+.float-wa{position:fixed;right:24px;bottom:24px;z-index:80;padding:14px 20px;border-radius:999px;background:#25D366;color:#fff;font-weight:600;font-size:15px;box-shadow:0 12px 30px rgba(0,0,0,.25);transform:translateY(120px);transition:transform .5s var(--ease)}
 .float-wa.show{transform:none}
 .float-wa:hover{transform:translateY(-3px)}
 .mobbar{display:none}

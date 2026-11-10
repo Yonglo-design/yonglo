@@ -172,17 +172,56 @@
     });
   });
 
-  // forms -> mailto
+  // formulieren -> Wix Forms (e-mailmelding naar Yonglo), daarna naar de bedanktpagina
+  function labelOf(el){
+    var fs=el.closest('fieldset'); if(fs&&fs.querySelector('legend')) return fs.querySelector('legend').textContent.trim();
+    var l=el.closest('label'); var sp=l&&l.querySelector('span'); if(sp&&sp.textContent.trim()) return sp.textContent.trim();
+    return el.name.charAt(0).toUpperCase()+el.name.slice(1);
+  }
+  function thanksType(f){
+    if(f.dataset.thanks) return f.dataset.thanks;
+    var s=(f.dataset.subject||'').toLowerCase();
+    if(/seo/.test(s)) return 'seo-scan'; if(/offerte/.test(s)) return 'offerte'; if(/terugbel/.test(s)) return 'terugbellen';
+    if(/optimaal/.test(s)) return 'optimaal'; if(/ecommerce/.test(s)) return 'ecommerce'; if(/webdesign/.test(s)) return 'webdesign';
+    if(/branding/.test(s)) return 'branding'; if(/wix websites/.test(s)) return 'wix'; if(/development/.test(s)) return 'development';
+    if(/^ai /.test(s)) return 'ai'; if(/api/.test(s)) return 'api'; if(/project|nieuws/.test(s)) return 'project';
+    return 'kennismaking';
+  }
+  function mailtoFallback(f){
+    var data=new FormData(f), lines=[];
+    data.forEach(function(v,k){ lines.push(k.charAt(0).toUpperCase()+k.slice(1)+': '+v); });
+    w.location.href='mailto:contact@yonglo.com?subject='+encodeURIComponent(f.dataset.subject||'Aanvraag via website')+'&body='+encodeURIComponent(lines.join('\n'));
+  }
   $$('form').forEach(function(f){
     f.addEventListener('submit',function(e){
       e.preventDefault();
+      if(f.dataset.busy) return;
       if(!f.checkValidity()){ f.reportValidity(); return; }
-      var data=new FormData(f), lines=[];
-      data.forEach(function(v,k){ lines.push(k.charAt(0).toUpperCase()+k.slice(1)+': '+v); });
-      var to=/^[^@\s]+@[^@\s]+$/.test(f.dataset.to||'')?f.dataset.to:'contact@yonglo.com';
-      var href='mailto:'+to+'?subject='+encodeURIComponent(f.dataset.subject||'Aanvraag via website')+'&body='+encodeURIComponent(lines.join('\n'));
-      w.location.href=href;
-      say('Top, je mailprogramma opent met je bericht!');
+      var v=function(n){ var el=f.elements[n]; return el&&el.value?el.value.trim():''; };
+      var naam=v('naam')||[v('voornaam'),v('achternaam')].filter(Boolean).join(' ');
+      var skip={naam:1,voornaam:1,achternaam:1,email:1,telefoon:1,website:1,url:1};
+      var lines=[], detail='', seen={};
+      [].forEach.call(f.elements,function(el){
+        if(!el.name||skip[el.name]||seen[el.name]) return;
+        if((el.type==='radio'||el.type==='checkbox')&&!el.checked) return;
+        if(!el.value||!el.value.trim()) return;
+        if(el.type==='radio'){ seen[el.name]=1; if(!detail) detail=el.value; }
+        lines.push(labelOf(el)+': '+el.value.trim());
+      });
+      var payload={ formulier:(f.dataset.subject||'Aanvraag via website').replace(/&amp;/g,'&'), naam:naam, email:v('email'),
+        telefoon:v('telefoon'), website:v('website')||v('url'), aanvraag:lines.join('\n'), pagina:location.pathname };
+      var btn=f.querySelector('button[type=submit],button:not([type])'), label=btn?btn.innerHTML:'';
+      f.dataset.busy='1'; if(btn){ btn.disabled=true; btn.textContent='Versturen…'; }
+      var type=thanksType(f);
+      import('/assets/wix/forms-submit.js').then(function(m){ return m.submitWebsiteForm(payload); }).then(function(){
+        try{ sessionStorage.setItem('yl-thanks',JSON.stringify({type:type,naam:(naam||'').split(' ')[0],detail:detail,website:payload.website})); }catch(_){}
+        w.location.href='/bedankt.html?f='+encodeURIComponent(type);
+      }).catch(function(err){
+        if(w.console) console.error(err);
+        delete f.dataset.busy; if(btn){ btn.disabled=false; btn.innerHTML=label; }
+        say('Versturen lukte niet. Je mailprogramma opent als alternatief.');
+        setTimeout(function(){ mailtoFallback(f); },900);
+      });
     });
   });
 })();
