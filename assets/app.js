@@ -209,23 +209,23 @@
       '<rect x="36" y="32" width="104" height="138" rx="14" fill="'+W+'"/><rect x="46" y="42" width="84" height="70" rx="9" fill="#FFE6DC"/><circle cx="88" cy="77" r="20" fill="#FF7A59" opacity=".85"/><rect x="46" y="122" width="62" height="7" rx="3.5" fill="'+INK+'" opacity=".8"/><rect x="46" y="134" width="40" height="6" rx="3" fill="'+INK+'" opacity=".25"/><rect x="46" y="148" width="44" height="14" rx="7" fill="#FF7A59"/>'+
       '<rect x="152" y="48" width="104" height="138" rx="14" fill="'+W+'"/><rect x="162" y="58" width="84" height="70" rx="9" fill="#EEF0FF"/><rect x="186" y="74" width="36" height="40" rx="6" fill="#5B60F6" opacity=".8"/><rect x="162" y="138" width="62" height="7" rx="3.5" fill="'+INK+'" opacity=".8"/><rect x="162" y="150" width="40" height="6" rx="3" fill="'+INK+'" opacity=".25"/><rect x="162" y="164" width="44" height="14" rx="7" fill="#FF7A59"/>'+
       '<circle cx="270" cy="40" r="24" fill="'+W+'"/><path d="M256 31h5l4 15h13l3-10h-18" fill="none" stroke="#FF7A59" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="267" cy="51" r="2.4" fill="#FF7A59"/><circle cx="277" cy="51" r="2.4" fill="#FF7A59"/>'+
-      '<circle cx="286" cy="24" r="9" fill="'+INK+'"/><text x="286" y="28" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="'+W+'">3</text>',
+      '<circle cx="286" cy="24" r="9" fill="'+INK+'"/><text x="286" y="28" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="700" fill="'+W+'">3</text>',
     wix: g('mg3','#116DFF','#5B60F6')+
       '<circle cx="270" cy="34" r="60" fill="'+W+'" opacity=".08"/><circle cx="40" cy="180" r="70" fill="'+W+'" opacity=".07"/>'+
       '<g transform="translate(74 50) scale(1.28)" fill="'+W+'"><path d="M61.1,6.3c-2.1,1.8-2.7,4.8-2.7,4.8l-6.9,26.7l-5.7-21.9c-0.6-2.3-1.6-5.2-3.2-7.1c-2-2.5-6.2-2.6-6.6-2.6c-0.4,0-4.6,0.2-6.6,2.6c-1.6,1.9-2.6,4.8-3.2,7.1l-5.7,21.9l-6.9-26.7c0,0-0.6-2.9-2.7-4.8C7.5,3.4,2.5,4,2.5,4l13.2,50c0,0,4.4,0.3,6.5-0.8c2.9-1.5,4.2-2.6,6-9.4c1.5-6.1,5.9-23.9,6.3-25.1c0.2-0.6,0.5-2.1,1.6-2.1c1.1,0,1.4,1.5,1.6,2.1c0.4,1.3,4.7,19.1,6.3,25.1c1.7,6.8,3.1,7.9,6,9.4c2.2,1.1,6.5,0.8,6.5,0.8L69.5,4C69.5,4,64.5,3.4,61.1,6.3z"/><path d="M81.7,4.6C81.7,4.6,81.7,4.6,81.7,4.6c0-0.2,0-0.4,0-0.7c0,0-3.5-0.1-5.5,0.9c-2,1-3,2.7-3.4,6.3c-0.1,0.4-0.1,0.8-0.1,1.2v8.2v2.6v0.1v0.6v30c0,0,3.3,0.4,5.5-0.7c2.8-1.4,3.5-2.8,3.5-9V14l0,0V4.6z"/><path d="M114.7,29.1l16.8-24.9c0,0-7.1-1.2-10.6,2c-2.2,2-4.7,5.7-4.7,5.7l-6.2,8.9c-0.3,0.5-0.7,1-1.3,1s-1-0.5-1.3-1l-6.2-8.9c0,0-2.5-3.7-4.7-5.7c-3.5-3.2-10.6-2-10.6-2l16.8,24.9L85.8,53.9c0,0,7.4,0.9,10.9-2.3c2.2-2,4.4-5.4,4.4-5.4l6.2-8.9c0.3-0.5,0.7-1,1.3-1s1,0.5,1.3,1l6.2,8.9c0,0,2.3,3.3,4.5,5.4c3.5,3.2,10.7,2.3,10.7,2.3L114.7,29.1z"/></g>'+
-      '<rect x="108" y="146" width="104" height="24" rx="12" fill="'+W+'" opacity=".2"/><text x="160" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.2" fill="'+W+'">WIX PARTNER</text>',
+      '<rect x="108" y="146" width="104" height="24" rx="12" fill="'+W+'" opacity=".2"/><text x="160" y="162" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" letter-spacing="1.2" fill="'+W+'">WIX PARTNER</text>',
     seo: g('mg4','#0EA5A0','#5B60F6')+
       '<rect x="40" y="22" width="240" height="32" rx="16" fill="'+W+'"/><circle cx="60" cy="37" r="6.5" fill="none" stroke="#0EA5A0" stroke-width="2.4"/><path d="M65 42l5 5" stroke="#0EA5A0" stroke-width="2.4" stroke-linecap="round"/><rect x="80" y="33" width="128" height="8" rx="4" fill="'+INK+'" opacity=".2"/>'+
       '<rect x="56" y="150" width="28" height="34" rx="6" fill="'+W+'" opacity=".3"/><rect x="96" y="136" width="28" height="48" rx="6" fill="'+W+'" opacity=".45"/><rect x="136" y="118" width="28" height="66" rx="6" fill="'+W+'" opacity=".6"/><rect x="176" y="100" width="28" height="84" rx="6" fill="'+W+'" opacity=".78"/><rect x="216" y="80" width="28" height="104" rx="6" fill="'+W+'"/>'+
       '<path d="M70 140L110 124L150 106L190 88L230 66" fill="none" stroke="'+W+'" stroke-width="2" stroke-dasharray="4 5" opacity=".7"/>'+
-      '<rect x="252" y="60" width="40" height="22" rx="11" fill="'+INK+'"/><text x="272" y="75" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="'+W+'">#1</text>',
+      '<rect x="252" y="60" width="40" height="22" rx="11" fill="'+INK+'"/><text x="272" y="75" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="700" fill="'+W+'">#1</text>',
     optimaal: g('mg5','#8A8EFF','#FF7A59')+
       '<path d="M86 138A74 74 0 0 1 234 138" fill="none" stroke="'+W+'" stroke-opacity=".25" stroke-width="14" stroke-linecap="round"/>'+
       '<path d="M86 138A74 74 0 0 1 234 138" fill="none" stroke="'+W+'" stroke-width="14" stroke-linecap="round" pathLength="100" stroke-dasharray="96 100"/>'+
-      '<text x="160" y="132" text-anchor="middle" font-family="Space Grotesk,Inter,sans-serif" font-size="46" font-weight="700" fill="'+W+'">98</text>'+
-      '<text x="160" y="156" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.4" fill="'+W+'" opacity=".8">PERFORMANCE</text>'+
-      '<rect x="218" y="26" width="72" height="24" rx="12" fill="'+W+'"/><text x="254" y="42" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" font-weight="700" fill="#FF7A59">↑ sneller</text>'+
-      '<rect x="30" y="26" width="60" height="24" rx="12" fill="'+INK+'" opacity=".85"/><text x="60" y="42" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" font-weight="700" fill="'+W+'">Upgrade</text>',
+      '<text x="160" y="132" text-anchor="middle" font-family="Outfit,sans-serif" font-size="46" font-weight="700" fill="'+W+'">98</text>'+
+      '<text x="160" y="156" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" letter-spacing="1.4" fill="'+W+'" opacity=".8">PERFORMANCE</text>'+
+      '<rect x="218" y="26" width="72" height="24" rx="12" fill="'+W+'"/><text x="254" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11.5" font-weight="700" fill="#FF7A59">↑ sneller</text>'+
+      '<rect x="30" y="26" width="60" height="24" rx="12" fill="'+INK+'" opacity=".85"/><text x="60" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11.5" font-weight="700" fill="'+W+'">Upgrade</text>',
     branding: g('mg6','#FF5C8A','#FF9F6B')+
       '<text x="48" y="128" font-family="Instrument Serif,Georgia,serif" font-size="96" fill="'+W+'">Aa</text>'+
       '<rect x="180" y="34" width="44" height="44" rx="12" fill="'+W+'"/><rect x="232" y="34" width="44" height="44" rx="12" fill="'+INK+'"/><rect x="180" y="86" width="44" height="44" rx="12" fill="#FFE45C"/><rect x="232" y="86" width="44" height="44" rx="12" fill="#5B60F6"/>'+
@@ -238,7 +238,7 @@
       '<rect x="82" y="90" width="30" height="7" rx="3.5" fill="#8A8EFF"/><rect x="118" y="90" width="96" height="7" rx="3.5" fill="'+W+'" opacity=".45"/>'+
       '<rect x="82" y="106" width="58" height="7" rx="3.5" fill="#FFC857"/><rect x="146" y="106" width="40" height="7" rx="3.5" fill="'+W+'" opacity=".45"/>'+
       '<rect x="66" y="122" width="22" height="7" rx="3.5" fill="#FF7A59"/><rect x="50" y="138" width="14" height="7" rx="3.5" fill="#8A8EFF"/></g>'+
-      '<rect x="214" y="144" width="56" height="22" rx="11" fill="#5B60F6"/><text x="242" y="159" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="'+W+'">&lt;/&gt;</text>',
+      '<rect x="214" y="144" width="56" height="22" rx="11" fill="#5B60F6"/><text x="242" y="159" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="700" fill="'+W+'">&lt;/&gt;</text>',
     ai: g('mg8','#6D3AED','#5B60F6')+
       '<rect x="148" y="28" width="132" height="32" rx="16" fill="'+W+'" opacity=".22"/><rect x="164" y="40" width="96" height="7" rx="3.5" fill="'+W+'" opacity=".8"/>'+
       '<rect x="36" y="74" width="178" height="62" rx="16" fill="'+W+'"/><circle cx="58" cy="94" r="10" fill="#6D3AED"/><path d="M58 87c.8 4 2.6 5.8 6.6 6.6c-4 .8-5.8 2.6-6.6 6.6c-.8-4-2.6-5.8-6.6-6.6c4-.8 5.8-2.6 6.6-6.6z" fill="'+W+'"/>'+
@@ -248,7 +248,7 @@
     api: g('mg9','#0E7490','#5B60F6')+
       '<g stroke="'+W+'" stroke-opacity=".55" stroke-width="2" stroke-dasharray="4 5"><path d="M160 100L66 46"/><path d="M160 100L254 46"/><path d="M160 100L66 154"/><path d="M160 100L254 154"/></g>'+
       '<g fill="'+W+'"><circle cx="66" cy="46" r="20" fill-opacity=".22"/><rect x="57" y="37" width="18" height="18" rx="5"/><circle cx="254" cy="46" r="20" fill-opacity=".22"/><rect x="245" y="37" width="18" height="18" rx="9"/><circle cx="66" cy="154" r="20" fill-opacity=".22"/><path d="M66 144l10 18H56z"/><circle cx="254" cy="154" r="20" fill-opacity=".22"/><rect x="245" y="145" width="18" height="18" rx="3" transform="rotate(45 254 154)"/></g>'+
-      '<circle cx="160" cy="100" r="34" fill="'+W+'"/><text x="160" y="106" text-anchor="middle" font-family="Space Grotesk,Inter,sans-serif" font-size="17" font-weight="700" fill="#0E7490">API</text>'
+      '<circle cx="160" cy="100" r="34" fill="'+W+'"/><text x="160" y="106" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" font-weight="700" fill="#0E7490">API</text>'
   };
   function key(a){var m=(a.getAttribute('href')||'').match(/([a-z-]+)\.html/);return m&&V[m[1]]?m[1]:null;}
 

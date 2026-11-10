@@ -3,7 +3,7 @@
   --spark:#5B60F6;--spark2:#8A8EFF;--glow:#FF7A59;--grey:#6B6F80;
   --line:rgba(14,15,26,.1);--line-d:rgba(255,255,255,.12);
   --ease:cubic-bezier(.22,1,.36,1);
-  --fh:'Space Grotesk',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif;--fs:'Instrument Serif',Georgia,serif;
+  --fh:'Outfit',system-ui,sans-serif;--fb:'Outfit',system-ui,sans-serif;--fs:'Instrument Serif',Georgia,serif;
   --r:20px;--wrap:1280px;--gut:64px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
