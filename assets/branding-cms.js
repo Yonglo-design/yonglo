@@ -50,7 +50,8 @@ function loadImages() {
     { root: track.parentElement, rootMargin: "0px 120% 0px 120%" });
   imgs.forEach(im => io.observe(im));
   // vangnet: na het laden van de pagina alles alsnog ophalen
-  addEventListener("load", () => setTimeout(() => imgs.forEach(load), 1500), { once: true });
+  const all = () => setTimeout(() => imgs.forEach(load), 1500);
+  if (document.readyState === "complete") all(); else addEventListener("load", all, { once: true });
 }
 
 if (track && section) {
