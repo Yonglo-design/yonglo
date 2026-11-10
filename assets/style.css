@@ -347,7 +347,7 @@ section{position:relative;padding:128px 0;overflow:clip}
 /* floating */
 .float-wa{position:fixed;right:24px;bottom:24px;z-index:80;padding:14px 20px;border-radius:999px;background:#25D366;color:#fff;font-weight:600;font-size:15px;box-shadow:0 12px 30px rgba(0,0,0,.25);transform:translateY(120px);transition:transform .5s var(--ease)}
 .float-wa.show{transform:none}
-.float-wa:hover{transform:translateY(-3px)}
+.float-wa:hover{background:#1ebe5b}
 .mobbar{display:none}
 .toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,100px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-size:15px;z-index:130;transition:transform .4s var(--ease);box-shadow:0 10px 30px rgba(0,0,0,.3)}
 .toast.show{transform:translate(-50%,0)}
@@ -511,7 +511,7 @@ a.proj{display:block;color:inherit}
 @media (max-width:767px){.mq-track img{width:calc(var(--w)*.72);height:calc(var(--h)*.72);margin-right:48px}}
 .ftr-social{display:flex;gap:12px;margin-top:24px}
 .ftr-grid .ftr-social a{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(255,255,255,.18);border-radius:50%;color:rgba(255,255,255,.8);transition:color .2s,background .25s,border-color .25s,transform .25s var(--ease)}
-.ftr-grid .ftr-social a:hover{color:#fff;background:var(--spark);border-color:var(--spark);transform:translateY(-3px)}
+.ftr-grid .ftr-social a:hover{color:#fff;background:var(--spark);border-color:var(--spark)}
 .ftr-social svg{width:18px;height:18px}.stat b span{font-size:inherit;color:inherit}
 /* ===== KPI-sectie onder de hero ===== */
 .kpi-sec{padding:0 0 72px}

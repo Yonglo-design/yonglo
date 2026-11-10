@@ -120,7 +120,7 @@
   burger.addEventListener('click',function(){ setMenu(mm.hidden); });
   $$('#mobmenu a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
 
-  // magnetic buttons + spotlight cards
+  // spotlight-kaarten en hero-kanteling
   if(fine && !reduce){
     $$('.spot').forEach(function(c){
       c.addEventListener('mousemove',function(e){

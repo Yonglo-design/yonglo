@@ -112,7 +112,7 @@
 .svc-wrap{display:flex;flex-wrap:wrap;gap:14px}
 .svc-pill{display:inline-flex;align-items:center;gap:14px;padding:20px 30px;border-radius:999px;border:1px solid var(--line);background:#fff;font-family:var(--fh);font-weight:600;font-size:clamp(18px,1.8vw,24px);transition:background .3s,color .3s,border-color .3s,transform .35s var(--ease)}
 .svc-pill i{font-style:normal;width:0;overflow:hidden;opacity:0;transition:width .35s var(--ease),opacity .3s}
-.svc-pill:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-3px)}
+.svc-pill:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .svc-pill:hover i{width:22px;opacity:1}
 
 /* responsive */
