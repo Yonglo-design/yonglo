@@ -695,3 +695,6 @@ main > section.dark:has(+ section.work.dark){padding-bottom:0}
 
 /* Header even breed als de rest van de site: 1600px met dezelfde zijmarge */
 .hdr-in{max-width:var(--wrap);padding:0 var(--gut)}
+
+/* Homepage: knop naar de nieuwspagina */
+.nw-all{display:flex;justify-content:center;margin-top:48px}
