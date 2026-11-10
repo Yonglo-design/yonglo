@@ -773,3 +773,9 @@
 @keyframes tyFall{0%{opacity:0;transform:translate(0,-20px) rotate(0)}10%{opacity:1}100%{opacity:0;transform:translate(var(--dx),95vh) rotate(var(--r))}}
 @media (max-width:767px){.ty{padding:120px 0 80px}.ty-steps{grid-template-columns:1fr;margin:28px 0 32px}.ty-check{width:84px;height:84px}}
 @media (prefers-reduced-motion:reduce){.ty-check,.ty-check circle,.ty-check path,.ty-steps li{animation:none;stroke-dashoffset:0}}
+
+/* ===== Wix websites: Wix Optimaal-cijfers gecentreerd + Wix Legend partner ===== */
+#optimaal.wixspec .spec-stats .stat{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#optimaal.wixspec .stat b.wix-legend{display:flex;align-items:center;justify-content:center;gap:.24em;font-size:clamp(28px,2.8vw,42px);white-space:nowrap}
+#optimaal.wixspec .wix-legend svg{flex:none;height:.74em;width:auto;fill:#fff}
+@media (max-width:767px){#optimaal.wixspec .stat b.wix-legend{font-size:clamp(20px,6.2vw,30px)}}
