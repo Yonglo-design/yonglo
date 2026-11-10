@@ -4,7 +4,7 @@
 .serif{font-family:var(--fs)!important;font-style:normal;font-weight:inherit!important;letter-spacing:0!important}
 
 /* project colour themes */
-.t1{--a:#2B2BB8;--b:#5B60F6;--c:#9D9DFF}
+.t1{--a:#2B2BB8;--b:#325FFC;--c:#99AFFE}
 .t2{--a:#3a2a24;--b:#a86b52;--c:#e8b99a}
 .t3{--a:#0f3b36;--b:#1e8a7a;--c:#7fe0cf}
 .t4{--a:#1b1d2e;--b:#3b3f63;--c:#8a90c7}
@@ -38,7 +38,7 @@
 .case:first-of-type{border-top:0;padding-top:16px}
 .case:nth-of-type(even) .case-txt{order:2}
 .case-num{display:block;font-family:var(--fh);font-size:96px;font-weight:600;line-height:.9;color:transparent;-webkit-text-stroke:1.5px rgba(14,15,26,.18);margin-bottom:20px}
-.case-cat{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--spark);background:rgba(91,96,246,.1);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+.case-cat{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--spark);background:rgba(50,95,252,.1);padding:6px 12px;border-radius:999px;margin-bottom:16px}
 .case h3{font-size:clamp(32px,3.6vw,48px);margin-bottom:16px}
 .case-txt>p{color:#3b3e4f;margin-bottom:24px}
 .case-tags,.pc-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
@@ -87,7 +87,7 @@
 .pcard-meta h3{font-size:22px;margin-bottom:6px}
 .pcard-meta p{color:var(--grey);font-size:15px;margin-bottom:14px}
 .pc-tags{margin:auto 0 0}
-.pc-tags li{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(91,96,246,.1);color:var(--spark)}
+.pc-tags li{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(50,95,252,.1);color:var(--spark)}
 .pcard-cta{background:var(--spark);color:#fff;border-color:transparent;justify-content:center;align-items:flex-start;gap:12px;padding:40px;min-height:280px}
 .pcard-cta span{opacity:.8}
 .pcard-cta b{font-family:var(--fh);font-size:30px;line-height:1.1;transition:transform .4s var(--ease)}
@@ -98,9 +98,9 @@
 /* trust */
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1}
 .tcard{padding:32px;border-radius:var(--r);background:rgba(255,255,255,.04);border:1px solid var(--line-d);transition:background .3s,border-color .3s,transform .4s var(--ease)}
-.tcard:hover{background:rgba(91,96,246,.12);border-color:rgba(138,142,255,.5);transform:translateY(-6px)}
+.tcard:hover{background:rgba(50,95,252,.12);border-color:rgba(122,151,253,.5);transform:translateY(-6px)}
 .tcard p{color:rgba(255,255,255,.65);font-size:15px}
-.ti{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:24px;background:rgba(91,96,246,.18);color:var(--spark2);font-family:var(--fh);font-weight:700;font-size:22px;transition:transform .5s var(--ease),background .3s,color .3s}
+.ti{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:24px;background:rgba(50,95,252,.18);color:var(--spark2);font-family:var(--fh);font-weight:700;font-size:22px;transition:transform .5s var(--ease),background .3s,color .3s}
 .tcard:hover .ti{transform:rotate(-8deg) scale(1.08);background:var(--spark);color:#fff}
 .ti-fast{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;padding-left:12px}
 .ti-fast i{height:3px;border-radius:2px;background:currentColor;animation:dash 1.4s ease-in-out infinite}

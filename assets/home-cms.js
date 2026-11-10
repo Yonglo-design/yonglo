@@ -8,8 +8,8 @@ const rail = document.querySelector(".work .rail");
 function bg(p) {
   const hex = /^#[0-9a-f]{3,8}$/i;
   const a = hex.test(p.kleurDonker || "") ? p.kleurDonker : "#1b1d2e";
-  const b = hex.test(p.kleurMidden || "") ? p.kleurMidden : "#5B60F6";
-  const c = hex.test(p.kleurLicht || "") ? p.kleurLicht : "#9D9DFF";
+  const b = hex.test(p.kleurMidden || "") ? p.kleurMidden : "#325FFC";
+  const c = hex.test(p.kleurLicht || "") ? p.kleurLicht : "#99AFFE";
   return `background:linear-gradient(150deg,${a},${b} 60%,${c})`;
 }
 

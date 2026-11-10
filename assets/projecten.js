@@ -80,8 +80,8 @@ export function esc(s) {
 const HEX = /^#[0-9a-f]{3,8}$/i;
 export function themeStyle(p) {
   const a = HEX.test(p.kleurDonker || "") ? p.kleurDonker : "#1b1d2e";
-  const b = HEX.test(p.kleurMidden || "") ? p.kleurMidden : "#5B60F6";
-  const c = HEX.test(p.kleurLicht || "") ? p.kleurLicht : "#9D9DFF";
+  const b = HEX.test(p.kleurMidden || "") ? p.kleurMidden : "#325FFC";
+  const c = HEX.test(p.kleurLicht || "") ? p.kleurLicht : "#99AFFE";
   return `--a:${a};--b:${b};--c:${c}`;
 }
 

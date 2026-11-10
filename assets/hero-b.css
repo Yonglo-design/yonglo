@@ -23,9 +23,9 @@
 .hx-steps{list-style:none;display:flex;justify-content:center;gap:8px;margin:0 auto 22px;padding:6px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line-d);width:max-content;position:relative}
 .hx-steps li:not(.hx-pill){position:relative;z-index:1;padding:8px 18px;border-radius:999px;font-size:14px;font-weight:600;color:rgba(255,255,255,.55);transition:color .4s}
 .hx-steps li.on{color:#fff}
-.hx-steps .hx-pill{position:absolute;z-index:0;top:6px;bottom:6px;left:0;border-radius:999px;background:var(--spark);box-shadow:0 8px 24px rgba(91,96,246,.45);transition:transform .55s var(--ease),width .55s var(--ease)}
+.hx-steps .hx-pill{position:absolute;z-index:0;top:6px;bottom:6px;left:0;border-radius:999px;background:var(--spark);box-shadow:0 8px 24px rgba(50,95,252,.45);transition:transform .55s var(--ease),width .55s var(--ease)}
 
-.hx-win{position:relative;border-radius:18px 18px 0 0;background:#14162a;border:1px solid rgba(255,255,255,.12);border-bottom:0;box-shadow:0 -10px 80px rgba(91,96,246,.25),0 40px 120px rgba(0,0,0,.5);transform:rotateX(var(--tx,14deg)) rotateY(var(--ty,0deg));transform-origin:50% 100%;transition:transform .6s var(--ease),background .7s var(--ease);overflow:hidden}
+.hx-win{position:relative;border-radius:18px 18px 0 0;background:#14162a;border:1px solid rgba(255,255,255,.12);border-bottom:0;box-shadow:0 -10px 80px rgba(50,95,252,.25),0 40px 120px rgba(0,0,0,.5);transform:rotateX(var(--tx,14deg)) rotateY(var(--ty,0deg));transform-origin:50% 100%;transition:transform .6s var(--ease),background .7s var(--ease);overflow:hidden}
 .hx-bar{display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08);transition:border-color .7s}
 .hx-bar>i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.18)}
 .hx-bar>i:nth-child(1){background:#ff6b5c}.hx-bar>i:nth-child(2){background:#ffbd4a}.hx-bar>i:nth-child(3){background:#2fd27a}
@@ -73,8 +73,8 @@
 .hx-site .b:nth-child(2n){--r:-.6deg}.hx-site .b:nth-child(3n){--r:.8deg}
 
 /* ---- Fase 2: Concept (wireframe) ---- */
-.hx-win[data-phase="1"] .hx-site{background-image:linear-gradient(rgba(138,142,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(138,142,255,.08) 1px,transparent 1px);background-size:24px 24px}
-.hx-win[data-phase="1"] .hx-site .b{border-style:solid;border-color:rgba(138,142,255,.45);background:rgba(138,142,255,.08);transform:none}
+.hx-win[data-phase="1"] .hx-site{background-image:linear-gradient(rgba(122,151,253,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(122,151,253,.08) 1px,transparent 1px);background-size:24px 24px}
+.hx-win[data-phase="1"] .hx-site .b{border-style:solid;border-color:rgba(122,151,253,.45);background:rgba(122,151,253,.08);transform:none}
 
 /* ---- Fase 3 + 4: Design en Live ---- */
 .hx-win[data-phase="2"],.hx-win[data-phase="3"]{background:#F6F4EF}
@@ -86,7 +86,7 @@
 .hx-win[data-phase="2"] .hx-cta,.hx-win[data-phase="3"] .hx-cta{background:var(--ink)}
 .hx-win[data-phase="2"] .hx-h,.hx-win[data-phase="3"] .hx-h,.hx-win[data-phase="2"] .hx-h2,.hx-win[data-phase="3"] .hx-h2{background:var(--ink)}
 .hx-win[data-phase="2"] .hx-p,.hx-win[data-phase="3"] .hx-p,.hx-win[data-phase="2"] .hx-p2,.hx-win[data-phase="3"] .hx-p2{background:rgba(14,15,26,.18)}
-.hx-win[data-phase="2"] .hx-btn,.hx-win[data-phase="3"] .hx-btn{background:var(--spark);box-shadow:0 10px 24px rgba(91,96,246,.4)}
+.hx-win[data-phase="2"] .hx-btn,.hx-win[data-phase="3"] .hx-btn{background:var(--spark);box-shadow:0 10px 24px rgba(50,95,252,.4)}
 .hx-win[data-phase="2"] .hx-img,.hx-win[data-phase="3"] .hx-img{background:radial-gradient(circle at 75% 25%,#ffd3c4 0 12%,transparent 13%),radial-gradient(circle at 30% 120%,var(--glow),transparent 55%),linear-gradient(150deg,#2a2d6e,var(--spark) 55%,var(--spark2))}
 .hx-win[data-phase="2"] .hx-card,.hx-win[data-phase="3"] .hx-card{background:#fff;box-shadow:0 8px 20px rgba(14,15,26,.08)}
 .hx-win[data-phase="2"] .hx-card:nth-child(2),.hx-win[data-phase="3"] .hx-card:nth-child(2){background:linear-gradient(135deg,#fff,#eceaff)}

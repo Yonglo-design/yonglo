@@ -141,7 +141,7 @@
 .mcard .pc-br{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-bottom:4px}
 .mcard h3{font-size:24px}
 .next-band{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:120px;padding:64px max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.next-band::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#2B2BB8,#5B60F6 60%,#9D9DFF);transform:translateX(-101%);transition:transform .7s var(--ease)}
+.next-band::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#2B2BB8,#325FFC 60%,#99AFFE);transform:translateX(-101%);transition:transform .7s var(--ease)}
 .next-band:hover::before{transform:none}
 .next-band span,.next-band b{position:relative}
 .next-band span{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
