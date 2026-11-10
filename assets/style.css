@@ -253,7 +253,6 @@ section{position:relative;padding:128px 0;overflow:clip}
 @keyframes tabIn{from{opacity:0;transform:translateY(12px)}}
 .tab-panel ul{list-style:none;display:grid;gap:12px;margin-top:16px}
 .tab-panel li{padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.05);display:flex;gap:12px;align-items:center}
-.tab-panel li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--glow);flex:none}
 
 /* split */
 .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
