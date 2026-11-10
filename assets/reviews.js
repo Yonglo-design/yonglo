@@ -28,8 +28,10 @@
   function fallback() {
     root.classList.add("gr-off");
     var a = root.querySelector('[data-gr="link"]');
-    rail.innerHTML = '<a class="gr-card gr-cta" href="' + esc(a ? a.href : "#") + '" target="_blank" rel="noopener">' + G +
-      '<b>Lees wat klanten over Yonglo zeggen</b><span>Al onze reviews staan op Google</span><i class="arr">→</i></a>';
+    var wr = root.querySelector(".gr-write");
+    rail.innerHTML = '<div class="gr-card gr-cta">' + G +
+      '<a class="gr-cta-main" href="' + esc(a ? a.href : "#") + '" target="_blank" rel="noopener"><b>Lees wat klanten over Yonglo zeggen</b><span>Al onze reviews staan op Google</span><i class="arr">→</i></a>' +
+      (wr ? '<a class="gr-write gr-cta-write" href="' + esc(wr.href) + '" target="_blank" rel="noopener">Schrijf zelf een review</a>' : "") + "</div>";
   }
 
   function render(d) {
