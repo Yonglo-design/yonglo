@@ -120,6 +120,17 @@
   burger.addEventListener('click',function(){ setMenu(mm.hidden); });
   $$('#mobmenu a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
 
+  // zoeken (header): het zoekvenster wordt pas geladen bij het eerste gebruik
+  var sbtn=$('.srch-btn'), srchMod=null;
+  function openSearch(){ (srchMod||(srchMod=import('/assets/zoeken.js'))).then(function(m){ if(!mm.hidden) setMenu(false); m.open(sbtn); }); }
+  if(sbtn){
+    sbtn.addEventListener('click',openSearch);
+    d.addEventListener('keydown',function(e){
+      var tag=(e.target&&e.target.tagName)||'';
+      if(((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k')||(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(tag)&&!e.target.isContentEditable)){ e.preventDefault(); openSearch(); }
+    });
+  }
+
   // spotlight-kaarten en hero-kanteling
   if(fine && !reduce){
     $$('.spot').forEach(function(c){
