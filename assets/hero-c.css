@@ -105,3 +105,7 @@ a.hc-t:hover .cap{opacity:1;transform:none}
   .hc ~ section{position:relative;z-index:1}
   .hc + section{box-shadow:0 -24px 60px rgba(14,15,26,.28)}
 }
+
+/* Hero: video in de tegel linksboven */
+.hc-t.hc-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+a.hc-t.hc-vid:hover video{transform:scale(1.06)}

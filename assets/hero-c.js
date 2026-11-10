@@ -20,6 +20,7 @@ if (hero) {
     const withImg = all.filter(p => p.portfolioImage || p.hoofdbeeld);
     const list = [...withImg.filter(p => p.uitgelicht), ...withImg.filter(p => !p.uitgelicht)];
     tiles.forEach((el, i) => {
+      if (el.hasAttribute("data-video")) return; // vaste video-tegel
       const p = list[i];
       if (!p) return;
       const [w, h] = size(el);
