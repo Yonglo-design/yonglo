@@ -1,7 +1,7 @@
 /* ===== Portfolio ===== */
 .nav a[aria-current=page]::after{transform:translateX(-50%) scale(1)}
 .mega a[aria-current=page] b::after{content:none}
-.serif{font-family:var(--fs)!important;font-style:italic;font-weight:400!important;letter-spacing:0!important}
+.serif{font-family:var(--fs)!important;font-style:normal;font-weight:inherit!important;letter-spacing:0!important}
 
 /* project colour themes */
 .t1{--a:#2B2BB8;--b:#5B60F6;--c:#9D9DFF}

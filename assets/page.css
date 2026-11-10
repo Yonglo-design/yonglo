@@ -148,7 +148,7 @@
 .duo-card.in .s2{transition-delay:.1s}.duo-card.in .s3{transition-delay:.2s}.duo-card.in .s4{transition-delay:.3s}
 .duo-card:hover .sw{transform:translateY(-6px) rotate(-6deg)}
 .duo-card:hover .s2{transition-delay:.04s}.duo-card:hover .s3{transition-delay:.08s}.duo-card:hover .s4{transition-delay:.12s}
-.aa{font-family:var(--fs);font-style:italic;font-size:64px;line-height:1;color:var(--spark);margin-left:10px}
+.aa{font-family:var(--fs);font-style:normal;font-size:64px;line-height:1;color:var(--spark);margin-left:10px}
 .code-vis{background:#0a0b14;border:1px solid var(--line-d);padding:22px 24px;display:flex;align-items:center}
 .code-vis code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.8;color:rgba(255,255,255,.85);white-space:nowrap;overflow:hidden;display:block;width:0;border-right:2px solid var(--spark2);transition:width 2.4s steps(40) .3s}
 .duo-card.in .code-vis code{width:100%;animation:caret 1s step-end infinite 2.7s}
@@ -372,7 +372,7 @@
 .bb-aa{font-family:var(--fh);font-size:54px;font-weight:700;line-height:1;background:linear-gradient(120deg,#fff,var(--spark2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .bb-type div{display:grid}
 .bb-type b{font-family:var(--fh);font-size:15px;color:#fff}
-.bb-type b.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:18px;margin-top:6px}
+.bb-type b.serif{font-family:var(--fs);font-style:normal;font-weight:inherit;font-size:18px;margin-top:6px}
 .bb-type small{font-size:12px;color:rgba(255,255,255,.5)}
 .bb-tone{display:flex;gap:8px;flex-wrap:wrap}
 .bb-tone span{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line-d);color:rgba(255,255,255,.75);opacity:0;animation:bbIn .5s var(--ease) forwards}

@@ -227,7 +227,7 @@
       '<rect x="218" y="26" width="72" height="24" rx="12" fill="'+W+'"/><text x="254" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11.5" font-weight="700" fill="#FF7A59">↑ sneller</text>'+
       '<rect x="30" y="26" width="60" height="24" rx="12" fill="'+INK+'" opacity=".85"/><text x="60" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11.5" font-weight="700" fill="'+W+'">Upgrade</text>',
     branding: g('mg6','#FF5C8A','#FF9F6B')+
-      '<text x="48" y="128" font-family="Instrument Serif,Georgia,serif" font-size="96" fill="'+W+'">Aa</text>'+
+      '<text x="48" y="128" font-family="Outfit,sans-serif" font-weight="600" font-size="96" fill="'+W+'">Aa</text>'+
       '<rect x="180" y="34" width="44" height="44" rx="12" fill="'+W+'"/><rect x="232" y="34" width="44" height="44" rx="12" fill="'+INK+'"/><rect x="180" y="86" width="44" height="44" rx="12" fill="#FFE45C"/><rect x="232" y="86" width="44" height="44" rx="12" fill="#5B60F6"/>'+
       '<rect x="48" y="150" width="228" height="8" rx="4" fill="'+W+'" opacity=".45"/><rect x="48" y="164" width="150" height="8" rx="4" fill="'+W+'" opacity=".28"/>',
     development: g('mg7','#1B1D2E','#3B3F9E')+
