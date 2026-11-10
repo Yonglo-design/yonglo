@@ -15,6 +15,7 @@ if (hero) {
     return [w, Math.round(w / (r.width && r.height ? r.width / r.height : 1))];
   };
 
+  setTimeout(show, 120); // tegels direct tonen; beelden komen erin zodra het CMS antwoordt
   try {
     const all = await fetchProjects();
     const withImg = all.filter(p => p.portfolioImage || p.hoofdbeeld);
@@ -40,7 +41,6 @@ if (hero) {
   } catch (e) {
     console.error(e);
   }
-  setTimeout(show, 120);
   setTimeout(() => hero.classList.add("ready"), 2200);
 
   // AI-prompt typt zichzelf

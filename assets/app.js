@@ -278,3 +278,19 @@
   var li=d.querySelector('.has-mega');
   if(li&&window.MutationObserver){ new MutationObserver(function(){ if(!li.classList.contains('open')) setTimeout(function(){ if(!li.classList.contains('open')) show(def); },300); }).observe(li,{attributes:true,attributeFilter:['class']}); }
 })();
+
+// Snelheid: niet-noodzakelijke media pas na het laden van de pagina ophalen
+(function(){
+  function later(){
+    // klantlogo's in de scrollbalk alvast laden, zodat er geen lege plekken ontstaan
+    document.querySelectorAll('.marquee img[loading="lazy"]').forEach(function(i){ i.loading='eager'; });
+    // video in de hero pas starten als de pagina klaar is
+    document.querySelectorAll('video[data-defer]').forEach(function(v){
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      v.muted=true; v.preload='auto'; v.autoplay=true;
+      var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    });
+  }
+  function go(){ setTimeout(function(){ ('requestIdleCallback' in window) ? requestIdleCallback(later,{timeout:2000}) : later(); }, 600); }
+  if (document.readyState==='complete') go(); else window.addEventListener('load', go, {once:true});
+})();
