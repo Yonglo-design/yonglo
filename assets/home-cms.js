@@ -36,7 +36,9 @@ if (rail) {
     const sel = want.length ? all.filter(p => (p.diensten || []).some(d => want.includes(String(d).toLowerCase()))) : all;
     const ps = sel.length ? sel : all;
     if (ps.length) {
-      const list = [...ps.filter(p => p.uitgelicht), ...ps.filter(p => !p.uitgelicht)];
+      // Maximaal 10 projecten in de slider (uitgelichte eerst); de rest staat op de portfoliopagina.
+      const max = Number(rail.dataset.max) || 10;
+      const list = [...ps.filter(p => p.uitgelicht), ...ps.filter(p => !p.uitgelicht)].slice(0, max);
       // Veel projecten: de rail beweegt sneller, zodat de sectie niet eindeloos lang wordt.
       rail.dataset.speed = String(Math.max(0.2, Math.min(1, 10 / (list.length + 1))));
       rail.innerHTML = list.map(card).join("") +
