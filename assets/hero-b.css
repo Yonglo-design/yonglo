@@ -1,0 +1,137 @@
+/* ===== Hero B: "Van idee naar website" — de site bouwt zichzelf ===== */
+.hx{position:relative;min-height:100vh;min-height:100svh;padding:128px 0 0;display:block;overflow:hidden;isolation:isolate}
+.hx-field{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hx .blob{z-index:0}
+.hx-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hx-txt{max-width:980px;display:flex;flex-direction:column;align-items:center}
+.hx h1{font-size:clamp(46px,6.6vw,98px);line-height:1;margin-bottom:24px}
+.hx .badge{margin-bottom:22px}
+.hx h1 em{background:linear-gradient(100deg,var(--spark2) 10%,#c9b8ff 45%,var(--glow) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:hxShine 6s ease-in-out infinite}
+@keyframes hxShine{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.hx .lead{max-width:680px;margin:0 auto 30px}
+.hx .hero-btns{justify-content:center}
+
+/* "idee" krijgt een getekende krabbel eronder */
+.hx-idee{position:relative;display:inline-block}
+.hx-idee svg{position:absolute;left:-4%;right:-4%;bottom:-.1em;width:108%;height:.42em;overflow:visible;pointer-events:none}
+.hx-idee path{fill:none;stroke:var(--glow);stroke-width:5;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:hxDraw 1.1s var(--ease) 1.1s forwards}
+@keyframes hxDraw{to{stroke-dashoffset:0}}
+
+/* ---- Podium met bouwend browservenster ---- */
+.hx-stage{position:relative;width:min(1040px,100%);margin-top:52px;perspective:1600px;opacity:0;transform:translateY(80px);animation:hxRise 1.2s var(--ease) .9s forwards}
+@keyframes hxRise{to{opacity:1;transform:none}}
+.hx-steps{list-style:none;display:flex;justify-content:center;gap:8px;margin:0 auto 22px;padding:6px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line-d);width:max-content;position:relative}
+.hx-steps li:not(.hx-pill){position:relative;z-index:1;padding:8px 18px;border-radius:999px;font-size:14px;font-weight:600;color:rgba(255,255,255,.55);transition:color .4s}
+.hx-steps li.on{color:#fff}
+.hx-steps .hx-pill{position:absolute;z-index:0;top:6px;bottom:6px;left:0;border-radius:999px;background:var(--spark);box-shadow:0 8px 24px rgba(91,96,246,.45);transition:transform .55s var(--ease),width .55s var(--ease)}
+
+.hx-win{position:relative;border-radius:18px 18px 0 0;background:#14162a;border:1px solid rgba(255,255,255,.12);border-bottom:0;box-shadow:0 -10px 80px rgba(91,96,246,.25),0 40px 120px rgba(0,0,0,.5);transform:rotateX(var(--tx,14deg)) rotateY(var(--ty,0deg));transform-origin:50% 100%;transition:transform .6s var(--ease),background .7s var(--ease);overflow:hidden}
+.hx-bar{display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08);transition:border-color .7s}
+.hx-bar>i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.18)}
+.hx-bar>i:nth-child(1){background:#ff6b5c}.hx-bar>i:nth-child(2){background:#ffbd4a}.hx-bar>i:nth-child(3){background:#2fd27a}
+.hx-url{margin:0 auto;display:flex;align-items:center;gap:8px;min-width:46%;justify-content:center;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,.06);font-size:13px;color:rgba(255,255,255,.7);font-family:var(--fb);transition:background .7s,color .7s}
+.hx-lock{width:9px;height:11px;border-radius:2px;border:1.6px solid currentColor;position:relative;opacity:.35;transition:opacity .5s,color .5s}
+.hx-lock::before{content:"";position:absolute;left:1px;right:1px;top:-6px;height:6px;border:1.6px solid currentColor;border-bottom:0;border-radius:4px 4px 0 0}
+.hx-live{font-size:12px;font-weight:700;color:#2fd27a;opacity:0;transform:translateX(8px);transition:opacity .4s,transform .4s var(--ease)}
+
+/* De nagebouwde website */
+.hx-site{position:relative;height:clamp(300px,34vw,420px);padding:22px 28px;display:grid;grid-template-rows:auto 1fr auto;gap:22px;transition:background .7s}
+.hx-nav{display:flex;align-items:center;gap:14px}
+.hx-site .b{display:block;border-radius:8px;border:1.5px dashed rgba(255,255,255,.28);background:transparent;transition:background .7s var(--ease),border-color .7s,box-shadow .7s,transform .7s var(--ease),opacity .5s}
+.hx-logo{width:90px;height:22px}
+.hx-link{width:54px;height:10px}
+.hx-nav .hx-link:first-of-type{margin-left:auto}
+.hx-cta{width:96px;height:32px;border-radius:999px!important}
+.hx-main{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center}
+.hx-copy{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.hx-h{height:22px;width:92%}.hx-h2{height:22px;width:70%}
+.hx-p{height:9px;width:84%}.hx-p2{height:9px;width:62%}
+.hx-btn{width:130px;height:38px;border-radius:999px!important;margin-top:6px;position:relative}
+.hx-img{height:100%;min-height:150px;border-radius:14px!important;position:relative;overflow:hidden}
+.hx-img::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);opacity:0}
+.hx-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hx-card{height:56px;border-radius:12px!important}
+
+/* krabbelnotities in fase 1 */
+.hx-note{position:absolute;font-family:"Instrument Serif",serif;font-style:italic;font-size:22px;color:var(--glow);opacity:0;transition:opacity .5s;pointer-events:none;white-space:nowrap}
+.hx-note.n1{left:31%;top:14%;transform:rotate(-4deg)}
+.hx-note.n2{right:6%;top:44%;transform:rotate(3deg)}
+.hx-note.n3{left:4%;bottom:21%;transform:rotate(-2deg)}
+
+/* cursor + toast */
+.hx-cursor{position:absolute;left:70%;top:80%;width:22px;height:22px;z-index:3;opacity:0;transition:left .9s var(--ease),top .9s var(--ease),opacity .4s;pointer-events:none}
+.hx-cursor svg{width:100%;height:100%;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+.hx-cursor::after{content:"";position:absolute;left:-14px;top:-14px;width:50px;height:50px;border-radius:50%;border:2px solid var(--spark);opacity:0;transform:scale(.3)}
+.hx-cursor.click::after{animation:hxRipple .6s var(--ease)}
+@keyframes hxRipple{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(1.2)}}
+.hx-toast{position:absolute;right:22px;bottom:22px;z-index:4;display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:#0E0F1A;color:#fff;font-size:14px;font-weight:600;box-shadow:0 16px 40px rgba(0,0,0,.35);opacity:0;transform:translateY(16px) scale(.96);transition:opacity .45s,transform .45s var(--ease)}
+.hx-toast b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#2fd27a;color:#0E0F1A;font-size:12px}
+
+/* ---- Fase 1: Idee (schets) — basis hierboven ---- */
+.hx-win[data-phase="0"] .hx-note{opacity:1}
+.hx-win[data-phase="0"] .hx-site .b{transform:rotate(var(--r,0deg))}
+.hx-site .b:nth-child(2n){--r:-.6deg}.hx-site .b:nth-child(3n){--r:.8deg}
+
+/* ---- Fase 2: Concept (wireframe) ---- */
+.hx-win[data-phase="1"] .hx-site{background-image:linear-gradient(rgba(138,142,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(138,142,255,.08) 1px,transparent 1px);background-size:24px 24px}
+.hx-win[data-phase="1"] .hx-site .b{border-style:solid;border-color:rgba(138,142,255,.45);background:rgba(138,142,255,.08);transform:none}
+
+/* ---- Fase 3 + 4: Design en Live ---- */
+.hx-win[data-phase="2"],.hx-win[data-phase="3"]{background:#F6F4EF}
+.hx-win[data-phase="2"] .hx-bar,.hx-win[data-phase="3"] .hx-bar{border-color:rgba(14,15,26,.08)}
+.hx-win[data-phase="2"] .hx-url,.hx-win[data-phase="3"] .hx-url{background:rgba(14,15,26,.06);color:#3d3f52}
+.hx-win[data-phase="2"] .hx-site .b,.hx-win[data-phase="3"] .hx-site .b{border-style:solid;border-color:transparent;transform:none}
+.hx-win[data-phase="2"] .hx-logo,.hx-win[data-phase="3"] .hx-logo{background:linear-gradient(90deg,var(--ink) 0 28%,transparent 28% 34%,var(--ink) 34%);border-radius:4px}
+.hx-win[data-phase="2"] .hx-link,.hx-win[data-phase="3"] .hx-link{background:rgba(14,15,26,.22)}
+.hx-win[data-phase="2"] .hx-cta,.hx-win[data-phase="3"] .hx-cta{background:var(--ink)}
+.hx-win[data-phase="2"] .hx-h,.hx-win[data-phase="3"] .hx-h,.hx-win[data-phase="2"] .hx-h2,.hx-win[data-phase="3"] .hx-h2{background:var(--ink)}
+.hx-win[data-phase="2"] .hx-p,.hx-win[data-phase="3"] .hx-p,.hx-win[data-phase="2"] .hx-p2,.hx-win[data-phase="3"] .hx-p2{background:rgba(14,15,26,.18)}
+.hx-win[data-phase="2"] .hx-btn,.hx-win[data-phase="3"] .hx-btn{background:var(--spark);box-shadow:0 10px 24px rgba(91,96,246,.4)}
+.hx-win[data-phase="2"] .hx-img,.hx-win[data-phase="3"] .hx-img{background:radial-gradient(circle at 75% 25%,#ffd3c4 0 12%,transparent 13%),radial-gradient(circle at 30% 120%,var(--glow),transparent 55%),linear-gradient(150deg,#2a2d6e,var(--spark) 55%,var(--spark2))}
+.hx-win[data-phase="2"] .hx-card,.hx-win[data-phase="3"] .hx-card{background:#fff;box-shadow:0 8px 20px rgba(14,15,26,.08)}
+.hx-win[data-phase="2"] .hx-card:nth-child(2),.hx-win[data-phase="3"] .hx-card:nth-child(2){background:linear-gradient(135deg,#fff,#eceaff)}
+.hx-win[data-phase="3"] .hx-lock{opacity:1;color:#18a35a}
+.hx-win[data-phase="3"] .hx-live{opacity:1;transform:none}
+.hx-win[data-phase="3"] .hx-img::after{opacity:1;animation:hxSheen 1.4s var(--ease) .3s}
+@keyframes hxSheen{to{transform:translateX(120%)}}
+.hx-win[data-phase="3"] .hx-cursor{opacity:1}
+.hx-win.hx-done .hx-toast{opacity:1;transform:none}
+
+/* Diensten zweven rond het podium */
+.hx-chip{position:absolute;z-index:4;padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;color:#fff;background:rgba(27,29,46,.78);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 12px 30px rgba(0,0,0,.3);animation:hxFloat 7s ease-in-out infinite;animation-delay:var(--dl,0s);white-space:nowrap}
+.hx-chip i{font-style:normal;margin-right:6px;color:var(--spark2)}
+@keyframes hxFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(var(--fx,6px),var(--fy,-12px))}}
+.hx-chip.c1{left:-4%;top:22%;--dl:-1s}
+.hx-chip.c2{right:-5%;top:28%;--dl:-3s;--fx:-8px}
+.hx-chip.c3{left:-7%;top:58%;--dl:-5s;--fy:10px}
+.hx-chip.c4{right:-3%;top:62%;--dl:-2s;--fx:-6px;--fy:12px}
+.hx-chip.c5{left:8%;top:-2%;--dl:-4s}
+.hx-chip.c6{right:10%;top:-4%;--dl:-6s;--fx:-6px}
+
+.hx .scroll-hint{display:none}
+
+@media (max-width:1180px){
+  .hx-chip.c1,.hx-chip.c3{left:-1%}
+  .hx-chip.c2,.hx-chip.c4{right:-1%}
+}
+@media (max-width:767px){
+  .hx{padding-top:120px}
+  .hx h1{font-size:clamp(40px,11vw,56px)}
+  .hx-stage{margin-top:44px}
+  .hx-steps li{padding:7px 11px;font-size:12px}
+  .hx-site{height:300px;padding:16px;gap:14px}
+  .hx-link{display:none!important}
+  .hx-main{grid-template-columns:1fr;gap:14px}
+  .hx-img{min-height:90px}
+  .hx-card{height:40px}
+  .hx-note{font-size:17px}
+  .hx-note.n2{display:none}
+  .hx-chip{display:none}
+  .hx-toast{right:12px;bottom:12px;font-size:12px;padding:10px 14px}
+  .hx-win{transform:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .hx-stage{animation:none;opacity:1;transform:none}
+  .hx h1 em,.hx-chip{animation:none}
+  .hx-idee path{animation:none;stroke-dashoffset:0}
+}

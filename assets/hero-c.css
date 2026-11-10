@@ -1,0 +1,100 @@
+/* ===== Hero C: gecentreerde kop met zwevende tegels van echt werk (naar het ontwerp van yonglo.com) ===== */
+.hc{position:relative;min-height:100vh;min-height:100svh;min-height:max(100svh,800px);padding:120px 0 120px;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hc .blob{z-index:0}
+.hc-in{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:860px;margin:0 auto;pointer-events:none}
+.hc-in a{pointer-events:auto}
+.hc-g{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;padding:8px 16px 8px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line-d);font-family:var(--fh);font-size:17px;font-weight:600}
+.hc-g svg{width:22px;height:22px;flex:none}
+.hc-g .stars{color:#FFC233;letter-spacing:2px}
+.hc h1{font-size:clamp(46px,6.4vw,96px);line-height:1.02;margin-bottom:26px}
+.hc .lead{max-width:640px;margin:0 auto 34px}
+.hc .hero-btns{justify-content:center}
+
+/* zwevende tegels */
+.hc-tiles{position:absolute;inset:96px 0 0 0;z-index:1}
+.hc-t{position:absolute;left:var(--x);top:var(--y);width:var(--w);aspect-ratio:var(--ar);border-radius:22px;overflow:hidden;background:linear-gradient(155deg,var(--a,#23265a),var(--b,#5B60F6) 60%,var(--c,#9D9DFF));box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08) inset;opacity:0;transform:translate3d(var(--px,0),var(--py,0),0) scale(.86);transition:opacity .9s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.hc.on .hc-t{opacity:1;transform:translate3d(var(--px,0),var(--py,0),0)}
+.hc-t>.f{position:absolute;inset:0}
+.hc-t,.hc-ico.ig{animation:hcFloat var(--fs,9s) ease-in-out infinite;animation-delay:var(--fd,0s)}
+@keyframes hcFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.hc-t img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .8s var(--ease)}
+.hc-t.pf img{object-position:center}
+.hc-t b.ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--fh);font-size:22px;color:#fff;padding:12px;text-align:center}
+.hc-t .cap{position:absolute;left:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(14,15,26,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:600;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s var(--ease)}
+a.hc-t:hover img{transform:scale(1.06)}
+a.hc-t:hover .cap{opacity:1;transform:none}
+/* tegels die tegen de rand lopen */
+.hc-t.edge-l{border-radius:0 22px 22px 0}
+.hc-t.edge-r{border-radius:22px 0 0 22px}
+
+/* UI-kaarten */
+.hc-ui{background:linear-gradient(160deg,#1f2240,#16182c);padding:18px;text-align:left}
+.hc-ui .f{position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;gap:12px}
+.hc-ui h5{font-family:var(--fb);font-size:13px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:space-between;margin:0}
+.hc-ui h5 em{font-style:normal;font-size:10px;padding:4px 8px;border-radius:999px;background:var(--spark);color:#fff}
+.hc-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;border-radius:12px;background:rgba(255,255,255,.05)}
+.hc-kpi span{font-size:10px;color:rgba(255,255,255,.55)}
+.hc-kpi i{display:block;height:6px;border-radius:3px;margin-top:6px;background:linear-gradient(90deg,var(--spark2),var(--glow));width:var(--v)}
+.hc-spark{flex:1;border-radius:12px;background:rgba(255,255,255,.04);position:relative;overflow:hidden}
+.hc-spark svg{position:absolute;inset:0;width:100%;height:100%}
+.hc-spark path{fill:none;stroke:var(--spark2);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:400;stroke-dashoffset:400}
+.hc.on .hc-spark path{animation:hcLine 2.2s var(--ease) 1.4s forwards}
+.hc-spark path.area{fill:url(#hcFill);stroke:none;opacity:0}
+.hc.on .hc-spark path.area{animation:hcFade 1s ease 2.6s forwards}
+@keyframes hcLine{to{stroke-dashoffset:0}}
+@keyframes hcFade{to{opacity:1}}
+.hc-ai .f{justify-content:flex-end}
+.hc-ai .prompt{padding:12px;border-radius:12px;background:#fff;color:#3d3f52;font-size:11px;line-height:1.45;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.hc-ai .prompt b{display:block;color:var(--ink);font-size:12px;margin-bottom:2px}
+.hc-ai .typed::after{content:"";display:inline-block;width:1px;height:1em;background:var(--spark);margin-left:2px;vertical-align:-2px;animation:hcCaret 1s steps(1) infinite}
+@keyframes hcCaret{50%{opacity:0}}
+.hc-ai .img{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.9}
+.hc-ai .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(14,15,26,.75))}
+.hc-ai .f{z-index:1}
+.hc-ai .sel{position:absolute;left:14%;top:12%;right:30%;bottom:46%;border:1.5px solid #fff;border-radius:6px;box-shadow:0 0 0 9999px rgba(14,15,26,.0);z-index:1}
+.hc-ai .sel::before,.hc-ai .sel::after{content:"";position:absolute;width:8px;height:8px;background:#fff;border-radius:2px}
+.hc-ai .sel::before{left:-4px;top:-4px}.hc-ai .sel::after{right:-4px;bottom:-4px}
+
+/* ronde icoontjes */
+.hc-ico{position:absolute;left:var(--x);top:var(--y);z-index:2;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;opacity:0;transform:scale(.6);transition:opacity .6s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.hc.on .hc-ico{opacity:1;transform:none}
+.hc-ico svg{width:26px;height:26px}
+.hc-ico.ai{background:var(--spark);box-shadow:0 12px 30px rgba(91,96,246,.55);animation:hcPulse 3s ease-in-out infinite}
+.hc-ico.ig{background:rgba(255,255,255,.06);border:1px solid var(--line-d);color:#fff}
+@keyframes hcPulse{0%,100%{box-shadow:0 12px 30px rgba(91,96,246,.55),0 0 0 0 rgba(91,96,246,.5)}50%{box-shadow:0 12px 30px rgba(91,96,246,.55),0 0 0 14px rgba(91,96,246,0)}}
+
+/* posities (desktop) — in lijn met de huidige yonglo.com */
+.hc-t.t1{--x:0;--y:0;--w:min(23vw,420px);--ar:2/1;--d:.15s;--fs:10s}
+.hc-t.t2{--x:0;--y:44%;--w:min(13.5vw,240px);--ar:.72;--d:.3s;--fs:8s;--fd:-2s}
+.hc-t.t3{--x:12%;--y:74%;--w:clamp(210px,14vw,250px);--ar:.95;--d:.45s;--fs:9s;--fd:-4s}
+.hc-t.t4{--x:auto;--y:2%;--w:min(16vw,290px);--ar:1;--d:.25s;--fs:11s;--fd:-1s;left:auto;right:6%}
+.hc-t.t5{--x:auto;--y:39%;--w:min(12.5vw,220px);--ar:.9;--d:.4s;--fs:9s;--fd:-3s;left:auto;right:0}
+.hc-t.t6{--x:auto;--y:76%;--w:min(24vw,440px);--ar:1.75;--d:.55s;--fs:10s;--fd:-5s;left:auto;right:7%}
+.hc-ico.ai{--x:auto;--y:10%;--d:.9s;left:auto;right:4.4%}
+.hc-ico.ig{--x:auto;--y:64%;--d:1s;left:auto;right:5.2%}
+
+@media (max-width:1180px){
+  .hc-t.t3{--x:7%}
+  .hc-t.t6{right:4%}
+}
+/* tablet en mobiel: tegels worden een strook onder de tekst */
+@media (max-width:1023px){
+  .hc{display:block;padding:120px 0 56px;min-height:auto}
+  .hc-tiles{position:relative;inset:auto;z-index:3;display:flex;gap:14px;margin-top:48px;padding:0 20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .hc-tiles::-webkit-scrollbar{display:none}
+  .hc-t,.hc-t.t1,.hc-t.t2,.hc-t.t3,.hc-t.t4,.hc-t.t5,.hc-t.t6{position:relative;left:auto;right:auto;top:auto;flex:none;width:200px;aspect-ratio:.8;border-radius:18px;scroll-snap-align:start}
+  .hc-ico{display:none}
+  .hc-t{animation:none}
+}
+@media (max-width:767px){
+  .hc{padding-top:110px}
+  .hc h1{font-size:clamp(40px,11vw,56px)}
+  .hc-g{font-size:15px}
+  .hc-t,.hc-t.t1,.hc-t.t2,.hc-t.t3,.hc-t.t4,.hc-t.t5,.hc-t.t6{width:160px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hc-t,.hc-ico.ig,.hc-ico.ai{animation:none}
+  .hc-t,.hc-ico{transition:none}
+}
+.hc.ready .hc-t,.hc.ready .hc-ico{transition:transform .6s var(--ease),opacity .6s;transition-delay:0s}
+@media (min-width:1500px){.hc-ico.ig{--y:84%;right:2.4%}}
