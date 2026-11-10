@@ -587,6 +587,16 @@ a.proj{display:block;color:inherit}
 
 /* Homepage Wix Optimaal: vinkjes onder elkaar */
 #optimaal .checks{grid-template-columns:1fr;margin-bottom:32px}
+/* SEO-blok naast Wix Optimaal: compacter, zodat beide blokken in verhouding zijn */
+#seo{display:flex;flex-direction:column}
+#seo .scan{margin-top:auto}
+@media (min-width:1200px){
+  #seo h2{padding-right:150px}
+  #seo .gauge{position:absolute;top:44px;right:44px;width:124px;margin:0}
+  #seo .gauge svg{width:124px}
+  #seo .scan{grid-template-columns:1fr 1fr;column-gap:14px}
+  #seo .scan .btn{grid-column:1/-1}
+}
 
 /* Google reviews (homepage) */
 .gr{display:grid;grid-template-columns:340px minmax(0,1fr);gap:28px;align-items:stretch;margin:0 auto 72px}
