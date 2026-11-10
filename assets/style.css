@@ -4,7 +4,7 @@
   --line:rgba(14,15,26,.1);--line-d:rgba(255,255,255,.12);
   --ease:cubic-bezier(.22,1,.36,1);
   --fh:'Outfit',system-ui,sans-serif;--fb:'Outfit',system-ui,sans-serif;--fs:'Outfit',system-ui,sans-serif;
-  --r:20px;--wrap:1280px;--gut:64px;
+  --r:20px;--wrap:1600px;--gut:80px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
