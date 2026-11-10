@@ -657,3 +657,18 @@ a.proj{display:block;color:inherit}
 
 /* Reviews: intro op één regel */
 @media (min-width:1300px){#reviews .sec-head{max-width:none}#reviews .sec-head .sub{max-width:none;white-space:nowrap}}
+
+/* ===== Eén ritme voor alle witruimte =====
+   Elke sectie heeft boven en onder dezelfde ruimte (--sec). Twee secties met dezelfde achtergrond
+   na elkaar krijgen geen dubbele ruimte, en een kop staat overal even ver boven de inhoud. */
+:root{--sec:128px;--head-gap:64px}
+@media (max-width:1023px){:root{--sec:96px;--head-gap:48px}}
+@media (max-width:767px){:root{--sec:64px;--head-gap:40px}}
+main > section.light:where(:not(.hero,.work,.ec-strip,.kpi-sec,.spotlight,.bslider,.pj-show,.pj-more)),
+main > section.dark:where(:not(.hero,.work,.ec-strip,.kpi-sec,.spotlight,.bslider,.pj-show,.pj-more)){padding-top:var(--sec);padding-bottom:var(--sec)}
+main > section.light + section.light:not(.brands,.hero),
+main > section.dark + section.dark:not(.hero,.work,.ec-strip,.kpi-sec){padding-top:0}
+main > section.light.spotlight + section.light.allwork{padding-top:64px}
+.sec-head,.sec-head.center{margin-bottom:var(--head-gap)}
+main > section.dark:has(+ section.work.dark){padding-bottom:0}
+.work-pin{padding-top:var(--sec);padding-bottom:var(--sec)}
