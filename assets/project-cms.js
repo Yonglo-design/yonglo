@@ -113,7 +113,6 @@ function gallery(p, n) {
   ${shots.length ? `<div class="wrap"><div class="gal-grid n${shots.length}">${shots.map((src, i) => `<figure class="gshot rv" style="--d:${i * 0.08}s"><img src="${src}" alt="${esc(p.title)} – afbeelding ${i + 1}" loading="lazy"></figure>`).join("")}</div></div>` : ""}
 </section>`;
 }
-
 function contact(p, n, cp) {
   const naam = (cp && cp.title) || "Marko";
   const functie = (cp && cp.functie) || "Founder & CEO Yonglo";
@@ -236,7 +235,6 @@ function keyPhone(videoEl) {
   };
   im.src = posterUrl;
 }
-
 function notFound() {
   document.title = "Project niet gevonden | Yonglo";
   main.innerHTML = `<section class="hero sub-hero pj-hero dark"><div class="blob b1"></div><div class="dots"></div>
