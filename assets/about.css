@@ -153,7 +153,7 @@
 .lc-meta p{font-size:15px;line-height:1.5;color:rgba(255,255,255,.85);margin:0}
 .lc-meta .kvk{font-size:12px;color:rgba(255,255,255,.6);margin-top:6px}
 .lc-btn{grid-area:b;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:#fff;color:var(--ink);font-size:14px;font-weight:600;white-space:nowrap;transition:background .3s,color .3s,transform .3s var(--ease)}
-.lc-btn:hover{background:var(--spark);color:#fff;transform:translateX(3px)}
+.lc-btn:hover{background:var(--spark);color:#fff}
 .lc-note{grid-area:b;margin:0;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(14,15,26,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:13px;font-weight:600;white-space:nowrap}
 .lc-note::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--spark2)}
 @media (max-width:1023px){

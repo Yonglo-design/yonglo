@@ -89,7 +89,7 @@
 .gal-head h2{margin-bottom:0}
 .gal-ctrl{display:flex;gap:10px}
 .gal-btn{width:52px;height:52px;border-radius:50%;border:1px solid var(--line-d);font-size:18px;transition:background .25s,border-color .25s,transform .25s var(--ease)}
-.gal-btn:hover{background:#fff;color:var(--ink);transform:scale(1.06)}
+.gal-btn:hover{background:#fff;color:var(--ink)}
 .gal-wrap{overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline-start:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));scrollbar-width:none;cursor:grab;padding-left:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));outline:none}
 .gal-wrap::-webkit-scrollbar{display:none}
 .gal-wrap.drag{cursor:grabbing;scroll-snap-type:none}

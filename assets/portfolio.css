@@ -67,7 +67,7 @@
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
 .fbtn{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:15px;transition:background .25s,color .25s,border-color .25s,transform .25s var(--ease)}
 .fbtn sup{font-size:11px;font-weight:600;opacity:.5;top:-.2em}
-.fbtn:hover{border-color:var(--ink);transform:translateY(-2px)}
+.fbtn:hover{border-color:var(--ink)}
 .fbtn[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .pcard{position:relative;display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);transition:opacity .35s var(--ease),transform .45s var(--ease),box-shadow .4s,border-color .3s}

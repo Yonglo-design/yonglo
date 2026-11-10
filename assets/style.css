@@ -33,10 +33,8 @@ section{position:relative;padding:128px 0;overflow:clip}
 .progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--spark),var(--glow));transform-origin:0 50%;transform:scaleX(0);z-index:120}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:16px;line-height:1;transition:background .25s var(--ease),color .25s,transform .25s var(--ease),box-shadow .25s;will-change:transform;white-space:nowrap}
-.btn .arr{font-style:normal;transition:transform .25s var(--ease)}
-.btn:hover .arr{transform:translateX(4px)}
-.btn:active{transform:scale(.97)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:16px;line-height:1;transition:background .25s var(--ease),color .25s,border-color .25s,box-shadow .25s;white-space:nowrap}
+.btn .arr{font-style:normal}
 .btn-primary{background:var(--spark);color:#fff;box-shadow:0 8px 24px rgba(50,95,252,.35)}
 .btn-primary:hover{background:var(--spark2);box-shadow:0 12px 32px rgba(50,95,252,.5)}
 .btn-ghost{border:1.5px solid currentColor;color:inherit}
@@ -44,8 +42,10 @@ section{position:relative;padding:128px 0;overflow:clip}
 .btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
 .light .btn-ghost:hover{background:var(--ink);color:#fff}
 .btn-dark{background:var(--ink);color:#fff}
-.btn-dark:hover{background:var(--ink2)}
+.btn-dark:hover{background:var(--spark)}
 .btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{background:var(--spark);color:#fff}
+.panel.accent .btn-light:hover{background:var(--ink);color:#fff}
 .btn.wide{width:100%;justify-content:center}
 .link{font-weight:600;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .35s var(--ease);padding-bottom:2px}
 .link:hover{background-size:100% 1.5px}

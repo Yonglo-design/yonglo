@@ -122,13 +122,6 @@
 
   // magnetic buttons + spotlight cards
   if(fine && !reduce){
-    $$('.magnetic').forEach(function(b){
-      b.addEventListener('mousemove',function(e){
-        var r=b.getBoundingClientRect(), x=e.clientX-r.left-r.width/2, y=e.clientY-r.top-r.height/2;
-        b.style.transform='translate('+x*.18+'px,'+y*.28+'px)';
-      });
-      b.addEventListener('mouseleave',function(){b.style.transform=''});
-    });
     $$('.spot').forEach(function(c){
       c.addEventListener('mousemove',function(e){
         var r=c.getBoundingClientRect();

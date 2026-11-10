@@ -136,7 +136,6 @@
 .duo-card h2{font-size:clamp(28px,3vw,40px);margin-bottom:16px;position:relative}
 .duo-card>p:not(.eyebrow){color:var(--grey);margin-bottom:32px;position:relative}
 .duo-card .btn{margin-top:auto;align-self:flex-start;position:relative}
-.duo-card:hover .btn .arr{transform:translateX(4px)}
 .dark-card{background:var(--ink);color:#fff;border-color:transparent}
 .dark-card>p:not(.eyebrow){color:rgba(255,255,255,.7)}
 .dark-card .eyebrow{color:rgba(255,255,255,.55)}
