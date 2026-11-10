@@ -195,6 +195,7 @@
 
 /* ===== Spotlight: drie uitgelichte projecten naast elkaar ===== */
 .spot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:stretch}
+.spot-cell{min-width:0}
 .spot-cell{display:flex}
 .spot-card{position:relative;flex:1;display:flex;flex-direction:column;border-radius:28px;overflow:hidden;color:#fff;isolation:isolate;
   background:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--b) 55%,transparent),transparent 60%),linear-gradient(170deg,color-mix(in srgb,var(--a) 80%,#0E0F1A),#0E0F1A 85%);
@@ -202,7 +203,7 @@
 .spot-card::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.12);pointer-events:none}
 .spot-card:hover{transform:translateY(calc(var(--off,0px) - 10px));box-shadow:0 44px 90px color-mix(in srgb,var(--b) 35%,rgba(14,15,26,.3))}
 .sc-vis{position:relative;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(155deg,var(--a),var(--b) 60%,var(--c))}
-.sc-vis img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.sc-vis img{display:block;width:100%;height:100%;max-width:100%;object-fit:cover;transition:transform 1s var(--ease)}
 .spot-card:hover .sc-vis img{transform:scale(1.06)}
 .sc-vis::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,color-mix(in srgb,var(--a) 70%,#0E0F1A));opacity:.85;pointer-events:none}
 .sc-mock{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--fh);font-size:34px;font-weight:600}
@@ -218,12 +219,12 @@
 .sc-go i{font-style:normal;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--ink);font-size:18px;transition:transform .4s var(--ease),background .3s,color .3s}
 .spot-card:hover .sc-go i{transform:rotate(-45deg);background:var(--spark);color:#fff}
 @media (max-width:1023px){
-  .spot-grid{grid-template-columns:1fr;gap:24px}
-  .spot-card{display:grid;grid-template-columns:5fr 6fr}
+  .spot-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+  .spot-card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
   .sc-vis{aspect-ratio:auto;min-height:100%}
 }
 @media (max-width:640px){
   .spot-card{display:flex}
-  .sc-vis{aspect-ratio:4/3}
+  .sc-vis{aspect-ratio:4/3;min-height:0}
   .sc-body{padding:24px 22px 26px}
 }
