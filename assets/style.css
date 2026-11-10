@@ -584,7 +584,7 @@ a.proj{display:block;color:inherit}
 @media (max-width:1023px){.hm-about-grid{grid-template-columns:1fr;gap:40px}}
 
 /* Homepage Wix Optimaal: vinkjes onder elkaar */
-#optimaal .checks{grid-template-columns:1fr}
+#optimaal .checks{grid-template-columns:1fr;margin-bottom:32px}
 
 /* Google reviews (homepage) */
 .gr{display:grid;grid-template-columns:340px minmax(0,1fr);gap:28px;align-items:stretch;margin:0 auto 72px}
