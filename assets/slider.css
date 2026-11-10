@@ -46,7 +46,9 @@ main > section.bslider.ps{padding-top:var(--sec);padding-bottom:var(--sec)}
 .bslider.dark .bs-btn{background:transparent;border-color:var(--line-d);color:#fff}
 .bslider.dark .bs-btn:hover:not(:disabled){background:#fff;border-color:#fff;color:var(--ink)}
 .bslider.dark .bs-bar{background:var(--line-d)}
-.bslider.dark .bs-card{border-color:transparent}
-.bslider.dark .bs-card:hover{border-color:var(--spark2);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.bslider.dark .bs-card{border:0;background:#16182a}
+.bslider.dark .bs-card:hover{box-shadow:0 24px 60px rgba(0,0,0,.45)}
 .bslider.dark .bs-card.sk{background:linear-gradient(100deg,rgba(255,255,255,.04) 30%,rgba(255,255,255,.1) 50%,rgba(255,255,255,.04) 70%) 0 0/300% 100%;border:0}
 .bslider.dark .sub .link{color:#fff}
+.bslider.dark .bs-meta{background:#fff}
+.bslider.dark .bs-vis{margin:-1px -1px 0;width:calc(100% + 2px)}
