@@ -780,3 +780,5 @@
 .wixspec .wix-legend svg{flex:none;height:.74em;width:auto;fill:#fff}
 .wixspec .wix-legend span{display:inline-block;padding-bottom:.14em}
 @media (max-width:767px){.wixspec .stat b.wix-legend{font-size:clamp(20px,6.2vw,30px)}}
+.wixspec.ws-txt .wixspec-grid>div:first-child{text-align:center}
+.wixspec.ws-txt .wixspec-grid>div:first-child .hero-btns{justify-content:center}
