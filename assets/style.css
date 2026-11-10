@@ -506,6 +506,8 @@ a.proj{display:block;color:inherit}
 .marquee.logos .mq-track{gap:0;align-items:center;animation-duration:var(--dur,180s)}
 .mq-track img{display:block;flex:none;width:var(--w);height:var(--h);max-width:none;margin-right:72px;object-fit:contain;opacity:.6;transition:opacity .3s}
 .mq-track img:hover{opacity:1}
+.mq-track .mq-link{display:block;flex:none;cursor:pointer}
+.mq-track .mq-link:hover img{opacity:1}
 @media (max-width:767px){.mq-track img{width:calc(var(--w)*.72);height:calc(var(--h)*.72);margin-right:48px}}
 .ftr-social{display:flex;gap:12px;margin-top:24px}
 .ftr-grid .ftr-social a{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(255,255,255,.18);border-radius:50%;color:rgba(255,255,255,.8);transition:color .2s,background .25s,border-color .25s,transform .25s var(--ease)}
