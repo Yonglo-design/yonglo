@@ -692,3 +692,6 @@ main > section.dark:has(+ section.work.dark){padding-bottom:0}
 .contact.light .fl input:focus+span,.contact.light .fl input:not(:placeholder-shown)+span,.contact.light .fl textarea:focus+span,.contact.light .fl textarea:not(:placeholder-shown)+span{color:var(--spark)}
 .contact.light .fnote{color:var(--grey)}
 .contact.light a.ul{color:var(--spark)}
+
+/* Header even breed als de rest van de site: 1600px met dezelfde zijmarge */
+.hdr-in{max-width:var(--wrap);padding:0 var(--gut)}
