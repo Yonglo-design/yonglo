@@ -27,14 +27,14 @@ function renderSpotlight(ps) {
   el.classList.add("spot-grid");
   el.innerHTML = list.map((p, i) => {
     const pf = !!p.portfolioImage;
-    const src = pf ? img(p.portfolioImage, 900, 900, "c") : img(p.hoofdbeeld, 900, 900, "c");
+    const src = pf ? img(p.portfolioImage, 900, 675, "c") : img(p.hoofdbeeld, 900, 675, "c");
     const tags = (p.diensten || []).slice(0, 3).map(t => `<li>${esc(t)}</li>`).join("");
     const intro = p.intro || p.kortTekst || "";
     const vis = src
       ? `<img src="${src}" alt="${esc(p.title)}" loading="lazy">`
       : `<span class="sc-mock">${esc(p.title)}</span>`;
     return `<div class="spot-cell rv" style="--d:${(i * 0.12).toFixed(2)}s"><a class="spot-card" href="${projectUrl(p)}" style="${themeStyle(p)}">
-      <div class="sc-vis">${vis}<span class="sc-badge"><i>★</i> Uitgelicht</span><span class="sc-num">${String(i + 1).padStart(2, "0")}</span></div>
+      <div class="sc-vis">${vis}<span class="sc-badge"><i>★</i> Uitgelicht</span></div>
       <div class="sc-body">
         ${p.branche ? `<span class="sc-cat">${esc(p.branche)}</span>` : ""}
         <h3>${esc(p.title)}</h3>
