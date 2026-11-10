@@ -9,7 +9,7 @@ function card(p, i) {
   const src = p.portfolioImage ? img(p.portfolioImage, 640, 640, "c") : img(p.hoofdbeeld, 640, 640);
   const tags = cardTags(p, 2).join(" · ");
   return `<a href="${projectUrl(p)}" class="bs-card" style="${themeStyle(p)};--i:${i}" draggable="false">
-    <div class="bs-vis">${src ? `<img src="${src}" alt="${esc(p.title)}" loading="lazy" draggable="false">` : `<b class="bs-ph">${esc(p.title)}</b>`}</div>
+    <div class="bs-vis">${src ? (i < 2 ? `<img src="${src}" alt="${esc(p.title)}" decoding="async" draggable="false">` : `<img data-src="${src}" alt="${esc(p.title)}" decoding="async" draggable="false">`) : `<b class="bs-ph">${esc(p.title)}</b>`}</div>
     <div class="bs-meta">${p.branche ? `<span>${esc(p.branche)}</span>` : ""}<h3>${esc(p.title)}</h3>${tags ? `<small>${esc(tags)}</small>` : ""}</div>
     <span class="bs-go" aria-hidden="true">→</span>
   </a>`;
@@ -40,6 +40,19 @@ function controls() {
   vp.addEventListener("click", e => { if (moved) { e.preventDefault(); moved = false; } }, true);
 }
 
+// Beelden in de slider zelf laden zodra ze (bijna) in beeld komen. Het standaard "lazy" laden
+// werkt op sommige telefoons (Safari) niet goed in een horizontale scroller.
+function loadImages() {
+  const imgs = [...track.querySelectorAll("img[data-src]")];
+  const load = im => { if (im.dataset.src) { im.src = im.dataset.src; im.removeAttribute("data-src"); } };
+  if (!("IntersectionObserver" in window)) { imgs.forEach(load); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { load(e.target); io.unobserve(e.target); } }),
+    { root: track.parentElement, rootMargin: "0px 120% 0px 120%" });
+  imgs.forEach(im => io.observe(im));
+  // vangnet: na het laden van de pagina alles alsnog ophalen
+  addEventListener("load", () => setTimeout(() => imgs.forEach(load), 1500), { once: true });
+}
+
 if (track && section) {
   try {
     const ps = await fetchProjects();
@@ -50,6 +63,7 @@ if (track && section) {
       track.removeAttribute("aria-busy");
       requestAnimationFrame(() => track.classList.add("on"));
       controls();
+      loadImages();
     }
   } catch (e) {
     console.error(e);
