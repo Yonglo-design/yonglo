@@ -16,7 +16,7 @@
 .nav-l{display:flex;gap:8px;margin-left:auto}.nav-l i{width:34px;height:7px;border-radius:4px;background:rgba(14,15,26,.12)}
 .cart{position:relative;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--paper)}
 .cart svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
-.cart-n{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--glow);color:#fff;font-family:var(--fb);font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center}
+.cart .cart-n{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--glow);color:#fff;font-family:var(--fb);font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center}
 .cart.bump{animation:bump .5s var(--ease)}
 @keyframes bump{40%{transform:scale(1.25)}}
 .shop-hero{margin:16px 0;height:92px;border-radius:12px;background:linear-gradient(135deg,var(--spark),#99AFFE);padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px}
