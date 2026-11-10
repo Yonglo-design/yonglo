@@ -22,26 +22,27 @@ function renderWall(ps) {
 function renderSpotlight(ps) {
   const el = $("spotlight");
   if (!el) return;
-  const list = ps.filter(p => p.uitgelicht).slice(0, 4);
+  const list = ps.filter(p => p.uitgelicht).slice(0, 3);
   if (!list.length) { el.closest("section").hidden = true; return; }
+  el.classList.add("spot-grid");
   el.innerHTML = list.map((p, i) => {
     const pf = !!p.portfolioImage;
-    const src = pf ? img(p.portfolioImage, 900, 900, "c") : img(p.hoofdbeeld, 1200, 900);
-    const tags = (p.diensten || []).slice(0, 4).map(t => `<li>${esc(t)}</li>`).join("");
+    const src = pf ? img(p.portfolioImage, 900, 900, "c") : img(p.hoofdbeeld, 900, 900, "c");
+    const tags = (p.diensten || []).slice(0, 3).map(t => `<li>${esc(t)}</li>`).join("");
+    const intro = p.intro || p.kortTekst || "";
     const vis = src
-      ? `<a class="cv-shot${pf ? " pf" : ""}" href="${projectUrl(p)}" tabindex="-1"><img src="${src}" alt="${esc(p.title)}" loading="lazy"></a>`
-      : `<div class="cv-win"><div class="bar"><i></i><i></i><i></i></div><div class="cv-body"><span class="cv-logo">${esc(p.title)}</span><span class="cv-h">${esc(p.subkop || p.branche || p.title)}</span><span class="cv-btn"></span><div class="cv-row"><i></i><i></i><i></i></div></div></div><div class="cv-phone"><span class="cv-logo">${esc(p.title)}</span><i></i><i></i></div>`;
-    return `<article class="case" style="${themeStyle(p)}">
-      <div class="case-txt">
-        <span class="case-num rv">${String(i + 1).padStart(2, "0")}</span>
-        ${p.branche ? `<span class="case-cat rv">${esc(p.branche)}</span>` : ""}
-        <h3 class="rv">${esc(p.title)}</h3>
-        ${p.intro || p.kortTekst ? `<p class="rv">${esc(p.intro || p.kortTekst)}</p>` : ""}
-        ${tags ? `<ul class="case-tags rv">${tags}</ul>` : ""}
-        <a href="${projectUrl(p)}" class="link rv">Bekijk het project →</a>
+      ? `<img src="${src}" alt="${esc(p.title)}" loading="lazy">`
+      : `<span class="sc-mock">${esc(p.title)}</span>`;
+    return `<div class="spot-cell rv" style="--d:${(i * 0.12).toFixed(2)}s"><a class="spot-card" href="${projectUrl(p)}" style="${themeStyle(p)}">
+      <div class="sc-vis">${vis}<span class="sc-badge"><i>★</i> Uitgelicht</span><span class="sc-num">${String(i + 1).padStart(2, "0")}</span></div>
+      <div class="sc-body">
+        ${p.branche ? `<span class="sc-cat">${esc(p.branche)}</span>` : ""}
+        <h3>${esc(p.title)}</h3>
+        ${intro ? `<p>${esc(intro)}</p>` : ""}
+        ${tags ? `<ul class="sc-tags">${tags}</ul>` : ""}
+        <span class="sc-go">Bekijk het project <i aria-hidden="true">→</i></span>
       </div>
-      <div class="case-vis rv">${vis}</div>
-    </article>`;
+    </a></div>`;
   }).join("");
 }
 
