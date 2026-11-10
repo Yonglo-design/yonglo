@@ -143,7 +143,7 @@ function contact(p, n, cp) {
       <label class="fl"><input type="email" name="email" placeholder=" " required><span>Hoe kunnen we je bereiken?</span></label>
       <label class="fl"><textarea name="bericht" rows="3" placeholder=" " required></textarea><span>Vertel kort over je project</span></label>
       <button class="btn btn-primary wide magnetic">Neem contact op <i class="arr">→</i></button>
-      <p class="fnote">Je mailprogramma opent met je bericht klaar om te versturen.</p>
+      <p class="fnote">Na het versturen nemen we zo snel mogelijk contact met je op.</p>
     </form>
   </div>
 </section>`;

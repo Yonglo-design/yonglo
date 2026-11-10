@@ -126,6 +126,7 @@
 .person b{display:block;font-family:var(--fh);font-size:20px}
 .person span{color:rgba(255,255,255,.6);font-size:15px}
 .pj-contact .direct{margin-bottom:32px}
+main.project > section.contact.dark.pj-contact{padding-top:var(--sec);padding-bottom:var(--sec)}
 .back:hover{background:#fff;color:var(--ink)}
 
 /* more */
