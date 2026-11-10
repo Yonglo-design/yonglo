@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/slider.css">
 <link rel="stylesheet" href="/assets/page.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Webdesign","serviceType":"Webdesign in Wix en Wix Studio","provider":{"@type":"ProfessionalService","name":"Yonglo","url":"https://www.yonglo.com"},"areaServed":["NL","BE"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.yonglo.com/"},{"@type":"ListItem","position":2,"name":"Webdesign","item":"https://www.yonglo.com/webdesign"}]}]}
@@ -194,26 +195,23 @@
 </section>
 
 <!-- WERK -->
-<section class="work dark" id="werk">
-  <div class="work-pin">
-    <div class="wrap work-head">
+<section class="dark bslider ps" id="werk" data-cms-section="proj-slider" data-dienst="Webdesign|Wix Studio" data-max="10">
+  <div class="wrap">
+    <div class="sec-head split-head">
       <div>
         <h2 class="rv">Voorbeelden van ons <em>werk</em>.</h2>
       </div>
-      <a href="/portfolio.html" class="btn btn-ghost rv">Bekijk alle projecten</a>
-    </div>
-    <div class="rail-wrap">
-      <div class="rail" data-dienst="Webdesign|Wix Studio">
-        <article class="proj g2"><div class="proj-vis"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="mbody"><span class="l w70"></span><span class="hero-img"></span></div></div></div><div class="proj-meta"><span class="tags">Wix Studio · Webdesign</span><h3>M+R interior architecture</h3><p>Interieurarchitectuur met meer dan 23 jaar ervaring, perfect tot in detail.</p></div></article>
-        <article class="proj g3"><div class="proj-vis"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="mbody"><span class="l w50"></span><span class="tile"></span><span class="tile"></span><span class="l w40"></span></div></div></div><div class="proj-meta"><span class="tags">Wix Studio · Vastgoed</span><h3>Burgstate</h3><p>Vastgoedpartner voor (bedrijfs)huisvesting, financiering en beheer.</p></div></article>
-        <article class="proj g4"><div class="proj-vis"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="mbody"><span class="l w60"></span><span class="l w40"></span><span class="hero-img"></span></div></div></div><div class="proj-meta"><span class="tags">Wix Studio · IT</span><h3>Ratho</h3><p>IT-oplossingen voor financiële dienstverleners, advocaten en architecten.</p></div></article>
-        <article class="proj g5"><div class="proj-vis"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="mbody"><span class="tile"></span><span class="tile"></span><span class="tile"></span><span class="l w60"></span></div></div></div><div class="proj-meta"><span class="tags">Wix · Webdesign</span><h3>Demi's Design</h3><p>Fotograaf voor (internationale) bruiloften, newborn-, zwangerschaps- en familieshoots.</p></div></article>
-        <article class="proj g6"><div class="proj-vis"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="mbody"><span class="l w70"></span><span class="hero-img"></span></div></div></div><div class="proj-meta"><span class="tags">Wix · Webdesign</span><h3>Just Add Wine</h3><p>Natuurwijnen voor restaurants, wijnbars, bistro's en liefhebbers.</p></div></article>
-        <article class="proj g1"><div class="proj-vis"><div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="mbody"><span class="l w60"></span><span class="tile"></span><span class="tile"></span><span class="tile"></span></div></div></div><div class="proj-meta"><span class="tags">Wix · Webdesign</span><h3>Rijschool Wildenberg</h3><p>Een heldere website die leerlingen snel de weg wijst naar hun rijbewijs.</p></div></article>
-        <a href="#contact" class="proj proj-cta"><span>Jouw website hier?</span><b>Start jouw project →</b></a>
+      <div class="rv sub" style="--d:.1s"><p>Websites die we ontwierpen en bouwden in Wix en Wix Studio, elk met een eigen gezicht.</p>
+        <div class="bs-ctrl"><button class="bs-btn" data-dir="-1" aria-label="Vorige projecten">←</button><button class="bs-btn" data-dir="1" aria-label="Volgende projecten">→</button><a href="/portfolio.html" class="link">Alle projecten →</a></div>
       </div>
     </div>
   </div>
+  <div class="bs-viewport">
+    <div class="bs-track" data-cms="proj-slider" aria-busy="true">
+      <div class="bs-card sk"></div><div class="bs-card sk"></div><div class="bs-card sk"></div><div class="bs-card sk"></div>
+    </div>
+  </div>
+  <div class="wrap"><div class="bs-bar"><i></i></div></div>
 </section>
 
 <!-- BRANDING + DEVELOPMENT -->
@@ -309,6 +307,6 @@
 
 <script src="/assets/app.js" defer></script>
 <script src="/assets/page.js" defer></script>
-<script type="module" src="/assets/home-cms.js"></script>
+<script type="module" src="/assets/slider-cms.js"></script>
 </body>
 </html>
