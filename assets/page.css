@@ -648,6 +648,12 @@
 @media (max-width:767px){.tc-single .tc-prose p{text-align:left;hyphens:manual;-webkit-hyphens:manual}}
 .tc-single .tc-intro p:first-child{color:#3d3f52}
 .ch-i.ch-img{width:56px;height:56px;padding:0;object-fit:cover;background:none;box-shadow:0 6px 16px rgba(14,15,26,.14)}
+.ch-i.ch-ico{width:56px;height:56px;border-radius:16px;background:var(--spark);box-shadow:0 8px 20px rgba(50,95,252,.35)}
+.ch-i.ch-ico.wa{background:#25D366;box-shadow:0 8px 20px rgba(37,211,102,.3)}
+.ch-i.ch-ico.ph{background:var(--glow);box-shadow:0 8px 20px rgba(255,122,89,.3)}
+.ch-i.ch-ico svg{width:26px;height:26px;color:#fff}
+.ch-row:hover .ch-ico{transform:scale(1.06)}
+.ch-i.ch-ico{transition:transform .3s var(--ease)}
 .hub-core .hub-wix{width:64px;height:auto;fill:#fff;display:block;margin:0 auto 6px}
 @media (max-width:767px){.hub-core .hub-wix{width:50px;margin-bottom:4px}}
 
