@@ -66,7 +66,6 @@ function about(p, n) {
   return `<section class="light pj-about">
   <div class="wrap pj-about-grid">
     <div>
-      <p class="num rv">Over de klant</p>
       <h2 class="rv">Over <em>${esc(p.title)}</em></h2>
     </div>
     <div class="pj-text">${ps.map((t, i) => `<p class="rv" style="--d:${i * 0.08}s">${esc(t)}</p>`).join("")}</div>
@@ -80,7 +79,6 @@ function feats(p, n) {
   return `<section class="light pj-feats">
   <div class="wrap">
     <div class="sec-head">
-      <p class="num rv">Wat we bouwden</p>
       ${p.sectieKop ? `<h2 class="rv">${esc(p.sectieKop)}</h2>` : ""}
       ${p.sectieTekst ? `<p class="rv sub">${esc(p.sectieTekst)}</p>` : ""}
     </div>
@@ -108,7 +106,6 @@ function gallery(p, n) {
   return `<section class="dark pj-gallery">
   <div class="wrap gal-head">
     <div>
-      <p class="num rv">Het resultaat</p>
       <h2 class="rv">Sterk op elk <em>scherm</em>.</h2>
     </div>
   </div>
@@ -128,7 +125,6 @@ function contact(p, n, cp) {
   <div class="cta-grad"></div>
   <div class="wrap contact-grid">
     <div>
-      <p class="num rv">Contact</p>
       <h2 class="rv">Contact opnemen over een <em>vergelijkbaar</em> project?</h2>
       <div class="person rv"><span class="avatar"><img src="${esc(foto)}" alt="${esc(naam)}" width="64" height="64"></span><div><b>${esc(naam)} helpt je graag verder</b><span>${esc(functie)}</span></div></div>
       <div class="direct rv">
@@ -169,7 +165,6 @@ function more(p, all, n) {
   <div class="wrap">
     <div class="sec-head row-head">
       <div>
-        <p class="num rv">Meer werk</p>
         <h2 class="rv">Bekijk ook onze andere <em>projecten</em>.</h2>
       </div>
       <a href="/portfolio.html" class="btn btn-dark rv">Naar portfolio <i class="arr">→</i></a>
