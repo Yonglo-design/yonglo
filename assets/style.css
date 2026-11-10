@@ -654,3 +654,6 @@ a.proj{display:block;color:inherit}
 @media (max-width:1180px){.gr-rail{grid-auto-columns:calc((100% - 20px)/2)}}
 @media (max-width:1023px){.gr{grid-template-columns:1fr}.gr-score{align-items:center;text-align:center}.gr-pills{justify-content:center;padding-top:24px}}
 @media (max-width:640px){.gr-rail{grid-auto-columns:86%}.gr-big b{font-size:60px}.gr-score{padding:30px 22px}}
+
+/* Reviews: intro op één regel */
+@media (min-width:1300px){#reviews .sec-head{max-width:none}#reviews .sec-head .sub{max-width:none;white-space:nowrap}}
