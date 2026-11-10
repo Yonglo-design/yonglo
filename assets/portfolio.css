@@ -87,9 +87,9 @@
 .pcard-meta h3{font-size:22px;margin-bottom:6px}
 .pcard-meta p{color:var(--grey);font-size:15px;margin-bottom:14px}
 .pc-tags{margin:auto 0 0}
-.pc-tags li{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(50,95,252,.1);color:var(--spark)}
+.pc-tags li{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(50,95,252,.1);color:var(--spark-d)}
 .pcard-cta{background:var(--spark);color:#fff;border-color:transparent;justify-content:center;align-items:flex-start;gap:12px;padding:40px;min-height:280px}
-.pcard-cta span{opacity:.8}
+.pcard-cta span{opacity:1}
 .pcard-cta b{font-family:var(--fh);font-size:30px;line-height:1.1;transition:transform .4s var(--ease)}
 .pcard-cta:hover b{transform:translateX(8px)}
 .pf-empty{margin-top:24px;color:var(--grey)}

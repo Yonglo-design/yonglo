@@ -30,8 +30,8 @@ a.hc-t:hover .cap{opacity:1;transform:none}
 /* UI-kaarten */
 .hc-ui{background:linear-gradient(160deg,#1f2240,#16182c);padding:18px;text-align:left}
 .hc-ui .f{position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;gap:12px}
-.hc-ui h5{font-family:var(--fb);font-size:13px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:space-between;margin:0}
-.hc-ui h5 em{font-style:normal;font-size:10px;padding:4px 8px;border-radius:999px;background:var(--spark);color:#fff}
+.hc-ui .hc-h{font-family:var(--fb);font-size:13px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:space-between;margin:0}
+.hc-ui .hc-h em{font-style:normal;font-size:10px;padding:4px 8px;border-radius:999px;background:var(--spark);color:#fff}
 .hc-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;border-radius:12px;background:rgba(255,255,255,.05)}
 .hc-kpi span{font-size:10px;color:rgba(255,255,255,.55)}
 .hc-kpi i{display:block;height:6px;border-radius:3px;margin-top:6px;background:linear-gradient(90deg,var(--spark2),var(--glow));width:var(--v)}

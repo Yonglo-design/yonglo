@@ -533,7 +533,7 @@
 .ch-row{display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;transition:background .3s}
 .ch-row:hover{background:rgba(255,255,255,.06)}
 .ch-row div{flex:1;min-width:0}
-.ch-row small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.ch-row small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .ch-row b{display:block;font-family:var(--fh);font-size:19px;color:#fff}
 .ch-row em{font-style:normal;font-size:13px;color:rgba(255,255,255,.55)}
 .ch-row .arr{color:var(--spark2);transition:transform .3s}
@@ -715,7 +715,7 @@
 .nw-ph{position:relative;overflow:hidden;margin:0;background:#e9e6df}
 .nw-ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .nw-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:14px;color:var(--grey)}
-.nw-meta .cat{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(50,95,252,.1);color:var(--spark)}
+.nw-meta .cat{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(50,95,252,.1);color:var(--spark-d)}
 .nw-body .more{margin-top:auto;font-weight:600;font-size:15px;color:var(--spark)}
 .nw-body .more .arr{font-style:normal;display:inline-block;transition:transform .3s var(--ease)}
 .nw-feat,.nw-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
