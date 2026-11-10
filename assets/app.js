@@ -196,7 +196,7 @@
     data.forEach(function(v,k){ lines.push(k.charAt(0).toUpperCase()+k.slice(1)+': '+v); });
     w.location.href='mailto:contact@yonglo.com?subject='+encodeURIComponent(f.dataset.subject||'Aanvraag via website')+'&body='+encodeURIComponent(lines.join('\n'));
   }
-  $$('form').forEach(function(f){
+  $$('form:not([data-own])').forEach(function(f){
     f.addEventListener('submit',function(e){
       e.preventDefault();
       if(f.dataset.busy) return;

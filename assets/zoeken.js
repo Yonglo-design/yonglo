@@ -22,7 +22,7 @@ function load() {
 // Pagina's die doorzocht worden (bedankt-, test- en losse projectpagina's niet).
 const PAGES = ["/", "/webdesign.html", "/ecommerce.html", "/wix.html", "/seo.html", "/optimaal.html", "/branding.html",
   "/development.html", "/ai.html", "/api.html", "/portfolio.html", "/over-yonglo.html", "/contact.html", "/nieuws.html",
-  "/disclaimer.html", "/privacybeleid.html", "/voorwaarden.html"];
+  "/spel.html", "/disclaimer.html", "/privacybeleid.html", "/voorwaarden.html"];
 const clean = s => String(s || "").replace(/\s+/g, " ").replace(/\s+([.,!?;:])/g, "$1").trim();
 
 async function indexPages() {

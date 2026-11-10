@@ -279,6 +279,6 @@ try {
   failed();
 }
 main.removeAttribute("aria-busy");
-await loadScript("/assets/app.js?v=3");
+await loadScript("/assets/app.js?v=4");
 if (rendered) await loadScript("/assets/project.js");
 reveal(main);
