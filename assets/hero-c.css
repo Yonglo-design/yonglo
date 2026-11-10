@@ -98,3 +98,10 @@ a.hc-t:hover .cap{opacity:1;transform:none}
 }
 .hc.ready .hc-t,.hc.ready .hc-ico{transition:transform .6s var(--ease),opacity .6s;transition-delay:0s}
 @media (min-width:1500px){.hc-ico.ig{--y:84%;right:2.4%}}
+
+/* Sticky hero: de volgende secties schuiven over de hero heen (alleen desktop) */
+@media (min-width:1024px){
+  .hc{position:sticky;top:calc(100svh - max(100svh,800px));z-index:0}
+  .hc ~ section{position:relative;z-index:1}
+  .hc + section{box-shadow:0 -24px 60px rgba(14,15,26,.28)}
+}
