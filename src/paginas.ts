@@ -6,6 +6,9 @@
 import config from "../wix.config.json";
 
 declare const __PAGINAS__: string[];
+declare const __DEELBEELDEN__: string[];
+// Deelafbeelding per pagina (assets/deel/<naam>.jpg en en-<naam>.jpg, gemaakt door tools/maak-deelbeelden.mjs).
+const DEELBEELDEN = new Set<string>(__DEELBEELDEN__);
 export const PAGINAS: string[] = __PAGINAS__;
 
 const RAW = import.meta.glob("/*.html", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
@@ -43,8 +46,21 @@ export function paginaHtml(naam: string, lang: "nl" | "en" = "nl", origin = ""):
     }
     head += `<meta property="og:locale" content="${lang === "en" ? "en_GB" : "nl_NL"}">`;
   }
-  if (!html.includes('id="wix-site-script"')) head += SITE_SCRIPT;
-  return html.replace("</head>", `${head}</head>`);
+  // Deelafbeelding (LinkedIn, Facebook, WhatsApp, X …): onze eigen afbeelding in de stijl van de site.
+  let doc = html;
+  const beeld = (lang === "en" ? "en-" : "") + naam;
+  if (origin && !noindex && DEELBEELDEN.has(beeld)) {
+    doc = doc.replace(/<meta (?:property|name)="(?:og:image(?::[a-z]+)?|twitter:image(?::[a-z]+)?)"[^>]*>\n?/g, "");
+    const url = `${origin}/assets/deel/${beeld}.jpg`;
+    const alt = (doc.match(/<title>([^<]*)<\/title>/) || [])[1] || "Yonglo";
+    head += `<meta property="og:image" content="${url}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">`;
+    head += `<meta property="og:image:type" content="image/jpeg"><meta property="og:image:alt" content="${alt}">`;
+    if (!/<meta (?:property|name)="og:type"/.test(doc)) head += `<meta property="og:type" content="website">`;
+    if (!/<meta name="twitter:card"/.test(doc)) head += `<meta name="twitter:card" content="summary_large_image">`;
+    head += `<meta name="twitter:image" content="${url}">`;
+  }
+  if (!doc.includes('id="wix-site-script"')) head += SITE_SCRIPT;
+  return doc.replace("</head>", `${head}</head>`);
 }
 
 export const htmlResponse = (html: string) => new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8" } });

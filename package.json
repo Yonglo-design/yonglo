@@ -19,7 +19,11 @@
     "astro": "^7.3.2"
   },
   "devDependencies": {
+    "@fontsource/outfit": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@wix/astro-wix-hosting-adapter": "^3.0.0",
+    "jpeg-js": "^0.4.4",
+    "opentype.js": "^2.0.0",
     "typescript": "^5.8.3"
   }
 }

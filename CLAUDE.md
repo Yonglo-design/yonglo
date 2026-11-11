@@ -129,3 +129,10 @@ op een Astro-site.
   Blogberichten zijn er alleen in het Nederlands. Elke pagina krijgt op de server een canonical en
   taalversies (hreflang) mee (`src/paginas.ts`). De knop NL/EN in de header wisselt naar dezelfde pagina in de andere taal.
 - Werk direct op `main`. Pull voordat je begint, push na elke keer opslaan.
+- **Deelafbeeldingen** (het plaatje bij een gedeelde link op LinkedIn, WhatsApp enz.): elke gewone pagina heeft er
+  één in `assets/deel/` (`<naam>.jpg`, Engels: `en-<naam>.jpg`), in de stijl van de site. De server zet de tags
+  (`og:image`, `twitter:image`) vanzelf (`src/paginas.ts`). Nieuwe pagina of andere kop (`<h1>`)? Draai
+  `node tools/maak-deelbeelden.mjs` (of met paginanaam, bijv. `node tools/maak-deelbeelden.mjs webdesign`) en sla op.
+  Het label boven de titel staat in `LABELS` in dat script. Blogs en projecten hebben hun eigen afbeelding uit Wix.
+- **Homepage-hero**: de projectbeelden in de tegels zet de server al in de pagina (`src/hero-tegels.ts`, 5 minuten
+  onthouden); lukt dat niet, dan vult `assets/hero-c.js` ze in de browser.
