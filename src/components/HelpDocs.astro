@@ -2,14 +2,13 @@
 // De HTML van de help docs (Engels). Gegevens uit src/helpdocs.ts (laadHelpDocs); gebruikt door
 // src/pages/help-docs/index.astro, [app].astro en [app]/[slug].astro.
 import type { HelpDocsData } from "../helpdocs";
-import { appUrl, docUrl, esc } from "../../assets/helpdocs.js";
+import { appUrl, docUrl, appIcon } from "../../assets/helpdocs.js";
 import config from "../../wix.config.json";
 
 interface Props { d: HelpDocsData }
 const { d } = Astro.props;
 const { app, doc } = d;
 const ok = d.mode !== "leeg";
-const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase());
 ---
 <!doctype html>
 <html lang="en">
@@ -54,38 +53,60 @@ const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\
 <main id="main" class="hd">
 
 {/* ---------- kop ---------- */}
-<section class="post-hero dark no-img hd-hero">
-  <div class="post-head">
-    <div class="blob b1"></div><div class="dots"></div>
-    <div class="wrap">
+<section class={`hero sub-hero dark hd-hero hd-m-${d.mode}`}>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="dots"></div>
+  <div class="wrap hd-hero-grid">
+    <div class="hd-hero-txt">
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="/en">Home</a><span>/</span>
         {d.mode === "overzicht" ? <b>Help docs</b> : <a href="/help-docs">Help docs</a>}
-        {app && <><span>/</span>{d.mode === "app" ? <b>{app.app}</b> : <a href={appUrl(app.app)}>{app.app}</a>}</>}
-        {doc && <><span>/</span><b>{doc.title.length > 48 ? doc.title.slice(0, 47) + "…" : doc.title}</b></>}
+        {app && <><span>/</span>{d.mode === "app" ? <b>{app.info.kort || app.app}</b> : <a href={appUrl(app.app)}>{app.info.kort || app.app}</a>}</>}
+        {doc && <><span>/</span><b>{doc.title.length > 44 ? doc.title.slice(0, 43) + "…" : doc.title}</b></>}
       </nav>
       {d.mode === "overzicht" && <>
         <p class="eyebrow">Wix apps by Yonglo</p>
-        <h1>Help <em>docs</em>.</h1>
+        <h1>How can we <em>help</em>?</h1>
         <p class="lead">Guides, setup instructions and answers to common questions for our apps in the Wix App Market.</p>
       </>}
       {d.mode === "app" && <>
-        <p class="eyebrow">Help docs</p>
-        <h1>{app.app}</h1>
+        <div class="hd-app-title"><Fragment set:html={appIcon(app.app, "hd-ico xl")} /><div><p class="eyebrow">Help docs</p><h1>{app.app}</h1></div></div>
         {app.info.intro && <p class="lead">{app.info.intro}</p>}
-        {app.info.market && <p class="hd-cta"><a class="btn btn-primary" href={app.info.market} target="_blank" rel="noopener">Get the app in the Wix App Market <i class="arr">↗</i></a></p>}
+        {app.info.market && <div class="hero-btns"><a class="btn btn-primary" href={app.info.market} target="_blank" rel="noopener">Get the app <i class="arr">↗</i></a><a class="btn btn-ghost" href={docUrl(app.docs[0])}>Start here</a></div>}
       </>}
       {d.mode === "artikel" && <>
-        <p class="eyebrow">{app.app}</p>
+        <p class="hd-pill"><Fragment set:html={appIcon(app.app, "hd-ico xs")} />{app.info.kort || app.app}</p>
         <h1>{doc.title}</h1>
         {d.lead && <p class="lead">{d.lead}</p>}
+        <p class="hd-meta"><span>{doc.minuten} min read</span>{doc.vragen > 0 && <span>{doc.vragen} FAQ{doc.vragen > 1 ? "s" : ""}</span>}<span>Article {app.docs.findIndex((x: any) => x._id === doc._id) + 1} of {app.docs.length}</span></p>
       </>}
       {d.mode === "leeg" && <>
         <h1>{d.failed ? "The help docs could not be loaded." : <>This page does <em>not exist</em>.</>}</h1>
         <p class="lead">{d.failed ? "Refresh the page or try again later." : "It may have moved. Find your article in the help docs."}</p>
-        <p class="post-nf"><a class="btn btn-primary" href={app ? appUrl(app.app) : "/help-docs"}>To the help docs <i class="arr">→</i></a></p>
+        <div class="hero-btns"><a class="btn btn-primary" href={app ? appUrl(app.app) : "/help-docs"}>To the help docs <i class="arr">→</i></a></div>
       </>}
+      {(d.mode === "overzicht" || d.mode === "app") && (
+        <div class="hd-search" data-hd-search>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" placeholder={d.mode === "app" ? "Search these docs" : "Search all help articles"} aria-label="Search the help docs" autocomplete="off">
+        </div>
+      )}
     </div>
+    {d.mode === "overzicht" && (
+      <div class="hd-hero-vis" aria-hidden="true">
+        {d.apps.map((a, i) => (
+          <div class="hd-vis-card" style={`--i:${i}`}><Fragment set:html={appIcon(a.app, "hd-ico")} /><div><b>{a.info.kort || a.app}</b><small>{a.docs.length} articles · {a.faqs} FAQs</small></div></div>
+        ))}
+        <div class="hd-vis-card ask"><span class="hd-ico q">?</span><div><b>Still stuck?</b><small>Our support team is happy to help</small></div></div>
+      </div>
+    )}
+    {d.mode === "app" && (
+      <dl class="hd-stats" aria-label={`${app.app} in numbers`}>
+        <div><dt>Articles</dt><dd>{app.docs.length}</dd></div>
+        <div><dt>FAQs</dt><dd>{app.faqs}</dd></div>
+        <div><dt>Read time</dt><dd>{app.docs.reduce((t: number, x: any) => t + x.minuten, 0)}<small>min</small></dd></div>
+        {app.info.market && <div class="wide"><dt>Available in</dt><dd class="sm"><a href={app.info.market} target="_blank" rel="noopener">Wix App Market ↗</a></dd></div>}
+      </dl>
+    )}
   </div>
 </section>
 
@@ -95,17 +116,20 @@ const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\
   <div class="wrap">
     <div class="hd-apps">
       {d.apps.map((a) => (
-        <article class="hd-app">
-          <div class="hd-app-head"><span class="hd-ico" aria-hidden="true" set:html={ico(a.app)} /><div><h2><a href={appUrl(a.app)}>{a.app}</a></h2><small>{a.docs.length} {a.docs.length === 1 ? "article" : "articles"}</small></div></div>
-          {a.info.intro && <p>{a.info.intro}</p>}
-          <ul class="hd-list">{a.docs.slice(0, 6).map((x: any) => <li><a href={docUrl(x)}>{x.title}</a></li>)}</ul>
-          <div class="hd-app-foot">
-            <a class="btn btn-dark" href={appUrl(a.app)}>All {a.app} docs <i class="arr">→</i></a>
-            {a.info.market && <a class="hd-ext" href={a.info.market} target="_blank" rel="noopener">Wix App Market ↗</a>}
+        <article class="hd-app" style={`--ia:${(a.info.kleur || ["#325FFC"])[0]}`}>
+          <div class="hd-app-info">
+            <div class="hd-app-head"><Fragment set:html={appIcon(a.app, "hd-ico lg")} /><div><h2><a href={appUrl(a.app)}>{a.app}</a></h2><small>{a.docs.length} articles · {a.faqs} FAQs</small></div></div>
+            {a.info.intro && <p>{a.info.intro}</p>}
+            <div class="hd-app-foot">
+              <a class="btn btn-dark" href={appUrl(a.app)}>All docs <i class="arr">→</i></a>
+              {a.info.market && <a class="hd-ext" href={a.info.market} target="_blank" rel="noopener">Wix App Market ↗</a>}
+            </div>
           </div>
+          <ul class="hd-list">{a.docs.map((x: any) => <li data-hd-item data-q={`${x.title} ${x.omschrijving || ""} ${a.app}`}><a href={docUrl(x)}><span>{x.title}</span><small>{x.minuten} min</small></a></li>)}</ul>
         </article>
       ))}
     </div>
+    <p class="hd-none" hidden>No articles found. Try another word, or <a href="mailto:contact@yonglo.com">ask our support team</a>.</p>
     {!d.apps.length && <p class="hd-empty">There are no help articles yet.</p>}
   </div>
 </section>
@@ -115,13 +139,25 @@ const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\
 {d.mode === "app" && (
 <section class="light hd-main">
   <div class="wrap">
-    <ol class="hd-index">
-      {app.docs.map((x: any) => (
-        <li class={x.depth ? "sub" : "top"}>
-          <a href={docUrl(x)}><b>{x.title}</b>{x.omschrijving && <span>{x.omschrijving}</span>}<i class="arr" aria-hidden="true">→</i></a>
-        </li>
+    {app.docs[0] && (
+      <a class="hd-start" href={docUrl(app.docs[0])} data-hd-item data-q={`${app.docs[0].title} ${app.docs[0].omschrijving || ""}`}>
+        <span class="hd-start-lab">Start here</span>
+        <b>{app.docs[0].title}</b>
+        {app.docs[0].omschrijving && <span class="hd-start-d">{app.docs[0].omschrijving}</span>}
+        <span class="hd-start-m">{app.docs[0].minuten} min read <i class="arr">→</i></span>
+      </a>
+    )}
+    <div class="hd-grid">
+      {app.docs.slice(1).map((x: any, i: number) => (
+        <a class="hd-card" href={docUrl(x)} data-hd-item data-q={`${x.title} ${x.omschrijving || ""}`}>
+          <span class="hd-num">{String(i + 1).padStart(2, "0")}</span>
+          <b>{x.title}</b>
+          {x.omschrijving && <span class="hd-card-d">{x.omschrijving}</span>}
+          <span class="hd-card-m">{x.minuten} min{x.vragen > 0 && ` · ${x.vragen} FAQ${x.vragen > 1 ? "s" : ""}`}<i class="arr" aria-hidden="true">→</i></span>
+        </a>
       ))}
-    </ol>
+    </div>
+    <p class="hd-none" hidden>No articles found. Try another word, or <a href="mailto:contact@yonglo.com">ask our support team</a>.</p>
   </div>
 </section>
 )}
@@ -132,12 +168,12 @@ const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\
   <div class="wrap hd-layout">
     <aside class="hd-side">
       <details class="hd-nav" open>
-        <summary>{app.app}</summary>
+        <summary><Fragment set:html={appIcon(app.app, "hd-ico xs")} /><span>{app.info.kort || app.app}</span><small>{app.docs.length} articles</small></summary>
         <nav aria-label={`${app.app} articles`}>
           <ul>{app.docs.map((x: any) => <li class={x.depth ? "sub" : ""}><a href={docUrl(x)} aria-current={x._id === doc._id ? "page" : undefined}>{x.title}</a></li>)}</ul>
         </nav>
       </details>
-      {d.apps.length > 1 && <p class="hd-other">Other apps: {d.apps.filter((a) => a.app !== app.app).map((a, i) => <>{i > 0 && ", "}<a href={appUrl(a.app)}>{a.app}</a></>)}</p>}
+      <a class="hd-side-help" href="mailto:contact@yonglo.com"><b>Need a hand?</b><span>Email our support team</span></a>
     </aside>
     <script is:inline>if (matchMedia("(max-width:991px)").matches) document.querySelector(".hd-nav")?.removeAttribute("open");</script>
     <article class="hd-article">
@@ -147,7 +183,7 @@ const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\
       <div class="post-body" set:html={d.html} />
       {d.faqs.length > 0 && (
         <div class="hd-faq" role="region" aria-labelledby="faq-t">
-          <h2 id="faq-t">Frequently asked questions</h2>
+          <h2 id="faq-t">Frequently asked <em>questions</em></h2>
           {d.faqs.map((f) => <details><summary>{f.q}</summary><div class="hd-faq-a" set:html={f.a} /></details>)}
         </div>
       )}
@@ -155,15 +191,26 @@ const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\
         {d.prev ? <a class="prev" href={docUrl(d.prev)}><small>← Previous</small><b>{d.prev.title}</b></a> : <span></span>}
         {d.next ? <a class="next" href={docUrl(d.next)}><small>Next →</small><b>{d.next.title}</b></a> : <span></span>}
       </nav>
-      <div class="hd-help">
-        <div><b>Still need help?</b><span>Our support team is happy to help you with {app.app}.</span></div>
-        <div class="hd-help-btns">
-          <a class="btn btn-primary" href={`mailto:contact@yonglo.com?subject=${encodeURIComponent("Support: " + app.app)}`}>Email support <i class="arr">→</i></a>
-          <a class="btn btn-ghost" href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
     </article>
   </div>
+</section>
+)}
+
+{/* ---------- hulp ---------- */}
+{d.mode !== "leeg" && (
+<section class="light hd-band">
+  <div class="wrap"><div class="hd-band-card">
+  <div class="hd-band-grid">
+    <div>
+      <h2>Still need <em>help</em>?</h2>
+      <p>Can't find the answer? Our support team is happy to help{app ? ` with ${app.info.kort || app.app}` : ""}.</p>
+    </div>
+    <div class="hd-band-btns">
+      <a class="btn btn-primary" href={`mailto:contact@yonglo.com?subject=${encodeURIComponent("Support" + (app ? ": " + app.app : ""))}`}>Email support <i class="arr">→</i></a>
+      <a class="btn btn-ghost" href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp us</a>
+    </div>
+  </div>
+  </div></div>
 </section>
 )}
 
@@ -176,5 +223,25 @@ const ico = (name: string) => esc(String(name).replace(/ for Wix$/, "").split(/\
 
 <script is:inline src="/assets/app.js?v=4" defer></script>
 <script is:inline src="/assets/footer.js" defer></script>
+{(d.mode === "overzicht" || d.mode === "app") && <script is:inline>
+// Zoeken in de help docs: filtert de artikelen op deze pagina terwijl je typt.
+(() => {
+  const box = document.querySelector("[data-hd-search] input");
+  if (!box) return;
+  const items = [...document.querySelectorAll("[data-hd-item]")];
+  const none = document.querySelector(".hd-none");
+  const norm = (s) => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  box.addEventListener("input", () => {
+    const words = norm(box.value).split(/\s+/).filter(Boolean);
+    let shown = 0;
+    items.forEach((el) => { const hit = words.every((w) => norm(el.dataset.q).includes(w)); el.hidden = !hit; if (hit) shown++; });
+    document.querySelectorAll(".hd-app").forEach((a) => { a.hidden = !!words.length && !a.querySelector("[data-hd-item]:not([hidden])"); });
+    if (none) none.hidden = shown > 0;
+    if (words.length && box.getBoundingClientRect().top < 0) box.scrollIntoView({ block: "center" });
+  });
+  const q = new URLSearchParams(location.search).get("q");
+  if (q) { box.value = q; box.dispatchEvent(new Event("input")); }
+})();
+</script>}
 </body>
 </html>

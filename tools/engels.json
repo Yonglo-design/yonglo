@@ -1403,5 +1403,6 @@
  "{1}{2}{3/}{/2}{4}{5/}{6}CRM &amp; marketing{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}CRM &amp; marketing{/6}{/4}{7}→{/7}{/1}",
  "{1}{2}{3/}{/2}{4}{5/}{6}AI{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}AI{/6}{/4}{7}→{/7}{/1}",
  "{1}{2}{3/}{/2}{4}{5/}{6}Samenwerking &amp; data{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}Collaboration &amp; data{/6}{/4}{7}→{/7}{/1}",
- "Filter op categorie": "Filter by category"
+ "Filter op categorie": "Filter by category",
+ "{1}{2}+{/2}{3}{4}Staat jouw systeem er niet tussen?{/4}{5}We koppelen Wix met 1000+ systemen{/5}{/3}{6}→{/6}{/1}": "{1}{2}+{/2}{3}{4}Your system not listed?{/4}{5}We connect Wix to 1000+ systems{/5}{/3}{6}→{/6}{/1}"
 }

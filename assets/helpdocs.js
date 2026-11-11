@@ -7,16 +7,41 @@ export const DOCS = "AppsHelpDocs";
 export const FAQ = "AppDocsFAQ";
 
 // Extra informatie per app (naam zoals in het CMS-veld "App"). Een nieuwe app zonder regel hier werkt ook.
+// icon: SVG-pictogram (24×24, lijnen); kleur: begin- en eindkleur van het app-icoon.
 export const APPS = {
   "Smart Cookie Popup for Wix": {
+    kort: "Smart Cookie Popup",
     intro: "A multilingual cookie banner for Wix that helps your site comply with GDPR and Google Consent Mode v2, with managed Google tags and a preferences button.",
     market: "https://www.wix.com/app-market/search-result?query=smart%20cookie",
+    kleur: ["#FF9A3C", "#E8590C"],
+    icon: '<path d="M21 12.4A9 9 0 1 1 11.6 3a4 4 0 0 0 5 5 4 4 0 0 0 4.4 4.4Z"/><circle cx="8.5" cy="10" r="1.1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="15.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="8" cy="15" r=".9" fill="currentColor" stroke="none"/><circle cx="16.3" cy="13" r=".9" fill="currentColor" stroke="none"/>',
   },
   "PDF Generator Pro": {
+    kort: "PDF Generator Pro",
     intro: "Generate PDFs from your Wix data: invoices from orders, tickets with QR codes from events, booking confirmations, product spec sheets and documents from any CMS collection.",
     market: "https://www.wix.com/app-market/search-result?query=pdf%20generator%20pro",
+    kleur: ["#FF5A5F", "#C2255C"],
+    icon: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M8.5 13h7M8.5 16.5h5"/>',
   },
 };
+const ICON_STANDAARD = '<path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 9h8M8 13h8M8 17h5"/>';
+
+// App-icoon (HTML) in de kleuren van de app.
+export function appIcon(app, cls = "hd-ico") {
+  const info = APPS[app] || {};
+  const [a, b] = info.kleur || ["#325FFC", "#7A97FD"];
+  return `<span class="${cls}" style="--ia:${a};--ib:${b}" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${info.icon || ICON_STANDAARD}</svg></span>`;
+}
+
+// Leestijd in minuten (200 woorden per minuut) van de tekst van een artikel (Wix rich content).
+export function leestijd(rc) {
+  let n = 0;
+  const walk = (ns) => (ns || []).forEach((x) => { if (x.type === "TEXT") n += String(x.textData?.text || "").split(/\s+/).filter(Boolean).length; walk(x.nodes); });
+  walk(rc?.nodes);
+  return Math.max(1, Math.round(n / 200));
+}
+
+export const datum = (iso) => (iso ? new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Amsterdam" }).format(new Date(iso)) : "");
 
 export function slugify(s) {
   return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()

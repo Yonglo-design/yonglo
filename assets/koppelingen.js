@@ -92,6 +92,18 @@ const LOG = {
   "Samenwerking & data": [["Formulier → melding aan het team", "Form → team notification"], ["Afspraak in de agenda gezet", "Appointment added to calendar"], ["Gegevens bijgewerkt op de website", "Data updated on the website"]],
 };
 
+// Inleiding onder de kop: de SEO-omschrijving, zonder de eerste zin als die bijna gelijk is aan de kop.
+export function inleiding(k) {
+  const meta = String(k.metabeschrijving || "").trim();
+  const norm = (x) => String(x || "").toLowerCase().replace(/[^a-z0-9à-ÿ]+/g, " ").trim();
+  const kop = norm(k.kop).slice(0, 40);
+  if (kop && norm(meta).startsWith(kop)) {
+    const rest = meta.replace(/^[^.!?]*[.!?]\s*/, "").trim();
+    return rest || "";
+  }
+  return meta;
+}
+
 export function hero(k) {
   const cat = k.categorieNl || k.categorie;
   const log = (LOG[cat] || LOG["Samenwerking & data"]).map(([nl, en]) => T(k, nl, en));
@@ -103,7 +115,7 @@ export function hero(k) {
       <nav class="crumbs rv" aria-label="${T(k, "Kruimelpad", "Breadcrumb")}"><a href="${pre(k) || "/"}">Home</a><span>/</span><a href="${pre(k)}/api">${T(k, "API koppelingen", "API integrations")}</a><span>/</span><b>${esc(k.title)}</b></nav>
       <p class="eyebrow rv">${T(k, "Wix koppeling", "Wix integration")}${k.categorie ? ` · ${esc(k.categorie)}` : ""}</p>
       <h1 class="rv kp-title">${esc(k.kop || k.title)}</h1>
-      ${k.metabeschrijving ? `<p class="lead rv" style="--d:.2s">${esc(k.metabeschrijving)}</p>` : ""}
+      ${inleiding(k) ? `<p class="lead rv" style="--d:.2s">${esc(inleiding(k))}</p>` : ""}
       <div class="hero-btns rv" style="--d:.35s">
         <a href="#contact" class="btn btn-primary">${T(k, "Plan een adviesgesprek", "Book a consultation")} <i class="arr">→</i></a>
         <a href="${pre(k)}/api#koppelingen" class="btn btn-ghost">${T(k, "Alle koppelingen", "All integrations")}</a>
@@ -147,6 +159,29 @@ export function body(k) {
 </section>`;
 }
 
+// Donker blok: zo pakken we een koppeling aan (vier stappen).
+export function aanpak(k) {
+  const n = esc(k.title);
+  const stappen = [
+    [T(k, "Analyse", "Analysis"), T(k, `We brengen je processen in kaart en bepalen welke gegevens er tussen Wix en ${n} moeten stromen.`, `We map your processes and decide which data should flow between Wix and ${n}.`)],
+    [T(k, "Bouwen", "Build"), T(k, `We bouwen de koppeling op maat via de API van ${n} en Velo by Wix, veilig en schaalbaar.`, `We build a custom integration using the ${n} API and Velo by Wix, secure and scalable.`)],
+    [T(k, "Testen", "Test"), T(k, "We testen met echte gegevens tot alles foutloos en automatisch synchroniseert.", "We test with real data until everything syncs automatically and without errors.")],
+    [T(k, "Live & beheer", "Live & support"), T(k, "We zetten de koppeling live, houden hem in de gaten en passen hem aan als je bedrijf groeit.", "We launch the integration, keep an eye on it and adapt it as your business grows.")],
+  ];
+  return `<section class="dark kp-steps">
+  <div class="blob b3"></div>
+  <div class="wrap">
+    <div class="sec-head split-head">
+      <div>
+        <h2 class="rv">${T(k, "Van idee naar <em>werkende</em> koppeling.", "From idea to a <em>working</em> integration.")}</h2>
+      </div>
+      <p class="rv sub" style="--d:.1s">${T(k, `Zo koppelen we jouw Wix-website aan ${n}: in vier heldere stappen, met één vast aanspreekpunt.`, `This is how we connect your Wix website to ${n}: in four clear steps, with one point of contact.`)}</p>
+    </div>
+    <ol class="kp-step-grid">${stappen.map(([t, d], i) => `<li class="rv" style="--d:${i * 0.08}s"><span class="kp-step-n">0${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join("")}</ol>
+  </div>
+</section>`;
+}
+
 export function projecten(k, list) {
   if (!list || !list.length) return "";
   return `<section class="light pj-more kp-projects">
@@ -172,6 +207,11 @@ export function tegel(k, i = 0) {
   const logo = img(k.logo, 112, 112, "c");
   // translate="no": de naam is een merknaam (tools/maak-engels.mjs slaat die over).
   return `<li class="rv" style="--d:${(i % 8) * 0.04}s" data-cat="${esc(k.categorieNl || k.categorie || "")}"><a href="${koppelingUrl(k)}" class="kp-tile"><span class="kp-tl">${logo ? `<img src="${logo}" alt="" width="56" height="56" loading="lazy">` : `<i translate="no">${esc(String(k.title).charAt(0))}</i>`}</span><span class="kp-tt"><b translate="no">${esc(k.title)}</b>${k.categorie ? `<small>${esc(k.categorie)}</small>` : ""}</span><i class="arr" aria-hidden="true">→</i></a></li>`;
+}
+
+// Laatste tegel in het overzicht op /api: je eigen systeem laten koppelen.
+export function ctaTegel(en = false) {
+  return `<li class="rv kp-cta-li" data-cta><a href="#contact" class="kp-tile kp-tile-cta"><span class="kp-tl">+</span><span class="kp-tt"><b>${en ? "Your system not listed?" : "Staat jouw systeem er niet tussen?"}</b><small>${en ? "We connect Wix to 1000+ systems" : "We koppelen Wix met 1000+ systemen"}</small></span><i class="arr" aria-hidden="true">→</i></a></li>`;
 }
 
 export function andere(k, all) {

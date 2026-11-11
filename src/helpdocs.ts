@@ -5,7 +5,7 @@
 import type { AstroGlobal } from "astro";
 import { fetchWithAuth } from "@wix/sdk/context";
 import { renderContent, trimTo } from "../assets/blog.js";
-import { DOCS, FAQ, perApp, appSlug, appUrl, docUrl, oudeSlug, veiligeHtml, platteTekst } from "../assets/helpdocs.js";
+import { DOCS, FAQ, perApp, appSlug, appUrl, docUrl, oudeSlug, veiligeHtml, platteTekst, leestijd } from "../assets/helpdocs.js";
 import { siteOrigin } from "./paginas";
 
 async function alles(dataCollectionId: string) {
@@ -31,7 +31,7 @@ export type HelpDocsData = {
   redirect?: string;
   mode: "overzicht" | "app" | "artikel" | "leeg";
   failed: boolean;
-  apps: ReturnType<typeof perApp>;
+  apps: any[];
   app: any;
   doc: any;
   html: string;
@@ -60,7 +60,12 @@ export async function laadHelpDocs(Astro: AstroGlobal): Promise<HelpDocsData> {
     Astro.response.status = 503;
     return { ...leeg, failed: true, title: "Help docs could not be loaded | Yonglo" };
   }
-  const apps = perApp(docs);
+  // Per app: aantal vragen; per artikel: leestijd en datum (voor de kaarten en de kop van een artikel).
+  const apps = perApp(docs).map((a) => {
+    const ids = new Set(a.docs.map((x: any) => x._id));
+    const docsMeer = a.docs.map((x: any) => ({ ...x, minuten: leestijd(x.richcontent), vragen: faqs.filter((f) => f.article === x._id).length, bijgewerkt: x._updatedDate?.$date || x._updatedDate || "" }));
+    return { ...a, docs: docsMeer, faqs: faqs.filter((f) => ids.has(f.article)).length, bijgewerkt: docsMeer.map((x: any) => x.bijgewerkt).sort().pop() || "" };
+  });
   const crumbs = (items: [string, string][]) => ld({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

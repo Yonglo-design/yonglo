@@ -4,7 +4,7 @@
 // De opmaak komt uit assets/koppelingen.js; de pagina zelf uit src/components/KoppelingPagina.astro.
 import type { AstroGlobal } from "astro";
 import { fetchWithAuth } from "@wix/sdk/context";
-import { hero, body, projecten, andere, contact, inTaal, sorteer, zoekProjecten, koppelingUrl, platteTekst, COLLECTION } from "../assets/koppelingen.js";
+import { hero, body, aanpak, projecten, andere, contact, inTaal, sorteer, zoekProjecten, koppelingUrl, platteTekst, COLLECTION } from "../assets/koppelingen.js";
 import { img, inTaal as projectInTaal } from "../assets/projecten.js";
 import { siteOrigin } from "./paginas";
 
@@ -94,7 +94,7 @@ export async function laadKoppeling(Astro: AstroGlobal): Promise<KoppelingData> 
 
   const kk = inTaal(k, EN ? "en" : "nl");
   const alleT = all.map((x) => inTaal(x, EN ? "en" : "nl"));
-  const html = [hero(kk), body(kk), projecten(kk, lijst), andere(kk, alleT), contact(kk)].join("\n");
+  const html = [hero(kk), body(kk), aanpak(kk), projecten(kk, lijst), andere(kk, alleT), contact(kk)].join("\n");
 
   const nlUrl = `${origin}/wix-koppeling/${encodeURIComponent(k.slug)}`;
   const enUrl = `${origin}/en/wix-koppeling/${encodeURIComponent(k.slug)}`;

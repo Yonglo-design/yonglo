@@ -3,7 +3,7 @@
 // vervangt ze door de actuele lijst uit de Wix CMS-collectie "Koppelingen", zodat een nieuwe koppeling
 // vanzelf verschijnt.
 import { queryDataItems } from "./wix/wix-cms.js";
-import { COLLECTION, CATEGORIEEN, CATEGORIE_EN, inTaal, sorteer, tegel } from "./koppelingen.js";
+import { COLLECTION, CATEGORIEEN, CATEGORIE_EN, inTaal, sorteer, tegel, ctaTegel } from "./koppelingen.js";
 
 const root = document.querySelector("[data-koppelingen]");
 const EN = document.documentElement.lang === "en";
@@ -23,7 +23,7 @@ function filters() {
   const bar = root.querySelector(".kp-filter");
   const grid = root.querySelector(".kp-tiles");
   if (!bar || !grid) return;
-  const tiles = [...grid.children];
+  const tiles = [...grid.children].filter((t) => !t.hasAttribute("data-cta"));
   const count = new Map();
   tiles.forEach((t) => count.set(t.dataset.cat, (count.get(t.dataset.cat) || 0) + 1));
   const cats = [...count.keys()].filter(Boolean).sort((a, b) => {
@@ -47,7 +47,7 @@ if (root) {
     .then((list) => {
       if (!list.length) return;
       const grid = root.querySelector(".kp-tiles");
-      grid.innerHTML = list.map(tegel).join("");
+      grid.innerHTML = list.map(tegel).join("") + ctaTegel(EN);
       [...grid.children].forEach((t) => t.classList.add("in"));
     })
     .catch((err) => console.warn("Koppelingen uit het CMS niet geladen; de vaste lijst blijft staan.", err))
