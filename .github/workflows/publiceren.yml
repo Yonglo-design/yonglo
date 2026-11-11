@@ -1,0 +1,108 @@
+# Automatisch publiceren: elke keer dat er iets op main wordt gezet (bijv. na een aanpassing via Claude),
+# bouwt GitHub de site en zet hem live bij Wix. Daarna wijst de git-tag "live" naar deze versie.
+#
+# Eenmalig instellen (zie CLAUDE.md, "Automatisch publiceren"):
+#   GitHub → repository → Settings → Secrets and variables → Actions → New repository secret
+#   Naam: WIX_API_KEY   Waarde: een API-sleutel uit Wix (Wix-account → API Keys).
+# Zonder die sleutel slaat deze workflow het publiceren over (er gaat dan niets mis).
+name: Publiceren
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # handmatig starten kan ook: tabblad Actions → Publiceren → Run workflow
+
+# Nooit twee keer tegelijk publiceren; een nieuwere versie wacht tot de vorige klaar is.
+concurrency:
+  group: publiceren
+  cancel-in-progress: false
+
+permissions:
+  contents: write # nodig om de tag "live" te verplaatsen
+
+env:
+  SITE_ID: 0b565482-d578-4a51-866a-655eed271d6b
+
+jobs:
+  publiceren:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Controleren of de Wix-sleutel is ingesteld
+        id: sleutel
+        env:
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+        run: |
+          if [ -z "$WIX_API_KEY" ]; then
+            echo "::warning::WIX_API_KEY is nog niet ingesteld; publiceren overgeslagen."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.sleutel.outputs.ok == 'true'
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        if: steps.sleutel.outputs.ok == 'true'
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installeren
+        if: steps.sleutel.outputs.ok == 'true'
+        run: npm ci
+
+      - name: AI-bestanden bijwerken (llms.txt, llms-full.txt, zoekindex.json)
+        if: steps.sleutel.outputs.ok == 'true'
+        run: node tools/maak-ai-bestanden.mjs
+
+      - name: Bouwen (ook de Engelse pagina's)
+        if: steps.sleutel.outputs.ok == 'true'
+        run: npm run build
+
+      - name: Publiceren bij Wix
+        if: steps.sleutel.outputs.ok == 'true'
+        env:
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+          CI: "true"
+        run: |
+          npx --yes @wix/cli@latest login --api-key "$WIX_API_KEY"
+          npx --yes @wix/cli@latest release --comment "$(git log -1 --pretty=%s | cut -c1-240)"
+
+      - name: Onze llms.txt bij Wix zetten
+        if: steps.sleutel.outputs.ok == 'true'
+        env:
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            const body = { llmsTxt: { content: fs.readFileSync("llms.txt", "utf8"), default: false, manuallyEdited: true, subdomain: "www" } };
+            fetch("https://www.wixapis.com/promote-seo-robots-server/v2/llms", {
+              method: "PUT",
+              headers: { "Content-Type": "application/json", Authorization: process.env.WIX_API_KEY, "wix-site-id": process.env.SITE_ID },
+              body: JSON.stringify(body),
+            }).then(async (r) => {
+              if (!r.ok) { console.log("::warning::llms.txt niet bijgewerkt: " + r.status + " " + (await r.text()).slice(0, 300)); return; }
+              console.log("llms.txt bijgewerkt.");
+            });
+          '
+
+      - name: Controleren of de site werkt
+        if: steps.sleutel.outputs.ok == 'true'
+        run: |
+          SITE=https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com
+          sleep 20
+          for pad in / /en /nieuws /en/webdesign; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$SITE$pad")
+            echo "$pad → $code"
+            if [ "$code" != "200" ]; then echo "::error::$pad geeft $code"; exit 1; fi
+          done
+
+      - name: Tag "live" verplaatsen
+        if: steps.sleutel.outputs.ok == 'true'
+        run: |
+          git tag -f live HEAD
+          git push -f origin live
