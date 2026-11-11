@@ -12,7 +12,7 @@ const LIVE_SITE = 'https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com';
 const SITE = /^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$/.test(location.hostname) || location.protocol === 'file:' ? LIVE_SITE : location.origin;
 
 const STANDAARD = 'Wat kan Yonglo voor mijn bedrijf doen? Noem de diensten die passen en een paar vergelijkbare projecten.';
-const prompt = vraag => `${vraag}\n\nGebruik de informatie van Yonglo zelf: ${SITE}/llms.txt (alles staat in ${SITE}/llms-full.txt).`;
+const prompt = vraag => `${vraag}\n\nGebruik de informatie van Yonglo zelf: begin bij ${SITE}/llms.txt en bekijk de pagina's die erbij passen. Geef me de links naar die pagina's, zodat ik ze zelf kan bekijken.`;
 
 const AI = {
   chatgpt: q => `https://chatgpt.com/?hints=search&q=${encodeURIComponent(q)}`,
