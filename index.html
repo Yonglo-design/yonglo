@@ -12,10 +12,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="preconnect" href="https://www.wixapis.com" crossorigin>
+<link rel="preconnect" href="https://static.wixstatic.com">
 <link rel="stylesheet" href="assets/style.css?v=4">
-<link rel="stylesheet" href="assets/footer.css">
-<link rel="stylesheet" href="/assets/slider.css">
 <link rel="stylesheet" href="/assets/hero-c.css">
+<!-- Snelheid: footer en projectslider staan onder de vouw; hun opmaak laadt zonder de pagina op te houden -->
+<link rel="stylesheet" href="/assets/footer.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/assets/slider.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/assets/footer.css"><link rel="stylesheet" href="/assets/slider.css"></noscript>
+<!-- Snelheid: alle scripts die de CMS-inhoud ophalen meteen tegelijk downloaden (in plaats van na elkaar) -->
+<link rel="modulepreload" href="/assets/hero-c.js">
+<link rel="modulepreload" href="/assets/projecten.js">
+<link rel="modulepreload" href="/assets/slider-cms.js">
+<link rel="modulepreload" href="/assets/home-nieuws.js">
+<link rel="modulepreload" href="/assets/blog.js">
+<link rel="modulepreload" href="/assets/wix/wix-cms.js">
+<link rel="modulepreload" href="/assets/wix/wixImage.js">
+<link rel="modulepreload" href="/assets/wix/wix-client.js">
+<link rel="modulepreload" href="/assets/wix/wix-config.js">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Yonglo","slogan":"Think Wix, think Yonglo","url":"https://www.yonglo.com","email":"contact@yonglo.com","telephone":"+31852033223","areaServed":["NL","BE"],"address":{"@type":"PostalAddress","addressLocality":"Eindhoven","addressRegion":"Noord-Brabant","addressCountry":"NL"}}
 </script>
@@ -45,7 +59,7 @@
     </div>
   </div>
   <div class="hc-tiles">
-    <a class="hc-t t1 edge-l hc-vid" data-tile data-video data-depth="1.2" href="/portfolio" aria-label="Rijschool Wildenberg"><span class="f"><video muted loop playsinline preload="none" data-defer poster="/assets/hero/wildenberg-poster.webp" aria-hidden="true"><source src="https://video.wixstatic.com/video/345956_f16491e70f654f6c8c73e4cb2e70d524/480p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_f16491e70f654f6c8c73e4cb2e70d524/720p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_f16491e70f654f6c8c73e4cb2e70d524/file" type="video/mp4"></video><span class="cap">Rijschool Wildenberg</span></span></a>
+    <a class="hc-t t1 edge-l hc-vid" data-tile data-video data-depth="1.2" href="/portfolio" aria-label="Project: Rijschool Wildenberg"><span class="f"><video muted loop playsinline preload="none" data-defer poster="/assets/hero/wildenberg-poster.webp" aria-hidden="true"><source src="https://video.wixstatic.com/video/345956_f16491e70f654f6c8c73e4cb2e70d524/480p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_f16491e70f654f6c8c73e4cb2e70d524/720p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_f16491e70f654f6c8c73e4cb2e70d524/file" type="video/mp4"></video><span class="cap">Rijschool Wildenberg</span></span></a>
     <a class="hc-t t2 edge-l" data-tile data-depth=".8" href="/portfolio"><span class="f"></span></a>
     <div class="hc-t t3 hc-ui" data-depth="1" aria-hidden="true"><div class="f">
       <p class="hc-h">Website-statistieken <em>Live</em></p>
@@ -54,7 +68,7 @@
     </div></div>
     <div class="hc-t t4 hc-ai" data-depth="1.3" aria-hidden="true"><span class="img"></span><span class="sel"></span><div class="f"><div class="prompt"><b>AI-beeld</b><span class="typed" data-text="Maak een close-up productfoto in zacht daglicht."></span></div></div></div>
     <a class="hc-t t5 edge-r" data-tile data-depth=".7" href="/portfolio"><span class="f"></span></a>
-    <a class="hc-t t6 hc-vid" data-tile data-video data-depth="1.1" href="/portfolio" aria-label="Pawy"><span class="f"><video muted loop playsinline preload="none" data-defer poster="/assets/hero/pawy-poster.webp" aria-hidden="true"><source src="https://video.wixstatic.com/video/345956_a6c734e2cd52420db96b90fc398eb806/480p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_a6c734e2cd52420db96b90fc398eb806/720p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_a6c734e2cd52420db96b90fc398eb806/file" type="video/mp4"></video><span class="cap">Pawy</span></span></a>
+    <a class="hc-t t6 hc-vid" data-tile data-video data-depth="1.1" href="/portfolio" aria-label="Project: Pawy"><span class="f"><video muted loop playsinline preload="none" data-defer poster="/assets/hero/pawy-poster.webp" aria-hidden="true"><source src="https://video.wixstatic.com/video/345956_a6c734e2cd52420db96b90fc398eb806/480p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_a6c734e2cd52420db96b90fc398eb806/720p/mp4/file.mp4" type="video/mp4"><source src="https://video.wixstatic.com/video/345956_a6c734e2cd52420db96b90fc398eb806/file" type="video/mp4"></video><span class="cap">Pawy</span></span></a>
     <span class="hc-ico ai" data-depth="1.6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2l1.8 5.6L19.5 9.5l-5.7 1.9L12 17l-1.8-5.6L4.5 9.5l5.7-1.9z"/><path d="M19 14l.8 2.2 2.2.8-2.2.8L19 20l-.8-2.2-2.2-.8 2.2-.8z"/></svg></span>
     <a class="hc-ico ig" data-depth="1.4" href="https://www.instagram.com/yonglo.design" target="_blank" rel="noopener" aria-label="Yonglo op Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
   </div>

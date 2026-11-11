@@ -7,8 +7,15 @@ import { fetchProjects, projectUrl, img, esc, themeStyle, cardTags } from "./pro
 
 const sections = [...document.querySelectorAll('[data-cms-section="proj-slider"],[data-cms-section="brand-slider"]')];
 
+// Snelheid: beeld precies zo groot laden als de kaart op dit scherm (max. 640 px, scherp op retina)
+const CARD_PX = (() => {
+  if (typeof window === "undefined") return 640;
+  const css = innerWidth <= 767 ? innerWidth * 0.78 : Math.min(360, Math.max(260, innerWidth * 0.26));
+  return Math.min(640, Math.ceil((css * Math.min(devicePixelRatio || 1, 2)) / 20) * 20);
+})();
+
 function card(p, i) {
-  const src = p.portfolioImage ? img(p.portfolioImage, 640, 640, "c") : img(p.hoofdbeeld, 640, 640);
+  const src = p.portfolioImage ? img(p.portfolioImage, CARD_PX, CARD_PX, "c") : img(p.hoofdbeeld, CARD_PX, CARD_PX);
   const tags = cardTags(p, 2).join(" · ");
   return `<a href="${projectUrl(p)}" class="bs-card" style="${themeStyle(p)};--i:${i}" draggable="false">
     <div class="bs-vis">${src ? (i < 2 ? `<img src="${src}" alt="${esc(p.title)}" decoding="async" draggable="false">` : `<img data-src="${src}" alt="${esc(p.title)}" decoding="async" draggable="false">`) : `<b class="bs-ph">${esc(p.title)}</b>`}</div>

@@ -85,6 +85,8 @@ a.hc-t:hover .cap{opacity:1;transform:none}
   .hc-t,.hc-t.t1,.hc-t.t2,.hc-t.t3,.hc-t.t4,.hc-t.t5,.hc-t.t6{position:relative;left:auto;right:auto;top:auto;flex:none;width:200px;aspect-ratio:.8;border-radius:18px;scroll-snap-align:start}
   .hc-ico{display:none}
   .hc-t{animation:none}
+  /* Snelheid: op tablet en mobiel staan de tegels er meteen (geen invliegen), zodat de pagina sneller "af" is */
+  .hc .hc-t{opacity:1;transform:none;transition:none}
 }
 @media (max-width:767px){
   .hc{padding-top:110px}

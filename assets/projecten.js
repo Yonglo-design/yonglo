@@ -10,7 +10,16 @@ const DIENST_ORDER = ["Wix Studio", "eCommerce", "Development", "Branding", "AI 
 // "Webdesign" geldt voor bijna elk project en is daarom geen apart filter.
 const NO_FILTER = ["Webdesign"];
 
-export async function fetchProjects() {
+// Snelheid: de projecten worden per pagina maar één keer opgehaald, ook als meerdere scripts
+// (hero, sliders) ze tegelijk nodig hebben.
+const projectsCache = {};
+export function fetchProjects() {
+  const lang = pageLang();
+  if (!projectsCache[lang]) projectsCache[lang] = loadProjects().catch(e => { delete projectsCache[lang]; throw e; });
+  return projectsCache[lang];
+}
+
+async function loadProjects() {
   const all = [];
   let cursor = null;
   do {

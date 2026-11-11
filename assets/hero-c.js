@@ -28,7 +28,7 @@ if (hero) {
       const pf = !!p.portfolioImage;
       const src = pf ? img(p.portfolioImage, w, h, "c") : img(p.hoofdbeeld, w, h);
       el.href = projectUrl(p);
-      el.setAttribute("aria-label", p.title);
+      el.setAttribute("aria-label", "Project: " + p.title);
       el.setAttribute("style", (el.getAttribute("style") || "") + ";" + themeStyle(p));
       el.classList.toggle("pf", pf);
       el.querySelector(".f").innerHTML = `${src ? `<img src="${src}" alt="" loading="eager" decoding="async">` : `<b class="ph">${esc(p.title)}</b>`}<span class="cap">${esc(p.title)}</span>`;

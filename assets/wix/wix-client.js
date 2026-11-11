@@ -46,8 +46,17 @@ async function mintToken(body) {
   };
 }
 
+// Snelheid: als meerdere scripts tegelijk een token vragen, wordt er maar één keer een token opgehaald.
+let tokenPromise = null;
+function getAccessToken() {
+  const cached = loadToken();
+  if (cached && cached.expiresAt > Date.now() + 60_000) return Promise.resolve(cached.accessToken);
+  if (!tokenPromise) tokenPromise = fetchAccessToken().finally(() => { tokenPromise = null; });
+  return tokenPromise;
+}
+
 // Persist the refresh token and refresh on expiry instead of re-minting a new anonymous visitor.
-async function getAccessToken() {
+async function fetchAccessToken() {
   const cached = loadToken();
   if (cached && cached.expiresAt > Date.now() + 60_000) return cached.accessToken;
 

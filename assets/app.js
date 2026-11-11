@@ -329,11 +329,20 @@
     // klantlogo's in de scrollbalk alvast laden, zodat er geen lege plekken ontstaan
     document.querySelectorAll('.marquee img[loading="lazy"]').forEach(function(i){ i.loading='eager'; });
     // video in de hero pas starten als de pagina klaar is
-    document.querySelectorAll('video[data-defer]').forEach(function(v){
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      v.muted=true; v.preload='auto'; v.autoplay=true;
-      var p=v.play(); if(p&&p.catch) p.catch(function(){});
-    });
+    var vids=document.querySelectorAll('video[data-defer]');
+    if (!vids.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function play(){
+      vids.forEach(function(v){
+        v.muted=true; v.preload='auto'; v.autoplay=true;
+        var p=v.play(); if(p&&p.catch) p.catch(function(){});
+      });
+    }
+    // Op mobiel en tablet (mobiele data) pas starten zodra de bezoeker iets doet: tot dan staat de stilstaande poster er.
+    if (window.innerWidth < 1024) {
+      var evs=['scroll','touchstart','pointerdown','keydown'], done=false;
+      var once=function(){ if(done) return; done=true; evs.forEach(function(e){ window.removeEventListener(e,once); }); play(); };
+      evs.forEach(function(e){ window.addEventListener(e,once,{passive:true}); });
+    } else play();
   }
   function go(){ setTimeout(function(){ ('requestIdleCallback' in window) ? requestIdleCallback(later,{timeout:2000}) : later(); }, 600); }
   if (document.readyState==='complete') go(); else window.addEventListener('load', go, {once:true});
