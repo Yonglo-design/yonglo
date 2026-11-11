@@ -9,7 +9,7 @@ import { img, inTaal as projectInTaal } from "../assets/projecten.js";
 import { siteOrigin } from "./paginas";
 
 // Oude adressen van yonglo.com waarvan de naam nu iets anders is.
-const ALIASES: Record<string, string> = { "e-boekhouden.nl": "e-boekhouden" };
+const ALIASES: Record<string, string> = { "e-boekhouden.nl": "e-boekhouden", "anthropic-ai-modellen-integratie": "anthropic" };
 
 async function wixData(path: string, body: unknown) {
   const res = await fetchWithAuth(`https://www.wixapis.com/wix-data/v2/${path}`, {

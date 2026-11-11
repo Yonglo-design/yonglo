@@ -1,0 +1,9 @@
+---
+// Regiopagina Nederland op /wix-website/<plaats> (CMS-collectie LandingNl).
+// Inhoud uit het Wix CMS; zie src/regio.ts, assets/regio.js en src/components/RegioPagina.astro.
+import RegioPagina from "../../components/RegioPagina.astro";
+import { laadRegio } from "../../regio";
+const d = await laadRegio(Astro, "nl");
+if (d.redirect) return Astro.redirect(d.redirect, 301);
+---
+<RegioPagina d={d} />

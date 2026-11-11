@@ -107,8 +107,8 @@ export async function laadHelpDocs(Astro: AstroGlobal): Promise<HelpDocsData> {
     // Oud adres van de vorige Wix-site (bijv. /help-docs/smart-cookie-popup-for-wix/gdpr-compliance of met haakjes en komma's)
     const oud = app.docs.find((d: any) => oudeSlug(d) === slugParam.toLowerCase());
     if (oud) return { ...leeg, redirect: docUrl(oud) };
-    Astro.response.status = 404;
-    return { ...leeg, apps, app, title: "Page not found | Yonglo help docs" };
+    // Artikel bestaat niet (meer), bijvoorbeeld een oud adres: door naar het overzicht van de app.
+    return { ...leeg, redirect: appUrl(app.app) };
   }
   const doc = app.docs[i];
   const r = renderContent({ title: doc.title, richContent: doc.richcontent });

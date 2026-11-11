@@ -95,6 +95,13 @@ op een Astro-site.
   (`src/helpdocs.ts`, `src/components/HelpDocs.astro`, `assets/helpdocs.js`; de tekst wordt omgezet met `assets/blog.js`).
   Een artikel met de status Draft in het CMS is niet zichtbaar. Introtekst en App Market-link per app: `APPS` in
   `assets/helpdocs.js`. (Op 11-11-2026 overgezet vanaf de oude site "Yonglo (oud)".)
+- **Regiopagina's (werkgebied)** staan in de CMS-collecties **LandingNl** (`/wix-website/<plaats>`), **LandingBe**
+  (`/wix-websites/<plaats>`, u-vorm), **LandingEurope** (`/wix-expert/<land>`, Engels) en **LandingCities**
+  (`/wix-design-development/<stad>`, Engels). Overzichten: `/wix-website` (NL/BE) en `/wix-expert` (Europa).
+  Code: `src/regio.ts`, `assets/regio.js` (ook de vaste teksten tussen de CMS-velden), `src/components/RegioPagina.astro`.
+  Een nieuwe plaats = een nieuw item met een `slug` in de juiste collectie. Oude adressen van de vorige sites
+  (`/landing-europe/…`, `/wix/<plaats>`, `/projecten/…`, `/blog/…`, `/en/…`) sturen door; zie ook `src/oude-projecten.ts`
+  en `OUDE_ADRESSEN` in `astro.config.mjs`.
 - Blogberichten staan in **Wix Blog van deze site** (Wix-dashboard → Blog). Schrijven, aanpassen
   en een categorie kiezen (Yonglo, Projecten, Wix of AI = de filterknoppen) doe je daar; het staat
   dan meteen op `nieuws.html`, de homepage en in de zoekfunctie, zonder te publiceren.

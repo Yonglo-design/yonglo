@@ -1,0 +1,6 @@
+---
+// Oud adres /en/projecten/<naam>: door naar /en/project/<naam> of het Engelse portfolio.
+import { oudProject } from "../../../oude-projecten";
+const slug = String(Astro.params.pad || "").split("/")[0];
+return Astro.redirect(slug ? oudProject(slug, true) || `/en/project/${slug}` : "/en/portfolio", 301);
+---

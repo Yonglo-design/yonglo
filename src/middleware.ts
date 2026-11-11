@@ -19,7 +19,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // Gewone pagina's (/, /webdesign, /en, /en/webdesign …) hebben hun eigen titel, omschrijving en canonical al in de HTML.
   const naam = path.replace(/^\/|\/$/g, "");
   const pagina = naam === "" || naam === "en" || PAGINAS.includes(naam) || (naam.startsWith("en/") && PAGINAS_EN.includes(naam.slice(3)));
-  if (!pagina && !path.startsWith("/post/") && !/^(\/en)?\/(project|wix-koppeling)\//.test(path) && !/^\/help-docs(\/|$)/.test(path)) return response;
+  if (!pagina && !path.startsWith("/post/") && !/^(\/en)?\/(project|wix-koppeling)\//.test(path) && !/^\/(help-docs|wix-website|wix-websites|wix-expert|wix-design-development)(\/|$)/.test(path)) return response;
   if (!(response.headers.get("content-type") || "").includes("text/html")) return response;
 
   const html = await response.text();

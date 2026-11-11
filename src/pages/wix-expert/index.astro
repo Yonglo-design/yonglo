@@ -1,0 +1,7 @@
+---
+// Regions (Engels): alle landen- en stedenpagina's in Europa.
+import RegioPagina from "../../components/RegioPagina.astro";
+import { laadOverzicht } from "../../regio";
+const d = await laadOverzicht(Astro, true);
+---
+<RegioPagina d={d} />

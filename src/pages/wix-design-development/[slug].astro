@@ -1,0 +1,9 @@
+---
+// Stedenpagina (Engels) op /wix-design-development/<stad> (CMS-collectie LandingCities).
+// Inhoud uit het Wix CMS; zie src/regio.ts, assets/regio.js en src/components/RegioPagina.astro.
+import RegioPagina from "../../components/RegioPagina.astro";
+import { laadRegio } from "../../regio";
+const d = await laadRegio(Astro, "stad");
+if (d.redirect) return Astro.redirect(d.redirect, 301);
+---
+<RegioPagina d={d} />

@@ -59,7 +59,10 @@ if (process.argv.includes("--na-build")) {
   const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]", "/[pagina]", "/[pagina].html",
     "/en/project", "/en/project/[slug]", "/en/[pagina]", "/en/[pagina].html",
     "/wix-koppeling", "/wix-koppeling/[slug]", "/en/wix-koppeling", "/en/wix-koppeling/[slug]",
-    "/help-docs/[app]", "/help-docs/[app]/[slug]", "/en/help-docs/[...pad]"];
+    "/help-docs/[app]", "/help-docs/[app]/[slug]", "/en/help-docs/[...pad]",
+    "/wix-website/[slug]", "/wix-websites", "/wix-websites/[slug]", "/wix-expert/[slug]", "/wix-design-development", "/wix-design-development/[slug]",
+    "/landing-europe/[...pad]", "/wix/[slug]", "/en/wix-website/[...pad]", "/en/wix-websites/[...pad]", "/en/wix-expert/[...pad]",
+    "/en/wix-design-development/[...pad]", "/projecten/[...pad]", "/en/projecten/[...pad]", "/blog/[...pad]", "/en/blog/[...pad]", "/en/post/[...pad]"];
   const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
   const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
   for (const page of own) add(page.path);
@@ -150,13 +153,34 @@ if (process.argv.includes("--na-build")) {
     } while (cursor);
     if (h) add("/help-docs");
     console.log(`${h} help-artikelen toegevoegd aan de paginalijst.`);
+
+    // Regiopagina's (werkgebied): Nederland, België, Europese landen en steden.
+    const REGIO = [["LandingNl", "/wix-website"], ["LandingBe", "/wix-websites"], ["LandingEurope", "/wix-expert"], ["LandingCities", "/wix-design-development"]];
+    let r = 0;
+    for (const [col, basis] of REGIO) {
+      cursor = null;
+      do {
+        const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+          body: JSON.stringify({ dataCollectionId: col, query: cursor ? { cursorPaging: { limit: 100, cursor } } : { cursorPaging: { limit: 100 } } }),
+        });
+        if (!res.ok) throw new Error(`Wix Data (${col}) ${res.status}`);
+        const d = await res.json();
+        for (const item of d.dataItems || []) if (item.data?.slug) { add(`${basis}/${encodeURIComponent(item.data.slug)}`); r++; }
+        cursor = d.pagingMetadata?.cursors?.next || null;
+      } while (cursor);
+    }
+    add("/wix-website");
+    add("/wix-expert");
+    console.log(`${r} regiopagina's toegevoegd aan de paginalijst.`);
   } catch (err) {
     console.warn(`Let op: projecten, koppelingen of help docs konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
   }
 
   mkdirSync(dirname(built), { recursive: true });
   writeFileSync(built, JSON.stringify(list));
-  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/(project|wix-koppeling|help-docs)\//.test(x.path)).map((x) => x.path).join(", ")} + projecten, koppelingen en help docs).`);
+  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/(project|wix-koppeling|help-docs|wix-website|wix-websites|wix-expert|wix-design-development)\//.test(x.path)).map((x) => x.path).join(", ")} + projecten, koppelingen, help docs en regiopagina's).`);
   process.exit(0);
 }
 

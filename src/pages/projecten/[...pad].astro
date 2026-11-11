@@ -1,0 +1,6 @@
+---
+// Oud adres /projecten/<naam> (eerdere versie van yonglo.com): door naar /project/<naam> of het portfolio.
+import { oudProject } from "../../oude-projecten";
+const slug = String(Astro.params.pad || "").split("/")[0];
+return Astro.redirect(slug ? oudProject(slug) || `/project/${slug}` : "/portfolio", 301);
+---
