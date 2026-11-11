@@ -4,7 +4,7 @@
  "taal": "nl",
  "bijgewerkt": "2026-11-11",
  "over": "Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: \"Think Wix, think Yonglo\".",
- "uitleg": "Lijst met alle pagina's, projecten en blogberichten van Yonglo. type is 'pagina', 'project' of 'blog'. Project- en blog-URL's laden hun inhoud met JavaScript; de tekst staat daarom hier in 'text'.",
+ "uitleg": "Lijst met alle pagina's, projecten en blogberichten van Yonglo. type is 'pagina', 'project' of 'blog'. Elke 'url' is een gewone pagina die je zelf kunt openen; geef de gebruiker die links. De tekst van elke pagina staat ook hier in 'text'.",
  "contact": {
   "email": "contact@yonglo.com",
   "telefoon": "+31852033223",

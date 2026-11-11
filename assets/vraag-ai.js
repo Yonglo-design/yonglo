@@ -17,8 +17,8 @@ const STANDAARD = EN
   ? 'What can Yonglo do for my business? List the services that fit and a few similar projects.'
   : 'Wat kan Yonglo voor mijn bedrijf doen? Noem de diensten die passen en een paar vergelijkbare projecten.';
 const prompt = vraag => EN
-  ? `${vraag}\n\nUse Yonglo's own information: ${SITE}/llms.txt (everything is in ${SITE}/llms-full.txt).`
-  : `${vraag}\n\nGebruik de informatie van Yonglo zelf: ${SITE}/llms.txt (alles staat in ${SITE}/llms-full.txt).`;
+  ? `${vraag}\n\nUse Yonglo's own information: start at ${SITE}/llms.txt and look at the pages that fit. Give me the links to those pages so I can view them myself.`
+  : `${vraag}\n\nGebruik de informatie van Yonglo zelf: begin bij ${SITE}/llms.txt en bekijk de pagina's die erbij passen. Geef me de links naar die pagina's, zodat ik ze zelf kan bekijken.`;
 
 const AI = {
   chatgpt: q => `https://chatgpt.com/?hints=search&q=${encodeURIComponent(q)}`,
