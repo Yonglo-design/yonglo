@@ -57,7 +57,8 @@ if (process.argv.includes("--na-build")) {
   // Doorverwijzingen (/post, /project, oude adressen) horen niet in de sitemap. De projectroute
   // /project/[slug] ook niet als patroon: Wix kent geen projecten, dus de echte adressen komen hieronder.
   const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]", "/[pagina]", "/[pagina].html",
-    "/en/project", "/en/project/[slug]", "/en/[pagina]", "/en/[pagina].html"];
+    "/en/project", "/en/project/[slug]", "/en/[pagina]", "/en/[pagina].html",
+    "/wix-koppeling", "/wix-koppeling/[slug]", "/en/wix-koppeling", "/en/wix-koppeling/[slug]"];
   const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
   const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
   for (const page of own) add(page.path);
@@ -104,13 +105,34 @@ if (process.argv.includes("--na-build")) {
       cursor = d.pagingMetadata?.cursors?.next || null;
     } while (cursor);
     console.log(`${n} projecten toegevoegd aan de paginalijst.`);
+
+    // Koppelingen (/wix-koppeling/<naam>). De Engelse versie alleen als er een Engelse tekst is
+    // (zonder vertaling staat die pagina op noindex).
+    let k = 0;
+    cursor = null;
+    do {
+      const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+        body: JSON.stringify({ dataCollectionId: "Koppelingen", query: cursor ? { cursorPaging: { limit: 100, cursor } } : { cursorPaging: { limit: 100 } } }),
+      });
+      if (!res.ok) throw new Error(`Wix Data (Koppelingen) ${res.status}`);
+      const d = await res.json();
+      for (const item of d.dataItems || []) if (item.data?.slug && item.data?.title) {
+        add(`/wix-koppeling/${encodeURIComponent(item.data.slug)}`);
+        if (item.data.tekstEn) add(`/en/wix-koppeling/${encodeURIComponent(item.data.slug)}`);
+        k++;
+      }
+      cursor = d.pagingMetadata?.cursors?.next || null;
+    } while (cursor);
+    console.log(`${k} koppelingen toegevoegd aan de paginalijst.`);
   } catch (err) {
-    console.warn(`Let op: projecten konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
+    console.warn(`Let op: projecten of koppelingen konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
   }
 
   mkdirSync(dirname(built), { recursive: true });
   writeFileSync(built, JSON.stringify(list));
-  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/project\//.test(x.path)).map((x) => x.path).join(", ")} + projecten).`);
+  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/(project|wix-koppeling)\//.test(x.path)).map((x) => x.path).join(", ")} + projecten en koppelingen).`);
   process.exit(0);
 }
 

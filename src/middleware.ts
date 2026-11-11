@@ -1,5 +1,5 @@
 // Blogberichten (/post/<naam>) en projecten (/project/<naam>) zetten hun eigen SEO-tags: de blog via
-// de SEO-service van Wix (gemarkeerd met wix-seo-tags="true"), projecten zelf (data-eigen-seo).
+// de SEO-service van Wix (gemarkeerd met wix-seo-tags="true"), projecten en koppelingen zelf (data-eigen-seo).
 // Wix voegt daarnaast standaardtags toe voor een pagina die het niet kent (gemarkeerd met
 // wix-seo-tag="true", zoals de titel "Post | Yonglo"). Twee titels en twee canonicals zijn slecht voor
 // SEO, dus op deze pagina's halen we die standaardtags weg zolang de echte er staan. Dat geldt ook voor de
@@ -19,7 +19,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // Gewone pagina's (/, /webdesign, /en, /en/webdesign …) hebben hun eigen titel, omschrijving en canonical al in de HTML.
   const naam = path.replace(/^\/|\/$/g, "");
   const pagina = naam === "" || naam === "en" || PAGINAS.includes(naam) || (naam.startsWith("en/") && PAGINAS_EN.includes(naam.slice(3)));
-  if (!pagina && !path.startsWith("/post/") && !/^(\/en)?\/project\//.test(path)) return response;
+  if (!pagina && !path.startsWith("/post/") && !/^(\/en)?\/(project|wix-koppeling)\//.test(path)) return response;
   if (!(response.headers.get("content-type") || "").includes("text/html")) return response;
 
   const html = await response.text();

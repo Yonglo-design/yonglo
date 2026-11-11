@@ -1,0 +1,78 @@
+---
+// De HTML van een koppelingspagina. De gegevens komen uit src/koppeling.ts (laadKoppeling);
+// gebruikt door src/pages/wix-koppeling/[slug].astro en src/pages/en/wix-koppeling/[slug].astro.
+import type { KoppelingData } from "../koppeling";
+import config from "../../wix.config.json";
+
+interface Props { d: KoppelingData }
+const { d } = Astro.props;
+const EN = d.en;
+const T = (nl: string, en: string) => (EN ? en : nl);
+const PRE = EN ? "/en" : "";
+const k = d.k;
+---
+<!doctype html>
+<html lang={EN ? "en" : "nl"}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-eigen-seo>{d.title}</title>
+{k ? <>
+<meta name="description" content={d.desc} data-eigen-seo>
+<meta name="robots" content={d.noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1"}>
+<link rel="canonical" href={d.canonical} data-eigen-seo>
+{d.hreflang.map((h) => <link rel="alternate" hreflang={h.lang} href={h.href}>)}
+<meta property="og:site_name" content="Yonglo">
+<meta property="og:locale" content={EN ? "en_GB" : "nl_NL"}>
+<meta property="og:type" content="website">
+<meta property="og:title" content={d.title.replace(/ \| Yonglo$/, "")}>
+<meta property="og:description" content={d.desc}>
+<meta property="og:url" content={d.url}>
+{d.ogImg && <meta property="og:image" content={d.ogImg}>}
+<meta name="twitter:card" content="summary">
+{d.jsonld.map((j) => <script type="application/ld+json" set:html={j} />)}
+</> : <meta name="robots" content="noindex">}
+<meta name="theme-color" content="#0E0F1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-20%20-8%20118%20118%22%3E%3Crect%20x%3D%22-20%22%20y%3D%22-8%22%20width%3D%22118%22%20height%3D%22118%22%20rx%3D%2228%22%20fill%3D%22%23325FFC%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M61.4%2C5.1h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C5.7-1.5%2C15.4-11.2%2C15.4s-11.3-8.4-11.3-15.4V6.5c0-.8-.6-1.4-1.4-1.4h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C15.4%2C7.3%2C26.5%2C19.6%2C30v22.8c0%2C.8.6%2C1.4%2C1.4%2C1.4h13.8c.8%2C0%2C1.4-.6%2C1.4-1.4v-22.8c12.3-3.6%2C19.6-14.6%2C19.6-30V6.5c0-.8-.6-1.4-1.4-1.4Z%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://static.wixstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<link rel="stylesheet" href="/assets/footer.css">
+<link rel="stylesheet" href="/assets/page.css">
+<link rel="stylesheet" href="/assets/project.css">
+<link rel="stylesheet" href="/assets/koppeling.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Yonglo voor AI-assistenten (llms.txt)">
+<script is:inline id="wix-site-script" src="https://manage.wix.com/_api/headless-business-setup/v1/headless-business/site-script.js" data-client-id={config.appId} async></script>
+</head>
+<body class="page-sub">
+<a class="skip" href="#main">{T("Naar inhoud", "Skip to content")}</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hdr" id="top" data-header></header>
+<script is:inline src="/assets/header.js"></script>
+
+{k ? (
+<main id="main" class="koppeling" set:html={d.html} />
+) : (
+<main id="main" class="koppeling">
+<section class="hero sub-hero pj-hero dark"><div class="blob b1"></div><div class="dots"></div>
+  <div class="wrap pj-missing"><nav class="crumbs" aria-label={T("Kruimelpad", "Breadcrumb")}><a href={PRE || "/"}>Home</a><span>/</span><a href={`${PRE}/api`}>{T("API koppelingen", "API integrations")}</a></nav>
+  {d.failed ? <h1>{T("De koppeling kon niet worden geladen.", "The integration could not be loaded.")}</h1> : <h1>{T("Deze koppeling bestaat niet (meer).", "This integration does not exist (any more).")}</h1>}
+  <p class="lead">{d.failed ? T("Ververs de pagina of probeer het later nog eens.", "Refresh the page or try again later.") : T("Bekijk alle koppelingen die we bouwen.", "See all the integrations we build.")}</p>
+  <a href={`${PRE}/api#koppelingen`} class="btn btn-primary">{T("Alle koppelingen", "All integrations")} <i class="arr">→</i></a></div></section>
+</main>
+)}
+
+<footer class="fd" data-footer></footer>
+
+<div class="mobbar"><a href="tel:+31852033223">{T("Bel", "Call")}</a><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a><a href="#contact" class="hl">{T("Kennismaken", "Get in touch")}</a></div>
+<a href="https://wa.me/31638148565" class="float-wa" target="_blank" rel="noopener">{T("Vragen? App ons", "Questions? Message us")}</a>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script is:inline src="/assets/app.js?v=4" defer></script>
+<script is:inline src="/assets/footer.js" defer></script>
+<script is:inline src="/assets/page.js" defer></script>
+</body>
+</html>

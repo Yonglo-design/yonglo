@@ -81,6 +81,14 @@ op een Astro-site.
   inhoud en de SEO-tags (titel, omschrijving, deelafbeelding uit het project zelf) staan in de HTML.
   Oude adressen (`project.html?p=…`, en vier oude projectnamen) sturen door naar het nieuwe adres.
   Nieuwe projecten komen bij de volgende publicatie in de sitemap.
+- **Koppelingen** (API-integraties zoals Moneybird, Mollie, HubSpot) staan in de CMS-collectie **Koppelingen**
+  (Wix-dashboard → CMS → Koppelingen) en elk op `/wix-koppeling/<slug>`, hetzelfde adres als op de oude yonglo.com.
+  Wix bouwt die pagina op de server (`src/pages/wix-koppeling/[slug].astro`, gegevens uit `src/koppeling.ts`,
+  opmaak uit `assets/koppelingen.js` en `src/components/KoppelingPagina.astro`). Het overzicht met filterknoppen
+  staat op `/api#koppelingen` (`assets/koppelingen-lijst.js`; de vaste tegels in `api.html` zijn alleen een terugval).
+  Projecten op een koppelingspagina: wat in het CMS bij "Projecten met deze koppeling" is aangevinkt, plus projecten
+  waarvan de tekst de naam van de koppeling noemt. Engels: velden `kopEn`, `tekstEn`, `metabeschrijvingEn`; zonder
+  `tekstEn` toont `/en/wix-koppeling/<slug>` de Nederlandse tekst en staat die pagina op noindex.
 - Blogberichten staan in **Wix Blog van deze site** (Wix-dashboard → Blog). Schrijven, aanpassen
   en een categorie kiezen (Yonglo, Projecten, Wix of AI = de filterknoppen) doe je daar; het staat
   dan meteen op `nieuws.html`, de homepage en in de zoekfunctie, zonder te publiceren.

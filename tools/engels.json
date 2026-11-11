@@ -1393,5 +1393,15 @@
  "✦ 24/7 assistent": "✦ 24/7 assistant",
  "✦ Concept": "✦ Concept",
  "✦ Zichtbaar in ChatGPT": "✦ Visible in ChatGPT",
- "🍪 Wij gebruiken cookies": "🍪 We use cookies"
+ "🍪 Wij gebruiken cookies": "🍪 We use cookies",
+ "{1}+ 1000 meer{/1}": "{1}+ 1000 more{/1}",
+ "Alle {1}koppelingen{/1}.": "All {1}integrations{/1}.",
+ "Een greep uit de systemen die we al aan Wix hebben gekoppeld. Kies een koppeling en lees wat die voor jouw website kan doen.": "A selection of the systems we have already connected to Wix. Pick an integration and read what it can do for your website.",
+ "{1}{2}{3/}{/2}{4}{5/}{6}Boekhouding{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}Accounting{/6}{/4}{7}→{/7}{/1}",
+ "{1}{2}{3/}{/2}{4}{5/}{6}Betalingen{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}Payments{/6}{/4}{7}→{/7}{/1}",
+ "{1}{2}{3/}{/2}{4}{5/}{6}Vastgoed &amp; verhuur{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}Real estate &amp; rentals{/6}{/4}{7}→{/7}{/1}",
+ "{1}{2}{3/}{/2}{4}{5/}{6}CRM &amp; marketing{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}CRM &amp; marketing{/6}{/4}{7}→{/7}{/1}",
+ "{1}{2}{3/}{/2}{4}{5/}{6}AI{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}AI{/6}{/4}{7}→{/7}{/1}",
+ "{1}{2}{3/}{/2}{4}{5/}{6}Samenwerking &amp; data{/6}{/4}{7}→{/7}{/1}": "{1}{2}{3/}{/2}{4}{5/}{6}Collaboration &amp; data{/6}{/4}{7}→{/7}{/1}",
+ "Filter op categorie": "Filter by category"
 }

@@ -2,7 +2,7 @@
 
 > Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
 
-Dit bestand bevat alle tekst van https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com (bijgewerkt op 2026-11-11): 18 pagina's, 52 projecten en 33 blogberichten. Een korter overzicht staat in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/llms.txt, gestructureerde data in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/zoekindex.json.
+Dit bestand bevat alle tekst van https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com (bijgewerkt op 2026-11-11): 18 pagina's, 25 koppelingen, 52 projecten en 33 blogberichten. Een korter overzicht staat in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/llms.txt, gestructureerde data in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/zoekindex.json.
 
 ## Contact
 
@@ -1554,11 +1554,490 @@ Plan een adviesgesprek → Development
 
 - + 1000 meer
 
+##### Alle koppelingen.
+
+Een greep uit de systemen die we al aan Wix hebben gekoppeld. Kies een koppeling en lees wat die voor jouw website kan doen.
+
+MoneybirdBoekhouding Exact OnlineBoekhouding e-Boekhouden.nlBoekhouding MollieBetalingen RealworksVastgoed & verhuur HubSpotCRM & marketing MailchimpCRM & marketing Rabobank SmartpayBetalingen AFASBoekhouding VismaBoekhouding BloxsVastgoed & verhuur SalesforceCRM & marketing ActiveCampaignCRM & marketing IntercomCRM & marketing ChargebeeBetalingen CryptopayBetalingen ChatGPTAI Claude (Anthropic)AI AirbnbVastgoed & verhuur My TouristVastgoed & verhuur Microsoft TeamsSamenwerking & data SlackSamenwerking & data Google CalendarSamenwerking & data Google SheetsSamenwerking & data Google MapsSamenwerking & data
+
 ##### Klaar om jouw systemen slimmer te verbinden?
 
 Wij denken graag met je mee over de mogelijkheden. Plan een vrijblijvend adviesgesprek. Liever direct contact? App of bel ons.
 
 E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
+
+## Koppelingen
+
+### Moneybird
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/moneybird
+Categorie: Boekhouding
+
+Automatiseer je boekhouding met een Moneybird-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je administratie voor automatische facturatie, klantdata en realtime financiële inzichten.
+
+Automatiseer je boekhouding met een Moneybird-integratie op je Wix-website
+
+Wil je tijd besparen en je boekhouding eenvoudiger maken? Door Moneybird te koppelen aan je Wix-website via Yonglo automatiseer je je financiële administratie. Met een directe integratie via de Moneybird API en Velo by Wix worden belangrijke gegevens automatisch gesynchroniseerd – van klantaanmaak en facturatie tot productinformatie en voorraadbeheer.
+Na elke online aankoop kunnen automatisch facturen worden aangemaakt en verstuurd, klanten worden toegevoegd aan je administratie, en producten worden bijgewerkt in zowel je webshop als je boekhoudsysteem. Zo blijft je administratie altijd actueel zonder handmatige invoer, en voorkom je fouten.
+Met een op maat gemaakte koppeling via Yonglo automatiseer je terugkerende taken zoals het verzenden van betalingsherinneringen, het beheren van klantdata en het genereren van rapporten – allemaal direct vanuit je website.
+Voordelen van een Moneybird-Wix integratie via Yonglo:
+ - Automatische synchronisatie van klanten, producten, facturen en voorraad
+ - Geen dubbele invoer, minder fouten en meer overzicht
+ - Automatisch factureren na bestellingen via je website
+ - Slimme automatisering van herinneringen en administratieve taken
+ - Realtime inzicht in je financiële status en cashflow
+Laat je boekhouding met je meewerken, niet tegenwerken. Kies voor een efficiënte en betrouwbare Moneybird-integratie op je Wix-site met behulp van Yonglo, en focus op het laten groeien van je bedrijf in plaats van op administratief werk.
+
+### Exact Online
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/exact
+Categorie: Boekhouding
+
+Koppel Exact Online aan je Wix-website voor geautomatiseerde administratie en efficiëntere processen
+
+Wil je je financiële administratie optimaliseren en je bedrijfsprocessen stroomlijnen? Met een koppeling tussen je Wix-website en Exact Online via Yonglo automatiseer je belangrijke taken zoals klantaanmaak, orderverwerking, facturatie en voorraadbeheer. Dankzij een krachtige integratie via de Exact Online API en Velo by Wix worden gegevens realtime gesynchroniseerd tussen je webshop en je administratie.
+Deze integratie elimineert dubbele invoer in meerdere systemen, waardoor je tijd bespaart en fouten voorkomt. Je klantenbestand blijft automatisch up-to-date, je hebt altijd inzicht in je financiële situatie, en facturen kunnen direct na een online aankoop automatisch worden aangemaakt.
+Met een op maat gemaakte Exact Online-koppeling via Yonglo haal je het maximale uit je digitale bedrijfsvoering. Wij zorgen dat de integratie perfect aansluit op jouw specifieke werkprocessen.
+Voordelen van een Exact Online-Wix integratie via Yonglo:
+ - Automatische synchronisatie van klanten, bestellingen, facturen en voorraad
+ - Geen dubbele invoer meer, minder fouten, meer tijdwinst
+ - Realtime inzicht in je administratie en financiële status
+ - Volledige automatisering van het facturatieproces
+ - Geschikt voor zowel B2B als B2C webshops
+Maak je bedrijfsvoering slimmer en efficiënter met een professionele Exact Online-integratie op je Wix-website. Laat Yonglo je helpen om je administratie te automatiseren, zodat jij je kunt focussen op het laten groeien van je bedrijf.
+
+### e-Boekhouden.nl
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/e-boekhouden
+Categorie: Boekhouding
+
+Koppel e-Boekhouden.nl aan je Wix-website voor geautomatiseerde administratie en meer efficiëntie
+
+Wil je tijd besparen en je financiële administratie eenvoudiger maken? Met een e-Boekhouden.nl-integratie via Yonglo koppel je je Wix-website rechtstreeks aan je boekhoudsoftware. Dankzij een naadloze koppeling via de e-Boekhouden API en Velo by Wix worden belangrijke gegevens automatisch gesynchroniseerd – zonder handmatig werk.
+Denk aan het automatisch aanmaken van klantgegevens, het genereren van facturen na een online bestelling, en het bijwerken van product- of service-informatie. Zo blijft je boekhouding altijd accuraat en up-to-date, terwijl je het risico op fouten minimaliseert en dubbele invoer voorkomt.
+Met een op maat gemaakte koppeling via Yonglo automatiseer je ook het versturen van betalingsherinneringen, en houd je eenvoudig overzicht over je inkomsten en uitgaven. Alles verloopt soepel en efficiënt, direct vanuit je eigen website.
+Voordelen van een e-Boekhouden.nl-Wix integratie via Yonglo:
+ - Automatische synchronisatie van klanten, bestellingen, facturen en producten
+ - Geen handmatige invoer in meerdere systemen
+ - Altijd inzicht in je actuele financiële status
+ - Volledige automatisering van facturatie en herinneringen
+ - Efficiënt boekhouden, volledig geïntegreerd met je website
+Laat e-Boekhouden.nl perfect samenwerken met je Wix-website. Met een slimme integratie van Yonglo automatiseer je je administratie en creëer je meer tijd om je te focussen op het laten groeien van je onderneming.
+
+### Mollie
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/mollie
+Categorie: Betalingen
+
+Verwerk veilige betalingen op je Wix-website met Mollie. Yonglo, dé Wix-specialist, realiseert standaard én maatwerk Mollie-integraties voor iDEAL, creditcards en andere betaalmethoden.
+
+Verwerk veilige betalingen op je Wix-website met Mollie – standaard of volledig op maat
+
+Wil je snel en veilig betalingen verwerken op je Wix-website? Met Mollie bied je klanten een soepel afrekenproces via populaire betaalmethoden zoals iDEAL, creditcards, PayPal en meer. Voor Wix Stores is er een uitstekende standaardintegratie beschikbaar, waarmee je direct aan de slag kunt in je webshop. Perfect voor de meeste webwinkels die een betrouwbare en gebruiksvriendelijke betaaloplossing zoeken.
+Heb je echter een op maat gemaakte website – bijvoorbeeld een boekingsplatform, lidmaatschapssysteem of aangepaste abonnementsstructuur – dan biedt Yonglo de oplossing. Via de Mollie API en Velo by Wix realiseren we een directe, flexibele integratie die volledig aansluit op jouw specifieke betalingsbehoeften.
+Een belangrijk voordeel van een geavanceerde Mollie-integratie is de ondersteuning van terugkerende betalingen en abonnementen, inclusief automatische incasso via iDEAL. Dit maakt het mogelijk om abonnementsmodellen te ondersteunen in uiteenlopende sectoren – van online services tot educatie of ledenplatforms.
+Voordelen van een Mollie-Wix integratie via Yonglo:
+ - Directe ondersteuning voor iDEAL, creditcard, PayPal en meer
+ - Naadloze betalingservaring voor je klanten
+ - Maatwerk betaalflows via Mollie API en Velo by Wix
+ - Ondersteuning voor terugkerende betalingen en abonnementen
+ - Geschikt voor webshops én op maat gemaakte platforms
+Of je nu de standaard Mollie-integratie voor Wix Stores gebruikt of een complexe, op maat gemaakte koppeling nodig hebt: Yonglo zorgt voor een veilige, stabiele en klantvriendelijke betaaloplossing. Laat je klanten eenvoudig en vertrouwd afrekenen via je Wix-website.
+
+### Realworks
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/realworks
+Categorie: Vastgoed & verhuur
+
+Synchroniseer je vastgoedaanbod met je Wix-website dankzij een Realworks-integratie
+
+Wil je je vastgoedbeheer optimaliseren en je aanbod altijd actueel presenteren? Met een Realworks-integratie op je Wix-website via Yonglo automatiseer je de koppeling tussen je vastgoedsoftware en je site. Dankzij een slimme integratie via de Realworks API en Velo by Wix wordt je aanbod automatisch gesynchroniseerd – zonder handmatig werk.
+Woningen, bedrijfspanden en ander vastgoed worden realtime bijgewerkt op je website. Beschrijvingen, foto's, plattegronden, prijzen en beschikbaarheid worden automatisch overgenomen vanuit Realworks. Zo zorg je ervoor dat je bezoekers altijd actuele en complete informatie te zien krijgen, wat de gebruikservaring verbetert én je conversie verhoogt.
+Met een maatwerk Realworks-Wix koppeling via Yonglo bespaar je tijd, voorkom je fouten en werk je efficiënter. Potentiële kopers of huurders kunnen snel en gemakkelijk door je actuele aanbod bladeren, rechtstreeks op je eigen website.
+Voordelen van een Realworks-Wix integratie via Yonglo:
+ - Automatische synchronisatie van objecten, foto's, prijzen en beschikbaarheid
+ - Geen dubbele invoer, altijd actuele gegevens op je website
+ - Professionele vastgoedpresentatie met minimale inspanning
+ - Geschikt voor woningen, bedrijfspanden en projectontwikkelingen
+ - Meer efficiëntie en betere leadgeneratie via je website
+Laat Yonglo een integratie bouwen die perfect aansluit op je Realworks-structuur en jouw wensen voor vastgoedpresentatie. Zo houd je je aanbod up-to-date en geef je je bezoekers een professionele en betrouwbare indruk.
+
+### HubSpot
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/hubspot
+Categorie: CRM & marketing
+
+Koppel HubSpot aan je Wix-website voor slimme marketing, sales en klantenservice
+
+Wil je je marketing, sales en klantenservice automatiseren en naar een hoger niveau tillen? Met een geavanceerde HubSpot-integratie op je Wix-website via Yonglo haal je alles uit je CRM. In plaats van alleen standaard apps te gebruiken, koppelen wij je website direct aan de HubSpot API via Velo by Wix – voor diepere, volledig aangepaste integraties.
+Automatiseer het aanmaken en bijwerken van contactpersonen, bedrijven en deals op basis van het gedrag van bezoekers op je site. Activeer gepersonaliseerde e-mailcampagnes, verzamel data via maatwerkformulieren, en segmenteer je bezoekers automatisch op basis van hun interactie. Alles wordt realtime gesynchroniseerd met je HubSpot CRM, zodat jij altijd met actuele en relevante gegevens werkt.
+Met een op maat gemaakte HubSpot-koppeling via Yonglo bouw je een krachtig, geautomatiseerd systeem dat perfect aansluit op je bedrijfsdoelen. Je optimaliseert klantrelaties, verhoogt conversies en stroomlijnt interne processen – allemaal vanuit één geïntegreerde omgeving.
+Voordelen van een HubSpot-Wix integratie via Yonglo:
+ - Volledige CRM-automatisering met realtime data
+ - Gepersonaliseerde e-mailflows en slimme segmentatie
+ - Directe synchronisatie van formulieren en gebruikersdata
+ - Inzicht in bezoekersgedrag en conversie-optimalisatie
+ - Op maat gemaakte workflows voor marketing en sales
+Laat je Wix-website optimaal samenwerken met HubSpot. Kies voor een slimme integratie via Yonglo en haal het maximale uit je CRM, marketingautomatisering en klantdata.
+
+### Mailchimp
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/mailchimp
+Categorie: CRM & marketing
+
+Automatiseer je e-mailmarketing met een slimme Mailchimp-integratie op je Wix-website
+
+Wil je je e-mailmarketing verbeteren en je communicatie automatiseren? Met een geavanceerde Mailchimp-integratie via Yonglo koppel je je Wix-website rechtstreeks aan de Mailchimp API met behulp van Velo by Wix. Hiermee ga je verder dan de standaardformulier-integraties en krijg je volledige controle over je e-mailcampagnes op basis van gebruikersgedrag op je site.
+Met een maatwerk integratie voeg je automatisch contacten toe aan specifieke lijsten of segmenten, bijvoorbeeld wanneer een bezoeker een product bekijkt, een whitepaper downloadt of een aankoop voltooit. Je kunt dynamische e-mails versturen die zich automatisch aanpassen aan klantgedrag en gesynchroniseerde gegevens uit je Wix-site gebruiken. Denk aan persoonlijke productaanbevelingen, verlaten winkelwagen-herinneringen of follow-ups na downloads.
+Dankzij de flexibiliteit van de Mailchimp API benut je alle mogelijkheden van e-mailautomatisering – afgestemd op jouw unieke marketingstrategie.
+Voordelen van een Mailchimp-Wix integratie via Yonglo:
+ - Automatische segmentatie op basis van website-activiteit
+ - Gepersonaliseerde en dynamische e-mailinhoud
+ - Realtime synchronisatie van klantdata tussen Wix en Mailchimp
+ - Volledige automatisering van je e-mailfunnels
+ - Meer betrokkenheid, hogere conversies en sterkere klantrelaties
+Maak je e-mailmarketing slimmer en effectiever met een op maat gemaakte Mailchimp-integratie via Yonglo. Wij zorgen voor een oplossing die jouw marketingdoelen ondersteunt en perfect aansluit op je Wix-website.
+
+### Rabobank Smartpay
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/smartpay
+Categorie: Betalingen
+
+Koppel Rabobank Smartpay aan je Wix-website voor veilige en vertrouwde online betalingen
+
+Wil je je klanten een veilige en vertrouwde betaalervaring bieden op je Wix-website? Met een integratie van Rabobank Smartpay via Yonglo koppel je eenvoudig diverse populaire betaalmethoden aan je webshop. Dankzij een naadloze koppeling via de Rabobank Smartpay API en Velo by Wix laat je klanten moeiteloos afrekenen via iDEAL, creditcards en andere bekende betaalopties – allemaal rechtstreeks op je eigen site.
+Deze integratie zorgt voor een soepel betaalproces dat bijdraagt aan hogere conversies en klanttevredenheid. De betalingen worden verwerkt via de beveiligde infrastructuur van Rabobank, waardoor je klanten met vertrouwen kunnen afrekenen.
+Kies je voor een Smartpay-integratie via Yonglo, dan kies je voor betrouwbaarheid én maatwerk. Wij zorgen voor een professionele implementatie die past bij de structuur van je Wix-website en jouw specifieke betaalbehoeften.
+Voordelen van Rabobank Smartpay op je Wix-website via Yonglo:
+ - Ondersteuning voor iDEAL, creditcards en meer
+ - Veilig en vertrouwd betaalproces via Rabobank
+ - Hogere conversie door gebruiksvriendelijke checkout
+ - Volledige integratie in je eigen websiteomgeving
+ - Maatwerkoplossing afgestemd op jouw betaalverkeer
+Bied je klanten het gemak van betalen via hun eigen bank met Rabobank Smartpay. Laat Yonglo je helpen bij een solide en veilige integratie op je Wix-website, zodat je zorgeloos online betalingen kunt accepteren.
+
+### AFAS
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/afas-software
+Categorie: Boekhouding
+
+Koppel AFAS Software aan je Wix-website voor geautomatiseerde HR-, boekhoud- en ERP-processen
+
+Wil je je bedrijfsprocessen automatiseren en je administratie stroomlijnen? Met een AFAS Software-integratie via Yonglo koppel je je Wix-website direct aan AFAS voor HR, boekhouding en ERP. Dankzij de koppeling via de AFAS API en Velo by Wix worden personeelsgegevens, klantdata en financiële transacties automatisch gesynchroniseerd.
+Nieuwe medewerkers, klanten of projecten worden direct bijgewerkt in AFAS. Facturen en betalingen worden automatisch verwerkt, en je hebt altijd realtime inzicht in je bedrijfsvoering – zonder handmatig werk of dubbele invoer.
+Voordelen van een AFAS-Wix integratie via Yonglo:
+ - Automatische synchronisatie van HR-, klant- en financiële data
+ - Geen dubbele invoer, minder fouten, meer tijdwinst
+ - Realtime inzicht in je bedrijfsprocessen
+ - Volledige automatisering van facturatie en HR-processen
+ - Op maat gemaakte integratie voor jouw organisatie
+Maak je organisatie efficiënter en toekomstbestendig met een AFAS-integratie op je Wix-website. Laat Yonglo je helpen om je processen te automatiseren en je bedrijf te laten groeien.
+
+### Visma
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/visma
+Categorie: Boekhouding
+
+Koppel Visma aan je Wix-website voor geautomatiseerde administratie en efficiëntere bedrijfsprocessen
+
+Wil je je administratie stroomlijnen en je bedrijfsprocessen optimaliseren? Door Visma-software te koppelen aan je Wix-website via Yonglo automatiseer je de uitwisseling van belangrijke bedrijfsdata. Met een naadloze integratie via de Visma API’s en Velo by Wix koppel je jouw website slim aan de Visma-modules die jij gebruikt – zoals boekhouding, ERP, CRM of projectbeheer.
+Afhankelijk van je systeemstructuur synchroniseren we automatisch gegevens zoals klantinformatie, bestellingen, facturen, voorraadniveaus en projecten. Zo vermijd je dubbele invoer, minimaliseer je fouten en werk je altijd met actuele data – zowel in je Visma-systeem als op je Wix-site.
+Met een Visma-integratie via Yonglo werk je efficiënter in je verkoop, administratie en marketing. Wij zorgen voor een maatwerkoplossing die naadloos aansluit op jouw bedrijfsbehoeften en de functionaliteit van je website.
+Voordelen van een Visma-Wix integratie via Yonglo:
+ - Realtime synchronisatie van klanten, orders, facturen en voorraad
+ - Minder handmatig werk en een lagere foutmarge
+ - Geautomatiseerde administratie en efficiëntere workflows
+ - Volledige integratie met jouw gebruikte Visma-modules
+ - Ondersteuning voor CRM-, ERP- en boekhoudfunctionaliteit
+Haal het maximale uit je Visma-software door het slim te koppelen aan je Wix-website. Laat Yonglo zorgen voor een betrouwbare en krachtige integratie waarmee je processen automatiseert en je bedrijf sneller laat groeien.
+
+### Bloxs
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/bloxs
+Categorie: Vastgoed & verhuur
+
+Koppel Bloxs vastgoedsoftware aan je Wix-website voor efficiënt vastgoedbeheer. Yonglo, dé Wix-specialist, zorgt voor een slimme integratie die je makelaarskantoor tijd bespaart en processen stroomlijnt.
+
+Koppel Bloxs vastgoedsoftware aan je Wix-website voor een efficiënter makelaarskantoor
+
+Wil je de processen binnen je makelaarskantoor stroomlijnen en tijd besparen? Koppel dan je Bloxs vastgoedbeheersoftware aan je Wix-website met behulp van Yonglo. Dankzij onze expertise in API-integraties en Velo by Wix zorgen we voor een automatische synchronisatie van belangrijke vastgoedgegevens zoals objectinformatie, beschikbaarheid, foto's en virtuele rondleidingen – allemaal direct zichtbaar op je website.
+Met deze slimme koppeling hoef je gegevens niet langer handmatig op meerdere platforms in te voeren. Dit vermindert fouten, bespaart je kostbare tijd en zorgt ervoor dat je online aanbod altijd up-to-date en accuraat is. Bezoekers van je website krijgen realtime informatie te zien, inclusief automatisch bijgewerkte objecten die verhuurd of verkocht zijn – wat je conversie kan verhogen.
+Door Bloxs te integreren met je Wix-website verbeter je niet alleen de efficiëntie van je interne processen, maar bied je klanten ook een professionele en soepele online ervaring. Yonglo levert een maatwerkoplossing die volledig is afgestemd op de behoeften van jouw makelaarskantoor.
+Voordelen van de Bloxs-Wix integratie via Yonglo:
+ - Automatische updates van vastgoedobjecten en beschikbaarheid
+ - Geen dubbele invoer, minder fouten, meer tijdwinst
+ - Altijd actuele informatie op je website
+ - Betere klantervaring en hogere conversie
+ - Op maat gemaakte API-integratie voor jouw kantoor
+Laat je vastgoedportfolio eruit springen met een professionele, geautomatiseerde presentatie op je Wix-site. Start vandaag nog met de Bloxs-koppeling via Yonglo en ervaar de voordelen van slimme vastgoedautomatisering.
+
+### Salesforce
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/salesforce
+Categorie: CRM & marketing
+
+Koppel Salesforce aan je Wix-website voor geautomatiseerde leadgeneratie en CRM-synchronisatie
+
+Wil je je sales- en marketingprocessen automatiseren? Met een Salesforce-integratie via Yonglo koppel je je Wix-website direct aan het meest gebruikte CRM ter wereld. Dankzij een naadloze koppeling via de Salesforce API en Velo by Wix worden leads, klantgegevens en interacties automatisch gesynchroniseerd – zonder handmatig werk.
+Leads die via je website binnenkomen, worden direct aangemaakt in Salesforce. Je kunt klantdata realtime bijwerken, gepersonaliseerde e-mailflows activeren en saleskansen automatisch opvolgen. Zo werk je altijd met actuele gegevens en optimaliseer je je conversie.
+Voordelen van een Salesforce-Wix integratie via Yonglo:
+ - Automatische leadgeneratie vanuit je website
+ - Realtime synchronisatie van klantdata
+ - Gepersonaliseerde sales- en marketingflows
+ - Efficiëntere opvolging en hogere conversie
+ - Volledige integratie met je bestaande Salesforce-omgeving
+Laat je Wix-website optimaal samenwerken met Salesforce. Kies voor een slimme integratie via Yonglo en haal het maximale uit je CRM en salesprocessen.
+
+### ActiveCampaign
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/activecampaign
+Categorie: CRM & marketing
+
+Koppel ActiveCampaign aan je Wix-website voor geavanceerde e-mailmarketing en marketingautomatisering. Yonglo, dé Wix-specialist, integreert ActiveCampaign voor realtime segmentatie en gepersonaliseerde campagnes.
+
+Koppel ActiveCampaign aan je Wix-website voor geavanceerde e-mailmarketing en automatisering
+
+Wil je je e-mailmarketing automatiseren en je conversie verhogen? Met een ActiveCampaign-integratie via Yonglo koppel je je Wix-website direct aan een van de krachtigste marketing automation platforms. Dankzij de koppeling via de ActiveCampaign API en Velo by Wix worden contacten, websitegedrag en aankopen automatisch gesynchroniseerd.
+Voeg automatisch nieuwe contacten toe aan specifieke lijsten of segmenten, activeer gepersonaliseerde e-mailflows op basis van websitegedrag en stuur dynamische campagnes die zich aanpassen aan de interesses van je bezoekers. Zo haal je meer uit je marketing en bouw je sterkere klantrelaties op.
+Voordelen van een ActiveCampaign-Wix integratie via Yonglo:
+ - Automatische segmentatie op basis van website-activiteit
+ - Gepersonaliseerde en dynamische e-mailcampagnes
+ - Realtime synchronisatie van klantdata
+ - Volledige automatisering van je marketingfunnels
+ - Meer betrokkenheid en hogere conversies
+Maak je e-mailmarketing slimmer en effectiever met een op maat gemaakte ActiveCampaign-integratie via Yonglo. Wij zorgen voor een oplossing die jouw marketingdoelen ondersteunt en perfect aansluit op je Wix-website.
+
+### Intercom
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/intercom
+Categorie: CRM & marketing
+
+Koppel Intercom aan je Wix-website voor slimme klantcommunicatie en efficiënte support
+
+Wil je je klantcommunicatie verbeteren en je supportprocessen automatiseren? Met een geavanceerde Intercom-integratie via Yonglo verbind je je Wix-website direct met de Intercom API en Velo by Wix. Hiermee ga je verder dan de standaard chatfunctie: je activeert slimme workflows en geautomatiseerde acties op basis van klantinteracties.
+Een krachtig voordeel van deze diepe integratie is het gebruik van "Fin Actions". Hiermee kun je direct vanuit een Intercom-chat automatisch acties uitvoeren op je website. Denk aan het aanpassen van bestellingen, toepassen van kortingen, toevoegen van producten aan het winkelmandje of het starten van specifieke backend-workflows – allemaal zonder handmatig werk. Dit bespaart tijd en maakt je klantenservice veel efficiënter.
+Door Intercom slim te koppelen via Yonglo, verander je je klantenservice van reactief naar proactief. Wij bouwen een maatwerkoplossing die klantinteracties in Intercom direct koppelt aan acties op je Wix-site. Zo reageer je sneller op vragen en bied je een gepersonaliseerde, professionele klantbeleving.
+Voordelen van een Intercom-Wix integratie via Yonglo:
+ - Geavanceerde chatfunctionaliteit met directe websiteacties
+ - Automatische orderaanpassingen, kortingen en producttoevoegingen
+ - Efficiëntere workflows en snellere reactietijden
+ - Gepersonaliseerde support gebaseerd op klantgedrag
+ - Volledige integratie tussen Intercom en je Wix-backend
+Bied je klanten een next-level supportervaring en maak je communicatieproces slimmer met een Intercom-koppeling op maat. Laat Yonglo je helpen om klantinteracties automatisch te vertalen naar directe acties op je Wix-website.
+
+### Chargebee
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/chargebee
+Categorie: Betalingen
+
+Automatiseer je abonnementsbeheer met een slimme Chargebee-Wix integratie. Yonglo, dé Wix-specialist, realiseert een veilige en efficiënte koppeling voor terugkerende betalingen en abonnementen.
+
+Automatiseer je abonnementsbeheer met een Chargebee-Wix integratie
+
+Wil je abonnementen en facturatie efficiënt beheren via je Wix-website? Met een professionele Chargebee-integratie door Yonglo automatiseer je het hele proces. Wij koppelen je Wix-platform naadloos aan de Chargebee API met behulp van Velo by Wix, zodat jij je kunt focussen op je bedrijf in plaats van op administratieve taken.
+Laat klanten eenvoudig hun abonnement beheren via je website, automatiseer terugkerende betalingen, en synchroniseer klant- en abonnementsgegevens automatisch. Deze oplossing is ideaal voor online diensten, lidmaatschappen of producten met periodieke facturatie.
+Dankzij een op maat gemaakte koppeling tussen Chargebee en je Wix-site stroomlijn je niet alleen je financiële processen, maar verbeter je ook de gebruikservaring voor je klanten.
+Voordelen van een Chargebee-Wix integratie via Yonglo:
+ - Volledige automatisering van abonnementsbeheer en facturatie
+ - Klanten beheren hun abonnementen direct via je website
+ - Naadloze synchronisatie van klant- en betalingsgegevens
+ - Minder handmatig werk, minder fouten, meer overzicht
+ - Perfect voor memberships, online diensten en SaaS-producten
+Optimaliseer je terugkerende betalingen en bouw aan een schaalbare abonnementsformule met een betrouwbare Chargebee-integratie. Start vandaag nog met Yonglo en maak je Wix-website klaar voor slimme en geautomatiseerde abonnementenverkoop.
+
+### Cryptopay
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/cryptopay
+Categorie: Betalingen
+
+Accepteer crypto betalingen op je Wix-website met een Cryptopay integratie. Yonglo, dé Wix-specialist, realiseert veilige en flexibele koppelingen voor betalingen met digitale valuta zoals Bitcoin en Ethereum.
+
+Accepteer crypto betalingen op je Wix-website met een Cryptopay integratie
+
+Wil je je betaalopties uitbreiden en inspelen op de groeiende markt van digitale valuta? Met een Cryptopay-integratie op je Wix-website via Yonglo geef je klanten de mogelijkheid om veilig en eenvoudig te betalen met cryptocurrency. Dankzij een naadloze koppeling via de Cryptopay API en Velo by Wix kun je snel crypto betalingen ontvangen voor je producten of diensten.
+Je klanten profiteren van flexibiliteit in hun betaalmethode, terwijl jij transacties direct in verschillende cryptocurrencies kunt ontvangen. Indien gewenst, worden deze automatisch omgezet naar traditionele valuta (fiat). Het betalingsproces is gebruiksvriendelijk en verlaagt de drempel voor klanten die met crypto willen betalen. Je kunt zelfs prijzen weergeven in zowel euro’s als crypto, direct op je site.
+Met een professionele integratie door Yonglo maak je jouw website future-proof en aantrekkelijk voor een wereldwijd publiek dat kiest voor innovatieve betaalmethoden.
+Voordelen van een Cryptopay-Wix integratie via Yonglo:
+ - Accepteer betalingen in populaire cryptocurrencies zoals Bitcoin en Ethereum
+ - Automatische omzetting naar fiat valuta mogelijk
+ - Eenvoudig en veilig betaalproces voor je klanten
+ - Toon prijzen in zowel fiat als crypto
+ - Trek nieuwe doelgroepen aan met moderne betaalopties
+Laat je bedrijf groeien door crypto betalingen te accepteren via je Wix-website. Kies voor een op maat gemaakte Cryptopay-koppeling van Yonglo en bied je klanten een moderne, veilige en flexibele betaalervaring.
+
+### ChatGPT
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/chat-gpt
+Categorie: AI
+
+Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit. Yonglo, dé Wix-specialist, bouwt krachtige koppelingen voor geautomatiseerde content, chatbots en gepersonaliseerde interactie.
+
+Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit
+
+Wil je de kracht van kunstmatige intelligentie benutten op je Wix-website? Met een integratie van ChatGPT of andere OpenAI-modellen via Yonglo voeg je geavanceerde AI-functionaliteit toe die je website slimmer, persoonlijker en efficiënter maakt. Dankzij een robuuste koppeling via de OpenAI API en Velo by Wix kun je taken automatiseren, content personaliseren en intelligente functies inzetten die verder gaan dan standaard webopties.
+De toepassingen zijn eindeloos. Laat bijvoorbeeld AI automatisch ongestructureerde tekst analyseren en databases vullen of optimaliseren. Genereer dynamische rapporten op basis van realtime data. Of verrijk je productinformatie met SEO-geoptimaliseerde AI-gegenereerde teksten. Je kunt zelfs een slimme chatbot inzetten die klantvragen op je website 24/7 beantwoordt.Met een op maat gemaakte ChatGPT-integratie door Yonglo investeer je in innovatie én gebruiksgemak. Wij zorgen voor een oplossing die volledig is afgestemd op jouw doelstellingen.
+Voordelen van een ChatGPT-integratie op je Wix-website via Yonglo:
+ - Slimme automatisering van processen met AI
+ - Gepersonaliseerde content en klantinteracties
+ - Verbeterde SEO met automatisch gegenereerde productomschrijvingen
+ - Intelligente chatbots voor betere klantenservice
+ - Efficiënt beheer van data en content
+Maak je website future-proof met AI-technologie van OpenAI. Start vandaag nog met de ChatGPT-koppeling via Yonglo en til je Wix-website naar een hoger niveau van personalisatie en automatisering.
+
+### Claude (Anthropic)
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/anthropic
+Categorie: AI
+
+Integreer Claude AI van Anthropic in je Wix-website voor slimme en veilige automatisering. Yonglo, expert in Wix-koppelingen, realiseert een krachtige en verantwoorde AI-integratie op maat.
+
+Integreer Claude AI van Anthropic in je Wix-website voor slimme en verantwoorde automatisering
+
+Wil je krachtige kunstmatige intelligentie inzetten op je Wix-website? Met de AI-integratie van Anthropic via Yonglo haal je de geavanceerde Claude-modellen naar je eigen platform. Dankzij de koppeling via de Anthropic API en Velo by Wix kun je moeiteloos gebruikmaken van de taalbegrip- en generatiekracht van Claude AI, afgestemd op de unieke mogelijkheden van Anthropic.
+Anthropic biedt niet alleen vergelijkbare functies als andere AI-providers, maar legt daarnaast de nadruk op veiligheid, betrouwbaarheid en ethiek. Je kunt AI inzetten om je database automatisch te vullen of te optimaliseren, geautomatiseerde rapporten te genereren, en productinformatie te verrijken – allemaal met verantwoorde AI in de kern.
+Ook voor geavanceerde toepassingen zoals tekstsamenvatting, gepersonaliseerde contentcreatie en slimme chatfunctionaliteiten biedt de Claude AI-integratie volop mogelijkheden. Yonglo zorgt voor een naadloze en op maat gemaakte koppeling, zodat je het maximale uit de technologie van Anthropic haalt.
+Waarom Claude AI van Anthropic koppelen aan je Wix-site via Yonglo?
+ - Directe integratie met de Anthropic API en Velo by Wix
+ - Betrouwbare AI-oplossingen met focus op ethiek en veiligheid
+ - Geautomatiseerde processen zoals dataverrijking en rapportage
+ - Verbeterde gebruikerservaring met slimme content en interactie
+ - Maatwerkoplossingen afgestemd op jouw doelen en werkwijze
+Til je Wix-website naar een hoger niveau met de intelligente kracht van Claude AI. Start vandaag nog met de AI-integratie via Yonglo en ervaar de voordelen van verantwoorde, geavanceerde kunstmatige intelligentie.
+
+### Airbnb
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/airbnb
+Categorie: Vastgoed & verhuur
+
+Automatiseer je verhuurbeheer met een directe koppeling tussen Wix en Airbnb. Yonglo, specialist in Wix-integraties, voorkomt dubbele boekingen en houdt je beschikbaarheid realtime up-to-date.
+
+Automatiseer je verhuurbeheer met een directe koppeling tussen Wix en Airbnb
+
+Wil je je verhuurbeheer efficiënter maken? Met een directe koppeling tussen je Wix-website en Airbnb via Yonglo bespaar je tijd en voorkom je dubbele boekingen. Yonglo synchroniseert automatisch je Airbnb-kalender, prijzen en boekingen, zodat je beschikbaarheid altijd actueel is – zonder handmatig werk.
+Dankzij de integratie via de Airbnb API en Velo by Wix kun je aangepaste functies laten bouwen die precies passen bij jouw verhuurstrategie. Denk aan het automatisch overzetten van informatie van je Wix-site naar je Airbnb-advertenties of andersom. Zo bied je je gasten altijd realtime en accurate informatie over je accommodaties.
+Met een naadloze Airbnb-koppeling van Yonglo werk je efficiënter, verminder je administratieve rompslomp en kun je je volledig richten op het verbeteren van de gastervaring en het laten groeien van je verhuurbedrijf.
+Voordelen op een rij:
+ - Automatische synchronisatie van kalender, prijzen en boekingen
+ - Geen dubbele boekingen meer
+ - Minder handmatige updates en minder fouten
+ - Verbeterde gebruikservaring voor je gasten
+ - Meer focus op groei van je verhuuractiviteiten
+Start vandaag nog met het koppelen van je Wix-website aan Airbnb en ervaar het gemak van geautomatiseerd verhuurbeheer met Yonglo.
+
+### My Tourist
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/my-tourist
+Categorie: Vastgoed & verhuur
+
+Beheer al je boekingen centraal met een My Tourist-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je boekingskanalen voor realtime synchronisatie en efficiënt verhuurbeheer.
+
+Beheer al je boekingen centraal met een My Tourist-integratie op je Wix-website
+
+Wil je het beheer van je accommodaties eenvoudiger maken en al je boekingen centraliseren? Koppel dan My Tourist aan je Wix-website via Yonglo. Met een krachtige integratie via de My Tourist API en Velo by Wix benut je de volledige functionaliteit van deze channel manager – rechtstreeks vanuit je eigen website.
+Het grootste voordeel? My Tourist koppelt met populaire boekingsplatforms zoals Booking.com, Airbnb, Expedia en meer. Door My Tourist te integreren met je Wix-site beheer je beschikbaarheid, prijzen en reserveringen vanuit één centrale plek, zonder steeds in te loggen op meerdere platforms.
+Alle gegevens worden automatisch gesynchroniseerd tussen je website en de gekoppelde boekingskanalen. Dit voorkomt dubbele boekingen en zorgt ervoor dat je beschikbaarheid en tarieven altijd actueel zijn – op je Wix-site én op externe platforms. Je kunt bovendien realtime beschikbaarheid tonen op je website, rechtstreeks uit My Tourist.
+Voordelen van een My Tourist-Wix integratie via Yonglo:
+ - Beheer boekingen van meerdere platforms via één dashboard
+ - Automatische synchronisatie van prijzen, beschikbaarheid en reserveringen
+ - Geen dubbele boekingen meer, altijd actuele informatie
+ - Toon realtime beschikbaarheid op je Wix-website
+ - Tijdsbesparing en minder handmatige handelingen
+Laat Yonglo een op maat gemaakte integratie bouwen die de kracht van My Tourist optimaal inzet op je Wix-website. Zo werk je efficiënter, verhoog je je bezettingsgraad en houd je eenvoudig overzicht over al je boekingskanalen. Eén centrale oplossing voor al je accommodatiebeheer.
+
+### Microsoft Teams
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/microsoft-teams
+Categorie: Samenwerking & data
+
+Koppel Microsoft Teams aan je Wix-website voor directe meldingen, efficiënte teamcommunicatie en geautomatiseerd afsprakenbeheer. Yonglo, dé Wix-specialist, integreert Microsoft 365 voor realtime samenwerking en planning.
+
+Koppel Microsoft Teams en Outlook aan je Wix-website voor realtime samenwerking en planning
+
+Wil je je interne communicatie en afsprakenbeheer automatiseren? Met een Microsoft Teams en Outlook-integratie via Yonglo koppel je je Wix-website direct aan Microsoft 365. Ontvang automatische meldingen in Teams bij belangrijke websitegebeurtenissen en synchroniseer afspraken direct met Outlook-agenda’s.
+Denk aan automatische Teams-notificaties bij nieuwe formulierinzendingen, webshopbestellingen of boekingen. Nieuwe afspraken worden direct toegevoegd aan de juiste Outlook-agenda, inclusief automatische bevestigingen en herinneringen voor klanten en medewerkers.
+Voordelen van een Microsoft Teams/Outlook-Wix integratie via Yonglo:
+ - Automatische meldingen van websiteactiviteiten in Teams
+ - Realtime synchronisatie van afspraken met Outlook
+ - Snellere interne communicatie en opvolging
+ - Altijd actuele agenda’s en minder dubbele boekingen
+ - Volledig op maat gemaakte workflows voor jouw organisatie
+Maak je communicatieproces slimmer en je planning efficiënter met een Microsoft 365-integratie voor je Wix-website. Laat Yonglo zorgen voor een doelgerichte koppeling die jouw samenwerking naar een hoger niveau tilt.
+
+### Slack
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/slack
+Categorie: Samenwerking & data
+
+Koppel Slack aan je Wix-website voor directe meldingen en betere teamcommunicatie
+
+Wil je je interne communicatie verbeteren en teamprocessen stroomlijnen? Met een Slack-integratie op je Wix-website via Yonglo ontvang je automatisch meldingen in je Slack-kanalen wanneer er belangrijke acties plaatsvinden op je site. Dankzij de koppeling via de Slack API en Velo by Wix zorg je voor snellere communicatie en efficiënte opvolging binnen je team.
+Denk aan het automatisch ontvangen van Slack-notificaties bij nieuwe formulierinzendingen, webshopbestellingen, afsprakenboekingen of andere specifieke gebruikersacties. Zo blijft je team altijd op de hoogte van wat er gebeurt en kan er direct worden gereageerd op belangrijke gebeurtenissen – zonder dat je constant je inbox hoeft te checken.
+Met een op maat gemaakte Slack-koppeling via Yonglo verstuur je alleen de meldingen die relevant zijn voor jouw workflow. Dit zorgt voor minder afleiding, meer overzicht en een snellere samenwerking.
+Voordelen van een Slack-Wix integratie via Yonglo:
+ - Automatische meldingen van websiteactiviteiten in Slack
+ - Directe updates bij nieuwe formulieren, bestellingen of boekingen
+ - Snellere interne communicatie en opvolging
+ - Volledig op maat gemaakte notificaties per Slack-kanaal
+ - Altijd realtime inzicht in wat er op je website gebeurt
+Maak je communicatieproces slimmer en je team responsiever met een Slack-integratie voor je Wix-website. Laat Yonglo zorgen voor een efficiënte, doelgerichte koppeling die jouw samenwerking naar een hoger niveau tilt.
+
+### Google Calendar
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/google-calendar
+Categorie: Samenwerking & data
+
+Koppel Google Calendar aan je Wix-website voor automatisch afsprakenbeheer. Yonglo, dé Wix-specialist, realiseert een slimme integratie voor realtime synchronisatie en efficiënte planning.
+
+Koppel Google Calendar aan je Wix-website voor slim en automatisch afsprakenbeheer
+
+Wil je je afsprakenbeheer automatiseren en het klanten gemakkelijk maken om online een afspraak te boeken? Met een Google Calendar-integratie op je Wix-website via Yonglo zorg je voor een naadloze tweewegsynchronisatie. Via de Google Calendar API en Velo by Wix wordt je beschikbaarheid automatisch gesynchroniseerd met je website én worden nieuwe boekingen direct toegevoegd aan je Google Agenda.
+Deze slimme koppeling voorkomt dubbele boekingen en houdt je agenda altijd up-to-date – zowel voor jou als voor je klanten. Je kunt zelf beschikbare tijdslots instellen, meerdere soorten afspraken aanbieden, en geboekte afspraken automatisch toewijzen aan de juiste medewerkers. Klanten ontvangen automatische bevestigingen en herinneringen via de gekoppelde kalender.
+Met een op maat gemaakte Google Calendar-integratie via Yonglo stroomlijn je het volledige boekingsproces. Zo werk je efficiënter en vergroot je het aantal gemaakte afspraken, zonder extra handmatig werk.
+Voordelen van Google Calendar-Wix integratie via Yonglo:
+ - Realtime synchronisatie tussen je website en je Google Agenda
+ - Geen dubbele boekingen, altijd een actuele agenda
+ - Automatische bevestigingen en herinneringen voor klanten
+ - Flexibel instellen van tijdslots en afspraaktypes
+ - Toewijzing van afspraken aan specifieke teamleden
+Maak online boeken eenvoudig en professioneel met een geïntegreerd afsprakensysteem op je Wix-site. Laat Yonglo je helpen met een geavanceerde Google Calendar-koppeling en bied je klanten een soepele en betrouwbare boekingservaring.
+
+### Google Sheets
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/sheets
+Categorie: Samenwerking & data
+
+Koppel Google Sheets aan je Wix-website voor realtime dataweergave en automatisering
+
+Wil je je data eenvoudig beheren en realtime tonen op je website? Met een Google Sheets-integratie op je Wix-site via Yonglo maak je je website datagedreven én automatiseer je je werkprocessen. Dankzij een naadloze tweerichtingskoppeling via de Google Sheets API en Velo by Wix kun je gegevens uit je spreadsheet op je website tonen, of juist formulierdata van je website direct wegschrijven naar een specifieke Google Sheet.
+Deze koppeling is bijzonder flexibel en toepasbaar voor uiteenlopende doeleinden. Denk aan het dynamisch weergeven van prijslijsten, evenementenkalenders, productoverzichten of ledenlijsten die je in Google Sheets bijhoudt. Omgekeerd kun je ook leadgegevens, bestellingen of feedback van je website automatisch verzamelen in een overzichtelijke spreadsheet voor verdere verwerking of analyse.
+Met een op maat gemaakte Google Sheets-koppeling via Yonglo werk je efficiënter en zorg je ervoor dat je data altijd actueel en centraal beschikbaar is – zowel op je website als in je spreadsheets.
+Voordelen van een Google Sheets-Wix integratie via Yonglo:
+ - Realtime data-uitwisseling tussen je website en Google Sheets
+ - Automatische opslag van formuliergegevens in je spreadsheet
+ - Toon dynamische lijsten, kalenders of prijstabellen op je site
+ - Verminder handmatig werk en fouten door automatisering
+ - Flexibele toepassing voor zowel zakelijke als informatieve doeleinden
+Maak van je Wix-website een slimme tool voor gegevensbeheer en presentatie. Laat Yonglo je helpen met een krachtige Google Sheets-integratie die perfect aansluit op jouw datastromen en digitale workflow.
+
+### Google Maps
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/google-maps
+Categorie: Samenwerking & data
+
+Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website. Yonglo, dé Wix-specialist, realiseert slimme kaartintegraties voor locatiegebaseerde services, routeplanning en realtime data.
+
+Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website
+
+Wil je meer doen dan alleen locaties tonen op je Wix-website? Met een geavanceerde Google Maps-integratie via Yonglo benut je de volledige kracht van Google’s geo-locatiediensten. Dankzij de koppeling via de Google Maps API en Velo by Wix kunnen we maatwerkoplossingen bouwen die verder gaan dan standaard kaartweergaves en routebeschrijvingen.
+Een slimme toepassing is het automatisch koppelen van medewerkers aan klanten of opdrachten op basis van reistijd en afstand. Met behulp van de API kunnen we afstanden en geschatte reistijden berekenen, zodat je altijd de dichtstbijzijnde beschikbare medewerker kunt inzetten. Dit is ideaal voor serviceplanning, routeoptimalisatie en efficiënte inzet van je personeel.
+Door Google Maps te integreren via Yonglo creëer je nieuwe mogelijkheden voor je bedrijfsvoering. Of je nu je logistiek wilt verbeteren, locatiegebaseerde content wilt tonen, of efficiëntere routes wilt plannen – wij realiseren een oplossing op maat die aansluit bij jouw geografische behoeften.
+Voordelen van een Google Maps-Wix integratie via Yonglo:
+• Toon interactieve kaarten en slimme routebeschrijvingen
+• Bereken reistijd en afstand automatisch via de Maps API
+• Optimaliseer je serviceplanning en personeelstoewijzing
+• Bied gepersonaliseerde content op basis van locatie
+• Verbeter je klantbeleving en werkprocessen met realtime locatie-inzichten
+Til je Wix-website naar een hoger niveau met locatiegebaseerde intelligentie. Laat Yonglo je helpen om Google Maps strategisch in te zetten voor een slimmere, efficiëntere bedrijfsvoering.
 
 ## Projecten
 
