@@ -1,7 +1,7 @@
 // Zoekfunctie in de header. Doorzoekt live de pagina's van de site (ze worden bij het eerste
-// gebruik opgehaald, dus nieuwe teksten zijn meteen vindbaar) en de projecten uit het Wix CMS.
+// gebruik opgehaald, dus nieuwe teksten zijn meteen vindbaar), de projecten uit het Wix CMS en de blogberichten uit Wix Blog.
 const d = document;
-let box, input, res, trigger, pages = null, projects = null, loading = null, sel = -1;
+let box, input, res, trigger, pages = null, projects = null, posts = null, loading = null, sel = -1;
 
 const norm = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const esc = s => String(s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -15,7 +15,10 @@ function load() {
       h: [p.branche, p.platform, ...(p.diensten || [])].filter(Boolean), x: [p.intro, p.omschrijving, p.opdrachtgever].filter(Boolean).join(" "), proj: true,
     }));
   })).catch(() => { projects = []; });
-  loading = Promise.all([a, b]);
+  const c = import("/assets/blog.js").then(m => m.fetchPosts().then(ps => {
+    posts = ps.map(p => ({ u: m.postUrl(p), t: p.title, d: p.excerpt, h: [p.cat], x: "" }));
+  })).catch(() => { posts = []; });
+  loading = Promise.all([a, b, c]);
   return loading;
 }
 
@@ -86,15 +89,16 @@ function render() {
   if (!terms.length) { res.innerHTML = ""; return; }
   if (!pages) { res.innerHTML = `<p class="srch-empty">Even zoeken…</p>`; load().then(render); return; }
   const rank = list => list.map(doc => ({ doc, s: score(doc, terms) })).filter(r => r.s).sort((a, b) => b.s - a.s);
-  const pg = rank(pages).slice(0, 7), pj = rank(projects || []).slice(0, 4);
-  if (!pg.length && !pj.length) {
+  const pg = rank(pages).slice(0, 7), pj = rank(projects || []).slice(0, 4), nw = rank(posts || []).slice(0, 4);
+  if (!pg.length && !pj.length && !nw.length) {
     res.innerHTML = `<p class="srch-empty">Geen resultaten voor “${esc(q)}”. Probeer een ander woord, of <a href="/contact.html">neem contact op</a>.</p>`;
     return;
   }
   const item = r => `<a class="srch-hit" href="${esc(r.doc.u)}"><b>${mark(r.doc.t, terms)}</b><span>${snippet(r.doc, terms)}</span></a>`;
   res.innerHTML =
     (pg.length ? `<p class="srch-lab">Pagina's</p>${pg.map(item).join("")}` : "") +
-    (pj.length ? `<p class="srch-lab">Projecten</p>${pj.map(item).join("")}` : "");
+    (pj.length ? `<p class="srch-lab">Projecten</p>${pj.map(item).join("")}` : "") +
+    (nw.length ? `<p class="srch-lab">Nieuws</p>${nw.map(item).join("")}` : "");
 }
 
 function hits() { return [...res.querySelectorAll(".srch-hit")]; }

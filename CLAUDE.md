@@ -51,4 +51,10 @@ Dit is alleen zichtbaar op de eigen computer. NIET publiceren.
 ## Goed om te weten
 - Projecten en andere CMS-items worden in het Wix-dashboard aangepast, niet in de code.
   Die wijzigingen staan meteen live, zonder te publiceren.
+- Blogberichten komen live uit **Wix Blog op de site www.yonglo.com** (site-ID
+  `c2d0d9f2-77ca-4c63-98a8-2fa82cf2459a`), via de publieke client `WIX_BLOG_CLIENT_ID` in
+  `assets/wix/wix-config.js`. Een bericht schrijven of aanpassen doe je in het blog-dashboard
+  van díe site; het staat dan meteen op `nieuws.html`, de homepage en in de zoekfunctie.
+  Elk bericht opent op `post.html?p=<slug>` (één sjabloon voor alle berichten, `assets/post.js`).
+  De vaste kaarten in `nieuws.html` zijn alleen een terugval voor als Wix niet bereikbaar is.
 - Werk direct op `main`. Pull voordat je begint, push na elke keer opslaan.
