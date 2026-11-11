@@ -6,7 +6,11 @@ gehost als **Wix-managed Astro**-site. Alleen de blogberichten (`/post/<naam>`) 
 `src/pages/project/[slug].astro`); alle andere pagina's blijven losse bestanden.
 Content zoals projecten komt uit het Wix CMS via `assets/wix/`, blogs uit Wix Blog.
 
-Er werken twee mensen aan. Ze zijn niet per se developers: voer alle git- en Wix-stappen
+Er werken twee mensen aan: **Joris** (development) en **Marko** (design, GitHub-account `Yonglo-design`).
+Ze hebben allebei dezelfde rechten: allebei mogen ze opslaan (committen en pushen naar `main`),
+publiceren (live zetten) en de `live`-tag verplaatsen. Geen van beiden hoeft op de ander te wachten;
+wie publiceert, neemt eerst het nieuwste werk van de ander mee (zie "Publiceren").
+Ze zijn niet per se developers: voer alle git- en Wix-stappen
 zelf uit en leg in gewone, korte taal uit wat je gedaan hebt. Vraag ze nooit om zelf
 git-commando's te typen. Praat Nederlands.
 
@@ -16,7 +20,9 @@ git-commando's te typen. Praat Nederlands.
 - Publiceren gaat via de **Wix-connector** van Claude (tool `UploadHeadlessWebsiteFiles`, als Astro-build),
   niet via de Wix CLI. Is de Wix-connector niet beschikbaar, zeg dan dat de gebruiker hem
   moet koppelen via claude.ai → Instellingen → Connectors → Wix, en inloggen met een
-  Wix-account dat toegang heeft tot deze site.
+  Wix-account dat toegang heeft tot deze site. Joris en Marko gebruiken elk hun eigen Wix-account;
+  beide accounts moeten toegang hebben tot deze site (Wix-dashboard → Instellingen → Rollen en machtigingen).
+- Pushen naar GitHub (`Yonglo-design/yonglo`) werkt voor allebei: ze staan er allebei als collaborator in.
 - De git-tag `live` wijst altijd naar de versie die nu live staat.
 
 ## Aan het begin van elke sessie
