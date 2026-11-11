@@ -6,7 +6,7 @@ import { wixImage } from "./wix/wixImage.js";
 export const COLLECTION = "Projecten";
 
 // Volgorde van de filterknoppen; diensten die hier niet staan komen er automatisch achter.
-const DIENST_ORDER = ["Wix Studio", "eCommerce", "Development", "Branding", "AI oplossingen", "API koppelingen"];
+const DIENST_ORDER = ["Wix Studio", "eCommerce", "Development", "Branding", "AI oplossingen", "API koppelingen", "AI solutions", "API integrations"];
 // "Webdesign" geldt voor bijna elk project en is daarom geen apart filter.
 const NO_FILTER = ["Webdesign"];
 
@@ -20,7 +20,7 @@ export async function fetchProjects() {
     all.push(...page.items);
     cursor = page.nextCursor;
   } while (cursor);
-  return all.filter(p => p.title && p.slug);
+  return all.filter(p => p.title && p.slug).map(p => inTaal(p));
 }
 
 // Contactpersoon per project (CMS-collectie "Contactpersonen", gekoppeld via het veld "contactpersoon").
@@ -30,8 +30,23 @@ export async function fetchContactpersoon(id) {
   return page.items[0] || null;
 }
 
+// ---- Engelse website (/en/…) ----
+// Elk project heeft in het CMS Engelse velden met "En" erachter (introEn, omschrijvingEn …). Op de Engelse
+// site worden die gebruikt; is een Engels veld leeg, dan blijft de Nederlandse tekst staan.
+export const EN_FIELDS = ["subkop", "branche", "kortTekst", "intro", "omschrijving", "sectieKop", "sectieTekst", "kenmerken", "quote"];
+// Namen van diensten (filterknoppen en labels) in het Engels.
+export const DIENST_EN = { "AI oplossingen": "AI solutions", "API koppelingen": "API integrations" };
+export const pageLang = () => (typeof document !== "undefined" && document.documentElement.lang === "en" ? "en" : "nl");
+export function inTaal(p, lang = pageLang()) {
+  if (lang !== "en" || !p || p._lang === "en") return p;
+  const q = { ...p, _lang: "en" };
+  for (const k of EN_FIELDS) if (p[k + "En"]) q[k] = p[k + "En"];
+  q.diensten = (p.diensten || []).map(d => DIENST_EN[d] || d);
+  return q;
+}
+
 export function projectUrl(p) {
-  return "/project/" + encodeURIComponent(p.slug);
+  return (p._lang === "en" ? "/en/project/" : "/project/") + encodeURIComponent(p.slug);
 }
 
 // Wix-afbeelding op maat (scherper en lichter dan het origineel).
@@ -97,7 +112,7 @@ export function filterDiensten(projects) {
   }));
   return [...seen.keys()].sort((x, y) => {
     const ix = DIENST_ORDER.indexOf(x), iy = DIENST_ORDER.indexOf(y);
-    return (ix < 0 ? 99 : ix) - (iy < 0 ? 99 : iy) || x.localeCompare(y, "nl");
+    return (ix < 0 ? 99 : ix) - (iy < 0 ? 99 : iy) || x.localeCompare(y, pageLang());
   });
 }
 
@@ -147,3 +162,6 @@ export function loadScript(src) {
 export function mockVis(p, cls = "ms") {
   return `<div class="${cls}"><i class="tb"></i><b>${esc(p.title)}</b><span></span><span class="s2"></span></div>`;
 }
+
+// Korte tekst in de taal van de pagina: t("Bekijk", "View").
+export const t = (nl, en) => (pageLang() === "en" ? en : nl);

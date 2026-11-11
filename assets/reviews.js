@@ -12,7 +12,8 @@
   var root = document.querySelector("[data-greviews]");
   if (!root) return;
   var rail = root.querySelector(".gr-rail");
-  var nf = new Intl.NumberFormat("nl-NL", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  var EN = document.documentElement.lang === "en"; // Engelse website
+  var nf = new Intl.NumberFormat(EN ? "en-GB" : "nl-NL", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -21,7 +22,7 @@
   }
   function stars(r) {
     var pct = Math.max(0, Math.min(100, (Number(r) || 0) / 5 * 100));
-    return '<span class="gr-stars" style="--p:' + pct + '%" role="img" aria-label="' + esc(nf.format(r || 0)) + ' van 5 sterren"><i>★★★★★</i><i>★★★★★</i></span>';
+    return '<span class="gr-stars" style="--p:' + pct + '%" role="img" aria-label="' + esc(nf.format(r || 0)) + (EN ? ' out of 5 stars"' : ' van 5 sterren"') + '><i>★★★★★</i><i>★★★★★</i></span>';
   }
   var G = '<svg class="gr-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
 
@@ -30,8 +31,8 @@
     var a = root.querySelector('[data-gr="link"]');
     var wr = root.querySelector(".gr-write");
     rail.innerHTML = '<div class="gr-card gr-cta">' + G +
-      '<a class="gr-cta-main" href="' + esc(a ? a.href : "#") + '" target="_blank" rel="noopener"><b>Lees wat klanten over Yonglo zeggen</b><span>Al onze reviews staan op Google</span><i class="arr">→</i></a>' +
-      (wr ? '<a class="gr-write gr-cta-write" href="' + esc(wr.href) + '" target="_blank" rel="noopener">Schrijf zelf een review</a>' : "") + "</div>";
+      '<a class="gr-cta-main" href="' + esc(a ? a.href : "#") + '" target="_blank" rel="noopener"><b>' + (EN ? 'Read what clients say about Yonglo' : 'Lees wat klanten over Yonglo zeggen') + '</b><span>' + (EN ? 'All our reviews are on Google' : 'Al onze reviews staan op Google') + '</span><i class="arr">→</i></a>' +
+      (wr ? '<a class="gr-write gr-cta-write" href="' + esc(wr.href) + '" target="_blank" rel="noopener">' + (EN ? 'Write a review' : 'Schrijf zelf een review') + '</a>' : "") + "</div>";
   }
 
   function render(d) {
@@ -40,7 +41,7 @@
       root.querySelector('[data-gr="rating"]').textContent = nf.format(d.rating);
       root.querySelector('[data-gr="stars"]').innerHTML = stars(d.rating);
     }
-    if (d.count) root.querySelector('[data-gr="count"]').textContent = "Op basis van " + d.count + " reviews op Google";
+    if (d.count) root.querySelector('[data-gr="count"]').textContent = (EN ? "Based on " : "Op basis van ") + d.count + (EN ? " reviews on Google" : " reviews op Google");
     if (d.url) root.querySelector('[data-gr="link"]').href = d.url;
     var list = (d.reviews || []).filter(function (r) { return r.text; });
     if (!list.length) { fallback(); return; }
@@ -52,13 +53,13 @@
         '<header><span class="gr-av">' + av + '</span><div><b>' + who + '</b><small>' + esc(r.when || "") + "</small></div>" + G + "</header>" +
         stars(r.rating) +
         '<p class="gr-text">' + esc(r.text) + "</p>" +
-        '<button class="gr-more" type="button" hidden>Lees meer</button></article>';
+        '<button class="gr-more" type="button" hidden>' + (EN ? 'Read more' : 'Lees meer') + '</button></article>';
     }).join("");
     rail.querySelectorAll(".gr-card").forEach(function (c) {
       var t = c.querySelector(".gr-text"), b = c.querySelector(".gr-more");
       if (t.scrollHeight > t.clientHeight + 4) {
         b.hidden = false;
-        b.addEventListener("click", function () { var o = c.classList.toggle("open"); b.textContent = o ? "Minder" : "Lees meer"; });
+        b.addEventListener("click", function () { var o = c.classList.toggle("open"); b.textContent = o ? (EN ? "Less" : "Minder") : (EN ? "Read more" : "Lees meer"); });
       }
     });
     navState();

@@ -46,6 +46,7 @@ const HEADER_HTML = `
     <div class="hdr-cta">
       <button class="icon-btn srch-btn" type="button" aria-label="Zoeken op de website" aria-expanded="false" aria-controls="srch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></button>
       <a href="/spel" class="icon-btn play-btn" aria-label="Speel Pixel Perfect" title="Speel Pixel Perfect"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 6.5h9.6a4.3 4.3 0 0 1 4.2 5.2l-.9 4.6a2.6 2.6 0 0 1-4.5 1.2L13.9 15h-3.8l-1.7 2.5a2.6 2.6 0 0 1-4.5-1.2l-.9-4.6a4.3 4.3 0 0 1 4.2-5.2z"/><path d="M8.5 9.3v3.4M6.8 11h3.4"/><circle cx="15.3" cy="10" r=".6"/><circle cx="17" cy="12" r=".6"/></svg></a>
+      <a href="/en" class="icon-btn lang-btn" data-lang-switch hreflang="en" lang="en" aria-label="English version of this page" title="English">EN</a>
       <a href="tel:+31852033223" class="icon-btn" aria-label="Bel Yonglo"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
       <a href="#contact" class="btn btn-primary">Plan een kennismaking <i class="arr">→</i></a>
     </div>
@@ -64,20 +65,56 @@ const MOBMENU_HTML = `
     <a href="/portfolio">Portfolio</a>
     <a href="/over-yonglo">Over Yonglo</a>
     <a href="/contact">Contact</a>
+    <a href="/en" class="mob-lang" data-lang-switch hreflang="en" lang="en">English</a>
   </nav>
   <a href="#contact" class="btn btn-primary wide">Plan een kennismaking <i class="arr">→</i></a>
 </div>
 `;
 
+// Engelse website (/en/…): zelfde menu, met Engelse teksten en links naar /en/…
+const EN = document.documentElement.lang === 'en';
+const EN_TEXT = [
+  ['aria-label="Hoofdmenu"', 'aria-label="Main menu"'], ['aria-label="Mobiel menu"', 'aria-label="Mobile menu"'],
+  ['>Diensten <i', '>Services <i'], ['<summary>Diensten</summary>', '<summary>Services</summary>'],
+  ['>Bouwen<', '>Build<'], ['>Groeien<', '>Grow<'], ['>Slimmer<', '>Smarter<'],
+  ['Professionele websites voor jouw bedrijf', 'Professional websites for your business'],
+  ['Webshops die verkopen', 'Online stores that sell'], ['Ontdek de onbeperkte mogelijkheden', 'Discover the unlimited possibilities'],
+  ['SEO, GEO &amp; succes', 'SEO, GEO &amp; success'], ['Word beter gevonden', 'Get found more easily'],
+  ['Website verbeteren', 'Improve your website'], ['Geef je Wix website een upgrade', 'Give your Wix website an upgrade'],
+  ['Van idee tot identiteit', 'From idea to identity'], ['Maatwerk oplossingen', 'Custom solutions'],
+  ['AI oplossingen', 'AI solutions'], ['Slimmer werken met AI', 'Work smarter with AI'],
+  ['API koppelingen', 'API integrations'], ['Integreer andere platformen', 'Integrate other platforms'],
+  ['Uitgelicht project', 'Featured project'], ['Custom webshop in Wix Studio', 'Custom online store in Wix Studio'],
+  ['>Wix websites<', '>Wix websites<'], ['>Over Yonglo<', '>About Yonglo<'],
+  ['aria-label="Zoeken op de website"', 'aria-label="Search the website"'],
+  ['aria-label="Speel Pixel Perfect" title="Speel Pixel Perfect"', 'aria-label="Play Pixel Perfect" title="Play Pixel Perfect"'],
+  ['aria-label="Bel Yonglo"', 'aria-label="Call Yonglo"'], ['Plan een kennismaking', 'Book an intro call'],
+  ['aria-label="Menu openen"', 'aria-label="Open menu"'],
+  ['href="/en" class="icon-btn lang-btn" data-lang-switch hreflang="en" lang="en" aria-label="English version of this page" title="English">EN<',
+   'href="/" class="icon-btn lang-btn" data-lang-switch hreflang="nl" lang="nl" aria-label="Nederlandse versie van deze pagina" title="Nederlands">NL<'],
+  ['href="/en" class="mob-lang" data-lang-switch hreflang="en" lang="en">English<', 'href="/" class="mob-lang" data-lang-switch hreflang="nl" lang="nl">Nederlands<'],
+];
+const toEn = html => {
+  for (const [nl, en] of EN_TEXT) html = html.split(nl).join(en);
+  // links naar pagina's → /en/…; het logo naar /en (data-lang-switch-links worden hieronder gezet)
+  return html.replace(/href="\/(?!en\b)([^"]*)"/g, (m, rest) => `href="/en${rest && !rest.startsWith('#') ? '/' + rest : rest}"`);
+};
+
 const host = document.querySelector('header[data-header]');
 if (!host) return;
-host.innerHTML = HEADER_HTML;
-host.insertAdjacentHTML('afterend', MOBMENU_HTML);
+host.innerHTML = EN ? toEn(HEADER_HTML) : HEADER_HTML;
+host.insertAdjacentHTML('afterend', EN ? toEn(MOBMENU_HTML) : MOBMENU_HTML);
 const mob = document.getElementById('mobmenu');
 
-// Welke pagina is dit? ('/ai', '/ai/' en het oude '/ai.html' worden allemaal '/ai'; '/' en '/index.html' worden '/')
-const norm = p => { p = p.split(/[?#]/)[0].replace(/\.html$/, '').replace(/\/+$/, ''); return !p || p === '/index' ? '/' : p; };
+// Welke pagina is dit? ('/ai', '/ai/' en het oude '/ai.html' worden allemaal '/ai'; '/' en '/index.html' worden '/').
+// Op de Engelse site valt /en ervoor weg: '/en/ai' wordt ook '/ai'.
+const norm = p => { p = p.split(/[?#]/)[0].replace(/\.html$/, '').replace(/\/+$/, '').replace(/^\/en(?=\/|$)/, ''); return !p || p === '/index' ? '/' : p; };
 const here = norm(location.pathname);
+
+// Taalknop: naar dezelfde pagina in de andere taal. Blogberichten zijn er alleen in het Nederlands,
+// dus vanaf een bericht gaat de Engelse knop naar het nieuwsoverzicht.
+const other = EN ? here : (here.startsWith('/post/') ? '/en/nieuws' : here === '/' ? '/en' : '/en' + here);
+document.querySelectorAll('[data-lang-switch]').forEach(a => a.setAttribute('href', other + (EN || !here.startsWith('/post/') ? location.search : '')));
 const isHome = here === '/' || here === '/home-b';
 const SERVICES = ['webdesign', 'ecommerce', 'wix', 'seo', 'optimaal', 'branding', 'development', 'ai', 'api'].map(n => `/${n}`);
 const active = here.startsWith('/post/') ? '/nieuws' : here.startsWith('/project/') ? '/portfolio' : here; // blogberichten horen bij Nieuws, projecten bij Portfolio
@@ -105,6 +142,6 @@ if (isHome) {
 // "Plan een kennismaking": naar het formulier op deze pagina, of anders naar de contactpagina
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('contact')) return;
-  document.querySelectorAll('.hdr a[href="#contact"], #mobmenu a[href="#contact"]').forEach(a => a.setAttribute('href', '/contact#contact'));
+  document.querySelectorAll('.hdr a[href="#contact"], #mobmenu a[href="#contact"]').forEach(a => a.setAttribute('href', (EN ? '/en' : '') + '/contact#contact'));
 });
 })();

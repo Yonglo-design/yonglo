@@ -11,8 +11,14 @@ const LIVE_SITE = 'https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com';
 // Lokaal (preview) kan een AI de site niet lezen, dus dan verwijzen we naar de live site.
 const SITE = /^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$/.test(location.hostname) || location.protocol === 'file:' ? LIVE_SITE : location.origin;
 
-const STANDAARD = 'Wat kan Yonglo voor mijn bedrijf doen? Noem de diensten die passen en een paar vergelijkbare projecten.';
-const prompt = vraag => `${vraag}\n\nGebruik de informatie van Yonglo zelf: ${SITE}/llms.txt (alles staat in ${SITE}/llms-full.txt).`;
+// Op de Engelse website (/en/…) is de vraag Engels.
+const EN = document.documentElement.lang === 'en';
+const STANDAARD = EN
+  ? 'What can Yonglo do for my business? List the services that fit and a few similar projects.'
+  : 'Wat kan Yonglo voor mijn bedrijf doen? Noem de diensten die passen en een paar vergelijkbare projecten.';
+const prompt = vraag => EN
+  ? `${vraag}\n\nUse Yonglo's own information: ${SITE}/llms.txt (everything is in ${SITE}/llms-full.txt).`
+  : `${vraag}\n\nGebruik de informatie van Yonglo zelf: ${SITE}/llms.txt (alles staat in ${SITE}/llms-full.txt).`;
 
 const AI = {
   chatgpt: q => `https://chatgpt.com/?hints=search&q=${encodeURIComponent(q)}`,

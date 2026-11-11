@@ -20,13 +20,6 @@ const SKIP = new Set([
 const skip = (name) => SKIP.has(name) || name.startsWith(".env") || name.endsWith(".zip") || name.endsWith(".log");
 
 
-const { appId: CLIENT_ID } = JSON.parse(readFileSync(join(ROOT, "wix.config.json"), "utf8"));
-const SITE_SCRIPT = `<script id="wix-site-script" src="https://manage.wix.com/_api/headless-business-setup/v1/headless-business/site-script.js" data-client-id="${CLIENT_ID}" async></script>`;
-function addSiteScript(file) {
-  const html = readFileSync(file, "utf8");
-  if (html.includes('id="wix-site-script"') || !html.includes("</head>")) return;
-  writeFileSync(file, html.replace("</head>", `${SITE_SCRIPT}</head>`));
-}
 
 // Preview (npm run dev): houd .site/ bij terwijl de preview draait, zodat een aangepast bestand meteen
 // zichtbaar is. Draait los op de achtergrond en stopt vanzelf als de preview (poort 4321) weg is.
@@ -36,15 +29,15 @@ if (process.argv.includes("--bijhouden")) {
     if (!rel) return;
     const parts = rel.split(/[\\/]/);
     if (skip(parts[0]) || parts.some((p) => p === ".DS_Store")) return;
-    // Gewone pagina's (behalve index.html) toont Astro zelf op /<naam> (src/pages/[pagina].astro).
-    if (parts.length === 1 && rel.endsWith(".html") && rel !== "index.html") return;
+    // Gewone pagina's (ook index.html en de Engelse in en/) toont Astro zelf (src/pages/[pagina].astro …).
+    if (parts.length === 1 && rel.endsWith(".html")) return;
+    if (parts[0] === "en" && rel.endsWith(".html")) return;
     const src = join(ROOT, rel), dst = join(OUT, rel);
     try {
       if (!existsSync(src)) { rmSync(dst, { recursive: true, force: true }); return; }
       if (!statSync(src).isFile()) return;
       mkdirSync(dirname(dst), { recursive: true });
       copyFileSync(src, dst);
-      if (parts.length === 1 && rel.endsWith(".html")) addSiteScript(dst);
     } catch { /* bestand was even niet leesbaar; de volgende wijziging pakt het op */ }
   });
   let misses = 0;
@@ -63,7 +56,8 @@ if (process.argv.includes("--na-build")) {
   const own = JSON.parse(readFileSync(join(ROOT, "_wix", "pages.json"), "utf8"));
   // Doorverwijzingen (/post, /project, oude adressen) horen niet in de sitemap. De projectroute
   // /project/[slug] ook niet als patroon: Wix kent geen projecten, dus de echte adressen komen hieronder.
-  const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]", "/[pagina]", "/[pagina].html"];
+  const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]", "/[pagina]", "/[pagina].html",
+    "/en/project", "/en/project/[slug]", "/en/[pagina]", "/en/[pagina].html"];
   const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
   const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
   for (const page of own) add(page.path);
@@ -76,6 +70,13 @@ if (process.argv.includes("--na-build")) {
     const path = `/${name.slice(0, -5)}`;
     if (NOT_IN_SITEMAP.has(name) || /<meta[^>]+name="robots"[^>]+noindex/i.test(readFileSync(join(ROOT, name), "utf8"))) { weg.add(path); continue; }
     add(path);
+  }
+  // Engelse pagina's (/en, /en/<naam>): dezelfde, behalve wat hierboven niet in de sitemap mocht.
+  for (const name of existsSync(join(ROOT, "en")) ? readdirSync(join(ROOT, "en")).sort() : []) {
+    if (!name.endsWith(".html")) continue;
+    if (name === "index.html") { add("/en"); continue; }
+    if (weg.has(`/${name.slice(0, -5)}`)) continue;
+    add(`/en/${name.slice(0, -5)}`);
   }
   for (let i = list.length - 1; i >= 0; i--) if (weg.has(list[i].path) || list[i].path.endsWith(".html")) list.splice(i, 1);
 
@@ -95,7 +96,11 @@ if (process.argv.includes("--na-build")) {
       });
       if (!res.ok) throw new Error(`Wix Data ${res.status}`);
       const d = await res.json();
-      for (const item of d.dataItems || []) if (item.data?.slug && item.data?.title) { add(`/project/${encodeURIComponent(item.data.slug)}`); n++; }
+      for (const item of d.dataItems || []) if (item.data?.slug && item.data?.title) {
+        add(`/project/${encodeURIComponent(item.data.slug)}`);
+        add(`/en/project/${encodeURIComponent(item.data.slug)}`);
+        n++;
+      }
       cursor = d.pagingMetadata?.cursors?.next || null;
     } while (cursor);
     console.log(`${n} projecten toegevoegd aan de paginalijst.`);
@@ -105,7 +110,7 @@ if (process.argv.includes("--na-build")) {
 
   mkdirSync(dirname(built), { recursive: true });
   writeFileSync(built, JSON.stringify(list));
-  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !x.path.startsWith("/project/")).map((x) => x.path).join(", ")} + projecten).`);
+  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/project\//.test(x.path)).map((x) => x.path).join(", ")} + projecten).`);
   process.exit(0);
 }
 
@@ -125,8 +130,10 @@ for (const name of readdirSync(ROOT)) {
 // De gewone pagina's (behalve index.html) staan op een adres zonder .html; die maakt Astro zelf
 // (src/pages/[pagina].astro, met het site-script erin). Het losse .html-bestand mag dus niet mee, anders
 // zou /webdesign.html niet doorsturen naar /webdesign.
-for (const name of readdirSync(OUT)) if (name.endsWith(".html") && name !== "index.html") rmSync(join(OUT, name));
-addSiteScript(join(OUT, "index.html"));
+// Ook de homepage (index.html) en de Engelse pagina's (en/) levert Astro zelf (src/pages/index.astro,
+// src/pages/en/…), met het site-script en de taalversies (hreflang) erin.
+for (const name of readdirSync(OUT)) if (name.endsWith(".html")) rmSync(join(OUT, name));
+rmSync(join(OUT, "en"), { recursive: true, force: true });
 
 const env = join(ROOT, ".env.local");
 if (!existsSync(env)) {

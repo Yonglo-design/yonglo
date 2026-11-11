@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Perfect – the game | Yonglo</title>
+<meta name="description" content="Play Pixel Perfect by Yonglo: stack the blocks of a website as precisely as possible and build the tallest website. Will you make the leaderboard?">
+<meta property="og:title" content="Pixel Perfect – the game | Yonglo">
+<meta property="og:description" content="Build the tallest website, pixel perfect. Will you make the leaderboard?">
+<meta name="theme-color" content="#0E0F1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-20%20-8%20118%20118%22%3E%3Crect%20x%3D%22-20%22%20y%3D%22-8%22%20width%3D%22118%22%20height%3D%22118%22%20rx%3D%2228%22%20fill%3D%22%23325FFC%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M61.4%2C5.1h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C5.7-1.5%2C15.4-11.2%2C15.4s-11.3-8.4-11.3-15.4V6.5c0-.8-.6-1.4-1.4-1.4h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C15.4%2C7.3%2C26.5%2C19.6%2C30v22.8c0%2C.8.6%2C1.4%2C1.4%2C1.4h13.8c.8%2C0%2C1.4-.6%2C1.4-1.4v-22.8c12.3-3.6%2C19.6-14.6%2C19.6-30V6.5c0-.8-.6-1.4-1.4-1.4Z%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<link rel="stylesheet" href="/assets/footer.css">
+<link rel="stylesheet" href="/assets/page.css">
+<link rel="stylesheet" href="/assets/spel.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Yonglo for AI assistants (llms.txt)">
+</head>
+<body class="page-sub">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hdr" id="top" data-header></header>
+<script src="/assets/header.js"></script>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero pph dark" aria-labelledby="pp-title">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="dots"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow rv">The Yonglo game</p>
+      <h1 class="split" id="pp-title">Pixel <em>Perfect</em>. Build the tallest website.</h1>
+      <p class="lead rv" style="--d:.2s">We build websites down to the pixel. Now it's your turn: stack headers, heroes, buttons and photos as precisely as possible and compete for first place.</p>
+      <div class="hero-btns rv" style="--d:.3s">
+        <a href="#spelen" class="btn btn-primary pp-jump">Play now <i class="arr">→</i></a> <a href="#highscores" class="btn btn-ghost">See the high scores</a>
+      </div>
+      <ul class="pph-stats rv" style="--d:.4s">
+        <li><b data-pp="top">–</b><span>top score</span></li>
+        <li><b data-pp="leader">–</b><span>in first place</span></li>
+        <li><b>30 sec</b><span>per round (roughly)</span></li>
+      </ul>
+    </div>
+    <div class="pph-vis" aria-hidden="true">
+      <div class="ppt"><span class="ppt-b" style="--i:0;--c:#1b1d33;--w:78%;--x:11%"><b>Foundation</b></span><span class="ppt-b" style="--i:1;--c:#325FFC;--w:78%;--x:11%"><b>Header</b></span><span class="ppt-b" style="--i:2;--c:#7A97FD;--w:74%;--x:13%"><b>Hero</b></span><span class="ppt-b" style="--i:3;--c:#FF7A59;--w:74%;--x:13%"><b>Text</b></span><span class="ppt-b" style="--i:4;--c:#2BC4A8;--w:70%;--x:15%"><b>Button</b></span><span class="ppt-b" style="--i:5;--c:#FFC94D;--w:70%;--x:15%"><b>Photo</b></span><span class="ppt-b" style="--i:6;--c:#99AFFE;--w:66%;--x:17%"><b>Slider</b></span><span class="ppt-b" style="--i:7;--c:#8B5CF6;--w:66%;--x:17%"><b>Footer</b></span><span class="ppt-drop"><b>Reviews</b></span></div>
+      <span class="ppt-chip pc-1">Perfect! <i>+2</i></span>
+      <span class="ppt-chip pc-2">×3 combo</span>
+      <span class="ppt-chip pc-3">Wix Legend 🏆</span>
+    </div>
+  </div>
+</section>
+
+<!-- SPEL -->
+<section class="pp dark" id="spelen" aria-label="The game">
+  <div class="wrap pp-grid">
+    <div class="pp-game">
+      <div class="pp-hud" aria-live="polite"><span>Score <b id="pp-score">0</b></span><span>Best <b id="pp-best">0</b></span></div>
+      <div class="pp-stage" tabindex="0" aria-label="Pixel Perfect playing field. Press space or tap to drop a block.">
+        <canvas id="pp-canvas" aria-hidden="true"></canvas>
+
+        <div class="pp-layer pp-start" id="pp-start">
+          <p class="eyebrow">Ready, set…</p>
+          <h2 class="pp-start-h">Pixel <em>Perfect</em></h2>
+          <p>Build the tallest website. The blocks slide back and forth: tap, click or press <kbd>space</kbd> to drop them. Anything that sticks out falls off, so aim carefully!</p>
+          <button type="button" class="btn btn-primary pp-go">Start the game <i class="arr">→</i></button>
+        </div>
+
+        <div class="pp-layer pp-over" id="pp-over" hidden role="dialog" aria-modal="false" aria-labelledby="pp-o-title">
+          <p class="eyebrow">Game over</p>
+          <h2 id="pp-o-title">Almost pixel perfect…</h2>
+          <p class="pp-big"><b id="pp-o-score">0</b><span>points</span></p>
+          <p id="pp-o-text" class="pp-o-text"></p>
+          <p class="pp-o-best">Your best: <b id="pp-o-best">0</b></p>
+          <form id="pp-form" class="pp-form" autocomplete="off" data-own>
+            <label for="pp-name">Put your score on the leaderboard</label>
+            <div><input id="pp-name" name="naam" maxlength="20" placeholder="Your name" required><button type="submit" class="btn btn-light">Save</button></div>
+          </form>
+          <p id="pp-msg" class="pp-msg" aria-live="polite"></p>
+          <div class="pp-btns">
+            <button type="button" class="btn btn-primary pp-go pp-again">Play again <i class="arr">→</i></button>
+            <button type="button" class="btn btn-ghost" id="pp-share">Share your score</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="pp-side">
+      <div class="pp-card">
+        <h2>Top 10</h2>
+        <ol class="pp-list" id="pp-list" aria-live="polite"><li class="pp-empty">Loading…</li></ol>
+      </div>
+      <div class="pp-card pp-keys">
+        <h2>Controls</h2>
+        <p><kbd>space</kbd> or <kbd>enter</kbd> on your keyboard, or tap / click in the playing field.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ZO WERKT HET -->
+<section class="light pp-steps-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">How to play</p>
+      <h2 class="split">Three rules. <em>Endlessly</em> addictive.</h2>
+    </div>
+    <ol class="pp-steps">
+      <li class="rv"><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11V6.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L4.3 15a1.5 1.5 0 0 1 2.4-1.8L9 15"/></svg></span><h3>Tap at the right moment</h3><p>The block slides back and forth. Tap, click or press space to drop it onto the tower.</p></li>
+      <li class="rv" style="--d:.1s"><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h10M4 12h16M10 17h10"/><path d="M14 4v6M10 14v6"/></svg></span><h3>What sticks out, falls off</h3><p>Not quite precise? Then your block gets narrower. The narrower your tower, the harder it gets.</p></li>
+      <li class="rv" style="--d:.2s"><span class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></svg></span><h3>Perfect = bonus</h3><p>Spot on? +2 points. Three perfects in a row and your block grows back a little.</p></li>
+    </ol>
+    <div class="pp-miles">
+      <p class="eyebrow">Milestones</p>
+      <ul>
+        <li class="rv"><b>10</b><span>Nice landing page</span></li>
+        <li class="rv" style="--d:.08s"><b>25</b><span>A complete website</span></li>
+        <li class="rv" style="--d:.16s"><b>40</b><span>Wix Studio level</span></li>
+        <li class="rv" style="--d:.24s"><b>60</b><span>Wix Legend</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHSCORES -->
+<section class="dark pp-fame" id="highscores">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv">Hall of fame</p>
+      <h2 class="split">The best <em>builders</em>.</h2>
+    </div>
+    <div class="pp-podium" id="pp-podium" aria-live="polite">
+      <div class="pod p2"><span class="pod-n">–</span><b class="pod-s">–</b><span class="pod-bar">2</span></div>
+      <div class="pod p1"><span class="pod-crown" aria-hidden="true">👑</span><span class="pod-n">–</span><b class="pod-s">–</b><span class="pod-bar">1</span></div>
+      <div class="pod p3"><span class="pod-n">–</span><b class="pod-s">–</b><span class="pod-bar">3</span></div>
+    </div>
+    <p class="pp-fame-cta"><a href="#spelen" class="btn btn-primary pp-jump">Beat the top 3 <i class="arr">→</i></a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="contact light pp-end">
+  <div class="wrap">
+    <div class="pp-end-in rv">
+      <div>
+        <h2>Pixel perfect websites. <em>For real.</em></h2>
+        <p>We build websites in Wix and Wix Studio with the same precision: fast, beautiful and finished down to the pixel.</p>
+      </div>
+      <div class="hero-btns">
+        <a href="/en/contact" class="btn btn-primary">Book an introduction <i class="arr">→</i></a> <a href="/en/portfolio" class="btn btn-dark">See our work</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="fd" data-footer></footer>
+
+<div class="mobbar"><a href="tel:+31852033223">Call</a><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a><a href="/en/contact" class="hl">Get in touch</a></div>
+<a href="https://wa.me/31638148565" class="float-wa" target="_blank" rel="noopener">Questions? Message us</a>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script src="/assets/app.js?v=4" defer></script>
+<script src="/assets/footer.js" defer></script>
+<script type="module" src="/assets/spel.js"></script>
+</body>
+</html>

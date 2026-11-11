@@ -5,6 +5,11 @@ import { queryDataItems } from "./wix/wix-cms.js";
 import { wixApiRequest } from "./wix/wix-client.js";
 
 const COLLECTION = "Highscores";
+// Engelse website (/en/spel): Engelse teksten. T("Nederlands", "English").
+const EN = document.documentElement.lang === "en";
+const T = (nl, en) => (EN ? en : nl);
+// Namen op de blokken (intern blijven ze Nederlands, want de tekening hangt ervan af).
+const LABEL_EN = { Tekst: "Text", Knop: "Button", Foto: "Photo", Formulier: "Form", Fundament: "Foundation" };
 const wrap = document.querySelector(".pp-stage");
 const cv = document.getElementById("pp-canvas");
 const ctx = cv.getContext("2d");
@@ -83,7 +88,7 @@ function drop() {
   }
   stack.push({ x, w, color: cur.color, type: cur.type });
   ui.score.textContent = score;
-  const ms = { 10: "Mooie landingspagina!", 25: "Een complete website!", 40: "Wix Studio-niveau!", 60: "Wix Legend!" }[stack.length - 1];
+  const ms = (EN ? { 10: "Nice landing page!", 25: "A complete website!", 40: "Wix Studio level!", 60: "Wix Legend!" } : { 10: "Mooie landingspagina!", 25: "Een complete website!", 40: "Wix Studio-niveau!", 60: "Wix Legend!" })[stack.length - 1];
   if (ms) fx.push({ t: 0, x: 0, w: W, i: stack.length - 1, text: ms, big: true });
   camT = Math.max(0, (stack.length + 1) * BH - H * 0.55);
   spawn();
@@ -97,8 +102,10 @@ function gameOver() {
   ui.best.textContent = best;
   setTimeout(() => {
     ui.overScore.textContent = score;
-    ui.overTitle.textContent = newBest && score > 0 ? "Nieuw record!" : blocks >= 25 ? "Wat een website!" : blocks >= 10 ? "Netjes gebouwd!" : "Bijna pixel perfect…";
-    ui.overText.textContent = `Je website is ${blocks} ${blocks === 1 ? "blok" : "blokken"} hoog, met ${perfects} perfecte ${perfects === 1 ? "plaatsing" : "plaatsingen"}.`;
+    ui.overTitle.textContent = newBest && score > 0 ? T("Nieuw record!", "New best!") : blocks >= 25 ? T("Wat een website!", "What a website!") : blocks >= 10 ? T("Netjes gebouwd!", "Nicely built!") : T("Bijna pixel perfect…", "Almost pixel perfect…");
+    ui.overText.textContent = EN
+      ? `Your website is ${blocks} ${blocks === 1 ? "block" : "blocks"} tall, with ${perfects} perfect ${perfects === 1 ? "drop" : "drops"}.`
+      : `Je website is ${blocks} ${blocks === 1 ? "blok" : "blokken"} hoog, met ${perfects} perfecte ${perfects === 1 ? "plaatsing" : "plaatsingen"}.`;
     ui.overBest.textContent = best;
     ui.form.hidden = score < 1;
     ui.msg.textContent = "";
@@ -159,7 +166,7 @@ function block(x, y, w, color, type, alpha = 1) {
     ctx.font = `600 ${BH < 44 ? 11 : 12}px Outfit, system-ui, sans-serif`;
     ctx.fillStyle = ink + ".95)";
     ctx.textBaseline = "middle";
-    ctx.fillText(type.toUpperCase(), x + 12, y + 2 + h / 2);
+    ctx.fillText((EN && LABEL_EN[type] || type).toUpperCase(), x + 12, y + 2 + h / 2);
     // mini-wireframe rechts in het blok (alleen als er ruimte is naast het label)
     const cx = x + w - 14, my = y + 2 + h / 2;
     if (w < 170) { ctx.restore(); return; }
@@ -191,7 +198,7 @@ function draw() {
     if (y < 0 || y > H) return;
     ctx.strokeStyle = "rgba(122,151,253,.25)"; ctx.setLineDash([4, 6]); ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); ctx.setLineDash([]);
     ctx.fillStyle = "rgba(122,151,253,.6)"; ctx.font = "600 11px Outfit, system-ui, sans-serif"; ctx.textBaseline = "bottom";
-    ctx.fillText(n + " blokken", 10, y - 4);
+    ctx.fillText(n + T(" blokken", " blocks"), 10, y - 4);
   });
   stack.forEach((b, i) => { const y = rowY(i); if (y > -BH && y < H) block(b.x, y, b.w, b.color, b.type); });
   if (state === "play" && cur) block(cur.x, rowY(stack.length), cur.w, cur.color, cur.type);
@@ -241,29 +248,29 @@ async function loadScores() {
   try {
     const page = await queryDataItems(COLLECTION, { sort: [{ fieldName: "score", order: "DESC" }, { fieldName: "_createdDate", order: "ASC" }], limit: 10 });
     const items = page.items || [];
-    if (!items.length) ui.list.innerHTML = `<li class="pp-empty">Nog geen scores. Zet jij de eerste neer?</li>`;
+    if (!items.length) ui.list.innerHTML = `<li class="pp-empty">${T("Nog geen scores. Zet jij de eerste neer?", "No scores yet. Will you set the first one?")}</li>`;
     const top = items[0];
     document.querySelectorAll('[data-pp="top"]').forEach(e => e.textContent = top ? Number(top.score) || 0 : "–");
     document.querySelectorAll('[data-pp="leader"]').forEach(e => e.textContent = top ? top.naam : "Jij?");
     ["p1", "p2", "p3"].forEach((c, k) => {
       const el = document.querySelector("#pp-podium ." + c), it = items[k];
       if (!el) return;
-      el.querySelector(".pod-n").textContent = it ? it.naam : "Nog vrij";
+      el.querySelector(".pod-n").textContent = it ? it.naam : T("Nog vrij", "Still open");
       el.querySelector(".pod-s").textContent = it ? Number(it.score) || 0 : "–";
     });
     if (items.length) ui.list.innerHTML = items.map((it, i) => `<li${mine && it._id === mine ? ' class="me"' : ""}><span class="pp-rank">${i + 1}</span><span class="pp-n">${esc(it.naam)}</span><b>${Number(it.score) || 0}</b></li>`).join("");
   } catch (e) {
     console.error(e);
-    ui.list.innerHTML = `<li class="pp-empty">De highscorelijst kan nu niet geladen worden.</li>`;
+    ui.list.innerHTML = `<li class="pp-empty">${T("De highscorelijst kan nu niet geladen worden.", "The leaderboard can't be loaded right now.")}</li>`;
   }
 }
 
 ui.form.addEventListener("submit", async e => {
   e.preventDefault();
   const naam = ui.name.value.replace(/[<>]/g, "").replace(/\s+/g, " ").trim().slice(0, 20);
-  if (naam.length < 2) { ui.msg.textContent = "Vul een naam van minimaal 2 tekens in."; ui.name.focus(); return; }
+  if (naam.length < 2) { ui.msg.textContent = T("Vul een naam van minimaal 2 tekens in.", "Enter a name of at least 2 characters."); ui.name.focus(); return; }
   const btn = ui.form.querySelector("button");
-  btn.disabled = true; ui.msg.textContent = "Opslaan…";
+  btn.disabled = true; ui.msg.textContent = T("Opslaan…", "Saving…");
   try {
     const res = await wixApiRequest("/wix-data/v2/items", {
       method: "POST",
@@ -271,13 +278,13 @@ ui.form.addEventListener("submit", async e => {
     });
     mine = res && res.dataItem && res.dataItem.id;
     try { localStorage.setItem("yl-pp-naam", naam); } catch (e2) {}
-    ui.msg.textContent = "Je score staat op de lijst!";
+    ui.msg.textContent = T("Je score staat op de lijst!", "Your score is on the leaderboard!");
     ui.form.hidden = true;
     loadScores();
   } catch (err) {
     console.error(err);
     btn.disabled = false;
-    ui.msg.textContent = "Opslaan lukte niet. Probeer het later nog eens.";
+    ui.msg.textContent = T("Opslaan lukte niet. Probeer het later nog eens.", "Saving failed. Please try again later.");
   }
 });
 try { ui.name.value = localStorage.getItem("yl-pp-naam") || ""; } catch (e) {}
@@ -285,11 +292,13 @@ try { ui.name.value = localStorage.getItem("yl-pp-naam") || ""; } catch (e) {}
 // delen
 const share = $("#pp-share");
 if (share) share.addEventListener("click", async () => {
-  const text = `Ik bouwde een website van ${stack.length - 1} blokken hoog in Pixel Perfect van Yonglo (score ${score}). Kun jij hoger?`;
-  const url = location.origin + "/spel";
+  const text = EN
+    ? `I built a website ${stack.length - 1} blocks tall in Pixel Perfect by Yonglo (score ${score}). Can you go higher?`
+    : `Ik bouwde een website van ${stack.length - 1} blokken hoog in Pixel Perfect van Yonglo (score ${score}). Kun jij hoger?`;
+  const url = location.origin + (EN ? "/en/spel" : "/spel");
   try {
     if (navigator.share) await navigator.share({ title: "Pixel Perfect | Yonglo", text, url });
-    else { await navigator.clipboard.writeText(text + " " + url); share.textContent = "Gekopieerd!"; setTimeout(() => share.textContent = "Deel je score", 2000); }
+    else { await navigator.clipboard.writeText(text + " " + url); share.textContent = T("Gekopieerd!", "Copied!"); setTimeout(() => share.textContent = T("Deel je score", "Share your score"), 2000); }
   } catch (e) {}
 });
 

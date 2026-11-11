@@ -5,7 +5,7 @@
 // SEO, dus op deze pagina's halen we die standaardtags weg zolang de echte er staan. Dat geldt ook voor de
 // gewone pagina's op een adres zonder .html (src/pages/[pagina].astro).
 import { defineMiddleware } from "astro:middleware";
-import { PAGINAS } from "./paginas";
+import { PAGINAS, PAGINAS_EN } from "./paginas";
 
 const FALLBACK = [
   /<title\b[^>]*\swix-seo-tag="true"[^>]*>[\s\S]*?<\/title>/g,
@@ -16,9 +16,10 @@ const FALLBACK = [
 export const onRequest = defineMiddleware(async (context, next) => {
   const response = await next();
   const path = context.url.pathname;
-  // Gewone pagina's (/webdesign …) hebben hun eigen titel, omschrijving en canonical al in de HTML.
-  const pagina = PAGINAS.includes(path.replace(/^\/|\/$/g, ""));
-  if (!pagina && !path.startsWith("/post/") && !path.startsWith("/project/")) return response;
+  // Gewone pagina's (/, /webdesign, /en, /en/webdesign …) hebben hun eigen titel, omschrijving en canonical al in de HTML.
+  const naam = path.replace(/^\/|\/$/g, "");
+  const pagina = naam === "" || naam === "en" || PAGINAS.includes(naam) || (naam.startsWith("en/") && PAGINAS_EN.includes(naam.slice(3)));
+  if (!pagina && !path.startsWith("/post/") && !/^(\/en)?\/project\//.test(path)) return response;
   if (!(response.headers.get("content-type") || "").includes("text/html")) return response;
 
   const html = await response.text();

@@ -1,6 +1,8 @@
 // Nieuwspagina: berichten live uit Wix Blog (nieuwe berichten staan er meteen op) + filteren op onderwerp.
 // De berichten die al in de HTML staan blijven zichtbaar als Wix (even) niet bereikbaar is.
-import { fetchPosts, card, CAT_ORDER, esc, wixImg, setJsonLd } from "./blog.js";
+import { fetchPosts, card, CAT_ORDER, esc, wixImg, setJsonLd, catLabel } from "./blog.js";
+
+const EN = document.documentElement.lang === "en"; // Engelse website (/en/nieuws)
 
 const wrap = document.querySelector("#berichten .wrap");
 
@@ -37,7 +39,7 @@ async function load() {
     .concat([...new Set(posts.map((p) => p.cat))].filter((c) => !CAT_ORDER.includes(c)));
   const [first, ...rest] = posts;
   wrap.innerHTML = `${card(first, 0, { feat: true, h: "h2" })}
-    <div class="nw-bar rv in" role="group" aria-label="Filter op onderwerp">${["Alles", ...cats].map((c) => `<button type="button" class="nw-chip" data-f="${esc(c)}" aria-pressed="false">${esc(c)}</button>`).join("")}</div>
+    <div class="nw-bar rv in" role="group" aria-label="${EN ? "Filter by topic" : "Filter op onderwerp"}">${["Alles", ...cats].map((c) => `<button type="button" class="nw-chip" data-f="${esc(c)}" aria-pressed="false">${esc(c === "Alles" && EN ? "All" : catLabel(c))}</button>`).join("")}</div>
     <div class="nw-grid">${rest.map((p, i) => card(p, i)).join("")}</div>`;
   applyFilter(cats.includes(active) ? active : "Alles");
   reveal(wrap);
@@ -47,9 +49,9 @@ async function load() {
   setJsonLd("ld-blog", {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "@id": `${SITE}/nieuws#blog`,
-    name: "Yonglo nieuws",
-    url: `${SITE}/nieuws`,
+    "@id": `${SITE}${EN ? "/en" : ""}/nieuws#blog`,
+    name: EN ? "Yonglo news" : "Yonglo nieuws",
+    url: `${SITE}${EN ? "/en" : ""}/nieuws`,
     inLanguage: "nl-NL",
     publisher: { "@type": "Organization", "@id": "https://www.yonglo.com/#organization", name: "Yonglo", url: "https://www.yonglo.com" },
     blogPost: posts.map((p) => ({

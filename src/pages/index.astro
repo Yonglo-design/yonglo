@@ -1,0 +1,10 @@
+---
+// Homepage (/): index.html uit de hoofdmap, met canonical en taalversies (de Engelse homepage staat op /en).
+import { paginaHtml, siteOrigin, htmlResponse, nietGevonden } from "../paginas";
+
+export const prerender = false;
+
+const html = paginaHtml("index", "nl", siteOrigin(Astro.request, Astro.url));
+if (!html) return nietGevonden();
+return htmlResponse(html);
+---

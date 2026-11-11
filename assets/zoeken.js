@@ -1,6 +1,10 @@
 // Zoekfunctie in de header. Doorzoekt live de pagina's van de site (ze worden bij het eerste
 // gebruik opgehaald, dus nieuwe teksten zijn meteen vindbaar), de projecten uit het Wix CMS en de blogberichten uit Wix Blog.
 const d = document;
+// Engelse website (/en/…): Engelse pagina's en projecten doorzoeken, Engelse teksten. Blogberichten zijn Nederlands.
+const EN = d.documentElement.lang === "en";
+const T = (nl, en) => (EN ? en : nl);
+const PRE = EN ? "/en" : "";
 let box, input, res, trigger, pages = null, projects = null, posts = null, loading = null, sel = -1;
 
 const norm = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -23,13 +27,13 @@ function load() {
 }
 
 // Pagina's die doorzocht worden (bedankt-, test- en losse projectpagina's niet).
-const PAGES = ["/", "/webdesign", "/ecommerce", "/wix", "/seo", "/optimaal", "/branding",
+const PAGES = [PRE || "/", ...["/webdesign", "/ecommerce", "/wix", "/seo", "/optimaal", "/branding",
   "/development", "/ai", "/api", "/portfolio", "/over-yonglo", "/contact", "/nieuws",
-  "/spel", "/disclaimer", "/privacybeleid", "/voorwaarden"];
+  "/spel", "/disclaimer", "/privacybeleid", "/voorwaarden"].map(u => PRE + u)];
 const clean = s => String(s || "").replace(/\s+/g, " ").replace(/\s+([.,!?;:])/g, "$1").trim();
 
 async function indexPages() {
-  try { const c = JSON.parse(sessionStorage.getItem("yl-zoek") || "null"); if (c && c.length) return c; } catch (e) {}
+  try { const c = JSON.parse(sessionStorage.getItem("yl-zoek" + PRE) || "null"); if (c && c.length) return c; } catch (e) {}
   const parser = new DOMParser();
   const list = await Promise.all(PAGES.map(u => fetch(u).then(r => r.ok ? r.text() : "").then(html => {
     if (!html) return null;
@@ -38,10 +42,10 @@ async function indexPages() {
     main.querySelectorAll("script,style,svg,form,noscript").forEach(n => n.remove());
     const heads = [...new Set([...main.querySelectorAll("h1,h2,h3")].map(h => clean(h.textContent)).filter(Boolean))];
     const title = clean(doc.title).replace(/ \| Yonglo$/, "");
-    return { u, t: u === "/" ? "Home" : title, d: clean(doc.querySelector('meta[name="description"]')?.content), h: heads.slice(0, 40), x: clean(main.textContent).slice(0, 6000) };
+    return { u, t: u === (PRE || "/") ? "Home" : title, d: clean(doc.querySelector('meta[name="description"]')?.content), h: heads.slice(0, 40), x: clean(main.textContent).slice(0, 6000) };
   }).catch(() => null)));
   const out = list.filter(Boolean);
-  try { sessionStorage.setItem("yl-zoek", JSON.stringify(out)); } catch (e) {}
+  try { sessionStorage.setItem("yl-zoek" + PRE, JSON.stringify(out)); } catch (e) {}
   return out;
 }
 
@@ -87,18 +91,18 @@ function render() {
   sel = -1;
   box.classList.toggle("has-q", !!terms.length);
   if (!terms.length) { res.innerHTML = ""; return; }
-  if (!pages) { res.innerHTML = `<p class="srch-empty">Even zoeken…</p>`; load().then(render); return; }
+  if (!pages) { res.innerHTML = `<p class="srch-empty">${T("Even zoeken…", "Searching…")}</p>`; load().then(render); return; }
   const rank = list => list.map(doc => ({ doc, s: score(doc, terms) })).filter(r => r.s).sort((a, b) => b.s - a.s);
   const pg = rank(pages).slice(0, 7), pj = rank(projects || []).slice(0, 4), nw = rank(posts || []).slice(0, 4);
   if (!pg.length && !pj.length && !nw.length) {
-    res.innerHTML = `<p class="srch-empty">Geen resultaten voor “${esc(q)}”. Probeer een ander woord, of <a href="/contact">neem contact op</a>.</p>`;
+    res.innerHTML = T(`<p class="srch-empty">Geen resultaten voor “${esc(q)}”. Probeer een ander woord, of <a href="/contact">neem contact op</a>.</p>`, `<p class="srch-empty">No results for “${esc(q)}”. Try another word, or <a href="/en/contact">get in touch</a>.</p>`);
     return;
   }
   const item = r => `<a class="srch-hit" href="${esc(r.doc.u)}"><b>${mark(r.doc.t, terms)}</b><span>${snippet(r.doc, terms)}</span></a>`;
   res.innerHTML =
-    (pg.length ? `<p class="srch-lab">Pagina's</p>${pg.map(item).join("")}` : "") +
-    (pj.length ? `<p class="srch-lab">Projecten</p>${pj.map(item).join("")}` : "") +
-    (nw.length ? `<p class="srch-lab">Nieuws</p>${nw.map(item).join("")}` : "");
+    (pg.length ? `<p class="srch-lab">${T("Pagina's", "Pages")}</p>${pg.map(item).join("")}` : "") +
+    (pj.length ? `<p class="srch-lab">${T("Projecten", "Projects")}</p>${pj.map(item).join("")}` : "") +
+    (nw.length ? `<p class="srch-lab">${T("Nieuws", "News (in Dutch)")}</p>${nw.map(item).join("")}` : "");
 }
 
 function hits() { return [...res.querySelectorAll(".srch-hit")]; }
@@ -116,14 +120,14 @@ function build() {
   box.hidden = true;
   box.setAttribute("role", "dialog");
   box.setAttribute("aria-modal", "true");
-  box.setAttribute("aria-label", "Zoeken op de website");
+  box.setAttribute("aria-label", T("Zoeken op de website", "Search the website"));
   box.innerHTML = `<div class="srch-panel">
     <form class="srch-form" role="search" action="#">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
-      <input type="search" placeholder="Waar ben je naar op zoek?" aria-label="Zoekterm" autocomplete="off" enterkeyhint="search">
-      <button type="button" class="srch-x" aria-label="Zoeken sluiten">Esc</button>
+      <input type="search" placeholder="${T("Waar ben je naar op zoek?", "What are you looking for?")}" aria-label="${T("Zoekterm", "Search term")}" autocomplete="off" enterkeyhint="search">
+      <button type="button" class="srch-x" aria-label="${T("Zoeken sluiten", "Close search")}">Esc</button>
     </form>
-    <div class="srch-tips"><span>Populair:</span><button type="button">Wix Studio</button><button type="button">Webshop</button><button type="button">SEO</button><button type="button">Branding</button><button type="button">Wix Optimaal</button></div>
+    <div class="srch-tips"><span>${T("Populair:", "Popular:")}</span><button type="button">Wix Studio</button><button type="button">${T("Webshop", "Online store")}</button><button type="button">SEO</button><button type="button">Branding</button><button type="button">Wix Optimaal</button></div>
     <div class="srch-res" aria-live="polite"></div>
   </div>`;
   d.body.appendChild(box);

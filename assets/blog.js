@@ -5,6 +5,10 @@ import { wixApiRequest } from "./wix/wix-client.js";
 
 const LANG = "nl";
 const TZ = "Europe/Amsterdam";
+// Engelse website (/en/nieuws, /en): de berichten zelf blijven Nederlands, alleen de labels zijn Engels.
+const EN = () => typeof document !== "undefined" && document.documentElement.lang === "en";
+const CAT_EN = { Projecten: "Projects" };
+export const catLabel = (c) => (EN() && CAT_EN[c]) || c;
 
 /* ------------------------------------------------------------ helpers */
 
@@ -19,7 +23,7 @@ export function trimTo(s, n) {
   return (sp > n * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,.;:–-]+$/, "") + "…";
 }
 
-export const fmtDate = (iso) => new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "long", year: "numeric", timeZone: TZ }).format(new Date(iso));
+export const fmtDate = (iso) => new Intl.DateTimeFormat(EN() ? "en-GB" : "nl-NL", { day: "numeric", month: "long", year: "numeric", timeZone: TZ }).format(new Date(iso));
 export const ymd = (iso) => new Intl.DateTimeFormat("en-CA", { year: "numeric", month: "2-digit", day: "2-digit", timeZone: TZ }).format(new Date(iso));
 
 export const postUrl = (p) => `/post/${encodeURIComponent(p.slug)}`;
@@ -272,13 +276,13 @@ export function card(p, i = 0, { feat = false, h = "h3" } = {}) {
   const ph = p.cover
     ? `<figure class="nw-ph"><img src="${esc(wixImg(p.cover.id, w, hh))}" alt="" width="${w}" height="${hh}"${feat ? "" : ' loading="lazy" decoding="async"'}></figure>`
     : `<figure class="nw-ph"></figure>`;
-  return `<a class="${feat ? "nw-feat" : "nw-card"} rv"${feat ? "" : ` style="--d:${((i % 3) * 0.06).toFixed(2)}s"`} href="${postUrl(p)}" data-cat="${esc(p.cat)}">
+  return `<a class="${feat ? "nw-feat" : "nw-card"} rv"${feat ? "" : ` style="--d:${((i % 3) * 0.06).toFixed(2)}s"`} href="${postUrl(p)}" data-cat="${esc(p.cat)}"${EN() ? ' hreflang="nl"' : ""}>
         ${ph}
         <div class="nw-body">
-          <div class="nw-meta"><span class="cat">${esc(p.cat)}</span><time datetime="${ymd(p.firstPublishedDate)}">${fmtDate(p.firstPublishedDate)}</time></div>
-          <${h}>${esc(p.title)}</${h}>
-          <p>${esc(trimTo(p.excerpt, 200))}</p>
-          <span class="more">${feat ? "Lees het artikel" : "Lees verder"} <i class="arr">→</i></span>
+          <div class="nw-meta"><span class="cat">${esc(catLabel(p.cat))}</span><time datetime="${ymd(p.firstPublishedDate)}">${fmtDate(p.firstPublishedDate)}</time></div>
+          <${h}${EN() ? ' lang="nl"' : ""}>${esc(p.title)}</${h}>
+          <p${EN() ? ' lang="nl"' : ""}>${esc(trimTo(p.excerpt, 200))}</p>
+          <span class="more">${EN() ? (feat ? "Read the article (in Dutch)" : "Read more (in Dutch)") : feat ? "Lees het artikel" : "Lees verder"} <i class="arr">→</i></span>
         </div>
       </a>`;
 }

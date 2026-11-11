@@ -1,7 +1,7 @@
 // "04 — Portfolio" (homepage, Webdesign): de projectrail komt uit de Wix CMS-collectie "Projecten".
 // Optioneel op de rail: data-dienst="Webdesign|Wix Studio" toont alleen projecten met die dienst(en).
 // De vaste projecten in de HTML blijven staan als de collectie niet geladen kan worden.
-import { fetchProjects, projectUrl, img, esc, cardTags } from "./projecten.js";
+import { fetchProjects, projectUrl, img, esc, cardTags, t } from "./projecten.js";
 
 const rail = document.querySelector(".work .rail");
 
@@ -42,7 +42,7 @@ if (rail) {
       // Veel projecten: de rail beweegt sneller, zodat de sectie niet eindeloos lang wordt.
       rail.dataset.speed = String(Math.max(0.2, Math.min(1, 10 / (list.length + 1))));
       rail.innerHTML = list.map(card).join("") +
-        `<a href="/portfolio" class="proj proj-cta"><span>Alle ${all.length} projecten op een rij</span><b>Bekijk al ons werk →</b></a>`;
+        `<a href="${t("", "/en")}/portfolio" class="proj proj-cta"><span>${t(`Alle ${all.length} projecten op een rij`, `All ${all.length} projects at a glance`)}</span><b>${t("Bekijk al ons werk →", "See all our work →")}</b></a>`;
       window.dispatchEvent(new Event("resize"));
     }
   } catch (e) {

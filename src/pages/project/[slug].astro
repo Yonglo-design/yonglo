@@ -4,9 +4,16 @@
 // (Wix-dashboard → CMS → Projecten), dus de volledige inhoud staat direct in de HTML (goed voor
 // Google en AI-zoekmachines). Een nieuw of aangepast project is meteen zichtbaar, zonder te publiceren.
 // De opmaak komt uit assets/project-render.js; titel, omschrijving en deelafbeelding uit het project zelf.
+// Dezelfde code staat ook in src/pages/en/project/[slug].astro (Engelse versie, /en/project/<naam>):
+// pas je hier iets aan, kopieer dit bestand dan daarheen (alleen de importpaden verschillen: één ../ meer).
 import { fetchWithAuth } from "@wix/sdk/context";
 import { hero, showcase, about, feats, gallery, contact, more } from "../../../assets/project-render.js";
-import { projectUrl, img, themeStyle } from "../../../assets/projecten.js";
+import { projectUrl, img, themeStyle, inTaal } from "../../../assets/projecten.js";
+
+// Taal van deze pagina: /en/project/<naam> is Engels (teksten uit de En-velden in het CMS).
+const EN = Astro.url.pathname.startsWith("/en/");
+const T = (nl: string, en: string) => (EN ? en : nl);
+const PRE = EN ? "/en" : "";
 
 // Oude adressen van yonglo.com waarvan de naam in het CMS iets anders is.
 const ALIASES: Record<string, string> = {
@@ -17,8 +24,8 @@ const ALIASES: Record<string, string> = {
 };
 
 const slug = Astro.params.slug || "";
-if (!slug) return Astro.redirect("/portfolio", 301);
-if (ALIASES[slug]) return Astro.redirect(`/project/${ALIASES[slug]}`, 301);
+if (!slug) return Astro.redirect(`${PRE}/portfolio`, 301);
+if (ALIASES[slug]) return Astro.redirect(`${PRE}/project/${ALIASES[slug]}`, 301);
 
 const forwardedUrl = Astro.request.headers.get("x-wix-forwarded-url");
 const pageUrl =
@@ -46,7 +53,7 @@ async function fetchProjects() {
     page = await query("Projecten", { cursorPaging: { limit: 100, cursor: page.next } });
     all.push(...page.items);
   }
-  return all.filter((p) => p.title && p.slug);
+  return all.filter((p) => p.title && p.slug).map((p) => inTaal(p, EN ? "en" : "nl"));
 }
 
 let all: any[] = [];
@@ -88,8 +95,8 @@ const trimTo = (s: string, n: number) => {
   return (sp > n * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,.;:–-]+$/, "") + "…";
 };
 const url = p ? origin + projectUrl(p) : "";
-const title = p ? `${p.title}${p.subkop ? " – " + p.subkop : ""} | Portfolio Yonglo` : failed ? "Project kon niet worden geladen | Yonglo" : "Project niet gevonden | Yonglo";
-const desc = p ? trimTo(p.intro || p.kortTekst || `Project van Yonglo voor ${p.title}.`, 158) : "";
+const title = p ? `${p.title}${p.subkop ? " – " + p.subkop : ""} | Portfolio Yonglo` : failed ? T("Project kon niet worden geladen | Yonglo", "Project could not be loaded | Yonglo") : T("Project niet gevonden | Yonglo", "Project not found | Yonglo");
+const desc = p ? trimTo(p.intro || p.kortTekst || T(`Project van Yonglo voor ${p.title}.`, `Project by Yonglo for ${p.title}.`), 158) : "";
 const ogImg = p ? img(p.hoofdbeeld || p.portfolioImage || p.heroImage, 1200, 630, "c") : null;
 const ORG = { "@type": "Organization", "@id": "https://www.yonglo.com/#organization", name: "Yonglo", url: "https://www.yonglo.com", logo: { "@type": "ImageObject", url: `${origin}/assets/yonglo-logo.png`, width: 512, height: 512 } };
 const ld = (o: unknown) => JSON.stringify(o).replace(/</g, "\\u003c");
@@ -103,26 +110,26 @@ const work = p && {
   headline: trimTo(`${p.title}${p.subkop ? " – " + p.subkop : ""}`, 110),
   description: desc,
   ...(ogImg ? { image: ogImg } : {}),
-  inLanguage: "nl-NL",
+  inLanguage: EN ? "en" : "nl-NL",
   creator: ORG,
   ...(p.opdrachtgever || p.title ? { sourceOrganization: { "@type": "Organization", name: p.opdrachtgever || p.title, ...(p.website ? { url: p.website } : {}) } } : {}),
   ...(p.branche ? { genre: p.branche } : {}),
   ...((p.diensten || []).length ? { keywords: (p.diensten || []).join(", ") } : {}),
   ...(p._updatedDate?.$date || p._updatedDate ? { dateModified: p._updatedDate?.$date || p._updatedDate } : {}),
-  isPartOf: { "@type": "CollectionPage", "@id": `${origin}/portfolio`, name: "Portfolio Yonglo", url: `${origin}/portfolio` },
+  isPartOf: { "@type": "CollectionPage", "@id": `${origin}${PRE}/portfolio`, name: "Portfolio Yonglo", url: `${origin}${PRE}/portfolio` },
 };
 const breadcrumb = p && {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${origin}/` },
-    { "@type": "ListItem", position: 2, name: "Portfolio", item: `${origin}/portfolio` },
+    { "@type": "ListItem", position: 1, name: "Home", item: `${origin}${PRE || "/"}` },
+    { "@type": "ListItem", position: 2, name: "Portfolio", item: `${origin}${PRE}/portfolio` },
     { "@type": "ListItem", position: 3, name: p.title, item: url },
   ],
 };
 ---
 <!doctype html>
-<html lang="nl">
+<html lang={EN ? "en" : "nl"}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -131,8 +138,11 @@ const breadcrumb = p && {
 <meta name="description" content={desc} data-eigen-seo>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href={url} data-eigen-seo>
+<link rel="alternate" hreflang="nl" href={`${origin}/project/${encodeURIComponent(p.slug)}`}>
+<link rel="alternate" hreflang="en" href={`${origin}/en/project/${encodeURIComponent(p.slug)}`}>
+<link rel="alternate" hreflang="x-default" href={`${origin}/project/${encodeURIComponent(p.slug)}`}>
 <meta property="og:site_name" content="Yonglo">
-<meta property="og:locale" content="nl_NL">
+<meta property="og:locale" content={EN ? "en_GB" : "nl_NL"}>
 <meta property="og:type" content="website">
 <meta property="og:title" content={title.replace(/ \| Portfolio Yonglo$/, "")}>
 <meta property="og:description" content={desc}>
@@ -157,7 +167,7 @@ const breadcrumb = p && {
 <link rel="alternate" type="text/plain" href="/llms.txt" title="Yonglo voor AI-assistenten (llms.txt)">
 </head>
 <body class="page-sub">
-<a class="skip" href="#main">Naar inhoud</a>
+<a class="skip" href="#main">{T("Naar inhoud", "Skip to content")}</a>
 <div class="progress" aria-hidden="true"></div>
 
 <header class="hdr" id="top" data-header></header>
@@ -168,17 +178,17 @@ const breadcrumb = p && {
 ) : (
 <main id="main" class="project">
 <section class="hero sub-hero pj-hero dark"><div class="blob b1"></div><div class="dots"></div>
-  <div class="wrap pj-missing"><nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/portfolio">Portfolio</a></nav>
-  {failed ? <h1>Het project kon niet worden geladen.</h1> : <h1>Dit project bestaat niet (meer).</h1>}
-  <p class="lead">{failed ? "Ververs de pagina of probeer het later nog eens." : "Bekijk al ons werk in het portfolio."}</p>
-  <a href="/portfolio" class="btn btn-primary">Naar portfolio <i class="arr">→</i></a></div></section>
+  <div class="wrap pj-missing"><nav class="crumbs" aria-label={T("Kruimelpad", "Breadcrumb")}><a href={PRE || "/"}>Home</a><span>/</span><a href={`${PRE}/portfolio`}>Portfolio</a></nav>
+  {failed ? <h1>{T("Het project kon niet worden geladen.", "The project could not be loaded.")}</h1> : <h1>{T("Dit project bestaat niet (meer).", "This project does not exist (any more).")}</h1>}
+  <p class="lead">{failed ? T("Ververs de pagina of probeer het later nog eens.", "Refresh the page or try again later.") : T("Bekijk al ons werk in het portfolio.", "See all our work in the portfolio.")}</p>
+  <a href={`${PRE}/portfolio`} class="btn btn-primary">{T("Naar portfolio", "To portfolio")} <i class="arr">→</i></a></div></section>
 </main>
 )}
 
 <footer class="fd" data-footer></footer>
 
-<div class="mobbar"><a href="tel:+31852033223">Bel</a><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a><a href="#contact" class="hl">Kennismaken</a></div>
-<a href="https://wa.me/31638148565" class="float-wa" target="_blank" rel="noopener">Vragen? App ons</a>
+<div class="mobbar"><a href="tel:+31852033223">{T("Bel", "Call")}</a><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a><a href="#contact" class="hl">{T("Kennismaken", "Get in touch")}</a></div>
+<a href="https://wa.me/31638148565" class="float-wa" target="_blank" rel="noopener">{T("Vragen? App ons", "Questions? Message us")}</a>
 <div class="toast" role="status" aria-live="polite"></div>
 
 <script is:inline src="/assets/app.js?v=4" defer></script>

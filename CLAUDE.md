@@ -97,4 +97,17 @@ op een Astro-site.
   pas dan `SITE` in het script en `LIVE_SITE` in `vraag-ai.js` aan.
   Wix serveert op `/llms.txt` zijn eigen bestand; stap 7 van "Publiceren" zet onze versie daar via de
   API van Wix in.
+- **Engelse website** (`/en/…`): de Engelse pagina's in de map `en/` worden gemaakt door
+  `tools/maak-engels.mjs` (draait vanzelf bij `npm run build` en `npm run dev`) uit de Nederlandse pagina's en
+  het woordenboek `tools/engels.json` ({ "Nederlandse tekst": "English text" }). Pas `en/*.html` dus nooit met de
+  hand aan: verander de Nederlandse pagina en voeg nieuwe teksten toe aan `tools/engels.json`.
+  Na een tekstwijziging: `node tools/maak-engels.mjs --check`. Meldt die ontbrekende vertalingen, dan staan ze in
+  `tools/engels-ontbrekend.json`; vertaal ze, zet ze in `tools/engels.json` en draai het script opnieuw.
+  Zolang een vertaling ontbreekt blijft die tekst op de Engelse pagina Nederlands.
+  Teksten in scripts (header, footer, formulieren, zoeken, spel …) hebben hun Engelse versie in het script zelf
+  (zoek naar `EN`). Projecten: het CMS heeft per tekstveld een Engels veld met "(EN)" erachter (bijv. "Intro (EN)");
+  is dat leeg, dan toont de Engelse site de Nederlandse tekst. Projectpagina's staan ook op `/en/project/<slug>`
+  (`src/pages/en/project/[slug].astro` is een kopie van de Nederlandse; pas ze samen aan).
+  Blogberichten zijn er alleen in het Nederlands. Elke pagina krijgt op de server een canonical en
+  taalversies (hreflang) mee (`src/paginas.ts`). De knop NL/EN in de header wisselt naar dezelfde pagina in de andere taal.
 - Werk direct op `main`. Pull voordat je begint, push na elke keer opslaan.

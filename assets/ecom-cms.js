@@ -1,6 +1,6 @@
 // eCommerce "07 — Portfolio": projecten uit de Wix CMS-collectie "Projecten" met de dienst "eCommerce".
 // Aanvullen gebeurt in het CMS (veld "Diensten"); de vaste voorbeelden blijven staan als het CMS niet laadt.
-import { fetchProjects, projectUrl, img, esc, themeStyle, cardTags, reveal, mockVis } from "./projecten.js";
+import { fetchProjects, projectUrl, img, esc, themeStyle, cardTags, reveal, mockVis, t } from "./projecten.js";
 
 const grid = document.querySelector('[data-cms="ecom-grid"]');
 
@@ -21,7 +21,7 @@ if (grid) {
     if (list.length) {
       const sorted = [...list.filter(p => p.uitgelicht), ...list.filter(p => !p.uitgelicht)].slice(0, 5);
       grid.innerHTML = sorted.map(card).join("") +
-        `<a href="#contact" class="pcard pcard-cta rv" style="--d:${(sorted.length % 3) * 0.08}s"><span>Jouw webshop hier?</span><b>Start jouw project →</b></a>`;
+        `<a href="#contact" class="pcard pcard-cta rv" style="--d:${(sorted.length % 3) * 0.08}s"><span>${t("Jouw webshop hier?", "Your online store here?")}</span><b>${t("Start jouw project →", "Start your project →")}</b></a>`;
       grid.removeAttribute("aria-busy");
       reveal(grid);
     }

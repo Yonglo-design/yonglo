@@ -1,12 +1,14 @@
 ---
 // Gewone pagina's op een adres zonder .html: /webdesign toont webdesign.html uit de hoofdmap.
 // De inhoud is bij het bouwen in de server ingebouwd. Pagina's aanpassen doe je dus gewoon in de
-// .html-bestanden in de hoofdmap (en daarna publiceren).
-import { paginaHtml } from "../paginas";
+// .html-bestanden in de hoofdmap (en daarna publiceren). De Engelse versie staat op /en/webdesign.
+import { paginaHtml, siteOrigin, htmlResponse, nietGevonden } from "../paginas";
 
 export const prerender = false;
 
-const html = paginaHtml(Astro.params.pagina as string);
-if (!html) return new Response("Pagina niet gevonden", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8" } });
-return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8" } });
+const naam = Astro.params.pagina as string;
+if (naam === "index") return Astro.redirect(`/${Astro.url.search}`, 301);
+const html = paginaHtml(naam, "nl", siteOrigin(Astro.request, Astro.url));
+if (!html) return nietGevonden();
+return htmlResponse(html);
 ---

@@ -58,7 +58,8 @@
       if(d.hidden) return;
       var s=sts[k%sts.length]; k++;
       var sent=s.classList.toggle('sent');
-      s.textContent= sent ? 'Verzonden' : 'Betaald';
+      var en=d.documentElement.lang==='en';
+      s.textContent= sent ? (en?'Shipped':'Verzonden') : (en?'Paid':'Betaald');
     },1400);
   }
 })();

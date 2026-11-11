@@ -734,3 +734,6 @@ html.srch-open{overflow:hidden}
 .srch-empty a{color:var(--spark);text-decoration:underline}
 @media (max-width:767px){.srch{padding:76px 12px 12px}.srch-form input{font-size:17px}.srch-panel{border-radius:20px}}
 
+/* taalknop (NL/EN) in de header en het mobiele menu */
+.lang-btn{font-family:var(--fm,monospace);font-size:12px;font-weight:500;letter-spacing:.06em}
+.mobmenu nav>a.mob-lang{font-size:18px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:0}

@@ -1,0 +1,13 @@
+---
+// Engelse pagina's: /en/webdesign toont en/webdesign.html. Die bestanden maakt tools/maak-engels.mjs
+// (bij elke build) uit de Nederlandse pagina's en het woordenboek tools/engels.json; niet met de hand aanpassen.
+import { paginaHtml, siteOrigin, htmlResponse, nietGevonden } from "../../paginas";
+
+export const prerender = false;
+
+const naam = Astro.params.pagina as string;
+if (naam === "index") return Astro.redirect(`/en${Astro.url.search}`, 301);
+const html = paginaHtml(naam, "en", siteOrigin(Astro.request, Astro.url));
+if (!html) return nietGevonden("en");
+return htmlResponse(html);
+---

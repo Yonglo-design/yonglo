@@ -55,9 +55,26 @@ const FOOTER_HTML = `
   </div>
   <div class="fd-bot"><span>© <span class="yr">2026</span> Yonglo · Think Wix, think Yonglo</span><span><a href="/disclaimer">Disclaimer</a> · <a href="/privacybeleid">Privacybeleid</a> · <a href="/voorwaarden">Voorwaarden</a></span></div>
 `;
+// Engelse website (/en/…): zelfde footer, met Engelse teksten en links naar /en/…
+const EN = document.documentElement.lang === 'en';
+const EN_TEXT = [
+  ['Zullen we iets<br>moois <em>bouwen?</em>', 'Shall we build<br>something <em>beautiful?</em>'],
+  ['aria-label="Yonglo op Instagram"', 'aria-label="Yonglo on Instagram"'], ['aria-label="Yonglo op LinkedIn"', 'aria-label="Yonglo on LinkedIn"'],
+  ['Vraag je AI naar Yonglo', 'Ask your AI about Yonglo'],
+  ['<h2>Diensten</h2>', '<h2>Services</h2>'], ['>Website verbeteren<', '>Improve your website<'],
+  ['SEO, GEO &amp; succes', 'SEO, GEO &amp; success'], ['>AI oplossingen<', '>AI solutions<'], ['>API koppelingen<', '>API integrations<'],
+  ['>Over Yonglo<', '>About Yonglo<'], ['>Locaties<', '>Locations<'], ['>Nieuws<', '>News<'], ['>Speel Pixel Perfect<', '>Play Pixel Perfect<'],
+  ['>Offerte aanvragen<', '>Request a quote<'], ['ontwerp · yonglo-logo', 'design · yonglo-logo'], ['<span>Bouwen…</span>', '<span>Building…</span>'],
+  ['>Privacybeleid<', '>Privacy policy<'], ['>Voorwaarden<', '>Terms<'],
+];
+const toEn = html => {
+  for (const [nl, en] of EN_TEXT) html = html.split(nl).join(en);
+  return html.replace(/href="\/(?!en\b)([^"]*)"/g, (m, rest) => `href="/en${rest && !rest.startsWith('#') ? '/' + rest : rest}"`);
+};
+
 const host = document.querySelector('footer[data-footer]');
 if (!host) return;
-host.innerHTML = FOOTER_HTML;
+host.innerHTML = EN ? toEn(FOOTER_HTML) : FOOTER_HTML;
 host.querySelectorAll('.yr').forEach(e => { e.textContent = new Date().getFullYear(); });
 // "Vraag je AI"-knoppen (ook gebruikt op ai.html)
 if (window.ylVraagAI) window.ylVraagAI.zetLinks(host);
@@ -258,7 +275,7 @@ function initD() {
       });
       const live = !resetting && L === LINES.length;
       status.classList.toggle('ok', live);
-      status.textContent = resetting ? '↻ Opnieuw' : live ? '✓ Live op yonglo.com · 0,6s' : `● Bouwen · regel ${Math.min(L + 1, LINES.length)}/${LINES.length}`;
+      status.textContent = resetting ? (EN ? '↻ Again' : '↻ Opnieuw') : live ? (EN ? '✓ Live on yonglo.com · 0.6s' : '✓ Live op yonglo.com · 0,6s') : `● ${EN ? 'Building · line' : 'Bouwen · regel'} ${Math.min(L + 1, LINES.length)}/${LINES.length}`;
     }
     // net gebouwde letter kort inspecteren, of de letter/regel waar de bezoeker overheen beweegt
     let flash = -1;
