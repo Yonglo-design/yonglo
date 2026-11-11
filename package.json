@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "description": "Website van Yonglo: statische pagina's + blogberichten op /post/<naam> (Wix-managed Astro).",
   "scripts": {
-    "dev": "node tools/site-bestanden.mjs && astro dev",
+    "dev": "node tools/site-bestanden.mjs --met-bijhouden && astro dev",
     "build": "node tools/site-bestanden.mjs && astro build && node tools/site-bestanden.mjs --na-build",
     "astro": "astro"
   },

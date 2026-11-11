@@ -11,21 +11,6 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, ".site");
 
-// Na de build (npm run build roept dit script dan met --na-build aan): de vaste pagina's uit
-// _wix/pages.json (zoals de homepage) toevoegen aan de paginalijst die Wix voor de sitemap gebruikt.
-// Astro zet daar zelf alleen de blogroute (/post/<naam>) in.
-if (process.argv.includes("--na-build")) {
-  const built = join(ROOT, "dist", "client", "_wix", "pages.json");
-  const own = JSON.parse(readFileSync(join(ROOT, "_wix", "pages.json"), "utf8"));
-  // /post is alleen een doorverwijzing naar nieuws.html en hoort niet in de sitemap.
-  const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => x.path !== "/post");
-  for (const page of own) if (!list.some((x) => x.path === page.path)) list.push(page);
-  mkdirSync(dirname(built), { recursive: true });
-  writeFileSync(built, JSON.stringify(list));
-  console.log(`Paginalijst voor Wix: ${list.map((x) => x.path).join(", ")}`);
-  process.exit(0);
-}
-
 // Wat NIET bij de website hoort.
 const SKIP = new Set([
   ".git", ".github", ".claude", ".agents", ".astro", ".wix", ".site", ".vscode", "node_modules", "dist", "src", "tools", "_wix",
@@ -34,6 +19,92 @@ const SKIP = new Set([
 ]);
 const skip = (name) => SKIP.has(name) || name.startsWith(".env") || name.endsWith(".zip") || name.endsWith(".log");
 
+
+const { appId: CLIENT_ID } = JSON.parse(readFileSync(join(ROOT, "wix.config.json"), "utf8"));
+const SITE_SCRIPT = `<script id="wix-site-script" src="https://manage.wix.com/_api/headless-business-setup/v1/headless-business/site-script.js" data-client-id="${CLIENT_ID}" async></script>`;
+function addSiteScript(file) {
+  const html = readFileSync(file, "utf8");
+  if (html.includes('id="wix-site-script"') || !html.includes("</head>")) return;
+  writeFileSync(file, html.replace("</head>", `${SITE_SCRIPT}</head>`));
+}
+
+// Preview (npm run dev): houd .site/ bij terwijl de preview draait, zodat een aangepast bestand meteen
+// zichtbaar is. Draait los op de achtergrond en stopt vanzelf als de preview (poort 4321) weg is.
+if (process.argv.includes("--bijhouden")) {
+  const { watch, copyFileSync, statSync } = await import("node:fs");
+  watch(ROOT, { recursive: true }, (_event, rel) => {
+    if (!rel) return;
+    const parts = rel.split(/[\\/]/);
+    if (skip(parts[0]) || parts.some((p) => p === ".DS_Store")) return;
+    const src = join(ROOT, rel), dst = join(OUT, rel);
+    try {
+      if (!existsSync(src)) { rmSync(dst, { recursive: true, force: true }); return; }
+      if (!statSync(src).isFile()) return;
+      mkdirSync(dirname(dst), { recursive: true });
+      copyFileSync(src, dst);
+      if (parts.length === 1 && rel.endsWith(".html")) addSiteScript(dst);
+    } catch { /* bestand was even niet leesbaar; de volgende wijziging pakt het op */ }
+  });
+  let misses = 0;
+  setInterval(async () => {
+    try { await fetch("http://localhost:4321/", { method: "HEAD" }); misses = 0; }
+    catch { if (++misses >= 3) process.exit(0); }
+  }, 20000);
+}
+
+// Na de build (npm run build roept dit script dan met --na-build aan): de paginalijst die Wix voor de
+// sitemap gebruikt aanvullen. Astro zet daar zelf alleen de blogroute (/post/<naam>) in. Wij voegen toe:
+// de vaste pagina's uit _wix/pages.json (homepage), alle gewone HTML-pagina's en alle projecten
+// (/project/<naam>, uit het Wix CMS). Een project dat later bijkomt staat er na de volgende publicatie in.
+if (process.argv.includes("--na-build")) {
+  const built = join(ROOT, "dist", "client", "_wix", "pages.json");
+  const own = JSON.parse(readFileSync(join(ROOT, "_wix", "pages.json"), "utf8"));
+  // Doorverwijzingen (/post, /project, oude adressen) horen niet in de sitemap. De projectroute
+  // /project/[slug] ook niet als patroon: Wix kent geen projecten, dus de echte adressen komen hieronder.
+  const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]"];
+  const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
+  const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
+  for (const page of own) add(page.path);
+
+  // Gewone pagina's: alle .html in .site/, behalve testpagina's en pagina's met noindex.
+  const NOT_IN_SITEMAP = new Set(["index.html", "footer-lab.html", "home-b.html", "bedankt.html"]);
+  for (const name of readdirSync(OUT).sort()) {
+    if (!name.endsWith(".html") || NOT_IN_SITEMAP.has(name)) continue;
+    if (/<meta[^>]+name="robots"[^>]+noindex/i.test(readFileSync(join(OUT, name), "utf8"))) continue;
+    add(`/${name}`);
+  }
+
+  // Projecten uit het Wix CMS (openbare bezoekerstoegang, zoals de website zelf).
+  try {
+    const { appId } = JSON.parse(readFileSync(join(ROOT, "wix.config.json"), "utf8"));
+    const tok = await fetch("https://www.wixapis.com/oauth2/token", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clientId: appId, grantType: "anonymous" }),
+    }).then((r) => r.json());
+    let cursor = null, n = 0;
+    do {
+      const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+        body: JSON.stringify({ dataCollectionId: "Projecten", query: cursor ? { cursorPaging: { limit: 100, cursor } } : { cursorPaging: { limit: 100 } } }),
+      });
+      if (!res.ok) throw new Error(`Wix Data ${res.status}`);
+      const d = await res.json();
+      for (const item of d.dataItems || []) if (item.data?.slug && item.data?.title) { add(`/project/${encodeURIComponent(item.data.slug)}`); n++; }
+      cursor = d.pagingMetadata?.cursors?.next || null;
+    } while (cursor);
+    console.log(`${n} projecten toegevoegd aan de paginalijst.`);
+  } catch (err) {
+    console.warn(`Let op: projecten konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
+  }
+
+  mkdirSync(dirname(built), { recursive: true });
+  writeFileSync(built, JSON.stringify(list));
+  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !x.path.startsWith("/project/")).map((x) => x.path).join(", ")} + projecten).`);
+  process.exit(0);
+}
+
+if (!process.argv.includes("--bijhouden")) {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT);
 let n = 0;
@@ -46,15 +117,7 @@ for (const name of readdirSync(ROOT)) {
 // Bij een gewone upload zette Wix zelf zijn site-script in elke HTML-pagina (statistieken, cookiemelding,
 // SEO-instellingen uit het dashboard). Bij een Astro-build gebeurt dat niet voor losse HTML-bestanden,
 // dus zetten we het hier in de kopie in .site/ (de bestanden in de hoofdmap blijven ongewijzigd).
-const { appId: clientId } = JSON.parse(readFileSync(join(ROOT, "wix.config.json"), "utf8"));
-const SITE_SCRIPT = `<script id="wix-site-script" src="https://manage.wix.com/_api/headless-business-setup/v1/headless-business/site-script.js" data-client-id="${clientId}" async></script>`;
-for (const name of readdirSync(OUT)) {
-  if (!name.endsWith(".html")) continue;
-  const file = join(OUT, name);
-  const html = readFileSync(file, "utf8");
-  if (html.includes('id="wix-site-script"') || !html.includes("</head>")) continue;
-  writeFileSync(file, html.replace("</head>", `${SITE_SCRIPT}</head>`));
-}
+for (const name of readdirSync(OUT)) if (name.endsWith(".html")) addSiteScript(join(OUT, name));
 
 const env = join(ROOT, ".env.local");
 if (!existsSync(env)) {
@@ -71,3 +134,10 @@ if (!existsSync(env)) {
   ].join("\n"));
 }
 console.log(`Websitebestanden klaargezet in .site/ (${n} onderdelen).`);
+
+if (process.argv.includes("--met-bijhouden")) {
+  const { spawn } = await import("node:child_process");
+  spawn(process.execPath, [fileURLToPath(import.meta.url), "--bijhouden"], { detached: true, stdio: "ignore" }).unref();
+  console.log("Wijzigingen worden bijgehouden zolang de preview draait.");
+}
+}

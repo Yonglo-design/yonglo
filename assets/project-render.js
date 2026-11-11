@@ -1,23 +1,8 @@
-// Projectpagina: /project.html?p=<slug>. Inhoud uit de Wix CMS-collectie "Projecten".
-import { fetchProjects, fetchContactpersoon, projectUrl, img, dims, video, esc, themeStyle, galleryOf, paragraphs, kenmerken, hostOf, reveal, loadScript, cardTags } from "./projecten.js";
+// Opbouw van een projectpagina (/project/<naam>) als HTML-tekst. Gebruikt door de server
+// (src/pages/project/[slug].astro); de inhoud komt uit de Wix CMS-collectie "Projecten".
+import { projectUrl, img, video, esc, themeStyle, galleryOf, paragraphs, kenmerken, hostOf, cardTags } from "./projecten.js";
 
-const main = document.querySelector('[data-cms="project"]');
-const slug = new URLSearchParams(location.search).get("p") || "";
-
-function setMeta(p) {
-  const title = `${p.title}${p.subkop ? " – " + p.subkop : ""} | Portfolio Yonglo`;
-  document.title = title;
-  const desc = p.intro || p.kortTekst || `Project van Yonglo voor ${p.title}.`;
-  const set = (sel, attr, val) => { const m = document.querySelector(sel); if (m) m.setAttribute(attr, val); };
-  set('meta[name="description"]', "content", desc);
-  set('meta[property="og:title"]', "content", title);
-  set('meta[property="og:description"]', "content", desc);
-  const og = img(p.hoofdbeeld, 1200, 630);
-  if (og) set('meta[property="og:image"]', "content", og);
-  set('link[rel="canonical"]', "href", location.origin + projectUrl(p));
-}
-
-function hero(p) {
+export function hero(p) {
   const diensten = (p.diensten || []).filter(d => d !== p.platform);
   const meta = [
     diensten.length && ["Diensten", esc(diensten.join(", "))],
@@ -42,7 +27,7 @@ function hero(p) {
 </section>`;
 }
 
-function showcase(p) {
+export function showcase(p) {
   const hero = !!p.heroImage;
   const src = img(p.heroImage || p.hoofdbeeld, hero ? 2200 : 1800);
   const logo = img(p.logo, 240, 240);
@@ -60,7 +45,7 @@ function showcase(p) {
 </section>`;
 }
 
-function about(p, n) {
+export function about(p, n) {
   const ps = paragraphs(p.omschrijving);
   if (!ps.length) return "";
   return `<section class="light pj-about">
@@ -73,7 +58,7 @@ function about(p, n) {
 </section>`;
 }
 
-function feats(p, n) {
+export function feats(p, n) {
   const ks = kenmerken(p.kenmerken);
   if (!ks.length && !p.sectieKop) return "";
   return `<section class="light pj-feats">
@@ -88,7 +73,7 @@ function feats(p, n) {
 </section>`;
 }
 
-function devices(p) {
+export function devices(p) {
   const page = img(p.homepage, 1440);
   const vid = video(p.mobileScrollVideo);
   if (!page && !vid) return "";
@@ -98,7 +83,7 @@ function devices(p) {
   </div></div>`;
 }
 
-function gallery(p, n) {
+export function gallery(p, n) {
   const g = galleryOf(p).slice(0, 3);
   const dev = devices(p);
   if (!g.length && !dev) return "";
@@ -113,7 +98,7 @@ function gallery(p, n) {
   ${shots.length ? `<div class="wrap"><div class="gal-grid n${shots.length}">${shots.map((src, i) => `<figure class="gshot rv" style="--d:${i * 0.08}s"><img src="${src}" alt="${esc(p.title)} – afbeelding ${i + 1}" loading="lazy"></figure>`).join("")}</div></div>` : ""}
 </section>`;
 }
-function contact(p, n, cp) {
+export function contact(p, n, cp) {
   const naam = (cp && cp.title) || "Marko";
   const functie = (cp && cp.functie) || "Founder & CEO Yonglo";
   const foto = (cp && cp.foto && img(cp.foto, 128, 128, "c")) || "/assets/marko.webp";
@@ -149,7 +134,7 @@ function contact(p, n, cp) {
 </section>`;
 }
 
-function more(p, all, n) {
+export function more(p, all, n) {
   const i = all.findIndex(x => x.slug === p.slug);
   const others = all.filter(x => x.slug !== p.slug);
   if (!others.length) return "";
@@ -178,107 +163,3 @@ function more(p, all, n) {
   ${next && next.slug !== p.slug ? `<a href="${projectUrl(next)}" class="next-band"><span>Volgend project</span><b>${esc(next.title)} <i>→</i></b></a>` : ""}
 </section>`;
 }
-
-// Maakt de witte achtergrond rond de telefoon in de mobiele video transparant.
-// Op basis van de poster wordt eenmalig een masker berekend (vlakvulling vanaf de randen
-// over lichte, kleurloze pixels); dat masker gaat als CSS-mask over de video.
-function keyPhone(videoEl) {
-  const posterUrl = videoEl && videoEl.getAttribute("poster");
-  if (!posterUrl) return;
-  const im = new Image();
-  im.crossOrigin = "anonymous";
-  im.onload = () => {
-    try {
-      const W = 320, H = Math.round(320 * im.naturalHeight / im.naturalWidth);
-      const c = document.createElement("canvas");
-      c.width = W; c.height = H;
-      const ctx = c.getContext("2d", { willReadFrequently: true });
-      ctx.drawImage(im, 0, 0, W, H);
-      const px = ctx.getImageData(0, 0, W, H);
-      const d = px.data, n = W * H;
-      const light = new Uint8Array(n), seen = new Uint8Array(n), lum = new Uint8Array(n);
-      for (let i = 0; i < n; i++) {
-        const r = d[i * 4], g = d[i * 4 + 1], b = d[i * 4 + 2];
-        const L = (r * 299 + g * 587 + b * 114) / 1000;
-        lum[i] = L;
-        light[i] = L > 150 && Math.max(r, g, b) - Math.min(r, g, b) < 28 ? 1 : 0;
-      }
-      const stack = [];
-      const push = i => { if (!seen[i] && light[i]) { seen[i] = 1; stack.push(i); } };
-      for (let x = 0; x < W; x++) { push(x); push((H - 1) * W + x); }
-      for (let y = 0; y < H; y++) { push(y * W); push(y * W + W - 1); }
-      while (stack.length) {
-        const i = stack.pop(), x = i % W, y = (i - x) / W;
-        if (x > 0) push(i - 1);
-        if (x < W - 1) push(i + 1);
-        if (y > 0) push(i - W);
-        if (y < H - 1) push(i + W);
-      }
-      let outside = 0;
-      for (let i = 0; i < n; i++) {
-        d[i * 4] = d[i * 4 + 1] = d[i * 4 + 2] = 0;
-        if (seen[i]) { outside++; d[i * 4 + 3] = Math.max(0, Math.min(255, (205 - lum[i]) * 4)); }
-        else d[i * 4 + 3] = 255;
-      }
-      // Alleen toepassen als er echt een witte rand is (anders niets doen).
-      if (outside < n * 0.05) return;
-      ctx.putImageData(px, 0, 0);
-      const url = `url(${c.toDataURL("image/png")})`;
-      videoEl.style.webkitMaskImage = url;
-      videoEl.style.maskImage = url;
-      videoEl.style.webkitMaskSize = "100% 100%";
-      videoEl.style.maskSize = "100% 100%";
-      videoEl.classList.add("keyed");
-    } catch (e) {
-      /* poster niet leesbaar (CORS): video blijft zoals hij is */
-    }
-  };
-  im.src = posterUrl;
-}
-function notFound() {
-  document.title = "Project niet gevonden | Yonglo";
-  main.innerHTML = `<section class="hero sub-hero pj-hero dark"><div class="blob b1"></div><div class="dots"></div>
-  <div class="wrap pj-missing"><nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/portfolio.html">Portfolio</a></nav>
-  <h1>Dit project bestaat niet (meer).</h1><p class="lead">Bekijk al ons werk in het portfolio.</p>
-  <a href="/portfolio.html" class="btn btn-primary">Naar portfolio <i class="arr">→</i></a></div></section>`;
-}
-
-function failed() {
-  main.innerHTML = `<section class="hero sub-hero pj-hero dark"><div class="blob b1"></div><div class="dots"></div>
-  <div class="wrap pj-missing"><h1>Het project kon niet worden geladen.</h1><p class="lead">Ververs de pagina of probeer het later nog eens.</p>
-  <a href="/portfolio.html" class="btn btn-primary">Naar portfolio <i class="arr">→</i></a></div></section>`;
-}
-
-// app.js (menu, formulieren, animaties) en project.js (galerij) laden pas na het renderen,
-// zodat ze ook de net toegevoegde inhoud oppakken.
-let rendered = false;
-try {
-  const all = await fetchProjects();
-  const p = all.find(x => x.slug === slug);
-  if (!p) notFound();
-  else {
-    setMeta(p);
-    main.setAttribute("style", themeStyle(p));
-    let k = 0;
-    const num = () => String(++k).padStart(2, "0");
-    const parts = [hero(p), showcase(p)];
-    const a = about(p, "@"); if (a) parts.push(about(p, num()));
-    const f = feats(p, "@"); if (f) parts.push(feats(p, num()));
-    const g = gallery(p, "@"); if (g) parts.push(gallery(p, num()));
-    let cp = null;
-    try { cp = await fetchContactpersoon(p.contactpersoon); } catch (e) { console.error(e); }
-    parts.push(contact(p, num(), cp));
-    parts.push(more(p, all, num()));
-    main.innerHTML = parts.join("\n");
-    main.removeAttribute("aria-busy");
-    rendered = true;
-    keyPhone(main.querySelector(".dev-phone video"));
-  }
-} catch (e) {
-  console.error(e);
-  failed();
-}
-main.removeAttribute("aria-busy");
-await loadScript("/assets/app.js?v=4");
-if (rendered) await loadScript("/assets/project.js");
-reveal(main);

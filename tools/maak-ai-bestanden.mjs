@@ -3,9 +3,8 @@
 //   llms-full.txt   alle tekst van de site, alle projecten en alle blogberichten in één bestand
 //   zoekindex.json  hetzelfde, gestructureerd (per pagina, project en bericht)
 //
-// Waarom: AI-bots voeren geen JavaScript uit. Projecten (project.html?p=…) worden met JavaScript uit
-// Wix geladen en zijn voor een AI dus onzichtbaar. Blogberichten (/post/<naam>) staan wel volledig in
-// de HTML (Wix bouwt ze op de server), maar komen er voor het overzicht ook in.
+// Waarom: AI-bots voeren geen JavaScript uit. Projecten (/project/<naam>) en blogberichten (/post/<naam>)
+// staan volledig in de HTML (Wix bouwt ze op de server), maar komen er voor het overzicht ook in.
 // Deze bestanden zetten die inhoud in gewone tekst klaar.
 //
 // Gebruik (vanuit de projectmap):  node tools/maak-ai-bestanden.mjs
@@ -142,7 +141,7 @@ async function fetchProjects() {
       p.website && `Live website: ${p.website}`,
     ].filter(Boolean);
     return {
-      type: "project", url: `${SITE}/project.html?p=${encodeURIComponent(p.slug)}`, title: plain(p.title),
+      type: "project", url: `${SITE}/project/${encodeURIComponent(p.slug)}`, title: plain(p.title),
       description: plain(p.kortTekst || p.intro || ""), opdrachtgever: plain(p.opdrachtgever || ""), branche: plain(p.branche || ""),
       platform: plain(p.platform || ""), diensten, website: p.website || "",
       text: [feiten.join("\n"), regels.join("\n\n")].filter(Boolean).join("\n\n"),
@@ -212,7 +211,7 @@ const ZOEKEN = `Deze site is gemaakt om goed leesbaar te zijn voor AI-assistente
 2. **Alles in één keer lezen:** [${SITE}/llms-full.txt](${SITE}/llms-full.txt) bevat de volledige tekst van alle pagina's, alle projecten (opdrachtgever, branche, diensten, beschrijving) en alle blogberichten. Gebruik dit om vragen te beantwoorden als "Wat kost…", "Hebben jullie ervaring met…" of "Welke projecten passen bij mijn branche?".
 3. **Gericht zoeken (JSON):** [${SITE}/zoekindex.json](${SITE}/zoekindex.json) bevat dezelfde inhoud als lijst \`items\`. Elk item heeft \`type\` ("pagina", "project" of "blog"), \`url\`, \`title\`, \`description\` en \`text\`. Projecten hebben ook \`opdrachtgever\`, \`branche\`, \`platform\`, \`diensten\` en \`website\`; blogberichten ook \`datum\` en \`categorie\`. Filter bijvoorbeeld op \`diensten\` bevat "eCommerce" of \`branche\` is "Retail".
 4. **Gewone pagina's** (zoals ${SITE}/seo.html) zijn ook zonder JavaScript te lezen.
-5. **Let op:** projectpagina's (\`project.html?p=…\`) laden hun inhoud met JavaScript; blogberichten (\`/post/<naam>\`) staan volledig in de HTML. Als je ze rechtstreeks ophaalt, zie je alleen een leeg sjabloon. Lees de inhoud daarom uit llms-full.txt of zoekindex.json, en geef de gebruiker wél de link naar de pagina zelf.
+5. **Let op:** projectpagina's (\`/project/<naam>\`) en blogberichten (\`/post/<naam>\`) staan volledig in de HTML en zijn dus ook rechtstreeks te lezen. Voor een snel overzicht kun je llms-full.txt of zoekindex.json gebruiken; geef de gebruiker de link naar de pagina zelf.
 6. De zoekbalk op de site werkt alleen in een browser; gebruik die niet.
 
 Bijgewerkt op ${vandaag}. Projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.`;

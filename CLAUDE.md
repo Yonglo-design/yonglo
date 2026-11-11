@@ -1,8 +1,9 @@
 # Projectregels voor Claude Code
 
 Dit is de website van Yonglo: gewone HTML-pagina's (HTML, CSS en JavaScript in de hoofdmap),
-gehost als **Wix-managed Astro**-site. Alleen de blogberichten (`/post/<naam>`) worden door Wix op
-de server opgebouwd (`src/pages/post/[slug].astro`); alle andere pagina's blijven losse bestanden.
+gehost als **Wix-managed Astro**-site. Alleen de blogberichten (`/post/<naam>`) en de projecten
+(`/project/<naam>`) worden door Wix op de server opgebouwd (`src/pages/post/[slug].astro` en
+`src/pages/project/[slug].astro`); alle andere pagina's blijven losse bestanden.
 Content zoals projecten komt uit het Wix CMS via `assets/wix/`, blogs uit Wix Blog.
 
 Er werken twee mensen aan. Ze zijn niet per se developers: voer alle git- en Wix-stappen
@@ -27,8 +28,8 @@ Voer `git pull --tags` uit. Bij conflicten: los ze zorgvuldig op en leg uit wat 
 
 ## "Preview" / "laat zien"
 Is de map `node_modules` er niet, voer dan eerst `npm install` uit. Start dan `npm run dev` en geef de
-gebruiker de link `http://localhost:4321`. Dat toont alle pagina's én de blogberichten (`/post/<naam>`).
-(`python3 -m http.server 8000` werkt ook nog, maar dan geven de blogberichten een 404.)
+gebruiker de link `http://localhost:4321`. Dat toont alle pagina's én de blogberichten (`/post/<naam>`) en
+projecten (`/project/<naam>`). (`python3 -m http.server 8000` werkt niet voor blogs en projecten: 404.)
 Openen als bestand (`file://`) werkt niet, omdat de scripts modules zijn.
 Als CMS-content lokaal niet laadt, tonen de pagina's de vaste HTML-inhoud; dat is normaal.
 Dit is alleen zichtbaar op de eigen computer. NIET publiceren.
@@ -70,6 +71,11 @@ op een Astro-site.
 ## Goed om te weten
 - Projecten en andere CMS-items worden in het Wix-dashboard aangepast, niet in de code.
   Die wijzigingen staan meteen live, zonder te publiceren.
+- Projecten staan op `/project/<slug>`, hetzelfde adres als op de oude yonglo.com. Wix bouwt die pagina op
+  de server (`src/pages/project/[slug].astro`, opmaak uit `assets/project-render.js`), dus de volledige
+  inhoud en de SEO-tags (titel, omschrijving, deelafbeelding uit het project zelf) staan in de HTML.
+  Oude adressen (`project.html?p=…`, en vier oude projectnamen) sturen door naar het nieuwe adres.
+  Nieuwe projecten komen bij de volgende publicatie in de sitemap.
 - Blogberichten staan in **Wix Blog van deze site** (Wix-dashboard → Blog). Schrijven, aanpassen
   en een categorie kiezen (Yonglo, Projecten, Wix of AI = de filterknoppen) doe je daar; het staat
   dan meteen op `nieuws.html`, de homepage en in de zoekfunctie, zonder te publiceren.

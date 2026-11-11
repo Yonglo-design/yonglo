@@ -31,7 +31,7 @@ export async function fetchContactpersoon(id) {
 }
 
 export function projectUrl(p) {
-  return "/project.html?p=" + encodeURIComponent(p.slug);
+  return "/project/" + encodeURIComponent(p.slug);
 }
 
 // Wix-afbeelding op maat (scherper en lichter dan het origineel).

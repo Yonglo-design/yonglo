@@ -16,7 +16,6 @@ const FOOTER_HTML = `
       <div class="fd-ai" data-vraag>
         <p class="fd-ai-t"><span class="fd-ai-spark" aria-hidden="true">✦</span> Vraag je AI naar Yonglo</p>
         <div class="fd-ai-btns"><a data-ai="chatgpt" href="https://chatgpt.com/">ChatGPT</a><a data-ai="claude" href="https://claude.ai/new">Claude</a><a data-ai="perplexity" href="https://www.perplexity.ai/">Perplexity</a></div>
-        <p class="fd-ai-s">Je AI leest onze <a href="/llms.txt">llms.txt</a>: alles over ons, in gewone tekst.</p>
       </div>
     </div>
     <div class="fd-cols">

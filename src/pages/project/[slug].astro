@@ -1,0 +1,189 @@
+---
+// Projectpagina op /project/<naam> — hetzelfde adres als op de oude yonglo.com.
+// Wix bouwt deze pagina op de server op met het project uit de Wix CMS-collectie "Projecten"
+// (Wix-dashboard → CMS → Projecten), dus de volledige inhoud staat direct in de HTML (goed voor
+// Google en AI-zoekmachines). Een nieuw of aangepast project is meteen zichtbaar, zonder te publiceren.
+// De opmaak komt uit assets/project-render.js; titel, omschrijving en deelafbeelding uit het project zelf.
+import { fetchWithAuth } from "@wix/sdk/context";
+import { hero, showcase, about, feats, gallery, contact, more } from "../../../assets/project-render.js";
+import { projectUrl, img, themeStyle } from "../../../assets/projecten.js";
+
+// Oude adressen van yonglo.com waarvan de naam in het CMS iets anders is.
+const ALIASES: Record<string, string> = {
+  "ad-design": "ad-design-studio",
+  "jus-add-wine": "just-add-wine",
+  "mankind": "mankind-coach",
+  "mplusr": "m-r-interior-architecture",
+};
+
+const slug = Astro.params.slug || "";
+if (!slug) return Astro.redirect("/portfolio.html", 301);
+if (ALIASES[slug]) return Astro.redirect(`/project/${ALIASES[slug]}`, 301);
+
+const forwardedUrl = Astro.request.headers.get("x-wix-forwarded-url");
+const pageUrl =
+  forwardedUrl && URL.canParse(forwardedUrl) && /^https?:$/.test(new URL(forwardedUrl).protocol)
+    ? forwardedUrl
+    : Astro.url.href;
+const origin = new URL(pageUrl).origin;
+
+// Wix Data, zelfde verzoek als assets/wix/wix-cms.js (queryDataItems), maar met de server-login van Wix.
+async function query(dataCollectionId: string, query: any) {
+  const res = await fetchWithAuth("https://www.wixapis.com/wix-data/v2/items/query", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ dataCollectionId, query }),
+  });
+  if (!res.ok) throw new Error(`Wix Data ${dataCollectionId}: ${res.status} ${await res.text()}`);
+  const d = await res.json();
+  return { items: (d?.dataItems ?? []).map((x: any) => x.data), next: d?.pagingMetadata?.cursors?.next ?? null };
+}
+async function fetchProjects() {
+  const all: any[] = [];
+  let page = await query("Projecten", { sort: [{ fieldName: "volgorde", order: "ASC" }, { fieldName: "title", order: "ASC" }], cursorPaging: { limit: 100 } });
+  all.push(...page.items);
+  while (page.next) {
+    page = await query("Projecten", { cursorPaging: { limit: 100, cursor: page.next } });
+    all.push(...page.items);
+  }
+  return all.filter((p) => p.title && p.slug);
+}
+
+let all: any[] = [];
+let p: any = null;
+let cp: any = null;
+let failed = false;
+try {
+  all = await fetchProjects();
+  p = all.find((x) => x.slug === slug) || null;
+  if (p?.contactpersoon) {
+    cp = (await query("Contactpersonen", { filter: { _id: { $eq: String(p.contactpersoon) } }, cursorPaging: { limit: 1 } }).catch(() => ({ items: [] }))).items[0] || null;
+  }
+} catch (err) {
+  console.error(err);
+  failed = true;
+}
+if (!p) Astro.response.status = failed ? 503 : 404;
+
+// ---- inhoud (zelfde volgorde en nummering als voorheen) -----------------------------------------
+let body = "";
+if (p) {
+  let k = 0;
+  const num = () => String(++k).padStart(2, "0");
+  const parts = [hero(p), showcase(p)];
+  if (about(p, "@")) parts.push(about(p, num()));
+  if (feats(p, "@")) parts.push(feats(p, num()));
+  if (gallery(p, "@")) parts.push(gallery(p, num()));
+  parts.push(contact(p, num(), cp));
+  parts.push(more(p, all, num()));
+  body = parts.join("\n");
+}
+
+// ---- SEO ------------------------------------------------------------------------------------
+const trimTo = (s: string, n: number) => {
+  s = String(s || "").replace(/\s+/g, " ").trim();
+  if (s.length <= n) return s;
+  const cut = s.slice(0, n - 1);
+  const sp = cut.lastIndexOf(" ");
+  return (sp > n * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,.;:–-]+$/, "") + "…";
+};
+const url = p ? origin + projectUrl(p) : "";
+const title = p ? `${p.title}${p.subkop ? " – " + p.subkop : ""} | Portfolio Yonglo` : failed ? "Project kon niet worden geladen | Yonglo" : "Project niet gevonden | Yonglo";
+const desc = p ? trimTo(p.intro || p.kortTekst || `Project van Yonglo voor ${p.title}.`, 158) : "";
+const ogImg = p ? img(p.hoofdbeeld || p.portfolioImage || p.heroImage, 1200, 630, "c") : null;
+const ORG = { "@type": "Organization", "@id": "https://www.yonglo.com/#organization", name: "Yonglo", url: "https://www.yonglo.com", logo: { "@type": "ImageObject", url: `${origin}/assets/yonglo-logo.png`, width: 512, height: 512 } };
+const ld = (o: unknown) => JSON.stringify(o).replace(/</g, "\\u003c");
+const work = p && {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": `${url}#project`,
+  url,
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  name: p.title,
+  headline: trimTo(`${p.title}${p.subkop ? " – " + p.subkop : ""}`, 110),
+  description: desc,
+  ...(ogImg ? { image: ogImg } : {}),
+  inLanguage: "nl-NL",
+  creator: ORG,
+  ...(p.opdrachtgever || p.title ? { sourceOrganization: { "@type": "Organization", name: p.opdrachtgever || p.title, ...(p.website ? { url: p.website } : {}) } } : {}),
+  ...(p.branche ? { genre: p.branche } : {}),
+  ...((p.diensten || []).length ? { keywords: (p.diensten || []).join(", ") } : {}),
+  ...(p._updatedDate?.$date || p._updatedDate ? { dateModified: p._updatedDate?.$date || p._updatedDate } : {}),
+  isPartOf: { "@type": "CollectionPage", "@id": `${origin}/portfolio.html`, name: "Portfolio Yonglo", url: `${origin}/portfolio.html` },
+};
+const breadcrumb = p && {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${origin}/` },
+    { "@type": "ListItem", position: 2, name: "Portfolio", item: `${origin}/portfolio.html` },
+    { "@type": "ListItem", position: 3, name: p.title, item: url },
+  ],
+};
+---
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-eigen-seo>{title}</title>
+{p ? <>
+<meta name="description" content={desc} data-eigen-seo>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href={url} data-eigen-seo>
+<meta property="og:site_name" content="Yonglo">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:type" content="website">
+<meta property="og:title" content={title.replace(/ \| Portfolio Yonglo$/, "")}>
+<meta property="og:description" content={desc}>
+<meta property="og:url" content={url}>
+{ogImg && <meta property="og:image" content={ogImg}>}
+{ogImg && <meta property="og:image:width" content="1200">}
+{ogImg && <meta property="og:image:height" content="630">}
+<meta name="twitter:card" content={ogImg ? "summary_large_image" : "summary"}>
+<script type="application/ld+json" set:html={ld(work)} />
+<script type="application/ld+json" set:html={ld(breadcrumb)} />
+</> : <meta name="robots" content="noindex">}
+<meta name="theme-color" content="#0E0F1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-20%20-8%20118%20118%22%3E%3Crect%20x%3D%22-20%22%20y%3D%22-8%22%20width%3D%22118%22%20height%3D%22118%22%20rx%3D%2228%22%20fill%3D%22%23325FFC%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M61.4%2C5.1h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C5.7-1.5%2C15.4-11.2%2C15.4s-11.3-8.4-11.3-15.4V6.5c0-.8-.6-1.4-1.4-1.4h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C15.4%2C7.3%2C26.5%2C19.6%2C30v22.8c0%2C.8.6%2C1.4%2C1.4%2C1.4h13.8c.8%2C0%2C1.4-.6%2C1.4-1.4v-22.8c12.3-3.6%2C19.6-14.6%2C19.6-30V6.5c0-.8-.6-1.4-1.4-1.4Z%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://static.wixstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<link rel="stylesheet" href="/assets/footer.css">
+<link rel="stylesheet" href="/assets/page.css">
+<link rel="stylesheet" href="/assets/project.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Yonglo voor AI-assistenten (llms.txt)">
+</head>
+<body class="page-sub">
+<a class="skip" href="#main">Naar inhoud</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hdr" id="top" data-header></header>
+<script is:inline src="/assets/header.js"></script>
+
+{p ? (
+<main id="main" class="project" style={themeStyle(p)} set:html={body} />
+) : (
+<main id="main" class="project">
+<section class="hero sub-hero pj-hero dark"><div class="blob b1"></div><div class="dots"></div>
+  <div class="wrap pj-missing"><nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/portfolio.html">Portfolio</a></nav>
+  {failed ? <h1>Het project kon niet worden geladen.</h1> : <h1>Dit project bestaat niet (meer).</h1>}
+  <p class="lead">{failed ? "Ververs de pagina of probeer het later nog eens." : "Bekijk al ons werk in het portfolio."}</p>
+  <a href="/portfolio.html" class="btn btn-primary">Naar portfolio <i class="arr">→</i></a></div></section>
+</main>
+)}
+
+<footer class="fd" data-footer></footer>
+
+<div class="mobbar"><a href="tel:+31852033223">Bel</a><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a><a href="#contact" class="hl">Kennismaken</a></div>
+<a href="https://wa.me/31638148565" class="float-wa" target="_blank" rel="noopener">Vragen? App ons</a>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script is:inline src="/assets/app.js?v=4" defer></script>
+<script is:inline src="/assets/footer.js" defer></script>
+{p && <script is:inline src="/assets/project.js" defer></script>}
+{p && <script is:inline src="/assets/project-page.js" defer></script>}
+</body>
+</html>
