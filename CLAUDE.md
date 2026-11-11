@@ -89,6 +89,12 @@ op een Astro-site.
   Projecten op een koppelingspagina: wat in het CMS bij "Projecten met deze koppeling" is aangevinkt, plus projecten
   waarvan de tekst de naam van de koppeling noemt. Engels: velden `kopEn`, `tekstEn`, `metabeschrijvingEn`; zonder
   `tekstEn` toont `/en/wix-koppeling/<slug>` de Nederlandse tekst en staat die pagina op noindex.
+- **Help docs** van de Wix-apps van Yonglo (Smart Cookie Popup, PDF Generator Pro) staan in de CMS-collecties
+  **AppsHelpDocs** (artikelen; veld "App", "Parent" voor de volgorde in de boom, "Order") en **AppDocsFAQ** (vragen,
+  gekoppeld aan een artikel). Ze staan in het Engels op `/help-docs`, `/help-docs/<app>` en `/help-docs/<app>/<slug>`
+  (`src/helpdocs.ts`, `src/components/HelpDocs.astro`, `assets/helpdocs.js`; de tekst wordt omgezet met `assets/blog.js`).
+  Een artikel met de status Draft in het CMS is niet zichtbaar. Introtekst en App Market-link per app: `APPS` in
+  `assets/helpdocs.js`. (Op 11-11-2026 overgezet vanaf de oude site "Yonglo (oud)".)
 - Blogberichten staan in **Wix Blog van deze site** (Wix-dashboard → Blog). Schrijven, aanpassen
   en een categorie kiezen (Yonglo, Projecten, Wix of AI = de filterknoppen) doe je daar; het staat
   dan meteen op `nieuws.html`, de homepage en in de zoekfunctie, zonder te publiceren.

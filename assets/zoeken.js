@@ -1,11 +1,12 @@
 // Zoekfunctie in de header. Doorzoekt live de pagina's van de site (ze worden bij het eerste
-// gebruik opgehaald, dus nieuwe teksten zijn meteen vindbaar), de projecten uit het Wix CMS en de blogberichten uit Wix Blog.
+// gebruik opgehaald, dus nieuwe teksten zijn meteen vindbaar), de projecten, koppelingen en help docs uit het Wix CMS en de
+// blogberichten uit Wix Blog.
 const d = document;
 // Engelse website (/en/…): Engelse pagina's en projecten doorzoeken, Engelse teksten. Blogberichten zijn Nederlands.
 const EN = d.documentElement.lang === "en";
 const T = (nl, en) => (EN ? en : nl);
 const PRE = EN ? "/en" : "";
-let box, input, res, trigger, pages = null, projects = null, posts = null, loading = null, sel = -1;
+let box, input, res, trigger, pages = null, projects = null, posts = null, koppelingen = null, docs = null, loading = null, sel = -1;
 
 const norm = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const esc = s => String(s || "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -22,7 +23,16 @@ function load() {
   const c = import("/assets/blog.js").then(m => m.fetchPosts().then(ps => {
     posts = ps.map(p => ({ u: m.postUrl(p), t: p.title, d: p.excerpt, h: [p.cat], x: "" }));
   })).catch(() => { posts = []; });
-  loading = Promise.all([a, b, c]);
+  // Koppelingen (CMS "Koppelingen") en de help docs van de apps (CMS "AppsHelpDocs", Engels)
+  const e = Promise.all([import("/assets/koppelingen.js"), import("/assets/wix/wix-cms.js")]).then(([k, cms]) => cms.queryDataItems(k.COLLECTION, { limit: 100 }).then(r => {
+    koppelingen = k.sorteer(r.items).map(x => k.inTaal(x, EN ? "en" : "nl")).map(x => ({
+      u: k.koppelingUrl(x), t: x.title, d: x.metabeschrijving || "", h: [x.categorie, T("koppeling", "integration"), "API"], x: [x.kop, k.platteTekst(x.tekst)].join(" "),
+    }));
+  })).catch(() => { koppelingen = []; });
+  const f = Promise.all([import("/assets/helpdocs.js"), import("/assets/wix/wix-cms.js")]).then(([h, cms]) => cms.queryDataItems(h.DOCS, { limit: 100 }).then(r => {
+    docs = h.perApp(r.items).flatMap(a => a.docs.map(x => ({ u: h.docUrl(x), t: x.title, d: x.omschrijving || "", h: [a.app, "help", "docs", "app"], x: "" })));
+  })).catch(() => { docs = []; });
+  loading = Promise.all([a, b, c, e, f]);
   return loading;
 }
 
@@ -93,16 +103,18 @@ function render() {
   if (!terms.length) { res.innerHTML = ""; return; }
   if (!pages) { res.innerHTML = `<p class="srch-empty">${T("Even zoeken…", "Searching…")}</p>`; load().then(render); return; }
   const rank = list => list.map(doc => ({ doc, s: score(doc, terms) })).filter(r => r.s).sort((a, b) => b.s - a.s);
-  const pg = rank(pages).slice(0, 7), pj = rank(projects || []).slice(0, 4), nw = rank(posts || []).slice(0, 4);
-  if (!pg.length && !pj.length && !nw.length) {
+  const pg = rank(pages).slice(0, 7), kp = rank(koppelingen || []).slice(0, 4), pj = rank(projects || []).slice(0, 4), nw = rank(posts || []).slice(0, 4), hd = rank(docs || []).slice(0, 3);
+  if (!pg.length && !kp.length && !pj.length && !nw.length && !hd.length) {
     res.innerHTML = T(`<p class="srch-empty">Geen resultaten voor “${esc(q)}”. Probeer een ander woord, of <a href="/contact">neem contact op</a>.</p>`, `<p class="srch-empty">No results for “${esc(q)}”. Try another word, or <a href="/en/contact">get in touch</a>.</p>`);
     return;
   }
   const item = r => `<a class="srch-hit" href="${esc(r.doc.u)}"><b>${mark(r.doc.t, terms)}</b><span>${snippet(r.doc, terms)}</span></a>`;
   res.innerHTML =
     (pg.length ? `<p class="srch-lab">${T("Pagina's", "Pages")}</p>${pg.map(item).join("")}` : "") +
+    (kp.length ? `<p class="srch-lab">${T("Koppelingen", "Integrations")}</p>${kp.map(item).join("")}` : "") +
     (pj.length ? `<p class="srch-lab">${T("Projecten", "Projects")}</p>${pj.map(item).join("")}` : "") +
-    (nw.length ? `<p class="srch-lab">${T("Nieuws", "News (in Dutch)")}</p>${nw.map(item).join("")}` : "");
+    (nw.length ? `<p class="srch-lab">${T("Nieuws", "News (in Dutch)")}</p>${nw.map(item).join("")}` : "") +
+    (hd.length ? `<p class="srch-lab">${T("Help docs van onze apps (Engels)", "Help docs for our apps")}</p>${hd.map(item).join("")}` : "");
 }
 
 function hits() { return [...res.querySelectorAll(".srch-hit")]; }

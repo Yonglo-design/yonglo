@@ -58,7 +58,8 @@ if (process.argv.includes("--na-build")) {
   // /project/[slug] ook niet als patroon: Wix kent geen projecten, dus de echte adressen komen hieronder.
   const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]", "/[pagina]", "/[pagina].html",
     "/en/project", "/en/project/[slug]", "/en/[pagina]", "/en/[pagina].html",
-    "/wix-koppeling", "/wix-koppeling/[slug]", "/en/wix-koppeling", "/en/wix-koppeling/[slug]"];
+    "/wix-koppeling", "/wix-koppeling/[slug]", "/en/wix-koppeling", "/en/wix-koppeling/[slug]",
+    "/help-docs/[app]", "/help-docs/[app]/[slug]", "/en/help-docs/[...pad]"];
   const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
   const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
   for (const page of own) add(page.path);
@@ -126,13 +127,36 @@ if (process.argv.includes("--na-build")) {
       cursor = d.pagingMetadata?.cursors?.next || null;
     } while (cursor);
     console.log(`${k} koppelingen toegevoegd aan de paginalijst.`);
+
+    // Help docs van de apps (/help-docs/<app>/<artikel>). Alleen gepubliceerde artikelen (concepten ziet een bezoeker niet).
+    const { appSlug } = await import("../assets/helpdocs.js");
+    let h = 0;
+    cursor = null;
+    const appsGezien = new Set();
+    do {
+      const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+        body: JSON.stringify({ dataCollectionId: "AppsHelpDocs", query: cursor ? { cursorPaging: { limit: 100, cursor } } : { cursorPaging: { limit: 100 } } }),
+      });
+      if (!res.ok) throw new Error(`Wix Data (AppsHelpDocs) ${res.status}`);
+      const d = await res.json();
+      for (const item of d.dataItems || []) if (item.data?.slug && item.data?.app) {
+        if (!appsGezien.has(item.data.app)) { appsGezien.add(item.data.app); add(`/help-docs/${appSlug(item.data.app)}`); }
+        add(`/help-docs/${appSlug(item.data.app)}/${encodeURIComponent(item.data.slug)}`);
+        h++;
+      }
+      cursor = d.pagingMetadata?.cursors?.next || null;
+    } while (cursor);
+    if (h) add("/help-docs");
+    console.log(`${h} help-artikelen toegevoegd aan de paginalijst.`);
   } catch (err) {
-    console.warn(`Let op: projecten of koppelingen konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
+    console.warn(`Let op: projecten, koppelingen of help docs konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
   }
 
   mkdirSync(dirname(built), { recursive: true });
   writeFileSync(built, JSON.stringify(list));
-  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/(project|wix-koppeling)\//.test(x.path)).map((x) => x.path).join(", ")} + projecten en koppelingen).`);
+  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/(project|wix-koppeling|help-docs)\//.test(x.path)).map((x) => x.path).join(", ")} + projecten, koppelingen en help docs).`);
   process.exit(0);
 }
 
