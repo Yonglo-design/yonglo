@@ -99,6 +99,27 @@ op een Astro-site.
   inhoud en de SEO-tags (titel, omschrijving, deelafbeelding uit het project zelf) staan in de HTML.
   Oude adressen (`project.html?p=…`, en vier oude projectnamen) sturen door naar het nieuwe adres.
   Nieuwe projecten komen bij de volgende publicatie in de sitemap.
+- **Koppelingen** (API-integraties zoals Moneybird, Mollie, HubSpot) staan in de CMS-collectie **Koppelingen**
+  (Wix-dashboard → CMS → Koppelingen) en elk op `/wix-koppeling/<slug>`, hetzelfde adres als op de oude yonglo.com.
+  Wix bouwt die pagina op de server (`src/pages/wix-koppeling/[slug].astro`, gegevens uit `src/koppeling.ts`,
+  opmaak uit `assets/koppelingen.js` en `src/components/KoppelingPagina.astro`). Het overzicht met filterknoppen
+  staat op `/api#koppelingen` (`assets/koppelingen-lijst.js`; de vaste tegels in `api.html` zijn alleen een terugval).
+  Projecten op een koppelingspagina: wat in het CMS bij "Projecten met deze koppeling" is aangevinkt, plus projecten
+  waarvan de tekst de naam van de koppeling noemt. Engels: velden `kopEn`, `tekstEn`, `metabeschrijvingEn`; zonder
+  `tekstEn` toont `/en/wix-koppeling/<slug>` de Nederlandse tekst en staat die pagina op noindex.
+- **Help docs** van de Wix-apps van Yonglo (Smart Cookie Popup, PDF Generator Pro) staan in de CMS-collecties
+  **AppsHelpDocs** (artikelen; veld "App", "Parent" voor de volgorde in de boom, "Order") en **AppDocsFAQ** (vragen,
+  gekoppeld aan een artikel). Ze staan in het Engels op `/help-docs`, `/help-docs/<app>` en `/help-docs/<app>/<slug>`
+  (`src/helpdocs.ts`, `src/components/HelpDocs.astro`, `assets/helpdocs.js`; de tekst wordt omgezet met `assets/blog.js`).
+  Een artikel met de status Draft in het CMS is niet zichtbaar. Introtekst en App Market-link per app: `APPS` in
+  `assets/helpdocs.js`. (Op 11-11-2026 overgezet vanaf de oude site "Yonglo (oud)".)
+- **Regiopagina's (werkgebied)** staan in de CMS-collecties **LandingNl** (`/wix-website/<plaats>`), **LandingBe**
+  (`/wix-websites/<plaats>`, u-vorm), **LandingEurope** (`/wix-expert/<land>`, Engels) en **LandingCities**
+  (`/wix-design-development/<stad>`, Engels). Overzichten: `/wix-website` (NL/BE) en `/wix-expert` (Europa).
+  Code: `src/regio.ts`, `assets/regio.js` (ook de vaste teksten tussen de CMS-velden), `src/components/RegioPagina.astro`.
+  Een nieuwe plaats = een nieuw item met een `slug` in de juiste collectie. Oude adressen van de vorige sites
+  (`/landing-europe/…`, `/wix/<plaats>`, `/projecten/…`, `/blog/…`, `/en/…`) sturen door; zie ook `src/oude-projecten.ts`
+  en `OUDE_ADRESSEN` in `astro.config.mjs`.
 - Blogberichten staan in **Wix Blog van deze site** (Wix-dashboard → Blog). Schrijven, aanpassen
   en een categorie kiezen (Yonglo, Projecten, Wix of AI = de filterknoppen) doe je daar; het staat
   dan meteen op `nieuws.html`, de homepage en in de zoekfunctie, zonder te publiceren.

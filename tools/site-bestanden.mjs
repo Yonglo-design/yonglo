@@ -57,7 +57,12 @@ if (process.argv.includes("--na-build")) {
   // Doorverwijzingen (/post, /project, oude adressen) horen niet in de sitemap. De projectroute
   // /project/[slug] ook niet als patroon: Wix kent geen projecten, dus de echte adressen komen hieronder.
   const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]", "/[pagina]", "/[pagina].html",
-    "/en/project", "/en/project/[slug]", "/en/[pagina]", "/en/[pagina].html"];
+    "/en/project", "/en/project/[slug]", "/en/[pagina]", "/en/[pagina].html",
+    "/wix-koppeling", "/wix-koppeling/[slug]", "/en/wix-koppeling", "/en/wix-koppeling/[slug]",
+    "/help-docs/[app]", "/help-docs/[app]/[slug]", "/en/help-docs/[...pad]",
+    "/wix-website/[slug]", "/wix-websites", "/wix-websites/[slug]", "/wix-expert/[slug]", "/wix-design-development", "/wix-design-development/[slug]",
+    "/landing-europe/[...pad]", "/wix/[slug]", "/en/wix-website/[...pad]", "/en/wix-websites/[...pad]", "/en/wix-expert/[...pad]",
+    "/en/wix-design-development/[...pad]", "/projecten/[...pad]", "/en/projecten/[...pad]", "/blog/[...pad]", "/en/blog/[...pad]", "/en/post/[...pad]"];
   const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
   const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
   for (const page of own) add(page.path);
@@ -104,13 +109,78 @@ if (process.argv.includes("--na-build")) {
       cursor = d.pagingMetadata?.cursors?.next || null;
     } while (cursor);
     console.log(`${n} projecten toegevoegd aan de paginalijst.`);
+
+    // Koppelingen (/wix-koppeling/<naam>). De Engelse versie alleen als er een Engelse tekst is
+    // (zonder vertaling staat die pagina op noindex).
+    let k = 0;
+    cursor = null;
+    do {
+      const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+        body: JSON.stringify({ dataCollectionId: "Koppelingen", query: cursor ? { cursorPaging: { limit: 100, cursor } } : { cursorPaging: { limit: 100 } } }),
+      });
+      if (!res.ok) throw new Error(`Wix Data (Koppelingen) ${res.status}`);
+      const d = await res.json();
+      for (const item of d.dataItems || []) if (item.data?.slug && item.data?.title) {
+        add(`/wix-koppeling/${encodeURIComponent(item.data.slug)}`);
+        if (item.data.tekstEn) add(`/en/wix-koppeling/${encodeURIComponent(item.data.slug)}`);
+        k++;
+      }
+      cursor = d.pagingMetadata?.cursors?.next || null;
+    } while (cursor);
+    console.log(`${k} koppelingen toegevoegd aan de paginalijst.`);
+
+    // Help docs van de apps (/help-docs/<app>/<artikel>). Alleen gepubliceerde artikelen (concepten ziet een bezoeker niet).
+    const { appSlug } = await import("../assets/helpdocs.js");
+    let h = 0;
+    cursor = null;
+    const appsGezien = new Set();
+    do {
+      const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+        body: JSON.stringify({ dataCollectionId: "AppsHelpDocs", query: cursor ? { cursorPaging: { limit: 100, cursor } } : { cursorPaging: { limit: 100 } } }),
+      });
+      if (!res.ok) throw new Error(`Wix Data (AppsHelpDocs) ${res.status}`);
+      const d = await res.json();
+      for (const item of d.dataItems || []) if (item.data?.slug && item.data?.app) {
+        if (!appsGezien.has(item.data.app)) { appsGezien.add(item.data.app); add(`/help-docs/${appSlug(item.data.app)}`); }
+        add(`/help-docs/${appSlug(item.data.app)}/${encodeURIComponent(item.data.slug)}`);
+        h++;
+      }
+      cursor = d.pagingMetadata?.cursors?.next || null;
+    } while (cursor);
+    if (h) add("/help-docs");
+    console.log(`${h} help-artikelen toegevoegd aan de paginalijst.`);
+
+    // Regiopagina's (werkgebied): Nederland, België, Europese landen en steden.
+    const REGIO = [["LandingNl", "/wix-website"], ["LandingBe", "/wix-websites"], ["LandingEurope", "/wix-expert"], ["LandingCities", "/wix-design-development"]];
+    let r = 0;
+    for (const [col, basis] of REGIO) {
+      cursor = null;
+      do {
+        const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+          body: JSON.stringify({ dataCollectionId: col, query: cursor ? { cursorPaging: { limit: 100, cursor } } : { cursorPaging: { limit: 100 } } }),
+        });
+        if (!res.ok) throw new Error(`Wix Data (${col}) ${res.status}`);
+        const d = await res.json();
+        for (const item of d.dataItems || []) if (item.data?.slug) { add(`${basis}/${encodeURIComponent(item.data.slug)}`); r++; }
+        cursor = d.pagingMetadata?.cursors?.next || null;
+      } while (cursor);
+    }
+    add("/wix-website");
+    add("/wix-expert");
+    console.log(`${r} regiopagina's toegevoegd aan de paginalijst.`);
   } catch (err) {
-    console.warn(`Let op: projecten konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
+    console.warn(`Let op: projecten, koppelingen of help docs konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
   }
 
   mkdirSync(dirname(built), { recursive: true });
   writeFileSync(built, JSON.stringify(list));
-  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/project\//.test(x.path)).map((x) => x.path).join(", ")} + projecten).`);
+  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/(project|wix-koppeling|help-docs|wix-website|wix-websites|wix-expert|wix-design-development)\//.test(x.path)).map((x) => x.path).join(", ")} + projecten, koppelingen, help docs en regiopagina's).`);
   process.exit(0);
 }
 

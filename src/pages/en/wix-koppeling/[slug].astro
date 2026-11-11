@@ -1,0 +1,10 @@
+---
+// Engelse koppelingspagina op /en/wix-koppeling/<naam> (teksten uit de En-velden in het CMS).
+// Zelfde code als src/pages/wix-koppeling/[slug].astro; zie src/koppeling.ts.
+import KoppelingPagina from "../../../components/KoppelingPagina.astro";
+import { laadKoppeling } from "../../../koppeling";
+
+const d = await laadKoppeling(Astro);
+if (d.redirect) return Astro.redirect(d.redirect, 301);
+---
+<KoppelingPagina d={d} />

@@ -7,6 +7,7 @@
 // Dezelfde code staat ook in src/pages/en/project/[slug].astro (Engelse versie, /en/project/<naam>):
 // pas je hier iets aan, kopieer dit bestand dan daarheen (alleen de importpaden verschillen: één ../ meer).
 import { fetchWithAuth } from "@wix/sdk/context";
+import { oudProject } from "../../oude-projecten";
 import { hero, showcase, about, feats, gallery, contact, more } from "../../../assets/project-render.js";
 import { projectUrl, img, themeStyle, inTaal } from "../../../assets/projecten.js";
 
@@ -15,17 +16,12 @@ const EN = Astro.url.pathname.startsWith("/en/");
 const T = (nl: string, en: string) => (EN ? en : nl);
 const PRE = EN ? "/en" : "";
 
-// Oude adressen van yonglo.com waarvan de naam in het CMS iets anders is.
-const ALIASES: Record<string, string> = {
-  "ad-design": "ad-design-studio",
-  "jus-add-wine": "just-add-wine",
-  "mankind": "mankind-coach",
-  "mplusr": "m-r-interior-architecture",
-};
+// Oude adressen van yonglo.com (andere naam of niet meer in het portfolio): src/oude-projecten.ts.
 
 const slug = Astro.params.slug || "";
 if (!slug) return Astro.redirect(`${PRE}/portfolio`, 301);
-if (ALIASES[slug]) return Astro.redirect(`${PRE}/project/${ALIASES[slug]}`, 301);
+const oud = oudProject(slug, EN);
+if (oud) return Astro.redirect(oud, 301);
 
 const forwardedUrl = Astro.request.headers.get("x-wix-forwarded-url");
 const pageUrl =

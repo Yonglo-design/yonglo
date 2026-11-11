@@ -2,7 +2,7 @@
 
 > Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
 
-Dit bestand bevat alle tekst van https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com (bijgewerkt op 2026-11-11): 18 pagina's, 52 projecten en 33 blogberichten. Een korter overzicht staat in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/llms.txt, gestructureerde data in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/zoekindex.json.
+Dit bestand bevat alle tekst van https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com (bijgewerkt op 2026-11-11): 18 pagina's, 25 koppelingen, 52 projecten en 33 blogberichten. Een korter overzicht staat in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/llms.txt, gestructureerde data in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/zoekindex.json.
 
 ## Contact
 
@@ -1554,11 +1554,934 @@ Plan een adviesgesprek → Development
 
 - + 1000 meer
 
+##### Alle koppelingen.
+
+Een greep uit de systemen die we al aan Wix hebben gekoppeld. Kies een koppeling en lees wat die voor jouw website kan doen.
+
+- MoneybirdBoekhouding
+
+- Exact OnlineBoekhouding
+
+- e-Boekhouden.nlBoekhouding
+
+- MollieBetalingen
+
+- RealworksVastgoed & verhuur
+
+- HubSpotCRM & marketing
+
+- MailchimpCRM & marketing
+
+- Rabobank SmartpayBetalingen
+
+- AFASBoekhouding
+
+- VismaBoekhouding
+
+- BloxsVastgoed & verhuur
+
+- SalesforceCRM & marketing
+
+- ActiveCampaignCRM & marketing
+
+- IntercomCRM & marketing
+
+- ChargebeeBetalingen
+
+- CryptopayBetalingen
+
+- ChatGPTAI
+
+- Claude (Anthropic)AI
+
+- AirbnbVastgoed & verhuur
+
+- My TouristVastgoed & verhuur
+
+- Microsoft TeamsSamenwerking & data
+
+- SlackSamenwerking & data
+
+- Google CalendarSamenwerking & data
+
+- Google SheetsSamenwerking & data
+
+- Google MapsSamenwerking & data
+
+- +Staat jouw systeem er niet tussen?We koppelen Wix met 1000+ systemen
+
 ##### Klaar om jouw systemen slimmer te verbinden?
 
 Wij denken graag met je mee over de mogelijkheden. Plan een vrijblijvend adviesgesprek. Liever direct contact? App of bel ons.
 
 E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
+
+## Koppelingen
+
+### Moneybird
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/moneybird
+Categorie: Boekhouding
+
+Automatiseer je boekhouding met een Moneybird-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je administratie voor automatische facturatie, klantdata en realtime financiële inzichten.
+
+Automatiseer je boekhouding met een Moneybird-integratie op je Wix-website
+
+Wil je tijd besparen en je boekhouding eenvoudiger maken? Door Moneybird te koppelen aan je Wix-website via Yonglo automatiseer je je financiële administratie. Met een directe integratie via de Moneybird API en Velo by Wix worden belangrijke gegevens automatisch gesynchroniseerd – van klantaanmaak en facturatie tot productinformatie en voorraadbeheer.
+Na elke online aankoop kunnen automatisch facturen worden aangemaakt en verstuurd, klanten worden toegevoegd aan je administratie, en producten worden bijgewerkt in zowel je webshop als je boekhoudsysteem. Zo blijft je administratie altijd actueel zonder handmatige invoer, en voorkom je fouten.
+Met een op maat gemaakte koppeling via Yonglo automatiseer je terugkerende taken zoals het verzenden van betalingsherinneringen, het beheren van klantdata en het genereren van rapporten – allemaal direct vanuit je website.
+Voordelen van een Moneybird-Wix integratie via Yonglo:
+ - Automatische synchronisatie van klanten, producten, facturen en voorraad
+ - Geen dubbele invoer, minder fouten en meer overzicht
+ - Automatisch factureren na bestellingen via je website
+ - Slimme automatisering van herinneringen en administratieve taken
+ - Realtime inzicht in je financiële status en cashflow
+Laat je boekhouding met je meewerken, niet tegenwerken. Kies voor een efficiënte en betrouwbare Moneybird-integratie op je Wix-site met behulp van Yonglo, en focus op het laten groeien van je bedrijf in plaats van op administratief werk.
+
+### Exact Online
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/exact
+Categorie: Boekhouding
+
+Koppel Exact Online aan je Wix-website voor geautomatiseerde administratie en efficiëntere processen
+
+Wil je je financiële administratie optimaliseren en je bedrijfsprocessen stroomlijnen? Met een koppeling tussen je Wix-website en Exact Online via Yonglo automatiseer je belangrijke taken zoals klantaanmaak, orderverwerking, facturatie en voorraadbeheer. Dankzij een krachtige integratie via de Exact Online API en Velo by Wix worden gegevens realtime gesynchroniseerd tussen je webshop en je administratie.
+Deze integratie elimineert dubbele invoer in meerdere systemen, waardoor je tijd bespaart en fouten voorkomt. Je klantenbestand blijft automatisch up-to-date, je hebt altijd inzicht in je financiële situatie, en facturen kunnen direct na een online aankoop automatisch worden aangemaakt.
+Met een op maat gemaakte Exact Online-koppeling via Yonglo haal je het maximale uit je digitale bedrijfsvoering. Wij zorgen dat de integratie perfect aansluit op jouw specifieke werkprocessen.
+Voordelen van een Exact Online-Wix integratie via Yonglo:
+ - Automatische synchronisatie van klanten, bestellingen, facturen en voorraad
+ - Geen dubbele invoer meer, minder fouten, meer tijdwinst
+ - Realtime inzicht in je administratie en financiële status
+ - Volledige automatisering van het facturatieproces
+ - Geschikt voor zowel B2B als B2C webshops
+Maak je bedrijfsvoering slimmer en efficiënter met een professionele Exact Online-integratie op je Wix-website. Laat Yonglo je helpen om je administratie te automatiseren, zodat jij je kunt focussen op het laten groeien van je bedrijf.
+
+### e-Boekhouden.nl
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/e-boekhouden
+Categorie: Boekhouding
+
+Koppel e-Boekhouden.nl aan je Wix-website voor geautomatiseerde administratie en meer efficiëntie
+
+Wil je tijd besparen en je financiële administratie eenvoudiger maken? Met een e-Boekhouden.nl-integratie via Yonglo koppel je je Wix-website rechtstreeks aan je boekhoudsoftware. Dankzij een naadloze koppeling via de e-Boekhouden API en Velo by Wix worden belangrijke gegevens automatisch gesynchroniseerd – zonder handmatig werk.
+Denk aan het automatisch aanmaken van klantgegevens, het genereren van facturen na een online bestelling, en het bijwerken van product- of service-informatie. Zo blijft je boekhouding altijd accuraat en up-to-date, terwijl je het risico op fouten minimaliseert en dubbele invoer voorkomt.
+Met een op maat gemaakte koppeling via Yonglo automatiseer je ook het versturen van betalingsherinneringen, en houd je eenvoudig overzicht over je inkomsten en uitgaven. Alles verloopt soepel en efficiënt, direct vanuit je eigen website.
+Voordelen van een e-Boekhouden.nl-Wix integratie via Yonglo:
+ - Automatische synchronisatie van klanten, bestellingen, facturen en producten
+ - Geen handmatige invoer in meerdere systemen
+ - Altijd inzicht in je actuele financiële status
+ - Volledige automatisering van facturatie en herinneringen
+ - Efficiënt boekhouden, volledig geïntegreerd met je website
+Laat e-Boekhouden.nl perfect samenwerken met je Wix-website. Met een slimme integratie van Yonglo automatiseer je je administratie en creëer je meer tijd om je te focussen op het laten groeien van je onderneming.
+
+### Mollie
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/mollie
+Categorie: Betalingen
+
+Verwerk veilige betalingen op je Wix-website met Mollie. Yonglo, dé Wix-specialist, realiseert standaard én maatwerk Mollie-integraties voor iDEAL, creditcards en andere betaalmethoden.
+
+Verwerk veilige betalingen op je Wix-website met Mollie – standaard of volledig op maat
+
+Wil je snel en veilig betalingen verwerken op je Wix-website? Met Mollie bied je klanten een soepel afrekenproces via populaire betaalmethoden zoals iDEAL, creditcards, PayPal en meer. Voor Wix Stores is er een uitstekende standaardintegratie beschikbaar, waarmee je direct aan de slag kunt in je webshop. Perfect voor de meeste webwinkels die een betrouwbare en gebruiksvriendelijke betaaloplossing zoeken.
+Heb je echter een op maat gemaakte website – bijvoorbeeld een boekingsplatform, lidmaatschapssysteem of aangepaste abonnementsstructuur – dan biedt Yonglo de oplossing. Via de Mollie API en Velo by Wix realiseren we een directe, flexibele integratie die volledig aansluit op jouw specifieke betalingsbehoeften.
+Een belangrijk voordeel van een geavanceerde Mollie-integratie is de ondersteuning van terugkerende betalingen en abonnementen, inclusief automatische incasso via iDEAL. Dit maakt het mogelijk om abonnementsmodellen te ondersteunen in uiteenlopende sectoren – van online services tot educatie of ledenplatforms.
+Voordelen van een Mollie-Wix integratie via Yonglo:
+ - Directe ondersteuning voor iDEAL, creditcard, PayPal en meer
+ - Naadloze betalingservaring voor je klanten
+ - Maatwerk betaalflows via Mollie API en Velo by Wix
+ - Ondersteuning voor terugkerende betalingen en abonnementen
+ - Geschikt voor webshops én op maat gemaakte platforms
+Of je nu de standaard Mollie-integratie voor Wix Stores gebruikt of een complexe, op maat gemaakte koppeling nodig hebt: Yonglo zorgt voor een veilige, stabiele en klantvriendelijke betaaloplossing. Laat je klanten eenvoudig en vertrouwd afrekenen via je Wix-website.
+
+### Realworks
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/realworks
+Categorie: Vastgoed & verhuur
+
+Synchroniseer je vastgoedaanbod met je Wix-website dankzij een Realworks-integratie
+
+Wil je je vastgoedbeheer optimaliseren en je aanbod altijd actueel presenteren? Met een Realworks-integratie op je Wix-website via Yonglo automatiseer je de koppeling tussen je vastgoedsoftware en je site. Dankzij een slimme integratie via de Realworks API en Velo by Wix wordt je aanbod automatisch gesynchroniseerd – zonder handmatig werk.
+Woningen, bedrijfspanden en ander vastgoed worden realtime bijgewerkt op je website. Beschrijvingen, foto's, plattegronden, prijzen en beschikbaarheid worden automatisch overgenomen vanuit Realworks. Zo zorg je ervoor dat je bezoekers altijd actuele en complete informatie te zien krijgen, wat de gebruikservaring verbetert én je conversie verhoogt.
+Met een maatwerk Realworks-Wix koppeling via Yonglo bespaar je tijd, voorkom je fouten en werk je efficiënter. Potentiële kopers of huurders kunnen snel en gemakkelijk door je actuele aanbod bladeren, rechtstreeks op je eigen website.
+Voordelen van een Realworks-Wix integratie via Yonglo:
+ - Automatische synchronisatie van objecten, foto's, prijzen en beschikbaarheid
+ - Geen dubbele invoer, altijd actuele gegevens op je website
+ - Professionele vastgoedpresentatie met minimale inspanning
+ - Geschikt voor woningen, bedrijfspanden en projectontwikkelingen
+ - Meer efficiëntie en betere leadgeneratie via je website
+Laat Yonglo een integratie bouwen die perfect aansluit op je Realworks-structuur en jouw wensen voor vastgoedpresentatie. Zo houd je je aanbod up-to-date en geef je je bezoekers een professionele en betrouwbare indruk.
+
+### HubSpot
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/hubspot
+Categorie: CRM & marketing
+
+Koppel HubSpot aan je Wix-website voor slimme marketing, sales en klantenservice
+
+Wil je je marketing, sales en klantenservice automatiseren en naar een hoger niveau tillen? Met een geavanceerde HubSpot-integratie op je Wix-website via Yonglo haal je alles uit je CRM. In plaats van alleen standaard apps te gebruiken, koppelen wij je website direct aan de HubSpot API via Velo by Wix – voor diepere, volledig aangepaste integraties.
+Automatiseer het aanmaken en bijwerken van contactpersonen, bedrijven en deals op basis van het gedrag van bezoekers op je site. Activeer gepersonaliseerde e-mailcampagnes, verzamel data via maatwerkformulieren, en segmenteer je bezoekers automatisch op basis van hun interactie. Alles wordt realtime gesynchroniseerd met je HubSpot CRM, zodat jij altijd met actuele en relevante gegevens werkt.
+Met een op maat gemaakte HubSpot-koppeling via Yonglo bouw je een krachtig, geautomatiseerd systeem dat perfect aansluit op je bedrijfsdoelen. Je optimaliseert klantrelaties, verhoogt conversies en stroomlijnt interne processen – allemaal vanuit één geïntegreerde omgeving.
+Voordelen van een HubSpot-Wix integratie via Yonglo:
+ - Volledige CRM-automatisering met realtime data
+ - Gepersonaliseerde e-mailflows en slimme segmentatie
+ - Directe synchronisatie van formulieren en gebruikersdata
+ - Inzicht in bezoekersgedrag en conversie-optimalisatie
+ - Op maat gemaakte workflows voor marketing en sales
+Laat je Wix-website optimaal samenwerken met HubSpot. Kies voor een slimme integratie via Yonglo en haal het maximale uit je CRM, marketingautomatisering en klantdata.
+
+### Mailchimp
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/mailchimp
+Categorie: CRM & marketing
+
+Automatiseer je e-mailmarketing met een slimme Mailchimp-integratie op je Wix-website
+
+Wil je je e-mailmarketing verbeteren en je communicatie automatiseren? Met een geavanceerde Mailchimp-integratie via Yonglo koppel je je Wix-website rechtstreeks aan de Mailchimp API met behulp van Velo by Wix. Hiermee ga je verder dan de standaardformulier-integraties en krijg je volledige controle over je e-mailcampagnes op basis van gebruikersgedrag op je site.
+Met een maatwerk integratie voeg je automatisch contacten toe aan specifieke lijsten of segmenten, bijvoorbeeld wanneer een bezoeker een product bekijkt, een whitepaper downloadt of een aankoop voltooit. Je kunt dynamische e-mails versturen die zich automatisch aanpassen aan klantgedrag en gesynchroniseerde gegevens uit je Wix-site gebruiken. Denk aan persoonlijke productaanbevelingen, verlaten winkelwagen-herinneringen of follow-ups na downloads.
+Dankzij de flexibiliteit van de Mailchimp API benut je alle mogelijkheden van e-mailautomatisering – afgestemd op jouw unieke marketingstrategie.
+Voordelen van een Mailchimp-Wix integratie via Yonglo:
+ - Automatische segmentatie op basis van website-activiteit
+ - Gepersonaliseerde en dynamische e-mailinhoud
+ - Realtime synchronisatie van klantdata tussen Wix en Mailchimp
+ - Volledige automatisering van je e-mailfunnels
+ - Meer betrokkenheid, hogere conversies en sterkere klantrelaties
+Maak je e-mailmarketing slimmer en effectiever met een op maat gemaakte Mailchimp-integratie via Yonglo. Wij zorgen voor een oplossing die jouw marketingdoelen ondersteunt en perfect aansluit op je Wix-website.
+
+### Rabobank Smartpay
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/smartpay
+Categorie: Betalingen
+
+Koppel Rabobank Smartpay aan je Wix-website voor veilige en vertrouwde online betalingen
+
+Wil je je klanten een veilige en vertrouwde betaalervaring bieden op je Wix-website? Met een integratie van Rabobank Smartpay via Yonglo koppel je eenvoudig diverse populaire betaalmethoden aan je webshop. Dankzij een naadloze koppeling via de Rabobank Smartpay API en Velo by Wix laat je klanten moeiteloos afrekenen via iDEAL, creditcards en andere bekende betaalopties – allemaal rechtstreeks op je eigen site.
+Deze integratie zorgt voor een soepel betaalproces dat bijdraagt aan hogere conversies en klanttevredenheid. De betalingen worden verwerkt via de beveiligde infrastructuur van Rabobank, waardoor je klanten met vertrouwen kunnen afrekenen.
+Kies je voor een Smartpay-integratie via Yonglo, dan kies je voor betrouwbaarheid én maatwerk. Wij zorgen voor een professionele implementatie die past bij de structuur van je Wix-website en jouw specifieke betaalbehoeften.
+Voordelen van Rabobank Smartpay op je Wix-website via Yonglo:
+ - Ondersteuning voor iDEAL, creditcards en meer
+ - Veilig en vertrouwd betaalproces via Rabobank
+ - Hogere conversie door gebruiksvriendelijke checkout
+ - Volledige integratie in je eigen websiteomgeving
+ - Maatwerkoplossing afgestemd op jouw betaalverkeer
+Bied je klanten het gemak van betalen via hun eigen bank met Rabobank Smartpay. Laat Yonglo je helpen bij een solide en veilige integratie op je Wix-website, zodat je zorgeloos online betalingen kunt accepteren.
+
+### AFAS
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/afas-software
+Categorie: Boekhouding
+
+Koppel AFAS Software aan je Wix-website voor geautomatiseerde HR-, boekhoud- en ERP-processen
+
+Wil je je bedrijfsprocessen automatiseren en je administratie stroomlijnen? Met een AFAS Software-integratie via Yonglo koppel je je Wix-website direct aan AFAS voor HR, boekhouding en ERP. Dankzij de koppeling via de AFAS API en Velo by Wix worden personeelsgegevens, klantdata en financiële transacties automatisch gesynchroniseerd.
+Nieuwe medewerkers, klanten of projecten worden direct bijgewerkt in AFAS. Facturen en betalingen worden automatisch verwerkt, en je hebt altijd realtime inzicht in je bedrijfsvoering – zonder handmatig werk of dubbele invoer.
+Voordelen van een AFAS-Wix integratie via Yonglo:
+ - Automatische synchronisatie van HR-, klant- en financiële data
+ - Geen dubbele invoer, minder fouten, meer tijdwinst
+ - Realtime inzicht in je bedrijfsprocessen
+ - Volledige automatisering van facturatie en HR-processen
+ - Op maat gemaakte integratie voor jouw organisatie
+Maak je organisatie efficiënter en toekomstbestendig met een AFAS-integratie op je Wix-website. Laat Yonglo je helpen om je processen te automatiseren en je bedrijf te laten groeien.
+
+### Visma
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/visma
+Categorie: Boekhouding
+
+Koppel Visma aan je Wix-website voor geautomatiseerde administratie en efficiëntere bedrijfsprocessen
+
+Wil je je administratie stroomlijnen en je bedrijfsprocessen optimaliseren? Door Visma-software te koppelen aan je Wix-website via Yonglo automatiseer je de uitwisseling van belangrijke bedrijfsdata. Met een naadloze integratie via de Visma API’s en Velo by Wix koppel je jouw website slim aan de Visma-modules die jij gebruikt – zoals boekhouding, ERP, CRM of projectbeheer.
+Afhankelijk van je systeemstructuur synchroniseren we automatisch gegevens zoals klantinformatie, bestellingen, facturen, voorraadniveaus en projecten. Zo vermijd je dubbele invoer, minimaliseer je fouten en werk je altijd met actuele data – zowel in je Visma-systeem als op je Wix-site.
+Met een Visma-integratie via Yonglo werk je efficiënter in je verkoop, administratie en marketing. Wij zorgen voor een maatwerkoplossing die naadloos aansluit op jouw bedrijfsbehoeften en de functionaliteit van je website.
+Voordelen van een Visma-Wix integratie via Yonglo:
+ - Realtime synchronisatie van klanten, orders, facturen en voorraad
+ - Minder handmatig werk en een lagere foutmarge
+ - Geautomatiseerde administratie en efficiëntere workflows
+ - Volledige integratie met jouw gebruikte Visma-modules
+ - Ondersteuning voor CRM-, ERP- en boekhoudfunctionaliteit
+Haal het maximale uit je Visma-software door het slim te koppelen aan je Wix-website. Laat Yonglo zorgen voor een betrouwbare en krachtige integratie waarmee je processen automatiseert en je bedrijf sneller laat groeien.
+
+### Bloxs
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/bloxs
+Categorie: Vastgoed & verhuur
+
+Koppel Bloxs vastgoedsoftware aan je Wix-website voor efficiënt vastgoedbeheer. Yonglo, dé Wix-specialist, zorgt voor een slimme integratie die je makelaarskantoor tijd bespaart en processen stroomlijnt.
+
+Koppel Bloxs vastgoedsoftware aan je Wix-website voor een efficiënter makelaarskantoor
+
+Wil je de processen binnen je makelaarskantoor stroomlijnen en tijd besparen? Koppel dan je Bloxs vastgoedbeheersoftware aan je Wix-website met behulp van Yonglo. Dankzij onze expertise in API-integraties en Velo by Wix zorgen we voor een automatische synchronisatie van belangrijke vastgoedgegevens zoals objectinformatie, beschikbaarheid, foto's en virtuele rondleidingen – allemaal direct zichtbaar op je website.
+Met deze slimme koppeling hoef je gegevens niet langer handmatig op meerdere platforms in te voeren. Dit vermindert fouten, bespaart je kostbare tijd en zorgt ervoor dat je online aanbod altijd up-to-date en accuraat is. Bezoekers van je website krijgen realtime informatie te zien, inclusief automatisch bijgewerkte objecten die verhuurd of verkocht zijn – wat je conversie kan verhogen.
+Door Bloxs te integreren met je Wix-website verbeter je niet alleen de efficiëntie van je interne processen, maar bied je klanten ook een professionele en soepele online ervaring. Yonglo levert een maatwerkoplossing die volledig is afgestemd op de behoeften van jouw makelaarskantoor.
+Voordelen van de Bloxs-Wix integratie via Yonglo:
+ - Automatische updates van vastgoedobjecten en beschikbaarheid
+ - Geen dubbele invoer, minder fouten, meer tijdwinst
+ - Altijd actuele informatie op je website
+ - Betere klantervaring en hogere conversie
+ - Op maat gemaakte API-integratie voor jouw kantoor
+Laat je vastgoedportfolio eruit springen met een professionele, geautomatiseerde presentatie op je Wix-site. Start vandaag nog met de Bloxs-koppeling via Yonglo en ervaar de voordelen van slimme vastgoedautomatisering.
+
+### Salesforce
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/salesforce
+Categorie: CRM & marketing
+
+Koppel Salesforce aan je Wix-website voor geautomatiseerde leadgeneratie en CRM-synchronisatie
+
+Wil je je sales- en marketingprocessen automatiseren? Met een Salesforce-integratie via Yonglo koppel je je Wix-website direct aan het meest gebruikte CRM ter wereld. Dankzij een naadloze koppeling via de Salesforce API en Velo by Wix worden leads, klantgegevens en interacties automatisch gesynchroniseerd – zonder handmatig werk.
+Leads die via je website binnenkomen, worden direct aangemaakt in Salesforce. Je kunt klantdata realtime bijwerken, gepersonaliseerde e-mailflows activeren en saleskansen automatisch opvolgen. Zo werk je altijd met actuele gegevens en optimaliseer je je conversie.
+Voordelen van een Salesforce-Wix integratie via Yonglo:
+ - Automatische leadgeneratie vanuit je website
+ - Realtime synchronisatie van klantdata
+ - Gepersonaliseerde sales- en marketingflows
+ - Efficiëntere opvolging en hogere conversie
+ - Volledige integratie met je bestaande Salesforce-omgeving
+Laat je Wix-website optimaal samenwerken met Salesforce. Kies voor een slimme integratie via Yonglo en haal het maximale uit je CRM en salesprocessen.
+
+### ActiveCampaign
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/activecampaign
+Categorie: CRM & marketing
+
+Koppel ActiveCampaign aan je Wix-website voor geavanceerde e-mailmarketing en marketingautomatisering. Yonglo, dé Wix-specialist, integreert ActiveCampaign voor realtime segmentatie en gepersonaliseerde campagnes.
+
+Koppel ActiveCampaign aan je Wix-website voor geavanceerde e-mailmarketing en automatisering
+
+Wil je je e-mailmarketing automatiseren en je conversie verhogen? Met een ActiveCampaign-integratie via Yonglo koppel je je Wix-website direct aan een van de krachtigste marketing automation platforms. Dankzij de koppeling via de ActiveCampaign API en Velo by Wix worden contacten, websitegedrag en aankopen automatisch gesynchroniseerd.
+Voeg automatisch nieuwe contacten toe aan specifieke lijsten of segmenten, activeer gepersonaliseerde e-mailflows op basis van websitegedrag en stuur dynamische campagnes die zich aanpassen aan de interesses van je bezoekers. Zo haal je meer uit je marketing en bouw je sterkere klantrelaties op.
+Voordelen van een ActiveCampaign-Wix integratie via Yonglo:
+ - Automatische segmentatie op basis van website-activiteit
+ - Gepersonaliseerde en dynamische e-mailcampagnes
+ - Realtime synchronisatie van klantdata
+ - Volledige automatisering van je marketingfunnels
+ - Meer betrokkenheid en hogere conversies
+Maak je e-mailmarketing slimmer en effectiever met een op maat gemaakte ActiveCampaign-integratie via Yonglo. Wij zorgen voor een oplossing die jouw marketingdoelen ondersteunt en perfect aansluit op je Wix-website.
+
+### Intercom
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/intercom
+Categorie: CRM & marketing
+
+Koppel Intercom aan je Wix-website voor slimme klantcommunicatie en efficiënte support
+
+Wil je je klantcommunicatie verbeteren en je supportprocessen automatiseren? Met een geavanceerde Intercom-integratie via Yonglo verbind je je Wix-website direct met de Intercom API en Velo by Wix. Hiermee ga je verder dan de standaard chatfunctie: je activeert slimme workflows en geautomatiseerde acties op basis van klantinteracties.
+Een krachtig voordeel van deze diepe integratie is het gebruik van "Fin Actions". Hiermee kun je direct vanuit een Intercom-chat automatisch acties uitvoeren op je website. Denk aan het aanpassen van bestellingen, toepassen van kortingen, toevoegen van producten aan het winkelmandje of het starten van specifieke backend-workflows – allemaal zonder handmatig werk. Dit bespaart tijd en maakt je klantenservice veel efficiënter.
+Door Intercom slim te koppelen via Yonglo, verander je je klantenservice van reactief naar proactief. Wij bouwen een maatwerkoplossing die klantinteracties in Intercom direct koppelt aan acties op je Wix-site. Zo reageer je sneller op vragen en bied je een gepersonaliseerde, professionele klantbeleving.
+Voordelen van een Intercom-Wix integratie via Yonglo:
+ - Geavanceerde chatfunctionaliteit met directe websiteacties
+ - Automatische orderaanpassingen, kortingen en producttoevoegingen
+ - Efficiëntere workflows en snellere reactietijden
+ - Gepersonaliseerde support gebaseerd op klantgedrag
+ - Volledige integratie tussen Intercom en je Wix-backend
+Bied je klanten een next-level supportervaring en maak je communicatieproces slimmer met een Intercom-koppeling op maat. Laat Yonglo je helpen om klantinteracties automatisch te vertalen naar directe acties op je Wix-website.
+
+### Chargebee
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/chargebee
+Categorie: Betalingen
+
+Automatiseer je abonnementsbeheer met een slimme Chargebee-Wix integratie. Yonglo, dé Wix-specialist, realiseert een veilige en efficiënte koppeling voor terugkerende betalingen en abonnementen.
+
+Automatiseer je abonnementsbeheer met een Chargebee-Wix integratie
+
+Wil je abonnementen en facturatie efficiënt beheren via je Wix-website? Met een professionele Chargebee-integratie door Yonglo automatiseer je het hele proces. Wij koppelen je Wix-platform naadloos aan de Chargebee API met behulp van Velo by Wix, zodat jij je kunt focussen op je bedrijf in plaats van op administratieve taken.
+Laat klanten eenvoudig hun abonnement beheren via je website, automatiseer terugkerende betalingen, en synchroniseer klant- en abonnementsgegevens automatisch. Deze oplossing is ideaal voor online diensten, lidmaatschappen of producten met periodieke facturatie.
+Dankzij een op maat gemaakte koppeling tussen Chargebee en je Wix-site stroomlijn je niet alleen je financiële processen, maar verbeter je ook de gebruikservaring voor je klanten.
+Voordelen van een Chargebee-Wix integratie via Yonglo:
+ - Volledige automatisering van abonnementsbeheer en facturatie
+ - Klanten beheren hun abonnementen direct via je website
+ - Naadloze synchronisatie van klant- en betalingsgegevens
+ - Minder handmatig werk, minder fouten, meer overzicht
+ - Perfect voor memberships, online diensten en SaaS-producten
+Optimaliseer je terugkerende betalingen en bouw aan een schaalbare abonnementsformule met een betrouwbare Chargebee-integratie. Start vandaag nog met Yonglo en maak je Wix-website klaar voor slimme en geautomatiseerde abonnementenverkoop.
+
+### Cryptopay
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/cryptopay
+Categorie: Betalingen
+
+Accepteer crypto betalingen op je Wix-website met een Cryptopay integratie. Yonglo, dé Wix-specialist, realiseert veilige en flexibele koppelingen voor betalingen met digitale valuta zoals Bitcoin en Ethereum.
+
+Accepteer crypto betalingen op je Wix-website met een Cryptopay integratie
+
+Wil je je betaalopties uitbreiden en inspelen op de groeiende markt van digitale valuta? Met een Cryptopay-integratie op je Wix-website via Yonglo geef je klanten de mogelijkheid om veilig en eenvoudig te betalen met cryptocurrency. Dankzij een naadloze koppeling via de Cryptopay API en Velo by Wix kun je snel crypto betalingen ontvangen voor je producten of diensten.
+Je klanten profiteren van flexibiliteit in hun betaalmethode, terwijl jij transacties direct in verschillende cryptocurrencies kunt ontvangen. Indien gewenst, worden deze automatisch omgezet naar traditionele valuta (fiat). Het betalingsproces is gebruiksvriendelijk en verlaagt de drempel voor klanten die met crypto willen betalen. Je kunt zelfs prijzen weergeven in zowel euro’s als crypto, direct op je site.
+Met een professionele integratie door Yonglo maak je jouw website future-proof en aantrekkelijk voor een wereldwijd publiek dat kiest voor innovatieve betaalmethoden.
+Voordelen van een Cryptopay-Wix integratie via Yonglo:
+ - Accepteer betalingen in populaire cryptocurrencies zoals Bitcoin en Ethereum
+ - Automatische omzetting naar fiat valuta mogelijk
+ - Eenvoudig en veilig betaalproces voor je klanten
+ - Toon prijzen in zowel fiat als crypto
+ - Trek nieuwe doelgroepen aan met moderne betaalopties
+Laat je bedrijf groeien door crypto betalingen te accepteren via je Wix-website. Kies voor een op maat gemaakte Cryptopay-koppeling van Yonglo en bied je klanten een moderne, veilige en flexibele betaalervaring.
+
+### ChatGPT
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/chat-gpt
+Categorie: AI
+
+Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit. Yonglo, dé Wix-specialist, bouwt krachtige koppelingen voor geautomatiseerde content, chatbots en gepersonaliseerde interactie.
+
+Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit
+
+Wil je de kracht van kunstmatige intelligentie benutten op je Wix-website? Met een integratie van ChatGPT of andere OpenAI-modellen via Yonglo voeg je geavanceerde AI-functionaliteit toe die je website slimmer, persoonlijker en efficiënter maakt. Dankzij een robuuste koppeling via de OpenAI API en Velo by Wix kun je taken automatiseren, content personaliseren en intelligente functies inzetten die verder gaan dan standaard webopties.
+De toepassingen zijn eindeloos. Laat bijvoorbeeld AI automatisch ongestructureerde tekst analyseren en databases vullen of optimaliseren. Genereer dynamische rapporten op basis van realtime data. Of verrijk je productinformatie met SEO-geoptimaliseerde AI-gegenereerde teksten. Je kunt zelfs een slimme chatbot inzetten die klantvragen op je website 24/7 beantwoordt.Met een op maat gemaakte ChatGPT-integratie door Yonglo investeer je in innovatie én gebruiksgemak. Wij zorgen voor een oplossing die volledig is afgestemd op jouw doelstellingen.
+Voordelen van een ChatGPT-integratie op je Wix-website via Yonglo:
+ - Slimme automatisering van processen met AI
+ - Gepersonaliseerde content en klantinteracties
+ - Verbeterde SEO met automatisch gegenereerde productomschrijvingen
+ - Intelligente chatbots voor betere klantenservice
+ - Efficiënt beheer van data en content
+Maak je website future-proof met AI-technologie van OpenAI. Start vandaag nog met de ChatGPT-koppeling via Yonglo en til je Wix-website naar een hoger niveau van personalisatie en automatisering.
+
+### Claude (Anthropic)
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/anthropic
+Categorie: AI
+
+Integreer Claude AI van Anthropic in je Wix-website voor slimme en veilige automatisering. Yonglo, expert in Wix-koppelingen, realiseert een krachtige en verantwoorde AI-integratie op maat.
+
+Integreer Claude AI van Anthropic in je Wix-website voor slimme en verantwoorde automatisering
+
+Wil je krachtige kunstmatige intelligentie inzetten op je Wix-website? Met de AI-integratie van Anthropic via Yonglo haal je de geavanceerde Claude-modellen naar je eigen platform. Dankzij de koppeling via de Anthropic API en Velo by Wix kun je moeiteloos gebruikmaken van de taalbegrip- en generatiekracht van Claude AI, afgestemd op de unieke mogelijkheden van Anthropic.
+Anthropic biedt niet alleen vergelijkbare functies als andere AI-providers, maar legt daarnaast de nadruk op veiligheid, betrouwbaarheid en ethiek. Je kunt AI inzetten om je database automatisch te vullen of te optimaliseren, geautomatiseerde rapporten te genereren, en productinformatie te verrijken – allemaal met verantwoorde AI in de kern.
+Ook voor geavanceerde toepassingen zoals tekstsamenvatting, gepersonaliseerde contentcreatie en slimme chatfunctionaliteiten biedt de Claude AI-integratie volop mogelijkheden. Yonglo zorgt voor een naadloze en op maat gemaakte koppeling, zodat je het maximale uit de technologie van Anthropic haalt.
+Waarom Claude AI van Anthropic koppelen aan je Wix-site via Yonglo?
+ - Directe integratie met de Anthropic API en Velo by Wix
+ - Betrouwbare AI-oplossingen met focus op ethiek en veiligheid
+ - Geautomatiseerde processen zoals dataverrijking en rapportage
+ - Verbeterde gebruikerservaring met slimme content en interactie
+ - Maatwerkoplossingen afgestemd op jouw doelen en werkwijze
+Til je Wix-website naar een hoger niveau met de intelligente kracht van Claude AI. Start vandaag nog met de AI-integratie via Yonglo en ervaar de voordelen van verantwoorde, geavanceerde kunstmatige intelligentie.
+
+### Airbnb
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/airbnb
+Categorie: Vastgoed & verhuur
+
+Automatiseer je verhuurbeheer met een directe koppeling tussen Wix en Airbnb. Yonglo, specialist in Wix-integraties, voorkomt dubbele boekingen en houdt je beschikbaarheid realtime up-to-date.
+
+Automatiseer je verhuurbeheer met een directe koppeling tussen Wix en Airbnb
+
+Wil je je verhuurbeheer efficiënter maken? Met een directe koppeling tussen je Wix-website en Airbnb via Yonglo bespaar je tijd en voorkom je dubbele boekingen. Yonglo synchroniseert automatisch je Airbnb-kalender, prijzen en boekingen, zodat je beschikbaarheid altijd actueel is – zonder handmatig werk.
+Dankzij de integratie via de Airbnb API en Velo by Wix kun je aangepaste functies laten bouwen die precies passen bij jouw verhuurstrategie. Denk aan het automatisch overzetten van informatie van je Wix-site naar je Airbnb-advertenties of andersom. Zo bied je je gasten altijd realtime en accurate informatie over je accommodaties.
+Met een naadloze Airbnb-koppeling van Yonglo werk je efficiënter, verminder je administratieve rompslomp en kun je je volledig richten op het verbeteren van de gastervaring en het laten groeien van je verhuurbedrijf.
+Voordelen op een rij:
+ - Automatische synchronisatie van kalender, prijzen en boekingen
+ - Geen dubbele boekingen meer
+ - Minder handmatige updates en minder fouten
+ - Verbeterde gebruikservaring voor je gasten
+ - Meer focus op groei van je verhuuractiviteiten
+Start vandaag nog met het koppelen van je Wix-website aan Airbnb en ervaar het gemak van geautomatiseerd verhuurbeheer met Yonglo.
+
+### My Tourist
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/my-tourist
+Categorie: Vastgoed & verhuur
+
+Beheer al je boekingen centraal met een My Tourist-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je boekingskanalen voor realtime synchronisatie en efficiënt verhuurbeheer.
+
+Beheer al je boekingen centraal met een My Tourist-integratie op je Wix-website
+
+Wil je het beheer van je accommodaties eenvoudiger maken en al je boekingen centraliseren? Koppel dan My Tourist aan je Wix-website via Yonglo. Met een krachtige integratie via de My Tourist API en Velo by Wix benut je de volledige functionaliteit van deze channel manager – rechtstreeks vanuit je eigen website.
+Het grootste voordeel? My Tourist koppelt met populaire boekingsplatforms zoals Booking.com, Airbnb, Expedia en meer. Door My Tourist te integreren met je Wix-site beheer je beschikbaarheid, prijzen en reserveringen vanuit één centrale plek, zonder steeds in te loggen op meerdere platforms.
+Alle gegevens worden automatisch gesynchroniseerd tussen je website en de gekoppelde boekingskanalen. Dit voorkomt dubbele boekingen en zorgt ervoor dat je beschikbaarheid en tarieven altijd actueel zijn – op je Wix-site én op externe platforms. Je kunt bovendien realtime beschikbaarheid tonen op je website, rechtstreeks uit My Tourist.
+Voordelen van een My Tourist-Wix integratie via Yonglo:
+ - Beheer boekingen van meerdere platforms via één dashboard
+ - Automatische synchronisatie van prijzen, beschikbaarheid en reserveringen
+ - Geen dubbele boekingen meer, altijd actuele informatie
+ - Toon realtime beschikbaarheid op je Wix-website
+ - Tijdsbesparing en minder handmatige handelingen
+Laat Yonglo een op maat gemaakte integratie bouwen die de kracht van My Tourist optimaal inzet op je Wix-website. Zo werk je efficiënter, verhoog je je bezettingsgraad en houd je eenvoudig overzicht over al je boekingskanalen. Eén centrale oplossing voor al je accommodatiebeheer.
+
+### Microsoft Teams
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/microsoft-teams
+Categorie: Samenwerking & data
+
+Koppel Microsoft Teams aan je Wix-website voor directe meldingen, efficiënte teamcommunicatie en geautomatiseerd afsprakenbeheer. Yonglo, dé Wix-specialist, integreert Microsoft 365 voor realtime samenwerking en planning.
+
+Koppel Microsoft Teams en Outlook aan je Wix-website voor realtime samenwerking en planning
+
+Wil je je interne communicatie en afsprakenbeheer automatiseren? Met een Microsoft Teams en Outlook-integratie via Yonglo koppel je je Wix-website direct aan Microsoft 365. Ontvang automatische meldingen in Teams bij belangrijke websitegebeurtenissen en synchroniseer afspraken direct met Outlook-agenda’s.
+Denk aan automatische Teams-notificaties bij nieuwe formulierinzendingen, webshopbestellingen of boekingen. Nieuwe afspraken worden direct toegevoegd aan de juiste Outlook-agenda, inclusief automatische bevestigingen en herinneringen voor klanten en medewerkers.
+Voordelen van een Microsoft Teams/Outlook-Wix integratie via Yonglo:
+ - Automatische meldingen van websiteactiviteiten in Teams
+ - Realtime synchronisatie van afspraken met Outlook
+ - Snellere interne communicatie en opvolging
+ - Altijd actuele agenda’s en minder dubbele boekingen
+ - Volledig op maat gemaakte workflows voor jouw organisatie
+Maak je communicatieproces slimmer en je planning efficiënter met een Microsoft 365-integratie voor je Wix-website. Laat Yonglo zorgen voor een doelgerichte koppeling die jouw samenwerking naar een hoger niveau tilt.
+
+### Slack
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/slack
+Categorie: Samenwerking & data
+
+Koppel Slack aan je Wix-website voor directe meldingen en betere teamcommunicatie
+
+Wil je je interne communicatie verbeteren en teamprocessen stroomlijnen? Met een Slack-integratie op je Wix-website via Yonglo ontvang je automatisch meldingen in je Slack-kanalen wanneer er belangrijke acties plaatsvinden op je site. Dankzij de koppeling via de Slack API en Velo by Wix zorg je voor snellere communicatie en efficiënte opvolging binnen je team.
+Denk aan het automatisch ontvangen van Slack-notificaties bij nieuwe formulierinzendingen, webshopbestellingen, afsprakenboekingen of andere specifieke gebruikersacties. Zo blijft je team altijd op de hoogte van wat er gebeurt en kan er direct worden gereageerd op belangrijke gebeurtenissen – zonder dat je constant je inbox hoeft te checken.
+Met een op maat gemaakte Slack-koppeling via Yonglo verstuur je alleen de meldingen die relevant zijn voor jouw workflow. Dit zorgt voor minder afleiding, meer overzicht en een snellere samenwerking.
+Voordelen van een Slack-Wix integratie via Yonglo:
+ - Automatische meldingen van websiteactiviteiten in Slack
+ - Directe updates bij nieuwe formulieren, bestellingen of boekingen
+ - Snellere interne communicatie en opvolging
+ - Volledig op maat gemaakte notificaties per Slack-kanaal
+ - Altijd realtime inzicht in wat er op je website gebeurt
+Maak je communicatieproces slimmer en je team responsiever met een Slack-integratie voor je Wix-website. Laat Yonglo zorgen voor een efficiënte, doelgerichte koppeling die jouw samenwerking naar een hoger niveau tilt.
+
+### Google Calendar
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/google-calendar
+Categorie: Samenwerking & data
+
+Koppel Google Calendar aan je Wix-website voor automatisch afsprakenbeheer. Yonglo, dé Wix-specialist, realiseert een slimme integratie voor realtime synchronisatie en efficiënte planning.
+
+Koppel Google Calendar aan je Wix-website voor slim en automatisch afsprakenbeheer
+
+Wil je je afsprakenbeheer automatiseren en het klanten gemakkelijk maken om online een afspraak te boeken? Met een Google Calendar-integratie op je Wix-website via Yonglo zorg je voor een naadloze tweewegsynchronisatie. Via de Google Calendar API en Velo by Wix wordt je beschikbaarheid automatisch gesynchroniseerd met je website én worden nieuwe boekingen direct toegevoegd aan je Google Agenda.
+Deze slimme koppeling voorkomt dubbele boekingen en houdt je agenda altijd up-to-date – zowel voor jou als voor je klanten. Je kunt zelf beschikbare tijdslots instellen, meerdere soorten afspraken aanbieden, en geboekte afspraken automatisch toewijzen aan de juiste medewerkers. Klanten ontvangen automatische bevestigingen en herinneringen via de gekoppelde kalender.
+Met een op maat gemaakte Google Calendar-integratie via Yonglo stroomlijn je het volledige boekingsproces. Zo werk je efficiënter en vergroot je het aantal gemaakte afspraken, zonder extra handmatig werk.
+Voordelen van Google Calendar-Wix integratie via Yonglo:
+ - Realtime synchronisatie tussen je website en je Google Agenda
+ - Geen dubbele boekingen, altijd een actuele agenda
+ - Automatische bevestigingen en herinneringen voor klanten
+ - Flexibel instellen van tijdslots en afspraaktypes
+ - Toewijzing van afspraken aan specifieke teamleden
+Maak online boeken eenvoudig en professioneel met een geïntegreerd afsprakensysteem op je Wix-site. Laat Yonglo je helpen met een geavanceerde Google Calendar-koppeling en bied je klanten een soepele en betrouwbare boekingservaring.
+
+### Google Sheets
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/sheets
+Categorie: Samenwerking & data
+
+Koppel Google Sheets aan je Wix-website voor realtime dataweergave en automatisering
+
+Wil je je data eenvoudig beheren en realtime tonen op je website? Met een Google Sheets-integratie op je Wix-site via Yonglo maak je je website datagedreven én automatiseer je je werkprocessen. Dankzij een naadloze tweerichtingskoppeling via de Google Sheets API en Velo by Wix kun je gegevens uit je spreadsheet op je website tonen, of juist formulierdata van je website direct wegschrijven naar een specifieke Google Sheet.
+Deze koppeling is bijzonder flexibel en toepasbaar voor uiteenlopende doeleinden. Denk aan het dynamisch weergeven van prijslijsten, evenementenkalenders, productoverzichten of ledenlijsten die je in Google Sheets bijhoudt. Omgekeerd kun je ook leadgegevens, bestellingen of feedback van je website automatisch verzamelen in een overzichtelijke spreadsheet voor verdere verwerking of analyse.
+Met een op maat gemaakte Google Sheets-koppeling via Yonglo werk je efficiënter en zorg je ervoor dat je data altijd actueel en centraal beschikbaar is – zowel op je website als in je spreadsheets.
+Voordelen van een Google Sheets-Wix integratie via Yonglo:
+ - Realtime data-uitwisseling tussen je website en Google Sheets
+ - Automatische opslag van formuliergegevens in je spreadsheet
+ - Toon dynamische lijsten, kalenders of prijstabellen op je site
+ - Verminder handmatig werk en fouten door automatisering
+ - Flexibele toepassing voor zowel zakelijke als informatieve doeleinden
+Maak van je Wix-website een slimme tool voor gegevensbeheer en presentatie. Laat Yonglo je helpen met een krachtige Google Sheets-integratie die perfect aansluit op jouw datastromen en digitale workflow.
+
+### Google Maps
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/google-maps
+Categorie: Samenwerking & data
+
+Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website. Yonglo, dé Wix-specialist, realiseert slimme kaartintegraties voor locatiegebaseerde services, routeplanning en realtime data.
+
+Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website
+
+Wil je meer doen dan alleen locaties tonen op je Wix-website? Met een geavanceerde Google Maps-integratie via Yonglo benut je de volledige kracht van Google’s geo-locatiediensten. Dankzij de koppeling via de Google Maps API en Velo by Wix kunnen we maatwerkoplossingen bouwen die verder gaan dan standaard kaartweergaves en routebeschrijvingen.
+Een slimme toepassing is het automatisch koppelen van medewerkers aan klanten of opdrachten op basis van reistijd en afstand. Met behulp van de API kunnen we afstanden en geschatte reistijden berekenen, zodat je altijd de dichtstbijzijnde beschikbare medewerker kunt inzetten. Dit is ideaal voor serviceplanning, routeoptimalisatie en efficiënte inzet van je personeel.
+Door Google Maps te integreren via Yonglo creëer je nieuwe mogelijkheden voor je bedrijfsvoering. Of je nu je logistiek wilt verbeteren, locatiegebaseerde content wilt tonen, of efficiëntere routes wilt plannen – wij realiseren een oplossing op maat die aansluit bij jouw geografische behoeften.
+Voordelen van een Google Maps-Wix integratie via Yonglo:
+• Toon interactieve kaarten en slimme routebeschrijvingen
+• Bereken reistijd en afstand automatisch via de Maps API
+• Optimaliseer je serviceplanning en personeelstoewijzing
+• Bied gepersonaliseerde content op basis van locatie
+• Verbeter je klantbeleving en werkprocessen met realtime locatie-inzichten
+Til je Wix-website naar een hoger niveau met locatiegebaseerde intelligentie. Laat Yonglo je helpen om Google Maps strategisch in te zetten voor een slimmere, efficiëntere bedrijfsvoering.
+
+## Help docs van de Wix-apps (Engels)
+
+### Smart Cookie Popup for Wix: Getting Started With: Smart Cookie Popup for Wix
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/getting-started-smart-cookie-popup-for-wix
+
+Smart Cookie Popup is an easy‑to‑use Wix app designed to help you add a fully GDPR‑compliant cookie consent popup to your website quickly and confidently.
+
+Whether you run a personal site, a business website, or an online store, the app makes it simple to collect valid user consent before any non‑essential cookies are used.
+
+The app is built specifically for the Wix platform and integrates seamlessly with Wix’s native features. This means there is no need for custom code, external scripts, or complicated setup.
+
+In most cases, you can have a compliant cookie popup live on your site within just a few minutes.
+
+##### FAQ
+
+**Why use a cookie popup instead of a banner?** When you have to be fully GDPR compliant you cannot use any cookies untill the user has activly made a disicion. This is why we always use a popup, this forces the user to make a choose. If you use a banner, there will often be user who keep using the website without making a choice, causing lots of unmeasured traffic.
+
+**Does Smart Cookie Popup impact performance?** Smart Cookie Popup is designed to have minimal to no noticeable impact on website performance. We tested performance using Google PageSpeed Insights on two identical Wix templates: one without any cookie solution installed and one using Smart Cookie Popup. The difference in performance scores was barely measurable, confirming that the app does not significantly affect load times or core web vitals. Compared to many other Wix cookie apps, Smart Cookie Popup is noticeably faster. This is because it does not attempt to handle everything on its own. Instead, it relies on Wix’s built‑in, optimized features wherever possible. Since Smart Cookie Popup is built specifically for Wix—rather than being a generic third‑party solution adapted to multiple platforms—it integrates seamlessly with the Wix ecosystem. This results in fewer external scripts, reduced overhead, and better overall performance. In short, Smart Cookie Popup provides GDPR compliance without slowing down your site.
+
+**Does Smart Cookie Popup work natively on Wix without coding?** Yes! Smart Cookie Popup is built exclusively for Wix and integrates seamlessly with your site’s native features. There’s no custom code, external scripts, or developer help needed – just install from the Wix App Market and activate in seconds. Unlike third-party solutions, it avoids conflicts with Wix’s editor and ensures your site stays fast and secure while meeting GDPR/CCPA requirements.
+
+**Can I achieve GDPR compliance with the free version?** Absolutely. The free version delivers full GDPR compliance by blocking all non-essential cookies (like analytics or ads) until visitors explicitly opt in. Crucially, users cannot dismiss the popup without choosing "Accept" or "Reject" – a requirement under GDPR Article 7. Both free and paid plans include auto-blocking, cookie categorization, consent logging, and real-time preference updates.
+
+**Can I match the popup to my Wix site’s branding?** Yes! Customize button colors, and messaging to match your Wix website theme.
+
+### Smart Cookie Popup for Wix: GDPR Compliance
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/gdpr-compliance
+
+The General Data Protection Regulation (GDPR) is an EU law designed to protect the privacy and personal data of individuals. It applies to any website that collects or processes personal data of visitors located in the European Union, regardless of where the website owner is based.
+
+Cookies and similar technologies can be considered personal data when they are used for tracking, analytics, advertising, or personalization. Under GDPR, these types of cookies may only be placed after a visitor has given informed, explicit consent.
+
+Smart Cookie Popup is built to help you meet these requirements, but proper configuration is essential to remain compliant.
+
+> Always consult a legal professional in your jurisdiction to ensure your cookie consent setup meets all applicable legal requirements.
+
+###### 1. Consent must be freely given and explicit
+
+GDPR requires that consent is:
+
+- Freely given (no pressure or forced agreement)
+- Specific and informed (users understand what they are agreeing to)
+- Unambiguous (a clear action is required)
+
+This means users must be able to actively choose whether to accept or decline non‑essential cookies. Pre‑selected options, implied consent, or passive actions (such as continuing to browse) are not considered valid consent under GDPR.
+
+A popup is commonly used because it clearly presents this choice before any cookies are placed.
+
+###### 2. Button design and visual balance
+
+The design of your cookie popup plays a critical role in GDPR compliance. Many EU regulators require that the Accept and Decline buttons have equal visual prominence. If one option is more noticeable, larger, brighter, or easier to click than the other, consent may be considered invalid.
+
+Modifying the popup design—especially button size, color, placement, or contrast can therefore affect compliance.
+
+Smart Cookie Popup includes a default “Equal Buttons” style, which ensures that both options are displayed with the same visual weight and emphasis.
+
+Before customizing the design, always consult a legal professional in your jurisdiction to confirm that your changes align with local GDPR enforcement guidelines.
+
+###### 3. Clear and honest consent text
+
+The text shown in your cookie popup is just as important as its design. GDPR requires that users are clearly informed about:
+
+- What types of cookies are used
+- Why they are used
+- Whether consent is optional
+- 
+
+Consent text must be easy to understand and free from misleading or manipulative language. Avoid wording that pressures users to accept cookies or suggests that accepting is required to use the website unless this is legally justified.
+
+Changing the wording of the popup can directly affect the legal validity of the consent. Even small phrasing changes can alter how regulators interpret user intent.
+
+###### 4. Responsibility and local legal differences
+
+While GDPR is an EU‑wide regulation, its interpretation and enforcement can vary between countries and regulatory authorities. Industry‑specific rules and national guidance may also apply.
+
+Smart Cookie Popup provides GDPR‑friendly defaults, but compliance ultimately depends on how the popup is configured and how cookies are implemented on your site.
+
+###### 5. Ongoing compliance
+
+GDPR compliance is not a one‑time task. Laws, regulatory guidance, and best practices evolve over time. Periodically review your popup design, text, and cookie usage to ensure continued compliance.
+
+If you make changes to your website, add new tools, or introduce new tracking technologies, you may need to update your consent setup accordingly.
+
+### Smart Cookie Popup for Wix: Adding manage preferences button
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/adding-manage-preferences-button
+
+After users make a choice about which cookies to accept, they should always be able to update their preferences later. The Manage Preferences button makes this possible.
+
+This button behaves just like any standard Wix element, so you have full control over its design and styling.
+
+###### Step 1: Open the Editor
+
+From your Dashboard, navigate to the Getting Started section and click Open Editor.
+
+###### Step 2: Add the Element to Your Site
+
+Click Add to Site.
+
+###### Step 3: Customize and Position the Button
+
+The element is now added to your editor. From here you can:
+
+- Position it — Place it in your footer or pin it to the screen so it's always accessible.
+- Choose a style — Select from three display options:Text link — A simple clickable text linkButton — A standard styled buttonIcon — A compact icon
+
+##### FAQ
+
+**Why do I need a cookie preferences button on my Wix site?** Privacy regulations such as GDPR and CCPA require that visitors can update their cookie consent at any time. Adding a manage preferences button ensures your site stays compliant and gives users control over their privacy settings.
+
+**Where should I place the cookie settings link on my website?** The two most common placements are in your site's footer or pinned to the screen. Pinning the cookie consent link to the screen is recommended, as it stays visible and accessible on every page regardless of where the user scrolls.
+
+**Can I customize the design of the cookie management button?** Yes. The cookie preferences element behaves like any standard Wix element, so you can fully customize its appearance. You can choose between three display formats: a text link, a styled button, or a compact icon to match your site's design.
+
+**Will the cookie consent button appear on all pages of my Wix site?** If you pin the manage cookies button to the screen or place it in a shared footer, it will automatically appear across all pages. If you place it in a section that only exists on a single page, visitors will only see it there.
+
+**Do I need coding experience to add a cookie preferences link to my site?** No. Adding a cookie settings button is done entirely through the Wix Editor using a simple point-and-click workflow. No coding or technical knowledge is required to set it up and customize it.
+
+### Smart Cookie Popup for Wix: Setting up Managed Google Tags
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/setting-up-managed-google-tags
+
+Managed Google Tags lets Smart Cookie Popup load your Google tags and manage Google Consent Mode v2 for you. Turn it on only if you want this app, not Wix Marketing Integrations or Custom Code, to load Google Tag Manager or direct Google measurement IDs on your site. This feature is optional, so if you only want a cookie popup you can skip it.
+
+###### What Managed Google Tags does
+
+- Loads your Google tags only after consent is handled correctly
+- Manages Google Consent Mode v2 for you automatically
+- Works with Google Tag Manager, direct Google tag IDs, or both
+
+###### When to use it
+
+Use Managed Google Tags if you want this app to be the single place that loads your Google tags. Leave it off if you do not use Google tags, or if you prefer to manage them somewhere else.
+
+###### Where to find it
+
+- Open Smart Cookie Popup from your dashboard.
+- Go to the Design tab.
+- Scroll to Managed Google Tags.
+- Check Enable managed Google tags to open the 3-step setup guide.
+
+You will see a status badge next to the feature: Not enabled, Setup incomplete, or Ready. Remember to click Save Changes and activate so your settings go live.
+
+###### Step 1: Add the Google IDs this app should load
+
+Add the IDs you want this app to load. You can use a Google Tag Manager container, direct Google tag IDs, or both.
+
+- Google Tag Manager ID (optional): one container in the format GTM-XXXXXXX.
+- Direct Google tag IDs (optional): one per line. Use G- for GA4, AW- for Google Ads, and DC- for Floodlight.
+
+You need at least one valid ID (a GTM container, one or more direct IDs, or both).
+
+Use GTM if your tags are managed in Google Tag Manager. Use direct IDs if you load GA4, Google Ads, or Floodlight without GTM. If you leave GTM empty, only your direct tags will load.
+
+Warning: If you use both GTM and direct IDs, make sure the direct IDs do not also fire from inside your GTM container. Loading the same ID in two places can count your visits and conversions twice.
+
+###### Step 2: Check for duplicate Google installs
+
+Make sure these Google IDs are not already installed anywhere else on this site. Many sites have no Google tags installed yet, so if that is you, this step is quick. If you are not sure, check these places:
+
+- Wix Marketing Integrations: disconnect Google Analytics, Google Tag Manager, Google Ads, or related Google integrations that load the same IDs.
+- Settings, then Custom Code: remove any Google snippets for the same IDs.
+- Other apps, embedded HTML, or custom elements that may add Google scripts.
+
+Why it matters: duplicate installs can make Consent Mode start too late, and your visits and conversions may be counted twice.
+
+When you have checked, tick the box: I confirmed there are no duplicate Google installs for these IDs.
+
+###### Step 3: Save and verify
+
+- Click Save Changes in the app and activate.
+- Visit your live site or a preview.
+- Accept cookies so the app loads your tags. Tags load after consent.
+- Verify your tags are firing.
+
+To verify GTM, use GTM Preview mode. Avoid the basic Test your website option, because it often misses tags that load through a cookie consent app.
+
+To verify direct GA4, Google Ads, or Floodlight tags, use Google Tag Assistant after you accept cookies.
+
+When setup is complete you will see: Consent defaults will run before this app loads your Google tags. The status badge will change to Ready.
+
+##### FAQ
+
+**Do I need Managed Google Tags if I only want a cookie popup?** No. Managed Google Tags is optional. If you only want a cookie consent popup, you can leave it off. Turn it on only if you want this app to load your Google tags and manage Consent Mode for you.
+
+**What ID formats does the app accept?** Use GTM-XXXXXXX for a Google Tag Manager container, G- for GA4, AW- for Google Ads, and DC- for Floodlight. You need at least one valid ID, and you can add several direct IDs one per line.
+
+**Can I use both GTM and direct IDs?** Yes, but each Google ID should load in only one place. If the same ID fires both as a direct ID and from inside your GTM container, you may see double counting. Keep each ID in either GTM or the direct list.
+
+### Smart Cookie Popup for Wix: Using Google Tag Manager with Smart Cookie Popup
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/using-google-tag-manager-with-smart-cookie-popup
+
+If your Google tags are managed in Google Tag Manager, you can let Smart Cookie Popup load your GTM container after consent and manage Consent Mode v2 for you. You only need one container ID, and you do not add any code yourself.
+
+###### When to use GTM
+
+Choose GTM if you already manage GA4, Google Ads, or other tags inside a Google Tag Manager container. With this setup, the app loads your container and handles consent for you.
+
+###### Where to find your GTM ID
+
+- Open Google Tag Manager and select your account and container.
+- Look at the top of the workspace for your container ID.
+- It looks like GTM-XXXXXXX. Copy it.
+
+Add this single ID to the Google Tag Manager ID field in Step 1 of the setup guide.
+
+###### Remove old GTM installs from Wix
+
+Before you go live, make sure the same container is not already loading somewhere else on your site. If it is, your tags can load twice. Check these places:
+
+- Wix Marketing Integrations: disconnect any Google Tag Manager connection that uses the same container.
+- Settings, then Custom Code: remove GTM snippets for the same container.
+- Other apps or embedded code that may add GTM.
+
+###### Verify with GTM Preview mode
+
+- Save and activate your settings in the app.
+- Open your live site or a preview and accept cookies.
+- In Google Tag Manager, click Preview and connect to your site.
+- Confirm your tags fire after consent is given.
+
+Tip: Use GTM Preview mode rather than the basic Test your website check.
+
+###### Why Test your website may show false negatives
+
+The Test your website tool often loads before consent is handled, so it can miss tags that a cookie consent app loads after the visitor chooses. That does not mean your tags are broken. GTM Preview mode gives you a more accurate picture, because you can accept cookies and then watch the tags fire.
+
+##### FAQ
+
+**Do I still need a cookie popup if I use GTM?** Yes. The cookie popup is what asks visitors for consent and records their choice. Managed Google Tags then loads your GTM container based on that choice. The popup and GTM work together.
+
+**Why does GTM Test your website say my tags are missing?** That tool often loads before consent is handled, so it can miss tags that load through a cookie consent app. Use GTM Preview mode instead, accept cookies, and then watch your tags fire.
+
+**How do I add Google Tag Manager to a Wix site with cookie consent?** Enable Managed Google Tags in Smart Cookie Popup, open the Design tab, and paste your GTM-XXXXXXX container ID into the Google Tag Manager ID field in Step 1. The app loads your container after visitors give consent, so you do not need to add GTM code in Wix Custom Code.
+
+### Smart Cookie Popup for Wix: Using direct Google tags (GA4, Google Ads, Floodlight) without GTM
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/using-direct-google-tags-ga4-google-ads-floodlight-without-gtm
+
+If you do not use Google Tag Manager, you can let Smart Cookie Popup load your Google tags directly. Add one ID per line, and the app loads them after consent and manages Consent Mode v2 for you.
+
+###### When to use direct IDs
+
+Choose direct IDs if you want to load GA4, Google Ads, or Floodlight without setting up a GTM container. This is the simplest option for most small sites.
+
+###### ID formats and examples
+
+- GA4: starts with G-, for example G-XXXXXXXXXX
+- Google Ads: starts with AW-, for example AW-XXXXXXXXX
+- Floodlight: starts with DC-, for example DC-XXXXXXXXX
+
+Add your IDs in the Direct Google tag IDs field in Step 1, one per line. You can add as many as you need.
+
+###### Adding multiple IDs
+
+Put each ID on its own line. For example, you might add a GA4 ID and a Google Ads ID together. The app loads each one after consent.
+
+Warning: If you also use a GTM container, do not load the same ID both as a direct ID and inside GTM. Pick one place for each ID to avoid double counting.
+
+###### Verify with Tag Assistant
+
+- Save and activate your settings in the app.
+- Open your live site or a preview.
+- Accept cookies so the app loads your tags.
+- Open Google Tag Assistant and confirm your tags fire after consent.
+
+Tip: Your tags will not appear in Tag Assistant until after you accept cookies. That is expected.
+
+##### FAQ
+
+**What is the difference between GTM and a direct G- measurement ID?** A GTM container (GTM-XXXXXXX) is a single place where you manage many tags inside Google Tag Manager. A direct G- ID is a single GA4 measurement ID loaded on its own without GTM. Use GTM if you manage tags in Tag Manager, and direct IDs if you do not.
+
+**Will this work with Google Ads conversion tracking?** Yes. Add your Google Ads ID (AW-XXXXXXXXX) as a direct ID, or manage it inside your GTM container. The app loads it after consent and applies Consent Mode v2.
+
+**How do I add a GA4 measurement ID to Wix without Google Tag Manager?** In Smart Cookie Popup, enable Managed Google Tags and add your GA4 ID (it starts with G-) in the Direct Google tag IDs field, one ID per line. The app loads GA4 after consent and applies Google Consent Mode v2, so you do not need any code or a GTM container.
+
+### Smart Cookie Popup for Wix: Avoiding duplicate Google installs
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/avoiding-duplicate-google-installs
+
+For Managed Google Tags to work correctly, this app should be the only place that loads your Google IDs. If the same ID also loads somewhere else, you can run into double counting and consent timing problems. This article shows where to check.
+
+###### Checklist: where the same ID might be hiding
+
+- Wix Marketing Integrations: Google Analytics, Google Tag Manager, Google Ads, or related Google integrations.
+- Settings, then Custom Code: Google snippets added by you or a previous setup.
+- Other apps that connect Google Analytics or Ads.
+- Embedded HTML or custom elements that include Google scripts.
+
+###### Symptoms of a duplicate install
+
+- Double pageviews in Google Analytics.
+- Conversion counts that look too high in Google Ads.
+- Tags that appear to fire before a visitor has made a choice.
+
+###### How to fix it
+
+- Decide that this app will be the single loader for each Google ID.
+- Disconnect the same IDs from Wix Marketing Integrations.
+- Remove matching Google snippets from Settings, then Custom Code.
+- Check other apps and embedded code for the same IDs and remove them.
+- Tick the confirmation box in Step 2, then save and verify.
+
+Important: Using the same ID in two places is a problem even if you think only one is active. Make sure each Google ID loads in just one place.
+
+##### FAQ
+
+**Can I keep Google Analytics connected in Wix Marketing Integrations?** Not for the same IDs that this app loads. If this app loads a Google ID, that same ID should not also load through Wix Marketing Integrations, or your visits and conversions may be counted twice. Disconnect the matching Google integration in Marketing Integrations.
+
+**Why must this app be the only Google tag loader?** So consent is handled before your tags load, and so each visit and conversion is counted once. If the same ID loads from another place, Consent Mode can start too late and your data can be doubled.
+
+**Why am I seeing double pageviews or doubled conversions on my Wix site?** Double counting usually means the same Google ID is loading in more than one place. Check Wix Marketing Integrations, Settings then Custom Code, and any other apps for the same ID, then remove the duplicates so Smart Cookie Popup is the only loader for that ID.
+
+### Smart Cookie Popup for Wix: Google Consent Mode and cookie categories
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/google-consent-mode-and-cookie-categories
+
+When Managed Google Tags is enabled and set up, the app connects your visitors’ cookie choices to Google Consent Mode v2. You do not need to add any Consent Mode code yourself. This article explains how it works.
+
+###### How visitor choices map to Google
+
+The app maps your Wix cookie categories to Google Consent Mode signals like this:
+
+- Analytics cookies control analytics_storage.
+- Marketing cookies control ad_storage.
+- Marketing plus third-party data sharing control ad_user_data and ad_personalization.
+- Functional cookies control functionality_storage and personalization_storage.
+- Essential and security are always allowed.
+
+###### What happens on Accept, Decline, or Customize
+
+- New visitors: consent starts as denied until the visitor makes a choice.
+- Returning visitors: their saved choice is restored, so tags do not reset incorrectly.
+- When a visitor changes preferences through Accept, Decline, Customize, or Save, consent updates automatically.
+
+###### You do not need to add Consent Mode code
+
+The app handles Consent Mode v2 for you when Managed Google Tags is set up correctly. There is no need to paste any code into Custom Code.
+
+Please note: This app helps support your compliance efforts, but it does not provide legal advice or guarantee compliance. For questions about your obligations, consult a legal professional.
+
+##### FAQ
+
+**Does this replace Wix consent logging?** No. Smart Cookie Popup still works with Wix native consent policy system and logs consent in the Wix Privacy Center. Managed Google Tags adds the loading of your Google tags and Consent Mode v2 on top of that.
+
+**What is Google Consent Mode v2 and do I need it on my Wix site?** Google Consent Mode v2 tells Google how to behave based on each visitor cookie choice. If you run Google Analytics or Google Ads for visitors in the EU or UK, you generally need it. When Managed Google Tags is set up, Smart Cookie Popup applies Consent Mode v2 for you automatically.
+
+**How does Smart Cookie Popup connect cookie consent to my Google tags?** It maps your Wix cookie categories to Google Consent Mode signals. Analytics cookies control analytics_storage, marketing cookies control ad_storage, and marketing with third-party data sharing controls ad_user_data and ad_personalization. Essential cookies are always allowed.
+
+### Smart Cookie Popup for Wix: Troubleshooting Managed Google Tags
+
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/troubleshooting-managed-google-tags
+
+If your tags are not behaving the way you expect, work through these common situations. Most issues come from setup that is not finished, or from the same Google ID loading in more than one place.
+
+###### Setup is stuck on Setup incomplete
+
+- Make sure you added at least one valid ID in Step 1 (a GTM container, one or more direct IDs, or both).
+- Check that each ID uses the right format: GTM-, G-, AW-, or DC-.
+- Tick the confirmation box in Step 2.
+- Click Save Changes and activate.
+
+###### Tags are not firing
+
+- Confirm you accepted cookies on the site. Tags load after consent, so nothing fires before a choice is made.
+- Check that the ID is entered correctly with no extra spaces.
+- Make sure the same ID was not disabled or removed elsewhere by mistake.
+- Save and activate again, then reload the live site.
+
+###### GTM Preview will not connect
+
+- Open your live site or preview in the same browser.
+- Accept cookies first, then start GTM Preview.
+- Use GTM Preview mode rather than the basic Test your website option, which can miss consent-managed tags.
+
+###### Tag Assistant shows nothing until I accept cookies
+
+This is expected. The app loads your direct tags only after consent, so Tag Assistant stays empty until you accept cookies. Accept cookies and the tags should appear.
+
+###### Using both GTM and direct IDs safely
+
+You can use a GTM container and direct IDs together, but each Google ID should load in only one place. If an ID fires both directly and from inside GTM, you may see double counting. Keep each ID in either GTM or the direct list, not both.
+
+##### FAQ
+
+**Why do not my tags show before I accept cookies?** This is expected behavior. The app loads your Google tags only after a visitor accepts cookies, so nothing fires beforehand. Accept cookies on the site and your tags should appear in GTM Preview or Tag Assistant.
+
+**My Google tags are not firing on my Wix site, how do I fix it?** First accept cookies on the live site, because tags load only after consent. Then check that your ID is entered correctly with no spaces, that the format is valid (GTM-, G-, AW-, or DC-), and that you clicked Save Changes and activated. Reload the live site and test again with GTM Preview or Tag Assistant.
+
+**Why does my Managed Google Tags setup say Setup incomplete?** Setup stays incomplete until you add at least one valid Google ID in Step 1, tick the no-duplicates confirmation box in Step 2, and click Save Changes. Make sure each ID uses a valid format: GTM-, G-, AW-, or DC-.
 
 ## Projecten
 

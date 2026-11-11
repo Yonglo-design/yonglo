@@ -1,0 +1,5 @@
+---
+// De help docs zijn al Engels en staan op /help-docs. Links van de Engelse site (/en/help-docs/…) sturen daarheen.
+const pad = Astro.params.pad ? `/${Astro.params.pad}` : "";
+return Astro.redirect(`/help-docs${pad}`, 301);
+---

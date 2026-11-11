@@ -1,0 +1,4 @@
+---
+// Oud adres /landing-europe/<land>: de landenpagina staat nu op /wix-expert/<land>.
+return Astro.redirect(Astro.params.pad ? `/wix-expert/${Astro.params.pad}` : "/wix-expert", 301);
+---

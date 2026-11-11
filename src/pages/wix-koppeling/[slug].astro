@@ -1,0 +1,11 @@
+---
+// Koppelingspagina op /wix-koppeling/<naam>, hetzelfde adres als op de oude yonglo.com.
+// Inhoud uit de Wix CMS-collectie "Koppelingen"; zie src/koppeling.ts en src/components/KoppelingPagina.astro.
+// De Engelse versie (/en/wix-koppeling/<naam>) staat in src/pages/en/wix-koppeling/[slug].astro en is gelijk.
+import KoppelingPagina from "../../components/KoppelingPagina.astro";
+import { laadKoppeling } from "../../koppeling";
+
+const d = await laadKoppeling(Astro);
+if (d.redirect) return Astro.redirect(d.redirect, 301);
+---
+<KoppelingPagina d={d} />

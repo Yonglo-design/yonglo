@@ -1,0 +1,8 @@
+---
+// /help-docs/<app>/<artikel>: één help-artikel met FAQ. Zie src/helpdocs.ts en src/components/HelpDocs.astro.
+import HelpDocs from "../../../components/HelpDocs.astro";
+import { laadHelpDocs } from "../../../helpdocs";
+const d = await laadHelpDocs(Astro);
+if (d.redirect) return Astro.redirect(d.redirect, 301);
+---
+<HelpDocs d={d} />

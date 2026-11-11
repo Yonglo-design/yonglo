@@ -120,7 +120,8 @@ const here = norm(location.pathname);
 
 // Taalknop: naar dezelfde pagina in de andere taal. Blogberichten zijn er alleen in het Nederlands,
 // dus vanaf een bericht gaat de Engelse knop naar het nieuwsoverzicht.
-const other = EN ? here : (here.startsWith('/post/') ? '/en/nieuws' : here === '/' ? '/en' : '/en' + here);
+// Engelse pagina's zonder /en (help docs, Europese regiopagina's) hebben geen Nederlandse versie: NL gaat naar de homepage.
+const other = EN ? (location.pathname.startsWith('/en') ? here : '/') : (here.startsWith('/post/') ? '/en/nieuws' : here === '/' ? '/en' : '/en' + here);
 document.querySelectorAll('[data-lang-switch]').forEach(a => a.setAttribute('href', other + (EN || !here.startsWith('/post/') ? location.search : '')));
 const isHome = here === '/' || here === '/home-b';
 const SERVICES = ['webdesign', 'ecommerce', 'wix', 'seo', 'optimaal', 'branding', 'development', 'ai', 'api'].map(n => `/${n}`);

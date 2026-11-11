@@ -74,11 +74,15 @@ function parse(html) {
 
 const outer = (n) => n.name === "#text" || n.name === "#raw" ? n.text : n.open + n.children.map(outer).join("") + (n.close || "");
 const hasLetters = (s) => /[A-Za-zÀ-ÿ]/.test(s.replace(/&[a-z#0-9]+;/gi, ""));
-const textOf = (n) => n.name === "#text" ? n.text : n.name === "#raw" || OPAQUE.has(n.name) ? "" : n.children.map(textOf).join("");
+const textOf = (n) => n.name === "#text" ? n.text : n.name === "#raw" || OPAQUE.has(n.name) || (n.open && /\stranslate="no"/i.test(n.open)) ? "" : n.children.map(textOf).join("");
 
 // Alleen tekst en inline opmaak (geen blokken) erin?
+// translate="no" (standaard-HTML): niet vertalen, bijvoorbeeld een merknaam. Telt als één geheel ({2/}).
+const noTranslate = (n) => !!n.open && /\stranslate="no"/i.test(n.open);
+const opaque = (n) => OPAQUE.has(n.name) || noTranslate(n);
+
 function inlineOnly(n) {
-  return n.children.every((c) => c.name === "#text" || (c.name === "#raw" && c.text.startsWith("<!--")) || OPAQUE.has(c.name) || (INLINE.has(c.name) && inlineOnly(c)));
+  return n.children.every((c) => c.name === "#text" || (c.name === "#raw" && c.text.startsWith("<!--")) || opaque(c) || (INLINE.has(c.name) && inlineOnly(c)));
 }
 
 // Sleutel van een tekstblok: tekst met {1}…{/1} voor opmaak en {2/} voor iconen/afbeeldingen.
@@ -89,7 +93,7 @@ function keyOf(n) {
     for (const c of node.children) {
       if (c.name === "#text") parts.push({ t: c.text });
       else if (c.name === "#raw") continue;
-      else if (OPAQUE.has(c.name) || !c.children.length && !c.close) { k++; parts.push({ ph: `{${k}/}`, node: c, whole: true }); }
+      else if (opaque(c) || !c.children.length && !c.close) { k++; parts.push({ ph: `{${k}/}`, node: c, whole: true }); }
       else { k++; const id = k; parts.push({ ph: `{${id}}`, open: c }); walk(c); parts.push({ ph: `{/${id}}`, close: c }); }
     }
   })(n);
@@ -128,7 +132,7 @@ function translateTree(node, page) {
       if (v != null) c.text = c.text.match(/^\s*/)[0] + v + c.text.match(/\s*$/)[0];
       continue;
     }
-    if (c.name === "#raw" || RAW.has(c.name) || OPAQUE.has(c.name) || c.name === "option" && false) continue;
+    if (c.name === "#raw" || RAW.has(c.name) || opaque(c) || c.name === "option" && false) continue;
     if (c.children.length && inlineOnly(c) && hasLetters(textOf(c))) {
       const { key, lead, trail, parts } = keyOf(c);
       const v = tr(key, page);
@@ -170,6 +174,7 @@ export function enHref(href) {
   if (path === "" || path === "index") return "/en" + rest;
   if (PAGE_NAMES.has(path)) return `/en/${path}${rest}`;
   if (path.startsWith("project/") || path === "project") return `/en/${path}${rest}`;
+  if (path.startsWith("wix-koppeling/") || path === "wix-koppeling") return `/en/${path}${rest}`;
   return href;
 }
 

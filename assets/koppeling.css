@@ -1,0 +1,112 @@
+/* Koppelingen: de pagina per koppeling (/wix-koppeling/<naam>) en het overzicht op /api (#koppelingen). */
+
+/* ---- hero ---- */
+.kp-hero .kp-title{font-size:clamp(34px,4.4vw,64px);line-height:1.06;letter-spacing:-.02em;margin-bottom:22px;max-width:16em}
+.kp-hero .lead{max-width:36em}
+.fl-ico.kp-ico{background:#fff;padding:0;overflow:hidden}
+.fl-ico.kp-ico img{width:100%;height:100%;object-fit:contain}
+
+/* ---- tekst ---- */
+.kp-body{padding:clamp(70px,9vw,140px) 0}
+.kp-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,110px);align-items:start}
+.kp-side{position:sticky;top:110px}
+.kp-side h2{margin-bottom:28px}
+.kp-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.kp-pair{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.kp-pair i{font-style:normal;font-size:22px;color:var(--spark)}
+.kp-w,.kp-l{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;overflow:hidden;flex:none;font-family:var(--fh);font-weight:700;font-size:22px}
+.kp-w{background:var(--ink);color:#fff}
+.kp-l{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.kp-l img{width:100%;height:100%;object-fit:contain}
+.kp-card dl{display:grid;gap:12px;margin-bottom:24px}
+.kp-card dl div{display:flex;justify-content:space-between;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--line);font-size:15px}
+.kp-card dt{color:var(--grey)}
+.kp-card dd{font-weight:600;text-align:right}
+.kp-card .wide{width:100%;justify-content:center}
+.kp-text{font-size:19px;line-height:1.7;color:#30334a}
+.kp-text>*+*{margin-top:18px}
+.kp-text p:first-child{font-size:clamp(20px,1.7vw,24px);line-height:1.55;color:var(--ink)}
+.kp-text strong,.kp-text b{color:var(--ink);font-weight:600}
+.kp-text h2,.kp-text h3,.kp-text h4{margin-top:36px;font-size:clamp(22px,2vw,28px)}
+.kp-text ul,.kp-text ol{list-style:none;display:grid;gap:12px;padding:24px 26px;background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+.kp-text li{position:relative;padding-left:34px}
+.kp-text ul li::before{content:"✓";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;background:var(--spark)}
+.kp-text ol{counter-reset:kp}
+.kp-text ol li::before{counter-increment:kp;content:counter(kp);position:absolute;left:0;top:1px;font-weight:700;color:var(--spark)}
+.kp-text a{color:var(--spark);text-decoration:underline;text-underline-offset:3px}
+.kp-text p:last-child strong:only-child{display:block;padding:22px 26px;border-left:3px solid var(--spark);background:rgba(50,95,252,.06);border-radius:0 14px 14px 0;font-weight:500}
+
+/* ---- aanpak (donker blok) ---- */
+.kp-steps{position:relative;overflow:hidden;padding:clamp(70px,9vw,140px) 0}
+.kp-steps .wrap{position:relative;z-index:2}
+.kp-steps .sub{color:rgba(255,255,255,.65)}
+.kp-step-grid{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:none}
+.kp-step-grid li{position:relative;padding:30px 28px 32px;border-radius:var(--r);background:rgba(255,255,255,.04);border:1px solid var(--line-d);transition:background .3s,border-color .3s,transform .4s var(--ease)}
+.kp-step-grid li:hover{background:rgba(50,95,252,.12);border-color:rgba(122,151,253,.45);transform:translateY(-4px)}
+.kp-step-grid li::after{content:"";position:absolute;top:48px;right:-17px;width:18px;height:1px;background:linear-gradient(90deg,rgba(122,151,253,.6),transparent)}
+.kp-step-grid li:last-child::after{display:none}
+.kp-step-n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--spark);color:#fff;font-family:var(--fm,monospace);font-size:14px;font-weight:500;margin-bottom:22px;box-shadow:0 10px 24px -8px var(--spark)}
+.kp-step-grid h3{font-size:22px;color:#fff;margin-bottom:10px}
+.kp-step-grid p{font-size:16px;line-height:1.6;color:rgba(255,255,255,.65)}
+
+/* projecten: .pj-more valt buiten het vaste ritme van style.css (op projectpagina's volgt er een band) */
+main.koppeling > section.kp-projects{padding-top:var(--sec);padding-bottom:var(--sec)}
+
+/* ---- tegels (andere koppelingen, overzicht op /api) ---- */
+.kp-more{padding:clamp(60px,8vw,120px) 0}
+.kp-tiles{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.kp-tiles>li{display:flex;min-width:0}
+.kp-tiles>li[hidden]{display:none}
+.kp-tile{position:relative;flex:1;min-width:0;display:flex;align-items:center;gap:14px;padding:16px 44px 16px 16px;border-radius:18px;background:#fff;border:1px solid var(--line);color:inherit;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
+.kp-tile:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(14,15,26,.09);border-color:var(--spark)}
+.kp-tl{width:52px;height:52px;flex:none;border-radius:14px;overflow:hidden;display:grid;place-items:center;background:#fff;border:1px solid var(--line);font-family:var(--fh);font-weight:700;font-size:20px;transition:transform .4s var(--ease)}
+.kp-tl img{width:100%;height:100%;object-fit:contain}
+.kp-tile:hover .kp-tl{transform:scale(1.06) rotate(-3deg)}
+.kp-tt{min-width:0;display:flex;flex-direction:column}
+.kp-tt b{font-size:17px;line-height:1.25;overflow-wrap:anywhere}
+.kp-tt small{font-size:13px;color:var(--grey)}
+.kp-tile-cta{background:var(--ink);border-color:var(--ink);color:#fff}
+.kp-tile-cta:hover{background:var(--spark);border-color:var(--spark);box-shadow:0 18px 36px -12px rgba(50,95,252,.55)}
+.kp-tile-cta .kp-tl{background:rgba(255,255,255,.1);border-color:transparent;color:#fff;font-size:26px;font-weight:400}
+.kp-tile-cta .kp-tt small{color:rgba(255,255,255,.65)}
+.kp-tile.kp-tile-cta .arr{color:#fff;opacity:1}
+.kp-tile .arr{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--spark);opacity:0;transition:opacity .3s,transform .3s}
+.kp-tile:hover .arr{opacity:1;transform:translate(3px,-50%)}
+.kp-tiles>li[data-cta]{order:99}
+
+/* overzicht op /api */
+.kp-all{padding:clamp(70px,9vw,140px) 0}
+.kp-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.kp-filter button{font:inherit;font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.kp-filter button:hover{border-color:var(--ink)}
+.kp-filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.kp-filter button small{font-size:12px;opacity:.6;margin-left:4px}
+
+/* tegels in het donkere integratieblok op /api zijn nu links */
+.int-grid li:not(.more):has(>a){padding:0}
+.int-grid li>a{display:flex;align-items:center;gap:10px;width:100%;height:100%;padding:0 12px;color:inherit;border-radius:inherit}
+
+@media (max-width:1199px){
+  .kp-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .kp-step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kp-step-grid li::after{display:none}
+}
+@media (max-width:991px){
+  .kp-grid{grid-template-columns:1fr}
+  .kp-side{position:static}
+  .kp-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:767px){
+  .kp-step-grid{grid-template-columns:1fr}
+  .kp-step-grid li{padding:24px}
+  .kp-tiles{gap:10px}
+  .kp-tile{padding:12px 14px;gap:10px}
+  .kp-tile .arr{display:none}
+  .kp-tl{width:42px;height:42px;border-radius:12px}
+  .kp-tt b{font-size:15px}
+  .kp-text{font-size:17px}
+  .kp-text ul,.kp-text ol{padding:20px}
+}
+@media (max-width:479px){
+  .kp-tile{flex-direction:column;align-items:flex-start;gap:10px}
+}

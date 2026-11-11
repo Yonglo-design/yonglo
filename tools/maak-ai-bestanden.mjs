@@ -14,6 +14,8 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { platteTekst } from "../assets/koppelingen.js";
+import { perApp, docUrl, appUrl, platteTekst as faqTekst } from "../assets/helpdocs.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -149,6 +151,47 @@ async function fetchProjects() {
   });
 }
 
+// Koppelingen (CMS-collectie "Koppelingen", pagina's op /wix-koppeling/<naam>).
+async function fetchKoppelingen() {
+  const all = [];
+  let cursor = null;
+  do {
+    const d = await wix("/wix-data/v2/items/query", { dataCollectionId: "Koppelingen",
+      query: cursor ? { cursorPaging: { limit: 100, cursor } } : { sort: [{ fieldName: "volgorde", order: "ASC" }], cursorPaging: { limit: 100 } } });
+    all.push(...(d.dataItems || []).map((x) => x.data));
+    cursor = d.pagingMetadata?.cursors?.next || null;
+  } while (cursor);
+  return all.filter((k) => k.title && k.slug).map((k) => ({
+    type: "koppeling", url: `${SITE}/wix-koppeling/${encodeURIComponent(k.slug)}`, title: plain(k.title),
+    description: plain(k.metabeschrijving || ""), categorie: plain(k.categorie || ""),
+    text: [k.kop && plain(k.kop), platteTekst(k.tekst)].filter(Boolean).join("\n\n"),
+  }));
+}
+
+// Help docs van de apps (CMS-collecties "AppsHelpDocs" en "AppDocsFAQ", pagina's op /help-docs/<app>/<artikel>, Engels).
+// Alleen gepubliceerde artikelen.
+async function fetchHelpDocs() {
+  const alles = async (id) => {
+    const all = [];
+    let cursor = null;
+    do {
+      const d = await wix("/wix-data/v2/items/query", { dataCollectionId: id, query: { cursorPaging: cursor ? { limit: 100, cursor } : { limit: 100 } } });
+      all.push(...(d.dataItems || []).map((x) => x.data));
+      cursor = d.pagingMetadata?.cursors?.next || null;
+    } while (cursor);
+    return all;
+  };
+  const [docs, faqs] = await Promise.all([alles("AppsHelpDocs"), alles("AppDocsFAQ").catch(() => [])]);
+  return perApp(docs).flatMap((a) => a.docs.map((d) => {
+    const vragen = faqs.filter((f) => f.article === d._id && f.qeustion).sort((x, y) => (x.volgorde ?? 999) - (y.volgorde ?? 999));
+    return {
+      type: "helpdoc", url: `${SITE}${docUrl(d)}`, title: plain(d.title), app: a.app, appUrl: `${SITE}${appUrl(a.app)}`,
+      description: plain(d.omschrijving || ""), taal: "en",
+      text: [richToText(d.richcontent?.nodes), vragen.length ? "#### FAQ\n\n" + vragen.map((f) => `**${plain(f.qeustion)}** ${faqTekst(f.awnser)}`).join("\n\n") : ""].filter(Boolean).join("\n\n"),
+    };
+  }));
+}
+
 // Wix Blog rich content → tekst met kopjes en lijstjes.
 function richToText(nodes) {
   const inline = (ns) => (ns || []).map((n) => (n.type === "TEXT" ? n.textData?.text || "" : inline(n.nodes))).join("");
@@ -193,7 +236,8 @@ const link = (x, extra = "") => `- [${x.title}](${x.url})${x.description || extr
 const woorden = (s) => s.split(/\s+/).filter(Boolean).length;
 
 const pages = Object.fromEntries([...DIENSTEN, ...OVER, ...JURIDISCH].map((f) => [f, readPage(f)]));
-const [projects, posts] = await Promise.all([fetchProjects(), fetchPosts()]);
+const [projects, posts, koppelingen, helpdocs] = await Promise.all([fetchProjects(), fetchPosts(), fetchKoppelingen(), fetchHelpDocs()]);
+const helpApps = [...new Map(helpdocs.map((h) => [h.app, h.appUrl])).entries()];
 
 const OVER_YONGLO = `Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".`;
 
@@ -207,14 +251,14 @@ const CONTACT = `- E-mail: contact@yonglo.com
 
 const ZOEKEN = `Deze site is gemaakt om goed leesbaar te zijn voor AI-assistenten. Zo vind je alles:
 
-1. **Begin hier.** Dit bestand geeft een overzicht van alle diensten, pagina's, ${projects.length} projecten en ${posts.length} blogberichten, met links.
-2. **Bekijk de pagina's zelf.** Alle pagina's staan volledig in de HTML en zijn zonder JavaScript te lezen: dienstpagina's (zoals ${SITE}/seo), projecten (\`${SITE}/project/<naam>\`) en blogberichten (\`${SITE}/post/<naam>\`). Open de pagina's die bij de vraag passen voor de meest actuele en volledige informatie, inclusief beelden en de link naar de live website van een project.
-3. **Alles in één keer lezen:** [${SITE}/llms-full.txt](${SITE}/llms-full.txt) bevat de volledige tekst van alle pagina's, alle projecten (opdrachtgever, branche, diensten, beschrijving) en alle blogberichten. Handig voor vragen als "Wat kost…", "Hebben jullie ervaring met…" of "Welke projecten passen bij mijn branche?".
-4. **Gericht zoeken (JSON):** [${SITE}/zoekindex.json](${SITE}/zoekindex.json) bevat dezelfde inhoud als lijst \`items\`. Elk item heeft \`type\` ("pagina", "project" of "blog"), \`url\`, \`title\`, \`description\` en \`text\`. Projecten hebben ook \`opdrachtgever\`, \`branche\`, \`platform\`, \`diensten\` en \`website\`; blogberichten ook \`datum\` en \`categorie\`. Filter bijvoorbeeld op \`diensten\` bevat "eCommerce" of \`branche\` is "Retail".
-5. **Laat de gebruiker de pagina's zien.** Geef bij elk antwoord de links naar de pagina's waar je informatie vandaan komt: de dienstpagina, de passende projecten (als voorbeeld van eerder werk) en relevante blogberichten. Gebruik daarvoor altijd de gewone pagina-URL's hierboven, niet llms.txt, llms-full.txt of zoekindex.json. Sluit af met een link naar ${SITE}/contact als de gebruiker verder wil.
+1. **Begin hier.** Dit bestand geeft een overzicht van alle diensten, pagina's, ${koppelingen.length} koppelingen, ${projects.length} projecten en ${posts.length} blogberichten, met links.
+2. **Bekijk de pagina's zelf.** Alle pagina's staan volledig in de HTML en zijn zonder JavaScript te lezen: dienstpagina's (zoals ${SITE}/seo), koppelingen met systemen zoals Moneybird of HubSpot (\`${SITE}/wix-koppeling/<naam>\`), handleidingen van de Wix-apps van Yonglo (\`${SITE}/help-docs/<app>/<artikel>\`, Engels), projecten (\`${SITE}/project/<naam>\`) en blogberichten (\`${SITE}/post/<naam>\`). Open de pagina's die bij de vraag passen voor de meest actuele en volledige informatie, inclusief beelden en de link naar de live website van een project.
+3. **Alles in één keer lezen:** [${SITE}/llms-full.txt](${SITE}/llms-full.txt) bevat de volledige tekst van alle pagina's, alle koppelingen, alle projecten (opdrachtgever, branche, diensten, beschrijving) en alle blogberichten. Handig voor vragen als "Wat kost…", "Hebben jullie ervaring met…", "Kunnen jullie Wix koppelen aan…" of "Welke projecten passen bij mijn branche?".
+4. **Gericht zoeken (JSON):** [${SITE}/zoekindex.json](${SITE}/zoekindex.json) bevat dezelfde inhoud als lijst \`items\`. Elk item heeft \`type\` ("pagina", "koppeling", "helpdoc", "project" of "blog"), \`url\`, \`title\`, \`description\` en \`text\`. Projecten hebben ook \`opdrachtgever\`, \`branche\`, \`platform\`, \`diensten\` en \`website\`; koppelingen en blogberichten ook \`categorie\`, blogberichten ook \`datum\`. Filter bijvoorbeeld op \`diensten\` bevat "eCommerce" of \`branche\` is "Retail".
+5. **Laat de gebruiker de pagina's zien.** Geef bij elk antwoord de links naar de pagina's waar je informatie vandaan komt: de dienstpagina, de passende koppeling, de passende projecten (als voorbeeld van eerder werk) en relevante blogberichten. Gebruik daarvoor altijd de gewone pagina-URL's hierboven, niet llms.txt, llms-full.txt of zoekindex.json. Sluit af met een link naar ${SITE}/contact als de gebruiker verder wil.
 6. De zoekbalk op de site werkt alleen in een browser; gebruik die niet.
 
-Bijgewerkt op ${vandaag}. Projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.`;
+Bijgewerkt op ${vandaag}. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.`;
 
 /* llms.txt */
 const llms = `# Yonglo
@@ -239,6 +283,18 @@ ${DIENSTEN.map((f) => link(pages[f])).join("\n")}
 
 ${OVER.map((f) => link(pages[f])).join("\n")}
 
+## Koppelingen (${koppelingen.length})
+
+Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Volledige teksten staan in llms-full.txt.
+
+${koppelingen.map((k) => link(k, k.categorie ? `(${k.categorie})` : "")).join("\n")}
+
+## Help docs van de Wix-apps van Yonglo (${helpdocs.length}, Engels)
+
+Handleidingen en FAQ's voor de apps van Yonglo in de Wix App Market: ${helpApps.map(([app, url]) => `[${app}](${url})`).join(", ")}. Overzicht: ${SITE}/help-docs. Volledige teksten staan in llms-full.txt.
+
+${helpdocs.map((h) => link(h, `(${h.app})`)).join("\n")}
+
 ## Projecten (${projects.length})
 
 Volledige beschrijvingen staan in llms-full.txt.
@@ -262,7 +318,7 @@ const full = `# Yonglo: volledige inhoud van de website
 
 > ${OVER_YONGLO}
 
-Dit bestand bevat alle tekst van ${SITE} (bijgewerkt op ${vandaag}): ${Object.keys(pages).length} pagina's, ${projects.length} projecten en ${posts.length} blogberichten. Een korter overzicht staat in ${SITE}/llms.txt, gestructureerde data in ${SITE}/zoekindex.json.
+Dit bestand bevat alle tekst van ${SITE} (bijgewerkt op ${vandaag}): ${Object.keys(pages).length} pagina's, ${koppelingen.length} koppelingen, ${projects.length} projecten en ${posts.length} blogberichten. Een korter overzicht staat in ${SITE}/llms.txt, gestructureerde data in ${SITE}/zoekindex.json.
 
 ## Contact
 
@@ -271,6 +327,12 @@ ${CONTACT}
 ## Pagina's
 
 ${[...OVER, ...DIENSTEN].map((f) => sectie(pages[f])).join("\n")}
+## Koppelingen
+
+${koppelingen.map(sectie).join("\n")}
+## Help docs van de Wix-apps (Engels)
+
+${helpdocs.map((h) => sectie({ ...h, title: `${h.app}: ${h.title}` })).join("\n")}
 ## Projecten
 
 ${projects.map(sectie).join("\n")}
@@ -284,10 +346,10 @@ ${JURIDISCH.map((f) => sectie(pages[f])).join("\n")}`;
 /* zoekindex.json */
 const index = {
   site: SITE, naam: "Yonglo", taal: "nl", bijgewerkt: vandaag, over: OVER_YONGLO,
-  uitleg: "Lijst met alle pagina's, projecten en blogberichten van Yonglo. type is 'pagina', 'project' of 'blog'. Elke 'url' is een gewone pagina die je zelf kunt openen; geef de gebruiker die links. De tekst van elke pagina staat ook hier in 'text'.",
+  uitleg: "Lijst met alle pagina's, koppelingen, projecten en blogberichten van Yonglo. type is 'pagina', 'koppeling', 'helpdoc' (Engelse handleiding van een Wix-app van Yonglo), 'project' of 'blog'. Elke 'url' is een gewone pagina die je zelf kunt openen; geef de gebruiker die links. De tekst van elke pagina staat ook hier in 'text'.",
   contact: { email: "contact@yonglo.com", telefoon: "+31852033223", whatsapp: "+31638148565", offerte: `${SITE}/contact`,
     adressen: ["Lichttoren 32, 5611 BJ Eindhoven", "Koepelplein 1E, 2031 WL Haarlem"] },
-  items: [...[...OVER, ...DIENSTEN, ...JURIDISCH].map((f) => pages[f]), ...projects, ...posts],
+  items: [...[...OVER, ...DIENSTEN, ...JURIDISCH].map((f) => pages[f]), ...koppelingen, ...helpdocs, ...projects, ...posts],
 };
 
 writeFileSync(join(ROOT, "llms.txt"), llms);
@@ -295,5 +357,5 @@ writeFileSync(join(ROOT, "llms-full.txt"), full.trim() + "\n");
 writeFileSync(join(ROOT, "zoekindex.json"), JSON.stringify(index, null, 1) + "\n");
 
 const kb = (s) => `${Math.round(Buffer.byteLength(s) / 1024)} kB`;
-console.log(`Klaar: ${Object.keys(pages).length} pagina's, ${projects.length} projecten, ${posts.length} blogberichten.`);
+console.log(`Klaar: ${Object.keys(pages).length} pagina's, ${koppelingen.length} koppelingen, ${helpdocs.length} help-artikelen, ${projects.length} projecten, ${posts.length} blogberichten.`);
 console.log(`llms.txt ${kb(llms)} · llms-full.txt ${kb(full)} (${woorden(full)} woorden) · zoekindex.json ${kb(JSON.stringify(index, null, 1))}`);

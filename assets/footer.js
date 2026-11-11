@@ -20,8 +20,8 @@ const FOOTER_HTML = `
     </div>
     <div class="fd-cols">
       <div><h2>Diensten</h2><a href="/webdesign">Webdesign</a><a href="/ecommerce">eCommerce</a><a href="/development">Development</a><a href="/branding">Concept &amp; Branding</a><a href="/wix">Wix websites</a><a href="/optimaal">Website verbeteren</a><a href="/seo">SEO, GEO &amp; succes</a><a href="/ai">AI oplossingen</a><a href="/api">API koppelingen</a></div>
-      <div><h2>Yonglo</h2><a href="/over-yonglo">Over Yonglo</a><a href="/over-yonglo#locaties">Locaties</a><a href="/contact#faq">FAQ</a><a href="/nieuws">Nieuws</a><a href="/portfolio">Portfolio</a><a href="/spel">Speel Pixel Perfect</a><a href="/contact">Contact</a></div>
-      <div><h2>Contact</h2><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp support</a><a href="${offerte}">Offerte aanvragen</a></div>
+      <div><h2>Yonglo</h2><a href="/over-yonglo">Over Yonglo</a><a href="/over-yonglo#locaties">Locaties</a><a href="/wix-website">Werkgebied</a><a href="/contact#faq">FAQ</a><a href="/nieuws">Nieuws</a><a href="/portfolio">Portfolio</a><a href="/spel">Speel Pixel Perfect</a><a href="/contact">Contact</a></div>
+      <div><h2>Contact</h2><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp support</a><a href="${offerte}">Offerte aanvragen</a><a href="/help-docs">Help docs (apps)</a></div>
     </div>
   </div>
   <div class="fd-stage">
@@ -63,7 +63,7 @@ const EN_TEXT = [
   ['Vraag je AI naar Yonglo', 'Ask your AI about Yonglo'],
   ['<h2>Diensten</h2>', '<h2>Services</h2>'], ['>Website verbeteren<', '>Improve your website<'],
   ['SEO, GEO &amp; succes', 'SEO, GEO &amp; success'], ['>AI oplossingen<', '>AI solutions<'], ['>API koppelingen<', '>API integrations<'],
-  ['>Over Yonglo<', '>About Yonglo<'], ['>Locaties<', '>Locations<'], ['>Nieuws<', '>News<'], ['>Speel Pixel Perfect<', '>Play Pixel Perfect<'],
+  ['>Over Yonglo<', '>About Yonglo<'], ['>Locaties<', '>Locations<'], ['href="/wix-website">Werkgebied<', 'href="/wix-expert">Regions<'], ['>Nieuws<', '>News<'], ['>Speel Pixel Perfect<', '>Play Pixel Perfect<'],
   ['>Offerte aanvragen<', '>Request a quote<'], ['ontwerp · yonglo-logo', 'design · yonglo-logo'], ['<span>Bouwen…</span>', '<span>Building…</span>'],
   ['>Privacybeleid<', '>Privacy policy<'], ['>Voorwaarden<', '>Terms<'],
 ];
