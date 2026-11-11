@@ -1,7 +1,7 @@
 ---
 // Oud adres met .html (bijv. /webdesign.html) → blijvend door naar het adres zonder .html (/webdesign).
 // Zoekopdrachten en anker blijven behouden (/bedankt.html?f=seo-scan → /bedankt?f=seo-scan).
-import { PAGINAS } from "../paginas";
+import { PAGINAS, nietGevonden } from "../paginas";
 
 const pagina = Astro.params.pagina as string;
 if (pagina === "index") return Astro.redirect(`/${Astro.url.search}`, 301);
@@ -10,6 +10,6 @@ if (pagina === "post") {
   const p = Astro.url.searchParams.get("p");
   return Astro.redirect(p ? `/post/${encodeURIComponent(p)}` : "/nieuws", 301);
 }
-if (!PAGINAS.includes(pagina)) return new Response("Pagina niet gevonden", { status: 404 });
+if (!PAGINAS.includes(pagina) || pagina === "404") return nietGevonden();
 return Astro.redirect(`/${pagina}${Astro.url.search}`, 301);
 ---

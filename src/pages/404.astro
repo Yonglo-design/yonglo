@@ -1,0 +1,9 @@
+---
+// Elk adres dat niet bestaat (ook diepere adressen zoals /a/b/c) toont de 404-pagina uit 404.html,
+// met status 404. Onder /en/… de Engelse versie (en/404.html, gemaakt door tools/maak-engels.mjs).
+import { nietGevonden } from "../paginas";
+
+export const prerender = false;
+
+return nietGevonden(/^\/en(\/|$)/.test(Astro.url.pathname) ? "en" : "nl");
+---

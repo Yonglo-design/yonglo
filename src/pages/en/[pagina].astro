@@ -7,6 +7,7 @@ export const prerender = false;
 
 const naam = Astro.params.pagina as string;
 if (naam === "index") return Astro.redirect(`/en${Astro.url.search}`, 301);
+if (naam === "404") return nietGevonden("en");
 const html = paginaHtml(naam, "en", siteOrigin(Astro.request, Astro.url));
 if (!html) return nietGevonden("en");
 return htmlResponse(html);

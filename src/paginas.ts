@@ -64,5 +64,9 @@ export function paginaHtml(naam: string, lang: "nl" | "en" = "nl", origin = ""):
 }
 
 export const htmlResponse = (html: string) => new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8" } });
-export const nietGevonden = (lang: "nl" | "en" = "nl") =>
-  new Response(lang === "en" ? "Page not found" : "Pagina niet gevonden", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8" } });
+// Niet gevonden: de 404-pagina (404.html, Engels en/404.html) met status 404. Ontbreekt die, dan een korte tekst.
+export const nietGevonden = (lang: "nl" | "en" = "nl") => {
+  const html = paginaHtml("404", lang) ?? paginaHtml("404", "nl");
+  if (html) return new Response(html, { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } });
+  return new Response(lang === "en" ? "Page not found" : "Pagina niet gevonden", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8" } });
+};

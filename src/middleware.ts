@@ -19,7 +19,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // Gewone pagina's (/, /webdesign, /en, /en/webdesign …) hebben hun eigen titel, omschrijving en canonical al in de HTML.
   const naam = path.replace(/^\/|\/$/g, "");
   const pagina = naam === "" || naam === "en" || PAGINAS.includes(naam) || (naam.startsWith("en/") && PAGINAS_EN.includes(naam.slice(3)));
-  if (!pagina && !path.startsWith("/post/") && !/^(\/en)?\/(project|wix-koppeling)\//.test(path) && !/^\/(help-docs|wix-website|wix-websites|wix-expert|wix-design-development)(\/|$)/.test(path)) return response;
+  // Ook elke 404 (src/pages/404.astro toont dan 404.html): die heeft zijn eigen titel.
+  if (!pagina && response.status !== 404 && !path.startsWith("/post/") && !/^(\/en)?\/(project|wix-koppeling)\//.test(path) && !/^\/(help-docs|wix-website|wix-websites|wix-expert|wix-design-development)(\/|$)/.test(path)) return response;
   if (!(response.headers.get("content-type") || "").includes("text/html")) return response;
 
   const html = await response.text();

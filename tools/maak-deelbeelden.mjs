@@ -21,7 +21,7 @@ const FONTS = ["400", "500", "600"].map((w) => join(ROOT, "tools", "fonts", `Out
 const F600 = opentype.parse(readFileSync(FONTS[2]).buffer.slice(0));
 
 // Pagina's die niet gedeeld worden (testpagina's en de bedankpagina).
-const OVERSLAAN = new Set(["footer-lab", "home-b", "bedankt"]);
+const OVERSLAAN = new Set(["footer-lab", "home-b", "bedankt", "404"]);
 
 // Klein label boven de titel: [Nederlands, Engels].
 const LABELS = {

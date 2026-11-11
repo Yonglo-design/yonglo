@@ -778,3 +778,26 @@
 .askai-note{margin-top:16px;font-size:14px;color:var(--grey)}
 @media (max-width:1023px){.askai-grid{grid-template-columns:1fr;gap:48px}}
 @media (max-width:767px){.askai-card{padding:24px}.askai-btns .btn{flex:1 1 auto;justify-content:center}}
+
+/* 404-pagina (404.html): stijl van de bedankt-pagina (.ty), met een grote 404 en snelle links */
+.nf-code{display:flex;align-items:center;gap:.08em;margin-bottom:26px;font-family:var(--fh);font-weight:700;font-size:clamp(88px,14vw,168px);line-height:1;letter-spacing:-.04em;background:linear-gradient(180deg,#fff,rgba(255,255,255,.55));-webkit-background-clip:text;background-clip:text;color:transparent;animation:tyUp .7s var(--ease) both}
+.nf-o{display:inline-block;width:.78em;height:.78em;border-radius:50%;background:radial-gradient(circle,rgba(50,95,252,.35),rgba(50,95,252,.08) 70%);box-shadow:0 0 0 .08em rgba(50,95,252,.08),0 20px 60px rgba(50,95,252,.45);animation:tyPop .7s cubic-bezier(.34,1.56,.64,1) .15s both}
+.nf-o svg{width:100%;height:100%;fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round}
+.nf-o circle{stroke:var(--spark2);stroke-dasharray:277;stroke-dashoffset:277;animation:tyDraw .9s var(--ease) .35s forwards}
+.nf-o path{stroke-dasharray:34;stroke-dashoffset:34;animation:tyDraw .5s var(--ease) 1s forwards}
+.nf h1{font-size:clamp(36px,5vw,68px)}
+.nf-pad{display:inline-block;max-width:100%;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--line-d);font-family:'JetBrains Mono',monospace;font-size:14px;color:rgba(255,255,255,.75);overflow-wrap:anywhere;margin-bottom:8px}
+.nf-pad[hidden]{display:none}
+.nf .ty-btns{margin-top:14px}
+.nf-links{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%;max-width:980px;margin:44px 0 8px;padding:0;text-align:left}
+.nf-links li{animation:tyUp .7s var(--ease) both}
+.nf-links li:nth-child(1){animation-delay:.45s}.nf-links li:nth-child(2){animation-delay:.52s}.nf-links li:nth-child(3){animation-delay:.59s}
+.nf-links li:nth-child(4){animation-delay:.66s}.nf-links li:nth-child(5){animation-delay:.73s}.nf-links li:nth-child(6){animation-delay:.8s}
+.nf-links a{display:flex;flex-direction:column;gap:4px;height:100%;padding:20px 22px;border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid var(--line-d);color:#fff;text-decoration:none;transition:background .25s,border-color .25s,transform .25s var(--ease)}
+.nf-links a:hover,.nf-links a:focus-visible{background:rgba(50,95,252,.14);border-color:rgba(122,151,253,.5);transform:translateY(-3px)}
+.nf-links b{font-family:var(--fh);font-size:18px;font-weight:600}
+.nf-links b::after{content:" →";color:var(--spark2)}
+.nf-links span{color:rgba(255,255,255,.72);font-size:15px}
+@media (max-width:767px){.nf-links{grid-template-columns:1fr 1fr;gap:10px;margin-top:32px}.nf-links a{padding:16px}.nf-links span{font-size:14px}}
+@media (max-width:420px){.nf-links{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.nf-code,.nf-o,.nf-o circle,.nf-o path,.nf-links li{animation:none;stroke-dashoffset:0}}

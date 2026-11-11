@@ -8,6 +8,7 @@ export const prerender = false;
 
 const naam = Astro.params.pagina as string;
 if (naam === "index") return Astro.redirect(`/${Astro.url.search}`, 301);
+if (naam === "404") return nietGevonden(); // de 404-pagina zelf geeft ook status 404
 const html = paginaHtml(naam, "nl", siteOrigin(Astro.request, Astro.url));
 if (!html) return nietGevonden();
 return htmlResponse(html);
