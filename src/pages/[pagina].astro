@@ -1,0 +1,15 @@
+---
+// Gewone pagina's op een adres zonder .html: /webdesign toont webdesign.html uit de hoofdmap.
+// Wordt bij het bouwen vooraf gemaakt (snel, gewoon een vast bestand), net als voorheen.
+// Pagina's aanpassen doe je dus gewoon in de .html-bestanden in de hoofdmap.
+import { PAGINAS, paginaHtml } from "../paginas";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return PAGINAS.map((pagina) => ({ params: { pagina } }));
+}
+
+const html = paginaHtml(Astro.params.pagina as string);
+---
+<Fragment set:html={html} />

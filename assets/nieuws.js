@@ -47,9 +47,9 @@ async function load() {
   setJsonLd("ld-blog", {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "@id": `${SITE}/nieuws.html#blog`,
+    "@id": `${SITE}/nieuws#blog`,
     name: "Yonglo nieuws",
-    url: `${SITE}/nieuws.html`,
+    url: `${SITE}/nieuws`,
     inLanguage: "nl-NL",
     publisher: { "@type": "Organization", "@id": "https://www.yonglo.com/#organization", name: "Yonglo", url: "https://www.yonglo.com" },
     blogPost: posts.map((p) => ({

@@ -23,9 +23,9 @@ function load() {
 }
 
 // Pagina's die doorzocht worden (bedankt-, test- en losse projectpagina's niet).
-const PAGES = ["/", "/webdesign.html", "/ecommerce.html", "/wix.html", "/seo.html", "/optimaal.html", "/branding.html",
-  "/development.html", "/ai.html", "/api.html", "/portfolio.html", "/over-yonglo.html", "/contact.html", "/nieuws.html",
-  "/spel.html", "/disclaimer.html", "/privacybeleid.html", "/voorwaarden.html"];
+const PAGES = ["/", "/webdesign", "/ecommerce", "/wix", "/seo", "/optimaal", "/branding",
+  "/development", "/ai", "/api", "/portfolio", "/over-yonglo", "/contact", "/nieuws",
+  "/spel", "/disclaimer", "/privacybeleid", "/voorwaarden"];
 const clean = s => String(s || "").replace(/\s+/g, " ").replace(/\s+([.,!?;:])/g, "$1").trim();
 
 async function indexPages() {
@@ -91,7 +91,7 @@ function render() {
   const rank = list => list.map(doc => ({ doc, s: score(doc, terms) })).filter(r => r.s).sort((a, b) => b.s - a.s);
   const pg = rank(pages).slice(0, 7), pj = rank(projects || []).slice(0, 4), nw = rank(posts || []).slice(0, 4);
   if (!pg.length && !pj.length && !nw.length) {
-    res.innerHTML = `<p class="srch-empty">Geen resultaten voor “${esc(q)}”. Probeer een ander woord, of <a href="/contact.html">neem contact op</a>.</p>`;
+    res.innerHTML = `<p class="srch-empty">Geen resultaten voor “${esc(q)}”. Probeer een ander woord, of <a href="/contact">neem contact op</a>.</p>`;
     return;
   }
   const item = r => `<a class="srch-hit" href="${esc(r.doc.u)}"><b>${mark(r.doc.t, terms)}</b><span>${snippet(r.doc, terms)}</span></a>`;

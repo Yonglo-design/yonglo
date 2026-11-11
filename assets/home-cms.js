@@ -42,7 +42,7 @@ if (rail) {
       // Veel projecten: de rail beweegt sneller, zodat de sectie niet eindeloos lang wordt.
       rail.dataset.speed = String(Math.max(0.2, Math.min(1, 10 / (list.length + 1))));
       rail.innerHTML = list.map(card).join("") +
-        `<a href="/portfolio.html" class="proj proj-cta"><span>Alle ${all.length} projecten op een rij</span><b>Bekijk al ons werk →</b></a>`;
+        `<a href="/portfolio" class="proj proj-cta"><span>Alle ${all.length} projecten op een rij</span><b>Bekijk al ons werk →</b></a>`;
       window.dispatchEvent(new Event("resize"));
     }
   } catch (e) {

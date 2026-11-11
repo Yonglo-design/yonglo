@@ -17,7 +17,7 @@ const ALIASES: Record<string, string> = {
 };
 
 const slug = Astro.params.slug || "";
-if (!slug) return Astro.redirect("/portfolio.html", 301);
+if (!slug) return Astro.redirect("/portfolio", 301);
 if (ALIASES[slug]) return Astro.redirect(`/project/${ALIASES[slug]}`, 301);
 
 const forwardedUrl = Astro.request.headers.get("x-wix-forwarded-url");
@@ -109,14 +109,14 @@ const work = p && {
   ...(p.branche ? { genre: p.branche } : {}),
   ...((p.diensten || []).length ? { keywords: (p.diensten || []).join(", ") } : {}),
   ...(p._updatedDate?.$date || p._updatedDate ? { dateModified: p._updatedDate?.$date || p._updatedDate } : {}),
-  isPartOf: { "@type": "CollectionPage", "@id": `${origin}/portfolio.html`, name: "Portfolio Yonglo", url: `${origin}/portfolio.html` },
+  isPartOf: { "@type": "CollectionPage", "@id": `${origin}/portfolio`, name: "Portfolio Yonglo", url: `${origin}/portfolio` },
 };
 const breadcrumb = p && {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: `${origin}/` },
-    { "@type": "ListItem", position: 2, name: "Portfolio", item: `${origin}/portfolio.html` },
+    { "@type": "ListItem", position: 2, name: "Portfolio", item: `${origin}/portfolio` },
     { "@type": "ListItem", position: 3, name: p.title, item: url },
   ],
 };
@@ -168,10 +168,10 @@ const breadcrumb = p && {
 ) : (
 <main id="main" class="project">
 <section class="hero sub-hero pj-hero dark"><div class="blob b1"></div><div class="dots"></div>
-  <div class="wrap pj-missing"><nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/portfolio.html">Portfolio</a></nav>
+  <div class="wrap pj-missing"><nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/portfolio">Portfolio</a></nav>
   {failed ? <h1>Het project kon niet worden geladen.</h1> : <h1>Dit project bestaat niet (meer).</h1>}
   <p class="lead">{failed ? "Ververs de pagina of probeer het later nog eens." : "Bekijk al ons werk in het portfolio."}</p>
-  <a href="/portfolio.html" class="btn btn-primary">Naar portfolio <i class="arr">→</i></a></div></section>
+  <a href="/portfolio" class="btn btn-primary">Naar portfolio <i class="arr">→</i></a></div></section>
 </main>
 )}
 

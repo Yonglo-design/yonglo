@@ -16,21 +16,21 @@ const HEADER_HTML = `
           <div class="mega" id="mega">
             <div class="mega-col">
               <p class="eyebrow">Bouwen</p>
-              <a href="/webdesign.html"><b>Webdesign</b><span>Professionele websites voor jouw bedrijf</span></a>
-              <a href="/ecommerce.html"><b>eCommerce</b><span>Webshops die verkopen</span></a>
-              <a href="/wix.html"><b>Wix websites</b><span>Ontdek de onbeperkte mogelijkheden</span></a>
+              <a href="/webdesign"><b>Webdesign</b><span>Professionele websites voor jouw bedrijf</span></a>
+              <a href="/ecommerce"><b>eCommerce</b><span>Webshops die verkopen</span></a>
+              <a href="/wix"><b>Wix websites</b><span>Ontdek de onbeperkte mogelijkheden</span></a>
             </div>
             <div class="mega-col">
               <p class="eyebrow">Groeien</p>
-              <a href="/seo.html"><b>SEO, GEO &amp; succes</b><span>Word beter gevonden</span></a>
-              <a href="/optimaal.html"><b>Website verbeteren</b><span>Geef je Wix website een upgrade</span></a>
-              <a href="/branding.html"><b>Concept &amp; Branding</b><span>Van idee tot identiteit</span></a>
+              <a href="/seo"><b>SEO, GEO &amp; succes</b><span>Word beter gevonden</span></a>
+              <a href="/optimaal"><b>Website verbeteren</b><span>Geef je Wix website een upgrade</span></a>
+              <a href="/branding"><b>Concept &amp; Branding</b><span>Van idee tot identiteit</span></a>
             </div>
             <div class="mega-col">
               <p class="eyebrow">Slimmer</p>
-              <a href="/development.html"><b>Development</b><span>Maatwerk oplossingen</span></a>
-              <a href="/ai.html"><b>AI oplossingen</b><span>Slimmer werken met AI</span></a>
-              <a href="/api.html"><b>API koppelingen</b><span>Integreer andere platformen</span></a>
+              <a href="/development"><b>Development</b><span>Maatwerk oplossingen</span></a>
+              <a href="/ai"><b>AI oplossingen</b><span>Slimmer werken met AI</span></a>
+              <a href="/api"><b>API koppelingen</b><span>Integreer andere platformen</span></a>
             </div>
             <a href="/#werk" class="mega-feat">
               <span class="eyebrow">Uitgelicht project</span>
@@ -38,14 +38,14 @@ const HEADER_HTML = `
             </a>
           </div>
         </li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/over-yonglo.html">Over Yonglo</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/over-yonglo">Over Yonglo</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
     <div class="hdr-cta">
       <button class="icon-btn srch-btn" type="button" aria-label="Zoeken op de website" aria-expanded="false" aria-controls="srch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></button>
-      <a href="/spel.html" class="icon-btn play-btn" aria-label="Speel Pixel Perfect" title="Speel Pixel Perfect"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 6.5h9.6a4.3 4.3 0 0 1 4.2 5.2l-.9 4.6a2.6 2.6 0 0 1-4.5 1.2L13.9 15h-3.8l-1.7 2.5a2.6 2.6 0 0 1-4.5-1.2l-.9-4.6a4.3 4.3 0 0 1 4.2-5.2z"/><path d="M8.5 9.3v3.4M6.8 11h3.4"/><circle cx="15.3" cy="10" r=".6"/><circle cx="17" cy="12" r=".6"/></svg></a>
+      <a href="/spel" class="icon-btn play-btn" aria-label="Speel Pixel Perfect" title="Speel Pixel Perfect"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 6.5h9.6a4.3 4.3 0 0 1 4.2 5.2l-.9 4.6a2.6 2.6 0 0 1-4.5 1.2L13.9 15h-3.8l-1.7 2.5a2.6 2.6 0 0 1-4.5-1.2l-.9-4.6a4.3 4.3 0 0 1 4.2-5.2z"/><path d="M8.5 9.3v3.4M6.8 11h3.4"/><circle cx="15.3" cy="10" r=".6"/><circle cx="17" cy="12" r=".6"/></svg></a>
       <a href="tel:+31852033223" class="icon-btn" aria-label="Bel Yonglo"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
       <a href="#contact" class="btn btn-primary">Plan een kennismaking <i class="arr">→</i></a>
     </div>
@@ -57,13 +57,13 @@ const MOBMENU_HTML = `
   <nav aria-label="Mobiel menu">
     <details>
       <summary>Diensten</summary>
-      <a href="/webdesign.html">Webdesign</a><a href="/ecommerce.html">eCommerce</a><a href="/development.html">Development</a>
-      <a href="/branding.html">Concept &amp; Branding</a><a href="/wix.html">Wix websites</a><a href="/optimaal.html">Website verbeteren</a>
-      <a href="/seo.html">SEO, GEO &amp; succes</a><a href="/ai.html">AI oplossingen</a><a href="/api.html">API koppelingen</a>
+      <a href="/webdesign">Webdesign</a><a href="/ecommerce">eCommerce</a><a href="/development">Development</a>
+      <a href="/branding">Concept &amp; Branding</a><a href="/wix">Wix websites</a><a href="/optimaal">Website verbeteren</a>
+      <a href="/seo">SEO, GEO &amp; succes</a><a href="/ai">AI oplossingen</a><a href="/api">API koppelingen</a>
     </details>
-    <a href="/portfolio.html">Portfolio</a>
-    <a href="/over-yonglo.html">Over Yonglo</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/over-yonglo">Over Yonglo</a>
+    <a href="/contact">Contact</a>
   </nav>
   <a href="#contact" class="btn btn-primary wide">Plan een kennismaking <i class="arr">→</i></a>
 </div>
@@ -75,13 +75,12 @@ host.innerHTML = HEADER_HTML;
 host.insertAdjacentHTML('afterend', MOBMENU_HTML);
 const mob = document.getElementById('mobmenu');
 
-// Welke pagina is dit? ('/', '/ai' en '/ai.html' worden allemaal genormaliseerd)
-const norm = p => { p = p.replace(/\/+$/, '') || '/index'; if (!/\.html$/.test(p)) p += '.html'; return p; };
+// Welke pagina is dit? ('/ai', '/ai/' en het oude '/ai.html' worden allemaal '/ai'; '/' en '/index.html' worden '/')
+const norm = p => { p = p.split(/[?#]/)[0].replace(/\.html$/, '').replace(/\/+$/, ''); return !p || p === '/index' ? '/' : p; };
 const here = norm(location.pathname);
-const isHome = here === '/index.html' || here === '/home-b.html';
-const SERVICES = ['webdesign', 'ecommerce', 'wix', 'seo', 'optimaal', 'branding', 'development', 'ai', 'api'].map(n => `/${n}.html`);
-const CURRENT = { '/project.html': '/portfolio.html', '/post.html': '/nieuws.html' }; // subpagina's die bij een menu-item horen
-const active = here.startsWith('/post/') ? '/nieuws.html' : here.startsWith('/project/') ? '/portfolio.html' : CURRENT[here] || here; // blogberichten horen bij Nieuws, projecten bij Portfolio
+const isHome = here === '/' || here === '/home-b';
+const SERVICES = ['webdesign', 'ecommerce', 'wix', 'seo', 'optimaal', 'branding', 'development', 'ai', 'api'].map(n => `/${n}`);
+const active = here.startsWith('/post/') ? '/nieuws' : here.startsWith('/project/') ? '/portfolio' : here; // blogberichten horen bij Nieuws, projecten bij Portfolio
 
 // actieve link markeren (menu, megamenu, mobiel menu, spelknop)
 [...host.querySelectorAll('a[href]'), ...mob.querySelectorAll('a[href]')].forEach(a => {
@@ -106,6 +105,6 @@ if (isHome) {
 // "Plan een kennismaking": naar het formulier op deze pagina, of anders naar de contactpagina
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('contact')) return;
-  document.querySelectorAll('.hdr a[href="#contact"], #mobmenu a[href="#contact"]').forEach(a => a.setAttribute('href', '/contact.html#contact'));
+  document.querySelectorAll('.hdr a[href="#contact"], #mobmenu a[href="#contact"]').forEach(a => a.setAttribute('href', '/contact#contact'));
 });
 })();

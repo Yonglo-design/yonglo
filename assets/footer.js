@@ -6,7 +6,7 @@
 'use strict';
 
 // ---------- footer-inhoud ----------
-const offerte = document.getElementById('contact') ? '#contact' : '/contact.html';
+const offerte = document.getElementById('contact') ? '#contact' : '/contact';
 const FOOTER_HTML = `
   <div class="fd-in">
     <div class="fd-brand">
@@ -19,8 +19,8 @@ const FOOTER_HTML = `
       </div>
     </div>
     <div class="fd-cols">
-      <div><h2>Diensten</h2><a href="/webdesign.html">Webdesign</a><a href="/ecommerce.html">eCommerce</a><a href="/development.html">Development</a><a href="/branding.html">Concept &amp; Branding</a><a href="/wix.html">Wix websites</a><a href="/optimaal.html">Website verbeteren</a><a href="/seo.html">SEO, GEO &amp; succes</a><a href="/ai.html">AI oplossingen</a><a href="/api.html">API koppelingen</a></div>
-      <div><h2>Yonglo</h2><a href="/over-yonglo.html">Over Yonglo</a><a href="/over-yonglo.html#locaties">Locaties</a><a href="/contact.html#faq">FAQ</a><a href="/nieuws.html">Nieuws</a><a href="/portfolio.html">Portfolio</a><a href="/spel.html">Speel Pixel Perfect</a><a href="/contact.html">Contact</a></div>
+      <div><h2>Diensten</h2><a href="/webdesign">Webdesign</a><a href="/ecommerce">eCommerce</a><a href="/development">Development</a><a href="/branding">Concept &amp; Branding</a><a href="/wix">Wix websites</a><a href="/optimaal">Website verbeteren</a><a href="/seo">SEO, GEO &amp; succes</a><a href="/ai">AI oplossingen</a><a href="/api">API koppelingen</a></div>
+      <div><h2>Yonglo</h2><a href="/over-yonglo">Over Yonglo</a><a href="/over-yonglo#locaties">Locaties</a><a href="/contact#faq">FAQ</a><a href="/nieuws">Nieuws</a><a href="/portfolio">Portfolio</a><a href="/spel">Speel Pixel Perfect</a><a href="/contact">Contact</a></div>
       <div><h2>Contact</h2><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp support</a><a href="${offerte}">Offerte aanvragen</a></div>
     </div>
   </div>
@@ -53,7 +53,7 @@ const FOOTER_HTML = `
       <div class="fd-status mono" id="fd-status"><span>Bouwen…</span></div>
     </div>
   </div>
-  <div class="fd-bot"><span>© <span class="yr">2026</span> Yonglo · Think Wix, think Yonglo</span><span><a href="/disclaimer.html">Disclaimer</a> · <a href="/privacybeleid.html">Privacybeleid</a> · <a href="/voorwaarden.html">Voorwaarden</a></span></div>
+  <div class="fd-bot"><span>© <span class="yr">2026</span> Yonglo · Think Wix, think Yonglo</span><span><a href="/disclaimer">Disclaimer</a> · <a href="/privacybeleid">Privacybeleid</a> · <a href="/voorwaarden">Voorwaarden</a></span></div>
 `;
 const host = document.querySelector('footer[data-footer]');
 if (!host) return;

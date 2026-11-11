@@ -286,7 +286,7 @@ try { ui.name.value = localStorage.getItem("yl-pp-naam") || ""; } catch (e) {}
 const share = $("#pp-share");
 if (share) share.addEventListener("click", async () => {
   const text = `Ik bouwde een website van ${stack.length - 1} blokken hoog in Pixel Perfect van Yonglo (score ${score}). Kun jij hoger?`;
-  const url = location.origin + "/spel.html";
+  const url = location.origin + "/spel";
   try {
     if (navigator.share) await navigator.share({ title: "Pixel Perfect | Yonglo", text, url });
     else { await navigator.clipboard.writeText(text + " " + url); share.textContent = "Gekopieerd!"; setTimeout(() => share.textContent = "Deel je score", 2000); }

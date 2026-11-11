@@ -63,12 +63,17 @@ op een Astro-site.
    (docs: Update Llms Txt). Controleer daarna dat `<live-url>/llms.txt` begint met "# Yonglo" en het kopje
    "Zo doorzoek je deze site" bevat.
 8. Controleer live: open een bericht (`<live-url>/post/<naam>`): er is precies één `<title>`, met de echte
-   titel van het bericht (niet "Post | Yonglo"), en `<live-url>/nieuws.html` moet werken.
+   titel van het bericht (niet "Post | Yonglo"), en `<live-url>/nieuws` moet werken (en `<live-url>/nieuws.html` moet doorsturen naar `/nieuws`).
 9. Als het gelukt is: `rm -f build.zip source.zip`, verplaats de tag en push hem:
    `git tag -f live HEAD` en `git push -f origin live`
 10. Geef de gebruiker de live URL.
 
 ## Goed om te weten
+- Pagina-adressen zijn zonder `.html`: `webdesign.html` in de hoofdmap staat live op `/webdesign`
+  (`src/pages/[pagina].astro` maakt dat bij het bouwen). Link in de code dus naar `/webdesign`, niet naar
+  `/webdesign.html`. Oude `.html`-adressen en adressen van de oude yonglo.com (zoals `/wix-seo`) sturen
+  blijvend door (`src/pages/[pagina].html.astro` en `OUDE_ADRESSEN` in `astro.config.mjs`).
+  Een nieuwe pagina = een nieuw `.html`-bestand in de hoofdmap; die krijgt vanzelf een adres zonder `.html`.
 - Projecten en andere CMS-items worden in het Wix-dashboard aangepast, niet in de code.
   Die wijzigingen staan meteen live, zonder te publiceren.
 - Projecten staan op `/project/<slug>`, hetzelfde adres als op de oude yonglo.com. Wix bouwt die pagina op

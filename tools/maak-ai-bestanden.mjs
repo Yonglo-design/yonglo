@@ -96,7 +96,7 @@ function readPage(file) {
   const title = plain((html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1]).replace(/\s*[|–-]\s*Yonglo\s*$/, "");
   const description = plain((html.match(/<meta\s+name="description"\s+content="([^"]*)"/i) || [])[1]);
   const text = ALLEEN_OMSCHRIJVING.includes(file) ? "" : htmlToText(html);
-  const url = file === "index.html" ? `${SITE}/` : `${SITE}/${file}`;
+  const url = file === "index.html" ? `${SITE}/` : `${SITE}/${file.replace(/\.html$/, "")}`;
   return { type: "pagina", url, title: file === "index.html" ? "Home" : title, description, text };
 }
 
@@ -202,7 +202,7 @@ const CONTACT = `- E-mail: contact@yonglo.com
 - WhatsApp support: +31 6 38 14 85 65 (https://wa.me/31638148565)
 - Studio Eindhoven: Lichttoren 32, 5611 BJ Eindhoven
 - Yonglo Development, Haarlem: Koepelplein 1E, 2031 WL Haarlem
-- Offerte of kennismaking aanvragen: ${SITE}/contact.html
+- Offerte of kennismaking aanvragen: ${SITE}/contact
 - LinkedIn: https://www.linkedin.com/company/yonglo · Instagram: https://www.instagram.com/yonglo.design`;
 
 const ZOEKEN = `Deze site is gemaakt om goed leesbaar te zijn voor AI-assistenten. Zo vind je alles:
@@ -210,7 +210,7 @@ const ZOEKEN = `Deze site is gemaakt om goed leesbaar te zijn voor AI-assistente
 1. **Begin hier.** Dit bestand geeft een overzicht van alle diensten, pagina's, ${projects.length} projecten en ${posts.length} blogberichten, met links.
 2. **Alles in één keer lezen:** [${SITE}/llms-full.txt](${SITE}/llms-full.txt) bevat de volledige tekst van alle pagina's, alle projecten (opdrachtgever, branche, diensten, beschrijving) en alle blogberichten. Gebruik dit om vragen te beantwoorden als "Wat kost…", "Hebben jullie ervaring met…" of "Welke projecten passen bij mijn branche?".
 3. **Gericht zoeken (JSON):** [${SITE}/zoekindex.json](${SITE}/zoekindex.json) bevat dezelfde inhoud als lijst \`items\`. Elk item heeft \`type\` ("pagina", "project" of "blog"), \`url\`, \`title\`, \`description\` en \`text\`. Projecten hebben ook \`opdrachtgever\`, \`branche\`, \`platform\`, \`diensten\` en \`website\`; blogberichten ook \`datum\` en \`categorie\`. Filter bijvoorbeeld op \`diensten\` bevat "eCommerce" of \`branche\` is "Retail".
-4. **Gewone pagina's** (zoals ${SITE}/seo.html) zijn ook zonder JavaScript te lezen.
+4. **Gewone pagina's** (zoals ${SITE}/seo) zijn ook zonder JavaScript te lezen.
 5. **Let op:** projectpagina's (\`/project/<naam>\`) en blogberichten (\`/post/<naam>\`) staan volledig in de HTML en zijn dus ook rechtstreeks te lezen. Voor een snel overzicht kun je llms-full.txt of zoekindex.json gebruiken; geef de gebruiker de link naar de pagina zelf.
 6. De zoekbalk op de site werkt alleen in een browser; gebruik die niet.
 
@@ -285,7 +285,7 @@ ${JURIDISCH.map((f) => sectie(pages[f])).join("\n")}`;
 const index = {
   site: SITE, naam: "Yonglo", taal: "nl", bijgewerkt: vandaag, over: OVER_YONGLO,
   uitleg: "Lijst met alle pagina's, projecten en blogberichten van Yonglo. type is 'pagina', 'project' of 'blog'. Project- en blog-URL's laden hun inhoud met JavaScript; de tekst staat daarom hier in 'text'.",
-  contact: { email: "contact@yonglo.com", telefoon: "+31852033223", whatsapp: "+31638148565", offerte: `${SITE}/contact.html`,
+  contact: { email: "contact@yonglo.com", telefoon: "+31852033223", whatsapp: "+31638148565", offerte: `${SITE}/contact`,
     adressen: ["Lichttoren 32, 5611 BJ Eindhoven", "Koepelplein 1E, 2031 WL Haarlem"] },
   items: [...[...OVER, ...DIENSTEN, ...JURIDISCH].map((f) => pages[f]), ...projects, ...posts],
 };

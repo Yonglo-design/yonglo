@@ -1,5 +1,5 @@
 ---
 // Oud adres /project.html?p=<naam> → nieuw adres /project/<naam> (blijvende doorverwijzing).
 const p = Astro.url.searchParams.get("p");
-return Astro.redirect(p ? `/project/${encodeURIComponent(p)}` : "/portfolio.html", 301);
+return Astro.redirect(p ? `/project/${encodeURIComponent(p)}` : "/portfolio", 301);
 ---

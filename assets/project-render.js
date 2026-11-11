@@ -13,7 +13,7 @@ export function hero(p) {
   return `<section class="hero sub-hero pj-hero dark">
   <div class="blob b1"></div><div class="dots"></div>
   <div class="wrap">
-    <nav class="crumbs rv" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/portfolio.html">Portfolio</a><span>/</span><b>${esc(p.title)}</b></nav>
+    <nav class="crumbs rv" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/portfolio">Portfolio</a><span>/</span><b>${esc(p.title)}</b></nav>
     <div class="pj-head">
       <div>
         ${diensten.length ? `<p class="pj-cat rv">${diensten.slice(0, 3).map(esc).join(" <i>|</i> ")}</p>` : ""}
@@ -115,7 +115,7 @@ export function contact(p, n, cp) {
         <a href="mailto:${esc(mail)}" class="dline copy" data-copy="${esc(mail)}"><span>E-mail</span><b>${esc(mail)}</b></a>
         <a href="tel:${esc(telHref)}" class="dline"><span>Telefoon</span><b>${esc(tel)}</b></a>
       </div>
-      <a href="/portfolio.html" class="btn btn-ghost rv back">← Naar portfolio</a>
+      <a href="/portfolio" class="btn btn-ghost rv back">← Naar portfolio</a>
     </div>
     <form class="cform rv" data-to="${esc(mail)}" data-subject="Vergelijkbaar project als ${esc(p.title)} (t.a.v. ${esc(naam)})">
       <fieldset class="chips">
@@ -151,7 +151,7 @@ export function more(p, all, n) {
       <div>
         <h2 class="rv">Bekijk ook onze andere <em>projecten</em>.</h2>
       </div>
-      <a href="/portfolio.html" class="btn btn-dark rv">Naar portfolio <i class="arr">→</i></a>
+      <a href="/portfolio" class="btn btn-dark rv">Naar portfolio <i class="arr">→</i></a>
     </div>
     <div class="more-grid">${pick.map((x, j) => {
       const pf = !!x.portfolioImage;

@@ -219,7 +219,7 @@
       var type=thanksType(f);
       import('/assets/wix/forms-submit.js').then(function(m){ return m.submitWebsiteForm(payload); }).then(function(){
         try{ sessionStorage.setItem('yl-thanks',JSON.stringify({type:type,naam:(naam||'').split(' ')[0],detail:detail,website:payload.website})); }catch(_){}
-        w.location.href='/bedankt.html?f='+encodeURIComponent(type);
+        w.location.href='/bedankt?f='+encodeURIComponent(type);
       }).catch(function(err){
         if(w.console) console.error(err);
         delete f.dataset.busy; if(btn){ btn.disabled=false; btn.innerHTML=label; }
@@ -293,11 +293,11 @@
       '<g fill="'+W+'"><circle cx="66" cy="46" r="20" fill-opacity=".22"/><rect x="57" y="37" width="18" height="18" rx="5"/><circle cx="254" cy="46" r="20" fill-opacity=".22"/><rect x="245" y="37" width="18" height="18" rx="9"/><circle cx="66" cy="154" r="20" fill-opacity=".22"/><path d="M66 144l10 18H56z"/><circle cx="254" cy="154" r="20" fill-opacity=".22"/><rect x="245" y="145" width="18" height="18" rx="3" transform="rotate(45 254 154)"/></g>'+
       '<circle cx="160" cy="100" r="34" fill="'+W+'"/><text x="160" y="106" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" font-weight="700" fill="#0E7490">API</text>'
   };
-  function key(a){var m=(a.getAttribute('href')||'').match(/([a-z-]+)\.html/);return m&&V[m[1]]?m[1]:null;}
+  function key(a){var m=(a.getAttribute('href')||'').match(/^\/([a-z-]+)(?:\.html)?(?:[?#]|$)/);return m&&V[m[1]]?m[1]:null;}
 
   var items=links.map(function(a){return{a:a,k:key(a),t:(a.querySelector('b')||a).textContent,s:(a.querySelector('span')||{}).textContent||''};}).filter(function(i){return i.k;});
   if(!items.length) return;
-  var here=(location.pathname.match(/([a-z-]+)\.html/)||[])[1];
+  var here=(location.pathname.match(/^\/([a-z-]+)(?:\.html)?\/?$/)||[])[1];
   var def=items.filter(function(i){return i.k===here;})[0]||items[0];
 
   feat.innerHTML='<span class="mf-vis" aria-hidden="true">'+items.map(function(i){return '<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" data-k="'+i.k+'">'+V[i.k]+'</svg>';}).join('')+'</span>'+

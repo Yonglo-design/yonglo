@@ -11,7 +11,7 @@ Dit bestand bevat alle tekst van https://headless-ddscngfdqfa-yonglo-1406.wix-si
 - WhatsApp support: +31 6 38 14 85 65 (https://wa.me/31638148565)
 - Studio Eindhoven: Lichttoren 32, 5611 BJ Eindhoven
 - Yonglo Development, Haarlem: Koepelplein 1E, 2031 WL Haarlem
-- Offerte of kennismaking aanvragen: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/contact.html
+- Offerte of kennismaking aanvragen: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/contact
 - LinkedIn: https://www.linkedin.com/company/yonglo · Instagram: https://www.instagram.com/yonglo.design
 
 ## Pagina's
@@ -204,7 +204,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Over Yonglo – Wix Partner in Eindhoven & Haarlem
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/over-yonglo.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/over-yonglo
 
 Yo, hello, bonjour, hi! Maak kennis met Yonglo: erkend Wix Partner met meer dan 18 jaar ervaring, een team voor design en development en studio's in Eindhoven en Haarlem.
 
@@ -307,19 +307,19 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Portfolio – Wix-websites & projecten
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/portfolio.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/portfolio
 
 Ontdek wat we maken: Wix-websites, webshops en maatwerk voor bedrijven van MKB tot multinational. Bekijk projecten als Pieter Smit Group, Pawy en Passanelli.
 
 ### Nieuws & blog over Wix, SEO en AI
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/nieuws.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/nieuws
 
 Nieuws, projecten en praktische kennis over Wix, Wix Studio, SEO en AI van Yonglo, 5-sterren Wix Partner. Lees onze blogs en tips voor een betere website.
 
 ### Contact | Neem contact op met Yonglo
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/contact.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/contact
 
 Neem contact op met Yonglo, dé Wix specialist. Mail naar contact@yonglo.com, bel of app 085 20 33 223 (ma t/m vr 9.00 – 17.30 uur) of vraag direct een offerte aan.
 
@@ -400,7 +400,7 @@ Telefoon085 20 33 223 E-mailcontact@yonglo.com Bereikbaarma t/m vr · 9.00 – 1
 
 ### Pixel Perfect – het spel
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/spel.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/spel
 
 Speel Pixel Perfect van Yonglo: stapel de blokken van een website zo precies mogelijk en bouw de hoogste website. Haal jij de highscorelijst?
 
@@ -478,7 +478,7 @@ Plan een kennismaking → Bekijk ons werk
 
 ### Webdesign in Wix & Wix Studio
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/webdesign.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/webdesign
 
 Webdesign dat werkt, voor jou en je klanten. Professionele Wix-websites die sterk ogen, snel laden, overal goed werken en bezoekers omzetten in klanten.
 
@@ -578,7 +578,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Wix webshop laten maken – eCommerce
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/ecommerce.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/ecommerce
 
 Webshops die verkopen: maatwerk Wix-webshops die snel, veilig en gebruiksvriendelijk zijn. Mollie-partner voor iDEAL, creditcard en Bancontact. Plan een afspraak.
 
@@ -719,7 +719,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Wix websites | Erkend Wix Partner Yonglo
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix
 
 Think Wix, think Yonglo. Als erkend Wix Partner en marktleider in Nederland en België bouwen we Wix-websites die er geweldig uitzien, gebruiksvriendelijk zijn en resultaat opleveren.
 
@@ -849,7 +849,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Development | Maatwerk in Wix & API-koppelingen
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/development.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/development
 
 Maatwerk zonder grenzen. Yonglo Development bouwt maatwerk functionaliteit, software, API-koppelingen en apps bovenop Wix: veilig, schaalbaar en snel opgeleverd.
 
@@ -967,7 +967,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Concept & Branding | Van idee tot identiteit
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/branding.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/branding
 
 Een sterk merk, van idee tot identiteit. Yonglo helpt bedrijven bouwen aan merken die raken: conceptontwikkeling, branding, online marketing en campagnes.
 
@@ -1053,7 +1053,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### SEO, GEO & succes | Hoger in Google
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/seo.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/seo
 
 Hoger in Google, vindbaar waar het telt. Yonglo zorgt dat jouw website beter vindbaar wordt in Google én zichtbaar in AI-gestuurde zoekresultaten. Doe de gratis SEO scan.
 
@@ -1189,7 +1189,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Website verbeteren | Wix Optimaal pakket
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/optimaal.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/optimaal
 
 Haal meer uit je Wix website. Met het Wix Optimaal pakket verbeteren we design, techniek, SEO en conversie van je bestaande Wix website. Vanaf € 495,- excl. btw.
 
@@ -1323,7 +1323,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### AI oplossingen | AI die werkt
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/ai.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/ai
 
 AI die werkt, resultaten die blijven. Yonglo zet AI in voor slimmere websites: content, chatbots, data & voorspellingen, automatisering en optimalisatie.
 
@@ -1426,7 +1426,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### API koppelingen | Wix koppelen met je systemen
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/api.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/api
 
 Yonglo koppelt jouw Wix website met krachtige API's en systemen zoals Moneybird, Exact, e-Boekhouden, Realworks, Mollie en HubSpot. Voor meer automatisering en realtime data.
 
@@ -5212,7 +5212,7 @@ Bron: Wix.com I Marijne Verhoef
 
 ### Algemene voorwaarden
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/voorwaarden.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/voorwaarden
 
 De algemene voorwaarden van Yonglo: definities, offertes, overeenkomst, prijzen, betaling, levering, eigendom en intellectuele eigendom.
 
@@ -5406,7 +5406,7 @@ Op al onze leveringen en diensten zijn deze voorwaarden van kracht.
 
 ### Privacybeleid
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/privacybeleid.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/privacybeleid
 
 Lees in het privacybeleid van Yonglo welke gegevens wij verzamelen, waarvoor wij ze gebruiken, hoe wij ze beschermen en welke rechten je hebt.
 
@@ -5543,7 +5543,7 @@ info@yonglo.com
 
 ### Disclaimer
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/disclaimer.html
+URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/disclaimer
 
 Disclaimer van Yonglo over de informatie op www.yonglo.com, aansprakelijkheid, links naar derden en het overnemen van informatie en illustraties.
 

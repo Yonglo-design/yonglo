@@ -36,6 +36,8 @@ if (process.argv.includes("--bijhouden")) {
     if (!rel) return;
     const parts = rel.split(/[\\/]/);
     if (skip(parts[0]) || parts.some((p) => p === ".DS_Store")) return;
+    // Gewone pagina's (behalve index.html) toont Astro zelf op /<naam> (src/pages/[pagina].astro).
+    if (parts.length === 1 && rel.endsWith(".html") && rel !== "index.html") return;
     const src = join(ROOT, rel), dst = join(OUT, rel);
     try {
       if (!existsSync(src)) { rmSync(dst, { recursive: true, force: true }); return; }
@@ -61,18 +63,21 @@ if (process.argv.includes("--na-build")) {
   const own = JSON.parse(readFileSync(join(ROOT, "_wix", "pages.json"), "utf8"));
   // Doorverwijzingen (/post, /project, oude adressen) horen niet in de sitemap. De projectroute
   // /project/[slug] ook niet als patroon: Wix kent geen projecten, dus de echte adressen komen hieronder.
-  const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]"];
+  const REDIRECTS = ["/post", "/project", "/project.html", "/project-pieter-smit-group.html", "/project/[slug]", "/[pagina]", "/[pagina].html"];
   const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
   const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
   for (const page of own) add(page.path);
 
-  // Gewone pagina's: alle .html in .site/, behalve testpagina's en pagina's met noindex.
+  // Gewone pagina's (adres zonder .html): alle .html in de hoofdmap, behalve testpagina's en pagina's met noindex.
   const NOT_IN_SITEMAP = new Set(["index.html", "footer-lab.html", "home-b.html", "bedankt.html"]);
-  for (const name of readdirSync(OUT).sort()) {
-    if (!name.endsWith(".html") || NOT_IN_SITEMAP.has(name)) continue;
-    if (/<meta[^>]+name="robots"[^>]+noindex/i.test(readFileSync(join(OUT, name), "utf8"))) continue;
-    add(`/${name}`);
+  const weg = new Set();
+  for (const name of readdirSync(ROOT).sort()) {
+    if (!name.endsWith(".html")) continue;
+    const path = `/${name.slice(0, -5)}`;
+    if (NOT_IN_SITEMAP.has(name) || /<meta[^>]+name="robots"[^>]+noindex/i.test(readFileSync(join(ROOT, name), "utf8"))) { weg.add(path); continue; }
+    add(path);
   }
+  for (let i = list.length - 1; i >= 0; i--) if (weg.has(list[i].path) || list[i].path.endsWith(".html")) list.splice(i, 1);
 
   // Projecten uit het Wix CMS (openbare bezoekerstoegang, zoals de website zelf).
   try {
@@ -117,7 +122,11 @@ for (const name of readdirSync(ROOT)) {
 // Bij een gewone upload zette Wix zelf zijn site-script in elke HTML-pagina (statistieken, cookiemelding,
 // SEO-instellingen uit het dashboard). Bij een Astro-build gebeurt dat niet voor losse HTML-bestanden,
 // dus zetten we het hier in de kopie in .site/ (de bestanden in de hoofdmap blijven ongewijzigd).
-for (const name of readdirSync(OUT)) if (name.endsWith(".html")) addSiteScript(join(OUT, name));
+// De gewone pagina's (behalve index.html) staan op een adres zonder .html; die maakt Astro zelf
+// (src/pages/[pagina].astro, met het site-script erin). Het losse .html-bestand mag dus niet mee, anders
+// zou /webdesign.html niet doorsturen naar /webdesign.
+for (const name of readdirSync(OUT)) if (name.endsWith(".html") && name !== "index.html") rmSync(join(OUT, name));
+addSiteScript(join(OUT, "index.html"));
 
 const env = join(ROOT, ".env.local");
 if (!existsSync(env)) {

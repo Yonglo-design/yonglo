@@ -125,11 +125,11 @@ export async function fetchPost(slug) {
 
 // Links in berichten naar de oude Wix-pagina's van yonglo.com wijzen naar de nieuwe pagina's.
 const LINK_MAP = {
-  "/": "/", "/contact": "/contact.html", "/over-yonglo": "/over-yonglo.html", "/portfolio": "/portfolio.html",
-  "/projecten": "/portfolio.html", "/expertise": "/", "/service": "/", "/wix": "/wix.html", "/wix-studio": "/wix.html",
-  "/wix-europe": "/wix.html", "/wix-development": "/development.html", "/wix-optimaal": "/optimaal.html",
-  "/wix-seo": "/seo.html", "/wix-blog-schrijven": "/seo.html", "/wix-webshop": "/ecommerce.html",
-  "/nieuws": "/nieuws.html", "/blog": "/nieuws.html",
+  "/": "/", "/contact": "/contact", "/over-yonglo": "/over-yonglo", "/portfolio": "/portfolio",
+  "/projecten": "/portfolio", "/expertise": "/", "/service": "/", "/wix": "/wix", "/wix-studio": "/wix",
+  "/wix-europe": "/wix", "/wix-development": "/development", "/wix-optimaal": "/optimaal",
+  "/wix-seo": "/seo", "/wix-blog-schrijven": "/seo", "/wix-webshop": "/ecommerce",
+  "/nieuws": "/nieuws", "/blog": "/nieuws",
 };
 
 function mapLink(raw) {
@@ -145,7 +145,7 @@ function mapLink(raw) {
     const post = p.match(/^\/post\/([^/]+)$/);
     if (post) return { href: `/post/${post[1]}${u.hash}`, ext: false };
     if (LINK_MAP[p]) return { href: LINK_MAP[p] + u.hash, ext: false };
-    if (p.startsWith("/wix-koppeling")) return { href: "/api.html", ext: false };
+    if (p.startsWith("/wix-koppeling")) return { href: "/api", ext: false };
     return { href: u.href, ext: true };
   }
   if (u.protocol === "http:") u.protocol = "https:";
