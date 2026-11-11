@@ -56,10 +56,6 @@ for (const name of readdirSync(OUT)) {
   writeFileSync(file, html.replace("</head>", `${SITE_SCRIPT}</head>`));
 }
 
-// Wix serveert op /llms.txt zijn eigen bestand (in te stellen via de llms.txt-API van Wix). Daarom komt
-// onze versie ook op /llms-yonglo.txt; na het publiceren zet Claude die via de API als llms.txt (CLAUDE.md).
-if (existsSync(join(OUT, "llms.txt"))) cpSync(join(OUT, "llms.txt"), join(OUT, "llms-yonglo.txt"));
-
 const env = join(ROOT, ".env.local");
 if (!existsSync(env)) {
   const { appId } = JSON.parse(readFileSync(join(ROOT, "wix.config.json"), "utf8"));

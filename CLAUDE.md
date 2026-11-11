@@ -30,7 +30,6 @@ Is de map `node_modules` er niet, voer dan eerst `npm install` uit. Start dan `n
 gebruiker de link `http://localhost:4321`. Dat toont alle pagina's én de blogberichten (`/post/<naam>`).
 (`python3 -m http.server 8000` werkt ook nog, maar dan geven de blogberichten een 404.)
 Openen als bestand (`file://`) werkt niet, omdat de scripts modules zijn.
-Lokaal staat er op blogberichten nog een tweede titel "Post | Yonglo"; die verdwijnt live.
 Als CMS-content lokaal niet laadt, tonen de pagina's de vaste HTML-inhoud; dat is normaal.
 Dit is alleen zichtbaar op de eigen computer. NIET publiceren.
 
@@ -55,8 +54,9 @@ op een Astro-site.
    - voer de `curl -X PUT …`-opdrachten uit het antwoord precies zo uit (build.zip en source.zip);
    - dan de tweede aanroep die het antwoord noemt: `{ siteId, uploadKey, sourceUploadId, expectedHeadRevisionId }`.
    Fout `EXPECTED_HEAD_REQUIRED` of `CODE_STORE_HEAD_CHANGED`: stap 5 opnieuw en dan stap 6 opnieuw.
-7. Zet onze `llms.txt` bij Wix (Wix serveert op `/llms.txt` een eigen bestand): met `ExecuteWixAPI`
-   (site-ID hierboven) de tekst ophalen met `fetch("<live-url>/llms-yonglo.txt")` en die opslaan met
+7. Zet onze `llms.txt` bij Wix (Wix serveert op `/llms.txt` een eigen bestand): met één `ExecuteWixAPI`-aanroep
+   (site-ID hierboven) de broncode ophalen die net is opgeslagen (`generate-download-url` uit stap 5,
+   `fetch(downloadUrl)`, `wix.unzip`), daaruit `llms.txt` lezen en opslaan met
    `PUT https://www.wixapis.com/promote-seo-robots-server/v2/llms`, body
    `{ "llmsTxt": { "content": <de tekst>, "default": false, "manuallyEdited": true, "subdomain": "www" } }`
    (docs: Update Llms Txt). Controleer daarna dat `<live-url>/llms.txt` begint met "# Yonglo" en het kopje
@@ -84,6 +84,6 @@ op een Astro-site.
   `tools/maak-ai-bestanden.mjs`; pas ze niet met de hand aan. De knoppen "Vraag je AI" (footer en
   `ai.html`) staan in `assets/vraag-ai.js`. Verandert het live adres (bijv. naar www.yonglo.com),
   pas dan `SITE` in het script en `LIVE_SITE` in `vraag-ai.js` aan.
-  Wix serveert op `/llms.txt` zijn eigen bestand; daarom zet de build onze versie ook op `/llms-yonglo.txt`
-  en zet stap 7 van "Publiceren" die via de API van Wix als `llms.txt`.
+  Wix serveert op `/llms.txt` zijn eigen bestand; stap 7 van "Publiceren" zet onze versie daar via de
+  API van Wix in.
 - Werk direct op `main`. Pull voordat je begint, push na elke keer opslaan.
