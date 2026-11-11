@@ -81,7 +81,7 @@ const here = norm(location.pathname);
 const isHome = here === '/index.html' || here === '/home-b.html';
 const SERVICES = ['webdesign', 'ecommerce', 'wix', 'seo', 'optimaal', 'branding', 'development', 'ai', 'api'].map(n => `/${n}.html`);
 const CURRENT = { '/project.html': '/portfolio.html', '/post.html': '/nieuws.html' }; // subpagina's die bij een menu-item horen
-const active = CURRENT[here] || here;
+const active = here.startsWith('/post/') ? '/nieuws.html' : CURRENT[here] || here; // blogberichten (/post/<naam>) horen bij Nieuws
 
 // actieve link markeren (menu, megamenu, mobiel menu, spelknop)
 [...host.querySelectorAll('a[href]'), ...mob.querySelectorAll('a[href]')].forEach(a => {

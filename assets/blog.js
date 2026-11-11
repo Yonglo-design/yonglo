@@ -1,12 +1,10 @@
-// Blog: berichten live uit Wix Blog (op de site www.yonglo.com). Een nieuw bericht dat in Wix
+// Blog: berichten live uit Wix Blog van deze site (Wix-dashboard → Blog). Een nieuw bericht dat daar
 // gepubliceerd wordt, staat meteen op de nieuwspagina, de homepage en in de zoekfunctie.
-// Gebruikt door nieuws.js, post.js, home-nieuws.js en zoeken.js.
+// Gebruikt door nieuws.js, home-nieuws.js en zoeken.js (browser) en door src/pages/post/[...slug].astro (server).
 import { wixApiRequest } from "./wix/wix-client.js";
-import { WIX_BLOG_CLIENT_ID } from "./wix/wix-config.js";
 
 const LANG = "nl";
 const TZ = "Europe/Amsterdam";
-const opts = (o) => ({ ...o, clientId: WIX_BLOG_CLIENT_ID });
 
 /* ------------------------------------------------------------ helpers */
 
@@ -24,7 +22,7 @@ export function trimTo(s, n) {
 export const fmtDate = (iso) => new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "long", year: "numeric", timeZone: TZ }).format(new Date(iso));
 export const ymd = (iso) => new Intl.DateTimeFormat("en-CA", { year: "numeric", month: "2-digit", day: "2-digit", timeZone: TZ }).format(new Date(iso));
 
-export const postUrl = (p) => `/post.html?p=${encodeURIComponent(p.slug)}`;
+export const postUrl = (p) => `/post/${encodeURIComponent(p.slug)}`;
 
 function slugify(s) {
   return clean(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
@@ -60,50 +58,32 @@ export function contentImg(src, w0, h0, alt, { eager = false, sizes = "(max-widt
 
 /* ------------------------------------------------------------ onderwerpen */
 
-// Onderwerp per bericht voor de filterknoppen. Een blogcategorie die in Wix is ingesteld gaat voor;
-// anders deze lijst; anders een gok op basis van de titel.
+// Onderwerp per bericht voor de filterknoppen = de blogcategorie in Wix. Zonder categorie: een gok.
 export const CAT_ORDER = ["Yonglo", "Projecten", "Wix", "AI"];
-const CATS = {
-  "yonglo-lanceert-compleet-vernieuwde-website": "Yonglo", "ai-en-wix-in-2026": "AI", "online-airco-bestellen": "Projecten",
-  "van-editor-naar-wix-studio": "Wix", "yonglo-lanceert-smart-cookie-popup": "Yonglo", "hoe-herken-je-spam": "Yonglo",
-  "nieuwe-website-rijschool-wildenberg": "Projecten", "yonglo-steunt-green-horizon": "Projecten", "wix-europa": "Yonglo",
-  "wix-vibe": "AI", "yonglo-wix-studio-webdesigner-developer": "Yonglo", "yonglo-groeit-door": "Yonglo",
-  "wixel-het-ai-designplatform-van-wix": "AI", "just-add-wine-from-nature-with-love": "Projecten",
-  "yonglo-realiseert-nieuwe-identiteit-burgstate": "Projecten", "verbeter-je-wix-website-met-ai": "AI",
-  "by-marko-wordt-yonglo": "Yonglo", "hoe-word-je-een-entrepreneur": "Yonglo",
-  "wat-is-webhosting-alles-wat-je-moet-weten-over-het-hosten-van-je-website": "Wix",
-};
 function guessCat(p) {
   const t = `${p.title} ${p.slug}`.toLowerCase();
-  if (/\bai\b|chatgpt|kunstmatige|vibe|wixel/.test(t)) return "AI";
-  if (/website voor|steunt|identiteit|nieuwe website|project/.test(t)) return "Projecten";
+  if (/\bai\b|chatgpt|kunstmatige/.test(t)) return "AI";
   if (/wix/.test(t)) return "Wix";
   return "Yonglo";
 }
-
-// Twee berichten hebben in Wix dezelfde titel als een ander bericht; dubbele titels zijn slecht voor SEO.
-const TITLES = {
-  "online-oplossingen-voor-wix-websites-1": "Welke slimme online oplossingen zijn beschikbaar voor Wix-websites?",
-  "een-wix-website-bouwen-die-makkelijk-te-beheren-is": "Een Wix-website bouwen die makkelijk te beheren is",
-};
 
 /* ------------------------------------------------------------ data */
 
 let catsP = null;
 function fetchCategories() {
-  catsP ||= wixApiRequest("/blog/v3/categories", opts({ method: "GET", query: { "paging.limit": 100 } }))
+  catsP ||= wixApiRequest("/blog/v3/categories", { method: "GET", query: { "paging.limit": 100 } })
     .then((d) => Object.fromEntries((d?.categories || []).map((c) => [c.id, c.label])))
     .catch(() => ({}));
   return catsP;
 }
 
-function tidy(p, cats) {
+export function tidy(p, cats) {
   const img = p.media?.wixMedia?.image;
   return {
     ...p,
-    title: clean(TITLES[p.slug] || p.title),
+    title: clean(p.title),
     excerpt: clean(p.excerpt),
-    cat: (p.categoryIds || []).map((id) => cats[id]).find(Boolean) || CATS[p.slug] || guessCat(p),
+    cat: (p.categoryIds || []).map((id) => cats[id]).find(Boolean) || guessCat(p),
     cover: img?.id ? { id: img.id, w: img.width || 1344, h: img.height || 768, alt: clean(img.altText || p.media?.altText || p.title) } : null,
   };
 }
@@ -115,9 +95,9 @@ export function fetchPosts() {
     const cats = fetchCategories();
     const out = [];
     for (let offset = 0; offset < 1000; offset += 100) {
-      const d = await wixApiRequest("/blog/v3/posts/query", opts({
+      const d = await wixApiRequest("/blog/v3/posts/query", {
         body: { query: { sort: [{ fieldName: "firstPublishedDate", order: "DESC" }], paging: { limit: 100, offset } } },
-      }));
+      });
       const posts = d?.posts || [];
       out.push(...posts);
       if (posts.length < 100) break;
@@ -132,9 +112,9 @@ export function fetchPosts() {
 /** Eén bericht met volledige tekst en SEO-gegevens, of null als het niet (meer) bestaat. */
 export async function fetchPost(slug) {
   const [d, cats] = await Promise.all([
-    wixApiRequest("/blog/v3/posts/query", opts({
+    wixApiRequest("/blog/v3/posts/query", {
       body: { query: { filter: { slug }, paging: { limit: 1 } }, fieldsets: ["RICH_CONTENT", "SEO"] },
-    })),
+    }),
     fetchCategories(),
   ]);
   const p = (d?.posts || []).find((x) => x.slug === slug);
@@ -163,7 +143,7 @@ function mapLink(raw) {
   if (/(^|\.)yonglo\.com$/i.test(u.hostname)) {
     const p = (u.pathname.replace(/\/+$/, "") || "/").replace(/^\/(en|nl)(?=\/|$)/, "") || "/";
     const post = p.match(/^\/post\/([^/]+)$/);
-    if (post) return { href: `/post.html?p=${encodeURIComponent(post[1])}${u.hash}`, ext: false };
+    if (post) return { href: `/post/${post[1]}${u.hash}`, ext: false };
     if (LINK_MAP[p]) return { href: LINK_MAP[p] + u.hash, ext: false };
     if (p.startsWith("/wix-koppeling")) return { href: "/api.html", ext: false };
     return { href: u.href, ext: true };

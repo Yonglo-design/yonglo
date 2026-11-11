@@ -55,7 +55,7 @@ async function load() {
     blogPost: posts.map((p) => ({
       "@type": "BlogPosting",
       headline: p.title.slice(0, 110),
-      url: `${SITE}/post.html?p=${encodeURIComponent(p.slug)}`,
+      url: `${SITE}/post/${encodeURIComponent(p.slug)}`,
       datePublished: p.firstPublishedDate,
       dateModified: p.lastPublishedDate || p.firstPublishedDate,
       ...(p.cover ? { image: wixImg(p.cover.id, 1200, 630) } : {}),

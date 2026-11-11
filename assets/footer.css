@@ -11,6 +11,15 @@
 .fd-social a{display:grid;place-items:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.18);border-radius:50%;color:rgba(255,255,255,.8);transition:color .2s,background .25s,border-color .25s}
 .fd-social a:hover{color:#fff;background:var(--spark);border-color:var(--spark)}
 .fd-social svg{width:18px;height:18px}
+.fd-ai{margin-top:36px;max-width:440px}
+.fd-ai-t{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.7);margin-bottom:14px}
+.fd-ai-spark{color:var(--spark2);letter-spacing:0;margin-right:4px}
+.fd-ai-btns{display:flex;flex-wrap:wrap;gap:8px}
+.fd-ai-btns a{padding:10px 18px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:15px;color:rgba(255,255,255,.85);transition:color .2s,background .25s,border-color .25s}
+.fd-ai-btns a:hover,.fd-ai-btns a:focus-visible{color:#fff;background:var(--spark);border-color:var(--spark)}
+.fd-ai-s{margin-top:12px;font-size:14px;color:rgba(255,255,255,.5)}
+.fd-ai-s a{border-bottom:1px solid rgba(255,255,255,.25)}
+.fd-ai-s a:hover{color:var(--spark2);border-color:var(--spark2)}
 .fd-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .fd-cols h2{color:rgba(255,255,255,.45)}
 .fd-cols a{display:block;padding:4px 0;font-size:16px;color:rgba(255,255,255,.85)}

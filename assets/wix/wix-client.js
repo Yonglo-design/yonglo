@@ -6,27 +6,26 @@ export const WIX_API_BASE = "https://www.wixapis.com";
 const OAUTH_TOKEN_URL = `${WIX_API_BASE}/oauth2/token`;
 
 // Scoped per client id so two headless sites on one origin don't share a visitor token.
-// The site's own client is the default; the blog uses the client of the site that hosts Wix Blog.
-const tokenCache = new Map();
-const storageKey = (clientId) => `wix-visitor-token-${clientId}`;
+const TOKEN_STORAGE_KEY = `wix-visitor-token-${WIX_CLIENT_ID}`;
+let tokenCache = null;
 
-function loadToken(clientId) {
-  if (tokenCache.has(clientId)) return tokenCache.get(clientId);
+function loadToken() {
+  if (tokenCache) return tokenCache;
   if (typeof window === "undefined") return null;
   try {
-    const raw = window.localStorage.getItem(storageKey(clientId));
-    if (raw) tokenCache.set(clientId, JSON.parse(raw));
+    const raw = window.localStorage.getItem(TOKEN_STORAGE_KEY);
+    if (raw) tokenCache = JSON.parse(raw);
   } catch {
     /* ignore disabled/full storage */
   }
-  return tokenCache.get(clientId) || null;
+  return tokenCache;
 }
 
-function saveToken(clientId, t) {
-  tokenCache.set(clientId, t);
+function saveToken(t) {
+  tokenCache = t;
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(storageKey(clientId), JSON.stringify(t));
+    window.localStorage.setItem(TOKEN_STORAGE_KEY, JSON.stringify(t));
   } catch {
     /* ignore */
   }
@@ -48,33 +47,33 @@ async function mintToken(body) {
 }
 
 // Persist the refresh token and refresh on expiry instead of re-minting a new anonymous visitor.
-async function getAccessToken(clientId = WIX_CLIENT_ID) {
-  const cached = loadToken(clientId);
+async function getAccessToken() {
+  const cached = loadToken();
   if (cached && cached.expiresAt > Date.now() + 60_000) return cached.accessToken;
 
   if (cached?.refreshToken) {
     try {
-      const refreshed = await mintToken({ clientId, grantType: "refresh_token", refreshToken: cached.refreshToken });
+      const refreshed = await mintToken({ clientId: WIX_CLIENT_ID, grantType: "refresh_token", refreshToken: cached.refreshToken });
       refreshed.role = cached.role || "visitor";
-      saveToken(clientId, refreshed);
+      saveToken(refreshed);
       return refreshed.accessToken;
     } catch {
       /* refresh failed — fall through to a fresh anonymous visitor */
     }
   }
-  const fresh = await mintToken({ clientId, grantType: "anonymous" });
+  const fresh = await mintToken({ clientId: WIX_CLIENT_ID, grantType: "anonymous" });
   fresh.role = "visitor";
-  saveToken(clientId, fresh);
+  saveToken(fresh);
   return fresh.accessToken;
 }
 
 /**
  * Core transport: adds the Authorization header, resolves the path against the Wix API base,
- * parses JSON, surfaces errors. Pass `clientId` to call a different Wix site (default: this site).
+ * parses JSON, surfaces errors.
  */
 export async function wixApiRequest(path, options = {}) {
-  const { method = "POST", body, query, clientId } = options;
-  const token = await getAccessToken(clientId);
+  const { method = "POST", body, query } = options;
+  const token = await getAccessToken();
 
   const url = new URL(path.startsWith("http") ? path : `${WIX_API_BASE}${path}`);
   if (query) {

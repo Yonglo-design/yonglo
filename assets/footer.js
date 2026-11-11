@@ -13,6 +13,11 @@ const FOOTER_HTML = `
       <p class="fd-big">Zullen we iets<br>moois <em>bouwen?</em></p>
       <p class="fd-contact"><a href="mailto:contact@yonglo.com">contact@yonglo.com</a><a href="tel:+31852033223">085 20 33 223</a></p>
       <div class="fd-social"><a href="https://www.instagram.com/yonglo.design" target="_blank" rel="noopener" aria-label="Yonglo op Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/company/yonglo" target="_blank" rel="noopener" aria-label="Yonglo op LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></a></div>
+      <div class="fd-ai" data-vraag>
+        <p class="fd-ai-t"><span class="fd-ai-spark" aria-hidden="true">✦</span> Vraag je AI naar Yonglo</p>
+        <div class="fd-ai-btns"><a data-ai="chatgpt" href="https://chatgpt.com/">ChatGPT</a><a data-ai="claude" href="https://claude.ai/new">Claude</a><a data-ai="perplexity" href="https://www.perplexity.ai/">Perplexity</a></div>
+        <p class="fd-ai-s">Je AI leest onze <a href="/llms.txt">llms.txt</a>: alles over ons, in gewone tekst.</p>
+      </div>
     </div>
     <div class="fd-cols">
       <div><h2>Diensten</h2><a href="/webdesign.html">Webdesign</a><a href="/ecommerce.html">eCommerce</a><a href="/development.html">Development</a><a href="/branding.html">Concept &amp; Branding</a><a href="/wix.html">Wix websites</a><a href="/optimaal.html">Website verbeteren</a><a href="/seo.html">SEO, GEO &amp; succes</a><a href="/ai.html">AI oplossingen</a><a href="/api.html">API koppelingen</a></div>
@@ -55,6 +60,9 @@ const host = document.querySelector('footer[data-footer]');
 if (!host) return;
 host.innerHTML = FOOTER_HTML;
 host.querySelectorAll('.yr').forEach(e => { e.textContent = new Date().getFullYear(); });
+// "Vraag je AI"-knoppen (ook gebruikt op ai.html)
+if (window.ylVraagAI) window.ylVraagAI.zetLinks(host);
+else if (!document.querySelector('script[src^="/assets/vraag-ai.js"]')) { const s = document.createElement('script'); s.src = '/assets/vraag-ai.js'; document.head.appendChild(s); }
 
 
 const LOGO = [

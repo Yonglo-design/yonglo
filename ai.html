@@ -18,6 +18,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Service","name":"AI oplossingen","serviceType":"AI-chatbots, AI-content, automatisering en data-analyse voor websites","provider":{"@type":"ProfessionalService","name":"Yonglo","url":"https://www.yonglo.com"},"areaServed":["NL","BE"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.yonglo.com/"},{"@type":"ListItem","position":2,"name":"AI oplossingen","item":"https://www.yonglo.com/ai"}]}]}
 </script>
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Yonglo voor AI-assistenten (llms.txt)">
 </head>
 <body class="page-sub">
 <a class="skip" href="#main">Naar inhoud</a>
@@ -147,6 +148,34 @@
   </div>
 </section>
 
+<!-- VRAAG HET JE AI -->
+<section class="light askai" id="vraag-je-ai" data-vraag>
+  <div class="wrap askai-grid">
+    <div class="askai-intro">
+      <p class="eyebrow rv">Probeer het zelf</p>
+      <h2 class="rv">Vraag het gewoon aan je <em>eigen AI</em>.</h2>
+      <p class="rv" style="--d:.08s">Wij werken elke dag met AI, ook aan deze website. Daarom maken we het jouw AI-assistent makkelijk: alles over onze diensten, projecten en blogs staat in gewone tekst klaar in <a href="/llms.txt">llms.txt</a>. Kies een vraag en een assistent, en kijk wat eruit komt.</p>
+      <p class="askai-dev rv" style="--d:.14s">Voor ontwikkelaars: <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a> · <a href="/zoekindex.json">zoekindex.json</a></p>
+    </div>
+    <div class="askai-card rv" style="--d:.1s">
+      <fieldset class="askai-qs">
+        <legend>1. Kies een vraag</legend>
+        <label><input type="radio" name="ai-vraag" value="Wat kan Yonglo voor mijn bedrijf doen? Noem de diensten die passen en een paar vergelijkbare projecten." checked><span>Wat kan Yonglo voor mijn bedrijf doen?</span></label>
+        <label><input type="radio" name="ai-vraag" value="Welke webshops heeft Yonglo gebouwd, en voor welke branches?"><span>Welke webshops heeft Yonglo gebouwd?</span></label>
+        <label><input type="radio" name="ai-vraag" value="Hoe zet Yonglo AI in voor websites, en wat levert dat op? Geef voorbeelden uit hun projecten en blogs."><span>Hoe zet Yonglo AI in?</span></label>
+        <label><input type="radio" name="ai-vraag" value="Wat is het verschil tussen Wix en Wix Studio, en wat raadt Yonglo aan voor mijn situatie?"><span>Wix of Wix Studio: wat past bij mij?</span></label>
+      </fieldset>
+      <p class="askai-step">2. Open je assistent</p>
+      <div class="askai-btns">
+        <a class="btn btn-dark" data-ai="chatgpt" href="https://chatgpt.com/">ChatGPT <i class="arr">↗</i></a>
+        <a class="btn btn-dark" data-ai="claude" href="https://claude.ai/new">Claude <i class="arr">↗</i></a>
+        <a class="btn btn-dark" data-ai="perplexity" href="https://www.perplexity.ai/">Perplexity <i class="arr">↗</i></a>
+      </div>
+      <p class="askai-note">De vraag staat al klaar. Je AI leest onze eigen informatie, zodat het antwoord klopt.</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact dark" id="contact">
   <div class="cta-grad"></div>
@@ -186,6 +215,7 @@
 <div class="toast" role="status" aria-live="polite"></div>
 
 <script src="/assets/app.js?v=4" defer></script>
+<script src="/assets/vraag-ai.js" defer></script>
 <script src="/assets/footer.js" defer></script>
 <script src="/assets/page.js" defer></script>
 </body>

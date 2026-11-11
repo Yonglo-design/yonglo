@@ -753,3 +753,28 @@
 @media (max-width:767px){.wixspec .stat b.wix-legend{font-size:clamp(20px,6.2vw,30px)}}
 .wixspec.ws-txt .wixspec-grid>div:first-child{text-align:center}
 .wixspec.ws-txt .wixspec-grid>div:first-child .hero-btns{justify-content:center}
+
+/* ai.html: "Vraag het je eigen AI" (knoppen: assets/vraag-ai.js) */
+.askai{background:#fff}
+.askai-grid{display:grid;grid-template-columns:6fr 5fr;gap:80px;align-items:center}
+.askai-intro>p:not(.eyebrow){color:var(--grey);max-width:560px}
+.askai-intro a{color:var(--spark);border-bottom:1px solid currentColor}
+.askai-intro .eyebrow{margin-bottom:16px}
+.askai-dev{margin-top:20px;font-size:15px}
+.askai-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:40px}
+.askai-qs{border:0;display:flex;flex-direction:column;gap:10px}
+.askai-qs legend,.askai-step{font-weight:600;font-size:16px;margin-bottom:14px}
+.askai-qs label{cursor:pointer;display:block}
+.askai-qs input{position:absolute;opacity:0;pointer-events:none}
+.askai-qs span{display:block;padding:14px 18px 14px 46px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:16px;line-height:1.35;position:relative;transition:border-color .2s,box-shadow .2s}
+.askai-qs span::before{content:"";position:absolute;left:18px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;border:1.5px solid rgba(14,15,26,.3);transition:border .2s}
+.askai-qs label:hover span{border-color:rgba(50,95,252,.45)}
+.askai-qs input:checked+span{border-color:var(--spark);box-shadow:0 0 0 1px var(--spark)}
+.askai-qs input:checked+span::before{border:5px solid var(--spark)}
+.askai-qs input:focus-visible+span{outline:2px solid var(--spark);outline-offset:2px}
+.askai-step{margin-top:28px}
+.askai-btns{display:flex;flex-wrap:wrap;gap:10px}
+.askai-btns .btn{padding:14px 22px;font-size:15px}
+.askai-note{margin-top:16px;font-size:14px;color:var(--grey)}
+@media (max-width:1023px){.askai-grid{grid-template-columns:1fr;gap:48px}}
+@media (max-width:767px){.askai-card{padding:24px}.askai-btns .btn{flex:1 1 auto;justify-content:center}}

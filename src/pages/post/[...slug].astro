@@ -1,0 +1,293 @@
+---
+// Blogbericht op /post/<naam> — hetzelfde adres als op de oude yonglo.com.
+// Wix bouwt deze pagina op de server op met het bericht uit Wix Blog (Wix-dashboard → Blog), dus
+// de volledige tekst staat direct in de HTML (goed voor Google en AI-zoekmachines). Een nieuw of
+// aangepast bericht is meteen zichtbaar, zonder te publiceren.
+//
+// Wix-itempagina: door `wixMetadata` + de SEO-tags van Wix (onderaan in <head>) kent Wix dit adres voor de blog-sitemap en kun je
+// titel/omschrijving/deelafbeelding per bericht aanpassen in het dashboard (SEO-instellingen van het bericht).
+// De opmaak en de omzetting van de tekst naar HTML komen uit assets/blog.js (ook gebruikt in de browser).
+import { fetchWithAuth } from "@wix/sdk/context";
+import { WIX_APPS } from "@wix/essentials";
+import { loadSEOTagsServiceConfig } from "@wix/seo/services";
+import { seoTags } from "@wix/seo";
+import { tidy, renderContent, card, postUrl, wixImg, contentImg, clean, trimTo, fmtDate, ymd } from "../../../assets/blog.js";
+
+export const wixMetadata = {
+  appDefId: WIX_APPS.blogs.id,
+  pageIdentifier: WIX_APPS.blogs.postPageMetadata.pageIdentifier,
+  identifiers: {
+    slug: WIX_APPS.blogs.postPageMetadata.identifiers.slug,
+  },
+};
+
+const slug = Astro.params.slug;
+if (!slug) return Astro.redirect("/nieuws.html", 301);
+
+// Achter de proxy van Wix is de request-URL intern; het echte adres staat in x-wix-forwarded-url.
+const forwardedUrl = Astro.request.headers.get("x-wix-forwarded-url");
+const pageUrl =
+  forwardedUrl && URL.canParse(forwardedUrl) && /^https?:$/.test(new URL(forwardedUrl).protocol)
+    ? forwardedUrl
+    : Astro.url.href;
+const origin = new URL(pageUrl).origin;
+
+async function wix(path: string, body?: unknown) {
+  const res = await fetchWithAuth(`https://www.wixapis.com${path}`, {
+    method: body ? "POST" : "GET",
+    headers: { "Content-Type": "application/json" },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  if (!res.ok) throw new Error(`Wix ${path}: ${res.status} ${await res.text()}`);
+  return res.json();
+}
+
+let post: any = null;
+let related: any[] = [];
+let seoConfig: any = null;
+try {
+  const [found, catsRes, cfg] = await Promise.all([
+    wix("/blog/v3/posts/query", { query: { filter: { slug }, paging: { limit: 1 } }, fieldsets: ["RICH_CONTENT", "SEO"] }),
+    wix("/blog/v3/categories?paging.limit=100").catch(() => ({ categories: [] })),
+    loadSEOTagsServiceConfig({ pageUrl, itemType: seoTags.ItemType.BLOG_POST, itemData: { slug } }).catch(() => null),
+  ]);
+  const cats = Object.fromEntries((catsRes?.categories || []).map((c: any) => [c.id, c.label]));
+  const p = (found?.posts || []).find((x: any) => x.slug === slug);
+  if (p) {
+    post = tidy(p, cats);
+    seoConfig = cfg;
+    // "Lees ook": eerst berichten uit dezelfde categorie, dan de nieuwste.
+    const list = await wix("/blog/v3/posts/query", {
+      query: { sort: [{ fieldName: "firstPublishedDate", order: "DESC" }], paging: { limit: 30 } },
+    }).catch(() => ({ posts: [] }));
+    const others = (list?.posts || []).filter((x: any) => x.slug !== slug && (x.language || "nl") === "nl").map((x: any) => tidy(x, cats));
+    related = [...others.filter((o: any) => o.cat === post.cat), ...others.filter((o: any) => o.cat !== post.cat)].slice(0, 3);
+  }
+} catch (err) {
+  console.error(err);
+}
+
+if (!post) Astro.response.status = 404;
+
+// ---- inhoud en SEO ------------------------------------------------------------------------
+const r = post ? renderContent(post) : null;
+const url = post ? origin + postUrl(post) : "";
+const tags = post ? (post.seoData?.tags || []).filter((t: any) => !t.disabled) : [];
+const seoMeta = (key: string) => tags.find((t: any) => t.type === "meta" && (t.props?.name === key || t.props?.property === key))?.props?.content || "";
+const customTitle = clean(tags.find((t: any) => t.type === "title")?.children || "");
+const baseTitle = post ? customTitle || post.title : "Bericht niet gevonden";
+const docTitle = baseTitle.length <= 56 ? `${baseTitle} | Yonglo` : baseTitle;
+const desc = post ? trimTo(seoMeta("description") || post.excerpt || post.title, 158) : "";
+const ogImg = post?.cover ? wixImg(post.cover.id, 1200, 630) : "";
+const published = post?.firstPublishedDate;
+const modified = post?.lastPublishedDate || published;
+const norm = (t: string) => clean(t).toLowerCase().slice(0, 80);
+const dupLead = !!post?.excerpt && !!r?.firstText && norm(r.firstText).startsWith(norm(post.excerpt).replace(/…$/, "").slice(0, 60));
+const toc = r && r.toc.length >= 4 ? r.toc : [];
+const updated = post && ymd(modified) !== ymd(published);
+const relatedHtml = related.map((o, i) => card(o, i)).join("");
+
+const ORG = { "@type": "Organization", "@id": "https://www.yonglo.com/#organization", name: "Yonglo", url: "https://www.yonglo.com", logo: { "@type": "ImageObject", url: `${origin}/assets/yonglo-logo.png`, width: 512, height: 512 } };
+const ldJson = (o: unknown) => JSON.stringify(o).replace(/</g, "\\u003c");
+const breadcrumb = post && {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${origin}/` },
+    { "@type": "ListItem", position: 2, name: "Nieuws", item: `${origin}/nieuws.html` },
+    { "@type": "ListItem", position: 3, name: post.title, item: url },
+  ],
+};
+const article = post && {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `${url}#article`,
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  url,
+  headline: trimTo(post.title, 110),
+  description: desc,
+  ...(post.cover ? { image: [wixImg(post.cover.id, 1200, 630), wixImg(post.cover.id, 1200, 900), wixImg(post.cover.id, 1200, 1200)] } : {}),
+  datePublished: published,
+  dateModified: modified,
+  inLanguage: "nl-NL",
+  articleSection: post.cat,
+  wordCount: r!.words,
+  timeRequired: `PT${post.minutesToRead || 1}M`,
+  author: ORG,
+  publisher: ORG,
+  isPartOf: { "@type": "Blog", "@id": `${origin}/nieuws.html#blog`, name: "Yonglo nieuws", url: `${origin}/nieuws.html` },
+  ...(r!.videos.length ? {
+    video: r!.videos.map((v: any) => ({
+      "@type": "VideoObject", name: post.title, description: desc, thumbnailUrl: v.thumb, uploadDate: published,
+      embedUrl: `https://www.youtube-nocookie.com/embed/${v.id}`, contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
+      ...(v.duration ? { duration: `PT${Math.round(v.duration)}S` } : {}),
+    })),
+  } : {}),
+};
+// Extra structured data die in Wix bij het bericht staat (bijv. een FAQ) overnemen.
+const own = ["Article", "BlogPosting", "NewsArticle", "Organization", "ImageObject", "WebPage", "BreadcrumbList", "WebSite"];
+const extraLd = tags
+  .filter((t: any) => t.type === "script" && /ld\+json/.test(t.props?.type || ""))
+  .map((t: any) => { try { return JSON.parse(t.children); } catch { return null; } })
+  .filter((j: any) => j && !own.includes(j["@type"]));
+// De SEO-service van Wix levert titel, omschrijving, canonical, deeltags en structured data (BlogPosting,
+// en wat bij het bericht is ingesteld, zoals een FAQ), inclusief wat in het dashboard is aangepast.
+// Lukt dat niet, dan zetten we ze zelf. Het kruimelpad (BreadcrumbList) voegen we altijd zelf toe.
+const ownHead = !seoConfig;
+// Dezelfde weergave als SEO.Tags van @wix/seo (die een React-renderer nodig heeft), hier zonder React.
+const wixSeoTags = (seoConfig?.tags || []).filter((t: any) => !t.disabled && ["title", "meta", "link", "script"].includes(t.type));
+const share = post ? { u: encodeURIComponent(url), t: encodeURIComponent(post.title) } : null;
+---
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{post && seoConfig && wixSeoTags.map((t: any) =>
+  t.type === "title" ? <title wix-seo-tags="true">{t.children}</title>
+  : t.type === "meta" ? <meta {...t.props} wix-seo-tags="true" />
+  : t.type === "link" ? <link {...t.props} wix-seo-tags="true" />
+  : <script {...t.props} wix-seo-tags="true" set:html={t.children || ""} />
+)}
+{(ownHead || !post) && <title>{docTitle}</title>}
+{post && ownHead && <>
+<meta name="description" content={desc}>
+<link rel="canonical" href={url}>
+<meta property="og:site_name" content="Yonglo">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:type" content="article">
+<meta property="og:title" content={baseTitle}>
+<meta property="og:description" content={desc}>
+<meta property="og:url" content={url}>
+{ogImg && <meta property="og:image" content={ogImg}>}
+{ogImg && <meta property="og:image:width" content="1200">}
+{ogImg && <meta property="og:image:height" content="630">}
+<meta name="twitter:card" content={ogImg ? "summary_large_image" : "summary"}>
+</>}
+{post && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">}
+{!post && <meta name="robots" content="noindex">}
+{post && ownHead && <meta property="article:published_time" content={published}>}
+{post && ownHead && <meta property="article:modified_time" content={modified}>}
+{post && <meta property="article:section" content={post.cat}>}
+{post && ownHead && <script type="application/ld+json" set:html={ldJson(article)} />}
+{post && <script type="application/ld+json" set:html={ldJson(breadcrumb)} />}
+{ownHead && extraLd.map((j: any) => <script type="application/ld+json" set:html={ldJson(j)} />)}
+<meta name="theme-color" content="#0E0F1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-20%20-8%20118%20118%22%3E%3Crect%20x%3D%22-20%22%20y%3D%22-8%22%20width%3D%22118%22%20height%3D%22118%22%20rx%3D%2228%22%20fill%3D%22%23325FFC%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M61.4%2C5.1h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C5.7-1.5%2C15.4-11.2%2C15.4s-11.3-8.4-11.3-15.4V6.5c0-.8-.6-1.4-1.4-1.4h-13.8c-.8%2C0-1.4.6-1.4%2C1.4v36.6c0%2C15.4%2C7.3%2C26.5%2C19.6%2C30v22.8c0%2C.8.6%2C1.4%2C1.4%2C1.4h13.8c.8%2C0%2C1.4-.6%2C1.4-1.4v-22.8c12.3-3.6%2C19.6-14.6%2C19.6-30V6.5c0-.8-.6-1.4-1.4-1.4Z%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://static.wixstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<link rel="stylesheet" href="/assets/footer.css">
+<link rel="stylesheet" href="/assets/page.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Yonglo voor AI-assistenten (llms.txt)">
+</head>
+<body class="page-sub">
+<a class="skip" href="#main">Naar inhoud</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hdr" id="top" data-header></header>
+<script is:inline src="/assets/header.js"></script>
+
+<main id="main">
+{post ? (
+<article class="post-article">
+<section class={`post-hero dark${post.cover ? "" : " no-img"}`}>
+  {post.cover && <figure class="post-banner" set:html={contentImg(post.cover.id, post.cover.w, post.cover.h, post.cover.alt, { eager: true, sizes: "100vw" })} />}
+  <div class="post-head">
+    <div class="blob b1"></div><div class="dots"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/nieuws.html">Nieuws</a><span>/</span><b>{trimTo(post.title, 48)}</b></nav>
+      <div class="nw-meta post-meta"><span class="cat">{post.cat}</span><time datetime={ymd(published)}>{fmtDate(published)}</time><span>{post.minutesToRead || 1} min leestijd</span></div>
+      <h1>{post.title}</h1>
+      {post.excerpt && !dupLead && <p class="lead">{trimTo(post.excerpt, 260)}</p>}
+    </div>
+  </div>
+</section>
+<section class="light post-main">
+  <div class="wrap">
+    <div class="post-layout">
+      {toc.length > 0 && (
+        <nav class="post-toc" aria-labelledby="toc-t"><p class="eyebrow" id="toc-t">In dit artikel</p><ol>{toc.map((t: any) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol></nav>
+      )}
+      <div class="post-body" set:html={r!.html} />
+      <footer class="post-foot">
+        {updated && <p class="post-upd">Bijgewerkt op <time datetime={ymd(modified)}>{fmtDate(modified)}</time></p>}
+        <div class="post-share"><span>Deel dit artikel</span>
+          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${share!.u}`} target="_blank" rel="noopener" aria-label="Deel op LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></a>
+          <a href={`https://wa.me/?text=${share!.t}%20${share!.u}`} target="_blank" rel="noopener" aria-label="Deel via WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+          <button type="button" class="post-copy" aria-label="Kopieer de link naar dit artikel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></button>
+        </div>
+        <a class="btn btn-ghost" href="/nieuws.html"><i class="arr">←</i> Alle berichten</a>
+      </footer>
+    </div>
+  </div>
+</section>
+</article>
+) : (
+<section class="post-hero dark no-img">
+  <div class="post-head">
+    <div class="blob b1"></div><div class="dots"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>/</span><a href="/nieuws.html">Nieuws</a></nav>
+      <h1>Dit bericht bestaat <em>niet (meer)</em>.</h1>
+      <p class="lead">Misschien is het verplaatst. Bekijk alle berichten op de nieuwspagina.</p>
+      <p class="post-nf"><a class="btn btn-primary" href="/nieuws.html">Naar alle berichten <i class="arr">→</i></a></p>
+    </div>
+  </div>
+</section>
+)}
+
+{relatedHtml && (
+<section class="light nw-list post-related" aria-labelledby="rel-t">
+  <div class="wrap">
+    <h2 id="rel-t">Lees <em>ook</em></h2>
+    <div class="nw-grid" set:html={relatedHtml} />
+  </div>
+</section>
+)}
+
+<!-- CONTACT -->
+<section class="contact light" id="contact">
+  <div class="cta-grad"></div>
+  <div class="wrap contact-grid">
+    <div>
+      <h2 class="rv">Klaar voor een nieuw project? Laten we <em>kennis</em> maken.</h2>
+      <p class="rv">Vertel ons wat je wilt bereiken. We geven vrijblijvend advies en laten zien hoe we jouw project kunnen aanpakken. Liever direct contact? App of bel ons.</p>
+      <div class="direct rv">
+        <a href="mailto:contact@yonglo.com" class="dline copy" data-copy="contact@yonglo.com"><span>E-mail</span><b>contact@yonglo.com</b></a>
+        <a href="tel:+31852033223" class="dline"><span>Telefoon</span><b>085 20 33 223</b></a>
+        <a href="https://wa.me/31638148565" class="dline" target="_blank" rel="noopener"><span>Vrijblijvend advies</span><b>App ons direct</b></a>
+      </div>
+    </div>
+    <form class="cform rv" data-subject={post ? `Contact via blog: ${post.title}` : "Contact via een blogbericht op yonglo.com"}>
+      <fieldset class="chips">
+        <legend>Wat voor project heb je?</legend>
+        <label><input type="radio" name="project" value="Website" checked><span>Website</span></label>
+        <label><input type="radio" name="project" value="Webshop"><span>Webshop</span></label>
+        <label><input type="radio" name="project" value="Branding"><span>Branding</span></label>
+        <label><input type="radio" name="project" value="Maatwerk / koppeling"><span>Maatwerk</span></label>
+      </fieldset>
+      <label class="fl"><input type="text" name="naam" placeholder=" " required><span>Wat is je naam?</span></label>
+      <label class="fl"><input type="email" name="email" placeholder=" " required><span>Hoe kunnen we je bereiken?</span></label>
+      <label class="fl"><textarea name="bericht" rows="3" placeholder=" " required></textarea><span>Vertel kort over je project</span></label>
+      <button class="btn btn-primary wide">Maak een afspraak <i class="arr">→</i></button>
+      <p class="fnote">Na het versturen nemen we zo snel mogelijk contact met je op.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="fd" data-footer></footer>
+
+<div class="mobbar"><a href="tel:+31852033223">Bel</a><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a><a href="#contact" class="hl">Kennismaken</a></div>
+<a href="https://wa.me/31638148565" class="float-wa" target="_blank" rel="noopener">Vragen? App ons</a>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script is:inline src="/assets/app.js?v=4" defer></script>
+<script is:inline src="/assets/footer.js" defer></script>
+<script is:inline src="/assets/post.js" defer></script>
+</body>
+</html>

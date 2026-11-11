@@ -1,0 +1,24 @@
+{
+  "name": "yonglo-website",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Website van Yonglo: statische pagina's + blogberichten op /post/<naam> (Wix-managed Astro).",
+  "scripts": {
+    "dev": "node tools/site-bestanden.mjs && astro dev",
+    "build": "node tools/site-bestanden.mjs && astro build && node tools/site-bestanden.mjs --na-build",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@wix/astro": "^3.0.0",
+    "@wix/astro-pages": "^3.0.0",
+    "@wix/essentials": "^1.0.6",
+    "@wix/sdk": "^1.21.5",
+    "@wix/seo": "^1.0.79",
+    "astro": "^7.3.2"
+  },
+  "devDependencies": {
+    "@wix/astro-wix-hosting-adapter": "^3.0.0",
+    "typescript": "^5.8.3"
+  }
+}
