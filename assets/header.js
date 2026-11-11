@@ -46,7 +46,7 @@ const HEADER_HTML = `
     <div class="hdr-cta">
       <button class="icon-btn srch-btn" type="button" aria-label="Zoeken op de website" aria-expanded="false" aria-controls="srch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></button>
       <a href="/spel" class="icon-btn play-btn" aria-label="Speel Pixel Perfect" title="Speel Pixel Perfect"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 6.5h9.6a4.3 4.3 0 0 1 4.2 5.2l-.9 4.6a2.6 2.6 0 0 1-4.5 1.2L13.9 15h-3.8l-1.7 2.5a2.6 2.6 0 0 1-4.5-1.2l-.9-4.6a4.3 4.3 0 0 1 4.2-5.2z"/><path d="M8.5 9.3v3.4M6.8 11h3.4"/><circle cx="15.3" cy="10" r=".6"/><circle cx="17" cy="12" r=".6"/></svg></a>
-      <a href="/en" class="icon-btn lang-btn" data-lang-switch hreflang="en" lang="en" aria-label="English version of this page" title="English">EN</a>
+      <a href="/en" class="icon-btn lang-btn" data-lang-switch hreflang="en" lang="en" aria-label="English version of this page" title="English"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><clipPath id="fl-uk"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fl-uk)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></span></a>
       <a href="tel:+31852033223" class="icon-btn" aria-label="Bel Yonglo"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
       <a href="#contact" class="btn btn-primary">Plan een kennismaking <i class="arr">→</i></a>
     </div>
@@ -65,11 +65,15 @@ const MOBMENU_HTML = `
     <a href="/portfolio">Portfolio</a>
     <a href="/over-yonglo">Over Yonglo</a>
     <a href="/contact">Contact</a>
-    <a href="/en" class="mob-lang" data-lang-switch hreflang="en" lang="en">English</a>
+    <a href="/en" class="mob-lang" data-lang-switch hreflang="en" lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><clipPath id="fl-uk"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fl-uk)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></span>English</a>
   </nav>
   <a href="#contact" class="btn btn-primary wide">Plan een kennismaking <i class="arr">→</i></a>
 </div>
 `;
+
+// Vlaggen voor de taalknop (rond bijgesneden met CSS).
+const FLAG_EN = '<span class="flag" aria-hidden="true"><svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><clipPath id="fl-uk"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fl-uk)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></span>';
+const FLAG_NL = '<span class="flag" aria-hidden="true"><svg viewBox="0 0 9 6" preserveAspectRatio="xMidYMid slice"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg></span>';
 
 // Engelse website (/en/…): zelfde menu, met Engelse teksten en links naar /en/…
 const EN = document.documentElement.lang === 'en';
@@ -90,9 +94,12 @@ const EN_TEXT = [
   ['aria-label="Speel Pixel Perfect" title="Speel Pixel Perfect"', 'aria-label="Play Pixel Perfect" title="Play Pixel Perfect"'],
   ['aria-label="Bel Yonglo"', 'aria-label="Call Yonglo"'], ['Plan een kennismaking', 'Book an intro call'],
   ['aria-label="Menu openen"', 'aria-label="Open menu"'],
-  ['href="/en" class="icon-btn lang-btn" data-lang-switch hreflang="en" lang="en" aria-label="English version of this page" title="English">EN<',
-   'href="/" class="icon-btn lang-btn" data-lang-switch hreflang="nl" lang="nl" aria-label="Nederlandse versie van deze pagina" title="Nederlands">NL<'],
-  ['href="/en" class="mob-lang" data-lang-switch hreflang="en" lang="en">English<', 'href="/" class="mob-lang" data-lang-switch hreflang="nl" lang="nl">Nederlands<'],
+  // taalknop: op de Engelse site wijst hij naar Nederlands, met de Nederlandse vlag
+  ['href="/en" class="icon-btn lang-btn" data-lang-switch hreflang="en" lang="en" aria-label="English version of this page" title="English">',
+   'href="/" class="icon-btn lang-btn" data-lang-switch hreflang="nl" lang="nl" aria-label="Nederlandse versie van deze pagina" title="Nederlands">'],
+  ['href="/en" class="mob-lang" data-lang-switch hreflang="en" lang="en">', 'href="/" class="mob-lang" data-lang-switch hreflang="nl" lang="nl">'],
+  ['>English</a>', '>Nederlands</a>'],
+  [FLAG_EN, FLAG_NL],
 ];
 const toEn = html => {
   for (const [nl, en] of EN_TEXT) html = html.split(nl).join(en);

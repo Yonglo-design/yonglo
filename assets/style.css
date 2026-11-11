@@ -735,5 +735,9 @@ html.srch-open{overflow:hidden}
 @media (max-width:767px){.srch{padding:76px 12px 12px}.srch-form input{font-size:17px}.srch-panel{border-radius:20px}}
 
 /* taalknop (NL/EN) in de header en het mobiele menu */
-.lang-btn{font-family:var(--fm,monospace);font-size:12px;font-weight:500;letter-spacing:.06em}
-.mobmenu nav>a.mob-lang{font-size:18px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:0}
+.lang-btn .flag{display:block;width:26px;height:26px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.25);transition:transform .2s}
+.lang-btn:hover .flag{transform:scale(1.08)}
+.flag svg{display:block;width:100%;height:100%;stroke:none;stroke-width:0}
+.icon-btn.lang-btn svg{width:100%;height:100%;stroke:none}
+.mobmenu nav>a.mob-lang{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:0}
+.mob-lang .flag{flex:none;width:22px;height:22px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
