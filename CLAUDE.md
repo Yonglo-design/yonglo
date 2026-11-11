@@ -43,14 +43,16 @@ Dit is alleen zichtbaar op de eigen computer. NIET publiceren.
 ## Automatisch publiceren (GitHub)
 Elke keer dat er iets op `main` wordt gezet ("Opslaan"), bouwt GitHub de site en zet hem live bij Wix
 (`.github/workflows/publiceren.yml`): AI-bestanden bijwerken, `npm run build`, `wix release`, llms.txt bij Wix
-zetten, de site controleren en de tag `live` verplaatsen. Dat duurt een paar minuten. Joris hoeft dus niets te doen.
+zetten, de site controleren en de tag `live` verplaatsen. Dat duurt een paar minuten. Dan hoeft niemand met de hand te publiceren.
 - Werkt alleen als in GitHub het geheim `WIX_API_KEY` is ingesteld (repository → Settings → Secrets and
   variables → Actions). Zonder sleutel wordt het publiceren overgeslagen. Zet de sleutel nooit in de code.
 - Na "Opslaan": zeg de gebruiker dat de wijziging over een paar minuten live staat, en controleer dat
   daarna op de live URL (en of de tag `live` is verplaatst na `git fetch --tags --force`).
-- Mislukt het automatisch publiceren, gebruik dan de handmatige stappen hieronder als terugval.
+- Staat `WIX_API_KEY` er (nog) niet, of mislukt het automatisch publiceren, gebruik dan de handmatige
+  stappen hieronder. Die werken via de Wix-connector van Claude, zonder sleutel in GitHub, en zowel Joris als
+  Marko mag ze uitvoeren (met het eigen Wix-account, dat toegang moet hebben tot de site).
 
-## "Publiceren" / "live zetten" (handmatig, als terugval)
+## "Publiceren" / "live zetten" (handmatig via de Wix-connector)
 De site is een **Astro-build**: er wordt altijd de hele site in één keer gepubliceerd.
 Gebruik **nooit** meer losse bestanden uploaden (`files`, `deletePaths` of `replaceAll`): dat werkt niet
 op een Astro-site.
