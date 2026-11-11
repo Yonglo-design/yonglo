@@ -756,6 +756,8 @@
 
 /* ai.html: "Vraag het je eigen AI" (knoppen: assets/vraag-ai.js) */
 .askai{background:#fff}
+/* Witte achtergrond, dus niet dezelfde als de lichte sectie erboven: eigen ruimte boven, even groot als onder */
+main > section.light + section.light.askai{padding-top:var(--sec)}
 .askai-grid{display:grid;grid-template-columns:6fr 5fr;gap:80px;align-items:center}
 .askai-intro>p:not(.eyebrow){color:var(--grey);max-width:560px}
 .askai-intro a{color:var(--spark);border-bottom:1px solid currentColor}
