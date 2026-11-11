@@ -1,6 +1,6 @@
 // Blog: berichten live uit Wix Blog van deze site (Wix-dashboard → Blog). Een nieuw bericht dat daar
 // gepubliceerd wordt, staat meteen op de nieuwspagina, de homepage en in de zoekfunctie.
-// Gebruikt door nieuws.js, home-nieuws.js en zoeken.js (browser) en door src/pages/post/[...slug].astro (server).
+// Gebruikt door nieuws.js, home-nieuws.js en zoeken.js (browser) en door src/pages/post/[slug].astro (server).
 import { wixApiRequest } from "./wix/wix-client.js";
 
 const LANG = "nl";

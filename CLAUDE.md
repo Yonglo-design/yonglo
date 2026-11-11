@@ -2,7 +2,7 @@
 
 Dit is de website van Yonglo: gewone HTML-pagina's (HTML, CSS en JavaScript in de hoofdmap),
 gehost als **Wix-managed Astro**-site. Alleen de blogberichten (`/post/<naam>`) worden door Wix op
-de server opgebouwd (`src/pages/post/[...slug].astro`); alle andere pagina's blijven losse bestanden.
+de server opgebouwd (`src/pages/post/[slug].astro`); alle andere pagina's blijven losse bestanden.
 Content zoals projecten komt uit het Wix CMS via `assets/wix/`, blogs uit Wix Blog.
 
 Er werken twee mensen aan. Ze zijn niet per se developers: voer alle git- en Wix-stappen
@@ -55,11 +55,17 @@ op een Astro-site.
    - voer de `curl -X PUT …`-opdrachten uit het antwoord precies zo uit (build.zip en source.zip);
    - dan de tweede aanroep die het antwoord noemt: `{ siteId, uploadKey, sourceUploadId, expectedHeadRevisionId }`.
    Fout `EXPECTED_HEAD_REQUIRED` of `CODE_STORE_HEAD_CHANGED`: stap 5 opnieuw en dan stap 6 opnieuw.
-7. Controleer live: open een bericht (`<live-url>/post/<naam>`): de `<title>` moet de echte titel van het
-   bericht zijn (niet "Post | Yonglo"), en `<live-url>/nieuws.html` moet werken.
-8. Als het gelukt is: `rm -f build.zip source.zip`, verplaats de tag en push hem:
+7. Zet onze `llms.txt` bij Wix (Wix serveert op `/llms.txt` een eigen bestand): met `ExecuteWixAPI`
+   (site-ID hierboven) de tekst ophalen met `fetch("<live-url>/llms-yonglo.txt")` en die opslaan met
+   `PUT https://www.wixapis.com/promote-seo-robots-server/v2/llms`, body
+   `{ "llmsTxt": { "content": <de tekst>, "default": false, "manuallyEdited": true, "subdomain": "www" } }`
+   (docs: Update Llms Txt). Controleer daarna dat `<live-url>/llms.txt` begint met "# Yonglo" en het kopje
+   "Zo doorzoek je deze site" bevat.
+8. Controleer live: open een bericht (`<live-url>/post/<naam>`): er is precies één `<title>`, met de echte
+   titel van het bericht (niet "Post | Yonglo"), en `<live-url>/nieuws.html` moet werken.
+9. Als het gelukt is: `rm -f build.zip source.zip`, verplaats de tag en push hem:
    `git tag -f live HEAD` en `git push -f origin live`
-9. Geef de gebruiker de live URL.
+10. Geef de gebruiker de live URL.
 
 ## Goed om te weten
 - Projecten en andere CMS-items worden in het Wix-dashboard aangepast, niet in de code.
@@ -68,7 +74,7 @@ op een Astro-site.
   en een categorie kiezen (Yonglo, Projecten, Wix of AI = de filterknoppen) doe je daar; het staat
   dan meteen op `nieuws.html`, de homepage en in de zoekfunctie, zonder te publiceren.
   Elk bericht staat op `/post/<slug>`, hetzelfde adres als op de oude yonglo.com. Wix bouwt die pagina
-  op de server (`src/pages/post/[...slug].astro`, opmaak en tekstomzetting uit `assets/blog.js`), dus de
+  op de server (`src/pages/post/[slug].astro`, opmaak en tekstomzetting uit `assets/blog.js`), dus de
   volledige tekst staat in de HTML. Titel, omschrijving en deelafbeelding per bericht pas je aan bij de
   SEO-instellingen van het bericht in Wix. De vaste kaarten in `nieuws.html` zijn alleen een terugval
   voor als Wix niet bereikbaar is.
@@ -78,6 +84,6 @@ op een Astro-site.
   `tools/maak-ai-bestanden.mjs`; pas ze niet met de hand aan. De knoppen "Vraag je AI" (footer en
   `ai.html`) staan in `assets/vraag-ai.js`. Verandert het live adres (bijv. naar www.yonglo.com),
   pas dan `SITE` in het script en `LIVE_SITE` in `vraag-ai.js` aan.
-  Wix maakt zelf ook een `llms.txt`. Controleer na publiceren dat `<live-url>/llms.txt` onze
-  versie is (met het kopje "Zo doorzoek je deze site").
+  Wix serveert op `/llms.txt` zijn eigen bestand; daarom zet de build onze versie ook op `/llms-yonglo.txt`
+  en zet stap 7 van "Publiceren" die via de API van Wix als `llms.txt`.
 - Werk direct op `main`. Pull voordat je begint, push na elke keer opslaan.

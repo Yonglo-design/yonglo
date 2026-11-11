@@ -28,7 +28,7 @@ Claude volgt de regels in [CLAUDE.md](CLAUDE.md).
 - `assets/`: CSS, JavaScript en afbeeldingen
 - `assets/wix/`: koppeling met Wix (CMS-content ophalen)
 - `_wix/`: Wix-instellingen voor de hosting
-- `src/pages/post/[...slug].astro`: de blogpagina (`/post/<naam>`), door Wix op de server opgebouwd
+- `src/pages/post/[slug].astro`: de blogpagina (`/post/<naam>`), door Wix op de server opgebouwd
 - `package.json`, `astro.config.mjs`, `wix.config.json`: instellingen voor de build bij het publiceren
 - `llms.txt`, `llms-full.txt`, `zoekindex.json`: de site in gewone tekst voor AI-assistenten (gemaakt met `node tools/maak-ai-bestanden.mjs`)
 - `tools/`: hulpscripts, worden niet geüpload

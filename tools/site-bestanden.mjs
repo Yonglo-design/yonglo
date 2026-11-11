@@ -17,7 +17,8 @@ const OUT = join(ROOT, ".site");
 if (process.argv.includes("--na-build")) {
   const built = join(ROOT, "dist", "client", "_wix", "pages.json");
   const own = JSON.parse(readFileSync(join(ROOT, "_wix", "pages.json"), "utf8"));
-  const list = existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : [];
+  // /post is alleen een doorverwijzing naar nieuws.html en hoort niet in de sitemap.
+  const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => x.path !== "/post");
   for (const page of own) if (!list.some((x) => x.path === page.path)) list.push(page);
   mkdirSync(dirname(built), { recursive: true });
   writeFileSync(built, JSON.stringify(list));
@@ -54,6 +55,10 @@ for (const name of readdirSync(OUT)) {
   if (html.includes('id="wix-site-script"') || !html.includes("</head>")) continue;
   writeFileSync(file, html.replace("</head>", `${SITE_SCRIPT}</head>`));
 }
+
+// Wix serveert op /llms.txt zijn eigen bestand (in te stellen via de llms.txt-API van Wix). Daarom komt
+// onze versie ook op /llms-yonglo.txt; na het publiceren zet Claude die via de API als llms.txt (CLAUDE.md).
+if (existsSync(join(OUT, "llms.txt"))) cpSync(join(OUT, "llms.txt"), join(OUT, "llms-yonglo.txt"));
 
 const env = join(ROOT, ".env.local");
 if (!existsSync(env)) {

@@ -23,6 +23,8 @@ export const wixMetadata = {
 
 const slug = Astro.params.slug;
 if (!slug) return Astro.redirect("/nieuws.html", 301);
+// Let op: de route heet bewust [slug] (niet [...slug]): Wix vult alleen zo het echte berichtadres in
+// voor de blog-sitemap en koppelt de SEO-instellingen aan het juiste bericht.
 
 // Achter de proxy van Wix is de request-URL intern; het echte adres staat in x-wix-forwarded-url.
 const forwardedUrl = Astro.request.headers.get("x-wix-forwarded-url");

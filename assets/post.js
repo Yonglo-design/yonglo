@@ -1,4 +1,4 @@
-// Blogbericht (/post/<naam>): de pagina zelf maakt Wix op de server (src/pages/post/[...slug].astro).
+// Blogbericht (/post/<naam>): de pagina zelf maakt Wix op de server (src/pages/post/[slug].astro).
 // Dit script doet alleen de knoppen: video's afspelen (YouTube laadt pas na een klik) en de link kopiëren.
 (function () {
   document.addEventListener("click", function (e) {
