@@ -16,7 +16,8 @@ if (hero) {
   };
 
   setTimeout(show, 120); // tegels direct tonen; beelden komen erin zodra het CMS antwoordt
-  try {
+  // data-ssr: de server heeft de projectbeelden al in de tegels gezet (src/hero-tegels.ts), dan hoeft dat hier niet.
+  if (!hero.hasAttribute("data-ssr")) try {
     const all = await fetchProjects();
     const withImg = all.filter(p => p.portfolioImage || p.hoofdbeeld);
     const list = [...withImg.filter(p => p.uitgelicht), ...withImg.filter(p => !p.uitgelicht)];

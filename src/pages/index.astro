@@ -1,10 +1,12 @@
 ---
 // Homepage (/): index.html uit de hoofdmap, met canonical en taalversies (de Engelse homepage staat op /en).
 import { paginaHtml, siteOrigin, htmlResponse, nietGevonden } from "../paginas";
+import { vulHero } from "../hero-tegels";
 
 export const prerender = false;
 
-const html = paginaHtml("index", "nl", siteOrigin(Astro.request, Astro.url));
+// Projectbeelden in de hero al op de server invullen (sneller in beeld), zie src/hero-tegels.ts.
+const html = await vulHero(paginaHtml("index", "nl", siteOrigin(Astro.request, Astro.url)), "nl");
 if (!html) return nietGevonden();
 return htmlResponse(html);
 ---
