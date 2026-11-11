@@ -7,7 +7,7 @@
 'use strict';
 
 // Live adres van de site. Aanpassen zodra het domein naar deze site wijst (ook in tools/maak-ai-bestanden.mjs).
-const LIVE_SITE = 'https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com';
+const LIVE_SITE = 'https://www.yonglo.com';
 // Lokaal (preview) kan een AI de site niet lezen, dus dan verwijzen we naar de live site.
 const SITE = /^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$/.test(location.hostname) || location.protocol === 'file:' ? LIVE_SITE : location.origin;
 

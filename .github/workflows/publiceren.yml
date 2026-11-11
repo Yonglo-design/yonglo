@@ -93,7 +93,7 @@ jobs:
       - name: Controleren of de site werkt
         if: steps.sleutel.outputs.ok == 'true'
         run: |
-          SITE=https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com
+          SITE=https://www.yonglo.com
           sleep 20
           for pad in / /en /nieuws /en/webdesign; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "$SITE$pad")

@@ -2,7 +2,7 @@
 
 > Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
 
-Dit bestand bevat alle tekst van https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com (bijgewerkt op 2026-11-11): 18 pagina's, 25 koppelingen, 52 projecten en 33 blogberichten. Een korter overzicht staat in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/llms.txt, gestructureerde data in https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/zoekindex.json.
+Dit bestand bevat alle tekst van https://www.yonglo.com (bijgewerkt op 2026-11-11): 18 pagina's, 25 koppelingen, 52 projecten en 33 blogberichten. Een korter overzicht staat in https://www.yonglo.com/llms.txt, gestructureerde data in https://www.yonglo.com/zoekindex.json.
 
 ## Contact
 
@@ -11,14 +11,14 @@ Dit bestand bevat alle tekst van https://headless-ddscngfdqfa-yonglo-1406.wix-si
 - WhatsApp support: +31 6 38 14 85 65 (https://wa.me/31638148565)
 - Studio Eindhoven: Lichttoren 32, 5611 BJ Eindhoven
 - Yonglo Development, Haarlem: Koepelplein 1E, 2031 WL Haarlem
-- Offerte of kennismaking aanvragen: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/contact
+- Offerte of kennismaking aanvragen: https://www.yonglo.com/contact
 - LinkedIn: https://www.linkedin.com/company/yonglo · Instagram: https://www.instagram.com/yonglo.design
 
 ## Pagina's
 
 ### Home
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/
+URL: https://www.yonglo.com/
 
 Van sterk idee naar krachtige website. 5-sterren Wix Partner met 750+ Wix-websites voor MKB. Webdesign, eCommerce, development, branding, SEO & GEO. Plan een kennismaking.
 
@@ -204,7 +204,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Over Yonglo – Wix Partner in Eindhoven & Haarlem
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/over-yonglo
+URL: https://www.yonglo.com/over-yonglo
 
 Yo, hello, bonjour, hi! Maak kennis met Yonglo: erkend Wix Partner met meer dan 18 jaar ervaring, een team voor design en development en studio's in Eindhoven en Haarlem.
 
@@ -307,19 +307,19 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Portfolio – Wix-websites & projecten
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/portfolio
+URL: https://www.yonglo.com/portfolio
 
 Ontdek wat we maken: Wix-websites, webshops en maatwerk voor bedrijven van MKB tot multinational. Bekijk projecten als Pieter Smit Group, Pawy en Passanelli.
 
 ### Nieuws & blog over Wix, SEO en AI
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/nieuws
+URL: https://www.yonglo.com/nieuws
 
 Nieuws, projecten en praktische kennis over Wix, Wix Studio, SEO en AI van Yonglo, 5-sterren Wix Partner. Lees onze blogs en tips voor een betere website.
 
 ### Contact | Neem contact op met Yonglo
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/contact
+URL: https://www.yonglo.com/contact
 
 Neem contact op met Yonglo, dé Wix specialist. Mail naar contact@yonglo.com, bel of app 085 20 33 223 (ma t/m vr 9.00 – 17.30 uur) of vraag direct een offerte aan.
 
@@ -400,7 +400,7 @@ Telefoon085 20 33 223 E-mailcontact@yonglo.com Bereikbaarma t/m vr · 9.00 – 1
 
 ### Pixel Perfect – het spel
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/spel
+URL: https://www.yonglo.com/spel
 
 Speel Pixel Perfect van Yonglo: stapel de blokken van een website zo precies mogelijk en bouw de hoogste website. Haal jij de highscorelijst?
 
@@ -478,7 +478,7 @@ Plan een kennismaking → Bekijk ons werk
 
 ### Webdesign in Wix & Wix Studio
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/webdesign
+URL: https://www.yonglo.com/webdesign
 
 Webdesign dat werkt, voor jou en je klanten. Professionele Wix-websites die sterk ogen, snel laden, overal goed werken en bezoekers omzetten in klanten.
 
@@ -578,7 +578,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Wix webshop laten maken – eCommerce
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/ecommerce
+URL: https://www.yonglo.com/ecommerce
 
 Webshops die verkopen: maatwerk Wix-webshops die snel, veilig en gebruiksvriendelijk zijn. Mollie-partner voor iDEAL, creditcard en Bancontact. Plan een afspraak.
 
@@ -719,7 +719,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Wix websites | Erkend Wix Partner Yonglo
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix
+URL: https://www.yonglo.com/wix
 
 Think Wix, think Yonglo. Als erkend Wix Partner en marktleider in Nederland en België bouwen we Wix-websites die er geweldig uitzien, gebruiksvriendelijk zijn en resultaat opleveren.
 
@@ -849,7 +849,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Development | Maatwerk in Wix & API-koppelingen
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/development
+URL: https://www.yonglo.com/development
 
 Maatwerk zonder grenzen. Yonglo Development bouwt maatwerk functionaliteit, software, API-koppelingen en apps bovenop Wix: veilig, schaalbaar en snel opgeleverd.
 
@@ -967,7 +967,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Concept & Branding | Van idee tot identiteit
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/branding
+URL: https://www.yonglo.com/branding
 
 Een sterk merk, van idee tot identiteit. Yonglo helpt bedrijven bouwen aan merken die raken: conceptontwikkeling, branding, online marketing en campagnes.
 
@@ -1053,7 +1053,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### SEO, GEO & succes | Hoger in Google
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/seo
+URL: https://www.yonglo.com/seo
 
 Hoger in Google, vindbaar waar het telt. Yonglo zorgt dat jouw website beter vindbaar wordt in Google én zichtbaar in AI-gestuurde zoekresultaten. Doe de gratis SEO scan.
 
@@ -1189,7 +1189,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Website verbeteren | Wix Optimaal pakket
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/optimaal
+URL: https://www.yonglo.com/optimaal
 
 Haal meer uit je Wix website. Met het Wix Optimaal pakket verbeteren we design, techniek, SEO en conversie van je bestaande Wix website. Vanaf € 495,- excl. btw.
 
@@ -1323,7 +1323,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### AI oplossingen | AI die werkt
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/ai
+URL: https://www.yonglo.com/ai
 
 AI die werkt, resultaten die blijven. Yonglo zet AI in voor slimmere websites: content, chatbots, data & voorspellingen, automatisering en optimalisatie.
 
@@ -1426,7 +1426,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### API koppelingen | Wix koppelen met je systemen
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/api
+URL: https://www.yonglo.com/api
 
 Yonglo koppelt jouw Wix website met krachtige API's en systemen zoals Moneybird, Exact, e-Boekhouden, Realworks, Mollie en HubSpot. Voor meer automatisering en realtime data.
 
@@ -1620,7 +1620,7 @@ E-mailcontact@yonglo.com Telefoon085 20 33 223 WhatsAppApp ons direct
 
 ### Moneybird
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/moneybird
+URL: https://www.yonglo.com/wix-koppeling/moneybird
 Categorie: Boekhouding
 
 Automatiseer je boekhouding met een Moneybird-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je administratie voor automatische facturatie, klantdata en realtime financiële inzichten.
@@ -1640,7 +1640,7 @@ Laat je boekhouding met je meewerken, niet tegenwerken. Kies voor een efficiënt
 
 ### Exact Online
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/exact
+URL: https://www.yonglo.com/wix-koppeling/exact
 Categorie: Boekhouding
 
 Koppel Exact Online aan je Wix-website voor geautomatiseerde administratie en efficiëntere processen
@@ -1658,7 +1658,7 @@ Maak je bedrijfsvoering slimmer en efficiënter met een professionele Exact Onli
 
 ### e-Boekhouden.nl
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/e-boekhouden
+URL: https://www.yonglo.com/wix-koppeling/e-boekhouden
 Categorie: Boekhouding
 
 Koppel e-Boekhouden.nl aan je Wix-website voor geautomatiseerde administratie en meer efficiëntie
@@ -1676,7 +1676,7 @@ Laat e-Boekhouden.nl perfect samenwerken met je Wix-website. Met een slimme inte
 
 ### Mollie
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/mollie
+URL: https://www.yonglo.com/wix-koppeling/mollie
 Categorie: Betalingen
 
 Verwerk veilige betalingen op je Wix-website met Mollie. Yonglo, dé Wix-specialist, realiseert standaard én maatwerk Mollie-integraties voor iDEAL, creditcards en andere betaalmethoden.
@@ -1696,7 +1696,7 @@ Of je nu de standaard Mollie-integratie voor Wix Stores gebruikt of een complexe
 
 ### Realworks
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/realworks
+URL: https://www.yonglo.com/wix-koppeling/realworks
 Categorie: Vastgoed & verhuur
 
 Synchroniseer je vastgoedaanbod met je Wix-website dankzij een Realworks-integratie
@@ -1714,7 +1714,7 @@ Laat Yonglo een integratie bouwen die perfect aansluit op je Realworks-structuur
 
 ### HubSpot
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/hubspot
+URL: https://www.yonglo.com/wix-koppeling/hubspot
 Categorie: CRM & marketing
 
 Koppel HubSpot aan je Wix-website voor slimme marketing, sales en klantenservice
@@ -1732,7 +1732,7 @@ Laat je Wix-website optimaal samenwerken met HubSpot. Kies voor een slimme integ
 
 ### Mailchimp
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/mailchimp
+URL: https://www.yonglo.com/wix-koppeling/mailchimp
 Categorie: CRM & marketing
 
 Automatiseer je e-mailmarketing met een slimme Mailchimp-integratie op je Wix-website
@@ -1750,7 +1750,7 @@ Maak je e-mailmarketing slimmer en effectiever met een op maat gemaakte Mailchim
 
 ### Rabobank Smartpay
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/smartpay
+URL: https://www.yonglo.com/wix-koppeling/smartpay
 Categorie: Betalingen
 
 Koppel Rabobank Smartpay aan je Wix-website voor veilige en vertrouwde online betalingen
@@ -1768,7 +1768,7 @@ Bied je klanten het gemak van betalen via hun eigen bank met Rabobank Smartpay. 
 
 ### AFAS
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/afas-software
+URL: https://www.yonglo.com/wix-koppeling/afas-software
 Categorie: Boekhouding
 
 Koppel AFAS Software aan je Wix-website voor geautomatiseerde HR-, boekhoud- en ERP-processen
@@ -1785,7 +1785,7 @@ Maak je organisatie efficiënter en toekomstbestendig met een AFAS-integratie op
 
 ### Visma
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/visma
+URL: https://www.yonglo.com/wix-koppeling/visma
 Categorie: Boekhouding
 
 Koppel Visma aan je Wix-website voor geautomatiseerde administratie en efficiëntere bedrijfsprocessen
@@ -1803,7 +1803,7 @@ Haal het maximale uit je Visma-software door het slim te koppelen aan je Wix-web
 
 ### Bloxs
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/bloxs
+URL: https://www.yonglo.com/wix-koppeling/bloxs
 Categorie: Vastgoed & verhuur
 
 Koppel Bloxs vastgoedsoftware aan je Wix-website voor efficiënt vastgoedbeheer. Yonglo, dé Wix-specialist, zorgt voor een slimme integratie die je makelaarskantoor tijd bespaart en processen stroomlijnt.
@@ -1823,7 +1823,7 @@ Laat je vastgoedportfolio eruit springen met een professionele, geautomatiseerde
 
 ### Salesforce
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/salesforce
+URL: https://www.yonglo.com/wix-koppeling/salesforce
 Categorie: CRM & marketing
 
 Koppel Salesforce aan je Wix-website voor geautomatiseerde leadgeneratie en CRM-synchronisatie
@@ -1840,7 +1840,7 @@ Laat je Wix-website optimaal samenwerken met Salesforce. Kies voor een slimme in
 
 ### ActiveCampaign
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/activecampaign
+URL: https://www.yonglo.com/wix-koppeling/activecampaign
 Categorie: CRM & marketing
 
 Koppel ActiveCampaign aan je Wix-website voor geavanceerde e-mailmarketing en marketingautomatisering. Yonglo, dé Wix-specialist, integreert ActiveCampaign voor realtime segmentatie en gepersonaliseerde campagnes.
@@ -1859,7 +1859,7 @@ Maak je e-mailmarketing slimmer en effectiever met een op maat gemaakte ActiveCa
 
 ### Intercom
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/intercom
+URL: https://www.yonglo.com/wix-koppeling/intercom
 Categorie: CRM & marketing
 
 Koppel Intercom aan je Wix-website voor slimme klantcommunicatie en efficiënte support
@@ -1877,7 +1877,7 @@ Bied je klanten een next-level supportervaring en maak je communicatieproces sli
 
 ### Chargebee
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/chargebee
+URL: https://www.yonglo.com/wix-koppeling/chargebee
 Categorie: Betalingen
 
 Automatiseer je abonnementsbeheer met een slimme Chargebee-Wix integratie. Yonglo, dé Wix-specialist, realiseert een veilige en efficiënte koppeling voor terugkerende betalingen en abonnementen.
@@ -1897,7 +1897,7 @@ Optimaliseer je terugkerende betalingen en bouw aan een schaalbare abonnementsfo
 
 ### Cryptopay
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/cryptopay
+URL: https://www.yonglo.com/wix-koppeling/cryptopay
 Categorie: Betalingen
 
 Accepteer crypto betalingen op je Wix-website met een Cryptopay integratie. Yonglo, dé Wix-specialist, realiseert veilige en flexibele koppelingen voor betalingen met digitale valuta zoals Bitcoin en Ethereum.
@@ -1917,7 +1917,7 @@ Laat je bedrijf groeien door crypto betalingen te accepteren via je Wix-website.
 
 ### ChatGPT
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/chat-gpt
+URL: https://www.yonglo.com/wix-koppeling/chat-gpt
 Categorie: AI
 
 Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit. Yonglo, dé Wix-specialist, bouwt krachtige koppelingen voor geautomatiseerde content, chatbots en gepersonaliseerde interactie.
@@ -1936,7 +1936,7 @@ Maak je website future-proof met AI-technologie van OpenAI. Start vandaag nog me
 
 ### Claude (Anthropic)
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/anthropic
+URL: https://www.yonglo.com/wix-koppeling/anthropic
 Categorie: AI
 
 Integreer Claude AI van Anthropic in je Wix-website voor slimme en veilige automatisering. Yonglo, expert in Wix-koppelingen, realiseert een krachtige en verantwoorde AI-integratie op maat.
@@ -1956,7 +1956,7 @@ Til je Wix-website naar een hoger niveau met de intelligente kracht van Claude A
 
 ### Airbnb
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/airbnb
+URL: https://www.yonglo.com/wix-koppeling/airbnb
 Categorie: Vastgoed & verhuur
 
 Automatiseer je verhuurbeheer met een directe koppeling tussen Wix en Airbnb. Yonglo, specialist in Wix-integraties, voorkomt dubbele boekingen en houdt je beschikbaarheid realtime up-to-date.
@@ -1976,7 +1976,7 @@ Start vandaag nog met het koppelen van je Wix-website aan Airbnb en ervaar het g
 
 ### My Tourist
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/my-tourist
+URL: https://www.yonglo.com/wix-koppeling/my-tourist
 Categorie: Vastgoed & verhuur
 
 Beheer al je boekingen centraal met een My Tourist-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je boekingskanalen voor realtime synchronisatie en efficiënt verhuurbeheer.
@@ -1996,7 +1996,7 @@ Laat Yonglo een op maat gemaakte integratie bouwen die de kracht van My Tourist 
 
 ### Microsoft Teams
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/microsoft-teams
+URL: https://www.yonglo.com/wix-koppeling/microsoft-teams
 Categorie: Samenwerking & data
 
 Koppel Microsoft Teams aan je Wix-website voor directe meldingen, efficiënte teamcommunicatie en geautomatiseerd afsprakenbeheer. Yonglo, dé Wix-specialist, integreert Microsoft 365 voor realtime samenwerking en planning.
@@ -2015,7 +2015,7 @@ Maak je communicatieproces slimmer en je planning efficiënter met een Microsoft
 
 ### Slack
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/slack
+URL: https://www.yonglo.com/wix-koppeling/slack
 Categorie: Samenwerking & data
 
 Koppel Slack aan je Wix-website voor directe meldingen en betere teamcommunicatie
@@ -2033,7 +2033,7 @@ Maak je communicatieproces slimmer en je team responsiever met een Slack-integra
 
 ### Google Calendar
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/google-calendar
+URL: https://www.yonglo.com/wix-koppeling/google-calendar
 Categorie: Samenwerking & data
 
 Koppel Google Calendar aan je Wix-website voor automatisch afsprakenbeheer. Yonglo, dé Wix-specialist, realiseert een slimme integratie voor realtime synchronisatie en efficiënte planning.
@@ -2053,7 +2053,7 @@ Maak online boeken eenvoudig en professioneel met een geïntegreerd afsprakensys
 
 ### Google Sheets
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/sheets
+URL: https://www.yonglo.com/wix-koppeling/sheets
 Categorie: Samenwerking & data
 
 Koppel Google Sheets aan je Wix-website voor realtime dataweergave en automatisering
@@ -2071,7 +2071,7 @@ Maak van je Wix-website een slimme tool voor gegevensbeheer en presentatie. Laat
 
 ### Google Maps
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/wix-koppeling/google-maps
+URL: https://www.yonglo.com/wix-koppeling/google-maps
 Categorie: Samenwerking & data
 
 Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website. Yonglo, dé Wix-specialist, realiseert slimme kaartintegraties voor locatiegebaseerde services, routeplanning en realtime data.
@@ -2093,7 +2093,7 @@ Til je Wix-website naar een hoger niveau met locatiegebaseerde intelligentie. La
 
 ### Smart Cookie Popup for Wix: Getting Started With: Smart Cookie Popup for Wix
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/getting-started-smart-cookie-popup-for-wix
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/getting-started-smart-cookie-popup-for-wix
 
 Smart Cookie Popup is an easy‑to‑use Wix app designed to help you add a fully GDPR‑compliant cookie consent popup to your website quickly and confidently.
 
@@ -2117,7 +2117,7 @@ In most cases, you can have a compliant cookie popup live on your site within ju
 
 ### Smart Cookie Popup for Wix: GDPR Compliance
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/gdpr-compliance
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/gdpr-compliance
 
 The General Data Protection Regulation (GDPR) is an EU law designed to protect the privacy and personal data of individuals. It applies to any website that collects or processes personal data of visitors located in the European Union, regardless of where the website owner is based.
 
@@ -2176,7 +2176,7 @@ If you make changes to your website, add new tools, or introduce new tracking te
 
 ### Smart Cookie Popup for Wix: Adding manage preferences button
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/adding-manage-preferences-button
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/adding-manage-preferences-button
 
 After users make a choice about which cookies to accept, they should always be able to update their preferences later. The Manage Preferences button makes this possible.
 
@@ -2211,7 +2211,7 @@ The element is now added to your editor. From here you can:
 
 ### Smart Cookie Popup for Wix: Setting up Managed Google Tags
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/setting-up-managed-google-tags
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/setting-up-managed-google-tags
 
 Managed Google Tags lets Smart Cookie Popup load your Google tags and manage Google Consent Mode v2 for you. Turn it on only if you want this app, not Wix Marketing Integrations or Custom Code, to load Google Tag Manager or direct Google measurement IDs on your site. This feature is optional, so if you only want a cookie popup you can skip it.
 
@@ -2282,7 +2282,7 @@ When setup is complete you will see: Consent defaults will run before this app l
 
 ### Smart Cookie Popup for Wix: Using Google Tag Manager with Smart Cookie Popup
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/using-google-tag-manager-with-smart-cookie-popup
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/using-google-tag-manager-with-smart-cookie-popup
 
 If your Google tags are managed in Google Tag Manager, you can let Smart Cookie Popup load your GTM container after consent and manage Consent Mode v2 for you. You only need one container ID, and you do not add any code yourself.
 
@@ -2329,7 +2329,7 @@ The Test your website tool often loads before consent is handled, so it can miss
 
 ### Smart Cookie Popup for Wix: Using direct Google tags (GA4, Google Ads, Floodlight) without GTM
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/using-direct-google-tags-ga4-google-ads-floodlight-without-gtm
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/using-direct-google-tags-ga4-google-ads-floodlight-without-gtm
 
 If you do not use Google Tag Manager, you can let Smart Cookie Popup load your Google tags directly. Add one ID per line, and the app loads them after consent and manages Consent Mode v2 for you.
 
@@ -2370,7 +2370,7 @@ Tip: Your tags will not appear in Tag Assistant until after you accept cookies. 
 
 ### Smart Cookie Popup for Wix: Avoiding duplicate Google installs
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/avoiding-duplicate-google-installs
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/avoiding-duplicate-google-installs
 
 For Managed Google Tags to work correctly, this app should be the only place that loads your Google IDs. If the same ID also loads somewhere else, you can run into double counting and consent timing problems. This article shows where to check.
 
@@ -2407,7 +2407,7 @@ Important: Using the same ID in two places is a problem even if you think only o
 
 ### Smart Cookie Popup for Wix: Google Consent Mode and cookie categories
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/google-consent-mode-and-cookie-categories
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/google-consent-mode-and-cookie-categories
 
 When Managed Google Tags is enabled and set up, the app connects your visitors’ cookie choices to Google Consent Mode v2. You do not need to add any Consent Mode code yourself. This article explains how it works.
 
@@ -2443,7 +2443,7 @@ Please note: This app helps support your compliance efforts, but it does not pro
 
 ### Smart Cookie Popup for Wix: Troubleshooting Managed Google Tags
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/help-docs/smart-cookie-popup-for-wix/troubleshooting-managed-google-tags
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/troubleshooting-managed-google-tags
 
 If your tags are not behaving the way you expect, work through these common situations. Most issues come from setup that is not finished, or from the same Google ID loading in more than one place.
 
@@ -2487,7 +2487,7 @@ You can use a GTM container and direct IDs together, but each Google ID should l
 
 ### Woningperspectief
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/woningperspectief
+URL: https://www.yonglo.com/project/woningperspectief
 
 Opdrachtgever: Woningperspectief
 Branche: Fotografie
@@ -2503,7 +2503,7 @@ Woningperspectief helpt makelaars en verkopers met sterke woningpresentaties voo
 
 ### M+R interior architecture
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/m-r-interior-architecture
+URL: https://www.yonglo.com/project/m-r-interior-architecture
 
 Opdrachtgever: M+R interior architecture
 Branche: Interieurarchitectuur
@@ -2519,7 +2519,7 @@ Met meer dan 25 jaar ervaring is M+R een toonaangevende naam in de branche. Het 
 
 ### Rijschool Wildenberg
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/rijschool-wildenberg
+URL: https://www.yonglo.com/project/rijschool-wildenberg
 
 Opdrachtgever: Rijschool Wildenberg
 Branche: Rijschool
@@ -2535,7 +2535,7 @@ Rijschool Wildenberg biedt kwalitatieve rijlessen met ervaren instructeurs, een 
 
 ### Burgstate
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/burgstate
+URL: https://www.yonglo.com/project/burgstate
 
 Opdrachtgever: Burgstate
 Branche: Vastgoed
@@ -2551,7 +2551,7 @@ Burgstate is dé vastgoedpartner op het gebied van bedrijfs- en commerciële hui
 
 ### La Casera
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/la-casera
+URL: https://www.yonglo.com/project/la-casera
 
 Opdrachtgever: La Casera
 Branche: Wijnbar
@@ -2567,7 +2567,7 @@ La Casera neemt bezoekers mee naar de zonnige heuvels van Toscane en de charmant
 
 ### Hagro
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/hagro
+URL: https://www.yonglo.com/project/hagro
 
 Opdrachtgever: Hagro kantoormeubelen
 Branche: Kantoormeubelen
@@ -2583,7 +2583,7 @@ Van logo en huisstijl tot website en marketingcampagnes: elk onderdeel werd ontw
 
 ### Pieter Smit Group
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/pieter-smit-group
+URL: https://www.yonglo.com/project/pieter-smit-group
 
 Opdrachtgever: Pieter Smit Group
 Branche: Event logistiek
@@ -2601,7 +2601,7 @@ Voor Pieter Smit Group ontwikkelde Yonglo een professionele en krachtige website
 
 ### Demi's Design
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/demis-design
+URL: https://www.yonglo.com/project/demis-design
 
 Opdrachtgever: Demi's Design
 Branche: Fotografie
@@ -2619,7 +2619,7 @@ Demi’s Design is gespecialiseerd in het vastleggen van luxe bruiloften in binn
 
 ### Door Martijn
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/door-martijn
+URL: https://www.yonglo.com/project/door-martijn
 
 Opdrachtgever: Door Martijn
 Branche: Makelaardij
@@ -2635,7 +2635,7 @@ Als NVM-makelaar begeleidt DOOR Martijn klanten bij het taxeren, verkopen of aan
 
 ### IAWA Leiden
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/iawaleiden
+URL: https://www.yonglo.com/project/iawaleiden
 
 Opdrachtgever: Naturalis
 Branche: Congres
@@ -2651,7 +2651,7 @@ De website combineert een overzichtelijke presentatie van het programma en congr
 
 ### Just Add Wine
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/just-add-wine
+URL: https://www.yonglo.com/project/just-add-wine
 
 Opdrachtgever: Just Add Wine
 Branche: Horeca & wijn
@@ -2669,7 +2669,7 @@ Just Add Wine gelooft dat wijn niet draait om woordenschat, maar om proeven, waa
 
 ### Pawy
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/pawy
+URL: https://www.yonglo.com/project/pawy
 
 Opdrachtgever: Pawy
 Branche: Dierenvoeding
@@ -2685,7 +2685,7 @@ Pawy produceert en verkoopt online vers, gezond voer voor honden en katten, met 
 
 ### Bloemen voor uitvaart
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/bloemen-voor-uitvaart
+URL: https://www.yonglo.com/project/bloemen-voor-uitvaart
 
 Opdrachtgever: Mrs. Flower
 Branche: Zijdenbloemen
@@ -2701,7 +2701,7 @@ In momenten van afscheid zijn bloemen meer dan decoratie: ze vormen een laatste 
 
 ### Tomorrow Energy
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/tomorrow-energy
+URL: https://www.yonglo.com/project/tomorrow-energy
 
 Opdrachtgever: Tomorrow Energy
 Branche: Energie
@@ -2717,7 +2717,7 @@ Tomorrow Energy ontwikkelt zonneprojecten voor de wereld van morgen, samen met g
 
 ### Kogna
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/kogna
+URL: https://www.yonglo.com/project/kogna
 
 Opdrachtgever: Kogna
 Branche: Consultant
@@ -2733,7 +2733,7 @@ Kogna helpt organisaties wereldwijd met slimme belastingoplossingen door innovat
 
 ### Mankind
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/mankind-coach
+URL: https://www.yonglo.com/project/mankind-coach
 
 Opdrachtgever: Mankind
 Branche: Coaching
@@ -2749,7 +2749,7 @@ Lees, leer en reis door Mankind, en maak gebruik van de wijsheden, kennis en ene
 
 ### Finiance
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/finiance
+URL: https://www.yonglo.com/project/finiance
 
 Opdrachtgever: Finiance
 Branche: Financieel
@@ -2765,7 +2765,7 @@ De nieuwe identiteit geeft het merk een professionele en scherpe uitstraling die
 
 ### Passanelli
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/passanelli
+URL: https://www.yonglo.com/project/passanelli
 
 Opdrachtgever: Passanelli
 Branche: Italiaanse wijnen
@@ -2783,7 +2783,7 @@ Yonglo ontwikkelde de naam, het logo en de volledige corporate identity voor Pas
 
 ### AD Design Studio
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/ad-design-studio
+URL: https://www.yonglo.com/project/ad-design-studio
 
 Opdrachtgever: AD Design Studio
 Branche: Textielontwerp
@@ -2799,7 +2799,7 @@ Voor AD Design Studio ontwikkelde Yonglo een professionele website en een custom
 
 ### Aircovooru
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/aircovooru
+URL: https://www.yonglo.com/project/aircovooru
 
 Opdrachtgever: Aircovooru
 Branche: Airco's
@@ -2815,7 +2815,7 @@ De websites zijn voorzien van een custom bestelmodule en een uitgebreid adminpor
 
 ### Bali Parasol
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/bali-parasol
+URL: https://www.yonglo.com/project/bali-parasol
 
 Opdrachtgever: Bali Parasol
 Branche: Parasols
@@ -2831,7 +2831,7 @@ De website is vernieuwd en geoptimaliseerd, zodat de authentieke luxe Balinese p
 
 ### Ducot
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/ducot
+URL: https://www.yonglo.com/project/ducot
 
 Opdrachtgever: Ducot Engineering & Advies
 Branche: Engineering
@@ -2847,7 +2847,7 @@ Ducot begeleidt uiteenlopende opdrachtgevers in het volledige traject: van advie
 
 ### Patisserie Rogier
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/patisserie-rogier
+URL: https://www.yonglo.com/project/patisserie-rogier
 
 Opdrachtgever: Patisserie Rogier
 Branche: Patisserie
@@ -2863,7 +2863,7 @@ Patisserie Rogier laat bezoekers kennismaken met topproducten op het gebied van 
 
 ### Your World
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/your-world
+URL: https://www.yonglo.com/project/your-world
 
 Opdrachtgever: Sustainable Me
 Branche: Gezondheid
@@ -2879,7 +2879,7 @@ Your World werkt aan een toekomst waarin mens en natuur in balans zijn en daagt 
 
 ### World Sponge Conference
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/world-sponge-conference
+URL: https://www.yonglo.com/project/world-sponge-conference
 
 Opdrachtgever: Naturalis
 Branche: Evenement
@@ -2895,7 +2895,7 @@ De conferentie wordt eens in de vier jaar georganiseerd en brengt wetenschappers
 
 ### Ter Heide
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/ter-heide
+URL: https://www.yonglo.com/project/ter-heide
 
 Opdrachtgever: Ter Heide
 Branche: Zorg
@@ -2911,7 +2911,7 @@ Ter Heide biedt professionele ondersteuning aan 430 kinderen en volwassenen met 
 
 ### Slimste vogelgids
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/slimste-vogelgids
+URL: https://www.yonglo.com/project/slimste-vogelgids
 
 Opdrachtgever: Jan Rodts
 Branche: Natuur
@@ -2927,7 +2927,7 @@ De gidsen bevatten alle regelmatige broedvogels van België en Nederland en zijn
 
 ### Bootsma Lamme
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/bootsma-lamme
+URL: https://www.yonglo.com/project/bootsma-lamme
 
 Opdrachtgever: Bootsma Lamme Advocaten
 Branche: Advocaat
@@ -2943,7 +2943,7 @@ De betrokken en menselijke aanpak van het kantoor is gericht op het creëren van
 
 ### Dogs&Zo
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/dogs-en-zo
+URL: https://www.yonglo.com/project/dogs-en-zo
 
 Opdrachtgever: Dogs&Zo
 Branche: Hondenschool
@@ -2959,7 +2959,7 @@ Dogs&Zo is een gerenommeerde hondenschool waar honden en hun baasjes terechtkunn
 
 ### SlimLaad
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/slimlaad
+URL: https://www.yonglo.com/project/slimlaad
 
 Opdrachtgever: SlimLaad
 Branche: Energie
@@ -2975,7 +2975,7 @@ SlimLaad helpt klanten slimmer omgaan met energieverbruik en tegelijkertijd kost
 
 ### Nina Basoski
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/nina-basoski
+URL: https://www.yonglo.com/project/nina-basoski
 
 Opdrachtgever: Diëtistenpraktijk Nina Basoski
 Branche: Gezondheid
@@ -2991,7 +2991,7 @@ De praktijk helpt mannen en vrouwen met onder andere darmklachten, voedselintole
 
 ### Wildenberg Osteopathie
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/wildenberg-osteopathie
+URL: https://www.yonglo.com/project/wildenberg-osteopathie
 
 Opdrachtgever: Wildenberg Osteopathie
 Branche: Gezondheid
@@ -3007,7 +3007,7 @@ Wildenberg Osteopathie behandelt lichamelijke klachten met zachte, manuele techn
 
 ### Business Centers
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/business-centers
+URL: https://www.yonglo.com/project/business-centers
 
 Opdrachtgever: Burgstate
 Branche: Business Centers
@@ -3023,7 +3023,7 @@ Burgstate Business Centers biedt moderne kantoorruimtes in Limburg voor ondernem
 
 ### Cabana interior
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/cabana-interior
+URL: https://www.yonglo.com/project/cabana-interior
 
 Opdrachtgever: Cabana interior
 Branche: Interieur
@@ -3039,7 +3039,7 @@ Cabana Interiors ontwerpt interieurs voor uiteenlopende projecten, van commerci�
 
 ### The Candy Corner
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/candy-corner
+URL: https://www.yonglo.com/project/candy-corner
 
 Opdrachtgever: The Candy Corner
 Branche: Snoep
@@ -3055,7 +3055,7 @@ The Candy Corner biedt een breed assortiment aan unieke treats, van populaire kl
 
 ### Arise
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/arise
+URL: https://www.yonglo.com/project/arise
 
 Opdrachtgever: Naturalis
 Branche: Onderzoek
@@ -3071,7 +3071,7 @@ ARISE richt zich op het volledig in kaart brengen van de biodiversiteit in Europ
 
 ### Giallo Modena
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/giallo-modena
+URL: https://www.yonglo.com/project/giallo-modena
 
 Opdrachtgever: Prancing Classics
 Branche: Automobiel
@@ -3087,7 +3087,7 @@ Giallo Modena brengt vraag en aanbod samen voor liefhebbers en kopers van dit ic
 
 ### Maartje Blans
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/maartje-blans
+URL: https://www.yonglo.com/project/maartje-blans
 
 Opdrachtgever: Maartje Blans
 Branche: Kunst
@@ -3103,7 +3103,7 @@ Maartje Blans is een Nederlandse beeldend kunstenaar die in haar werk leegte, ho
 
 ### Hartog & van Rossum
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/hartog-van-rossum
+URL: https://www.yonglo.com/project/hartog-van-rossum
 
 Opdrachtgever: Hartog & van Rossum
 Branche: Advies & training
@@ -3119,7 +3119,7 @@ Hartog & van Rossum ondersteunt werkgevers met een breed pakket aan diensten die
 
 ### Persival
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/persival
+URL: https://www.yonglo.com/project/persival
 
 Opdrachtgever: AMG Mode Group
 Branche: Mode
@@ -3135,7 +3135,7 @@ Persival staat voor mode voor echte meiden en biedt een uitstraling die aansluit
 
 ### Lys d'Avril
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/lys-davril
+URL: https://www.yonglo.com/project/lys-davril
 
 Opdrachtgever: Lys d'Avril
 Branche: Bed & Breakfast
@@ -3151,7 +3151,7 @@ Lys d’Avril is een kleinschalig domein op een heuvel in het gehucht Glanges, m
 
 ### Peanuts Academie
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/peanuts-academie
+URL: https://www.yonglo.com/project/peanuts-academie
 
 Opdrachtgever: Peanuts Strategie & Academie
 Branche: Advies & training
@@ -3167,7 +3167,7 @@ Peanuts Academie helpt bedrijven om online marketing en sales naar een hoger niv
 
 ### VAD Notarissen
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/vad-notarissen
+URL: https://www.yonglo.com/project/vad-notarissen
 
 Opdrachtgever: VAD Notarissen
 Branche: Notaris
@@ -3183,7 +3183,7 @@ VAD Notarissen N.V. denkt met cliënten mee in goede en minder goede tijden en b
 
 ### Wifac
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/wifac
+URL: https://www.yonglo.com/project/wifac
 
 Opdrachtgever: Wifac
 Branche: Grafisch
@@ -3199,7 +3199,7 @@ Al ruim 100 jaar is Wifac een flexibele speler en deskundige partner in de grafi
 
 ### Van Weele
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/van-weele
+URL: https://www.yonglo.com/project/van-weele
 
 Opdrachtgever: Aankoopmakelaardij Van Weele
 Branche: Makelaar
@@ -3215,7 +3215,7 @@ De identiteit sluit aan bij hun deskundige en persoonlijke begeleiding in de won
 
 ### EAGM
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/eagm
+URL: https://www.yonglo.com/project/eagm
 
 Opdrachtgever: EAGM
 Branche: Corporate
@@ -3231,7 +3231,7 @@ EAGM bevordert de kennis en toepassing van Europese geosynthetische producten en
 
 ### Go2Academy
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/go2academy
+URL: https://www.yonglo.com/project/go2academy
 
 Opdrachtgever: Go2Academy
 Branche: Advies & training
@@ -3247,7 +3247,7 @@ Go2Academy Safety & Training is een gedegen opleidingsorganisatie op het gebied 
 
 ### Green Horizon
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/green-horizon
+URL: https://www.yonglo.com/project/green-horizon
 
 Opdrachtgever: Green Horizon
 Branche: Goede doel
@@ -3263,7 +3263,7 @@ Green Horizon zet zich in voor het herstel van ecosystemen, het terugbrengen van
 
 ### Den Doorbraak
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/den-doorbraak
+URL: https://www.yonglo.com/project/den-doorbraak
 
 Opdrachtgever: Burgstate projectontwikkeling
 Branche: Vastgoed
@@ -3279,7 +3279,7 @@ D’n Doorbraak bestaat uit 20 comfortabele en energiezuinige appartementen, ont
 
 ### Roercenter
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/roercenter
+URL: https://www.yonglo.com/project/roercenter
 
 Opdrachtgever: Roercenter
 Branche: Winkelcentrum
@@ -3295,7 +3295,7 @@ Het Roercenter is een overdekt winkelcentrum in het hart van de stad, met een ge
 
 ### Tenerife Online
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/tenerife-online
+URL: https://www.yonglo.com/project/tenerife-online
 
 Opdrachtgever: Tenerife Online
 Branche: Makelaar
@@ -3311,7 +3311,7 @@ Tenerife Online S.L. is gevestigd op de Canarische Eilanden, in het zuiden van T
 
 ### Event Culinair
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/project/event-culinair
+URL: https://www.yonglo.com/project/event-culinair
 
 Opdrachtgever: Event Culinair
 Branche: Catering
@@ -3329,7 +3329,7 @@ Event Culinair bedient al vele jaren de zakelijke markt, van kleine bijeenkomste
 
 ### Yonglo lanceert compleet vernieuwde website: van sterk idee naar krachtige website
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/yonglo-lanceert-compleet-vernieuwde-website
+URL: https://www.yonglo.com/post/yonglo-lanceert-compleet-vernieuwde-website
 Gepubliceerd: 2026-09-13
 Categorie: Yonglo
 
@@ -3369,7 +3369,7 @@ Benieuwd naar de nieuwe website en de projecten van Yonglo? Neem een kijkje en o
 
 ### AI en Wix in 2026: waar zit de échte tijdwinst voor bedrijven?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/ai-en-wix-in-2026
+URL: https://www.yonglo.com/post/ai-en-wix-in-2026
 Gepubliceerd: 2026-08-10
 Categorie: AI
 
@@ -4096,7 +4096,7 @@ Think Wix, think Yonglo.
 
 ### Zon, warmte… en een soepele online airco-bestelling dankzij Yonglo
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/online-airco-bestellen
+URL: https://www.yonglo.com/post/online-airco-bestellen
 Gepubliceerd: 2026-06-25
 Categorie: Projecten
 
@@ -4152,7 +4152,7 @@ Benieuwd wat Yonglo voor jouw organisatie kan betekenen? We denken graag met je 
 
 ### Overstappen van Wix Editor naar Wix Studio
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/van-editor-naar-wix-studio
+URL: https://www.yonglo.com/post/van-editor-naar-wix-studio
 Gepubliceerd: 2026-04-17
 Categorie: Wix
 
@@ -4195,7 +4195,7 @@ Neem contact met ons op en we gaan aan de slag!
 
 ### Yonglo lanceert ‘Smart Cookie Popup’ voor Wix
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/yonglo-lanceert-smart-cookie-popup
+URL: https://www.yonglo.com/post/yonglo-lanceert-smart-cookie-popup
 Gepubliceerd: 2026-02-26
 Categorie: Yonglo
 
@@ -4249,7 +4249,7 @@ Blijf Yonglo volgen voor meer innovatieve Wix apps en updates van ons developmen
 
 ### Let op: oplichters actief uit naam van Yonglo
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/hoe-herken-je-spam
+URL: https://www.yonglo.com/post/hoe-herken-je-spam
 Gepubliceerd: 2026-02-10
 Categorie: Yonglo
 
@@ -4285,7 +4285,7 @@ Heb je twijfels over de echtheid van een e-mail of heb je vragen naar aanleiding
 
 ### The Road to Freedom: nieuwe website voor Rijschool Wildenberg
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/nieuwe-website-rijschool-wildenberg
+URL: https://www.yonglo.com/post/nieuwe-website-rijschool-wildenberg
 Gepubliceerd: 2026-01-20
 Categorie: Projecten
 
@@ -4322,7 +4322,7 @@ Wil jij ook een website die jouw bedrijf naar een hoger niveau tilt? Yonglo denk
 
 ### Welke slimme online oplossingen zijn beschikbaar voor Wix-websites in Nederland?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/online-oplossingen-voor-wix-websites-in-nederland
+URL: https://www.yonglo.com/post/online-oplossingen-voor-wix-websites-in-nederland
 Gepubliceerd: 2025-12-03
 Categorie: Wix
 
@@ -4392,7 +4392,7 @@ Door slim gebruik te maken van de beschikbare online oplossingen, kunt u niet al
 
 ### Yonglo steunt Green Horizon met nieuwe website en speciaal ontwikkelde sponsormodule
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/yonglo-steunt-green-horizon
+URL: https://www.yonglo.com/post/yonglo-steunt-green-horizon
 Gepubliceerd: 2025-11-27
 Categorie: Projecten
 
@@ -4424,7 +4424,7 @@ Wil je meer weten over Green Horizon en hun initiatieven? Bezoek de website: www
 
 ### Wie kan een Wix-website bouwen die makkelijk te beheren is?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wie-kan-een-wix-website-bouwen-die-makkelijk-te-beheren-is-1
+URL: https://www.yonglo.com/post/wie-kan-een-wix-website-bouwen-die-makkelijk-te-beheren-is-1
 Gepubliceerd: 2025-11-13
 Categorie: Wix
 
@@ -4492,7 +4492,7 @@ Door te kiezen voor een expert als Yonglo, investeert u in de toekomst van uw be
 
 ### Welke slimme online oplossingen zijn beschikbaar voor Wix-websites?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/online-oplossingen-voor-wix-websites-1
+URL: https://www.yonglo.com/post/online-oplossingen-voor-wix-websites-1
 Gepubliceerd: 2025-11-13
 Categorie: Wix
 
@@ -4582,7 +4582,7 @@ Neem contact met ons op en ontdek hoe wij jou kunnen helpen bij het realiseren v
 
 ### Slimme online oplossingen voor Wix websites en waarom Yonglo jouw beste partner is
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/online-oplossingen-voor-wix
+URL: https://www.yonglo.com/post/online-oplossingen-voor-wix
 Gepubliceerd: 2025-09-25
 Categorie: Wix
 
@@ -4668,7 +4668,7 @@ De toekomst van online oplossingen is veelbelovend. Door gebruik te maken van sl
 
 ### Een Wix-website bouwen die makkelijk te beheren is
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/een-wix-website-bouwen-die-makkelijk-te-beheren-is
+URL: https://www.yonglo.com/post/een-wix-website-bouwen-die-makkelijk-te-beheren-is
 Gepubliceerd: 2025-09-24
 Categorie: Wix
 
@@ -4742,7 +4742,7 @@ Door samen te werken met de juiste ervaring en expertise, kun je de uitdagingen 
 
 ### De kracht van maatwerk oplossingen in Wix voor bedrijven
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/maatwerk-oplossingen-in-wix
+URL: https://www.yonglo.com/post/maatwerk-oplossingen-in-wix
 Gepubliceerd: 2025-09-22
 Categorie: Wix
 
@@ -4815,7 +4815,7 @@ Ben je klaar om de kracht van maatwerk functies te ontdekken? Begin vandaag nog 
 
 ### Hoe vind ik een expert voor het ontwikkelen van een Wix-website
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/expert-voor-het-ontwikkelen-van-een-wix-website
+URL: https://www.yonglo.com/post/expert-voor-het-ontwikkelen-van-een-wix-website
 Gepubliceerd: 2025-09-22
 Categorie: Wix
 
@@ -4876,7 +4876,7 @@ Neem gewoon even contact op met Yonglo en ontdek zelf wat allemaal mogelijk is.
 
 ### Kan iemand mijn Wix-site optimaliseren voor betere conversies in Nederland?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wix-site-optimaliseren
+URL: https://www.yonglo.com/post/wix-site-optimaliseren
 Gepubliceerd: 2025-09-21
 Categorie: Wix
 
@@ -4931,7 +4931,7 @@ Neem vandaag nog contact op voor jouw gratis analyse en adviesgesprek!
 
 ### Waar kan ik een Wix-website laten maken met een uniek ontwerp in Nederland?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wix-website-laten-maken-in-nederland
+URL: https://www.yonglo.com/post/wix-website-laten-maken-in-nederland
 Gepubliceerd: 2025-09-21
 Categorie: Wix
 
@@ -4987,7 +4987,7 @@ Zet de eerste stap naar succes en maak gebruik van de mogelijkheden van maatwerk
 
 ### Slimme Online Oplossingen voor Wix-websites in Nederland
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/online-oplossingen-voor-wix-websites
+URL: https://www.yonglo.com/post/online-oplossingen-voor-wix-websites
 Gepubliceerd: 2025-09-21
 Categorie: Wix
 
@@ -5045,7 +5045,7 @@ Neem contact met ons op voor een vrijblijvend adviesgesprek en ontdek hoe wij jo
 
 ### Wat kost het om een aangepaste Wix-website te laten maken in Nederland?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wix-website-laten-maken
+URL: https://www.yonglo.com/post/wix-website-laten-maken
 Gepubliceerd: 2025-09-21
 Categorie: Wix
 
@@ -5099,7 +5099,7 @@ Benieuwd naar de kosten voor jouw project? Neem vrijblijvend contact op met Yong
 
 ### Yonglo: jouw Europese Wix & Wix Studio webdesign specialist
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wix-europa
+URL: https://www.yonglo.com/post/wix-europa
 Gepubliceerd: 2025-08-26
 Categorie: Yonglo
 
@@ -5141,7 +5141,7 @@ Neem vandaag nog contact op voor gratis advies of een vrijblijvende offerte – 
 
 ### Wix Vibe: Eerste indruk en wat je ervan kunt verwachten
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wix-vibe
+URL: https://www.yonglo.com/post/wix-vibe
 Gepubliceerd: 2025-08-19
 Categorie: AI
 
@@ -5185,7 +5185,7 @@ Wil je alvast werken aan slimme prompts die jouw merk en structuur vertalen zond
 
 ### Yonglo officieel erkend als Wix Studio Webdesigner & Developer
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/yonglo-wix-studio-webdesigner-developer
+URL: https://www.yonglo.com/post/yonglo-wix-studio-webdesigner-developer
 Gepubliceerd: 2025-07-22
 Categorie: Yonglo
 
@@ -5239,7 +5239,7 @@ Neem contact op met Yonglo en ervaar zelf het verschil van een gecertificeerd Wi
 
 ### Yonglo: Dé specialist in API-koppelingen binnen Wix-websites
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/api-koppelingen-wix-websites
+URL: https://www.yonglo.com/post/api-koppelingen-wix-websites
 Gepubliceerd: 2025-05-28
 Categorie: Wix
 
@@ -5312,7 +5312,7 @@ Of je nu een eenvoudige API-koppeling nodig hebt om bijvoorbeeld klantgegevens t
 
 ### Yonglo groeit: Design én Development, nu onder één krachtig merk
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/yonglo-groeit-door
+URL: https://www.yonglo.com/post/yonglo-groeit-door
 Gepubliceerd: 2025-04-28
 Categorie: Yonglo
 
@@ -5342,7 +5342,7 @@ Tot snel, Joris Borgers & Marko Fiers
 
 ### Ontdek Wixel: Het Nieuwe AI-Designplatform van Wix
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wixel-het-ai-designplatform-van-wix
+URL: https://www.yonglo.com/post/wixel-het-ai-designplatform-van-wix
 Gepubliceerd: 2025-04-16
 Categorie: AI
 
@@ -5426,7 +5426,7 @@ Probeer Wixel vandaag nog uit en ontdek wat jij visueel kunt neerzetten!
 
 ### From nature with love
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/just-add-wine-from-nature-with-love
+URL: https://www.yonglo.com/post/just-add-wine-from-nature-with-love
 Gepubliceerd: 2024-08-02
 Categorie: Projecten
 
@@ -5456,7 +5456,7 @@ www.justaddwine.nl
 
 ### Hoe Yonglo de nieuwe naam en identiteit van Burgstate realiseerde
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/yonglo-realiseert-nieuwe-identiteit-burgstate
+URL: https://www.yonglo.com/post/yonglo-realiseert-nieuwe-identiteit-burgstate
 Gepubliceerd: 2024-05-13
 Categorie: Projecten
 
@@ -5500,7 +5500,7 @@ Neem vandaag nog contact met ons op en ontdek hoe we samen jouw bedrijf naar nie
 
 ### Makkelijk en snel blogberichten schrijven in Wix
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/makkelijk-en-snel-blogberichten-schrijven-in-wix
+URL: https://www.yonglo.com/post/makkelijk-en-snel-blogberichten-schrijven-in-wix
 Gepubliceerd: 2024-04-09
 Categorie: Wix
 
@@ -5524,7 +5524,7 @@ Dus laat je stem horen en breng je merk tot leven met geweldige blogberichten in
 
 ### Verbeter je Wix-website met krachtige AI-hulpmiddelen
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/verbeter-je-wix-website-met-ai
+URL: https://www.yonglo.com/post/verbeter-je-wix-website-met-ai
 Gepubliceerd: 2024-02-02
 Categorie: AI
 
@@ -5562,7 +5562,7 @@ Wil je meer weten of de werking van AI en Wix neem dan contact met ons op.
 
 ### Een nieuw hoofdstuk: By Marko wordt Yonglo!
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/by-marko-wordt-yonglo
+URL: https://www.yonglo.com/post/by-marko-wordt-yonglo
 Gepubliceerd: 2024-01-01
 Categorie: Yonglo
 
@@ -5598,7 +5598,7 @@ Het Yonglo Team
 
 ### Wat is webhosting? Alles wat je moet weten over het hosten van je website
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wat-is-webhosting-alles-wat-je-moet-weten-over-het-hosten-van-je-website
+URL: https://www.yonglo.com/post/wat-is-webhosting-alles-wat-je-moet-weten-over-het-hosten-van-je-website
 Gepubliceerd: 2023-11-16
 Categorie: Wix
 
@@ -5758,7 +5758,7 @@ Bron: Wix
 
 ### Wat is een landingspagina en hoe maak je deze in Wix?
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/wat-is-een-wix-landingspagina
+URL: https://www.yonglo.com/post/wat-is-een-wix-landingspagina
 Gepubliceerd: 2023-11-16
 Categorie: Wix
 
@@ -5973,7 +5973,7 @@ Bron: Wix.com I Marijne Verhoef
 
 ### Hoe word je een entrepreneur? 10 stappen naar succes
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/post/hoe-word-je-een-entrepreneur
+URL: https://www.yonglo.com/post/hoe-word-je-een-entrepreneur
 Gepubliceerd: 2023-11-12
 Categorie: Yonglo
 
@@ -6135,7 +6135,7 @@ Bron: Wix.com I Marijne Verhoef
 
 ### Algemene voorwaarden
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/voorwaarden
+URL: https://www.yonglo.com/voorwaarden
 
 De algemene voorwaarden van Yonglo: definities, offertes, overeenkomst, prijzen, betaling, levering, eigendom en intellectuele eigendom.
 
@@ -6329,7 +6329,7 @@ Op al onze leveringen en diensten zijn deze voorwaarden van kracht.
 
 ### Privacybeleid
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/privacybeleid
+URL: https://www.yonglo.com/privacybeleid
 
 Lees in het privacybeleid van Yonglo welke gegevens wij verzamelen, waarvoor wij ze gebruiken, hoe wij ze beschermen en welke rechten je hebt.
 
@@ -6466,7 +6466,7 @@ info@yonglo.com
 
 ### Disclaimer
 
-URL: https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com/disclaimer
+URL: https://www.yonglo.com/disclaimer
 
 Disclaimer van Yonglo over de informatie op www.yonglo.com, aansprakelijkheid, links naar derden en het overnemen van informatie en illustraties.
 

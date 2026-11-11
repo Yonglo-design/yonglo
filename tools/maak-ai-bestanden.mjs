@@ -21,7 +21,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 // Adres waar de site live staat. Aanpassen zodra het domein (bijv. www.yonglo.com) naar deze site wijst.
 // Moet gelijk zijn aan LIVE_SITE in assets/vraag-ai.js.
-const SITE = (process.env.SITE_URL || "https://headless-ddscngfdqfa-yonglo-1406.wix-site-host.com").replace(/\/$/, "");
+const SITE = (process.env.SITE_URL || "https://www.yonglo.com").replace(/\/$/, "");
 
 const cfg = readFileSync(join(ROOT, "assets/wix/wix-config.js"), "utf8");
 const CLIENT_ID = cfg.match(/WIX_CLIENT_ID\s*=\s*"([^"]+)"/)[1];
