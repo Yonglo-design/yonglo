@@ -8,11 +8,53 @@
   var PLACE_ID = "ChIJi7HE8AbZxkcRgo37ebUsTsw"; // Yonglo, Lichttoren 32, Eindhoven
   var CACHE_KEY = "yonglo-greviews-v1";
   var CACHE_MS = 60 * 60 * 1000; // 1 uur per bezoeker, scheelt API-verzoeken
+  var EN = document.documentElement.lang === "en"; // Engelse website
+
+  // Echte Google-reviews van Yonglo (originele tekst, overgenomen van Google Maps op 11-11-2026).
+  // "datum" = maand van plaatsing (jjjj-mm); de site rekent zelf "x maanden geleden" uit, net als Google.
+  // Foto's staan in assets/reviews/. Zodra de Google-sleutel er is, komen de live Google-reviews hiervoor in de plaats.
+  var GOOGLE_REVIEWS = [
+    { author: "Alexandre Lang-Willar", photo: "alexandre-lang-willar.png", datum: "2025-11", link: "https://maps.app.goo.gl/LdXh4pZ3Qq1yYtEH8", text: "The most amazing, project success oriented, WIX team! 3 years of collaboration on our project which has grown beyond our wildest expectations! Our company couldn’t have done it without Yonglo (especially Joris). The team consistently goes above and beyond on every project, delivering results that exceed expectations while staying within budget. If you're hesitating, don’t. You can’t afford not to work with them. Great return on investment, all while having fun with like-minded, passionate people." },
+    { author: "Ramon van den Wildenberg", photo: "ramon-van-den-wildenberg.png", datum: "2026-06", link: "https://maps.app.goo.gl/4D2FeFwJyMseAavo6", text: "Super blij met het resultaat! Mooie website, strak logo en het briefpapier ziet er ook top uit. Zeker een aanrader!" },
+    { author: "Rijschool Wildenberg", photo: "rijschool-wildenberg.png", datum: "2026-01", link: "https://maps.app.goo.gl/UDF3dRQiWmK7xvwx5", text: "Wat een geweldig team heeft Marko Fiers van Yonglo achter zich staan. Door het meer dan prettige contact met Marko wordt er snel geschakeld en goed naar je wensen geluisterd. Vandaag is de site live gegaan waar we enorm naar uitkeken. Voorzien van de allernieuwste technieken en features, klaar om weer geruime tijd onze potentiële klanten van informatie te voorzien via deze geweldig frisse, duidelijke en persoonlijke site. En de prijs viel ook nog eens mee!! Niets is voor deze partij onmogelijk. Een echte aanrader!" },
+    { author: "Pieter", photo: "pieter.png", datum: "2025-12", link: "https://maps.app.goo.gl/jbBqe1QUXYyFyTRn7", text: "Super deskundige en vriendelijke organisatie die prachtige en praktische websites maakt… Ze doen wat ze beloven… Zeker een aanrader!" }
+  ].map(function (r) {
+    return { src: "google", author: r.author, authorUrl: r.link, photo: "/assets/reviews/" + r.photo, rating: 5, text: r.text, when: geleden(r.datum) };
+  });
+  function geleden(jm) {
+    var p = jm.split("-"), nu = new Date();
+    var m = (nu.getFullYear() - Number(p[0])) * 12 + (nu.getMonth() + 1 - Number(p[1]));
+    if (m < 1) return EN ? "this month" : "deze maand";
+    if (m === 1) return EN ? "a month ago" : "een maand geleden";
+    if (m < 12) return m + (EN ? " months ago" : " maanden geleden");
+    var j = Math.floor(m / 12);
+    if (EN) return j === 1 ? "a year ago" : j + " years ago";
+    return j === 1 ? "een jaar geleden" : j + " jaar geleden";
+  }
+
+  // Echte reviews van Yonglo op de Wix Marketplace (overgenomen van het partnerprofiel, 11-11-2026).
+  // Deze staan altijd in de sectie; zodra de Google-sleutel er is, komen de Google-reviews ervoor.
+  // Nieuwe review erbij? Voeg hier een regel toe (nieuwste bovenaan). "\n" = nieuwe regel.
+  var WIX_URL = "https://www.wix.com/marketplace/wix-partner/yonglo";
+  var WIX_REVIEWS = [
+    { when: "17 aug 2026", service: "Websiteontwerp", text: "Top quality service, true professionals who understands the ins and outs of WIX. Besides getting my e-commerce website ready for launch, they have also created some custom features behind the scenes which I am very happy about. I can highly recommend Yonglo." },
+    { when: "16 mei 2025", service: "Websiteontwerp", text: "Ze hebben mij super geholpen met:\nOptimaliseren en aanpassen website\nAlgemene instellingen - SEO instellingen - SEO setup - Website gekoppeld aan Google Search Console\nZe hebben goed werk verricht!" },
+    { author: "Martino di Piemonte", when: "7 mei 2025", service: "Website-redesign", text: "Ciao vorige week kwam ik er achter dat er iets mis was met de ranking. Via wix kwam ik bij Marko langs. Nu een week later ziet mijn site er heel professioneel uit en ga ervan uit dat de ranking nu ook goed zal zijn. Grazie mille Martino di Piemonte" },
+    { when: "14 sep 2023", service: "Website-redesign", text: "Super snel en kwalitatief te werk gegaan! communicatie is sterk en snel geschakeld. dik tevreden!" },
+    { when: "9 mei 2023", service: "Website-redesign", text: "Bymarko is erg fijn om mee samen te werken!" },
+    { when: "29 nov 2022", service: "Website-redesign", text: "Ontzettend blij en tevreden met de professionaliteit, communicatie en bereidheid om te adviseren. Mijn website is binnen 2 weken geoptimaliseerd, en heeft een frisse uitstraling gekregen allemaal binnen mijn financiële mogelijkheden. Ik raad iedereen aan om samen te werken met By Marko. Dankjewel Marko voor je inzet." }
+  ].map(function (r) {
+    var when = r.when, service = r.service;
+    if (EN) {
+      when = when.replace(/\b(mei|okt|mrt)\b/, function (m) { return { mei: "May", okt: "Oct", mrt: "Mar" }[m]; }).replace(/\b([a-z])/, function (c) { return c.toUpperCase(); });
+      service = { "Websiteontwerp": "Website design", "Website-redesign": "Website redesign" }[service] || service;
+    }
+    return { src: "wix", author: r.author || (EN ? "Client via Wix" : "Klant via Wix"), authorUrl: WIX_URL, rating: 5, text: r.text, when: when + " · " + service };
+  });
 
   var root = document.querySelector("[data-greviews]");
   if (!root) return;
   var rail = root.querySelector(".gr-rail");
-  var EN = document.documentElement.lang === "en"; // Engelse website
   var nf = new Intl.NumberFormat(EN ? "en-GB" : "nl-NL", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
   function esc(s) {
@@ -43,14 +85,15 @@
     }
     if (d.count) root.querySelector('[data-gr="count"]').textContent = (EN ? "Based on " : "Op basis van ") + d.count + (EN ? " reviews on Google" : " reviews op Google");
     if (d.url) root.querySelector('[data-gr="link"]').href = d.url;
-    var list = (d.reviews || []).filter(function (r) { return r.text; });
+    var live = (d.reviews || []).filter(function (r) { return r.text; });
+    var list = (live.length ? live : GOOGLE_REVIEWS).concat(WIX_REVIEWS);
     if (!list.length) { fallback(); return; }
     rail.innerHTML = list.map(function (r, i) {
       var name = esc(r.author || "Google-gebruiker");
       var who = r.authorUrl ? '<a href="' + esc(r.authorUrl) + '" target="_blank" rel="noopener">' + name + "</a>" : name;
       var av = r.photo ? '<img src="' + esc(r.photo) + '" alt="" width="44" height="44" loading="lazy" referrerpolicy="no-referrer">' : "<span>" + name.charAt(0) + "</span>";
       return '<article class="gr-card rv in" style="--d:' + (i * 0.08) + 's">' +
-        '<header><span class="gr-av">' + av + '</span><div><b>' + who + '</b><small>' + esc(r.when || "") + "</small></div>" + G + "</header>" +
+        '<header><span class="gr-av">' + av + '</span><div><b>' + who + '</b><small>' + esc(r.when || "") + "</small></div>" + (r.src === "wix" ? '<span class="gr-wix" title="' + (EN ? "Review on the Wix Marketplace" : "Review op de Wix Marketplace") + '">Wix</span>' : G) + "</header>" +
         stars(r.rating) +
         '<p class="gr-text">' + esc(r.text) + "</p>" +
         '<button class="gr-more" type="button" hidden>' + (EN ? 'Read more' : 'Lees meer') + '</button></article>';
@@ -116,14 +159,14 @@
     });
   }
 
-  if (!GOOGLE_MAPS_API_KEY) { root.classList.remove("gr-loading"); fallback(); return; }
+  if (!GOOGLE_MAPS_API_KEY) { render({}); return; }
   var cached = fromCache();
   if (cached) { render(cached); return; }
   // Pas laden als de sectie in beeld komt (scheelt laadtijd en API-verzoeken)
   var started = false;
   function go() {
     if (started) return; started = true;
-    fetchLive().then(function (d) { toCache(d); render(d); }).catch(function (e) { console.error(e); root.classList.remove("gr-loading"); fallback(); });
+    fetchLive().then(function (d) { toCache(d); render(d); }).catch(function (e) { console.error(e); render({}); });
   }
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); } }, { rootMargin: "400px" });
