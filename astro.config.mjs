@@ -21,14 +21,14 @@ const OUDE_ADRESSEN = {
   "/wix-webshop": "/ecommerce", "/wix-koppelingen": "/api",
   // losse oude pagina's
   "/algemene-voorwaarden": "/voorwaarden", "/privacy": "/privacybeleid", "/faq": "/contact#faq", "/goede-vraag": "/contact",
-  "/klantgegevens": "/contact", "/bedankt-aanvraag": "/", "/bedankt-seo-aanvraag": "/seo", "/welkom": "/", "/jorisborgers": "/over-yonglo",
+  "/bedankt-aanvraag": "/", "/bedankt-seo-aanvraag": "/seo", "/welkom": "/", "/jorisborgers": "/over-yonglo",
   "/vacatures": "/over-yonglo", "/vacature-aanvraag": "/over-yonglo", "/project-addesign": "/project/ad-design-studio",
   "/project-burgstate": "/project/burgstate", "/project-mankind": "/project/mankind-coach", "/project-pawy": "/project/pawy",
   "/project-rewild": "/portfolio", "/wix-europe": "/wix-expert",
   "/post/slimme-online-oplossingen-voor-wix": "/post/online-oplossingen-voor-wix", "/post/yonglo-ontwikkelt-outdoor-boekingsplatform-rewild-be": "/nieuws",
   // oude Engelse versies (de vorige site was meertalig via Wix)
   "/en/algemene-voorwaarden": "/en/voorwaarden", "/en/privacy": "/en/privacybeleid", "/en/faq": "/en/contact#faq",
-  "/en/klantgegevens": "/en/contact", "/en/bedankt-aanvraag": "/en", "/en/expertise": "/en", "/en/service": "/en",
+  "/en/bedankt-aanvraag": "/en", "/en/expertise": "/en", "/en/service": "/en",
   "/en/jorisborgers": "/en/over-yonglo", "/en/vacatures": "/en/over-yonglo", "/en/project-addesign": "/en/project/ad-design-studio",
   "/en/project-burgstate": "/en/project/burgstate", "/en/project-mankind": "/en/project/mankind-coach", "/en/project-pawy": "/en/project/pawy",
   "/en/project-rewild": "/en/portfolio", "/en/wix-blog-schrijven": "/en/seo", "/en/wix-development": "/en/development",
