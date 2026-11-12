@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klantgegevens | Yonglo</title>
+<meta name="description" content="Welkom bij Yonglo. Vul je gegevens in, zodat we snel voor je aan het werk kunnen.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Klantgegevens – Yonglo">
+<meta property="og:description" content="Welkom bij Yonglo. Vul je gegevens in, zodat we snel voor je aan het werk kunnen.">
+<meta name="theme-color" content="#0E0F1A">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/favicon/favicon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4">
+<link rel="stylesheet" href="/assets/footer.css">
+<link rel="stylesheet" href="/assets/page.css">
+</head>
+<body class="page-sub">
+<a class="skip" href="#main">Naar inhoud</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hdr" id="top" data-header></header>
+<script src="/assets/header.js"></script>
+
+<main id="main">
+
+<!-- KLANTGEGEVENS (niet in het menu, noindex) -->
+<section class="contact dark kg" id="klantgegevens" aria-labelledby="kg-title">
+  <div class="cta-grad"></div>
+  <div class="wrap kg-in">
+    <div class="kg-intro">
+      <p class="eyebrow rv">Klantgegevens</p>
+      <h1 class="rv" id="kg-title">Welkom bij <em>Yonglo</em>.</h1>
+      <p class="rv" style="--d:.08s">Wil je onderstaande gegevens zo compleet mogelijk invullen zodat we snel voor je aan het werk kunnen. Mochten er nog vragen zijn dan horen we het graag.</p>
+    </div>
+    <form class="cform kg-form rv" style="--d:.12s" data-subject="Klantgegevens via yonglo.com" data-thanks="klantgegevens">
+      <label class="fl"><input type="text" name="bedrijfsnaam" placeholder=" " required autocomplete="organization"><span>Bedrijfsnaam*</span></label>
+      <div class="fl-row">
+        <label class="fl"><input type="text" name="kvk" placeholder=" " inputmode="numeric"><span>KVK nummer</span></label>
+        <label class="fl"><input type="text" name="btw" placeholder=" " required><span>BTW nummer*</span></label>
+      </div>
+      <div class="fl-row">
+        <label class="fl"><input type="text" name="voornaam" placeholder=" " required autocomplete="given-name"><span>Voornaam*</span></label>
+        <label class="fl"><input type="text" name="achternaam" placeholder=" " required autocomplete="family-name"><span>Achternaam*</span></label>
+      </div>
+      <label class="fl"><input type="text" name="adres" placeholder=" " required autocomplete="street-address"><span>Adres*</span></label>
+      <div class="fl-row">
+        <label class="fl"><input type="text" name="postcode" placeholder=" " required autocomplete="postal-code"><span>Postcode*</span></label>
+        <label class="fl"><input type="text" name="plaats" placeholder=" " required autocomplete="address-level2"><span>Plaats*</span></label>
+      </div>
+      <div class="fl-row">
+        <label class="fl fl-sel"><select name="land" required autocomplete="country-name" data-landen><option value="Nederland" selected>Nederland</option></select><span>Land*</span></label>
+        <label class="fl"><input type="url" name="website" placeholder=" " autocomplete="url"><span>URL website</span></label>
+      </div>
+      <div class="fl-row">
+        <label class="fl"><input type="email" name="email" placeholder=" " required autocomplete="email"><span>E-mailadres*</span></label>
+        <label class="fl"><input type="tel" name="telefoon" placeholder=" " required autocomplete="tel"><span>Telefoonnummer*</span></label>
+      </div>
+      <div class="kg-checks">
+        <label class="kg-check"><input type="checkbox" name="voorwaarden" value="Ja" required><span>Ik ga akkoord met de <a href="/voorwaarden" target="_blank" rel="noopener">Algemene voorwaarden</a> van Yonglo*</span></label>
+        <label class="kg-check"><input type="checkbox" name="privacy" value="Ja" required><span>Ik ga akkoord met het <a href="/privacybeleid" target="_blank" rel="noopener">privacybeleid</a>*</span></label>
+      </div>
+      <button class="btn btn-primary wide">Gegevens versturen <i class="arr">→</i></button>
+      <p class="fnote">Velden met een * zijn verplicht. Je gegevens gebruiken we alleen voor onze samenwerking.</p>
+    </form>
+    <div class="direct kg-direct rv">
+      <a href="mailto:contact@yonglo.com" class="dline copy" data-copy="contact@yonglo.com"><span>E-mail</span><b>contact@yonglo.com</b></a>
+      <a href="tel:+31852033223" class="dline"><span>Telefoon</span><b>085 20 33 223</b></a>
+      <a href="https://wa.me/31638148565" class="dline" target="_blank" rel="noopener"><span>WhatsApp</span><b>App ons direct</b></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="fd" data-footer></footer>
+
+<div class="mobbar"><a href="tel:+31852033223">Bel</a><a href="https://wa.me/31638148565" target="_blank" rel="noopener">WhatsApp</a><a href="/contact" class="hl">Contact</a></div>
+<a href="https://wa.me/31638148565" class="float-wa" target="_blank" rel="noopener">Vragen? App ons</a>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script src="/assets/app.js?v=4" defer></script>
+<script src="/assets/footer.js" defer></script>
+<script src="/assets/page.js" defer></script>
+<script src="/assets/klantgegevens.js" defer></script>
+</body>
+</html>

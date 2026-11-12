@@ -41,6 +41,7 @@ const LABELS = {
   wix: ["Wix & Wix Studio", "Wix & Wix Studio"],
   optimaal: ["Wix-optimalisatie", "Wix optimisation"],
   portfolio: ["Portfolio", "Portfolio"],
+  klantgegevens: ["Klantgegevens", "Client details"],
   nieuws: ["Nieuws & inzichten", "News & insights"],
   "over-yonglo": ["Over Yonglo", "About Yonglo"],
   contact: ["Contact", "Contact"],

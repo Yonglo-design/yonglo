@@ -809,3 +809,34 @@ main > section.light + section.light.askai{padding-top:var(--sec)}
 @media (max-width:767px){.nf-links{grid-template-columns:1fr 1fr;gap:10px;margin-top:32px}.nf-links a{padding:16px}.nf-links span{font-size:14px}}
 @media (max-width:420px){.nf-links{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.nf-code,.nf-o,.nf-o circle,.nf-o path,.nf-links li{animation:none;stroke-dashoffset:0}}
+
+/* klantgegevens.html: welkomsttekst met daaronder het formulier (pagina staat niet in het menu) */
+main > section.kg{padding-top:calc(var(--sec) + 40px)}
+.kg-in{position:relative;z-index:1;max-width:880px}
+.kg-intro{margin-bottom:40px}
+.kg-intro .eyebrow{margin-bottom:16px}
+.kg-intro h1{font-size:clamp(40px,5.6vw,72px);margin-bottom:20px}
+.kg-intro p:not(.eyebrow){color:rgba(255,255,255,.72);font-size:19px;max-width:680px}
+.kg-checks{display:grid;gap:12px}
+/* Overal dezelfde ruimte tussen de velden: 16px, naast en onder elkaar, ook op mobiel */
+.kg-form .fl-row{gap:16px}
+.fl-sel select{width:100%;padding:24px 44px 10px 18px;border-radius:14px;border:1px solid var(--line-d);background:rgba(255,255,255,.04);color:#fff;font:inherit;font-size:16px;appearance:none;-webkit-appearance:none;cursor:pointer;transition:border-color .25s,background .25s}
+.fl-sel select:focus{outline:none;border-color:var(--spark2);background:rgba(255,255,255,.08)}
+.fl-sel select option{color:var(--ink);background:#fff}
+.fl-sel span{transform:translateY(-10px) scale(.78)}
+.fl-sel select:focus+span{color:var(--spark2)}
+.fl-sel::after{content:"";position:absolute;right:20px;top:50%;width:8px;height:8px;margin-top:-6px;border:solid rgba(255,255,255,.6);border-width:0 2px 2px 0;transform:rotate(45deg);pointer-events:none}
+.kg-check{display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:15px;line-height:1.45;color:rgba(255,255,255,.85)}
+.kg-check input{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;margin:0;border-radius:7px;border:1.5px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.kg-check input::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px) scale(0);transition:transform .2s}
+.kg-check input:checked{background:var(--spark);border-color:var(--spark)}
+.kg-check input:checked::after{transform:rotate(45deg) translate(-1px,-1px) scale(1)}
+.kg-check input:focus-visible{outline:2px solid var(--spark2);outline-offset:2px}
+.kg-check a{color:var(--spark2);text-decoration:underline;text-underline-offset:3px}
+.kg-direct{max-width:none;margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px}
+.kg-direct .dline{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:4px}
+@media (max-width:767px){
+  .kg-intro{margin-bottom:28px}
+  .kg-intro p:not(.eyebrow){font-size:17px}
+  .kg-direct{grid-template-columns:1fr;margin-top:36px}
+}
