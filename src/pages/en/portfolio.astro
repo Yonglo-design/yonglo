@@ -1,0 +1,12 @@
+---
+// Engelse portfolio (/en/portfolio): en/portfolio.html (gemaakt door tools/maak-engels.mjs), met de lijst van
+// alle projecten al in de HTML (zie src/portfolio-server.ts).
+import { paginaHtml, siteOrigin, htmlResponse, nietGevonden } from "../../paginas";
+import { vulPortfolio } from "../../portfolio-server";
+
+export const prerender = false;
+
+const html = await vulPortfolio(paginaHtml("portfolio", "en", siteOrigin(Astro.request, Astro.url)), "en");
+if (!html) return nietGevonden("en");
+return htmlResponse(html);
+---

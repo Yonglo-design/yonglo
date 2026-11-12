@@ -761,7 +761,6 @@ main > section.light + section.light.askai{padding-top:var(--sec)}
 .askai-grid{display:grid;grid-template-columns:6fr 5fr;gap:80px;align-items:center}
 .askai-intro>p:not(.eyebrow){color:var(--grey);max-width:560px}
 .askai-intro a{color:var(--spark);border-bottom:1px solid currentColor}
-.askai-intro .eyebrow{margin-bottom:16px}
 .askai-dev{margin-top:20px;font-size:15px}
 .askai-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:40px}
 .askai-qs{border:0;display:flex;flex-direction:column;gap:10px}
@@ -769,12 +768,19 @@ main > section.light + section.light.askai{padding-top:var(--sec)}
 .askai-qs label{cursor:pointer;display:block}
 .askai-qs input{position:absolute;opacity:0;pointer-events:none}
 .askai-qs span{display:block;padding:14px 18px 14px 46px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:16px;line-height:1.35;position:relative;transition:border-color .2s,box-shadow .2s}
-.askai-qs span::before{content:"";position:absolute;left:18px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;border:1.5px solid rgba(14,15,26,.3);transition:border .2s}
+.askai-qs span::before{content:"";box-sizing:border-box;position:absolute;left:18px;top:50%;width:16px;height:16px;transform:translateY(-50%);border-radius:50%;border:1.5px solid rgba(14,15,26,.3);transition:border .2s}
 .askai-qs label:hover span{border-color:rgba(50,95,252,.45)}
 .askai-qs input:checked+span{border-color:var(--spark);box-shadow:0 0 0 1px var(--spark)}
 .askai-qs input:checked+span::before{border:5px solid var(--spark)}
 .askai-qs input:focus-visible+span{outline:2px solid var(--spark);outline-offset:2px}
 .askai-step{margin-top:28px}
+.askai-ctx{display:block}
+.askai-ctx .askai-step{display:block}
+.askai-ctx small{font-weight:400;font-size:14px;color:var(--grey)}
+.askai-ctx textarea{display:block;width:100%;box-sizing:border-box;min-height:76px;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;color:inherit;font:inherit;font-size:16px;line-height:1.4;resize:vertical;transition:border-color .2s,box-shadow .2s}
+.askai-ctx textarea::placeholder{color:var(--grey);opacity:.75}
+.askai-ctx textarea:hover{border-color:rgba(50,95,252,.45)}
+.askai-ctx textarea:focus{outline:none;border-color:var(--spark);box-shadow:0 0 0 1px var(--spark)}
 .askai-btns{display:flex;flex-wrap:wrap;gap:10px}
 .askai-btns .btn{padding:14px 22px;font-size:15px}
 .askai-note{margin-top:16px;font-size:14px;color:var(--grey)}

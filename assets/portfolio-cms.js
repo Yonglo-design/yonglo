@@ -1,5 +1,5 @@
 // Portfolio: vult de pagina met projecten uit de Wix CMS-collectie "Projecten".
-import { fetchProjects, projectUrl, img, esc, themeStyle, dienstKey, filterDiensten, cardTags, reveal, loadScript, mockVis, t } from "./projecten.js";
+import { fetchProjects, projectUrl, img, esc, themeStyle, dienstKey, filterDiensten, reveal, loadScript, t, gridHtml } from "./projecten.js";
 
 const $ = s => document.querySelector(`[data-cms="${s}"]`);
 
@@ -58,16 +58,7 @@ function renderFilters(ps) {
 function renderGrid(ps) {
   const el = $("grid");
   if (!el) return;
-  const allKeys = [...new Set(ps.flatMap(p => (p.diensten || []).map(dienstKey)))].join(" ");
-  el.innerHTML = ps.map(p => {
-    const pf = !!p.portfolioImage;
-    const src = pf ? img(p.portfolioImage, 700, 700, "c") : img(p.hoofdbeeld, 800, 600);
-    const tags = cardTags(p).map(t => `<li>${esc(t)}</li>`).join("");
-    return `<a href="${projectUrl(p)}" class="pcard" data-cat="${(p.diensten || []).map(dienstKey).join(" ")}">
-      <div class="pcard-vis${src ? " has-img" : ""}${pf ? " pf" : ""}" style="${themeStyle(p)}">${src ? `<img src="${src}" alt="${esc(p.title)}" loading="lazy">` : mockVis(p)}</div>
-      <div class="pcard-meta">${p.branche ? `<span class="pc-br">${esc(p.branche)}</span>` : ""}<h3>${esc(p.title)}</h3>${p.kortTekst ? `<p>${esc(p.kortTekst)}</p>` : ""}${tags ? `<ul class="pc-tags">${tags}</ul>` : ""}</div>
-    </a>`;
-  }).join("") + `<a href="#contact" class="pcard pcard-cta" data-cat="${allKeys}"><span>${t("Jouw project hier?", "Your project here?")}</span><b>${t("Laten we kennismaken →", "Let's get acquainted →")}</b></a>`;
+  el.innerHTML = gridHtml(ps);
   el.removeAttribute("aria-busy");
 }
 

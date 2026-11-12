@@ -28,7 +28,7 @@ const k = d.ok;
 <meta property="og:title" content={d.title.replace(/ \| Yonglo$/, "")}>
 <meta property="og:description" content={d.desc}>
 <meta property="og:url" content={d.url}>
-{d.ogImg && <meta property="og:image" content={d.ogImg}>}
+{d.ogImg && <><meta property="og:image" content={d.ogImg}><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content={d.title.replace(/ \| Yonglo$/, "")}><meta name="twitter:image" content={d.ogImg}></>}
 <meta name="twitter:card" content={d.ogImg ? "summary_large_image" : "summary"}>
 {d.jsonld.map((j) => <script type="application/ld+json" set:html={j} />)}
 </> : <meta name="robots" content="noindex">}

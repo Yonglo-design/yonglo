@@ -6,7 +6,7 @@ import type { AstroGlobal } from "astro";
 import { fetchWithAuth } from "@wix/sdk/context";
 import { renderContent, trimTo } from "../assets/blog.js";
 import { DOCS, FAQ, perApp, appSlug, appUrl, docUrl, oudeSlug, veiligeHtml, platteTekst, leestijd } from "../assets/helpdocs.js";
-import { siteOrigin } from "./paginas";
+import { siteOrigin, deelbeeld } from "./paginas";
 
 async function alles(dataCollectionId: string) {
   const all: any[] = [];
@@ -43,6 +43,7 @@ export type HelpDocsData = {
   desc: string;
   lead: string;
   url: string;
+  ogImg: string | null;
   jsonld: string[];
 };
 
@@ -50,7 +51,7 @@ export async function laadHelpDocs(Astro: AstroGlobal): Promise<HelpDocsData> {
   const appParam = Astro.params.app ? decodeURIComponent(String(Astro.params.app)) : "";
   const slugParam = Astro.params.slug ? decodeURIComponent(String(Astro.params.slug)) : "";
   const origin = siteOrigin(Astro.request, Astro.url);
-  const leeg: HelpDocsData = { mode: "leeg", failed: false, apps: [], app: null, doc: null, html: "", toc: [], faqs: [], prev: null, next: null, title: "", desc: "", lead: "", url: "", jsonld: [] };
+  const leeg: HelpDocsData = { mode: "leeg", failed: false, apps: [], app: null, doc: null, html: "", toc: [], faqs: [], prev: null, next: null, title: "", desc: "", lead: "", url: "", ogImg: deelbeeld(origin, "help-docs"), jsonld: [] };
 
   let docs: any[] = [], faqs: any[] = [];
   try {
@@ -77,7 +78,7 @@ export async function laadHelpDocs(Astro: AstroGlobal): Promise<HelpDocsData> {
     return {
       ...leeg, mode: "overzicht", apps,
       title: "Help docs for Yonglo's Wix apps | Yonglo",
-      desc: `Guides, setup instructions and FAQs for ${apps.map((a) => a.app).join(" and ")}, the Wix apps by Yonglo.`,
+      desc: `Guides, setup instructions and FAQs for ${apps.map((a) => a.app).join(" and ")}, ${apps.length === 1 ? "a Wix app" : "the Wix apps"} by Yonglo.`,
       url: origin + "/help-docs",
       jsonld: [crumbs([])],
     };

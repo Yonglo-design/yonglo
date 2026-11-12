@@ -79,7 +79,7 @@ op een Astro-site.
    `PUT https://www.wixapis.com/promote-seo-robots-server/v2/llms`, body
    `{ "llmsTxt": { "content": <de tekst>, "default": false, "manuallyEdited": true, "subdomain": "www" } }`
    (docs: Update Llms Txt). Controleer daarna dat `<live-url>/llms.txt` begint met "# Yonglo" en het kopje
-   "Zo doorzoek je deze site" bevat.
+   "Zo is deze site opgebouwd" bevat.
 8. Controleer live: open een bericht (`<live-url>/post/<naam>`): er is precies één `<title>`, met de echte
    titel van het bericht (niet "Post | Yonglo"), en `<live-url>/nieuws` moet werken (en `<live-url>/nieuws.html` moet doorsturen naar `/nieuws`).
 9. Als het gelukt is: `rm -f build.zip source.zip`, verplaats de tag en push hem:
@@ -129,9 +129,13 @@ op een Astro-site.
   SEO-instellingen van het bericht in Wix. De vaste kaarten in `nieuws.html` zijn alleen een terugval
   voor als Wix niet bereikbaar is.
   (De berichten zijn op 11-11-2026 eenmalig overgezet vanaf de oude Wix-site www.yonglo.com.)
-- **AI-assistenten** lezen de site via `llms.txt` (overzicht en uitleg), `llms-full.txt` (alle tekst,
-  projecten en blogs) en `zoekindex.json`. Die bestanden worden gemaakt door
-  `tools/maak-ai-bestanden.mjs`; pas ze niet met de hand aan. De knoppen "Vraag je AI" (footer en
+- **AI-assistenten** lezen de site via `llms.txt` (overzicht met links, onderwerpen als webshops, AI en
+  Wix-platforms, en projecten per branche), losse bestanden per onderwerp (`llms-projecten.txt`, `llms-paginas.txt`,
+  `llms-koppelingen.txt`, `llms-blog*.txt`, `llms-helpdocs.txt`; elk onder ~90 kB, want AI-assistenten lezen
+  niet meer per keer), `llms-full.txt` (alles) en `zoekindex.json`. Die bestanden worden gemaakt door
+  `tools/maak-ai-bestanden.mjs`; pas ze niet met de hand aan. Schrijf de uitleg daarin beschrijvend, niet als
+  opdracht aan de AI ("Geef altijd …"): dat zien assistenten soms als manipulatie. Nieuwe branche in het CMS?
+  Het script meldt het; zet hem in `SECTOREN` in het script. De knoppen "Vraag je AI" (footer en
   `ai.html`) staan in `assets/vraag-ai.js`. Verandert het live adres (bijv. naar www.yonglo.com),
   pas dan `SITE` in het script en `LIVE_SITE` in `vraag-ai.js` aan.
   Wix serveert op `/llms.txt` zijn eigen bestand; stap 7 van "Publiceren" zet onze versie daar via de
@@ -154,6 +158,10 @@ op een Astro-site.
   één in `assets/deel/` (`<naam>.jpg`, Engels: `en-<naam>.jpg`), in de stijl van de site. De server zet de tags
   (`og:image`, `twitter:image`) vanzelf (`src/paginas.ts`). Nieuwe pagina of andere kop (`<h1>`)? Draai
   `node tools/maak-deelbeelden.mjs` (of met paginanaam, bijv. `node tools/maak-deelbeelden.mjs webdesign`) en sla op.
-  Het label boven de titel staat in `LABELS` in dat script. Blogs en projecten hebben hun eigen afbeelding uit Wix.
+  Het label boven de titel staat in `LABELS` in dat script. Blogs en projecten hebben hun eigen afbeelding uit Wix,
+  de regiopagina's in Nederland en België ook (veld socialShare). Hetzelfde script maakt per koppeling een afbeelding
+  met het logo (`koppeling-<slug>.jpg`, `en-koppeling-<slug>.jpg`) en algemene afbeeldingen voor het werkgebied, de
+  Europese regiopagina's en de help docs (`EXTRA` in het script). Nieuwe koppeling in het CMS? Draai
+  `node tools/maak-deelbeelden.mjs koppelingen` en sla op; tot dan krijgt die de algemene koppelingen-afbeelding.
 - **Homepage-hero**: de projectbeelden in de tegels zet de server al in de pagina (`src/hero-tegels.ts`, 5 minuten
   onthouden); lukt dat niet, dan vult `assets/hero-c.js` ze in de browser.

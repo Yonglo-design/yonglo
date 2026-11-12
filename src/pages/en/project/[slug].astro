@@ -91,7 +91,9 @@ const trimTo = (s: string, n: number) => {
   return (sp > n * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,.;:–-]+$/, "") + "…";
 };
 const url = p ? origin + projectUrl(p) : "";
-const title = p ? `${p.title}${p.subkop ? " – " + p.subkop : ""} | Portfolio Yonglo` : failed ? T("Project kon niet worden geladen | Yonglo", "Project could not be loaded | Yonglo") : T("Project niet gevonden | Yonglo", "Project not found | Yonglo");
+// Titel zo kort dat Google hem heel toont (tot ±65 tekens): eerst met subkop en "Portfolio", anders korter.
+const titels = p ? [`${p.title}${p.subkop ? " – " + p.subkop : ""} | Portfolio Yonglo`, `${p.title}${p.subkop ? " – " + p.subkop : ""} | Yonglo`, `${p.title} | Portfolio Yonglo`] : [];
+const title = p ? titels.find((t) => t.length <= 65) || titels[2] : failed ? T("Project kon niet worden geladen | Yonglo", "Project could not be loaded | Yonglo") : T("Project niet gevonden | Yonglo", "Project not found | Yonglo");
 const desc = p ? trimTo(p.intro || p.kortTekst || T(`Project van Yonglo voor ${p.title}.`, `Project by Yonglo for ${p.title}.`), 158) : "";
 const ogImg = p ? img(p.hoofdbeeld || p.portfolioImage || p.heroImage, 1200, 630, "c") : null;
 const ORG = { "@type": "Organization", "@id": "https://www.yonglo.com/#organization", name: "Yonglo", url: "https://www.yonglo.com", logo: { "@type": "ImageObject", url: `${origin}/assets/yonglo-logo.png`, width: 512, height: 512 } };
@@ -140,7 +142,7 @@ const breadcrumb = p && {
 <meta property="og:site_name" content="Yonglo">
 <meta property="og:locale" content={EN ? "en_GB" : "nl_NL"}>
 <meta property="og:type" content="website">
-<meta property="og:title" content={title.replace(/ \| Portfolio Yonglo$/, "")}>
+<meta property="og:title" content={title.replace(/ \| (Portfolio )?Yonglo$/, "")}>
 <meta property="og:description" content={desc}>
 <meta property="og:url" content={url}>
 {ogImg && <meta property="og:image" content={ogImg}>}

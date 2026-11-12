@@ -149,7 +149,6 @@
 <section class="light askai" id="vraag-je-ai" data-vraag>
   <div class="wrap askai-grid">
     <div class="askai-intro">
-      <p class="eyebrow rv">Try it yourself</p>
       <h2 class="rv">Just ask your <em>own AI</em>.</h2>
       <p class="rv" style="--d:.08s">We work with AI every day, on this website too. That's why we make it easy for your AI assistant: everything about our services, projects and blogs is ready in plain text in <a href="/llms.txt">llms.txt</a>. Pick a question and an assistant, and see what comes out.</p>
       <p class="askai-dev rv" style="--d:.14s">For developers: <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a> · <a href="/zoekindex.json">zoekindex.json</a></p>
@@ -157,12 +156,13 @@
     <div class="askai-card rv" style="--d:.1s">
       <fieldset class="askai-qs">
         <legend>1. Pick a question</legend>
-        <label><input type="radio" name="ai-vraag" value="What can Yonglo do for my business? List the services that fit and a few similar projects." checked><span>What can Yonglo do for my business?</span></label>
+        <label><input type="radio" name="ai-vraag" value="What can Yonglo do for my business? List the services that fit, a price indication if there is one, and a few similar projects." data-persoonlijk checked><span>What can Yonglo do for my business?</span></label>
         <label><input type="radio" name="ai-vraag" value="Which online stores has Yonglo built, and for which industries?"><span>Which online stores has Yonglo built?</span></label>
         <label><input type="radio" name="ai-vraag" value="How does Yonglo use AI for websites, and what does it deliver? Give examples from their projects and blogs."><span>How does Yonglo use AI?</span></label>
-        <label><input type="radio" name="ai-vraag" value="What is the difference between Wix and Wix Studio, and what does Yonglo recommend for my situation?"><span>Wix or Wix Studio: which suits me?</span></label>
+        <label><input type="radio" name="ai-vraag" value="What is the difference between Wix, Wix Studio and Studio Two, and what does Yonglo recommend for my situation?" data-persoonlijk><span>Wix, Wix Studio or Studio Two: which suits me?</span></label>
       </fieldset>
-      <p class="askai-step">2. Open your assistant</p>
+      <label class="askai-ctx"><span class="askai-step">2. Tell us about your business <small>(optional)</small></span><textarea name="ai-context" rows="2" maxlength="300" placeholder="For example: bakery in Utrecht, we already have a Wix site and want online ordering"></textarea></label>
+      <p class="askai-step">3. Open your assistant</p>
       <div class="askai-btns">
         <a class="btn btn-dark" data-ai="chatgpt" href="https://chatgpt.com/">ChatGPT <i class="arr">↗</i></a> <a class="btn btn-dark" data-ai="claude" href="https://claude.ai/new">Claude <i class="arr">↗</i></a> <a class="btn btn-dark" data-ai="perplexity" href="https://www.perplexity.ai/">Perplexity <i class="arr">↗</i></a>
       </div>

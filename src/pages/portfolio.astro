@@ -1,0 +1,12 @@
+---
+// Portfolio (/portfolio): portfolio.html uit de hoofdmap, met de lijst van alle projecten al in de HTML
+// (zie src/portfolio-server.ts), zodat zoekmachines en AI-assistenten de projecten zien.
+import { paginaHtml, siteOrigin, htmlResponse, nietGevonden } from "../paginas";
+import { vulPortfolio } from "../portfolio-server";
+
+export const prerender = false;
+
+const html = await vulPortfolio(paginaHtml("portfolio", "nl", siteOrigin(Astro.request, Astro.url)), "nl");
+if (!html) return nietGevonden();
+return htmlResponse(html);
+---

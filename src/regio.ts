@@ -5,7 +5,7 @@ import type { AstroGlobal } from "astro";
 import { fetchWithAuth } from "@wix/sdk/context";
 import { SOORTEN, PROVINCIES, REGIO_ALIASES, slugify, regioUrl, paginaNl, paginaLand, paginaStad, overzicht, overzichtKop } from "../assets/regio.js";
 import { img, inTaal } from "../assets/projecten.js";
-import { siteOrigin } from "./paginas";
+import { siteOrigin, deelbeeld } from "./paginas";
 
 type Soort = "nl" | "be" | "land" | "stad";
 
@@ -92,15 +92,18 @@ export async function laadRegio(Astro: AstroGlobal, soort: Soort): Promise<Regio
     : paginaNl(x, soort, { projecten: pj, anderen });
 
   const url = origin + regioUrl(soort, x);
-  const title = soort === "land" ? `Wix website specialist in ${plaats}: design, development & SEO | Yonglo`
+  const title = soort === "land" ? `Wix expert in ${plaats}: design, development & SEO | Yonglo`
     : soort === "stad" ? `Wix expert in ${plaats}: web design & development | Yonglo`
     : `Wix-website laten maken in ${plaats} | Wix Expert Yonglo`;
   const desc = trimTo(
-    soort === "land" ? x.introTekst1 : soort === "stad" ? x.introText
+    soort === "land" ? x.introTekst1
+      // De introtekst van een stad is voor elke stad dezelfde (met de plaatsnaam pas na 140 tekens): eigen omschrijving.
+      : soort === "stad" ? `Looking for a Wix expert in ${plaats}? Yonglo, official Wix Partner, builds SEO-friendly Wix and Wix Studio websites for companies in ${plaats}.`
       : def.u ? `Op zoek naar een Wix-specialist in ${plaats}? Yonglo is officieel Wix Partner en bouwt professionele, SEO-geoptimaliseerde Wix- en Wix Studio-websites voor ondernemers in ${plaats} en omgeving.`
       : `Op zoek naar een Wix-specialist in ${plaats}? Yonglo is officieel Wix Partner en bouwt professionele, SEO-geoptimaliseerde Wix- en Wix Studio-websites voor ondernemers in ${plaats} en omgeving.`,
     158);
-  const ogImg = x.socialShare ? img(x.socialShare, 1200, 630, "c") : null;
+  // Deelafbeelding uit het CMS (veld socialShare); zonder: de algemene van het werkgebied (tools/maak-deelbeelden.mjs).
+  const ogImg = x.socialShare ? img(x.socialShare, 1200, 630, "c") : deelbeeld(origin, en ? "en-werkgebied" : "werkgebied");
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -142,7 +145,7 @@ export async function laadOverzicht(Astro: AstroGlobal, en: boolean): Promise<Re
     const aantal = a.length + b.length;
     const url = origin + (en ? "/wix-expert" : "/wix-website");
     return {
-      ...leeg, ok: true, url,
+      ...leeg, ok: true, url, ogImg: deelbeeld(origin, en ? "en-werkgebied" : "werkgebied"),
       html: overzichtKop({ en, aantal }) + "\n" + overzicht({ en, groepen }),
       title: en ? "Wix web design across Europe: all regions | Yonglo" : "Werkgebied: Wix-websites in heel Nederland en België | Yonglo",
       desc: en ? "Yonglo designs, builds and optimises Wix and Wix Studio websites for businesses across Europe. Find your country or city." : "Yonglo bouwt Wix- en Wix Studio-websites voor ondernemers in heel Nederland en België. Bekijk ons werkgebied: alle provincies en steden.",

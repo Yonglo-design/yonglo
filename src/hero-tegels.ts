@@ -2,6 +2,7 @@
 // (in plaats van in de browser na het laden). Daardoor staan ze er meteen, wat de pagina sneller "af"
 // maakt (Speed Index in PageSpeed). Projecten komen uit de Wix CMS-collectie "Projecten"; een gewijzigd
 // project is binnen een paar minuten zichtbaar, zonder te publiceren.
+// (De projectlijst hieronder gebruikt ook src/portfolio-server.ts.)
 // Lukt het ophalen niet snel genoeg, dan blijft de pagina zoals hij was en vult assets/hero-c.js de tegels
 // in de browser, net als vroeger. Dezelfde volgorde en keuze als in assets/hero-c.js.
 import { fetchWithAuth } from "@wix/sdk/context";
@@ -34,7 +35,7 @@ async function laadProjecten(): Promise<any[]> {
   return all.filter((p) => p.title && p.slug);
 }
 
-async function projecten(): Promise<any[] | null> {
+export async function projecten(): Promise<any[] | null> {
   if (cache && Date.now() - cache.at < CACHE_MS) return cache.items;
   if (!bezig) {
     bezig = laadProjecten()

@@ -1,0 +1,382 @@
+# Yonglo: blog, deel 3 van 3
+
+> Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
+
+Blogberichten van Yonglo, nieuwste eerst; 33 berichten verdeeld over llms-blog.txt, llms-blog-2.txt, llms-blog-3.txt (bijgewerkt op 2026-11-12). Overzicht met links: https://www.yonglo.com/llms.txt. Contact en offerte: https://www.yonglo.com/contact.
+
+## Blogberichten
+
+### Wat is een landingspagina en hoe maak je deze in Wix?
+
+URL: https://www.yonglo.com/post/wat-is-een-wix-landingspagina
+Gepubliceerd: 2023-11-16
+Categorie: Wix
+
+Wil je je bedrijf online brengen? en van de meest effectieve manieren om dat te doen, is door een simpel maar doeltreffende website te maken
+
+Online marketing kan de beste vriend van iedere ondernemer zijn, mits je het goed uitvoert. Wil je je bedrijf online brengen? Dan hebt je een krachtige digitale marketingstrategie nodig die je merkboodschap perfect vertegenwoordigd en via verschillende kanalen promoot. Een van de meest effectieve manieren om dat te doen, is door een simpel maar doeltreffende website te maken, ofwel: een landingspagina.
+
+Een landingspagina is een essentiële pagina om je merk te promoten en heeft een enorme kracht om conversies te stimuleren. Door een landingspagina bouwer te gebruiken om je pagina's te ontwerpen en aan te passen, kun je je publiek nauwkeurig targeten en hen smoothly door de verkooptrechter leiden.
+
+In dit artikel gaan we verder in op de vraag: 'Wat is een landingspagina'?, leggen we uit hoe je een landingspagina maakt en bieden we een aantal best practices voor het ontwerpen van je eigen perfecte landingspagina. Daar gaan we!
+
+##### Wat is een Wix landingspagina?
+
+Landingspagina betekenis:
+
+Een landingspagina is de bestemming voor mensen die meer willen weten over je bedrijf na het zien van je online marketing- of reclamecampagne. Het is een op zichzelf staande webpagina die gebruikers verleidt om te klikken op een strategische call-to-action (CTA), zoals 'Aan de slag', 'Inschrijven' of 'Nu kopen'.
+
+###### Wat moet een goede landingspagina bevatten?
+
+Een goede landingspagina bevat, naast een duidelijke en gerichte call-to-action, weinig afleiding en op maat gemaakte content die aansluit bij de intentie en interesse van de bezoeker. Dit type pagina's richten zich op één enkel doel, meestal het maken van conversie of het genereren van potentiële klanten. Dit alles maakt ze super effectief omdat het de kosten van het verwerven van klanten en het doen van verkopen verlaagd.
+
+Het concept van landingspagina's gaat terug tot de dagen van 'direct response'- marketingcampagnes, waarbij marketeers gericht verkeer naar specifieke pagina's stuurden om de conversie te maximaliseren. Sindsdien zijn landingspagina's geëvolueerd van traditionele printadvertenties naar digitale marketingcampagnes. En tegenwoordig gebruiken bedrijven ze in al hun digitale marketingkanalen.
+
+###### Wat is het verschil tussen een homepage en een landingspagina?
+
+Om een goed antwoord te krijgen op de vraag: 'Wat is een landingspagina'?, is het belangrijk om het verschil te kennen tussen landingspagina's en websites.
+
+Het belangrijkste onderscheid tussen de homepage van een website en een landingspagina, is dat de laatste specifiek is en een homepage multifunctioneel. De content van een homepage is introducerend en heeft verschillende doelen, terwijl een landingspagina informatie verstrekt die is afgestemd op het gewenste doel.
+
+Om deze redenen bevat een homepage vaak veel links, terwijl landingspagina's doorgaans slechts één link bevatten, om bezoekers gericht te houden op de primaire CTA. Daarom bieden landingspagina's bezoekers slechts twee opties: converteren of de pagina verlaten.
+
+###### Soorten landingspagina's
+
+De landingspagina betekenis is inmiddels hopelijk duidelijk. Maar hoe maak je een landingspagina en hoe weet je welk type landingspagina bij je bedrijf past? Voor je aan de slag gaat met het praktische gedeelte is het goed om eerst je doelstellingen te bepalen. Wil je contactgegevens verzamelen voor potentiële klanten? Bied je een unieke verkoop aan? Of is het je doel om RSVP's te verzamelen voor een evenement?
+
+Als je je rechtstreeks op dit doel richt, kun je een nauwkeurige en gerichte landingspagina maken. Voor de nodige inspiratie hebben we de hieronder meest voorkomende soorten landingspagina's voor je op een rijtje gezet:
+
+- Long-form landingspagina Zoals de naam al aangeeft, is een 'long form' landingspagina het langste type landingspagina dat er bestaat. Deze pagina bevat een grote hoeveelheid content, waaronder uitgebreide product- of dienstinformatie en beeldmateriaal dat de waarde van het product of de dienst benadrukt. Om deze reden kunnen long-form landingspagina's aantrekkelijk zijn voor zoekoptimalisatie.
+- Product landingspagina Heb je een specifiek product hebt dat je onder de aandacht wilt brengen? Overweeg dan om een product landingspagina te maken. Je kunt deze gebruiken om dieper in te gaan op de functionaliteit, kenmerken en voordelen van het product.
+- Landingspagina voor evenementen Als je een evenement organiseert is het een goed idee om een landingspagina voor evenementen te maken, om het promoten van je evenement te vergemakkelijken. Het is een handige manier voor geïnteresseerden om meer te weten te komen, te RSVP-en of tickets te kopen.
+- Landingspagina voor het genereren van leads Ook wel bekend als 'lead-capture'- pagina, genereert dit type pagina potentiële klanten door informatie over je publiek te verzamelen. Het bevat meestal een formulier waar bezoekers hun contactgegevens kunnen invullen. Landingspagina's voor het genereren van leads kunnen je helpen inzicht te krijgen in je potentiële klanten en hoe je hen kunt bereiken. Om gebruikers aan te moedigen hun gegevens in te voeren kun je een stimulans aanbieden, zoals een couponcode, een e-book, een webinar of exclusieve nieuwsbriefcontent. 'Squeeze-pagina's' zijn een ander voorbeeld van dit type landingspagina's.
+- Afmeldingslandingspagina Een afmeldingslandingspagina bied een laatste kans om klanten die zich hebben aangemeld voor je e-mailmarketing in de marketingtrechter te houden. Je kunt hen opties bieden om hun inschrijving aantrekkelijker te maken, zoals de mogelijkheid om de frequentie van de e-mails aan te passen, of hen eraan herinneren wat ze zullen verliezen als ze besluiten zich af te melden.
+- Coming soon landingspagina Een Coming soon landingspagina kan helpen enthousiasme op te wekken voor je aanstaande bedrijf. Overweeg om je geplande lanceringsdatum te vermelden en een 'Stel me op de hoogte'-formulier te maken, zodat bezoekers weten wanneer je website officieel live gaat.
+- Bedank landingspagina Omdat bedankpagina's verschijnen nadat een klant een actie heeft uitgevoerd (zoals het doen van een aankoop of het delen van contactgegevens), kunnen ze effectief zijn in het voeden van potentiële klanten en het behouden van bestaande klanten. "Je kunt een bedank landingspagina gebruiken om een extra trechter te creëren door klanten een andere stimulans aan te bieden," aldus Jane Musatova, een product-marketingmanager van Wix met veel ervaring met landingspagina's.
+- Click-through landingspagina Dit type landingspagina's bevat meestal een CTA die bezoekers rechtstreeks naar de kassa stuurt en hen aanzet tot kopen of inschrijven. eCommerce of SaaS-websites die gericht zijn op onmiddellijke verkoop gebruiken bijvoorbeeld vaak click-through landingspagina's.
+
+##### Wat is het doel van een landingspagina?
+
+Landingspagina's bieden een enorm groeipotentieel voor je bedrijf en kunnen deze helpen te blijven bloeien. Neem ze dus absoluut op in je marketingstrategieën en profiteer van de volgende voordelen:
+
+###### 01. Ze verbeteren je conversiepercentage
+
+Zoals eerder vermeld, richten landingspagina's zich op één enkel doel en 'dwingen' ze je bezoekers tot actie. Zo brengen ze mensen verder in de marketingtrechter: van anonieme bezoekers naar potentiële- en uiteindelijk (hopelijk) betalende klanten.
+
+###### 02. Ze geven informatie over je publiek
+
+Als je een inschrijvingsformulier op je landingspagina opneemt, kun je informatie vragen over de demografische gegevens van je publiek om een beter inzicht te krijgen in je doelgroep.
+
+Bovendien zeggen de kanalen die wel of niet werken voor de promotie van je landingspagina veel over de interesses en gewoonten van je potentiële klanten. Je kunt deze informatie gebruiken om je doelgerichtheid en marketingstrategie te optimaliseren.
+
+###### 03. Ze verhogen je merkbekendheid
+
+Een aantrekkelijke, goede landingspagina brengt de professionaliteit, waarde en aantrekkingskracht van je merk over. Landingspagina's kunnen niet alleen direct potentiële klanten converteren, maar je tevens helpen je merk te versterken, door het bestaan ervan simpelweg bekend te maken. En hoe meer mensen je kennen, hoe beter het is voor je bedrijf!
+
+###### 04. Ze zijn meetbaar
+
+Door de statistieken van landingspagina's te analyseren, zoals conversies, bouncepercentage, paginabezoeken en verkeersbronnen, kun je zien hoe een bepaalde marketingcampagne presteert.
+
+Bekijk waar het verkeer vandaan komt (bijvoorbeeld van een betaalde post of een e-mailmarketingcampagne) om te bepalen welke marketingmiddelen het meest effectief zijn.
+
+##### Hoe ziet een goede landingspagina eruit?
+
+Om een goede landingspagina te definiëren kunnen we het beste eerst de basiselementen van het ontwerp van landingspagina's doornemen, zodat je precies weet wat je moet opnemen. Hier komen ze:
+
+- Beelden
+
+Je hebt minder dan 20 seconden om je publiek te overtuigen lang genoeg te blijven om iets van je landingspagina te leren. En je design is het beste middel om dat te doen. Afbeeldingen of video's voegen context toe en maken je pagina aantrekkelijker.
+
+- Koppen
+
+Omdat klanten meestal eerst door landingspagina's bladeren, lezen ze misschien alleen de koppen voordat ze beslissen of ze op je CTA willen reageren. Maak je koppen daarom direct, verleidelijk en kort.
+
+Een sterke en duidelijke kop trekt meteen de aandacht van de gebruiker en communiceert je voorstel. Dit is het meest uitdagende deel van het bouwen van je landingspagina; je moet hen namelijk in drie tot zeven woorden overtuigen van het feit dat dat je aanbod waarde biedt.
+
+- Beschrijving
+
+Zorg voor een beknopte en duidelijke beschrijving die je product of dienst uitlegt en hoe deze waardevol kan zijn voor je gebruiker.
+
+- CTA's
+
+Calls-to-actions (CTA's) zijn de aanwijzingen die je gebruikt om lezers aan te moedigen een specifieke actie te ondernemen. Ze bevatten meestal twee tot vier woorden. Goede voorbeelden zijn: 'Nu abonneren', 'Start je gratis proefperiode', 'Meer informatie' en 'Een demo aanvragen'.
+
+- Samenvatting van de voordelen
+
+Dit moet het meest gedetailleerde gedeelte van je landingspagina worden. In de samenvatting kun je informatie verstrekken aan geïnteresseerde lezers die meer willen weten. Houd de samenvatting echter eenvoudig. Gebruik de ruimte bijvoorbeeld om de specifieke voordelen van de CTA-knop te benadrukken, in plaats van te veel in detail te treden.
+
+- 'Social proof'
+
+Verwacht niet dat lezers je op je woord geloven. Zet daarom beoordelingen en prijzen op je landingspagina op om lezers te bewijzen dat wat je beweert waar is, en dat klanten daadwerkelijk kunnen profiteren van de aangeprezen functies.
+
+- Slotverklaring
+
+De lezers die het tot onderaan je pagina redden zijn waarschijnlijk geïnteresseerd in je aanbod, dus de slotverklaring moet hen het laatste zetje geven om op die CTA-knop te drukken. Deze verklaring hoeft niet uitgebreid te zijn; een sterke kop en een krachtige CTA volstaan prima.
+
+##### Best practices voor landingspagina's
+
+Houd bij het ontwikkelen van je campagne rekening met de volgende praktische tips voor landingspagina's om de meest effectieve voor jouw bedrijf te maken:
+
+###### 01. Voer A/B-tests uit
+
+Met landingspagina's kun je experimenteren. Dit kan leiden tot betere gebruikerservaringen en hogere conversiepercentages. Door het uitvoeren van A/B-tests kun je koppen, indelingen, ontwerpen en CTA's testen om te zien wat het beste werkt.
+
+Gebruik bijvoorbeeld een A/B-test om te bepalen of je CTA-knop de tekst: 'Nu kopen' of juist: 'Aan de slag' zou moeten bevatten, op basis van welke knop het hoogste conversiepercentage heeft.
+
+Tip: Informeer by Yonglo naar de mogelijkheden
+
+###### 02. Minimaliseer de navigatie
+
+Verwijder zoveel mogelijk links om een recht pad van je landingspagina naar de gewenste actie te creëren. Je kunt zelfs de navigatiebalk verwijderen indien nodig. Idealiter is je CTA-knop de enige link; alle andere links die op de pagina staan mogen zo weinig mogelijk ruimte innemen.
+
+###### 03. Maximaliseer de leesbaarheid
+
+Lange stukken tekst kunnen je bezoekers snel vervelen, overweldigen en afleiden. Door je tekst kort en bondig te maken, trek je meteen de aandacht van je publiek.
+
+Elk woord moet een heel specifiek doel dienen en de ogen van je bezoekers direct naar de CTA leiden. Wordt hier echter niet té creatief met je content, dit kun je beter bewaren voor je blog.
+
+###### 04. Zorg voor consistentie
+
+Om verwarring in navigatie te voorkomen, moet je ervoor zorgen dat de content van je marketingmateriaal overeenkomt met die van je landingspagina. Laat de SEO-kop voor je landingspagina bijvoorbeeld overeenkomen met de kop die boven de vouw verschijnt.
+
+Bovendien moeten de branding en opmaak van je landingspagina resoneren met de homepage van je website. Dit zorgt ervoor dat je publiek soepel en met minimale afleiding door je marketingtrechter kan navigeren.
+
+###### 05. Laat je CTA opvallen
+
+Je landingspagina moet een opvallende CTA bevatten. Gebruik hiervoor duidelijke en directe taal en een CTA-knop die een visueel contrast vormt met de achtergrond. Plaats de CTA-knop bovendien meerdere keren op je landingspagina, zodat bezoekers er niet naar hoeven te zoeken.
+
+###### 06. Richt je op specifieke markten
+
+Een effectieve en goede landingspagina richt zich op potentiële klanten in een specifieke fase van de marketingtrechter. Je wilt dat de content van de pagina aansluit bij de intentie van je publiek.
+
+Zodra je leads hebt onderverdeeld kun je zelfs een paar versies van dezelfde landingspagina maken. Op deze manier kun je je nog beter richten op verschillende groepen potentiële klanten.
+
+###### 07. Vereenvoudig acties
+
+Hoe eenvoudiger de actie die je van de lezers verwacht, hoe groter de kans dat ze daadwerkelijk actie ondernemen. Je zou zelfs kunnen overwegen om alleen naar e-mailadressen te vragen en later meer informatie te achterhalen.
+
+###### 08. Focus op de consument
+
+De content van je landingspagina moet gericht zijn op de lezer en niet op je bedrijf. Dus in plaats van te praten over hoe geweldig je bedrijf is, kun je je beter richten op de manieren waarop je aanbod de klant ten goede kan komen.
+
+###### 09. Plaats belangrijke content boven de vouw*
+
+Wees niet afhankelijk van bezoekers die moeten scrollen om te converteren. Plaats ten minste één CTA-knop boven de vouw, waar hij direct zichtbaar is. Daarnaast kun je andere belangrijke elementen van je landingspagina, zoals de afbeelding en de kop, boven de vouw plaatsen.
+
+*'boven de vouw' verwijst naar het eerste gedeelte van een webpagina dat direct zichtbaar is zonder te scrollen.
+
+###### 10. Maak je landingspagina mobielvriendelijk
+
+Zorg ervoor dat je landingspagina er niet alleen goed uitziet op desktop, maar zeker ook op mobiele apparaten van verschillende formaten. Daarnaast is het essentieel dat hij hij ook snel laadt. Een groot deel van je verkeer zal afkomstig zijn van mobiele apparaten. En deze bezoekers zijn minder geneigd om te converteren als de pagina er raar uitziet op hun kleinere scherm of als hij langzaam opent.
+
+##### Hoe genereer je verkeer naar je landingspagina's?
+
+Nu komt het leuke gedeelte: bezoekers naar je landingspagina leiden zodat ze kunnen converteren. En de grootste uitdaging hiervan is het creëren van een effectieve strategie, voor het aantrekken van verkeer naar de landingspagina zelf.
+
+Het gebruik van andere digitale marketingpraktijken kan helpen om het verkeer naar je landingspagina te vergroten. Probeer een of meerdere van de volgende vier strategieën om je verkeer te laten groeien:
+
+###### 01. Social media
+
+Als een van de meest prominente platforms om in contact te komen met je doelgroep, is het promoten van je landingspagina op social media een goede eerste zet. Of het nu op Facebook, LinkedIn, Twitter of Pinterest is; maak een aantrekkelijke post met een link naar je landingspagina. Op die manier rich je je op mensen die al geïnteresseerd zijn in je merk en kun je kwaliteitsverkeer genereren.
+
+###### 02. E-mailmarketing
+
+E-mailmarketing blijft een van de meest effectieve methoden om verkeer naar je landingspagina te brengen. Zijn het onderwerp, de visuals, de lay-out en de copywriting van je e-mail allemaal goed doordacht? Dan krijgt je landingspagina een merkbare boost van inkomende bezoeken.
+
+###### 03. SEO
+
+Het optimaliseren van je landingspagina's voor de zoekresultaten van Google zorgt ervoor dat de juiste mensen ze kunnen vinden.
+
+Doe om te beginnen wat onderzoek naar welke zoekwoorden het beste bij je landingspagina passen, met behulp van SEO-tools zoals Ahrefs of Semrush. Heb je eenmaal besloten voor welk primair zoekwoord je de pagina wilt laten scoren? Verwerk deze dan waar mogelijk in je tekst, evenals in je SEO-titel en -beschrijving.
+
+Maak gebruik van koppen en andere elementen
+
+Een website maken met Wix betekent dat je je 'on-page' SEO kunt aanpassen, inclusief metatags, URL-slugs, canonieke tags en andere pagina-elementen. Koppen, bijvoorbeeld, verbeteren de leesbaarheid voor de gebruiker, maar dragen ook bij aan de HTML-taal die Google leest om de ranking van websites te bepalen.
+
+Wanneer Google websitecontent scant, gebruikt het koppen om de informatie van een website of webpagina te helpen analyseren. Koppen zijn gerangschikt in een hiërarchie van H1 tot H6, met H1 als de paginatitel.
+
+SEO is een langdurig proces
+
+Houd verder in gedachten dat SEO geen snelle strategie is die direct resultaat oplevert. Het vereist langdurige aandacht. Wees niet bang: al deze inspanning is niet voor niets. Een landingspagina kan de SEO-autoriteit die hij in de loop der tijd heeft opgebouwd namelijk behouden.
+
+Neem voor de beste SEO tips contact op met het team van Yonglo.
+
+###### 04. Betaalde advertenties
+
+Social media-marketing, e-mailmarketing en SEO zijn gratis manieren om verkeer naar je landingspagina te halen. Denk je echter dat je een extra boost kunt gebruiken? Overweeg dan om je landingspagina te promoten via betaalde advertenties.
+
+Door mensen te targeten op basis van hun interesses en demografische gegevens, leid je hen naar de landingspagina die voor hun specifieke niche is bedoeld. We onderscheiden onder andere de volgende advertenties:
+
+- Advertenties voor zoekresultaten Op basis van je gedefinieerde zoekwoorden verschijnen advertenties voor zoekresultaten op zoekmachines, wanneer mensen die termen opnemen in hun zoekopdrachten.
+- Social media advertenties Wanneer je betaalde social media posts maakt, promoten sociale netwerken zoals Facebook en Instagram deze aan die mensen die overeenkomen met het profiel van je doelgroep.
+- Weergave advertenties Een andere optie is om advertentietools van derden te gebruiken om banneradvertenties te plaatsen op de websites die je publiek bezoekt.
+
+Op basis van je campagnedoelstellingen kun je ervoor kiezen om je reclame-inspanningen te spreiden, of je te richten op slechts één van deze platforms. Waarvoor je ook kiest: monitor je resultaten consequent, zodat je je campagne waar nodig kunt aanpassen.
+
+##### Tot slot
+
+Hopelijk heb je na het lezen van dit artikel een goed beeld over landingspagina's, inclusief de landingspagina betekenis, wat een goede landingspagina moet bevatten en het belangrijkste: hoe je de perfecte landingspagina voor jouw bedrijf kunt maken.
+
+Wil je een landingspagina laten maken? Neem dan even contact op met Yonglo.
+
+Bron: Wix.com I Marijne Verhoef
+
+### Hoe word je een entrepreneur? 10 stappen naar succes
+
+URL: https://www.yonglo.com/post/hoe-word-je-een-entrepreneur
+Gepubliceerd: 2023-11-12
+Categorie: Yonglo
+
+De afgelopen jaren is er wereldwijd een enorme stijging van startups en ondernemers te zien. Dit is niet zo gek als je je bedenkt dat velen onder ons creatief moesten zijn om een inkomen te genereren tijdens de coronacrisis.
+
+De veranderingen die de pandemie met zich mee bracht voedde de drang naar het opzetten van een eigen bedrijfje en het worden van een entrepreneur. Velen onder ons hebben deze uitdaging met beide handen aangegrepen. Maar wat is een entrepreneur precies?
+
+Entrepreneur betekenis:
+
+> Een entrepreneur, of ondernemer, is een persoon die een nieuw bedrijf opricht, waarbij hij zelf de risico's draagt en van de voordelen geniet. Een entrepreneur wordt vaak gezien als een innovator, een bron van nieuwe ideeën, goederen, diensten en zaken/of procedures.
+
+Droom jij ook van een eigen onderneming? Houd dan in gedachten dat er veel nodig is om je staande te houden in de wereld van concurrentie. Entrepreneur worden vereist planning, strategie en het nemen van risico's. Dat gezegd hebbende: laat je er hierdoor absoluut niet van weerhouden je droom na te jagen!
+
+Deze stapsgewijze handleiding laat je zien wat er nodig is om je eigen bedrijfsidee om te zetten in actie. Van het maken van een zakelijke website tot het ontwikkelen van een standvastig merk.
+
+##### Hoe word je een succesvolle entrepreneur?
+
+Je snapt het vast al: alleen met het antwoord op de vraag 'Wat is een entrepreneur'? kom je er niet. Ben je gedreven en gemotiveerd om écht iets goeds neer te zetten en een succesvolle entrepreneur te worden? Volg de onderstaande 10 stappen als je persoonlijke checklist voor succes:
+
+- Bedenk een verbluffend bedrijfsidee
+- Leer je doelgroep kennen
+- Test je idee
+- Gebruik een template voor je bedrijfsplan
+- Maak een website
+- Neem partner(s) aan
+- Bouw je netwerk op
+- Plan je financiën
+- Ontwikkel een sterk merk
+- Creëer waarde in je markt
+
+###### 
+
+###### 01. Bedenk een verbluffend bedrijfsidee
+
+Wanneer je een bedrijf wil starten, is het bedenken van een geweldig bedrijfsidee voor je nieuwe onderneming natuurlijk essentieel. Het doel hiervan is om je te onderscheiden van anderen. Denk je er bijvoorbeeld aan om een kledinglijn te starten? Bedenk dan goed tot welke niche je je gaat richten: welke producten ga je precies verkopen? Worden je items duurzaam of etnisch gemaakt? Enz.
+
+Als je dit eenmaal weet, kun je gaan nadenken over mogelijke bedrijfsnamen. Gebruik eventueel een bedrijfsnaamgenerator om je hierbij te helpen.
+
+###### 
+
+###### Volg je passie en wees leergierig
+
+Denk echter niet alleen aan het concurrentievoordeel, maar ook aan wat je echt graag doet. Welke problemen heb je altijd al willen oplossen? Misschien het verminderen van specifiek afval? Je recept voor zakelijk succes is vasthouden aan datgene waar je passie voor hebt. Zorg er daarnaast voor dat je zoveel mogelijk leert over het onderwerp. Dit kan betekenen dat je terug naar school gaat om een diploma te behalen, online cursussen gaat volgen of online research doet.
+
+###### 02. Leer je doelgroep kennen
+
+Hoewel je idee in jouw oren misschien goed klinkt, moet je er eerst voor zorgen dat anderen er daadwerkelijk voor willen betalen. Een belangrijke reden waarom bedrijven falen is omdat er geen marktbehoefte naar is.
+
+Door je doelgroep te onderzoeken, krijg je inzicht in het winstpotentieel. Bovendien ontdek je op deze manier niet alleen wat de behoeften van je klanten zijn, maar kun je je idee ook effectief bij hen op de markt brengen. Voer daarom altijd eerst een marktonderzoek uit en bepaal alle kenmerken op die jouw doelmarkt definiëren: in welke leeftijdscategorie vallen ze bijvoorbeeld? Welke hobby's hebben ze? Waar bevinden ze zich? En ga zo maar door. Dit staat beter bekend als het maken van een buyer persona.
+
+###### 03. Test je idee
+
+Als entrepreneur is het houden van een proefperiode belangrijk om de interesse voor je product of dienst te peilen bij je potentiële klanten. Niet alleen om alvast ervaring op te doen. Ook om erachter te komen hoe je hen het beste van dienst kunt zijn en om te zien waar je verbeteringen kunt aanbrengen. Beschouw deze fase als de eerste stap in het verkopen van je idee.
+
+Hoe meer je je idee in de handen van consumenten legt, hoe meer feedback je krijgt. Dit kun je goed gebruiken om op je concept voort te bouwen en bewustzijn te creëren. Stuur onder andere voorbeelden, host focusgroepen of werk zelfs één-op-één. Als entrepreneur is de betekenis van feedback enorm groot. Je succes hangt mede af van hoe serieus je het neemt!
+
+###### 04. Gebruik een template voor je bedrijfsplan
+
+Eigenaar worden van een klein bedrijf vereist veel planning. Van het kiezen van een type ondernemerschap en het bouwen van je concept, tot het omzetten van je idee in realiteit. Begin op een georganiseerde manier aan de hand van een bedrijfsplan-template, waarin de kerncomponenten van je idee worden beschreven: van je visie en missie tot je marketingstrategieën, je operationele plan en meer. Dit document helpt je je doelen te visualiseren en uit te voeren.
+
+Daarnaast raden we aan om ook een managementsamenvatting te maken, of een overzicht van je bedrijf op hoog niveau. Dit rapport is essentieel wanneer je je bedrijf in het kort moet voorstellen, zoals bij het zoeken naar partners of het aanvragen van financiering.
+
+###### 05. Maak een website
+
+Wat is een entrepreneur zonder website? Juist. Of je hem nu gebruikt voor online planning, eCommerce of het leiden van organische bezoekers naar je bestemmingspagina: het hebben van een professionele website is noodzakelijk. Ga dus meteen zelf aan de slag of laat je website bouwen door Yonglo.
+
+Overweeg te eerste welk type pagina's je wilt opnemen op je professionele website, zoals de Homepage, de 'Over ons'-pagina en een contactformulier. Heb je je template gekozen? Dan heb je ook een webhostingprovider nodig om je website online te zetten en je te ondersteunen. Koop en beheer ten slotte een domeinnaam of online adres zodat mensen je gemakkelijk online kunnen vinden.
+
+###### 06. Neem partner(s) aan
+
+Misschien wil je je graag helemaal alleen in het entrepreneur avontuur storten. Maar het zoeken naar een een ondersteunende partner zal je helpen verschillende uitdagingen en kansen te zien die je anders misschien zou hebben gemist.
+
+Ga je op zoek naar een partner? Bedenkt dan welke kwaliteiten je wilt dat deze persoon bezit. Misschien ken je al mensen met deze eigenschappen? Zorg voor een semi-gepland zakelijk voorstel wanneer je contact opneemt met de door jouw gekozen potentiële partner (gebruik hiervoor bijvoorbeeld je uitgebreide samenvatting).
+
+De eerste persoon die je aanneemt bepaald de sfeer voor je bedrijfscultuur (de gedeelde visie, normen en waarden die door je werknemers worden gedeeld), zelfs als je nog geen volledig team aan hebt genomen. Een dergelijke vooruitziende blik kan het toekomstige succes van je bedrijf bepalen, omdat het ervoor zorgt dat iedereen in je team op één lijn ligt.
+
+###### 07. Bouw je netwerk op
+
+Als entrepreneur ben je nooit eenzaam, zelfs als je ervoor kiest om geen partners aan te nemen. Je hebt altijd deskundige en ervaren mentoren nodig om je markt beter te begrijpen, kansen te benutten en kostbare fouten te voorkomen.
+
+Om dit te bereiken, is het noodzakelijk om relevante netwerkevenementen, conferenties, beurzen en exposities bij te wonen. Je kunt ook je eigen netwerkevenementen organiseren of een online forum-community creëren.
+
+###### 08. Plan je financiën
+
+Het plannen van je bedrijfsfinanciën is misschien niet het meest leuke aspect van het ondernemerschap, maar het is wel verplicht. Probeer daarom een goed beeld te krijgen van de kosten van het starten van je bedrijf. Hoeveel denk je ongeveer nodig te hebben? Doorloop de kosten van materialen en productie, voorraden en indien nodig het aannemen van personeel, het huren van kantoorruimte, etc.
+
+Als beginner moet je waarschijnlijk om hulp vragen, dus zorg ervoor dat je je uitgaven zo laag mogelijk houdt om jezelf wat financiële ruimte te geven voor extern advies. Heb je eenmaal een goed idee van hoeveel financiering je nodig hebt? Check dan je financiële situatie. Hoeveel ga je zelf investeren? Als je op zoek gaat naar investeerders, zal het inzetten van een deel van je eigen geld ervoor zorgen dat zij eerder bereid zijn om je te ondersteunen.
+
+Zodra je het geld bij elkaar hebt, volgt het openen van een speciale bankrekening om je winsten en uitgaven bij te houden. Dit stroomlijnt de boekhouding en geeft je nuttige inzichten om je bedrijfsgroei te kunnen plannen.
+
+###### 09. Ontwikkel een sterk merk
+
+Net zoals Spotify de kleuren levendig groen en zwart gebruikt om zich te onderscheiden, en Dove de subtiele slogan 'Let's change beauty' hanteert, heeft jouw bedrijf ook een consistente merkidentiteit nodig. Na verloop van tijd zorgt dit namelijk voor herkenning en bouwt het vertrouwen op bij je klanten. Een merkidentiteit (ook wel branding genoemd) omvat je kernwaarden, taal, medewerkers en klanten, maar ook je merkkleuren, lettertype, logo en meer.
+
+Implementeer je merkidentiteit in al je merkkanalen en -middelen, beginnend met je bedrijfswebsite. Zie je website als het online platform van je merk!
+
+###### 10. Creëer waarde in je markt
+
+Nu je je product of dienst getest hebt, een sterk netwerk hebt opgebouwd en je merkidentiteit hebt bepaald, is het tijd om te beslissen hoe je jezelf op de markt wilt brengen.
+
+Of het nu is door regelmatig relevante 'thought leadership' te publiceren op social media, of een elevator pitch te houden die laat zien waarom jouw aanbod je concurrenten verslaat: een duidelijke, gedefinieerde 'go-to-market'-boodschap zal je klanten helpen begrijpen waarom ze juist jouw merk moeten verkiezen boven een ander.
+
+##### Ben je er klaar voor om een entrepreneur te worden?
+
+##### 
+
+Je hebt ondertussen niet alleen antwoord op de vraag: 'Wat is een entrepreneur?', maar je weet ook dat het starten van een bedrijf meer vergt dan het hebben van een goed bedrijfsidee.
+
+Niet alle ondernemers slagen in hun missie. Omdat ondernemerschap een super competitieve en complexe praktijk is, is het dan ook een must om goed met ups en downs om te kunnen gaan.
+
+Hoewel werken voor jezelf bevredigend kan zijn, is het vaak ook ongelooflijk stressvol. Je bouwt een leven rond je bedrijf op, waardoor de balans tussen werk en privé mogelijk onder druk komt te staan. En niet alleen dat: je hebt zowel emotionele als financiële ondersteuningssystemen nodig om op het juiste pad te blijven.
+
+Nog niet afgeschrikt? Hier volgen vijf signalen die laten zien dat je er helemaal klaar voor bent om het begrip entrepreneur zelf betekenis te geven:
+
+###### 01. Leer omgaan met afwijzing
+
+Ongeveer 20% van de nieuwe bedrijven falen al in het eerste jaar. Als entrepreneur zijnde is een van de eerste dingen die je moet leren dan ook hoe je met afwijzing om gaat.
+
+Of je nu een 'nee' hoort van een potentiële investeerder, klant of uitgever: met de juiste houding ten opzichte van afwijzing kom je een heel eind. Neem bijvoorbeeld J.K. Rowling. De romanschrijver van Harry Potter is altijd duidelijk geweest over haar eigen hobbelige weg om miljardair te worden. In 2016 tweette ze twee afwijzingsbrieven die ze ontving, waarin ze haar fans verklaarde dat deze juist een inspiratie waren om door te gaan.
+
+Een andere goede manier om met afwijzing om te gaan is door een stapje terug te doen en je te concentreren op zelfzorg, volgens Dr. Leslie Becker-Phelps (auteur, psycholoog en spreker):
+
+> "Build the Resilience You Need to Get Back Up When Life Knocks You Down".
+
+Zelfzorg beoefenen, legt Becker-Phelps uit, kan van alles zijn: mediteren, hardlopen of zelfs naar muziek luisteren. Denk aan rituelen die je kalmeren, waardoor je weer in balans komt.
+
+###### 02. Zorg voor een gestage geldstroom
+
+Een van de meest voorkomende uitdagingen voor kleine bedrijven is een gebrek aan kapitaal en cashflow, volgens een recent onderzoek van Guidant Financial. In een vroeg stadium kan het hebben van een stabiele financieringsbron besparingen op zowel persoonlijk- als op gezinsvlak opleveren.
+
+Moet je het buiten je directe omgeving zoeken? Dan kun je ook een openbare of particuliere lening voor kleine bedrijven of zakelijke creditcards aanvragen, of je kredietlimiet bij de bank verlengen. Afgezien van een gestage inkomstenstroom, is het daarnaast belangrijk om te zorgen voor een kleine winst om je bedrijf te laten groeien zodra het is gelanceerd. Door uitgebreid marktonderzoek te doen naar je bedrijfsidee kun je bepalen of er daadwerkelijk vraag is naar je product of dienst, en hoe groot je potentiële klantenbestand is.
+
+###### 03. Zoek een mentor
+
+Uit een peiling van Kabbage, een wereldwijd platform voor financiële diensten voor kleine bedrijven, bleek dat 92% van de eigenaren van kleine bedrijven het erover eens is dat mentoren een directe invloed hebben op de groei en het voortbestaan van hun bedrijf.
+
+Door goed mentorschap verwerf je niet alleen wijsheid, begeleiding en perspectief, maar ook alle noodzakelijke vaardigheden voor professionele groei, zoals communicatie en zelfbewustzijn.
+
+###### 04. Ben gepassioneerd over je idee
+
+Een paar van de rijkste bedrijven tot nu toe, Venmo, Instagram, Uber en WhatsApp, begonnen als entrepreneur tijdens een economische crisis. Maar hun oprichters waren vastberaden en veerkrachtig in het nastreven van innovatie en creativiteit. Onthoud dus altijd: gepassioneerd zijn in wat je doet kan je helpen gemotiveerd te blijven, zelfs als er veel op het spel staat!
+
+###### 05. Wees comfortabel genoeg om risico's te nemen
+
+Het nemen van risico's speelt een grote rol als het gaat om het worden van een entrepreneur. Zonder risico's zouden vele bedrijfsleiders misschien niet zo ver zijn gekomen.
+
+Maak je klaar om je op je gemak te voelen met onzekerheid en stap uit je comfortzone. Sommige risico's waarmee je te maken kunt krijgen zijn onder andere:
+
+- Het verlaten van een fulltime baan en een vast salaris
+- Minder tijd hebben voor met vrienden en familie, maar ook slaap en vrije tijd opofferen
+- Je persoonlijke financiën gebruiken zonder garantie dat je een rendement op je investering zult zien
+- Een verkeerde inschatting maken over het succes dat je product- of dienst zal hebben
+
+Dat gezegd hebbende: als je er nog niet helemaal klaar voor bent om je plan uit te voeren, kun je het beter rustig aan doen. Begin met het maken van kleine aanpassingen en leer jezelf in de loop van tijd succesvolle gewoonten aan. Als de passie er is, dan komt jouw tijd hoe dan ook!
+
+Bron: Wix.com I Marijne Verhoef

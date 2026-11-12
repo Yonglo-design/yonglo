@@ -10,6 +10,12 @@ declare const __DEELBEELDEN__: string[];
 // Deelafbeelding per pagina (assets/deel/<naam>.jpg en en-<naam>.jpg, gemaakt door tools/maak-deelbeelden.mjs).
 const DEELBEELDEN = new Set<string>(__DEELBEELDEN__);
 export const PAGINAS: string[] = __PAGINAS__;
+// Adres van een deelafbeelding uit assets/deel/ (bijv. "werkgebied", "en-koppeling-moneybird"), of null als die er niet is.
+// Meerdere namen: de eerste die bestaat (bijv. eerst de eigen afbeelding, dan een algemene).
+export const deelbeeld = (origin: string, ...namen: string[]): string | null => {
+  const naam = namen.find((n) => DEELBEELDEN.has(n));
+  return naam ? `${origin}/assets/deel/${naam}.jpg` : null;
+};
 
 const RAW = import.meta.glob("/*.html", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
 const RAW_EN = import.meta.glob("/en/*.html", { query: "?raw", import: "default", eager: true }) as Record<string, string>;

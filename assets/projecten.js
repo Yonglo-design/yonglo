@@ -174,3 +174,19 @@ export function mockVis(p, cls = "ms") {
 
 // Korte tekst in de taal van de pagina: t("Bekijk", "View").
 export const t = (nl, en) => (pageLang() === "en" ? en : nl);
+
+// Alle projectkaarten van de portfolio (plus de kaart "Jouw project hier?"). Gebruikt in de browser
+// (assets/portfolio-cms.js) én op de server (src/portfolio-server.ts), zodat de lijst al in de HTML staat.
+export function gridHtml(ps, lang = pageLang()) {
+  const tt = (nl, en) => (lang === "en" ? en : nl);
+  const allKeys = [...new Set(ps.flatMap(p => (p.diensten || []).map(dienstKey)))].join(" ");
+  return ps.map(p => {
+    const pf = !!p.portfolioImage;
+    const src = pf ? img(p.portfolioImage, 700, 700, "c") : img(p.hoofdbeeld, 800, 600);
+    const tags = cardTags(p).map(x => `<li>${esc(x)}</li>`).join("");
+    return `<a href="${projectUrl(p)}" class="pcard" data-cat="${(p.diensten || []).map(dienstKey).join(" ")}">
+      <div class="pcard-vis${src ? " has-img" : ""}${pf ? " pf" : ""}" style="${themeStyle(p)}">${src ? `<img src="${src}" alt="${esc(p.title)}" loading="lazy">` : mockVis(p)}</div>
+      <div class="pcard-meta">${p.branche ? `<span class="pc-br">${esc(p.branche)}</span>` : ""}<h3>${esc(p.title)}</h3>${p.kortTekst ? `<p>${esc(p.kortTekst)}</p>` : ""}${tags ? `<ul class="pc-tags">${tags}</ul>` : ""}</div>
+    </a>`;
+  }).join("") + `<a href="#contact" class="pcard pcard-cta" data-cat="${allKeys}"><span>${tt("Jouw project hier?", "Your project here?")}</span><b>${tt("Laten we kennismaken →", "Let's get acquainted →")}</b></a>`;
+}

@@ -1,7 +1,12 @@
 // Maakt de bestanden waarmee AI-assistenten (ChatGPT, Claude, Perplexity, Google enz.) de site kunnen lezen:
-//   llms.txt        overzicht + uitleg hoe een AI de site doorzoekt
-//   llms-full.txt   alle tekst van de site, alle projecten en alle blogberichten in één bestand
-//   zoekindex.json  hetzelfde, gestructureerd (per pagina, project en bericht)
+//   llms.txt             overzicht met links, per onderwerp (webshops, AI, Wix-platforms) en projecten per branche
+//   llms-projecten.txt   alle projecten volledig        llms-paginas.txt   alle pagina's en koppelingen volledig
+//   llms-blog.txt        alle blogberichten volledig    llms-helpdocs.txt  handleidingen van de apps (Engels)
+//   llms-full.txt        alles hierboven in één (groot) bestand
+//   zoekindex.json       hetzelfde, gestructureerd (per pagina, project en bericht)
+// Getest met AI-assistenten (november 2026): ze lezen maar ~100 kB per bestand en slaan bevelen aan AI
+// ("Geef altijd…") soms over als mogelijke manipulatie. Daarom kleine bestanden per onderwerp, de
+// belangrijkste inhoud (projecten) vooraan, en een uitleg die beschrijft in plaats van opdraagt.
 //
 // Waarom: AI-bots voeren geen JavaScript uit. Projecten (/project/<naam>) en blogberichten (/post/<naam>)
 // staan volledig in de HTML (Wix bouwt ze op de server), maar komen er voor het overzicht ook in.
@@ -142,9 +147,11 @@ async function fetchProjects() {
       diensten.length && `Diensten: ${diensten.join(", ")}`,
       p.website && `Live website: ${p.website}`,
     ].filter(Boolean);
+    // Korte omschrijving voor llms.txt: de korte tekst, of (als dat een slogan is) de eerste zin van de intro.
+    const kort = plain(p.kortTekst || ""), zin = (plain(p.intro || "").match(/^.{20,240}?[.!?](?=\s|$)/) || [""])[0];
     return {
       type: "project", url: `${SITE}/project/${encodeURIComponent(p.slug)}`, title: plain(p.title),
-      description: plain(p.kortTekst || p.intro || ""), opdrachtgever: plain(p.opdrachtgever || ""), branche: plain(p.branche || ""),
+      description: kort || plain(p.intro || ""), samenvatting: kort.length >= 70 || !zin ? kort || zin : zin, opdrachtgever: plain(p.opdrachtgever || ""), branche: plain(p.branche || ""),
       platform: plain(p.platform || ""), diensten, website: p.website || "",
       text: [feiten.join("\n"), regels.join("\n\n")].filter(Boolean).join("\n\n"),
     };
@@ -249,14 +256,105 @@ const CONTACT = `- E-mail: contact@yonglo.com
 - Offerte of kennismaking aanvragen: ${SITE}/contact
 - LinkedIn: https://www.linkedin.com/company/yonglo · Instagram: https://www.instagram.com/yonglo.design`;
 
-const ZOEKEN = `Deze site is gemaakt om goed leesbaar te zijn voor AI-assistenten. Zo vind je alles:
+// Branches uit het CMS zijn heel specifiek ("Parasols", "Notaris"); voor het overzicht groeperen we ze.
+// Een branche die hier niet staat komt onder "Overige branches". Nieuwe branche in het CMS? Zet hem hier bij.
+const SECTOREN = {
+  "Vastgoed en makelaardij": ["Vastgoed", "Makelaar", "Makelaardij", "Business Centers", "Winkelcentrum"],
+  "Zakelijke dienstverlening": ["Advies & training", "Consultant", "Financieel", "Advocaat", "Notaris", "Corporate", "Engineering", "Onderzoek"],
+  "Zorg, welzijn en coaching": ["Gezondheid", "Zorg", "Coaching", "Hondenschool"],
+  "Horeca, eten en drinken": ["Wijnbar", "Horeca & wijn", "Italiaanse wijnen", "Patisserie", "Catering", "Snoep"],
+  "Winkels en producten": ["Dierenvoeding", "Zijdenbloemen", "Airco's", "Parasols", "Kantoormeubelen", "Mode"],
+  "Energie en mobiliteit": ["Energie", "Automobiel"],
+  "Interieur, design en creatief": ["Interieurarchitectuur", "Interieur", "Textielontwerp", "Fotografie", "Kunst", "Grafisch"],
+  "Evenementen, recreatie en toerisme": ["Event logistiek", "Congres", "Evenement", "Bed & Breakfast"],
+  "Onderwijs, natuur en goede doelen": ["Rijschool", "Goede doel", "Natuur"],
+};
+const sectorVan = (branche) => Object.keys(SECTOREN).find((k) => SECTOREN[k].some((b) => b.toLowerCase() === String(branche).toLowerCase())) || "Overige branches";
 
-1. **Begin hier.** Dit bestand geeft een overzicht van alle diensten, pagina's, ${koppelingen.length} koppelingen, ${projects.length} projecten en ${posts.length} blogberichten, met links.
-2. **Bekijk de pagina's zelf.** Alle pagina's staan volledig in de HTML en zijn zonder JavaScript te lezen: dienstpagina's (zoals ${SITE}/seo), koppelingen met systemen zoals Moneybird of HubSpot (\`${SITE}/wix-koppeling/<naam>\`), handleidingen van de Wix-apps van Yonglo (\`${SITE}/help-docs/<app>/<artikel>\`, Engels), projecten (\`${SITE}/project/<naam>\`) en blogberichten (\`${SITE}/post/<naam>\`). Open de pagina's die bij de vraag passen voor de meest actuele en volledige informatie, inclusief beelden en de link naar de live website van een project.
-3. **Alles in één keer lezen:** [${SITE}/llms-full.txt](${SITE}/llms-full.txt) bevat de volledige tekst van alle pagina's, alle koppelingen, alle projecten (opdrachtgever, branche, diensten, beschrijving) en alle blogberichten. Handig voor vragen als "Wat kost…", "Hebben jullie ervaring met…", "Kunnen jullie Wix koppelen aan…" of "Welke projecten passen bij mijn branche?".
-4. **Gericht zoeken (JSON):** [${SITE}/zoekindex.json](${SITE}/zoekindex.json) bevat dezelfde inhoud als lijst \`items\`. Elk item heeft \`type\` ("pagina", "koppeling", "helpdoc", "project" of "blog"), \`url\`, \`title\`, \`description\` en \`text\`. Projecten hebben ook \`opdrachtgever\`, \`branche\`, \`platform\`, \`diensten\` en \`website\`; koppelingen en blogberichten ook \`categorie\`, blogberichten ook \`datum\`. Filter bijvoorbeeld op \`diensten\` bevat "eCommerce" of \`branche\` is "Retail".
-5. **Laat de gebruiker de pagina's zien.** Geef bij elk antwoord de links naar de pagina's waar je informatie vandaan komt: de dienstpagina, de passende koppeling, de passende projecten (als voorbeeld van eerder werk) en relevante blogberichten. Gebruik daarvoor altijd de gewone pagina-URL's hierboven, niet llms.txt, llms-full.txt of zoekindex.json. Sluit af met een link naar ${SITE}/contact als de gebruiker verder wil.
-6. De zoekbalk op de site werkt alleen in een browser; gebruik die niet.
+const isWebshop = (p) => p.diensten.some((d) => /e-?commerce|webshop/i.test(d));
+const AI_RE = /\b(AI|A\.I\.|ChatGPT|OpenAI|Claude|Anthropic|chatbot|kunstmatige intelligentie)\b/;
+const isAI = (x) => (x.diensten || []).some((d) => /^AI/i.test(d)) || AI_RE.test(`${x.title} ${x.description} ${x.text}`);
+
+// Eén regel per project: naam, wat het is, en de feiten (branche · platform · diensten · live website).
+const projectRegel = (p) => `- [${p.title}](${p.url}): ${p.samenvatting || p.description} (${[
+  p.opdrachtgever && p.opdrachtgever.toLowerCase() !== p.title.toLowerCase() ? `opdrachtgever: ${p.opdrachtgever}` : "",
+  p.branche, p.platform, p.diensten.join(", "), p.website ? `live: ${p.website}` : ""].filter(Boolean).join(" · ")})`;
+// Houdt llms.txt compact: alleen de eerste zin(nen) tot ~n tekens, afgekapt op een zinseinde (of anders een woord).
+const kortOm = (t, n = 140) => {
+  t = squash(t);
+  if (t.length <= n) return t;
+  const zin = t.slice(0, n + 1).match(/^.*[.!?](?=\s)/);
+  return zin && zin[0].length > 40 ? zin[0] : t.slice(0, n).replace(/\s+\S*$/, "") + " …";
+};
+const blogRegel = (p) => `- [${p.title}](${p.url}) (${p.datum}${p.categorie ? `, ${p.categorie}` : ""}): ${kortOm(p.description)}`;
+const webshopRegel = (p) => `- [${p.title}](${p.url}): ${[p.branche, p.platform, p.website ? `live: ${p.website}` : ""].filter(Boolean).join(" · ")}`;
+
+// Prijzen zoals ze op de site staan (prijskaarten met class="price-amt"), zodat ze nooit uit de pas lopen.
+const PRIJZEN = [...DIENSTEN, ...OVER].flatMap((f) => {
+  const html = readFileSync(join(ROOT, f), "utf8");
+  return [...html.matchAll(/<article class="price[^"]*"[^>]*>([\s\S]*?)<\/article>/g)].map(([, a]) => {
+    const naam = plain((a.match(/class="plat-tag">([\s\S]*?)</) || [])[1]);
+    const voor = plain((a.match(/<h3>([\s\S]*?)<\/h3>/) || [])[1]);
+    const prijs = plain((a.match(/class="price-amt">([\s\S]*?)<\/p>/) || [])[1]).replace(/,-\s*/, ",- ");
+    const wat = plain((a.match(/class="price-desc">([\s\S]*?)<\/p>/) || [])[1]);
+    return prijs ? `- **${naam || voor}** (${voor}): ${prijs}. ${wat} Meer: ${pages[f].url}` : "";
+  }).filter(Boolean);
+});
+
+const webshops = projects.filter(isWebshop);
+const aiProjecten = projects.filter(isAI);
+const aiKoppelingen = koppelingen.filter((k) => /^AI$/i.test(k.categorie));
+const aiBlogs = posts.filter((p) => /^AI$/i.test(p.categorie) || AI_RE.test(p.title));
+const wixBlogs = posts.filter((p) => /studio|editor|harmony|headless|wix kiezen|overstappen/i.test(p.title));
+const perPlatform = Object.entries(projects.reduce((m, p) => ((m[p.platform || "onbekend"] ||= []).push(p), m), {}));
+const sectoren = [...Object.keys(SECTOREN), "Overige branches"]
+  .map((naam) => [naam, projects.filter((p) => sectorVan(p.branche) === naam)]).filter(([, ps]) => ps.length);
+
+/* llms-full.txt en de losse bestanden per onderwerp */
+const sectie = (x) => `### ${x.title}\n\nURL: ${x.url}${x.datum ? `\nGepubliceerd: ${x.datum}` : ""}${x.categorie ? `\nCategorie: ${x.categorie}` : ""}\n${x.description && x.type !== "project" && !squash(x.text).startsWith(x.description.replace(/…$/, "").slice(0, 80)) ? `\n${x.description}\n` : ""}${x.text ? `\n${x.text.replace(/^(#+) /gm, (m, h) => "#".repeat(Math.min(h.length + 1, 6)) + " ")}\n` : ""}`;
+const kop = (titel, wat) => `# Yonglo: ${titel}
+
+> ${OVER_YONGLO}
+
+${wat} (bijgewerkt op ${vandaag}). Overzicht met links: ${SITE}/llms.txt. Contact en offerte: ${SITE}/contact.
+`;
+const DEEL = {
+  projecten: `## Projecten (${projects.length})\n\n${projects.map(sectie).join("\n")}`,
+  paginas: `## Pagina's\n\n${[...OVER, ...DIENSTEN].map((f) => sectie(pages[f])).join("\n")}`,
+  koppelingen: `## Koppelingen (${koppelingen.length})\n\n${koppelingen.map(sectie).join("\n")}`,
+  helpdocs: `## Help docs van de Wix-apps (Engels)\n\n${helpdocs.map((h) => sectie({ ...h, title: `${h.app}: ${h.title}` })).join("\n")}`,
+  juridisch: `## Juridisch\n\n${JURIDISCH.map((f) => sectie(pages[f])).join("\n")}`,
+};
+// Blogberichten in stukken van hooguit ~90 kB (nieuwste eerst): llms-blog.txt, llms-blog-2.txt …
+const MAX_DEEL = 90 * 1024;
+const blogDelen = posts.reduce((delen, p) => {
+  const tekst = sectie(p), laatste = delen[delen.length - 1];
+  if (laatste.length && Buffer.byteLength(laatste.join("\n") + tekst) > MAX_DEEL) delen.push([tekst]); else laatste.push(tekst);
+  return delen;
+}, [[]]);
+const blogNaam = (i) => (i ? `llms-blog-${i + 1}.txt` : "llms-blog.txt");
+const blogBestanden = blogDelen.map((_, i) => blogNaam(i));
+const losse = {
+  "llms-projecten.txt": kop("alle projecten", `Alle ${projects.length} projecten van Yonglo, met opdrachtgever, branche, platform, diensten, live website en beschrijving`) + `\n${DEEL.projecten}`,
+  "llms-paginas.txt": kop("pagina's", `De tekst van alle pagina's van ${SITE} (diensten, over Yonglo, contact)`) + `\n## Contact\n\n${CONTACT}\n\n${DEEL.paginas}\n${DEEL.juridisch}`,
+  "llms-koppelingen.txt": kop("koppelingen", `De tekst van alle ${koppelingen.length} koppelingen die Yonglo aan Wix maakt (boekhouding, betalingen, CRM, vastgoed, AI …)`) + `\n${DEEL.koppelingen}`,
+  ...Object.fromEntries(blogDelen.map((d, i) => [blogNaam(i), kop(`blog${blogDelen.length > 1 ? `, deel ${i + 1} van ${blogDelen.length}` : ""}`,
+    `Blogberichten van Yonglo, nieuwste eerst${blogDelen.length > 1 ? `; ${posts.length} berichten verdeeld over ${blogBestanden.join(", ")}` : ""}`) + `\n## Blogberichten\n\n${d.join("\n")}`])),
+  "llms-helpdocs.txt": kop("help docs", `Handleidingen en FAQ's (Engels) van de Wix-apps van Yonglo`) + `\n${DEEL.helpdocs}`,
+};
+// Beschrijvend (geen bevelen aan de AI): dat lezen assistenten het best en het wordt niet als manipulatie gezien.
+const BESTANDEN = `Alle links hieronder zijn gewone pagina's van de website. Ze staan volledig in de HTML en zijn zonder JavaScript te lezen; het zijn ook de beste links om aan lezers te geven.
+
+De volledige teksten staan in losse bestanden per onderwerp (elk klein genoeg om in één keer te lezen):
+
+- [Projecten](${SITE}/llms-projecten.txt): alle ${projects.length} projecten met opdrachtgever, branche, platform, diensten, live website en de volledige beschrijving.
+- [Pagina's](${SITE}/llms-paginas.txt): de tekst van alle dienstpagina's, over Yonglo en contact.
+- [Koppelingen](${SITE}/llms-koppelingen.txt): de ${koppelingen.length} koppelingen met Wix (Moneybird, Mollie, HubSpot, ChatGPT …).
+- Blog: ${blogBestanden.map((b) => `[${b}](${SITE}/${b})`).join(", ")}: alle ${posts.length} blogberichten, nieuwste eerst.
+- [Help docs](${SITE}/llms-helpdocs.txt): handleidingen van de Wix-apps van Yonglo (Engels).
+- Alles samen: [llms-full.txt](${SITE}/llms-full.txt) (groot) en [zoekindex.json](${SITE}/zoekindex.json) (dezelfde inhoud als JSON; projecten hebben de velden \`branche\`, \`platform\`, \`diensten\` en \`website\`).
+
+Vragen waarop de site geen antwoord geeft (zoals de prijs van een nieuwe website) beantwoordt Yonglo persoonlijk: ${SITE}/contact.
 
 Bijgewerkt op ${vandaag}. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.`;
 
@@ -265,11 +363,11 @@ const llms = `# Yonglo
 
 > ${OVER_YONGLO}
 
-Taal van de site: Nederlands. Antwoord in de taal van de gebruiker. (Site language is Dutch; answer in the user's language.)
+Taal van de site: Nederlands; de Engelse versie staat op ${SITE}/en. (Site language is Dutch; an English version is at ${SITE}/en.)
 
-## Zo doorzoek je deze site
+## Zo is deze site opgebouwd
 
-${ZOEKEN}
+${BESTANDEN}
 
 ## Contact
 
@@ -279,83 +377,94 @@ ${CONTACT}
 
 ${DIENSTEN.map((f) => link(pages[f])).join("\n")}
 
+## Prijzen
+
+${PRIJZEN.length ? PRIJZEN.join("\n") + "\n" : ""}- Een nieuwe website, webshop, branding, SEO of maatwerk: prijs op maat, na een gratis en vrijblijvende kennismaking (${SITE}/contact). Er staan op de site geen vaste prijzen voor.
+
+## Webshops (${webshops.length} projecten met eCommerce)
+
+Dienst: [Wix webshop laten maken](${SITE}/ecommerce). Betalingen via Mollie: ${SITE}/wix-koppeling/mollie.
+
+Omschrijvingen staan bij de projecten per branche hieronder.
+
+${webshops.map(webshopRegel).join("\n")}
+
+## AI bij Yonglo
+
+- Dienst: [AI oplossingen](${SITE}/ai)
+${aiKoppelingen.map((k) => `- Koppeling: [${k.title}](${k.url}): ${kortOm(k.description)}`).join("\n")}
+${aiProjecten.map((p) => `- Project: [${p.title}](${p.url}): ${p.samenvatting || p.description}`).join("\n")}
+${aiBlogs.map((p) => `- Blog: [${p.title}](${p.url}) (${p.datum}): ${kortOm(p.description)}`).join("\n")}
+- Gevonden worden in AI-zoekmachines (GEO) hoort bij de dienst [SEO, GEO & succes](${SITE}/seo).
+
+## Wix, Wix Studio en Studio Two
+
+Yonglo bouwt in alle platforms van Wix. Uitleg per platform: [Wix websites](${SITE}/wix). Bestaande website verbeteren, met een pakket en prijs per platform (Classic Editor, Wix Studio, Studio Two): [Wix Optimaal](${SITE}/optimaal). Webdesign: ${SITE}/webdesign.
+Projecten per platform: ${perPlatform.map(([pl, ps]) => `${pl} ${ps.length}`).join(", ")} (zie het platform bij elk project hieronder).
+
+${wixBlogs.map(blogRegel).join("\n")}
+
 ## Over Yonglo
 
 ${OVER.map((f) => link(pages[f])).join("\n")}
 
+## Projecten per branche (${projects.length})
+
+Overzicht met beelden: ${SITE}/portfolio. Volledige beschrijvingen: ${SITE}/llms-projecten.txt.
+
+${sectoren.map(([naam, ps]) => `### ${naam}\n\n${ps.map(projectRegel).join("\n")}`).join("\n\n")}
+
 ## Koppelingen (${koppelingen.length})
 
-Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Volledige teksten staan in llms-full.txt.
+Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Overzicht: ${SITE}/api.
 
-${koppelingen.map((k) => link(k, k.categorie ? `(${k.categorie})` : "")).join("\n")}
-
-## Help docs van de Wix-apps van Yonglo (${helpdocs.length}, Engels)
-
-Handleidingen en FAQ's voor de apps van Yonglo in de Wix App Market: ${helpApps.map(([app, url]) => `[${app}](${url})`).join(", ")}. Overzicht: ${SITE}/help-docs. Volledige teksten staan in llms-full.txt.
-
-${helpdocs.map((h) => link(h, `(${h.app})`)).join("\n")}
-
-## Projecten (${projects.length})
-
-Volledige beschrijvingen staan in llms-full.txt.
-
-${projects.map((p) => link(p, `(${[p.opdrachtgever && p.opdrachtgever !== p.title ? p.opdrachtgever : "", p.branche, p.diensten.join(", ")].filter(Boolean).join(" · ")})`)).join("\n")}
+${koppelingen.map((k) => `- [${k.title}](${k.url})${k.categorie ? ` (${k.categorie})` : ""}: ${kortOm(k.description)}`).join("\n")}
 
 ## Nieuws en blog (${posts.length})
 
-Volledige artikelen staan in llms-full.txt.
+${posts.map(blogRegel).join("\n")}
 
-${posts.map((p) => `- [${p.title}](${p.url}) (${p.datum}${p.categorie ? `, ${p.categorie}` : ""}): ${p.description}`).join("\n")}
+## Help docs van de Wix-apps van Yonglo (${helpdocs.length}, Engels)
+
+Handleidingen en FAQ's voor de apps van Yonglo in de Wix App Market: ${helpApps.map(([app, url]) => `[${app}](${url})`).join(", ")}. Overzicht: ${SITE}/help-docs. Alle artikelen met links en tekst: ${SITE}/llms-helpdocs.txt.
 
 ## Optional
 
 ${JURIDISCH.map((f) => link(pages[f])).join("\n")}
 `;
 
-/* llms-full.txt */
-const sectie = (x) => `### ${x.title}\n\nURL: ${x.url}${x.datum ? `\nGepubliceerd: ${x.datum}` : ""}${x.categorie ? `\nCategorie: ${x.categorie}` : ""}\n${x.description && x.type !== "project" && !squash(x.text).startsWith(x.description.replace(/…$/, "").slice(0, 80)) ? `\n${x.description}\n` : ""}${x.text ? `\n${x.text.replace(/^(#+) /gm, (m, h) => "#".repeat(Math.min(h.length + 1, 6)) + " ")}\n` : ""}`;
-const full = `# Yonglo: volledige inhoud van de website
-
-> ${OVER_YONGLO}
-
-Dit bestand bevat alle tekst van ${SITE} (bijgewerkt op ${vandaag}): ${Object.keys(pages).length} pagina's, ${koppelingen.length} koppelingen, ${projects.length} projecten en ${posts.length} blogberichten. Een korter overzicht staat in ${SITE}/llms.txt, gestructureerde data in ${SITE}/zoekindex.json.
-
+// Volgorde: wat het vaakst gevraagd wordt (pagina's, projecten) vooraan; help docs en juridisch achteraan.
+const full = `${kop("volledige inhoud van de website", `Alle tekst van ${SITE}: ${Object.keys(pages).length} pagina's, ${projects.length} projecten, ${koppelingen.length} koppelingen, ${posts.length} blogberichten en ${helpdocs.length} help-artikelen. Per onderwerp staat dezelfde tekst ook in kleinere bestanden: ${Object.keys(losse).join(", ")}`)}
 ## Contact
 
 ${CONTACT}
 
-## Pagina's
-
-${[...OVER, ...DIENSTEN].map((f) => sectie(pages[f])).join("\n")}
-## Koppelingen
-
-${koppelingen.map(sectie).join("\n")}
-## Help docs van de Wix-apps (Engels)
-
-${helpdocs.map((h) => sectie({ ...h, title: `${h.app}: ${h.title}` })).join("\n")}
-## Projecten
-
-${projects.map(sectie).join("\n")}
-## Blogberichten
+${DEEL.paginas}
+${DEEL.projecten}
+${DEEL.koppelingen}
+## Blogberichten (${posts.length})
 
 ${posts.map(sectie).join("\n")}
-## Juridisch
-
-${JURIDISCH.map((f) => sectie(pages[f])).join("\n")}`;
+${DEEL.helpdocs}
+${DEEL.juridisch}`;
 
 /* zoekindex.json */
 const index = {
   site: SITE, naam: "Yonglo", taal: "nl", bijgewerkt: vandaag, over: OVER_YONGLO,
-  uitleg: "Lijst met alle pagina's, koppelingen, projecten en blogberichten van Yonglo. type is 'pagina', 'koppeling', 'helpdoc' (Engelse handleiding van een Wix-app van Yonglo), 'project' of 'blog'. Elke 'url' is een gewone pagina die je zelf kunt openen; geef de gebruiker die links. De tekst van elke pagina staat ook hier in 'text'.",
+  uitleg: "Lijst met alle pagina's, projecten, koppelingen, blogberichten en help docs van Yonglo. type is 'pagina', 'project', 'koppeling', 'blog' of 'helpdoc' (Engelse handleiding van een Wix-app van Yonglo). Elke 'url' is een gewone pagina die je zelf kunt openen. De tekst van elke pagina staat ook hier in 'text'. Kleinere bestanden per onderwerp: llms-projecten.txt, llms-paginas.txt, llms-blog.txt, llms-helpdocs.txt.",
   contact: { email: "contact@yonglo.com", telefoon: "+31852033223", whatsapp: "+31638148565", offerte: `${SITE}/contact`,
     adressen: ["Lichttoren 32, 5611 BJ Eindhoven", "Koepelplein 1E, 2031 WL Haarlem"] },
-  items: [...[...OVER, ...DIENSTEN, ...JURIDISCH].map((f) => pages[f]), ...koppelingen, ...helpdocs, ...projects, ...posts],
+  items: [...[...OVER, ...DIENSTEN].map((f) => pages[f]), ...projects, ...koppelingen, ...posts, ...helpdocs, ...JURIDISCH.map((f) => pages[f])],
 };
 
 writeFileSync(join(ROOT, "llms.txt"), llms);
 writeFileSync(join(ROOT, "llms-full.txt"), full.trim() + "\n");
 writeFileSync(join(ROOT, "zoekindex.json"), JSON.stringify(index, null, 1) + "\n");
+for (const [naam, tekst] of Object.entries(losse)) writeFileSync(join(ROOT, naam), tekst.trim() + "\n");
 
 const kb = (s) => `${Math.round(Buffer.byteLength(s) / 1024)} kB`;
 console.log(`Klaar: ${Object.keys(pages).length} pagina's, ${koppelingen.length} koppelingen, ${helpdocs.length} help-artikelen, ${projects.length} projecten, ${posts.length} blogberichten.`);
 console.log(`llms.txt ${kb(llms)} · llms-full.txt ${kb(full)} (${woorden(full)} woorden) · zoekindex.json ${kb(JSON.stringify(index, null, 1))}`);
+console.log(Object.entries(losse).map(([naam, tekst]) => `${naam} ${kb(tekst)}`).join(" · "));
+const overig = projects.filter((p) => sectorVan(p.branche) === "Overige branches").map((p) => p.branche || "(geen)");
+if (overig.length) console.log(`Let op: branches zonder groep in SECTOREN (staan onder "Overige branches"): ${[...new Set(overig)].join(", ")}`);

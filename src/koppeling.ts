@@ -6,7 +6,7 @@ import type { AstroGlobal } from "astro";
 import { fetchWithAuth } from "@wix/sdk/context";
 import { hero, body, aanpak, projecten, andere, contact, inTaal, sorteer, zoekProjecten, koppelingUrl, platteTekst, COLLECTION } from "../assets/koppelingen.js";
 import { img, inTaal as projectInTaal } from "../assets/projecten.js";
-import { siteOrigin } from "./paginas";
+import { siteOrigin, deelbeeld } from "./paginas";
 
 // Oude adressen van yonglo.com waarvan de naam nu iets anders is.
 const ALIASES: Record<string, string> = { "e-boekhouden.nl": "e-boekhouden", "anthropic-ai-modellen-integratie": "anthropic" };
@@ -106,8 +106,12 @@ export async function laadKoppeling(Astro: AstroGlobal): Promise<KoppelingData> 
     ? [{ lang: "nl", href: nlUrl }, { lang: "en", href: enUrl }, { lang: "x-default", href: nlUrl }]
     : [];
   const title = `${kk.title}: ${T("Wix koppeling", "Wix integration")} | Yonglo`;
-  const desc = trimTo(kk.metabeschrijving || platteTekst(kk.tekst), 158);
-  const ogImg = img(k.logo, 1200, 630, "c");
+  // Engels zonder eigen Engelse omschrijving (metabeschrijvingEn): een vaste Engelse tekst, niet de Nederlandse.
+  const desc = EN && !k.metabeschrijvingEn
+    ? trimTo(`Connect ${kk.title} to your Wix or Wix Studio website. Yonglo, official Wix Partner, builds reliable ${kk.title} integrations that save you time and manual work.`, 158)
+    : trimTo(kk.metabeschrijving || platteTekst(kk.tekst), 158);
+  // Deelafbeelding: onze eigen (Wix + logo, tools/maak-deelbeelden.mjs), anders de algemene, anders het logo.
+  const ogImg = deelbeeld(origin, `${EN ? "en-" : ""}koppeling-${k.slug}`, EN ? "en-koppelingen" : "koppelingen") || img(k.logo, 1200, 630, "c");
   const ORG = { "@type": "Organization", "@id": "https://www.yonglo.com/#organization", name: "Yonglo", url: "https://www.yonglo.com" };
   const service = {
     "@context": "https://schema.org",

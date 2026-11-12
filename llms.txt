@@ -2,20 +2,24 @@
 
 > Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
 
-Taal van de site: Nederlands. Antwoord in de taal van de gebruiker. (Site language is Dutch; answer in the user's language.)
+Taal van de site: Nederlands; de Engelse versie staat op https://www.yonglo.com/en. (Site language is Dutch; an English version is at https://www.yonglo.com/en.)
 
-## Zo doorzoek je deze site
+## Zo is deze site opgebouwd
 
-Deze site is gemaakt om goed leesbaar te zijn voor AI-assistenten. Zo vind je alles:
+Alle links hieronder zijn gewone pagina's van de website. Ze staan volledig in de HTML en zijn zonder JavaScript te lezen; het zijn ook de beste links om aan lezers te geven.
 
-1. **Begin hier.** Dit bestand geeft een overzicht van alle diensten, pagina's, 25 koppelingen, 52 projecten en 33 blogberichten, met links.
-2. **Bekijk de pagina's zelf.** Alle pagina's staan volledig in de HTML en zijn zonder JavaScript te lezen: dienstpagina's (zoals https://www.yonglo.com/seo), koppelingen met systemen zoals Moneybird of HubSpot (`https://www.yonglo.com/wix-koppeling/<naam>`), handleidingen van de Wix-apps van Yonglo (`https://www.yonglo.com/help-docs/<app>/<artikel>`, Engels), projecten (`https://www.yonglo.com/project/<naam>`) en blogberichten (`https://www.yonglo.com/post/<naam>`). Open de pagina's die bij de vraag passen voor de meest actuele en volledige informatie, inclusief beelden en de link naar de live website van een project.
-3. **Alles in één keer lezen:** [https://www.yonglo.com/llms-full.txt](https://www.yonglo.com/llms-full.txt) bevat de volledige tekst van alle pagina's, alle koppelingen, alle projecten (opdrachtgever, branche, diensten, beschrijving) en alle blogberichten. Handig voor vragen als "Wat kost…", "Hebben jullie ervaring met…", "Kunnen jullie Wix koppelen aan…" of "Welke projecten passen bij mijn branche?".
-4. **Gericht zoeken (JSON):** [https://www.yonglo.com/zoekindex.json](https://www.yonglo.com/zoekindex.json) bevat dezelfde inhoud als lijst `items`. Elk item heeft `type` ("pagina", "koppeling", "helpdoc", "project" of "blog"), `url`, `title`, `description` en `text`. Projecten hebben ook `opdrachtgever`, `branche`, `platform`, `diensten` en `website`; koppelingen en blogberichten ook `categorie`, blogberichten ook `datum`. Filter bijvoorbeeld op `diensten` bevat "eCommerce" of `branche` is "Retail".
-5. **Laat de gebruiker de pagina's zien.** Geef bij elk antwoord de links naar de pagina's waar je informatie vandaan komt: de dienstpagina, de passende koppeling, de passende projecten (als voorbeeld van eerder werk) en relevante blogberichten. Gebruik daarvoor altijd de gewone pagina-URL's hierboven, niet llms.txt, llms-full.txt of zoekindex.json. Sluit af met een link naar https://www.yonglo.com/contact als de gebruiker verder wil.
-6. De zoekbalk op de site werkt alleen in een browser; gebruik die niet.
+De volledige teksten staan in losse bestanden per onderwerp (elk klein genoeg om in één keer te lezen):
 
-Bijgewerkt op 2026-11-11. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.
+- [Projecten](https://www.yonglo.com/llms-projecten.txt): alle 52 projecten met opdrachtgever, branche, platform, diensten, live website en de volledige beschrijving.
+- [Pagina's](https://www.yonglo.com/llms-paginas.txt): de tekst van alle dienstpagina's, over Yonglo en contact.
+- [Koppelingen](https://www.yonglo.com/llms-koppelingen.txt): de 25 koppelingen met Wix (Moneybird, Mollie, HubSpot, ChatGPT …).
+- Blog: [llms-blog.txt](https://www.yonglo.com/llms-blog.txt), [llms-blog-2.txt](https://www.yonglo.com/llms-blog-2.txt), [llms-blog-3.txt](https://www.yonglo.com/llms-blog-3.txt): alle 33 blogberichten, nieuwste eerst.
+- [Help docs](https://www.yonglo.com/llms-helpdocs.txt): handleidingen van de Wix-apps van Yonglo (Engels).
+- Alles samen: [llms-full.txt](https://www.yonglo.com/llms-full.txt) (groot) en [zoekindex.json](https://www.yonglo.com/zoekindex.json) (dezelfde inhoud als JSON; projecten hebben de velden `branche`, `platform`, `diensten` en `website`).
+
+Vragen waarop de site geen antwoord geeft (zoals de prijs van een nieuwe website) beantwoordt Yonglo persoonlijk: https://www.yonglo.com/contact.
+
+Bijgewerkt op 2026-11-12. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.
 
 ## Contact
 
@@ -39,6 +43,50 @@ Bijgewerkt op 2026-11-11. Koppelingen, projecten en blogberichten komen uit het 
 - [AI oplossingen | AI die werkt](https://www.yonglo.com/ai): AI die werkt, resultaten die blijven. Yonglo zet AI in voor slimmere websites: content, chatbots, data & voorspellingen, automatisering en optimalisatie.
 - [API koppelingen | Wix koppelen met je systemen](https://www.yonglo.com/api): Yonglo koppelt jouw Wix website met krachtige API's en systemen zoals Moneybird, Exact, e-Boekhouden, Realworks, Mollie en HubSpot. Voor meer automatisering en realtime data.
 
+## Prijzen
+
+- **Optimaal Classic** (Wix Editor): vanaf € 495,- exclusief btw. Voor websites gebouwd met de Classic Editor van Wix. We verbeteren structuur, uitstraling, snelheid en vindbaarheid, zonder je website volledig opnieuw te bouwen. Meer: https://www.yonglo.com/optimaal
+- **Optimaal Studio** (Wix Studio): vanaf € 595,- exclusief btw. Voor websites gebouwd met Wix Studio. We optimaliseren design, performance, responsive gedrag en technische instellingen. Meer: https://www.yonglo.com/optimaal
+- **Optimaal Studio Two** (Studio Two): vanaf € 695,- exclusief btw. Voor websites gebouwd met Studio Two. We optimaliseren design, performance, animaties, vindbaarheid, responsive gedrag en technische instellingen. Meer: https://www.yonglo.com/optimaal
+- Een nieuwe website, webshop, branding, SEO of maatwerk: prijs op maat, na een gratis en vrijblijvende kennismaking (https://www.yonglo.com/contact). Er staan op de site geen vaste prijzen voor.
+
+## Webshops (9 projecten met eCommerce)
+
+Dienst: [Wix webshop laten maken](https://www.yonglo.com/ecommerce). Betalingen via Mollie: https://www.yonglo.com/wix-koppeling/mollie.
+
+Omschrijvingen staan bij de projecten per branche hieronder.
+
+- [Pawy](https://www.yonglo.com/project/pawy): Dierenvoeding · Wix Studio · live: https://www.pawy.ch
+- [Passanelli](https://www.yonglo.com/project/passanelli): Italiaanse wijnen · Wix Studio · live: https://www.passanelli.com
+- [Aircovooru](https://www.yonglo.com/project/aircovooru): Airco's · Wix Editor · live: https://www.aircovooru.nl
+- [Bali Parasol](https://www.yonglo.com/project/bali-parasol): Parasols · Wix Editor · live: https://www.baliparasol.com
+- [Patisserie Rogier](https://www.yonglo.com/project/patisserie-rogier): Patisserie · Wix Editor · live: https://www.patisserierogier.nl
+- [SlimLaad](https://www.yonglo.com/project/slimlaad): Energie · Wix Studio · live: https://www.slimlaad.nl
+- [The Candy Corner](https://www.yonglo.com/project/candy-corner): Snoep · Wix Editor · live: https://www.thecandycorner.nl
+- [Giallo Modena](https://www.yonglo.com/project/giallo-modena): Automobiel · Wix Editor · live: https://www.giallomodena.com
+- [Roercenter](https://www.yonglo.com/project/roercenter): Winkelcentrum · Wix Studio · live: https://www.roercenter.nl
+
+## AI bij Yonglo
+
+- Dienst: [AI oplossingen](https://www.yonglo.com/ai)
+- Koppeling: [ChatGPT](https://www.yonglo.com/wix-koppeling/chat-gpt): Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit.
+- Koppeling: [Claude (Anthropic)](https://www.yonglo.com/wix-koppeling/anthropic): Integreer Claude AI van Anthropic in je Wix-website voor slimme en veilige automatisering.
+- Project: [Passanelli](https://www.yonglo.com/project/passanelli): Van naam en logo tot een complete corporate identity en een stijlvolle webshop voor Italiaanse wijnen.
+- Blog: [AI en Wix in 2026: waar zit de échte tijdwinst voor bedrijven?](https://www.yonglo.com/post/ai-en-wix-in-2026) (2026-08-10): AI en Wix worden steeds vaker in één adem genoemd.
+- Blog: [Wix Vibe: Eerste indruk en wat je ervan kunt verwachten](https://www.yonglo.com/post/wix-vibe) (2025-08-19): Wij werken dagelijks met Wix en houden alle ontwikkelingen scherp in de gaten.
+- Blog: [Ontdek Wixel: Het Nieuwe AI-Designplatform van Wix](https://www.yonglo.com/post/wixel-het-ai-designplatform-van-wix) (2025-04-16): Wix heeft onlangs een innovatieve stap gezet in de wereld van digitale creativiteit met de lancering van Wixel—een AI-gedreven …
+- Blog: [Verbeter je Wix-website met krachtige AI-hulpmiddelen](https://www.yonglo.com/post/verbeter-je-wix-website-met-ai) (2024-02-02): Dankzij AI kunnen we websites slimmer, gebruiksvriendelijker en efficiënter maken. En dat is precies wat we bij Yonglo doen met Wix!
+- Gevonden worden in AI-zoekmachines (GEO) hoort bij de dienst [SEO, GEO & succes](https://www.yonglo.com/seo).
+
+## Wix, Wix Studio en Studio Two
+
+Yonglo bouwt in alle platforms van Wix. Uitleg per platform: [Wix websites](https://www.yonglo.com/wix). Bestaande website verbeteren, met een pakket en prijs per platform (Classic Editor, Wix Studio, Studio Two): [Wix Optimaal](https://www.yonglo.com/optimaal). Webdesign: https://www.yonglo.com/webdesign.
+Projecten per platform: Wix Studio 22, Wix Editor 30 (zie het platform bij elk project hieronder).
+
+- [Overstappen van Wix Editor naar Wix Studio](https://www.yonglo.com/post/van-editor-naar-wix-studio) (2026-04-17, Wix): Draait jouw website op de klassieke Wix Editor en kijk je al een tijdje naar de mogelijkheden van Wix Studio?
+- [Yonglo: jouw Europese Wix & Wix Studio webdesign specialist](https://www.yonglo.com/post/wix-europa) (2025-08-26, Yonglo): Als gecertificeerd Europese Wix Studio Web Developer en Webdesigner, beheerst Yonglo het volledige spectrum van Wix‑functionaliteit – van …
+- [Yonglo officieel erkend als Wix Studio Webdesigner & Developer](https://www.yonglo.com/post/yonglo-wix-studio-webdesigner-developer) (2025-07-22, Yonglo): Yonglo werd door Wix Studio officieel bekroond met niet één, maar twee prestigieuze certificaten.
+
 ## Over Yonglo
 
 - [Home](https://www.yonglo.com/): Van sterk idee naar krachtige website. 5-sterren Wix Partner met 750+ Wix-websites voor MKB. Webdesign, eCommerce, development, branding, SEO & GEO. Plan een kennismaking.
@@ -48,144 +96,158 @@ Bijgewerkt op 2026-11-11. Koppelingen, projecten en blogberichten komen uit het 
 - [Contact | Neem contact op met Yonglo](https://www.yonglo.com/contact): Neem contact op met Yonglo, dé Wix specialist. Mail naar contact@yonglo.com, bel of app 085 20 33 223 (ma t/m vr 9.00 – 17.30 uur) of vraag direct een offerte aan.
 - [Pixel Perfect – het spel](https://www.yonglo.com/spel): Speel Pixel Perfect van Yonglo: stapel de blokken van een website zo precies mogelijk en bouw de hoogste website. Haal jij de highscorelijst?
 
+## Projecten per branche (52)
+
+Overzicht met beelden: https://www.yonglo.com/portfolio. Volledige beschrijvingen: https://www.yonglo.com/llms-projecten.txt.
+
+### Vastgoed en makelaardij
+
+- [Burgstate](https://www.yonglo.com/project/burgstate): Voor Burgstate bedacht Yonglo de naam en ontwikkelde de corporate identity en website. (Vastgoed · Wix Studio · Webdesign, Wix Studio, Branding, Development, API koppelingen · live: https://www.burgstate.nl)
+- [Door Martijn](https://www.yonglo.com/project/door-martijn): Voor DOOR Martijn ontwikkelde Yonglo een professionele makelaarswebsite met een custom koppeling met Realworks. (Makelaardij · Wix Editor · Webdesign, API koppelingen · live: https://www.door-martijn.nl)
+- [Business Centers](https://www.yonglo.com/project/business-centers): Voor Burgstate Business Centers ontwikkelde Yonglo een professionele en overzichtelijke website die hun flexibele kantooroplossingen helder presenteert. (opdrachtgever: Burgstate · Business Centers · Wix Studio · Branding, Webdesign, Wix Studio · live: https://www.burgstate-businesscenters.nl)
+- [Van Weele](https://www.yonglo.com/project/van-weele): Voor Aankoopmakelaardij Van Weele ontwikkelde Yonglo de corporate identity en een professionele, betrouwbare website. (opdrachtgever: Aankoopmakelaardij Van Weele · Makelaar · Wix Editor · Branding, Webdesign, Wix Editor · live: https://www.aankoopmakelaardijvanweele.nl)
+- [Den Doorbraak](https://www.yonglo.com/project/den-doorbraak): Voor nieuwbouwproject D’n Doorbraak ontwikkelde Yonglo een heldere en aantrekkelijke projectwebsite die het woonproject in Blerick overtuigend presenteert. (opdrachtgever: Burgstate projectontwikkeling · Vastgoed · Wix Studio · Webdesign, Wix Studio · live: https://www.dendoorbraak.nl)
+- [Roercenter](https://www.yonglo.com/project/roercenter): Voor shoppingcenter Roercenter in Roermond ontwikkelde Yonglo een overzichtelijke en sfeervolle website die het winkelcentrum online tot leven brengt. (Winkelcentrum · Wix Studio · Branding, Webdesign, eCommerce, Wix Studio · live: https://www.roercenter.nl)
+- [Tenerife Online](https://www.yonglo.com/project/tenerife-online): Voor Tenerife Online ontwikkelde Yonglo een professionele makelaarswebsite die het woningaanbod en de dienstverlening helder presenteert. (Makelaar · Wix Editor · Webdesign, Development, Wix Editor · live: https://www.tenerifeonline.be)
+
+### Zakelijke dienstverlening
+
+- [Kogna](https://www.yonglo.com/project/kogna): Voor Kogna ontwikkelde Yonglo een professionele en moderne website die hun combinatie van data-analyse en fiscale expertise helder presenteert. (Consultant · Wix Studio · Webdesign, Wix Studio · live: https://www.kogna.tech)
+- [Finiance](https://www.yonglo.com/project/finiance): Voor Finiance ontwikkelde Yonglo de naam, corporate identity en website. (Financieel · Wix Studio · Branding, Webdesign, Wix Studio · live: https://www.finiance.nl)
+- [Ducot](https://www.yonglo.com/project/ducot): Voor Ducot Engineering & Advies ontwikkelde Yonglo een professionele en overzichtelijke website die past bij hun expertise in buitenruimten. (opdrachtgever: Ducot Engineering & Advies · Engineering · Wix Editor · Webdesign, Wix Editor · live: https://www.ducot.nl)
+- [Bootsma Lamme](https://www.yonglo.com/project/bootsma-lamme): Advocatenkantoor Bootsma Lamme heeft veel ervaring als echtscheidings-, erfrechtadvocaat en mediator. (opdrachtgever: Bootsma Lamme Advocaten · Advocaat · Wix Editor · Webdesign, Wix Editor · live: https://www.bladvocaten.nl)
+- [Arise](https://www.yonglo.com/project/arise): Voor ARISE Biodiversity ontwikkelde Yonglo een heldere en informatieve website voor dit Nederlandse wetenschappelijke onderzoeksprogramma. (opdrachtgever: Naturalis · Onderzoek · Wix Editor · Webdesign, Wix Editor · live: https://www.arise-biodiversity.nl)
+- [Hartog & van Rossum](https://www.yonglo.com/project/hartog-van-rossum): Voor Hartog & van Rossum ontwikkelde Yonglo een professionele website die hun expertise op het gebied van vertrouwen, integriteit en cultuur helder presenteert. (Advies & training · Wix Editor · Webdesign, Wix Editor · live: https://www.hartog-vanrossum.nl)
+- [Peanuts Academie](https://www.yonglo.com/project/peanuts-academie): Voor Peanuts Academie ontwikkelde Yonglo een professionele en toegankelijke website voor hun B2B-platform. (opdrachtgever: Peanuts Strategie & Academie · Advies & training · Wix Editor · Webdesign, Development, Wix Editor · live: https://www.peanutsacademie.nl)
+- [VAD Notarissen](https://www.yonglo.com/project/vad-notarissen): Voor VAD Notarissen ontwikkelde Yonglo een betrouwbare en professionele website die past bij de nuchtere Rotterdamse aanpak van het kantoor. (Notaris · Wix Editor · Webdesign, Wix Editor · live: https://www.vadnotarissen.nl)
+- [EAGM](https://www.yonglo.com/project/eagm): Voor EAGM ontwikkelde Yonglo een professionele en informatieve website voor de European Association of Geosynthetic product Manufacturers. (Corporate · Wix Editor · Webdesign, Development, Wix Editor · live: https://www.eagm.eu)
+- [Go2Academy](https://www.yonglo.com/project/go2academy): Voor Go2Academy ontwikkelde Yonglo een duidelijke en gebruiksvriendelijke website die het trainingsaanbod overzichtelijk presenteert. (Advies & training · Wix Editor · Webdesign, Wix Editor · live: https://www.go2academy.nl)
+
+### Zorg, welzijn en coaching
+
+- [Mankind](https://www.yonglo.com/project/mankind-coach): Mankind is een online platform om te ontdekken wat er bestaat om te groeien, te ontdekken en te ontwikkelen. (Coaching · Wix Editor · Webdesign, Development · live: https://www.mankind.coach)
+- [Your World](https://www.yonglo.com/project/your-world): Voor Your World ontwierp en bouwde Yonglo een inspirerende website die hun duurzame missie krachtig uitdraagt. (opdrachtgever: Sustainable Me · Gezondheid · Wix Editor · Webdesign, Development, Wix Editor · live: https://www.your-world.nl)
+- [Ter Heide](https://www.yonglo.com/project/ter-heide): Voor de Belgische zorginstelling Ter Heide ontwikkelde Yonglo een warme en toegankelijke website die aansluit bij hun maatschappelijke rol. (Zorg · Wix Editor · Webdesign, Development, API koppelingen · live: https://www.terheide.be)
+- [Dogs&Zo](https://www.yonglo.com/project/dogs-en-zo): Voor hondenschool Dogs&Zo ontwikkelde Yonglo een toegankelijke en professionele website die het cursusaanbod duidelijk in beeld brengt. (Hondenschool · Wix Editor · Webdesign, Wix Editor · live: https://www.dogsenzo.nl)
+- [Nina Basoski](https://www.yonglo.com/project/nina-basoski): Voor Diëtistenpraktijk Nina Basoski ontwikkelde Yonglo een rustige en professionele website die haar persoonlijke aanpak duidelijk naar voren brengt. (opdrachtgever: Diëtistenpraktijk Nina Basoski · Gezondheid · Wix Editor · Webdesign, Wix Editor · live: https://www.ninabasoski.nl)
+- [Wildenberg Osteopathie](https://www.yonglo.com/project/wildenberg-osteopathie): Voor Wildenberg Osteopathie ontwikkelde Yonglo een rustige en professionele website die de holistische werkwijze van de praktijk helder communiceert. (Gezondheid · Wix Studio · Branding, Webdesign, Wix Studio · live: https://www.wildenbergosteopathie.nl)
+
+### Horeca, eten en drinken
+
+- [La Casera](https://www.yonglo.com/project/la-casera): Voor La Casera ontwikkelde Yonglo een sfeervolle en stijlvolle website die de Italiaanse beleving van de wijnbar online tot leven brengt. (Wijnbar · Wix Studio · Webdesign, Wix Studio · live: https://www.la-casera.nl)
+- [Just Add Wine](https://www.yonglo.com/project/just-add-wine): Voor Just Add Wine ontwikkelde Yonglo een stijlvolle en gebruiksvriendelijke website die hun liefde voor natuurwijn voelbaar maakt. (Horeca & wijn · Wix Studio · Webdesign · live: https://www.justaddwine.nl)
+- [Passanelli](https://www.yonglo.com/project/passanelli): Van naam en logo tot een complete corporate identity en een stijlvolle webshop voor Italiaanse wijnen. (Italiaanse wijnen · Wix Studio · Branding, Webdesign, eCommerce, Development, Wix Studio · live: https://www.passanelli.com)
+- [Patisserie Rogier](https://www.yonglo.com/project/patisserie-rogier): Voor Patisserie Rogier ontwikkelde Yonglo een smaakvolle website met webshop, waarmee klanten eenvoudig online de lekkerste gebakjes en patisserie kunnen bestellen. (Patisserie · Wix Editor · Webdesign, eCommerce · live: https://www.patisserierogier.nl)
+- [The Candy Corner](https://www.yonglo.com/project/candy-corner): Voor The Candy Corner ontwikkelde Yonglo een frisse en gebruiksvriendelijke webshop waar klanten eenvoudig hun favoriete snoep en snacks kunnen bestellen. (Snoep · Wix Editor · Webdesign, eCommerce, API koppelingen · live: https://www.thecandycorner.nl)
+- [Event Culinair](https://www.yonglo.com/project/event-culinair): Voor Event Culinair ontwikkelde Yonglo een smaakvolle en professionele website die hun maatwerk in zakelijke catering duidelijk naar voren brengt. (Catering · Wix Editor · Webdesign, Wix Editor · live: https://www.eventculinair.nl)
+
+### Winkels en producten
+
+- [Hagro](https://www.yonglo.com/project/hagro): Voor Hagro Kantoormeubelen ontwikkelde Yonglo een volledig nieuwe merkidentiteit. (opdrachtgever: Hagro kantoormeubelen · Kantoormeubelen · Wix Studio · Branding, Webdesign, Wix Studio · live: https://www.hagrokantoormeubelen.nl)
+- [Pawy](https://www.yonglo.com/project/pawy): Een moderne, gebruiksvriendelijke website en webshop voor een Zwitserse aanbieder van vers, gezond voer voor honden en katten. (Dierenvoeding · Wix Studio · Webdesign, Wix Studio, eCommerce, Development, API koppelingen · live: https://www.pawy.ch)
+- [Bloemen voor uitvaart](https://www.yonglo.com/project/bloemen-voor-uitvaart): Voor Bloemen voor Uitvaart ontwikkelde Yonglo een respectvolle en sfeervolle website die past bij de emotionele betekenis van afscheidsbloemen. (opdrachtgever: Mrs. Flower · Zijdenbloemen · Wix Studio · Branding, Webdesign, Wix Studio · live: https://www.bloemenvooruitvaart.nl)
+- [Aircovooru](https://www.yonglo.com/project/aircovooru): Voor Aircovooru heeft Yonglo drie professionele websites ontwikkeld, waaronder specifieke platforms voor Hubo- en Hornbach-klanten. (Airco's · Wix Editor · Webdesign, Development, Wix Editor, eCommerce, API koppelingen · live: https://www.aircovooru.nl)
+- [Bali Parasol](https://www.yonglo.com/project/bali-parasol): Voor de webshop van Bali Parasol heeft Yonglo via het Wix Optimaal pakket een professionele update uitgevoerd. (Parasols · Wix Editor · Webdesign, Wix Editor, eCommerce · live: https://www.baliparasol.com)
+- [Persival](https://www.yonglo.com/project/persival): Voor Persival ontwikkelde Yonglo een stijlvolle en eigentijdse website die de modecollectie krachtig presenteert. (opdrachtgever: AMG Mode Group · Mode · Wix Editor · Webdesign, Wix Editor · live: https://www.persival.nl)
+
+### Energie en mobiliteit
+
+- [Tomorrow Energy](https://www.yonglo.com/project/tomorrow-energy): Voor Tomorrow Energy realiseerde Yonglo zowel de branding als de website. (Energie · Wix Editor · Webdesign, Branding · live: https://www.tomorrowenergy.nl)
+- [SlimLaad](https://www.yonglo.com/project/slimlaad): Voor SlimLaad ontwikkelde Yonglo een moderne en heldere website die hun slimme energieoplossingen overzichtelijk presenteert. (Energie · Wix Studio · Webdesign, eCommerce, Wix Studio · live: https://www.slimlaad.nl)
+- [Giallo Modena](https://www.yonglo.com/project/giallo-modena): Voor Giallo Modena ontwikkelde Yonglo een exclusieve en gebruiksvriendelijke website voor de online marktplaats voor Ferrari’s. (opdrachtgever: Prancing Classics · Automobiel · Wix Editor · Webdesign, Development, Wix Editor, eCommerce · live: https://www.giallomodena.com)
+
+### Interieur, design en creatief
+
+- [Woningperspectief](https://www.yonglo.com/project/woningperspectief): Voor Woningperspectief ontwikkelde Yonglo een professionele website en een custom portaal voor fotografen. (Fotografie · Wix Studio · Webdesign, Development, Wix Studio · live: https://www.woningperspectief.nl)
+- [M+R interior architecture](https://www.yonglo.com/project/m-r-interior-architecture): Meer dan 23 jaar ervaring, perfect tot in detail. (Interieurarchitectuur · Wix Studio · Webdesign, Wix Studio · live: https://www.mplusr.nl)
+- [Demi's Design](https://www.yonglo.com/project/demis-design): Voor Demi’s Design ontwikkelde Yonglo een stijlvolle en visuele website die perfect aansluit bij haar high-end fotografie. (Fotografie · Wix Editor · Webdesign · live: https://www.demisdesign.nl)
+- [AD Design Studio](https://www.yonglo.com/project/ad-design-studio): Ontwerp- en kleuroplossingen voor beddengoed, textiel en wandbekleding. (Textielontwerp · Wix Editor · Webdesign, Development · live: https://www.addesign.online)
+- [Cabana interior](https://www.yonglo.com/project/cabana-interior): Voor Cabana Interiors ontwikkelde Yonglo een stijlvolle en visuele website die de interieurconcepten van het bureau krachtig presenteert. (Interieur · Wix Studio · Webdesign, Wix Studio · live: https://www.cabanainterior.com)
+- [Maartje Blans](https://www.yonglo.com/project/maartje-blans): Voor de kunstwebsite van Maartje Blans ontwikkelde Yonglo een ingetogen en visuele website die haar werk alle ruimte geeft. (Kunst · Wix Studio · Webdesign, Wix Studio · live: https://www.maartjeblans.nl)
+- [Wifac](https://www.yonglo.com/project/wifac): Voor Wifac ontwikkelde Yonglo een professionele en toekomstgerichte website die de jarenlange expertise van de Wifac Groep krachtig presenteert. (Grafisch · Wix Editor · Webdesign, Wix Editor · live: https://www.wifac.nl)
+
+### Evenementen, recreatie en toerisme
+
+- [Pieter Smit Group](https://www.yonglo.com/project/pieter-smit-group): Een website die de logistieke kracht achter live entertainment laat zien: van concerten en festivals tot theatertours en sportevenementen. (Event logistiek · Wix Studio · Webdesign, Development, Wix Studio · live: https://www.pietersmit.com)
+- [IAWA Leiden](https://www.yonglo.com/project/iawaleiden): Voor de IAWA Leiden 2027-website ontwierp en bouwde Yonglo in opdracht van Naturalis een heldere, professionele congreswebsite voor een internationaal publiek binnen Wood Science. (opdrachtgever: Naturalis · Congres · Wix Studio · Webdesign, Wix Studio · live: https://www.iawaleiden2027.com)
+- [World Sponge Conference](https://www.yonglo.com/project/world-sponge-conference): Voor de World Sponge Conference ontwikkelde Yonglo een duidelijke en informatieve website voor dit internationale wetenschappelijke evenement. (opdrachtgever: Naturalis · Evenement · Wix Editor · Webdesign, Wix Editor · live: https://www.worldspongeconference.com)
+- [Lys d'Avril](https://www.yonglo.com/project/lys-davril): Voor de bed & breakfast-website van Lys d’Avril ontwikkelde Yonglo een sfeervolle en uitnodigende website die het Franse vakantiedomein tot leven brengt. (Bed & Breakfast · Wix Editor · Webdesign, Wix Editor · live: https://www.lysdavril.com)
+
+### Onderwijs, natuur en goede doelen
+
+- [Rijschool Wildenberg](https://www.yonglo.com/project/rijschool-wildenberg): Voor Rijschool Wildenberg ontwikkelde Yonglo de corporate identity en een toegankelijke, professionele website. (Rijschool · Wix Studio · Webdesign, Branding, Development · live: https://www.rijschoolwildenberg.nl)
+- [Slimste vogelgids](https://www.yonglo.com/project/slimste-vogelgids): Voor De Slimste Vogelgids ontwikkelde Yonglo een overzichtelijke website die de verschillende edities van deze slimme veldgidsen helder presenteert. (opdrachtgever: Jan Rodts · Natuur · Wix Editor · Webdesign, Wix Editor · live: https://www.deslimstevogelgids.com)
+- [Green Horizon](https://www.yonglo.com/project/green-horizon): Voor Green Horizon ontwikkelde Yonglo een inspirerende en informatieve website die de missie van dit goede doel krachtig uitdraagt. (Goede doel · Wix Studio · Webdesign, Development, Wix Studio · live: https://www.greenhorizon.earth)
+
 ## Koppelingen (25)
 
-Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Volledige teksten staan in llms-full.txt.
+Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Overzicht: https://www.yonglo.com/api.
 
-- [Moneybird](https://www.yonglo.com/wix-koppeling/moneybird): Automatiseer je boekhouding met een Moneybird-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je administratie voor automatische facturatie, klantdata en realtime financiële inzichten. (Boekhouding)
-- [Exact Online](https://www.yonglo.com/wix-koppeling/exact): Koppel Exact Online aan je Wix-website voor geautomatiseerde administratie en efficiënte processen. Yonglo, dé Wix-specialist, zorgt voor een slimme integratie van boekhouding, facturatie en klantdata. (Boekhouding)
-- [e-Boekhouden.nl](https://www.yonglo.com/wix-koppeling/e-boekhouden): Koppel e-Boekhouden.nl aan je Wix-website voor geautomatiseerde administratie en meer efficiëntie. Yonglo, dé Wix-specialist, integreert je boekhouding voor realtime facturatie en actuele klantgegevens. (Boekhouding)
-- [Mollie](https://www.yonglo.com/wix-koppeling/mollie): Verwerk veilige betalingen op je Wix-website met Mollie. Yonglo, dé Wix-specialist, realiseert standaard én maatwerk Mollie-integraties voor iDEAL, creditcards en andere betaalmethoden. (Betalingen)
-- [Realworks](https://www.yonglo.com/wix-koppeling/realworks): Synchroniseer je vastgoedaanbod met je Wix-website dankzij een Realworks-integratie. Yonglo, dé Wix-specialist, zorgt voor realtime updates van woningen, prijzen en beschikbaarheid – volledig automatisch. (Vastgoed & verhuur)
-- [HubSpot](https://www.yonglo.com/wix-koppeling/hubspot): Koppel HubSpot aan je Wix-website voor slimme marketing, sales en klantenservice. Yonglo, dé Wix-specialist, bouwt krachtige integraties voor geautomatiseerde workflows en gepersonaliseerde klantinteracties. (CRM & marketing)
-- [Mailchimp](https://www.yonglo.com/wix-koppeling/mailchimp): Automatiseer je e-mailmarketing met een slimme Mailchimp-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt Mailchimp voor gepersonaliseerde campagnes en realtime datasychronisatie. (CRM & marketing)
-- [Rabobank Smartpay](https://www.yonglo.com/wix-koppeling/smartpay): Koppel Rabobank Smartpay aan je Wix-website voor veilige en vertrouwde online betalingen. Yonglo, dé Wix-specialist, zorgt voor een naadloze integratie met iDEAL, creditcard en meer. (Betalingen)
-- [AFAS](https://www.yonglo.com/wix-koppeling/afas-software): Koppel AFAS Software aan je Wix-website voor geautomatiseerde HR-, boekhoud- en ERP-processen. Yonglo, dé Wix-specialist, integreert AFAS voor realtime synchronisatie van personeels-, klant- en financiële data. (Boekhouding)
-- [Visma](https://www.yonglo.com/wix-koppeling/visma): Koppel Visma aan je Wix-website voor geautomatiseerde administratie en efficiëntere bedrijfsprocessen. Yonglo, dé Wix-specialist, integreert Visma met je website voor realtime data en minder handmatig werk. (Boekhouding)
-- [Bloxs](https://www.yonglo.com/wix-koppeling/bloxs): Koppel Bloxs vastgoedsoftware aan je Wix-website voor efficiënt vastgoedbeheer. Yonglo, dé Wix-specialist, zorgt voor een slimme integratie die je makelaarskantoor tijd bespaart en processen stroomlijnt. (Vastgoed & verhuur)
-- [Salesforce](https://www.yonglo.com/wix-koppeling/salesforce): Koppel Salesforce aan je Wix-website voor geautomatiseerde leadgeneratie en CRM-synchronisatie. Yonglo, dé Wix-specialist, integreert Salesforce met je website voor realtime klantdata en efficiënte salesprocessen. (CRM & marketing)
-- [ActiveCampaign](https://www.yonglo.com/wix-koppeling/activecampaign): Koppel ActiveCampaign aan je Wix-website voor geavanceerde e-mailmarketing en marketingautomatisering. Yonglo, dé Wix-specialist, integreert ActiveCampaign voor realtime segmentatie en gepersonaliseerde campagnes. (CRM & marketing)
-- [Intercom](https://www.yonglo.com/wix-koppeling/intercom): Koppel Intercom aan je Wix-website voor slimme klantcommunicatie en efficiënte support. Yonglo, dé Wix-specialist, integreert Intercom met geautomatiseerde acties en realtime interactie. (CRM & marketing)
-- [Chargebee](https://www.yonglo.com/wix-koppeling/chargebee): Automatiseer je abonnementsbeheer met een slimme Chargebee-Wix integratie. Yonglo, dé Wix-specialist, realiseert een veilige en efficiënte koppeling voor terugkerende betalingen en abonnementen. (Betalingen)
-- [Cryptopay](https://www.yonglo.com/wix-koppeling/cryptopay): Accepteer crypto betalingen op je Wix-website met een Cryptopay integratie. Yonglo, dé Wix-specialist, realiseert veilige en flexibele koppelingen voor betalingen met digitale valuta zoals Bitcoin en Ethereum. (Betalingen)
-- [ChatGPT](https://www.yonglo.com/wix-koppeling/chat-gpt): Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit. Yonglo, dé Wix-specialist, bouwt krachtige koppelingen voor geautomatiseerde content, chatbots en gepersonaliseerde interactie. (AI)
-- [Claude (Anthropic)](https://www.yonglo.com/wix-koppeling/anthropic): Integreer Claude AI van Anthropic in je Wix-website voor slimme en veilige automatisering. Yonglo, expert in Wix-koppelingen, realiseert een krachtige en verantwoorde AI-integratie op maat. (AI)
-- [Airbnb](https://www.yonglo.com/wix-koppeling/airbnb): Automatiseer je verhuurbeheer met een directe koppeling tussen Wix en Airbnb. Yonglo, specialist in Wix-integraties, voorkomt dubbele boekingen en houdt je beschikbaarheid realtime up-to-date. (Vastgoed & verhuur)
-- [My Tourist](https://www.yonglo.com/wix-koppeling/my-tourist): Beheer al je boekingen centraal met een My Tourist-integratie op je Wix-website. Yonglo, dé Wix-specialist, koppelt je boekingskanalen voor realtime synchronisatie en efficiënt verhuurbeheer. (Vastgoed & verhuur)
-- [Microsoft Teams](https://www.yonglo.com/wix-koppeling/microsoft-teams): Koppel Microsoft Teams aan je Wix-website voor directe meldingen, efficiënte teamcommunicatie en geautomatiseerd afsprakenbeheer. Yonglo, dé Wix-specialist, integreert Microsoft 365 voor realtime samenwerking en planning. (Samenwerking & data)
-- [Slack](https://www.yonglo.com/wix-koppeling/slack): Koppel Slack aan je Wix-website voor directe meldingen en betere teamcommunicatie. Yonglo, dé Wix-specialist, integreert Slack voor realtime updates en efficiënte samenwerking binnen je team. (Samenwerking & data)
-- [Google Calendar](https://www.yonglo.com/wix-koppeling/google-calendar): Koppel Google Calendar aan je Wix-website voor automatisch afsprakenbeheer. Yonglo, dé Wix-specialist, realiseert een slimme integratie voor realtime synchronisatie en efficiënte planning. (Samenwerking & data)
-- [Google Sheets](https://www.yonglo.com/wix-koppeling/sheets): Koppel Google Sheets aan je Wix-website voor realtime dataweergave en automatisering. Yonglo, dé Wix-specialist, integreert je spreadsheets naadloos voor dynamische content en efficiënte workflows. (Samenwerking & data)
-- [Google Maps](https://www.yonglo.com/wix-koppeling/google-maps): Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website. Yonglo, dé Wix-specialist, realiseert slimme kaartintegraties voor locatiegebaseerde services, routeplanning en realtime data. (Samenwerking & data)
-
-## Help docs van de Wix-apps van Yonglo (9, Engels)
-
-Handleidingen en FAQ's voor de apps van Yonglo in de Wix App Market: [Smart Cookie Popup for Wix](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix). Overzicht: https://www.yonglo.com/help-docs. Volledige teksten staan in llms-full.txt.
-
-- [Getting Started With: Smart Cookie Popup for Wix](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/getting-started-smart-cookie-popup-for-wix): Smart Cookie Popup is an easy‑to‑use Wix app designed to help you add a fully GDPR‑compliant cookie consent popup to your website quickly and confidently. (Smart Cookie Popup for Wix)
-- [GDPR Compliance](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/gdpr-compliance): The General Data Protection Regulation (GDPR) is an EU law designed to protect the privacy and personal data of individuals. It applies to any website that… (Smart Cookie Popup for Wix)
-- [Adding manage preferences button](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/adding-manage-preferences-button): After users make a choice about which cookies to accept, they should always be able to update their preferences later. The Manage Preferences button makes… (Smart Cookie Popup for Wix)
-- [Setting up Managed Google Tags](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/setting-up-managed-google-tags): Managed Google Tags lets Smart Cookie Popup load your Google tags and manage Google Consent Mode v2 for you. Turn it on only if you want this app, not Wix… (Smart Cookie Popup for Wix)
-- [Using Google Tag Manager with Smart Cookie Popup](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/using-google-tag-manager-with-smart-cookie-popup): If your Google tags are managed in Google Tag Manager, you can let Smart Cookie Popup load your GTM container after consent and manage Consent Mode v2 for… (Smart Cookie Popup for Wix)
-- [Using direct Google tags (GA4, Google Ads, Floodlight) without GTM](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/using-direct-google-tags-ga4-google-ads-floodlight-without-gtm): If you do not use Google Tag Manager, you can let Smart Cookie Popup load your Google tags directly. Add one ID per line, and the app loads them after… (Smart Cookie Popup for Wix)
-- [Avoiding duplicate Google installs](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/avoiding-duplicate-google-installs): For Managed Google Tags to work correctly, this app should be the only place that loads your Google IDs. If the same ID also loads somewhere else, you can… (Smart Cookie Popup for Wix)
-- [Google Consent Mode and cookie categories](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/google-consent-mode-and-cookie-categories): When Managed Google Tags is enabled and set up, the app connects your visitors’ cookie choices to Google Consent Mode v2. You do not need to add any Consent… (Smart Cookie Popup for Wix)
-- [Troubleshooting Managed Google Tags](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/troubleshooting-managed-google-tags): If your tags are not behaving the way you expect, work through these common situations. Most issues come from setup that is not finished, or from the same… (Smart Cookie Popup for Wix)
-
-## Projecten (52)
-
-Volledige beschrijvingen staan in llms-full.txt.
-
-- [Woningperspectief](https://www.yonglo.com/project/woningperspectief): Brengt vastgoed in beeld (Fotografie · Webdesign, Development, Wix Studio)
-- [M+R interior architecture](https://www.yonglo.com/project/m-r-interior-architecture): Meer dan 23 jaar ervaring, perfect tot in detail. (Interieurarchitectuur · Webdesign, Wix Studio)
-- [Rijschool Wildenberg](https://www.yonglo.com/project/rijschool-wildenberg): Voor Rijschool Wildenberg ontwikkelde Yonglo de corporate identity en een toegankelijke, professionele website. De nieuwe uitstraling sluit aan bij het betrouwbare en persoonlijke karakter van de rijschool. (Rijschool · Webdesign, Branding, Development)
-- [Burgstate](https://www.yonglo.com/project/burgstate): Voor Burgstate bedacht Yonglo de naam en ontwikkelde de corporate identity en website. (Vastgoed · Webdesign, Wix Studio, Branding, Development, API koppelingen)
-- [La Casera](https://www.yonglo.com/project/la-casera): Italiaanse wijnbar en delicatessen (Wijnbar · Webdesign, Wix Studio)
-- [Hagro](https://www.yonglo.com/project/hagro): Van ruimte naar resultaat (Hagro kantoormeubelen · Kantoormeubelen · Branding, Webdesign, Wix Studio)
-- [Pieter Smit Group](https://www.yonglo.com/project/pieter-smit-group): Logistiek voor concerten, festivals en theatertours. (Event logistiek · Webdesign, Development, Wix Studio)
-- [Demi's Design](https://www.yonglo.com/project/demis-design): Bruiloften, newborn-, zwangerschaps- en familieshoots. (Fotografie · Webdesign)
-- [Door Martijn](https://www.yonglo.com/project/door-martijn): Voor DOOR Martijn ontwikkelde Yonglo een professionele makelaarswebsite met een custom koppeling met Realworks. (Makelaardij · Webdesign, API koppelingen)
-- [IAWA Leiden](https://www.yonglo.com/project/iawaleiden): Empowering Wood Science (Naturalis · Congres · Webdesign, Wix Studio)
-- [Just Add Wine](https://www.yonglo.com/project/just-add-wine): Natuurwijnen voor restaurants, wijnbars en liefhebbers. (Horeca & wijn · Webdesign)
-- [Pawy](https://www.yonglo.com/project/pawy): Custom webshop en vaste developmentpartner. (Dierenvoeding · Webdesign, Wix Studio, eCommerce, Development, API koppelingen)
-- [Bloemen voor uitvaart](https://www.yonglo.com/project/bloemen-voor-uitvaart): Voor een liefdevol afscheid (Mrs. Flower · Zijdenbloemen · Branding, Webdesign, Wix Studio)
-- [Tomorrow Energy](https://www.yonglo.com/project/tomorrow-energy): Voor Tomorrow Energy realiseerde Yonglo zowel de branding als de website. (Energie · Webdesign, Branding)
-- [Kogna](https://www.yonglo.com/project/kogna): BTW-compliance en data-analyse (Consultant · Webdesign, Wix Studio)
-- [Mankind](https://www.yonglo.com/project/mankind-coach): Mankind is een online platform om te ontdekken wat er bestaat om te groeien, te ontdekken en te ontwikkelen. (Coaching · Webdesign, Development)
-- [Finiance](https://www.yonglo.com/project/finiance): CFO-diensten en projectregie (Financieel · Branding, Webdesign, Wix Studio)
-- [Passanelli](https://www.yonglo.com/project/passanelli): Naam, identiteit en webshop met AI-bestelhulp. (Italiaanse wijnen · Branding, Webdesign, eCommerce, Development, Wix Studio)
-- [AD Design Studio](https://www.yonglo.com/project/ad-design-studio): Ontwerp- en kleuroplossingen voor beddengoed, textiel en wandbekleding. (Textielontwerp · Webdesign, Development)
-- [Aircovooru](https://www.yonglo.com/project/aircovooru): Jouw comfort, perfect geregeld (Airco's · Webdesign, Development, Wix Editor, eCommerce, API koppelingen)
-- [Bali Parasol](https://www.yonglo.com/project/bali-parasol): Luxury Balinese parasols (Parasols · Webdesign, Wix Editor, eCommerce)
-- [Ducot](https://www.yonglo.com/project/ducot): Engineering & Advies (Ducot Engineering & Advies · Engineering · Webdesign, Wix Editor)
-- [Patisserie Rogier](https://www.yonglo.com/project/patisserie-rogier): Lekkers voor iedereen (Patisserie · Webdesign, eCommerce)
-- [Your World](https://www.yonglo.com/project/your-world): Meer veerkracht voor zorgverleners (Sustainable Me · Gezondheid · Webdesign, Development, Wix Editor)
-- [World Sponge Conference](https://www.yonglo.com/project/world-sponge-conference): Internationale wetenschappelijke evenement (Naturalis · Evenement · Webdesign, Wix Editor)
-- [Ter Heide](https://www.yonglo.com/project/ter-heide): Vind zorg en ondersteuning op maat (Zorg · Webdesign, Development, API koppelingen)
-- [Slimste vogelgids](https://www.yonglo.com/project/slimste-vogelgids): Vogels in de Benelux leren herkennen (Jan Rodts · Natuur · Webdesign, Wix Editor)
-- [Bootsma Lamme](https://www.yonglo.com/project/bootsma-lamme): Weer verder met familiekwesties (Bootsma Lamme Advocaten · Advocaat · Webdesign, Wix Editor)
-- [Dogs&Zo](https://www.yonglo.com/project/dogs-en-zo): Samen werken aan een fijn hondenleven (Hondenschool · Webdesign, Wix Editor)
-- [SlimLaad](https://www.yonglo.com/project/slimlaad): Slim in thuisbatterijen en laadpalen (Energie · Webdesign, eCommerce, Wix Studio)
-- [Nina Basoski](https://www.yonglo.com/project/nina-basoski): Jouw gezondheid begint hier (Diëtistenpraktijk Nina Basoski · Gezondheid · Webdesign, Wix Editor)
-- [Wildenberg Osteopathie](https://www.yonglo.com/project/wildenberg-osteopathie): Weer soepel en in balans (Gezondheid · Branding, Webdesign, Wix Studio)
-- [Business Centers](https://www.yonglo.com/project/business-centers): Flexibele kantoorruimtes in Limburg (Burgstate · Business Centers · Branding, Webdesign, Wix Studio)
-- [Cabana interior](https://www.yonglo.com/project/cabana-interior): Inspirerende interieurs van ontwerp tot realisatie (Interieur · Webdesign, Wix Studio)
-- [The Candy Corner](https://www.yonglo.com/project/candy-corner): Ontdek uniek Amerikaans en Japans snoep (Snoep · Webdesign, eCommerce, API koppelingen)
-- [Arise](https://www.yonglo.com/project/arise): Biodiversity (Naturalis · Onderzoek · Webdesign, Wix Editor)
-- [Giallo Modena](https://www.yonglo.com/project/giallo-modena): Vind en verkoop exclusieve Ferrari's (Prancing Classics · Automobiel · Webdesign, Development, Wix Editor, eCommerce)
-- [Maartje Blans](https://www.yonglo.com/project/maartje-blans): Ervaar verstilling en verwondering in kunst (Kunst · Webdesign, Wix Studio)
-- [Hartog & van Rossum](https://www.yonglo.com/project/hartog-van-rossum): Veilige werkomgeving met vertrouwen (Advies & training · Webdesign, Wix Editor)
-- [Persival](https://www.yonglo.com/project/persival): Mode voor meiden (AMG Mode Group · Mode · Webdesign, Wix Editor)
-- [Lys d'Avril](https://www.yonglo.com/project/lys-davril): Vakantiedomein in Glanges (Bed & Breakfast · Webdesign, Wix Editor)
-- [Peanuts Academie](https://www.yonglo.com/project/peanuts-academie): Marketingtrainingen (Peanuts Strategie & Academie · Advies & training · Webdesign, Development, Wix Editor)
-- [VAD Notarissen](https://www.yonglo.com/project/vad-notarissen): Notariskantoor in Rotterdam (Notaris · Webdesign, Wix Editor)
-- [Wifac](https://www.yonglo.com/project/wifac): Van prepress tot perschemie (Grafisch · Webdesign, Wix Editor)
-- [Van Weele](https://www.yonglo.com/project/van-weele): Aankoopmakelaardij (Aankoopmakelaardij Van Weele · Makelaar · Branding, Webdesign, Wix Editor)
-- [EAGM](https://www.yonglo.com/project/eagm): European synthetic products (Corporate · Webdesign, Development, Wix Editor)
-- [Go2Academy](https://www.yonglo.com/project/go2academy): BHV- en VCA-opleidingen (Advies & training · Webdesign, Wix Editor)
-- [Green Horizon](https://www.yonglo.com/project/green-horizon): Steun herbebossing in Afrika (Goede doel · Webdesign, Development, Wix Studio)
-- [Den Doorbraak](https://www.yonglo.com/project/den-doorbraak): Verkoopsite voor 20 appartementen in Blerick (Burgstate projectontwikkeling · Vastgoed · Webdesign, Wix Studio)
-- [Roercenter](https://www.yonglo.com/project/roercenter): Winkelcentrum in Roermond (Winkelcentrum · Branding, Webdesign, eCommerce, Wix Studio)
-- [Tenerife Online](https://www.yonglo.com/project/tenerife-online): Makelaarssite voor woningen op Tenerife (Makelaar · Webdesign, Development, Wix Editor)
-- [Event Culinair](https://www.yonglo.com/project/event-culinair): Cateringwebsite (Catering · Webdesign, Wix Editor)
+- [Moneybird](https://www.yonglo.com/wix-koppeling/moneybird) (Boekhouding): Automatiseer je boekhouding met een Moneybird-integratie op je Wix-website.
+- [Exact Online](https://www.yonglo.com/wix-koppeling/exact) (Boekhouding): Koppel Exact Online aan je Wix-website voor geautomatiseerde administratie en efficiënte processen.
+- [e-Boekhouden.nl](https://www.yonglo.com/wix-koppeling/e-boekhouden) (Boekhouding): Koppel e-Boekhouden.nl aan je Wix-website voor geautomatiseerde administratie en meer efficiëntie.
+- [Mollie](https://www.yonglo.com/wix-koppeling/mollie) (Betalingen): Verwerk veilige betalingen op je Wix-website met Mollie.
+- [Realworks](https://www.yonglo.com/wix-koppeling/realworks) (Vastgoed & verhuur): Synchroniseer je vastgoedaanbod met je Wix-website dankzij een Realworks-integratie.
+- [HubSpot](https://www.yonglo.com/wix-koppeling/hubspot) (CRM & marketing): Koppel HubSpot aan je Wix-website voor slimme marketing, sales en klantenservice.
+- [Mailchimp](https://www.yonglo.com/wix-koppeling/mailchimp) (CRM & marketing): Automatiseer je e-mailmarketing met een slimme Mailchimp-integratie op je Wix-website.
+- [Rabobank Smartpay](https://www.yonglo.com/wix-koppeling/smartpay) (Betalingen): Koppel Rabobank Smartpay aan je Wix-website voor veilige en vertrouwde online betalingen.
+- [AFAS](https://www.yonglo.com/wix-koppeling/afas-software) (Boekhouding): Koppel AFAS Software aan je Wix-website voor geautomatiseerde HR-, boekhoud- en ERP-processen.
+- [Visma](https://www.yonglo.com/wix-koppeling/visma) (Boekhouding): Koppel Visma aan je Wix-website voor geautomatiseerde administratie en efficiëntere bedrijfsprocessen.
+- [Bloxs](https://www.yonglo.com/wix-koppeling/bloxs) (Vastgoed & verhuur): Koppel Bloxs vastgoedsoftware aan je Wix-website voor efficiënt vastgoedbeheer.
+- [Salesforce](https://www.yonglo.com/wix-koppeling/salesforce) (CRM & marketing): Koppel Salesforce aan je Wix-website voor geautomatiseerde leadgeneratie en CRM-synchronisatie.
+- [ActiveCampaign](https://www.yonglo.com/wix-koppeling/activecampaign) (CRM & marketing): Koppel ActiveCampaign aan je Wix-website voor geavanceerde e-mailmarketing en marketingautomatisering.
+- [Intercom](https://www.yonglo.com/wix-koppeling/intercom) (CRM & marketing): Koppel Intercom aan je Wix-website voor slimme klantcommunicatie en efficiënte support.
+- [Chargebee](https://www.yonglo.com/wix-koppeling/chargebee) (Betalingen): Automatiseer je abonnementsbeheer met een slimme Chargebee-Wix integratie.
+- [Cryptopay](https://www.yonglo.com/wix-koppeling/cryptopay) (Betalingen): Accepteer crypto betalingen op je Wix-website met een Cryptopay integratie.
+- [ChatGPT](https://www.yonglo.com/wix-koppeling/chat-gpt) (AI): Integreer ChatGPT op je Wix-website voor slimme AI-functionaliteit.
+- [Claude (Anthropic)](https://www.yonglo.com/wix-koppeling/anthropic) (AI): Integreer Claude AI van Anthropic in je Wix-website voor slimme en veilige automatisering.
+- [Airbnb](https://www.yonglo.com/wix-koppeling/airbnb) (Vastgoed & verhuur): Automatiseer je verhuurbeheer met een directe koppeling tussen Wix en Airbnb.
+- [My Tourist](https://www.yonglo.com/wix-koppeling/my-tourist) (Vastgoed & verhuur): Beheer al je boekingen centraal met een My Tourist-integratie op je Wix-website.
+- [Microsoft Teams](https://www.yonglo.com/wix-koppeling/microsoft-teams) (Samenwerking & data): Koppel Microsoft Teams aan je Wix-website voor directe meldingen, efficiënte teamcommunicatie en geautomatiseerd afsprakenbeheer.
+- [Slack](https://www.yonglo.com/wix-koppeling/slack) (Samenwerking & data): Koppel Slack aan je Wix-website voor directe meldingen en betere teamcommunicatie.
+- [Google Calendar](https://www.yonglo.com/wix-koppeling/google-calendar) (Samenwerking & data): Koppel Google Calendar aan je Wix-website voor automatisch afsprakenbeheer.
+- [Google Sheets](https://www.yonglo.com/wix-koppeling/sheets) (Samenwerking & data): Koppel Google Sheets aan je Wix-website voor realtime dataweergave en automatisering.
+- [Google Maps](https://www.yonglo.com/wix-koppeling/google-maps) (Samenwerking & data): Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website.
 
 ## Nieuws en blog (33)
 
-Volledige artikelen staan in llms-full.txt.
-
-- [Yonglo lanceert compleet vernieuwde website: van sterk idee naar krachtige website](https://www.yonglo.com/post/yonglo-lanceert-compleet-vernieuwde-website) (2026-09-13, Yonglo): Yonglo heeft een compleet vernieuwde website gelanceerd. Een frisse, overzichtelijke en duidelijke online omgeving waarin bezoekers in één oogopslag ontdekken wat Yonglo doet, waar het voor staat en hoe ideeën worden vertaald naar sterke digitale oplossingen. Het centrale thema van de nieuwe website is dan ook: van sterk idee naar krachtige website.
-- [AI en Wix in 2026: waar zit de échte tijdwinst voor bedrijven?](https://www.yonglo.com/post/ai-en-wix-in-2026) (2026-08-10, AI): AI en Wix worden steeds vaker in één adem genoemd. Meestal gaat het dan over twee bekende functies: de Wix AI Website Builder, waarmee je snel een eerste website kunt laten maken, en Astro, de AI-assistent in je Wix-dashboard.
-- [Zon, warmte… en een soepele online airco-bestelling dankzij Yonglo](https://www.yonglo.com/post/online-airco-bestellen) (2026-06-25, Projecten): De zon laat zich volop zien en de temperaturen lopen snel op. Dat betekent maar één ding: airco’s draaien overuren. Bij Aircovooru merken ze dat als geen ander. Gelukkig staat er een krachtig digitaal fundament achter hun succes, gerealiseerd door Yonglo.
-- [Overstappen van Wix Editor naar Wix Studio](https://www.yonglo.com/post/van-editor-naar-wix-studio) (2026-04-17, Wix): Draait jouw website op de klassieke Wix Editor en kijk je al een tijdje naar de mogelijkheden van Wix Studio? Dan is er waarschijnlijk één ding dat je tegenhoudt: wat gebeurt er met al mijn data?
-- [Yonglo lanceert ‘Smart Cookie Popup’ voor Wix](https://www.yonglo.com/post/yonglo-lanceert-smart-cookie-popup) (2026-02-26, Yonglo): Goed nieuws voor alle Wix gebruikers! Het Yonglo development team heeft speciaal voor Wix een krachtige en gebruiksvriendelijke cookie app ontwikkeld: Smart Cookie Popup.
-- [Let op: oplichters actief uit naam van Yonglo](https://www.yonglo.com/post/hoe-herken-je-spam) (2026-02-10, Yonglo): Helaas ontvangen wij de laatste tijd steeds meer meldingen van oplichters en spammers die misbruik maken van onze naam, logo’s en zelfs foto’s. Zij doen zich voor als Yonglo en benaderen onze klanten met misleidende e-mails. Deze berichten zien er vaak professioneel uit en kunnen daardoor voor verwarring zorgen.
-- [The Road to Freedom: nieuwe website voor Rijschool Wildenberg](https://www.yonglo.com/post/nieuwe-website-rijschool-wildenberg) (2026-01-20, Projecten): Bij Yonglo geloven we dat een sterke website de eerste stap is richting vrijheid en groei. Daarom zijn we trots op de mooie samenwerking met Rijschool Wildenberg.
-- [Welke slimme online oplossingen zijn beschikbaar voor Wix-websites in Nederland?](https://www.yonglo.com/post/online-oplossingen-voor-wix-websites-in-nederland) (2025-12-03, Wix): In Nederland kiezen steeds meer ondernemers ervoor om hun websites te bouwen met Wix. Dit platform biedt een gebruiksvriendelijke interface en een scala aan functies die het creëren van een professionele website eenvoudig maken, zelfs voor mensen zonder technische achtergrond.
-- [Yonglo steunt Green Horizon met nieuwe website en speciaal ontwikkelde sponsormodule](https://www.yonglo.com/post/yonglo-steunt-green-horizon) (2025-11-27, Projecten): Bij Yonglo geloven we dat digitale innovatie hand in hand gaat met maatschappelijke verantwoordelijkheid. Daarom zijn we trots om ons partnerschap met Green Horizon aan te kondigen, een organisatie die zich inzet voor een groenere, duurzamere toekomst
-- [Wie kan een Wix-website bouwen die makkelijk te beheren is?](https://www.yonglo.com/post/wie-kan-een-wix-website-bouwen-die-makkelijk-te-beheren-is-1) (2025-11-13, Wix): Tegenwoordig kiezen steeds meer bedrijven voor Wix als hun platform voor webdesign. Maar wie kan een Wix-website construeren die eenvoudig te beheren is?
-- [Welke slimme online oplossingen zijn beschikbaar voor Wix-websites?](https://www.yonglo.com/post/online-oplossingen-voor-wix-websites-1) (2025-11-13, Wix): Een aantrekkelijk en functioneel ontwerp is cruciaal voor het succes van een website. Bij Yonglo zijn we gespecialiseerd in het creëren van op maat gemaakte Wix-websites die zijn afgestemd op de specifieke behoeften van onze klanten.
-- [Slimme online oplossingen voor Wix websites en waarom Yonglo jouw beste partner is](https://www.yonglo.com/post/online-oplossingen-voor-wix) (2025-09-25, Wix): Om het meeste uit je Wix-website te halen, heb je slimme online oplossingen nodig en laten we zien waarom Yonglo jouw beste partner is voor een succesvolle Wix-website.
-- [Een Wix-website bouwen die makkelijk te beheren is](https://www.yonglo.com/post/een-wix-website-bouwen-die-makkelijk-te-beheren-is) (2025-09-24, Wix): Als ondernemer of starter is het belangrijk om een online aanwezigheid te hebben. Tegenwoordig biedt een Wix-website een gebruiksvriendelijke en flexibele oplossing voor het bouwen van een professionele website. Maar wie kan deze websites ontwikkelen, en hoe zorg je ervoor dat je gemakkelijk kunt beheren?
-- [De kracht van maatwerk oplossingen in Wix voor bedrijven](https://www.yonglo.com/post/maatwerk-oplossingen-in-wix) (2025-09-22, Wix): Wix maatwerk functies zijn speciaal ontworpen om aan jouw specifieke eisen te voldoen. Dit betekent dat je niet hoeft te worstelen met standaardsoftware die niet helemaal past.
-- [Hoe vind ik een expert voor het ontwikkelen van een Wix-website](https://www.yonglo.com/post/expert-voor-het-ontwikkelen-van-een-wix-website) (2025-09-22, Wix): Als ondernemer of marketingprofessional weet je hoe belangrijk een sterke online aanwezigheid is. Een goed ontworpen website kan een cruciaal hulpmiddel zijn voor je merk. Dit is waar Wix en Yonglo in het spel komen.
-- [Kan iemand mijn Wix-site optimaliseren voor betere conversies in Nederland?](https://www.yonglo.com/post/wix-site-optimaliseren) (2025-09-21, Wix): Het optimaliseren van je Wix-website voor betere conversies is een slimme zet voor elke ondernemer. Dit geldt vooral voor MKB's en starters in Nederland die hun online aanwezigheid willen verbeteren. Maar hoe pak je dat aan? Het antwoord ligt bij Yonglo, een officiële Wix Partner met meer dan 16 jaar ervaring in conversie-optimalisatie en maatwerk.
+- [Yonglo lanceert compleet vernieuwde website: van sterk idee naar krachtige website](https://www.yonglo.com/post/yonglo-lanceert-compleet-vernieuwde-website) (2026-09-13, Yonglo): Yonglo heeft een compleet vernieuwde website gelanceerd.
+- [AI en Wix in 2026: waar zit de échte tijdwinst voor bedrijven?](https://www.yonglo.com/post/ai-en-wix-in-2026) (2026-08-10, AI): AI en Wix worden steeds vaker in één adem genoemd.
+- [Zon, warmte… en een soepele online airco-bestelling dankzij Yonglo](https://www.yonglo.com/post/online-airco-bestellen) (2026-06-25, Projecten): De zon laat zich volop zien en de temperaturen lopen snel op. Dat betekent maar één ding: airco’s draaien overuren.
+- [Overstappen van Wix Editor naar Wix Studio](https://www.yonglo.com/post/van-editor-naar-wix-studio) (2026-04-17, Wix): Draait jouw website op de klassieke Wix Editor en kijk je al een tijdje naar de mogelijkheden van Wix Studio?
+- [Yonglo lanceert ‘Smart Cookie Popup’ voor Wix](https://www.yonglo.com/post/yonglo-lanceert-smart-cookie-popup) (2026-02-26, Yonglo): Goed nieuws voor alle Wix gebruikers! Het Yonglo development team heeft speciaal voor Wix een krachtige en gebruiksvriendelijke cookie app …
+- [Let op: oplichters actief uit naam van Yonglo](https://www.yonglo.com/post/hoe-herken-je-spam) (2026-02-10, Yonglo): Helaas ontvangen wij de laatste tijd steeds meer meldingen van oplichters en spammers die misbruik maken van onze naam, logo’s en zelfs …
+- [The Road to Freedom: nieuwe website voor Rijschool Wildenberg](https://www.yonglo.com/post/nieuwe-website-rijschool-wildenberg) (2026-01-20, Projecten): Bij Yonglo geloven we dat een sterke website de eerste stap is richting vrijheid en groei.
+- [Welke slimme online oplossingen zijn beschikbaar voor Wix-websites in Nederland?](https://www.yonglo.com/post/online-oplossingen-voor-wix-websites-in-nederland) (2025-12-03, Wix): In Nederland kiezen steeds meer ondernemers ervoor om hun websites te bouwen met Wix.
+- [Yonglo steunt Green Horizon met nieuwe website en speciaal ontwikkelde sponsormodule](https://www.yonglo.com/post/yonglo-steunt-green-horizon) (2025-11-27, Projecten): Bij Yonglo geloven we dat digitale innovatie hand in hand gaat met maatschappelijke verantwoordelijkheid.
+- [Wie kan een Wix-website bouwen die makkelijk te beheren is?](https://www.yonglo.com/post/wie-kan-een-wix-website-bouwen-die-makkelijk-te-beheren-is-1) (2025-11-13, Wix): Tegenwoordig kiezen steeds meer bedrijven voor Wix als hun platform voor webdesign.
+- [Welke slimme online oplossingen zijn beschikbaar voor Wix-websites?](https://www.yonglo.com/post/online-oplossingen-voor-wix-websites-1) (2025-11-13, Wix): Een aantrekkelijk en functioneel ontwerp is cruciaal voor het succes van een website.
+- [Slimme online oplossingen voor Wix websites en waarom Yonglo jouw beste partner is](https://www.yonglo.com/post/online-oplossingen-voor-wix) (2025-09-25, Wix): Om het meeste uit je Wix-website te halen, heb je slimme online oplossingen nodig en laten we zien waarom Yonglo jouw beste partner is voor …
+- [Een Wix-website bouwen die makkelijk te beheren is](https://www.yonglo.com/post/een-wix-website-bouwen-die-makkelijk-te-beheren-is) (2025-09-24, Wix): Als ondernemer of starter is het belangrijk om een online aanwezigheid te hebben.
+- [De kracht van maatwerk oplossingen in Wix voor bedrijven](https://www.yonglo.com/post/maatwerk-oplossingen-in-wix) (2025-09-22, Wix): Wix maatwerk functies zijn speciaal ontworpen om aan jouw specifieke eisen te voldoen.
+- [Hoe vind ik een expert voor het ontwikkelen van een Wix-website](https://www.yonglo.com/post/expert-voor-het-ontwikkelen-van-een-wix-website) (2025-09-22, Wix): Als ondernemer of marketingprofessional weet je hoe belangrijk een sterke online aanwezigheid is.
+- [Kan iemand mijn Wix-site optimaliseren voor betere conversies in Nederland?](https://www.yonglo.com/post/wix-site-optimaliseren) (2025-09-21, Wix): Het optimaliseren van je Wix-website voor betere conversies is een slimme zet voor elke ondernemer.
 - [Waar kan ik een Wix-website laten maken met een uniek ontwerp in Nederland?](https://www.yonglo.com/post/wix-website-laten-maken-in-nederland) (2025-09-21, Wix): Waar kan ik een Wix-website laten maken met een uniek ontwerp in Nederland?
-- [Slimme Online Oplossingen voor Wix-websites in Nederland](https://www.yonglo.com/post/online-oplossingen-voor-wix-websites) (2025-09-21, Wix): De wereld van online ondernemen verandert snel, en het bijhouden van de trends kan overweldigend zijn. Voor ondernemers, het MKB en starters van een eigen bedrijf kan een goed functionerende website het verschil maken. Wix biedt een gebruiksvriendelijk platform, maar hoe haal je er het meeste uit?
-- [Wat kost het om een aangepaste Wix-website te laten maken in Nederland?](https://www.yonglo.com/post/wix-website-laten-maken) (2025-09-21, Wix): Waarom wachten? Zorg ervoor dat je bedrijf een online aanwezigheid heeft die bijdraagt aan je groei en succes. Met de nodige kennis en expertise van Yonglo krijg je de best mogelijke ondersteuning voor je Wix-website.
-- [Yonglo: jouw Europese Wix & Wix Studio webdesign specialist](https://www.yonglo.com/post/wix-europa) (2025-08-26, Yonglo): Als gecertificeerd Europese Wix Studio Web Developer en Webdesigner, beheerst Yonglo het volledige spectrum van Wix‑functionaliteit – van visueel indrukwekkend design tot maatwerk functionaliteiten.
-- [Wix Vibe: Eerste indruk en wat je ervan kunt verwachten](https://www.yonglo.com/post/wix-vibe) (2025-08-19, AI): Wij werken dagelijks met Wix en houden alle ontwikkelingen scherp in de gaten. Toen er ineens nieuwe artikelen verschenen onder de naam “Wix Vibe”, doken we bij Yonglo er natuurlijk meteen in.
-- [Yonglo officieel erkend als Wix Studio Webdesigner & Developer](https://www.yonglo.com/post/yonglo-wix-studio-webdesigner-developer) (2025-07-22, Yonglo): Yonglo werd door Wix Studio officieel bekroond met niet één, maar twee prestigieuze certificaten. Deze dubbele erkenning bevestigt de toonaangevende positie van Yonglo als expert in zowel het ontwerpen als het ontwikkelen van hoogwaardige websites op het Wix-platform
-- [Yonglo: Dé specialist in API-koppelingen binnen Wix-websites](https://www.yonglo.com/post/api-koppelingen-wix-websites) (2025-05-28, Wix): In een digitale wereld waarin maatwerk en automatisering essentieel zijn, biedt Yonglo als erkend Wix Partner innovatieve oplossingen voor bedrijven die hun Wix-websites willen uitbreiden met geavanceerde functionaliteiten.
-- [Yonglo groeit: Design én Development, nu onder één krachtig merk](https://www.yonglo.com/post/yonglo-groeit-door) (2025-04-28, Yonglo): Na jaren van succesvolle samenwerking tillen we onze ambities naar een hoger niveau: Yonglo bundelt officieel de krachten van design en development. Met trots verwelkomen we Joris Borgers en zijn expertise binnen Yonglo Development als vast onderdeel van het Yonglo merk.
-- [Ontdek Wixel: Het Nieuwe AI-Designplatform van Wix](https://www.yonglo.com/post/wixel-het-ai-designplatform-van-wix) (2025-04-16, AI): Wix heeft onlangs een innovatieve stap gezet in de wereld van digitale creativiteit met de lancering van Wixel—een AI-gedreven ontwerpplatform dat is ontworpen om iedereen, ongeacht hun ontwerpvaardigheden, in staat te stellen verbluffende visuals te creëren. Of je nu een ondernemer, marketeer, content creator of hobbyist bent, Wixel biedt de tools om je creatieve visie tot leven te brengen.
-- [From nature with love](https://www.yonglo.com/post/just-add-wine-from-nature-with-love) (2024-08-02, Projecten): Just Add Wine: passie voor natuurwijn'Just Add Wine' is niet zomaar een naam. Die vertegenwoordigt de liefde en passie voor natuurwijn. De passie voor wijn ontstaat bij de wijnmaker en gaat verder bij de wijnimporteur. Dit inspireerde ons om bij Yonglo hun nieuwe website te ontwikkelen. De passie van de eigenaren Ine en Ries wordt zo voor iedereen tastbaar. Een website is immers meer dan een online visitekaartje. Het is een plek waar je jouw verhaal kunt delen. Van wijngaard tot browser:...
+- [Slimme Online Oplossingen voor Wix-websites in Nederland](https://www.yonglo.com/post/online-oplossingen-voor-wix-websites) (2025-09-21, Wix): De wereld van online ondernemen verandert snel, en het bijhouden van de trends kan overweldigend zijn.
+- [Wat kost het om een aangepaste Wix-website te laten maken in Nederland?](https://www.yonglo.com/post/wix-website-laten-maken) (2025-09-21, Wix): Waarom wachten? Zorg ervoor dat je bedrijf een online aanwezigheid heeft die bijdraagt aan je groei en succes.
+- [Yonglo: jouw Europese Wix & Wix Studio webdesign specialist](https://www.yonglo.com/post/wix-europa) (2025-08-26, Yonglo): Als gecertificeerd Europese Wix Studio Web Developer en Webdesigner, beheerst Yonglo het volledige spectrum van Wix‑functionaliteit – van …
+- [Wix Vibe: Eerste indruk en wat je ervan kunt verwachten](https://www.yonglo.com/post/wix-vibe) (2025-08-19, AI): Wij werken dagelijks met Wix en houden alle ontwikkelingen scherp in de gaten.
+- [Yonglo officieel erkend als Wix Studio Webdesigner & Developer](https://www.yonglo.com/post/yonglo-wix-studio-webdesigner-developer) (2025-07-22, Yonglo): Yonglo werd door Wix Studio officieel bekroond met niet één, maar twee prestigieuze certificaten.
+- [Yonglo: Dé specialist in API-koppelingen binnen Wix-websites](https://www.yonglo.com/post/api-koppelingen-wix-websites) (2025-05-28, Wix): In een digitale wereld waarin maatwerk en automatisering essentieel zijn, biedt Yonglo als erkend Wix Partner innovatieve oplossingen voor …
+- [Yonglo groeit: Design én Development, nu onder één krachtig merk](https://www.yonglo.com/post/yonglo-groeit-door) (2025-04-28, Yonglo): Na jaren van succesvolle samenwerking tillen we onze ambities naar een hoger niveau: Yonglo bundelt officieel de krachten van design en …
+- [Ontdek Wixel: Het Nieuwe AI-Designplatform van Wix](https://www.yonglo.com/post/wixel-het-ai-designplatform-van-wix) (2025-04-16, AI): Wix heeft onlangs een innovatieve stap gezet in de wereld van digitale creativiteit met de lancering van Wixel—een AI-gedreven …
+- [From nature with love](https://www.yonglo.com/post/just-add-wine-from-nature-with-love) (2024-08-02, Projecten): Just Add Wine: passie voor natuurwijn'Just Add Wine' is niet zomaar een naam. Die vertegenwoordigt de liefde en passie voor natuurwijn.
 - [Hoe Yonglo de nieuwe naam en identiteit van Burgstate realiseerde](https://www.yonglo.com/post/yonglo-realiseert-nieuwe-identiteit-burgstate) (2024-05-13, Projecten): Een nieuwe naam en identiteit vragen om een krachtige lancering. Voor Burgstate hebben we daarom een uitgebreide lanceercampagne ontworpen.
 - [Makkelijk en snel blogberichten schrijven in Wix](https://www.yonglo.com/post/makkelijk-en-snel-blogberichten-schrijven-in-wix) (2024-04-09, Wix): Het schrijven van blogberichten ging nog nooit zo makkelijk en snel dankzij onze unieke samenwerking met Bliep.ai
 - [Verbeter je Wix-website met krachtige AI-hulpmiddelen](https://www.yonglo.com/post/verbeter-je-wix-website-met-ai) (2024-02-02, AI): Dankzij AI kunnen we websites slimmer, gebruiksvriendelijker en efficiënter maken. En dat is precies wat we bij Yonglo doen met Wix!
 - [Een nieuw hoofdstuk: By Marko wordt Yonglo!](https://www.yonglo.com/post/by-marko-wordt-yonglo) (2024-01-01, Yonglo): Vanaf 1 januari 2024 hebben we een bedrijfstransformatie ondergaan - een verandering die niet alleen onze naam omvat, maar ook....
 - [Wat is webhosting? Alles wat je moet weten over het hosten van je website](https://www.yonglo.com/post/wat-is-webhosting-alles-wat-je-moet-weten-over-het-hosten-van-je-website) (2023-11-16, Wix): Wanneer het gaat over de lancering van een website is een veilige en betrouwbare hosting een must. Maar wat is webhosting?
 - [Wat is een landingspagina en hoe maak je deze in Wix?](https://www.yonglo.com/post/wat-is-een-wix-landingspagina) (2023-11-16, Wix): Wil je je bedrijf online brengen? en van de meest effectieve manieren om dat te doen, is door een simpel maar doeltreffende website te maken
-- [Hoe word je een entrepreneur? 10 stappen naar succes](https://www.yonglo.com/post/hoe-word-je-een-entrepreneur) (2023-11-12, Yonglo): De afgelopen jaren is er wereldwijd een enorme stijging van startups en ondernemers te zien. Dit is niet zo gek als je je bedenkt dat velen onder ons creatief moesten zijn om een inkomen te genereren tijdens de coronacrisis. De veranderingen die de pandemie met zich mee bracht voedde de drang naar het opzetten van een eigen bedrijfje en het worden van een entrepreneur. Velen onder ons hebben deze uitdaging met beide handen aangegrepen. Maar wat is een entrepreneur precies? Entrepreneur...
+- [Hoe word je een entrepreneur? 10 stappen naar succes](https://www.yonglo.com/post/hoe-word-je-een-entrepreneur) (2023-11-12, Yonglo): De afgelopen jaren is er wereldwijd een enorme stijging van startups en ondernemers te zien.
+
+## Help docs van de Wix-apps van Yonglo (9, Engels)
+
+Handleidingen en FAQ's voor de apps van Yonglo in de Wix App Market: [Smart Cookie Popup for Wix](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix). Overzicht: https://www.yonglo.com/help-docs. Alle artikelen met links en tekst: https://www.yonglo.com/llms-helpdocs.txt.
 
 ## Optional
 

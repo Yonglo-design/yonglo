@@ -48,7 +48,8 @@
   var counters=$$('.count');
   if('IntersectionObserver' in w && !reduce){
     var co=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){count(e.target);co.unobserve(e.target);} })},{threshold:.6});
-    counters.forEach(function(c){co.observe(c)});
+    // In de HTML staat het echte getal (voor zoekmachines en AI); voor de animatie beginnen we bij 0.
+    counters.forEach(function(c){c.textContent='0';co.observe(c)});
   } else counters.forEach(function(c){c.textContent=c.dataset.to});
 
   // header, progress, floating buttons, rail, timeline

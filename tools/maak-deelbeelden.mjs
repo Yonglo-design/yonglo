@@ -7,7 +7,12 @@
 // Opnieuw maken (bijv. na een nieuwe pagina of een andere kop): node tools/maak-deelbeelden.mjs
 // De titel komt uit de <h1> van de pagina (het stuk in <em> wordt blauw); het kleine label erboven
 // staat hieronder in LABELS. Een nieuwe pagina zonder label krijgt "Yonglo".
-// Blogberichten en projecten hebben hun eigen deelafbeelding (uit Wix) en vallen hierbuiten.
+// Daarnaast (zie EXTRA en KOPPELINGEN hieronder):
+//   - vaste afbeeldingen voor de pagina's uit het CMS zonder eigen beeld: werkgebied (NL en Engels),
+//     help docs en een algemene voor de koppelingen;
+//   - per koppeling (CMS-collectie Koppelingen) een eigen afbeelding met het logo: koppeling-<slug>.jpg
+//     en en-koppeling-<slug>.jpg. Nieuwe koppeling? Draai: node tools/maak-deelbeelden.mjs koppelingen
+// Blogberichten, projecten en de Nederlandse/Belgische regiopagina's hebben hun eigen deelafbeelding (uit Wix).
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -107,7 +112,7 @@ function zet(ws, maxW) {
   throw new Error("Titel te lang voor de deelafbeelding: " + ws.map((w) => w.t).join(" "));
 }
 
-function svg({ label, h1, lang }) {
+function svg({ label, h1, lang, onder, logo }) {
   const W = 1200, H = 630, L = 80;
   const { size, regels } = zet(woorden(h1), 720);
   const lh = Math.round(size * 1.06);
@@ -119,7 +124,7 @@ function svg({ label, h1, lang }) {
     `</text>`).join("\n");
   const labelY = Math.round(top - size * 0.8 - 34);
   const wmH = 34, wmW = (WM_VIEW[2] / WM_VIEW[3]) * wmH;
-  const knop = ONDER[lang === "en" ? 1 : 0];
+  const knop = onder || ONDER[lang === "en" ? 1 : 0];
   const knopW = Math.round(textW(knop, 22) + 104);
 
   // Zwevende tegels rechts, zoals in de hero van de homepage.
@@ -143,9 +148,17 @@ function svg({ label, h1, lang }) {
   <circle cx="160" cy="640" r="380" fill="url(#blob2)"/>
   <circle cx="760" cy="620" r="260" fill="url(#blob3)"/>
   <rect width="${W}" height="${H}" fill="url(#dots)"/>
+  ${logo ? `
+  ${tegel(930, 380, 150, 150, 22, "#325FFC", "#7A97FD", "#C9D5FF", 8, "g3")}
+  <clipPath id="logoclip"><rect x="860" y="170" width="260" height="260" rx="36"/></clipPath>
+  <g transform="rotate(-4 990 300)" filter="url(#schaduw)">
+    <rect x="860" y="170" width="260" height="260" rx="36" fill="#FFFFFF"/>
+    <image href="${logo}" x="860" y="170" width="260" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#logoclip)"/>
+    <rect x="860.5" y="170.5" width="259" height="259" rx="36" fill="none" stroke="#FFFFFF" stroke-opacity=".2"/>
+  </g>` : `
   ${tegel(905, 140, 230, 150, 22, "#23265a", "#325FFC", "#99AFFE", -4, "g1")}
   ${tegel(965, 312, 190, 210, 22, "#1b1d2e", "#3b3f63", "#8a90c7", 5, "g2")}
-  ${tegel(872, 452, 140, 140, 20, "#325FFC", "#7A97FD", "#C9D5FF", -7, "g3")}
+  ${tegel(872, 452, 140, 140, 20, "#325FFC", "#7A97FD", "#C9D5FF", -7, "g3")}`}
   <g transform="translate(${L} 64) scale(${(wmH / WM_VIEW[3]).toFixed(4)})" fill="#FFFFFF">${WM_PATHS}</g>
   <g transform="translate(${W - 80 - 196} 60)">
     <rect width="196" height="44" rx="22" fill="#FFFFFF" fill-opacity=".08" stroke="#FFFFFF" stroke-opacity=".14"/>
@@ -191,6 +204,49 @@ for (const [lang, dir, prefix] of [["nl", ROOT, ""], ["en", join(ROOT, "en"), "e
     if (process.argv.includes("--svg")) writeFileSync(join(OUT, `${prefix}${naam}.svg`), svgText);
     render(svgText, join(OUT, `${prefix}${naam}.jpg`));
     n++;
+  }
+}
+// Vaste afbeeldingen voor CMS-pagina's zonder eigen beeld (src/regio.ts, src/helpdocs.ts, src/koppeling.ts).
+const EXTRA = [
+  { naam: "werkgebied", lang: "nl", label: "Werkgebied · Nederland & België", h1: "Jouw Wix-partner, <em>waar</em> je ook zit." },
+  { naam: "en-werkgebied", lang: "en", label: "Wix web design across Europe", h1: "Your Wix partner, <em>wherever</em> you are." },
+  { naam: "help-docs", lang: "en", label: "Help docs · Wix apps by Yonglo", h1: "How can we <em>help</em>?", onder: "Read the guides" },
+  { naam: "koppelingen", lang: "nl", label: "Wix-koppelingen", h1: "Koppel Wix aan <em>elk systeem</em>." },
+  { naam: "en-koppelingen", lang: "en", label: "Wix integrations", h1: "Connect Wix to <em>any system</em>." },
+];
+for (const x of EXTRA) {
+  if (alleen.length && !alleen.includes(x.naam) && !alleen.includes("extra")) continue;
+  render(svg(x), join(OUT, `${x.naam}.jpg`));
+  n++;
+}
+
+// Per koppeling een eigen afbeelding met het logo (alleen met het argument "koppelingen" of zonder argumenten).
+if (!alleen.length || alleen.includes("koppelingen")) {
+  const cfg = readFileSync(join(ROOT, "assets", "wix", "wix-config.js"), "utf8");
+  const clientId = cfg.match(/WIX_CLIENT_ID\s*=\s*"([^"]+)"/)[1];
+  try {
+    const tok = await fetch("https://www.wixapis.com/oauth2/token", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clientId, grantType: "anonymous" }) }).then((r) => r.json());
+    const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", { method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: tok.access_token },
+      body: JSON.stringify({ dataCollectionId: "Koppelingen", query: { cursorPaging: { limit: 100 } } }) });
+    if (!res.ok) throw new Error(`Wix Data ${res.status}`);
+    const items = ((await res.json()).dataItems || []).map((x) => x.data).filter((k) => k.slug && k.title);
+    for (const k of items) {
+      // Logo als PNG ophalen (vierkant, 520 px) en in de afbeelding zetten.
+      let logo = null;
+      const id = (String(k.logo || "").match(/^wix:image:\/\/v1\/([^/]+)/) || [])[1];
+      if (id) {
+        const r = await fetch(`https://static.wixstatic.com/media/${id}/v1/fill/w_520,h_520,al_c,q_90/${id.replace(/\.[a-z]+$/i, "")}.png`);
+        if (r.ok) logo = `data:${r.headers.get("content-type") || "image/png"};base64,${Buffer.from(await r.arrayBuffer()).toString("base64")}`;
+      }
+      const titel = esc(k.title);
+      render(svg({ lang: "nl", label: "Wix-koppeling", h1: `Wix koppelen met <em>${titel}</em>`, logo }), join(OUT, `koppeling-${k.slug}.jpg`));
+      render(svg({ lang: "en", label: "Wix integration", h1: `Connect Wix with <em>${titel}</em>`, logo }), join(OUT, `en-koppeling-${k.slug}.jpg`));
+      n += 2;
+    }
+  } catch (err) {
+    console.warn("Koppelingen overgeslagen (CMS niet bereikbaar):", err.message);
   }
 }
 console.log(`${n} deelafbeeldingen gemaakt in assets/deel/.`);
