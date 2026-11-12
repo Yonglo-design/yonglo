@@ -1494,6 +1494,16 @@
   },
   {
    "type": "helpdoc",
+   "url": "https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/install-smart-cookie-popup-with-an-ai-assistant",
+   "title": "Install Smart Cookie Popup with an AI assistant",
+   "app": "Smart Cookie Popup for Wix",
+   "appUrl": "https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix",
+   "description": "Let an AI assistant such as Claude install Smart Cookie Popup on your Wix site for you, with a ready-to-copy prompt.",
+   "taal": "en",
+   "text": "You can install Smart Cookie Popup from the Wix App Market yourself, but you can also let an AI assistant do it for you. This works with an assistant that is connected to your Wix account, such as Claude with the Wix connector. It takes about a minute.\n\n##### Before you start\n\n- An AI assistant with a Wix connection. In Claude you add it under Settings → Connectors → Wix.\n- A Wix account with access to the site where you want the cookie popup. Sign in with that account when you connect Wix.\n\n##### Step by step\n\n- Open a new chat in your AI assistant.\n- Copy the prompt below and replace [your site] with the name or address of your Wix site.\n- Paste the prompt and send it. The assistant finds your site and installs the app.\n- When the assistant confirms the installation, open Smart Cookie Popup in your Wix dashboard to set up your banner.\n\n##### The prompt\n\nThe prompt includes the app ID of Smart Cookie Popup. With the ID, the assistant installs exactly this app instead of searching the App Market, where it could pick a different cookie app with a similar name.\n\n##### After installing\n\nThe app is now on your site, but your banner still needs its settings. Continue with Getting Started With: Smart Cookie Popup for Wix to set it up.\n\n##### Prefer to install it yourself?\n\nOpen Smart Cookie Popup in the Wix App Market and add it to your site from there."
+  },
+  {
+   "type": "helpdoc",
    "url": "https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/gdpr-compliance",
    "title": "GDPR Compliance",
    "app": "Smart Cookie Popup for Wix",

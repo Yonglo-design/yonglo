@@ -245,7 +245,7 @@ Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Overzicht: https:
 - [Wat is een landingspagina en hoe maak je deze in Wix?](https://www.yonglo.com/post/wat-is-een-wix-landingspagina) (2023-11-16, Wix): Wil je je bedrijf online brengen? en van de meest effectieve manieren om dat te doen, is door een simpel maar doeltreffende website te maken
 - [Hoe word je een entrepreneur? 10 stappen naar succes](https://www.yonglo.com/post/hoe-word-je-een-entrepreneur) (2023-11-12, Yonglo): De afgelopen jaren is er wereldwijd een enorme stijging van startups en ondernemers te zien.
 
-## Help docs van de Wix-apps van Yonglo (9, Engels)
+## Help docs van de Wix-apps van Yonglo (10, Engels)
 
 Handleidingen en FAQ's voor de apps van Yonglo in de Wix App Market: [Smart Cookie Popup for Wix](https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix). Overzicht: https://www.yonglo.com/help-docs. Alle artikelen met links en tekst: https://www.yonglo.com/llms-helpdocs.txt.
 

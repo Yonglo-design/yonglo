@@ -2,7 +2,7 @@
 
 > Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
 
-Alle tekst van https://www.yonglo.com: 18 pagina's, 52 projecten, 25 koppelingen, 33 blogberichten en 9 help-artikelen. Per onderwerp staat dezelfde tekst ook in kleinere bestanden: llms-projecten.txt, llms-paginas.txt, llms-koppelingen.txt, llms-blog.txt, llms-blog-2.txt, llms-blog-3.txt, llms-helpdocs.txt (bijgewerkt op 2026-11-12). Overzicht met links: https://www.yonglo.com/llms.txt. Contact en offerte: https://www.yonglo.com/contact.
+Alle tekst van https://www.yonglo.com: 18 pagina's, 52 projecten, 25 koppelingen, 33 blogberichten en 10 help-artikelen. Per onderwerp staat dezelfde tekst ook in kleinere bestanden: llms-projecten.txt, llms-paginas.txt, llms-koppelingen.txt, llms-blog.txt, llms-blog-2.txt, llms-blog-3.txt, llms-helpdocs.txt (bijgewerkt op 2026-11-12). Overzicht met links: https://www.yonglo.com/llms.txt. Contact en offerte: https://www.yonglo.com/contact.
 
 ## Contact
 
@@ -5760,6 +5760,38 @@ In most cases, you can have a compliant cookie popup live on your site within ju
 **Can I achieve GDPR compliance with the free version?** Absolutely. The free version delivers full GDPR compliance by blocking all non-essential cookies (like analytics or ads) until visitors explicitly opt in. Crucially, users cannot dismiss the popup without choosing "Accept" or "Reject" – a requirement under GDPR Article 7. Both free and paid plans include auto-blocking, cookie categorization, consent logging, and real-time preference updates.
 
 **Can I match the popup to my Wix site’s branding?** Yes! Customize button colors, and messaging to match your Wix website theme.
+
+### Smart Cookie Popup for Wix: Install Smart Cookie Popup with an AI assistant
+
+URL: https://www.yonglo.com/help-docs/smart-cookie-popup-for-wix/install-smart-cookie-popup-with-an-ai-assistant
+
+Let an AI assistant such as Claude install Smart Cookie Popup on your Wix site for you, with a ready-to-copy prompt.
+
+You can install Smart Cookie Popup from the Wix App Market yourself, but you can also let an AI assistant do it for you. This works with an assistant that is connected to your Wix account, such as Claude with the Wix connector. It takes about a minute.
+
+###### Before you start
+
+- An AI assistant with a Wix connection. In Claude you add it under Settings → Connectors → Wix.
+- A Wix account with access to the site where you want the cookie popup. Sign in with that account when you connect Wix.
+
+###### Step by step
+
+- Open a new chat in your AI assistant.
+- Copy the prompt below and replace [your site] with the name or address of your Wix site.
+- Paste the prompt and send it. The assistant finds your site and installs the app.
+- When the assistant confirms the installation, open Smart Cookie Popup in your Wix dashboard to set up your banner.
+
+###### The prompt
+
+The prompt includes the app ID of Smart Cookie Popup. With the ID, the assistant installs exactly this app instead of searching the App Market, where it could pick a different cookie app with a similar name.
+
+###### After installing
+
+The app is now on your site, but your banner still needs its settings. Continue with Getting Started With: Smart Cookie Popup for Wix to set it up.
+
+###### Prefer to install it yourself?
+
+Open Smart Cookie Popup in the Wix App Market and add it to your site from there.
 
 ### Smart Cookie Popup for Wix: GDPR Compliance
 
