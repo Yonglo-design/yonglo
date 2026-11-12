@@ -824,6 +824,9 @@ main > section.kg{padding-top:calc(var(--sec) + 40px)}
 .fl-sel select:focus{outline:none;border-color:var(--spark2);background:rgba(255,255,255,.08)}
 .fl-sel select option{color:var(--ink);background:#fff}
 .fl-sel span{transform:translateY(-10px) scale(.78)}
+/* Veld met een voorbeeld (URL website): label staat altijd klein bovenaan, het voorbeeld lichter eronder */
+.fl-ex span{transform:translateY(-10px) scale(.78)}
+.fl-ex input::placeholder{color:rgba(255,255,255,.35);opacity:1}
 .fl-sel select:focus+span{color:var(--spark2)}
 .fl-sel::after{content:"";position:absolute;right:20px;top:50%;width:8px;height:8px;margin-top:-6px;border:solid rgba(255,255,255,.6);border-width:0 2px 2px 0;transform:rotate(45deg);pointer-events:none}
 .kg-check{display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:15px;line-height:1.45;color:rgba(255,255,255,.85)}

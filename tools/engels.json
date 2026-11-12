@@ -1440,5 +1440,6 @@
  "{1}{2/}{3}KVK nummer{/3}{/1} {4}{5/}{6}BTW nummer*{/6}{/4}": "{1}{2/}{3}Chamber of Commerce number{/3}{/1} {4}{5/}{6}VAT number*{/6}{/4}",
  "Nederland": "Netherlands",
  "Land*": "Country*",
- "{1/}{2}URL website{/2}": "{1/}{2}Website URL{/2}"
+ "{1/}{2}URL website{/2}": "{1/}{2}Website URL{/2}",
+ "https://www.jouwwebsite.nl": "https://www.yourwebsite.com"
 }
