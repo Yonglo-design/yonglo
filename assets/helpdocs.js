@@ -8,12 +8,14 @@ export const FAQ = "AppDocsFAQ";
 
 // Extra informatie per app (naam zoals in het CMS-veld "App"). Een nieuwe app zonder regel hier werkt ook.
 // icon: SVG-pictogram (24×24, lijnen); kleur: begin- en eindkleur van het app-icoon.
+// logo: eigen logo van de app (bestand in assets/apps/); staat dan op een wit vlak in plaats van het pictogram.
 export const APPS = {
   "Smart Cookie Popup for Wix": {
     kort: "Smart Cookie Popup",
     intro: "A multilingual cookie banner for Wix that helps your site comply with GDPR and Google Consent Mode v2, with managed Google tags and a preferences button.",
-    market: "https://www.wix.com/app-market/search-result?query=smart%20cookie",
+    market: "https://www.wix.com/app-market/smart-cookie-popup",
     kleur: ["#FF9A3C", "#E8590C"],
+    logo: "/assets/apps/smart-cookie-popup.svg",
     icon: '<path d="M21 12.4A9 9 0 1 1 11.6 3a4 4 0 0 0 5 5 4 4 0 0 0 4.4 4.4Z"/><circle cx="8.5" cy="10" r="1.1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="15.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="8" cy="15" r=".9" fill="currentColor" stroke="none"/><circle cx="16.3" cy="13" r=".9" fill="currentColor" stroke="none"/>',
   },
   "PDF Generator Pro": {
@@ -30,6 +32,7 @@ const ICON_STANDAARD = '<path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 
 export function appIcon(app, cls = "hd-ico") {
   const info = APPS[app] || {};
   const [a, b] = info.kleur || ["#325FFC", "#7A97FD"];
+  if (info.logo) return `<span class="${cls} logo" aria-hidden="true"><img src="${info.logo}" alt="" width="48" height="48" loading="lazy" decoding="async"></span>`;
   return `<span class="${cls}" style="--ia:${a};--ib:${b}" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${info.icon || ICON_STANDAARD}</svg></span>`;
 }
 

@@ -244,5 +244,21 @@ const ok = d.mode !== "leeg";
   if (q) { box.value = q; box.dispatchEvent(new Event("input")); }
 })();
 </script>}
+{d.mode === "artikel" && <script is:inline>
+// Kopieerknop bij elk codeblok in een artikel (bijv. een prompt om te plakken in een AI-assistent).
+document.querySelectorAll(".hd-article .post-body pre").forEach((pre) => {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "hd-copy";
+  btn.textContent = "Copy";
+  btn.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(pre.innerText.trim()); btn.textContent = "Copied"; }
+    catch { btn.textContent = "Select and copy"; }
+    setTimeout(() => { btn.textContent = "Copy"; }, 2000);
+  });
+  pre.classList.add("hd-pre");
+  pre.append(btn);
+});
+</script>}
 </body>
 </html>
