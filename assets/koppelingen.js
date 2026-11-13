@@ -8,12 +8,13 @@ import { img, esc, projectUrl, themeStyle, cardTags } from "./projecten.js";
 export const COLLECTION = "Koppelingen";
 
 // Volgorde van de filterknoppen op /api en de Engelse namen van de categorieën.
-export const CATEGORIEEN = ["Boekhouding", "Betalingen", "Vastgoed & verhuur", "CRM & marketing", "AI", "Samenwerking & data"];
+export const CATEGORIEEN = ["Boekhouding", "Betalingen", "Vastgoed & verhuur", "CRM & marketing", "Verzending & webshop", "AI", "Samenwerking & data"];
 export const CATEGORIE_EN = {
   "Boekhouding": "Accounting",
   "Betalingen": "Payments",
   "Vastgoed & verhuur": "Real estate & rentals",
   "CRM & marketing": "CRM & marketing",
+  "Verzending & webshop": "Shipping & e-commerce",
   "AI": "AI",
   "Samenwerking & data": "Collaboration & data",
   "Overig": "Other",
@@ -88,6 +89,7 @@ const LOG = {
   "Betalingen": [["Betaling ontvangen", "Payment received"], ["Order #1043 op betaald gezet", "Order #1043 marked as paid"], ["Bevestiging naar de klant", "Confirmation sent to customer"]],
   "Vastgoed & verhuur": [["Nieuw object op de website", "New listing on the website"], ["Prijs en status bijgewerkt", "Price and status updated"], ["Beschikbaarheid gesynchroniseerd", "Availability synchronised"]],
   "CRM & marketing": [["Nieuwe lead in het CRM", "New lead in the CRM"], ["Contact toegevoegd aan segment", "Contact added to segment"], ["Opvolg-e-mail ingepland", "Follow-up email scheduled"]],
+  "Verzending & webshop": [["Order #1043 → verzendlabel aangemaakt", "Order #1043 → shipping label created"], ["Track & trace naar de klant", "Tracking link sent to customer"], ["Status op verzonden gezet", "Status set to shipped"]],
   "AI": [["Vraag van bezoeker beantwoord", "Visitor question answered"], ["Tekst gegenereerd uit het CMS", "Copy generated from the CMS"], ["Antwoord gecontroleerd en opgeslagen", "Answer checked and saved"]],
   "Samenwerking & data": [["Formulier → melding aan het team", "Form → team notification"], ["Afspraak in de agenda gezet", "Appointment added to calendar"], ["Gegevens bijgewerkt op de website", "Data updated on the website"]],
 };
