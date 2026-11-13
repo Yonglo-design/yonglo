@@ -12,14 +12,14 @@ De volledige teksten staan in losse bestanden per onderwerp (elk klein genoeg om
 
 - [Projecten](https://www.yonglo.com/llms-projecten.txt): alle 52 projecten met opdrachtgever, branche, platform, diensten, live website en de volledige beschrijving.
 - [Pagina's](https://www.yonglo.com/llms-paginas.txt): de tekst van alle dienstpagina's, over Yonglo en contact.
-- [Koppelingen](https://www.yonglo.com/llms-koppelingen.txt): de 25 koppelingen met Wix (Moneybird, Mollie, HubSpot, ChatGPT …).
+- [Koppelingen](https://www.yonglo.com/llms-koppelingen.txt): de 26 koppelingen met Wix (Moneybird, Mollie, HubSpot, ChatGPT …).
 - Blog: [llms-blog.txt](https://www.yonglo.com/llms-blog.txt), [llms-blog-2.txt](https://www.yonglo.com/llms-blog-2.txt), [llms-blog-3.txt](https://www.yonglo.com/llms-blog-3.txt): alle 33 blogberichten, nieuwste eerst.
 - [Help docs](https://www.yonglo.com/llms-helpdocs.txt): handleidingen van de Wix-apps van Yonglo (Engels).
 - Alles samen: [llms-full.txt](https://www.yonglo.com/llms-full.txt) (groot) en [zoekindex.json](https://www.yonglo.com/zoekindex.json) (dezelfde inhoud als JSON; projecten hebben de velden `branche`, `platform`, `diensten` en `website`).
 
 Vragen waarop de site geen antwoord geeft (zoals de prijs van een nieuwe website) beantwoordt Yonglo persoonlijk: https://www.yonglo.com/contact.
 
-Bijgewerkt op 2026-11-12. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.
+Bijgewerkt op 2026-11-13. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.
 
 ## Contact
 
@@ -179,7 +179,7 @@ Overzicht met beelden: https://www.yonglo.com/portfolio. Volledige beschrijvinge
 - [Slimste vogelgids](https://www.yonglo.com/project/slimste-vogelgids): Voor De Slimste Vogelgids ontwikkelde Yonglo een overzichtelijke website die de verschillende edities van deze slimme veldgidsen helder presenteert. (opdrachtgever: Jan Rodts · Natuur · Wix Editor · Webdesign, Wix Editor · live: https://www.deslimstevogelgids.com)
 - [Green Horizon](https://www.yonglo.com/project/green-horizon): Voor Green Horizon ontwikkelde Yonglo een inspirerende en informatieve website die de missie van dit goede doel krachtig uitdraagt. (Goede doel · Wix Studio · Webdesign, Development, Wix Studio · live: https://www.greenhorizon.earth)
 
-## Koppelingen (25)
+## Koppelingen (26)
 
 Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Overzicht: https://www.yonglo.com/api.
 
@@ -208,6 +208,7 @@ Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Overzicht: https:
 - [Google Calendar](https://www.yonglo.com/wix-koppeling/google-calendar) (Samenwerking & data): Koppel Google Calendar aan je Wix-website voor automatisch afsprakenbeheer.
 - [Google Sheets](https://www.yonglo.com/wix-koppeling/sheets) (Samenwerking & data): Koppel Google Sheets aan je Wix-website voor realtime dataweergave en automatisering.
 - [Google Maps](https://www.yonglo.com/wix-koppeling/google-maps) (Samenwerking & data): Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website.
+- [Asana](https://www.yonglo.com/wix-koppeling/asana) (Samenwerking & data): Koppel Asana aan je Wix-website: formulieren, boekingen en bestellingen worden automatisch taken in het juiste project.
 
 ## Nieuws en blog (33)
 

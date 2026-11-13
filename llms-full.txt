@@ -2,7 +2,7 @@
 
 > Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
 
-Alle tekst van https://www.yonglo.com: 18 pagina's, 52 projecten, 25 koppelingen, 33 blogberichten en 10 help-artikelen. Per onderwerp staat dezelfde tekst ook in kleinere bestanden: llms-projecten.txt, llms-paginas.txt, llms-koppelingen.txt, llms-blog.txt, llms-blog-2.txt, llms-blog-3.txt, llms-helpdocs.txt (bijgewerkt op 2026-11-12). Overzicht met links: https://www.yonglo.com/llms.txt. Contact en offerte: https://www.yonglo.com/contact.
+Alle tekst van https://www.yonglo.com: 18 pagina's, 52 projecten, 26 koppelingen, 33 blogberichten en 10 help-artikelen. Per onderwerp staat dezelfde tekst ook in kleinere bestanden: llms-projecten.txt, llms-paginas.txt, llms-koppelingen.txt, llms-blog.txt, llms-blog-2.txt, llms-blog-3.txt, llms-helpdocs.txt (bijgewerkt op 2026-11-13). Overzicht met links: https://www.yonglo.com/llms.txt. Contact en offerte: https://www.yonglo.com/contact.
 
 ## Contact
 
@@ -2456,7 +2456,7 @@ Voor Event Culinair ontwikkelde Yonglo een smaakvolle en professionele website d
 
 Event Culinair bedient al vele jaren de zakelijke markt, van kleine bijeenkomsten tot grote evenementen. Geen standaard menu’s of cateringoplossingen, maar altijd een culinaire invulling die aansluit op de specifieke wensen van de opdrachtgever.
 
-## Koppelingen (25)
+## Koppelingen (26)
 
 ### Moneybird
 
@@ -2928,6 +2928,33 @@ Voordelen van een Google Maps-Wix integratie via Yonglo:
 • Bied gepersonaliseerde content op basis van locatie
 • Verbeter je klantbeleving en werkprocessen met realtime locatie-inzichten
 Til je Wix-website naar een hoger niveau met locatiegebaseerde intelligentie. Laat Yonglo je helpen om Google Maps strategisch in te zetten voor een slimmere, efficiëntere bedrijfsvoering.
+
+### Asana
+
+URL: https://www.yonglo.com/wix-koppeling/asana
+Categorie: Samenwerking & data
+
+Koppel Asana aan je Wix-website: formulieren, boekingen en bestellingen worden automatisch taken in het juiste project. Yonglo bouwt de koppeling op maat.
+
+Koppel Asana aan je Wix-website en zet aanvragen, boekingen en bestellingen automatisch om in taken
+
+Komen aanvragen via je website binnen en zet iemand ze daarna met de hand in Asana? Met een koppeling tussen je Wix-website en Asana gebeurt dat automatisch. Elke formulierinzending, boeking of bestelling wordt een taak in het juiste Asana-project, met alle gegevens erbij. Yonglo bouwt die koppeling via de Asana API en Velo by Wix.
+Wat er kan met de Asana API
+- Taken aanmaken in het juiste project en de juiste sectie, met beschrijving, deadline, eigenaar en eigen velden (custom fields) zoals adres, pakket of bedrag
+- Subtaken toevoegen, bijvoorbeeld een vaste reeks stappen per soort opdracht
+- Bestanden van de website, zoals foto's of documenten, als bijlage aan een taak hangen
+- Reacties en de status van een taak terugzetten op de website
+- Met webhooks direct reageren als een taak in Asana klaar is of verschuift: de status op je website bijwerken, een e-mail sturen of een item in het Wix CMS aanpassen
+Zo zet je het in
+Een boeking via Wix Bookings wordt een taak voor de juiste medewerker, met de afspraak als deadline. Een offerteaanvraag komt als taak in de sectie "Nieuw" van je salesbord. Een webshopbestelling met maatwerk krijgt een productietaak met subtaken per stap. En in een persoonlijk dashboard op je website ziet een opdrachtgever hoe ver de opdracht is, zonder eigen Asana-account.
+Voor Woningperspectief, een online boekingssysteem voor woningfotografen met meer dan 140 boekingen per week, koppelde Yonglo de website aan Asana en aan de agenda's van de fotografen.
+Voordelen van een Asana-Wix integratie via Yonglo:
+- Geen aanvragen meer overtypen: alles komt vanzelf in Asana
+- Elke taak heeft meteen de juiste gegevens, deadline en eigenaar
+- Website en Asana blijven gelijk lopen dankzij webhooks
+- Werkt met Wix Forms, Wix Bookings, Wix Stores en het Wix CMS
+- Veilig gekoppeld via OAuth of een toegangstoken, opgeslagen in de Wix Secrets Manager
+Laat je website het werk in Asana klaarzetten. Yonglo bouwt een Asana-koppeling die past bij hoe jouw team werkt.
 
 ## Blogberichten (33)
 
