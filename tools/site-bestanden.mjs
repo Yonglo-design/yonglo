@@ -47,11 +47,26 @@ if (process.argv.includes("--bijhouden")) {
   }, 20000);
 }
 
-// Na de build (npm run build roept dit script dan met --na-build aan): de paginalijst die Wix voor de
-// sitemap gebruikt aanvullen. Astro zet daar zelf alleen de blogroute (/post/<naam>) in. Wij voegen toe:
-// de vaste pagina's uit _wix/pages.json (homepage), alle gewone HTML-pagina's en alle projecten
-// (/project/<naam>, uit het Wix CMS). Een project dat later bijkomt staat er na de volgende publicatie in.
+// Na de build (npm run build roept dit script dan met --na-build aan): onze eigen sitemap maken,
+// /sitemap-yonglo.xml, met alle gewone HTML-pagina's (ook Engels), projecten, koppelingen, help docs en
+// regiopagina's, elk met de datum waarop die pagina echt is veranderd (lastmod). Een project dat later
+// bijkomt staat er na de volgende publicatie in.
+// Waarom een eigen sitemap: Wix maakt /sitemap.xml uit de paginalijst /_wix/pages.json, maar geeft daarin elke
+// pagina de datum van de laatste publicatie. Dan lijkt elke pagina bij elke publicatie veranderd en negeert
+// Google de datums helemaal. In de paginalijst van Wix blijven dus alleen de routes die Astro zelf registreert
+// (homepage, /en, /portfolio, /help-docs en de blogroute voor de blog-sitemap van Wix); de rest staat alleen in onze
+// sitemap. Die staat in robots.txt (eenmalig via de API van Wix gezet) en hoort in Google Search Console.
 if (process.argv.includes("--na-build")) {
+  const { execFileSync } = await import("node:child_process");
+  const SITE = (process.env.SITE_URL || "https://www.yonglo.com").replace(/\/$/, "");
+  // Laatste commit van een bestand (ISO-datum), of null als git het niet weet (nog niet opgeslagen bestand).
+  const gitDatum = (file) => {
+    try { return execFileSync("git", ["log", "-1", "--format=%cI", "--", file], { cwd: ROOT, encoding: "utf8" }).trim() || null; }
+    catch { return null; }
+  };
+  const cmsDatum = (item) => item?.data?._updatedDate?.$date || item?.data?._createdDate?.$date || null;
+  const nieuwste = (a, b) => (!a ? b : !b ? a : new Date(a) > new Date(b) ? a : b);
+  const datums = new Map();
   const built = join(ROOT, "dist", "client", "_wix", "pages.json");
   const own = JSON.parse(readFileSync(join(ROOT, "_wix", "pages.json"), "utf8"));
   // Doorverwijzingen (/post, /project, oude adressen) horen niet in de sitemap. De projectroute
@@ -64,8 +79,13 @@ if (process.argv.includes("--na-build")) {
     "/landing-europe/[...pad]", "/wix/[slug]", "/en/wix-website/[...pad]", "/en/wix-websites/[...pad]", "/en/wix-expert/[...pad]",
     "/en/wix-design-development/[...pad]", "/projecten/[...pad]", "/en/projecten/[...pad]", "/blog/[...pad]", "/en/blog/[...pad]", "/en/post/[...pad]"];
   const list = (existsSync(built) ? JSON.parse(readFileSync(built, "utf8")) : []).filter((x) => !REDIRECTS.includes(x.path));
-  const add = (path) => { if (!list.some((x) => x.path === path)) list.push({ path, static: true }); };
+  const add = (path, lastmod = null) => {
+    if (!list.some((x) => x.path === path)) list.push({ path, static: true });
+    datums.set(path, nieuwste(datums.get(path), lastmod));
+  };
   for (const page of own) add(page.path);
+  // Deze blijven in de paginalijst van Wix (die heeft ze nodig); alles wat hierna bijkomt gaat naar onze sitemap.
+  const BIJ_WIX = new Set(list.map((x) => x.path));
 
   // Gewone pagina's (adres zonder .html): alle .html in de hoofdmap, behalve testpagina's en pagina's met noindex.
   const NOT_IN_SITEMAP = new Set(["index.html", "footer-lab.html", "home-b.html", "bedankt.html"]);
@@ -74,14 +94,14 @@ if (process.argv.includes("--na-build")) {
     if (!name.endsWith(".html")) continue;
     const path = `/${name.slice(0, -5)}`;
     if (NOT_IN_SITEMAP.has(name) || /<meta[^>]+name="robots"[^>]+noindex/i.test(readFileSync(join(ROOT, name), "utf8"))) { weg.add(path); continue; }
-    add(path);
+    add(path, gitDatum(name));
   }
   // Engelse pagina's (/en, /en/<naam>): dezelfde, behalve wat hierboven niet in de sitemap mocht.
   for (const name of existsSync(join(ROOT, "en")) ? readdirSync(join(ROOT, "en")).sort() : []) {
     if (!name.endsWith(".html")) continue;
-    if (name === "index.html") { add("/en"); continue; }
+    if (name === "index.html") { add("/en", gitDatum("en/index.html")); continue; }
     if (weg.has(`/${name.slice(0, -5)}`)) continue;
-    add(`/en/${name.slice(0, -5)}`);
+    add(`/en/${name.slice(0, -5)}`, gitDatum(`en/${name}`));
   }
   for (let i = list.length - 1; i >= 0; i--) if (weg.has(list[i].path) || list[i].path.endsWith(".html")) list.splice(i, 1);
 
@@ -102,8 +122,8 @@ if (process.argv.includes("--na-build")) {
       if (!res.ok) throw new Error(`Wix Data ${res.status}`);
       const d = await res.json();
       for (const item of d.dataItems || []) if (item.data?.slug && item.data?.title) {
-        add(`/project/${encodeURIComponent(item.data.slug)}`);
-        add(`/en/project/${encodeURIComponent(item.data.slug)}`);
+        add(`/project/${encodeURIComponent(item.data.slug)}`, cmsDatum(item));
+        add(`/en/project/${encodeURIComponent(item.data.slug)}`, cmsDatum(item));
         n++;
       }
       cursor = d.pagingMetadata?.cursors?.next || null;
@@ -123,8 +143,8 @@ if (process.argv.includes("--na-build")) {
       if (!res.ok) throw new Error(`Wix Data (Koppelingen) ${res.status}`);
       const d = await res.json();
       for (const item of d.dataItems || []) if (item.data?.slug && item.data?.title) {
-        add(`/wix-koppeling/${encodeURIComponent(item.data.slug)}`);
-        if (item.data.tekstEn) add(`/en/wix-koppeling/${encodeURIComponent(item.data.slug)}`);
+        add(`/wix-koppeling/${encodeURIComponent(item.data.slug)}`, cmsDatum(item));
+        if (item.data.tekstEn) add(`/en/wix-koppeling/${encodeURIComponent(item.data.slug)}`, cmsDatum(item));
         k++;
       }
       cursor = d.pagingMetadata?.cursors?.next || null;
@@ -135,7 +155,6 @@ if (process.argv.includes("--na-build")) {
     const { appSlug } = await import("../assets/helpdocs.js");
     let h = 0;
     cursor = null;
-    const appsGezien = new Set();
     do {
       const res = await fetch("https://www.wixapis.com/wix-data/v2/items/query", {
         method: "POST",
@@ -145,8 +164,9 @@ if (process.argv.includes("--na-build")) {
       if (!res.ok) throw new Error(`Wix Data (AppsHelpDocs) ${res.status}`);
       const d = await res.json();
       for (const item of d.dataItems || []) if (item.data?.slug && item.data?.app) {
-        if (!appsGezien.has(item.data.app)) { appsGezien.add(item.data.app); add(`/help-docs/${appSlug(item.data.app)}`); }
-        add(`/help-docs/${appSlug(item.data.app)}/${encodeURIComponent(item.data.slug)}`);
+        // Overzicht per app: de datum van het nieuwste artikel van die app.
+        add(`/help-docs/${appSlug(item.data.app)}`, cmsDatum(item));
+        add(`/help-docs/${appSlug(item.data.app)}/${encodeURIComponent(item.data.slug)}`, cmsDatum(item));
         h++;
       }
       cursor = d.pagingMetadata?.cursors?.next || null;
@@ -167,7 +187,12 @@ if (process.argv.includes("--na-build")) {
         });
         if (!res.ok) throw new Error(`Wix Data (${col}) ${res.status}`);
         const d = await res.json();
-        for (const item of d.dataItems || []) if (item.data?.slug) { add(`${basis}/${encodeURIComponent(item.data.slug)}`); r++; }
+        for (const item of d.dataItems || []) if (item.data?.slug) {
+          add(`${basis}/${encodeURIComponent(item.data.slug)}`, cmsDatum(item));
+          // Overzicht (/wix-website toont NL en BE, /wix-expert Europa en steden): de datum van de nieuwste plaats.
+          add(basis === "/wix-websites" ? "/wix-website" : basis === "/wix-design-development" ? "/wix-expert" : basis, cmsDatum(item));
+          r++;
+        }
         cursor = d.pagingMetadata?.cursors?.next || null;
       } while (cursor);
     }
@@ -178,9 +203,23 @@ if (process.argv.includes("--na-build")) {
     console.warn(`Let op: projecten, koppelingen of help docs konden niet aan de paginalijst worden toegevoegd (${err.message}). De site werkt wel.`);
   }
 
+  // Paginalijst voor Wix: alleen wat Wix zelf nodig heeft (zie boven).
+  const wixLijst = list.filter((x) => BIJ_WIX.has(x.path));
   mkdirSync(dirname(built), { recursive: true });
-  writeFileSync(built, JSON.stringify(list));
-  console.log(`Paginalijst voor Wix: ${list.length} adressen (${list.filter((x) => !/^(\/en)?\/(project|wix-koppeling|help-docs|wix-website|wix-websites|wix-expert|wix-design-development)\//.test(x.path)).map((x) => x.path).join(", ")} + projecten, koppelingen, help docs en regiopagina's).`);
+  writeFileSync(built, JSON.stringify(wixLijst));
+  console.log(`Paginalijst voor Wix: ${wixLijst.map((x) => x.path).join(", ")}.`);
+
+  // Onze sitemap. Zonder bekende datum (bijv. een pagina die nog niet is opgeslagen) laten we lastmod weg.
+  const xml = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const eigen = list.filter((x) => !BIJ_WIX.has(x.path) && !x.path.includes("[")).map((x) => x.path).sort();
+  const urls = eigen.map((path) => {
+    const d = datums.get(path);
+    return `<url><loc>${xml(SITE + path)}</loc>${d ? `<lastmod>${new Date(d).toISOString()}</lastmod>` : ""}</url>`;
+  });
+  writeFileSync(join(ROOT, "dist", "client", "sitemap-yonglo.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`);
+  const zonder = eigen.filter((p) => !datums.get(p));
+  console.log(`Eigen sitemap (/sitemap-yonglo.xml): ${eigen.length} adressen${zonder.length ? `, ${zonder.length} zonder datum (${zonder.slice(0, 5).join(", ")}${zonder.length > 5 ? " …" : ""})` : ""}.`);
   process.exit(0);
 }
 

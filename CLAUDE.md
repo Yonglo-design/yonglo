@@ -163,5 +163,15 @@ op een Astro-site.
   met het logo (`koppeling-<slug>.jpg`, `en-koppeling-<slug>.jpg`) en algemene afbeeldingen voor het werkgebied, de
   Europese regiopagina's en de help docs (`EXTRA` in het script). Nieuwe koppeling in het CMS? Draai
   `node tools/maak-deelbeelden.mjs koppelingen` en sla op; tot dan krijgt die de algemene koppelingen-afbeelding.
+- **Menu en footer** staan in `assets/header.js` en `assets/footer.js` (pas ze alleen daar aan). De server zet dezelfde
+  HTML al in elke pagina (`tools/kop-voet.mjs` draait die scripts bij het bouwen, `src/middleware.ts` vult de lege
+  `<header data-header>` en `<footer data-footer>`), zodat zoekmachines de links zien zonder JavaScript. In de lokale
+  preview (`npm run dev`) levert Vite de gewone `.html`-pagina's rechtstreeks, dus daar zie je dat alleen op de pagina's
+  die de server opbouwt (projecten, regio's, koppelingen, help docs, blogs); live geldt het voor alle pagina's.
+- **Sitemaps**: Wix maakt `/sitemap.xml` (blogs en de paar routes die Astro zelf registreert), maar zet daarin bij elke
+  publicatie de datum van die dag. Alle andere pagina's (gewone pagina's, Engels, projecten, koppelingen, help docs,
+  regio's) staan daarom in onze eigen `/sitemap-yonglo.xml`, met de echte datum van de laatste wijziging (git voor
+  `.html`-bestanden, het CMS voor de rest). Die maakt `tools/site-bestanden.mjs --na-build` (onderdeel van `npm run build`).
+  `robots.txt` (bij Wix, aan te passen via de Robots Txt-API) verwijst naar beide sitemaps; zet ze allebei in Google Search Console.
 - **Homepage-hero**: de projectbeelden in de tegels zet de server al in de pagina (`src/hero-tegels.ts`, 5 minuten
   onthouden); lukt dat niet, dan vult `assets/hero-c.js` ze in de browser.

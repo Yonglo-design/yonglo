@@ -3,6 +3,8 @@
      <header class="hdr" id="top" data-header></header>
      <script src="/assets/header.js"></script>
    Dit script vult de header en zet het mobiele menu erachter. Menu aanpassen? Alleen hier, in HEADER_HTML / MOBMENU_HTML.
+   De server zet dezelfde header al vooraf in de pagina (voor zoekmachines; tools/kop-voet.mjs draait dit script daarvoor
+   bij het bouwen, src/middleware.ts zet het erin). Na een wijziging hier dus opnieuw bouwen/publiceren, zoals altijd.
    Het script draait direct (geen defer), zodat de header er meteen staat en app.js hem daarna kan aansturen. */
 (() => {
 'use strict';

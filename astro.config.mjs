@@ -7,12 +7,15 @@ import { readdirSync } from "node:fs";
 import wix from "@wix/astro";
 import wixPages from "@wix/astro-pages";
 import wixHostingAdapter from "@wix/astro-wix-hosting-adapter";
+import { kopVoet } from "./tools/kop-voet.mjs";
 
 // De gewone pagina's (HTML-bestanden in de hoofdmap, behalve index.html). Ze staan op een adres zonder .html
 // (src/pages/[pagina].astro); de oude .html-adressen sturen door (src/pages/[pagina].html.astro).
 const PAGINAS = readdirSync(".").filter((n) => n.endsWith(".html") && n !== "index.html").map((n) => n.slice(0, -5)).sort();
 // Deelafbeeldingen (assets/deel/, gemaakt door tools/maak-deelbeelden.mjs): welke er zijn, zodat de server de tags zet.
 const DEELBEELDEN = readdirSync("./assets/deel").filter((n) => n.endsWith(".jpg")).map((n) => n.slice(0, -4)).sort();
+// Header en footer als vaste HTML (uit assets/header.js en assets/footer.js), zodat de server ze al in elke pagina zet.
+const KOPVOET = kopVoet();
 
 // Adressen van de oude Wix-site www.yonglo.com die nu een andere naam hebben (blijvende doorverwijzing).
 const OUDE_ADRESSEN = {
@@ -38,7 +41,7 @@ const OUDE_ADRESSEN = {
 
 export default defineConfig({
   redirects: Object.fromEntries(Object.entries(OUDE_ADRESSEN).map(([van, naar]) => [van, { status: 301, destination: naar }])),
-  vite: { define: { __PAGINAS__: JSON.stringify(PAGINAS), __DEELBEELDEN__: JSON.stringify(DEELBEELDEN) } },
+  vite: { define: { __PAGINAS__: JSON.stringify(PAGINAS), __DEELBEELDEN__: JSON.stringify(DEELBEELDEN), __KOPVOET__: JSON.stringify(KOPVOET) } },
   publicDir: "./.site",
   integrations: [wix(), wixPages()],
   security: { checkOrigin: false },

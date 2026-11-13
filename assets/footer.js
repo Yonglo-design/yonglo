@@ -1,6 +1,7 @@
 /* Footer van de hele site.
    Elke pagina heeft alleen <footer class="fd" data-footer></footer>; dit script vult hem.
-   Aanpassen aan de footer (links, teksten) doe je dus alleen hier, in FOOTER_HTML. */
+   Aanpassen aan de footer (links, teksten) doe je dus alleen hier, in FOOTER_HTML.
+   De server zet dezelfde footer al vooraf in de pagina (voor zoekmachines; zie tools/kop-voet.mjs en src/middleware.ts). */
 /* Animatie: ontwerp (Marko) naast code (Joris). Elke getypte <path>-regel bouwt een letter van het logo. */
 (() => {
 'use strict';
@@ -69,7 +70,8 @@ const EN_TEXT = [
 ];
 const toEn = html => {
   for (const [nl, en] of EN_TEXT) html = html.split(nl).join(en);
-  return html.replace(/href="\/(?!en\b)([^"]*)"/g, (m, rest) => `href="/en${rest && !rest.startsWith('#') ? '/' + rest : rest}"`);
+  // help docs en de Europese regiopagina's zijn al Engels en hebben geen /en-versie
+  return html.replace(/href="\/(?!en\b|wix-expert\b|help-docs\b)([^"]*)"/g, (m, rest) => `href="/en${rest && !rest.startsWith('#') ? '/' + rest : rest}"`);
 };
 
 const host = document.querySelector('footer[data-footer]');
