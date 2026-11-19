@@ -18,7 +18,7 @@ function card(p, i) {
   const src = p.portfolioImage ? img(p.portfolioImage, CARD_PX, CARD_PX, "c") : img(p.hoofdbeeld, CARD_PX, CARD_PX);
   const tags = cardTags(p, 2).join(" · ");
   return `<a href="${projectUrl(p)}" class="bs-card" style="${themeStyle(p)};--i:${i}" draggable="false">
-    <div class="bs-vis">${src ? (i < 2 ? `<img src="${src}" alt="${esc(p.title)}" decoding="async" draggable="false">` : `<img data-src="${src}" alt="${esc(p.title)}" decoding="async" draggable="false">`) : `<b class="bs-ph">${esc(p.title)}</b>`}</div>
+    <div class="bs-vis">${src ? (i < 2 ? `<img src="${src}" alt="${esc(p.title)}" loading="lazy" decoding="async" draggable="false">` : `<img data-src="${src}" alt="${esc(p.title)}" decoding="async" draggable="false">`) : `<b class="bs-ph">${esc(p.title)}</b>`}</div>
     <div class="bs-meta">${p.branche ? `<span>${esc(p.branche)}</span>` : ""}<h3>${esc(p.title)}</h3>${tags ? `<small>${esc(tags)}</small>` : ""}</div>
     <span class="bs-go" aria-hidden="true">→</span>
   </a>`;
@@ -52,16 +52,23 @@ function controls(section, track) {
 
 // Beelden zelf laden zodra ze (bijna) in beeld komen. Het standaard "lazy" laden
 // werkt op sommige telefoons (Safari) niet goed in een horizontale scroller.
+// Pas beginnen als de slider (bijna) in beeld komt: zo laadt de pagina bovenaan geen beelden die verderop staan.
 function loadImages(track) {
+  if (!("IntersectionObserver" in window)) return startImages(track);
+  const near = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { near.disconnect(); startImages(track); } },
+    { rootMargin: "600px 0px" });
+  near.observe(track);
+}
+
+function startImages(track) {
   const imgs = [...track.querySelectorAll("img[data-src]")];
   const load = im => { if (im.dataset.src) { im.src = im.dataset.src; im.removeAttribute("data-src"); } };
   if (!("IntersectionObserver" in window)) { imgs.forEach(load); return; }
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { load(e.target); io.unobserve(e.target); } }),
     { root: track.parentElement, rootMargin: "0px 120% 0px 120%" });
   imgs.forEach(im => io.observe(im));
-  // vangnet: na het laden van de pagina alles alsnog ophalen
-  const all = () => setTimeout(() => imgs.forEach(load), 1500);
-  if (document.readyState === "complete") all(); else addEventListener("load", all, { once: true });
+  // vangnet: kort nadat de slider in beeld kwam alles alsnog ophalen
+  setTimeout(() => imgs.forEach(load), 1500);
 }
 
 function pick(all, section) {
