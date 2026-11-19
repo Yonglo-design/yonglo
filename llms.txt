@@ -12,14 +12,14 @@ De volledige teksten staan in losse bestanden per onderwerp (elk klein genoeg om
 
 - [Projecten](https://www.yonglo.com/llms-projecten.txt): alle 52 projecten met opdrachtgever, branche, platform, diensten, live website en de volledige beschrijving.
 - [Pagina's](https://www.yonglo.com/llms-paginas.txt): de tekst van alle dienstpagina's, over Yonglo en contact.
-- [Koppelingen](https://www.yonglo.com/llms-koppelingen.txt): de 26 koppelingen met Wix (Moneybird, Mollie, HubSpot, ChatGPT …).
+- [Koppelingen](https://www.yonglo.com/llms-koppelingen.txt): de 35 koppelingen met Wix (Moneybird, Mollie, HubSpot, ChatGPT …).
 - Blog: [llms-blog.txt](https://www.yonglo.com/llms-blog.txt), [llms-blog-2.txt](https://www.yonglo.com/llms-blog-2.txt), [llms-blog-3.txt](https://www.yonglo.com/llms-blog-3.txt): alle 33 blogberichten, nieuwste eerst.
 - [Help docs](https://www.yonglo.com/llms-helpdocs.txt): handleidingen van de Wix-apps van Yonglo (Engels).
 - Alles samen: [llms-full.txt](https://www.yonglo.com/llms-full.txt) (groot) en [zoekindex.json](https://www.yonglo.com/zoekindex.json) (dezelfde inhoud als JSON; projecten hebben de velden `branche`, `platform`, `diensten` en `website`).
 
 Vragen waarop de site geen antwoord geeft (zoals de prijs van een nieuwe website) beantwoordt Yonglo persoonlijk: https://www.yonglo.com/contact.
 
-Bijgewerkt op 2026-11-13. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.
+Bijgewerkt op 2026-11-19. Koppelingen, projecten en blogberichten komen uit het Wix CMS en Wix Blog van Yonglo.
 
 ## Contact
 
@@ -179,7 +179,7 @@ Overzicht met beelden: https://www.yonglo.com/portfolio. Volledige beschrijvinge
 - [Slimste vogelgids](https://www.yonglo.com/project/slimste-vogelgids): Voor De Slimste Vogelgids ontwikkelde Yonglo een overzichtelijke website die de verschillende edities van deze slimme veldgidsen helder presenteert. (opdrachtgever: Jan Rodts · Natuur · Wix Editor · Webdesign, Wix Editor · live: https://www.deslimstevogelgids.com)
 - [Green Horizon](https://www.yonglo.com/project/green-horizon): Voor Green Horizon ontwikkelde Yonglo een inspirerende en informatieve website die de missie van dit goede doel krachtig uitdraagt. (Goede doel · Wix Studio · Webdesign, Development, Wix Studio · live: https://www.greenhorizon.earth)
 
-## Koppelingen (26)
+## Koppelingen (35)
 
 Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Overzicht: https://www.yonglo.com/api.
 
@@ -209,6 +209,15 @@ Systemen die Yonglo aan Wix koppelt, elk met een eigen pagina. Overzicht: https:
 - [Google Sheets](https://www.yonglo.com/wix-koppeling/sheets) (Samenwerking & data): Koppel Google Sheets aan je Wix-website voor realtime dataweergave en automatisering.
 - [Google Maps](https://www.yonglo.com/wix-koppeling/google-maps) (Samenwerking & data): Voeg geavanceerde Google Maps-functionaliteit toe aan je Wix-website.
 - [Asana](https://www.yonglo.com/wix-koppeling/asana) (Samenwerking & data): Koppel Asana aan je Wix-website: formulieren, boekingen en bestellingen worden automatisch taken in het juiste project.
+- [Dropbox](https://www.yonglo.com/wix-koppeling/dropbox) (Samenwerking & data): Koppel Dropbox aan je Wix-website: uploads komen direct in de juiste map en je deelt bestanden veilig via een portaal.
+- [Stripe](https://www.yonglo.com/wix-koppeling/stripe) (Betalingen): Koppel Stripe aan je Wix-website voor abonnementen, betaallinks en automatische facturen.
+- [PayPal](https://www.yonglo.com/wix-koppeling/paypal) (Betalingen): Meer uit PayPal halen op je Wix-website: abonnementen, facturen, terugbetalingen en uitbetalingen aan partners.
+- [SnelStart](https://www.yonglo.com/wix-koppeling/snelstart) (Boekhouding): Koppel SnelStart aan je Wix-webshop: klanten, verkooporders en boekingen gaan automatisch naar je administratie.
+- [Pipedrive](https://www.yonglo.com/wix-koppeling/pipedrive) (CRM & marketing): Koppel Pipedrive aan je Wix-website: aanvragen, boekingen en bestellingen komen automatisch als lead of deal in je pipeline.
+- [Teamleader Focus](https://www.yonglo.com/wix-koppeling/teamleader) (CRM & marketing): Koppel Teamleader Focus aan je Wix-website: contacten, deals, offertes en facturen lopen automatisch door.
+- [Sendcloud](https://www.yonglo.com/wix-koppeling/sendcloud) (Verzending & webshop): Koppel Sendcloud aan je Wix-webshop: verzendlabels, track & trace en retouren gaan automatisch. Yonglo bouwt de Sendcloud-koppeling op maat.
+- [Zapier](https://www.yonglo.com/wix-koppeling/zapier) (Samenwerking & data): Koppel je Wix-website via Zapier aan duizenden apps.
+- [Make](https://www.yonglo.com/wix-koppeling/make) (Samenwerking & data): Koppel je Wix-website aan Make en automatiseer processen tussen je apps in visuele scenario's.
 
 ## Nieuws en blog (33)
 

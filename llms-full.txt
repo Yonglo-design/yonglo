@@ -2,7 +2,7 @@
 
 > Yonglo is een Nederlands webbureau en erkend Wix Partner (5 sterren) met meer dan 18 jaar ervaring en 750+ gebouwde Wix-websites, vooral voor het MKB. Yonglo doet webdesign in Wix en Wix Studio, webshops (eCommerce, Mollie-partner), maatwerk development en API-koppelingen, concept en branding, SEO en GEO (vindbaarheid in Google en in AI-zoekmachines) en AI-oplossingen. Studio's in Eindhoven en Haarlem. Slogan: "Think Wix, think Yonglo".
 
-Alle tekst van https://www.yonglo.com: 18 pagina's, 52 projecten, 26 koppelingen, 33 blogberichten en 10 help-artikelen. Per onderwerp staat dezelfde tekst ook in kleinere bestanden: llms-projecten.txt, llms-paginas.txt, llms-koppelingen.txt, llms-blog.txt, llms-blog-2.txt, llms-blog-3.txt, llms-helpdocs.txt (bijgewerkt op 2026-11-13). Overzicht met links: https://www.yonglo.com/llms.txt. Contact en offerte: https://www.yonglo.com/contact.
+Alle tekst van https://www.yonglo.com: 18 pagina's, 52 projecten, 35 koppelingen, 33 blogberichten en 10 help-artikelen. Per onderwerp staat dezelfde tekst ook in kleinere bestanden: llms-projecten.txt, llms-paginas.txt, llms-koppelingen.txt, llms-blog.txt, llms-blog-2.txt, llms-blog-3.txt, llms-helpdocs.txt (bijgewerkt op 2026-11-19). Overzicht met links: https://www.yonglo.com/llms.txt. Contact en offerte: https://www.yonglo.com/contact.
 
 ## Contact
 
@@ -2456,7 +2456,7 @@ Voor Event Culinair ontwikkelde Yonglo een smaakvolle en professionele website d
 
 Event Culinair bedient al vele jaren de zakelijke markt, van kleine bijeenkomsten tot grote evenementen. Geen standaard menu’s of cateringoplossingen, maar altijd een culinaire invulling die aansluit op de specifieke wensen van de opdrachtgever.
 
-## Koppelingen (26)
+## Koppelingen (35)
 
 ### Moneybird
 
@@ -2955,6 +2955,243 @@ Voordelen van een Asana-Wix integratie via Yonglo:
 - Werkt met Wix Forms, Wix Bookings, Wix Stores en het Wix CMS
 - Veilig gekoppeld via OAuth of een toegangstoken, opgeslagen in de Wix Secrets Manager
 Laat je website het werk in Asana klaarzetten. Yonglo bouwt een Asana-koppeling die past bij hoe jouw team werkt.
+
+### Dropbox
+
+URL: https://www.yonglo.com/wix-koppeling/dropbox
+Categorie: Samenwerking & data
+
+Koppel Dropbox aan je Wix-website: uploads komen direct in de juiste map en je deelt bestanden veilig via een portaal. Yonglo bouwt de koppeling op maat.
+
+Koppel Dropbox aan je Wix-website en deel bestanden automatisch, veilig en overzichtelijk
+
+Werk je met grote bestanden, zoals foto's, video's, tekeningen of contracten? Met een koppeling tussen je Wix-website en Dropbox komen bestanden automatisch op de juiste plek terecht, en deel je ze net zo makkelijk weer via je website. Yonglo bouwt die koppeling via de Dropbox API en Velo by Wix.
+Wat er kan met de Dropbox API
+- Bestanden uit een formulier of portaal direct uploaden naar een vaste map in Dropbox
+- Automatisch een map aanmaken per opdracht, bestelling of opdrachtgever
+- Deellinks maken en op de website of in een e-mail zetten, bij een betaald Dropbox-abonnement ook met verloopdatum of wachtwoord
+- De inhoud van een map ophalen en als overzicht of galerij op je website tonen
+- Met webhooks direct reageren als er een nieuw bestand in een map staat, bijvoorbeeld met een melding of een e-mail
+Zo zet je het in
+Een fotograaf zet de foto's van een shoot in Dropbox en de opdrachtgever ziet ze meteen in een persoonlijk dashboard op de website. Een offerteaanvraag met bijlagen komt in een eigen map, zodat niets in de mailbox verdwijnt. En een levering staat klaar om te downloaden zodra de bestanden in Dropbox staan.
+Voor Woningperspectief, een online boekingssysteem voor woningfotografen, bouwde Yonglo een klantdashboard waarin alle media via Dropbox klaarstaan.
+Voordelen van een Dropbox-Wix integratie via Yonglo:
+- Geen losse downloadlinks of volle mailboxen meer
+- Elke opdracht krijgt automatisch een eigen, nette map
+- Bestanden veilig delen vanuit je eigen website
+- Werkt met Wix Forms, Wix Bookings, Wix Stores, het Wix CMS en ledenpagina's
+- Veilig gekoppeld via OAuth, met de sleutels in de Wix Secrets Manager
+Laat je website en Dropbox samenwerken. Yonglo bouwt een Dropbox-koppeling die past bij hoe jij met bestanden werkt.
+
+### Stripe
+
+URL: https://www.yonglo.com/wix-koppeling/stripe
+Categorie: Betalingen
+
+Koppel Stripe aan je Wix-website voor abonnementen, betaallinks en automatische facturen. Yonglo bouwt de Stripe-koppeling op maat, veilig en betrouwbaar.
+
+Koppel Stripe aan je Wix-website voor abonnementen, betalingen op maat en automatische facturen
+
+Wil je meer met online betalen dan een gewone kassa? Met een koppeling tussen je Wix-website en Stripe reken je af met abonnementen, termijnbetalingen, betaallinks of een betaalstap op maat. Yonglo bouwt de koppeling via de Stripe API en Velo by Wix.
+Wat er kan met de Stripe API
+- Betalingen starten via Stripe Checkout of een eigen betaalstap, met onder meer iDEAL, Bancontact, creditcard, Apple Pay en Google Pay
+- Abonnementen en terugkerende betalingen beheren met Stripe Billing, inclusief proefperiodes, upgrades en opzeggen
+- Automatisch facturen en creditnota's maken en versturen
+- Een portaal waarin betalers zelf hun betaalgegevens en abonnement beheren
+- Met webhooks direct reageren op betalingen: een bestelling op betaald zetten, toegang geven tot ledenpagina's of een bevestiging sturen
+- Met Stripe Connect betalingen verdelen over meerdere partijen, bijvoorbeeld bij een marktplaats
+Zo zet je het in
+Een online cursus laat deelnemers maandelijks betalen en geeft automatisch toegang tot de lessen zolang het abonnement loopt. Een zakelijke dienst stuurt na elke bestelling een factuur met betaallink. En een platform met meerdere aanbieders verdeelt elke betaling automatisch over de juiste partijen.
+Voordelen van een Stripe-Wix integratie via Yonglo:
+- Alle bekende betaalmethodes, ook voor internationale betalers
+- Abonnementen die zichzelf verlengen, factureren en innen
+- Betaalstatus en toegang op je website altijd gelijk dankzij webhooks
+- Werkt met Wix Stores, ledenpagina's en het Wix CMS
+- Veilig: betaalgegevens blijven bij Stripe, de sleutels staan in de Wix Secrets Manager
+Haal meer uit online betalen. Yonglo bouwt een Stripe-koppeling die precies past bij jouw verdienmodel.
+
+### PayPal
+
+URL: https://www.yonglo.com/wix-koppeling/paypal
+Categorie: Betalingen
+
+Meer uit PayPal halen op je Wix-website: abonnementen, facturen, terugbetalingen en uitbetalingen aan partners. Yonglo bouwt de PayPal-koppeling op maat.
+
+Koppel PayPal aan je Wix-website voor abonnementen, facturen en uitbetalingen
+
+Afrekenen met PayPal kan al in de standaard Wix-kassa. Wil je meer, zoals abonnementen, facturen met een PayPal-betaallink of uitbetalingen aan partners? Dan bouwt Yonglo een koppeling via de PayPal REST API en Velo by Wix.
+Wat er kan met de PayPal API
+- Betalingen maken en vastleggen buiten de standaard kassa, bijvoorbeeld voor een aanbetaling of een offerte op maat
+- Abonnementen met vaste termijnen en proefperiodes
+- Facturen maken en versturen met een PayPal-betaallink
+- Uitbetalingen aan meerdere ontvangers tegelijk, zoals partners, affiliates of verkopers (na goedkeuring door PayPal)
+- Terugbetalingen regelen en met webhooks direct reageren op betalingen, geschillen en opzeggingen
+Zo zet je het in
+Een vereniging laat de jaarcontributie via een PayPal-abonnement betalen. Een webshop met internationale kopers stuurt voor maatwerk een factuur met betaallink. En een platform betaalt elke maand automatisch de commissie aan partners uit.
+Voordelen van een PayPal-Wix integratie via Yonglo:
+- Bekend en vertrouwd, vooral bij internationale kopers
+- Abonnementen, facturen en uitbetalingen vanuit één koppeling
+- Betaalstatus op je website altijd actueel dankzij webhooks
+- Minder handwerk bij terugbetalingen en uitbetalingen
+- Veilig gekoppeld, met de sleutels in de Wix Secrets Manager
+Gebruik PayPal voor meer dan afrekenen alleen. Yonglo bouwt een PayPal-koppeling die past bij jouw manier van verkopen.
+
+### SnelStart
+
+URL: https://www.yonglo.com/wix-koppeling/snelstart
+Categorie: Boekhouding
+
+Koppel SnelStart aan je Wix-webshop: klanten, verkooporders en boekingen gaan automatisch naar je administratie. Yonglo bouwt de SnelStart-koppeling op maat.
+
+Koppel SnelStart aan je Wix-website en verwerk bestellingen automatisch in je boekhouding
+
+Typ je bestellingen uit je webshop nog over in SnelStart? Met een koppeling tussen je Wix-website en SnelStart gaan klanten, bestellingen en betalingen automatisch naar je administratie. Yonglo bouwt die koppeling via de SnelStart B2B API en Velo by Wix.
+Wat er kan met de SnelStart API
+- Klanten automatisch aanmaken of bijwerken als relatie in SnelStart
+- Bestellingen uit Wix Stores omzetten in verkooporders of verkoopboekingen, met het juiste btw-tarief en de juiste grootboekrekening
+- Artikelen en prijzen tussen SnelStart en je webshop gelijk houden
+- Facturen of bonnen als bijlage aan een boeking hangen
+- Grootboekrekeningen en btw-tarieven ophalen, zodat elke boeking klopt
+Zo zet je het in
+Elke betaalde bestelling staat vanzelf als verkoopboeking in SnelStart. Een nieuwe zakelijke klant komt meteen met de gegevens uit het bestelformulier in je relaties. En je boekhouder hoeft niets meer over te typen.
+SnelStart keurt elke koppeling eerst goed voordat die met echte gegevens mag werken. Dat traject nemen we voor je mee.
+Voordelen van een SnelStart-Wix integratie via Yonglo:
+- Geen dubbele invoer meer, en dus minder fouten
+- Je administratie is altijd bij, ook in drukke periodes
+- Elke boeking met de juiste btw en grootboekrekening
+- Werkt met Wix Stores, Wix Bookings en formulieren
+- Veilig gekoppeld, met de sleutels in de Wix Secrets Manager
+Laat je webshop en je boekhouding samenwerken. Yonglo bouwt een SnelStart-koppeling die past bij jouw administratie.
+
+### Pipedrive
+
+URL: https://www.yonglo.com/wix-koppeling/pipedrive
+Categorie: CRM & marketing
+
+Koppel Pipedrive aan je Wix-website: aanvragen, boekingen en bestellingen komen automatisch als lead of deal in je pipeline. Yonglo bouwt de koppeling op maat.
+
+Koppel Pipedrive aan je Wix-website en zet elke aanvraag direct als lead of deal in je pipeline
+
+Komen aanvragen via je website binnen en zet iemand ze daarna met de hand in Pipedrive? Met een koppeling tussen je Wix-website en Pipedrive staat elke aanvraag meteen als lead of deal in je pipeline, met alle gegevens erbij. Yonglo bouwt die koppeling via de Pipedrive API en Velo by Wix.
+Wat er kan met de Pipedrive API
+- Personen en organisaties aanmaken of bijwerken, zonder dubbele contacten
+- Leads en deals aanmaken in de juiste pipeline en fase, met waarde en eigen velden
+- Activiteiten inplannen, zoals een belafspraak of follow-up, voor de juiste verkoper
+- Notities en bestanden aan een deal hangen, zoals het ingevulde formulier of een offerte
+- Met webhooks reageren als een deal verschuift of gewonnen wordt: een e-mail sturen, een ledenaccount aanmaken of het Wix CMS bijwerken
+Zo zet je het in
+Een offerteaanvraag wordt een deal in de fase “Nieuw”, met een belactiviteit voor de volgende dag. Een boeking via Wix Bookings komt als activiteit in de agenda van de verkoper. En zodra een deal gewonnen is, krijgt de nieuwe opdrachtgever automatisch een welkomstmail en toegang tot het portaal.
+Voordelen van een Pipedrive-Wix integratie via Yonglo:
+- Geen lead meer vergeten of te laat opgevolgd
+- Elke deal heeft meteen de juiste gegevens, fase en eigenaar
+- Website en Pipedrive blijven gelijk lopen dankzij webhooks
+- Werkt met Wix Forms, Wix Bookings, Wix Stores en het Wix CMS
+- Veilig gekoppeld, met de sleutels in de Wix Secrets Manager
+Laat je website je pipeline vullen. Yonglo bouwt een Pipedrive-koppeling die past bij jouw verkoopproces.
+
+### Teamleader Focus
+
+URL: https://www.yonglo.com/wix-koppeling/teamleader
+Categorie: CRM & marketing
+
+Koppel Teamleader Focus aan je Wix-website: contacten, deals, offertes en facturen lopen automatisch door. Yonglo bouwt de koppeling op maat, in NL en BE.
+
+Koppel Teamleader Focus aan je Wix-website en laat aanvragen, offertes en facturen automatisch doorlopen
+
+Teamleader Focus is in Nederland en België populair om klanten, deals, offertes, projecten en facturen op één plek te beheren. Met een koppeling tussen je Wix-website en Teamleader Focus komt alles wat via je website binnenkomt daar automatisch in terecht. Yonglo bouwt die koppeling via de Teamleader API en Velo by Wix.
+Wat er kan met de Teamleader API
+- Contacten en bedrijven aanmaken of bijwerken, met adres en btw-nummer
+- Deals aanmaken in de juiste fase en toewijzen aan de juiste medewerker
+- Offertes en facturen maken vanuit een aanvraag of bestelling, en betalingen registreren
+- Agenda-afspraken, taken en projecten aanmaken, bijvoorbeeld na een boeking
+- Met webhooks reageren als een deal gewonnen of een factuur betaald is
+Zo zet je het in
+Een aanvraag via de website komt als deal in Teamleader, met het bedrijf en de contactpersoon erbij. Een webshopbestelling wordt een factuur die meteen als betaald staat. En een geboekte intake staat direct in de agenda van de juiste medewerker.
+Voordelen van een Teamleader-Wix integratie via Yonglo:
+- Van aanvraag tot factuur zonder overtypen
+- Je CRM, agenda en facturatie altijd bij
+- Website en Teamleader blijven gelijk lopen dankzij webhooks
+- Werkt met Wix Forms, Wix Bookings, Wix Stores en het Wix CMS
+- Veilig gekoppeld via OAuth, met de sleutels in de Wix Secrets Manager
+Laat je website en Teamleader Focus samenwerken. Yonglo bouwt een koppeling die past bij hoe jouw team werkt.
+
+### Sendcloud
+
+URL: https://www.yonglo.com/wix-koppeling/sendcloud
+Categorie: Verzending & webshop
+
+Koppel Sendcloud aan je Wix-webshop: verzendlabels, track & trace en retouren gaan automatisch. Yonglo bouwt de Sendcloud-koppeling op maat.
+
+Koppel Sendcloud aan je Wix-webshop en regel verzendlabels, track & trace en retouren automatisch
+
+Kopieer je adressen uit je webshop nog naar een verzendprogramma? Met een koppeling tussen je Wix-webshop en Sendcloud staat elke bestelling meteen klaar om te verzenden, bij de vervoerder die je wilt. Yonglo bouwt die koppeling via de Sendcloud API en Velo by Wix.
+Wat er kan met de Sendcloud API
+- Na een bestelling automatisch een zending aanmaken bij de juiste vervoerder, zoals PostNL, DHL of DPD, met het juiste gewicht en de juiste verzendmethode
+- Verzendlabels ophalen om meteen te printen
+- Het trackingnummer terugzetten bij de bestelling in Wix, zodat de koper de track & trace-link krijgt
+- Afhaalpunten van een vervoerder ophalen voor een adres
+- Met webhooks de status van een zending volgen, van onderweg tot afgeleverd
+- Retouren aanmelden en een retourlabel maken
+Zo zet je het in
+Een bestelling in Wix Stores staat meteen in Sendcloud, met het label klaar om te printen. De koper krijgt automatisch de track & trace, en de bestelling staat in Wix op verzonden. En een retour aanmelden gaat via een retourpagina op je eigen website.
+Voordelen van een Sendcloud-Wix integratie via Yonglo:
+- Geen adressen meer overtypen, en dus geen verkeerd verstuurde pakketten
+- Kies per bestelling de vervoerder en verzendmethode die het beste past
+- Kopers zijn altijd op de hoogte van hun pakket
+- Retouren zonder gedoe, voor jou en voor de koper
+- Veilig gekoppeld, met de sleutels in de Wix Secrets Manager
+Maak verzenden net zo makkelijk als verkopen. Yonglo bouwt een Sendcloud-koppeling die past bij jouw webshop.
+
+### Zapier
+
+URL: https://www.yonglo.com/wix-koppeling/zapier
+Categorie: Samenwerking & data
+
+Koppel je Wix-website via Zapier aan duizenden apps. Yonglo zet slimme automatiseringen op en bouwt een koppeling op maat waar Zapier tekortschiet.
+
+Koppel Zapier aan je Wix-website en automatiseer werk met duizenden apps, zonder te programmeren
+
+Zapier verbindt duizenden apps met elkaar via zogeheten Zaps: als er iets gebeurt in de ene app, voert Zapier een actie uit in een andere. Met een koppeling tussen je Wix-website en Zapier zet je nieuwe aanvragen, bestellingen of leden automatisch door naar bijvoorbeeld je CRM, mailinglijst of een spreadsheet. Yonglo zet die automatiseringen voor je op, via webhooks en Velo by Wix.
+Wat er kan met Zapier
+- Gebeurtenissen op je website, zoals een formulier, bestelling, boeking of nieuw lid, naar Zapier sturen via een webhook
+- Vanuit Zapier gegevens terugzetten op je website, via een beveiligd eindpunt, bijvoorbeeld een item in het Wix CMS
+- Stappen combineren met filters, vertragingen en voorwaarden, zonder code
+- Apps aansluiten waarvoor geen standaardkoppeling met Wix bestaat
+Zapier of een koppeling op maat?
+Zapier is ideaal om snel te starten en voor eenvoudige stappen. Gaat het om veel gegevens, gevoelige informatie of ingewikkelde logica, dan is een directe API-koppeling vaak betrouwbaarder en voordeliger, omdat Zapier per uitgevoerde taak rekent. Yonglo kijkt met je mee wat het beste past, en combineert beide als dat handig is.
+Voordelen van een Zapier-Wix integratie via Yonglo:
+- Snel live, zonder lange bouwtijd
+- Duizenden apps binnen bereik
+- Kleine aanpassingen doe je zelf in Zapier
+- Veilig: webhooks met een geheime sleutel, opgeslagen in de Wix Secrets Manager
+- Eerlijk advies over wanneer maatwerk beter is
+Laat je website het saaie werk doen. Yonglo zet Zapier-automatiseringen op die echt tijd besparen.
+
+### Make
+
+URL: https://www.yonglo.com/wix-koppeling/make
+Categorie: Samenwerking & data
+
+Koppel je Wix-website aan Make en automatiseer processen tussen je apps in visuele scenario's. Yonglo zet ze op en bouwt maatwerk waar Make tekortschiet.
+
+Koppel Make aan je Wix-website en bouw visuele automatiseringen tussen al je apps
+
+In Make (vroeger Integromat) bouw je automatiseringen als visuele scenario's: je ziet precies welke stappen er gebeuren en in welke volgorde. Met een koppeling tussen je Wix-website en Make stuur je aanvragen, bestellingen en boekingen automatisch door naar al je andere apps, en verwerk je gegevens onderweg. Yonglo zet die scenario's voor je op, via webhooks en Velo by Wix.
+Wat er kan met Make
+- Gebeurtenissen op je website, zoals een formulier, bestelling, boeking of nieuw lid, naar Make sturen via een webhook
+- Gegevens omzetten, filteren en over meerdere routes verdelen, zonder code
+- Vanuit Make gegevens terugzetten op je website, via een beveiligd eindpunt, bijvoorbeeld een item in het Wix CMS
+- Foutafhandeling instellen, zodat een mislukte stap opnieuw wordt geprobeerd en er niets verloren gaat
+- Gegevens tijdelijk bewaren in een data store van Make
+Make of een koppeling op maat?
+Make is sterk in processen met meerdere stappen en vertakkingen, en goed betaalbaar voor middelgrote volumes. Gaat het om heel veel gegevens, gevoelige informatie of logica die nauw met je website samenhangt, dan is een directe API-koppeling vaak betrouwbaarder, omdat Make per uitgevoerde stap rekent. Yonglo kijkt met je mee wat het beste past, en combineert beide als dat handig is.
+Voordelen van een Make-Wix integratie via Yonglo:
+- Ingewikkelde processen overzichtelijk in één scenario
+- Duizenden apps binnen bereik
+- Kleine aanpassingen doe je zelf in Make
+- Veilig: webhooks met een geheime sleutel, opgeslagen in de Wix Secrets Manager
+- Eerlijk advies over wanneer maatwerk beter is
+Automatiseer slim en overzichtelijk. Yonglo bouwt Make-scenario's die naadloos aansluiten op je Wix-website.
 
 ## Blogberichten (33)
 
